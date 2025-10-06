@@ -1,0 +1,104 @@
+---
+sidebar: sidebar 
+permalink: task-setting-up-transit-gateway.html 
+keywords: transit gateway, aws, amazon web services, transit gateway, floating ip, client access, nas, outside, vpc, virtual private cloud, route table 
+summary: 'Configurare un gateway di transito AWS per consentire al client NAS di accedere agli indirizzi IP mobili dall"esterno della VPC in cui risiede Cloud Volumes ONTAP .  Ciò è vantaggioso perché gli IP flottanti migrano automaticamente tra i nodi quando si verificano errori.' 
+---
+= Configurare un gateway di transito AWS per coppie Cloud Volumes ONTAP HA
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Impostare un gateway di transito AWS per abilitare l'accesso a una coppia HAlink:reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs["indirizzi IP flottanti"] dall'esterno della VPC in cui risiede la coppia HA.
+
+Quando una configurazione Cloud Volumes ONTAP HA è distribuita su più zone di disponibilità AWS, sono necessari indirizzi IP mobili per l'accesso ai dati NAS dall'interno della VPC.  Questi indirizzi IP mobili possono migrare tra i nodi in caso di guasti, ma non sono accessibili in modo nativo dall'esterno della VPC.  Indirizzi IP privati ​​separati forniscono l'accesso ai dati dall'esterno della VPC, ma non forniscono il failover automatico.
+
+Sono richiesti anche indirizzi IP flottanti per l'interfaccia di gestione del cluster e per il LIF di gestione SVM opzionale.
+
+Se si configura un gateway di transito AWS, si abilita l'accesso agli indirizzi IP mobili dall'esterno della VPC in cui risiede la coppia HA.  Ciò significa che i client NAS e gli strumenti di gestione NetApp esterni alla VPC possono accedere agli IP mobili.
+
+Ecco un esempio che mostra due VPC connesse tramite un gateway di transito.  Un sistema HA risiede in una VPC, mentre un client risiede nell'altra.  È quindi possibile montare un volume NAS sul client utilizzando l'indirizzo IP flottante.
+
+image:diagram_transit_gateway.png["Un diagramma che mostra una configurazione HA in una VPC, con IP mobili instradati verso ENI, un client in un'altra VPC, con IP mobili instradati verso il gateway di transito, e un gateway di transito, con IP mobili instradati verso la tabella di routing VPC1."]
+
+I passaggi seguenti illustrano come impostare una configurazione simile.
+
+.Passi
+. https://docs.aws.amazon.com/vpc/latest/tgw/tgw-getting-started.html["Creare un gateway di transito e collegare le VPC al gateway"^] .
+. Associare le VPC alla tabella di routing del gateway di transito.
++
+.. Nel servizio *VPC*, fare clic su *Tabelle di routing del gateway di transito*.
+.. Selezionare la tabella di routing.
+.. Fare clic su *Associazioni* e quindi selezionare *Crea associazione*.
+.. Selezionare gli allegati (VPC) da associare, quindi fare clic su *Crea associazione*.
+
+
+. Creare percorsi nella tabella di routing del gateway di transito specificando gli indirizzi IP flottanti della coppia HA.
++
+Puoi trovare gli indirizzi IP mobili nella pagina delle informazioni di sistema nella console NetApp . Ecco un esempio:
+
++
+image:screenshot_floating_ips.gif["Uno screenshot che mostra gli indirizzi IP mobili per l'interfaccia di gestione del cluster, due interfacce dati NFS e CIFS e l'interfaccia di gestione SVM."]
+
++
+L'immagine di esempio seguente mostra la tabella di routing per il gateway di transito.  Include percorsi verso i blocchi CIDR delle due VPC e quattro indirizzi IP mobili utilizzati da Cloud Volumes ONTAP.
+
++
+image:screenshot_transit_gateway1.png["Uno screenshot della console AWS che mostra la tabella di routing per il gateway di transito.  Include percorsi verso i blocchi CIDR delle due VPC e quattro indirizzi IP mobili utilizzati da Cloud Volumes ONTAP."]
+
+. Modificare la tabella di routing delle VPC che devono accedere agli indirizzi IP mobili.
++
+.. Aggiungere voci di percorso agli indirizzi IP mobili.
+.. Aggiungere una voce di percorso al blocco CIDR della VPC in cui risiede la coppia HA.
++
+L'immagine di esempio seguente mostra la tabella di routing per VPC 2, che include i percorsi verso VPC 1 e gli indirizzi IP mobili.
+
++
+image:screenshot_transit_gateway2.png["Uno screenshot della console AWS che mostra la tabella di routing per VPC 2, che include i percorsi verso VPC 1 e gli indirizzi IP mobili."]
+
+
+
+. Modificare la tabella di routing per la VPC della coppia HA aggiungendo una route alla VPC che necessita di accesso agli indirizzi IP flottanti.
++
+Questo passaggio è importante perché completa il routing tra le VPC.
+
++
+L'immagine di esempio seguente mostra la tabella di routing per VPC 1.  Include un percorso verso gli indirizzi IP mobili e verso VPC 2, dove risiede un client.  La console ha aggiunto automaticamente gli IP mobili alla tabella di routing quando ha distribuito la coppia HA.
+
++
+image:screenshot_transit_gateway3.png["Uno screenshot della console AWS che mostra la tabella di routing per VPC 1.  Include un percorso verso gli indirizzi IP mobili e verso VPC 2, dove risiede un client."]
+
+. Aggiorna le impostazioni dei gruppi di sicurezza su Tutto il traffico per la VPC.
++
+.. In Virtual Private Cloud, fare clic su *Sottoreti*.
+.. Fare clic sulla scheda *Tabella di routing* e selezionare l'ambiente desiderato per uno degli indirizzi IP mobili per una coppia HA.
+.. Fare clic su *Gruppi di sicurezza*.
+.. Selezionare *Modifica regole in entrata*.
+.. Fare clic su *Aggiungi regola*.
+.. In Tipo, seleziona *Tutto il traffico*, quindi seleziona l'indirizzo IP VPC.
+.. Fare clic su *Salva regole* per applicare le modifiche.
+
+
+. Montare i volumi sui client utilizzando l'indirizzo IP mobile.
++
+È possibile trovare l'indirizzo IP corretto nella Console tramite l'opzione *Comando di montaggio* nel pannello Gestisci volumi nella Console.
+
++
+image::screenshot_mount_option.png[400]
+
+. Se si sta montando un volume NFS, configurare la policy di esportazione in modo che corrisponda alla subnet del VPC client.
++
+link:task-manage-volumes.html["Scopri come modificare un volume"] .
+
+
+
+*Link correlati*
+
+* link:concept-ha.html["Coppie ad alta disponibilità in AWS"]
+* link:reference-networking-aws.html["Requisiti di rete per Cloud Volumes ONTAP in AWS"]
+

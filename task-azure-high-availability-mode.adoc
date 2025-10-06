@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: task-azure-high-availability-mode.html 
+keywords: high availability mode, EnableHighAvailabilityMode, action required, nfsv4 
+summary: La modalità ad alta disponibilità di Microsoft Azure dovrebbe essere abilitata per ridurre i tempi di failover non pianificati e abilitare il supporto NFSv4 per Cloud Volumes ONTAP. 
+---
+= Abilita la modalità ad alta disponibilità per Cloud Volumes ONTAP in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La modalità ad alta disponibilità (HA) di Microsoft Azure dovrebbe essere abilitata per ridurre i tempi di failover non pianificati e abilitare il supporto NFSv4 per Cloud Volumes ONTAP.  In questa modalità, i nodi Cloud Volumes ONTAP HA possono raggiungere un obiettivo di tempo di ripristino (RTO) basso (60 secondi) durante i failover non pianificati sui client CIFS e NFSv4.
+
+A partire da Cloud Volumes ONTAP 9.10.1, abbiamo ridotto il tempo di failover non pianificato per le coppie Cloud Volumes ONTAP HA in esecuzione in Microsoft Azure e aggiunto il supporto per NFSv4.  Per rendere disponibili questi miglioramenti a Cloud Volumes ONTAP, è necessario abilitare la funzionalità di alta disponibilità nella sottoscrizione di Azure.
+
+NetApp Console ti chiede di fornire questi dettagli quando la funzionalità deve essere abilitata su un abbonamento Azure.
+
+Notare quanto segue:
+
+* Non ci sono problemi con l'elevata disponibilità della coppia Cloud Volumes ONTAP HA.  Questa funzionalità di Azure interagisce con ONTAP per ridurre i tempi di interruzione delle applicazioni osservati dal client per i protocolli NFS, derivanti da eventi di failover non pianificati.
+* L'abilitazione di questa funzionalità non comporta interruzioni per le coppie Cloud Volumes ONTAP HA.
+* L'abilitazione di questa funzionalità nell'abbonamento Azure non causa problemi alle altre VM.
+* Cloud Volumes ONTAP utilizza un Azure Load Balancer interno durante i failover dei LIF di gestione del cluster e SVM sui client CIFS e NFS.
+* Quando la modalità HA è abilitata, la console esegue la scansione del sistema ogni 12 ore per aggiornare le regole interne di Azure Load Balancer.
+
+
+Un utente di Azure con privilegi di "Proprietario" può abilitare la funzionalità dall'interfaccia della riga di comando di Azure.
+
+.Passi
+. https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart["Accedi ad Azure Cloud Shell dal portale di Azure"^]
+. Registra la funzionalità della modalità ad alta disponibilità:
++
+[source, azurecli]
+----
+az account set -s AZURE_SUBSCRIPTION_NAME_OR_ID
+az feature register --name EnableHighAvailabilityMode --namespace Microsoft.Network
+az provider register -n Microsoft.Network
+----
+. Facoltativamente, verificare che la funzionalità sia ora registrata:
++
+[source, azurecli]
+----
+az feature show --name EnableHighAvailabilityMode --namespace Microsoft.Network
+----
++
+L'interfaccia della riga di comando di Azure dovrebbe restituire un risultato simile al seguente:
+
++
+[listing]
+----
+{
+  "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Features/providers/Microsoft.Network/features/EnableHighAvailabilityMode",
+  "name": "Microsoft.Network/EnableHighAvailabilityMode",
+  "properties": {
+    "state": "Registered"
+  },
+  "type": "Microsoft.Features/providers/features"
+}
+----
+

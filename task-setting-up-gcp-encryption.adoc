@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: task-setting-up-gcp-encryption.html 
+keywords: encryption, gcp, encryption key, permissions, customer-managed, gcpencryption 
+summary: Sebbene Google Cloud Storage crittografi sempre i dati prima che vengano scritti sul disco, è possibile utilizzare le API della console per creare un sistema Cloud Volumes ONTAP che utilizzi chiavi di crittografia gestite dal cliente.  Si tratta di chiavi che puoi generare e gestire in GCP utilizzando Cloud Key Management Service. 
+---
+= Utilizzo di chiavi di crittografia gestite dal cliente con Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sebbene Google Cloud Storage crittografi sempre i dati prima che vengano scritti sul disco, è possibile utilizzare le API per creare un sistema Cloud Volumes ONTAP che utilizzi _chiavi di crittografia gestite dal cliente_.  Si tratta di chiavi che puoi generare e gestire in GCP utilizzando Cloud Key Management Service.
+
+.Passi
+. Assicurarsi che l'account del servizio agente della console disponga delle autorizzazioni corrette a livello di progetto, nel progetto in cui è archiviata la chiave.
++
+I permessi sono forniti nel https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html["le autorizzazioni dell'account di servizio per impostazione predefinita"^] , ma potrebbe non essere applicato se si utilizza un progetto alternativo per il Cloud Key Management Service.
+
++
+I permessi sono i seguenti:
+
++
+[source, yaml]
+----
+- cloudkms.cryptoKeyVersions.useToEncrypt
+- cloudkms.cryptoKeys.get
+- cloudkms.cryptoKeys.list
+- cloudkms.keyRings.list
+----
+. Assicurarsi che l'account di servizio per il https://cloud.google.com/iam/docs/service-agents["Agente di servizio Google Compute Engine"^] dispone delle autorizzazioni Cloud KMS Encrypter/Decrypter sulla chiave.
++
+Il nome dell'account di servizio utilizza il seguente formato: "service-[service_project_number]@compute-system.iam.gserviceaccount.com".
+
++
+https://cloud.google.com/kms/docs/iam#granting_roles_on_a_resource["Documentazione di Google Cloud: Utilizzo di IAM con Cloud KMS - Concessione di ruoli su una risorsa"]
+
+. Ottieni l'"id" della chiave invocando il comando get per `/gcp/vsa/metadata/gcp-encryption-keys` Chiamata API o selezionando "Copia nome risorsa" sulla chiave nella console GCP.
+. Se si utilizzano chiavi di crittografia gestite dal cliente e si suddividono i dati in livelli per l'archiviazione di oggetti, la console NetApp tenta di utilizzare le stesse chiavi utilizzate per crittografare i dischi persistenti.  Ma prima devi abilitare i bucket di Google Cloud Storage per utilizzare le chiavi:
++
+.. Trova l'agente del servizio Google Cloud Storage seguendo le istruzioni https://cloud.google.com/storage/docs/getting-service-agent["Documentazione di Google Cloud: ottenere l'agente del servizio Cloud Storage"^] .
+.. Passare alla chiave di crittografia e assegnare all'agente del servizio Google Cloud Storage le autorizzazioni Cloud KMS Encrypter/Decrypter.
+
+
++
+Per maggiori informazioni, fare riferimento a https://cloud.google.com/storage/docs/encryption/using-customer-managed-keys["Documentazione di Google Cloud: utilizzo delle chiavi di crittografia gestite dal cliente"^]
+
+. Utilizzare il parametro "GcpEncryption" con la richiesta API durante la creazione di un sistema.
++
+*Esempio*
+
++
+[source, json]
+----
+"gcpEncryptionParameters": {
+    "key": "projects/project-1/locations/us-east4/keyRings/keyring-1/cryptoKeys/generatedkey1"
+  }
+----
+
+
+Fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione della console NetApp"^] per maggiori dettagli sull'utilizzo del parametro "GcpEncryption".

@@ -1,0 +1,90 @@
+---
+sidebar: sidebar 
+permalink: task-managing-state.html 
+keywords: schedule, schedules, scheduling, shutdowns, shut down, restart, stop, stopping, turn off, weekday, weekend 
+summary: È possibile arrestare e avviare Cloud Volumes ONTAP dalla console NetApp per gestire i costi di elaborazione cloud. 
+---
+= Avviare e arrestare un sistema Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile arrestare e avviare Cloud Volumes ONTAP dalla console NetApp per gestire i costi di elaborazione cloud.
+
+
+
+== Pianificazione degli arresti automatici di Cloud Volumes ONTAP
+
+Potrebbe essere necessario arrestare Cloud Volumes ONTAP durante intervalli di tempo specifici per ridurre i costi di elaborazione.  Invece di procedere manualmente, è possibile configurare la Console in modo che arresti e riavvii automaticamente i sistemi in momenti specifici.
+
+.Informazioni su questo compito
+* Quando si pianifica un arresto automatico del sistema Cloud Volumes ONTAP , la Console posticipa l'arresto se è in corso un trasferimento dati attivo.
++
+Al termine del trasferimento, il sistema viene spento.
+
+* Questa attività pianifica gli arresti automatici di entrambi i nodi in una coppia HA.
+* Gli snapshot dei dischi di avvio e di root non vengono creati quando si disattiva Cloud Volumes ONTAP tramite arresti pianificati.
++
+Gli snapshot vengono creati automaticamente solo quando si esegue uno spegnimento manuale, come descritto nella sezione successiva.
+
+
+
+.Passi
+. Nella pagina *Sistemi*, fare doppio clic sul sistema Cloud Volumes ONTAP .
+. Nella scheda Panoramica, fare clic sul pannello Funzionalità e quindi sull'icona della matita accanto a *Tempo di inattività pianificato*.
++
+image::screenshot_schedule_downtime.png[400]
+
+. Specificare la pianificazione dello spegnimento:
++
+.. Scegli se vuoi spegnere il sistema ogni giorno, ogni giorno feriale, ogni fine settimana o una qualsiasi combinazione delle tre opzioni.
+.. Specifica quando vuoi spegnere il sistema e per quanto tempo vuoi che resti spento.
++
+*Esempio*
+
++
+L'immagine seguente mostra una pianificazione che indica alla Console di spegnere il sistema ogni sabato alle 20:00 (20:00) per 12 ore.  La console riavvia il sistema ogni lunedì alle 12:00
+
++
+image:screenshot_schedule_downtime_window.png["Screenshot: mostra la schermata Pianifica tempi di inattività."]
+
+
+
+. Fare clic su *Salva*.
+
+
+.Risultato
+Il programma è stato salvato.  La voce corrispondente della riga Tempo di inattività programmato nel pannello Funzionalità visualizza "Attivo".
+
+
+
+== Arresto di Cloud Volumes ONTAP
+
+L'arresto di Cloud Volumes ONTAP consente di evitare l'accumulo di costi di elaborazione e di creare snapshot dei dischi root e boot, utili per la risoluzione dei problemi.
+
+
+NOTE: Per ridurre i costi, la Console elimina periodicamente gli snapshot più vecchi dei dischi di root e di avvio.  Vengono conservati solo i due snapshot più recenti sia per il disco di root che per quello di avvio.
+
+.Informazioni su questo compito
+Quando si arresta una coppia HA, la console arresta entrambi i nodi.
+
+.Passi
+. Dal sistema, fare clic sull'icona *Disattiva*.
++
+image:screenshot_turn_off_redesign.png["Screenshot: mostra l'icona per disattivare un sistema Cloud Volumes ONTAP ."]
+
+. Mantenere abilitata l'opzione per creare snapshot perché gli snapshot possono abilitare il ripristino del sistema.
+. Fare clic su *Disattiva*.
++
+L'arresto del sistema potrebbe richiedere alcuni minuti.  È possibile riavviare i sistemi in un secondo momento dalla pagina *Sistemi*.
+
++
+
+NOTE: Gli snapshot vengono creati automaticamente al riavvio.
+
+

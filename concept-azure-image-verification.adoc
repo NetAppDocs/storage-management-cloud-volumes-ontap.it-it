@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: concept-azure-image-verification.html 
+keywords: Azure, image, VHD, image signature file, 
+summary: Verificare i file delle firme dei file immagine VHD di Azure. 
+---
+= Verifica delle immagini di Azure Marketplace per Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La verifica delle immagini di Azure è conforme ai requisiti di sicurezza avanzati NetApp .  La verifica di un file immagine è un processo semplice.  Tuttavia, la verifica della firma dell'immagine di Azure richiede considerazioni specifiche per il file immagine VHD di Azure, poiché viene modificato in Azure Marketplace.
+
+
+NOTE: La verifica delle immagini di Azure è supportata su Cloud Volumes ONTAP 9.15.0 e versioni successive.
+
+
+
+== Alterazione dei file VHD pubblicati da parte di Azure
+
+1 MB (1048576 byte) all'inizio e 512 byte alla fine del file VHD vengono modificati da Azure.  NetApp firma il file VHD rimanente.
+
+image:screenshot_azure_vhd_10gb.png["Un'immagine che mostra l'alternanza di file VHD da 10 GB di Azure"]
+
+Nell'esempio, il file VHD è di 10 GB.  La parte firmata NetApp è contrassegnata in verde (10 GB - 1 MB - 512 byte).
+
+.Link correlati
+* https://pagefault.blog/2019/04/22/how-to-sign-and-verify-using-openssl/["Blog Page Fault: come firmare e verificare utilizzando OpenSSL"^]
+* https://docs.microsoft.com/en-us/azure/databox-online/azure-stack-edge-gpu-create-virtual-machine-marketplace-image["Utilizzare l'immagine di Azure Marketplace per creare un'immagine di macchina virtuale per la GPU di Azure Stack Edge Pro | Microsoft Learn"^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/scripts/copy-managed-disks-vhd-to-storage-account["Esportare/copiare un disco gestito in un account di archiviazione tramite l'interfaccia della riga di comando di Azure | Microsoft Learn"^]
+* https://learn.microsoft.com/en-us/azure/cloud-shell/quickstart["Guida introduttiva ad Azure Cloud Shell - Bash | Microsoft Learn"^]
+* https://learn.microsoft.com/en-us/cli/azure/install-azure-cli["Come installare l'interfaccia della riga di comando di Azure | Microsoft Learn"^]
+* https://learn.microsoft.com/en-us/cli/azure/storage/blob/copy?view=azure-cli-latest#az-storage-blob-copy-start["copia blob di archiviazione az | Microsoft Learn"^]
+* https://learn.microsoft.com/en-us/cli/azure/authenticate-azure-cli["Sign in con Azure CLI — Accesso e autenticazione | Microsoft Learn"^]
+

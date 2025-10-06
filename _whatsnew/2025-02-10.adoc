@@ -1,0 +1,32 @@
+= Autenticazione utente abilitata per l'accesso a System Manager da BlueXP
+:allow-uri-read: 
+
+
+
+
+=== Autenticazione utente abilitata per l'accesso a System Manager da BlueXP
+
+In qualità di amministratore BlueXP , ora puoi attivare l'autenticazione per gli utenti ONTAP che accedono a ONTAP System Manager da BlueXP.  È possibile abilitare questa opzione modificando le impostazioni di BlueXP Connector.  Questa opzione è disponibile per le modalità standard e privata.
+
+link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-administer-advanced-view.html["Amministrare Cloud Volumes ONTAP utilizzando System Manager"^] .
+
+
+
+=== BlueXP Advanced View è stato rinominato System Manager
+
+L'opzione per la gestione avanzata di Cloud Volumes ONTAP da BlueXP tramite ONTAP System Manager è stata rinominata da *Advanced View* a *System Manager*.
+
+link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-administer-advanced-view.html["Amministrare Cloud Volumes ONTAP utilizzando System Manager"^] .
+
+
+
+=== Introduzione di un modo più semplice per gestire le licenze con il BlueXP digital wallet
+
+Ora puoi sperimentare una gestione semplificata delle licenze Cloud Volumes ONTAP utilizzando punti di navigazione migliorati all'interno del BlueXP digital wallet:
+
+* Accedi facilmente alle informazioni sulla licenza Cloud Volumes ONTAP tramite le schede *Amministrazione > Licenze e abbonamenti > Panoramica/Licenze dirette*.
+* Fare clic su *Visualizza* nel pannello Cloud Volume ONTAP nella scheda *Panoramica* per ottenere una panoramica completa delle licenze basate sulla capacità.  Questa visualizzazione avanzata offre informazioni dettagliate sulle tue licenze e sui tuoi abbonamenti.
+* Se preferisci l'interfaccia precedente, puoi fare clic sul pulsante *Passa alla visualizzazione legacy* per visualizzare i dettagli della licenza in base al tipo e modificare i metodi di addebito per le tue licenze.
+
+
+link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-capacity-licenses.html["Gestire le licenze basate sulla capacità"^] .

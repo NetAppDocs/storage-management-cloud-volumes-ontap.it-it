@@ -1,0 +1,142 @@
+---
+sidebar: sidebar 
+permalink: concept-storage.html 
+keywords: storage, capacity, volumes, aggregates, raw capacity, usable capacity 
+summary: 'Comprendere come Cloud Volumes ONTAP utilizza l"archiviazione cloud può aiutarti a comprendere i costi di archiviazione.' 
+---
+= Dischi e aggregati utilizzati per i cluster Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Comprendere come Cloud Volumes ONTAP utilizza l'archiviazione cloud può aiutarti a comprendere i costi di archiviazione.
+
+
+CAUTION: È necessario creare ed eliminare tutti i dischi e gli aggregati dalla console NetApp . Non dovresti eseguire queste azioni da un altro strumento di gestione. Ciò potrebbe compromettere la stabilità del sistema, ostacolare la possibilità di aggiungere dischi in futuro e potenzialmente generare commissioni ridondanti per il provider cloud.
+
+
+
+== Panoramica
+
+Cloud Volumes ONTAP utilizza lo storage del provider cloud come dischi e li raggruppa in uno o più aggregati.  Gli aggregati forniscono spazio di archiviazione a uno o più volumi.
+
+image:diagram_storage.png["Questa illustrazione mostra un aggregato composto da dischi e dai volumi di dati che Cloud Volumes ONTAP mette a disposizione degli host."]
+
+Sono supportati diversi tipi di dischi cloud.  Quando si crea un volume, si sceglie il tipo di disco e quando si distribuisce Cloud Volumes ONTAP si seleziona la dimensione predefinita del disco.
+
+
+TIP: La quantità totale di spazio di archiviazione acquistato da un fornitore cloud è la _capacità grezza_.  La _capacità utilizzabile_ è inferiore perché circa il 12-14 percento è costituito da overhead riservato all'utilizzo Cloud Volumes ONTAP .  Ad esempio, se la Console crea un aggregato da 500 GiB, la capacità utilizzabile è 442,94 GiB.
+
+ifdef::aws[]
+
+
+
+== Deposito AWS
+
+In AWS, Cloud Volumes ONTAP utilizza l'archiviazione EBS per i dati utente e l'archiviazione NVMe locale come cache Flash su alcuni tipi di istanze EC2.
+
+Deposito EBS:: In AWS, un aggregato può contenere fino a 6 dischi tutti della stessa dimensione. Tuttavia, se si dispone di una configurazione che supporta la funzionalità Amazon EBS Elastic Volumes, un aggregato può contenere fino a 8 dischi. link:concept-aws-elastic-volumes.html["Scopri di più sul supporto per Elastic Volumes"] .
++
+--
+La dimensione massima del disco è 16 TiB.
+
+Il tipo di disco EBS sottostante può essere un SSD per uso generico (gp3 o gp2), un SSD Provisioned IOPS (io1) o un HDD Throughput Optimized (st1).  È possibile associare un disco EBS con Amazon S3 perlink:concept-data-tiering.html["archiviazione di oggetti a basso costo"] .
+
+
+NOTE: Si sconsiglia di suddividere i dati in livelli per l'archiviazione di oggetti quando si utilizzano HDD Throughput Optimized (st1).
+
+--
+Archiviazione NVMe locale:: Alcuni tipi di istanza EC2 includono l'archiviazione NVMe locale, che Cloud Volumes ONTAP utilizza comelink:concept-flash-cache.html["Cache flash"] .
+
+
+*Link correlati*
+
+* http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html["Documentazione AWS: Tipi di volume EBS"^]
+* link:task-planning-your-config.html["Scopri come scegliere i tipi e le dimensioni dei dischi per i tuoi sistemi in AWS"]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html["Esaminare i limiti di archiviazione per Cloud Volumes ONTAP in AWS"^]
+* http://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html["Esamina le configurazioni supportate per Cloud Volumes ONTAP in AWS"^]
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+
+
+== Archiviazione di Azure
+
+In Azure, un aggregato può contenere fino a 12 dischi tutti della stessa dimensione.  Il tipo di disco e la dimensione massima del disco dipendono dal fatto che si utilizzi un sistema a nodo singolo o una coppia HA:
+
+Sistemi a nodo singolo:: I sistemi a nodo singolo possono utilizzare questi tipi di Azure Managed Disks:
++
+--
+* I dischi gestiti SSD Premium offrono prestazioni elevate per carichi di lavoro ad alta intensità di I/O a un costo più elevato.
+* I dischi gestiti Premium SSD v2 offrono prestazioni più elevate con una latenza inferiore a un costo inferiore sia per i singoli nodi che per le coppie HA, rispetto ai dischi gestiti Premium SSD.
+* I dischi gestiti SSD standard garantiscono prestazioni costanti per carichi di lavoro che richiedono IOPS bassi.
+* I dischi gestiti HDD standard sono una buona scelta se non hai bisogno di IOPS elevati e vuoi ridurre i costi.
++
+Ogni tipo di disco gestito ha una dimensione massima del disco di 32 TiB.
+
++
+È possibile associare un disco gestito all'archiviazione BLOB di Azure perlink:concept-data-tiering.html["archiviazione di oggetti a basso costo"] .
+
+
+
+--
+coppie HA:: Le coppie HA utilizzano due tipi di dischi che garantiscono prestazioni elevate per carichi di lavoro ad alta intensità di I/O a un costo più elevato:
++
+--
+* _Blob di pagina premium_ con una dimensione massima del disco di 8 TiB
+* _Dischi gestiti_ con una dimensione massima del disco di 32 TiB
+
+
+--
+
+
+*Link correlati*
+
+* link:task-planning-your-config-azure.html["Scopri come scegliere i tipi e le dimensioni dei dischi per i tuoi sistemi in Azure"]
+* link:task-deploying-otc-azure.html#launching-a-cloud-volumes-ontap-ha-pair-in-azure["Avvia una coppia Cloud Volumes ONTAP HA in Azure"]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types["Documentazione di Microsoft Azure: tipi di dischi gestiti di Azure"^]
+* https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-pageblob-overview["Documentazione di Microsoft Azure: Panoramica dei blob di pagine di Azure"^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html["Esaminare i limiti di archiviazione per Cloud Volumes ONTAP in Azure"^]
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+
+
+== Archiviazione Google Cloud
+
+In Google Cloud, un aggregato può contenere fino a 6 dischi tutti della stessa dimensione.  La dimensione massima del disco è 64 TiB.
+
+Il tipo di disco può essere _dischi persistenti SSD zonali_, _dischi persistenti bilanciati zonali_ o _dischi persistenti standard zonali_.  È possibile associare dischi persistenti a un bucket di Google Storage perlink:concept-data-tiering.html["archiviazione di oggetti a basso costo"] .
+
+*Link correlati*
+
+* https://cloud.google.com/compute/docs/disks/["Documentazione di Google Cloud: Opzioni di archiviazione"^]
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html["Esamina i limiti di archiviazione per Cloud Volumes ONTAP in Google Cloud"^]
+
+
+endif::gcp[]
+
+
+
+== Tipo RAID
+
+Il tipo RAID per ogni aggregato Cloud Volumes ONTAP è RAID0 (striping).  Cloud Volumes ONTAP si affida al provider cloud per la disponibilità e la durabilità dei dischi.  Non sono supportati altri tipi di RAID.
+
+
+
+=== Ricambi a caldo
+
+RAID0 non supporta l'uso di hot spare per la ridondanza.
+
+La creazione di dischi inutilizzati (hot spare) collegati a un'istanza di Cloud Volumes ONTAP è una spesa non necessaria e potrebbe impedire il provisioning di spazio aggiuntivo secondo necessità.  Pertanto non è consigliabile.

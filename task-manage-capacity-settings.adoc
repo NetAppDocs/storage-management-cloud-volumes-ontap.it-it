@@ -1,0 +1,61 @@
+---
+sidebar: sidebar 
+permalink: task-manage-capacity-settings.html 
+keywords: aggregates, delete aggregates, add disks, view aggregates 
+summary: Gestisci autonomamente gli aggregati aggiungendo dischi, visualizzando informazioni sugli aggregati ed eliminandoli. 
+---
+= Gestire la capacità aggregata di Cloud Volumes ONTAP su un agente Console
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ogni agente della console dispone di impostazioni che determinano il modo in cui gestisce la capacità aggregata per Cloud Volumes ONTAP.
+
+Queste impostazioni interessano tutti i sistemi Cloud Volumes ONTAP gestiti da un agente Console.  Se si dispone di un altro agente Console, è possibile configurarlo in modo diverso.
+
+.Autorizzazioni richieste
+Per modificare le impostazioni Cloud Volumes ONTAP , sono necessari i privilegi di amministratore dell'organizzazione o dell'account della console NetApp .
+
+.Passi
+. Dal riquadro di navigazione a sinistra, vai su *Amministrazione > Agenti*.
+. Fare clic suimage:icon-action.png[""] icona per l'agente Console che gestisce il sistema Cloud Volumes ONTAP .
+. Selezionare *Impostazioni Cloud Volumes ONTAP *.
++
+image::screenshot-settings-cloud-volumes-ontap.png[Uno screenshot dell'opzione Impostazioni Cloud Volumes ONTAP sotto l'icona Impostazioni.]
+
+. In *Capacità*, modifica una delle seguenti impostazioni:
++
+image:screenshot-cvo-settings-page.png["Panoramica delle impostazioni di capacità di Cloud Volumes ONTAP."]
+
++
+Modalità di gestione della capacità:: Scegli se la Console deve notificarti le decisioni relative alla capacità di archiviazione o se deve gestire automaticamente i requisiti di capacità per te.
++
+--
+link:concept-storage-management.html#capacity-management["Scopri come funziona la modalità di gestione della capacità"] .
+
+--
+Soglia di capacità aggregata - Rapporto spazio libero:: Questo rapporto è un parametro chiave nelle decisioni di gestione della capacità e comprenderne l'impatto è essenziale indipendentemente dal fatto che si utilizzi una modalità di gestione della capacità automatica o manuale.  Si consiglia di impostare questa soglia tenendo conto delle proprie specifiche esigenze di archiviazione e della crescita prevista per mantenere un equilibrio tra utilizzo delle risorse e costi.
++
+--
+In modalità manuale, se il rapporto di spazio libero su un aggregato scende al di sotto della soglia specificata, viene attivata una notifica che avvisa l'utente che è necessario adottare misure per risolvere il problema del basso rapporto di spazio libero.  È importante monitorare queste notifiche e gestire manualmente la capacità aggregata per evitare interruzioni del servizio e garantire prestazioni ottimali.
+
+Il rapporto di spazio libero è calcolato come segue: (capacità aggregata - capacità totale utilizzata sull'aggregato) / capacità aggregata
+
+Fare riferimento alink:concept-storage-management.html#automatic-capacity-management["Gestione automatica della capacità"] per scoprire ora che la capacità è gestita automaticamente in Cloud Volumes ONTAP.
+
+--
+Soglie di capacità aggregata - Rapporto di spazio libero per la suddivisione in livelli dei dati:: Definisce la quantità di spazio libero richiesta sul livello di prestazioni (dischi) quando si suddividono i dati in livelli di capacità (archiviazione di oggetti).
++
+--
+Il rapporto è importante per gli scenari di disaster recovery.  Quando i dati vengono letti dal livello di capacità, Cloud Volumes ONTAP sposta i dati al livello di prestazioni per garantire prestazioni migliori.  Se lo spazio non è sufficiente, Cloud Volumes ONTAP non può spostare i dati.
+
+--
+
+
+. Fare clic su *Salva*.
+

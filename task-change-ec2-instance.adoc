@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: task-change-ec2-instance.html 
+keywords: ec2 instance type, change ec2 instance type, change instance type, modify instance type, modify ec2 instance, amazon ec2 
+summary: Quando avvii Cloud Volumes ONTAP in AWS, puoi scegliere tra diverse istanze o tipologie.  Puoi modificare il tipo di istanza in qualsiasi momento se ritieni che sia troppo piccolo o troppo grande per le tue esigenze. 
+---
+= Modificare il tipo di istanza EC2 per un sistema Cloud Volumes ONTAP in AWS
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Quando avvii Cloud Volumes ONTAP in AWS, puoi scegliere tra diverse istanze o tipologie.  Puoi modificare il tipo di istanza in qualsiasi momento se ritieni che sia troppo piccolo o troppo grande per le tue esigenze.
+
+.Informazioni su questo compito
+* Il giveback automatico deve essere abilitato su una coppia Cloud Volumes ONTAP HA (questa è l'impostazione predefinita).  In caso contrario, l'operazione fallirà.
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D01-49A5-BEFD-D529713EC1FA.html["Documentazione ONTAP 9: Comandi per la configurazione della restituzione automatica"^]
+
+* La modifica del tipo di istanza può influire sui costi dei servizi AWS.
+* L'operazione riavvia Cloud Volumes ONTAP.
++
+Nei sistemi a nodo singolo, l'I/O viene interrotto.
+
++
+Per le coppie HA, il cambiamento non è dirompente.  Le coppie HA continuano a fornire dati.
+
++
+
+TIP: La console NetApp modifica un nodo alla volta avviando l'acquisizione e attendendo la restituzione.  Il team di controllo qualità di NetApp ha testato sia la scrittura che la lettura dei file durante questo processo e non ha riscontrato alcun problema sul lato client.  Con la modifica delle connessioni, sono stati osservati alcuni nuovi tentativi a livello di I/O, ma il livello applicativo ha superato il ricollegamento delle connessioni NFS/CIFS.
+
+
+
+.Riferimento
+Per un elenco dei tipi di istanza supportati in AWS, fare riferimento alink:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html#supported-ec2-compute["Istanze EC2 supportate"^] .
+
+Se non è possibile modificare il tipo di istanza da c4, m4 o r4, fare riferimento all'articolo della Knowledge Baselink:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/Converting_an_AWS_Xen_CVO_instance_to_Nitro_(KVM)["Conversione di un'istanza CVO di AWS Xen in Nitro (KVM)"^] .
+
+.Passi
+. Nella pagina *Sistemi*, seleziona il sistema.
+. Nella scheda Panoramica, fare clic sul pannello Funzionalità e quindi sull'icona della matita accanto a *Tipo di istanza*.
++
+image::screenshot_features_instance_type.png[400]
+
++
+Se si utilizza una licenza PAYGO (Pay as you go) basata su nodi, è possibile scegliere facoltativamente una licenza e un tipo di istanza diversi facendo clic sull'icona della matita accanto a *Tipo di licenza*.
+
+. Scegli un tipo di istanza, seleziona la casella di controllo per confermare di aver compreso le implicazioni della modifica, quindi fai clic su *Modifica*.
+
+
+.Risultato
+Cloud Volumes ONTAP si riavvia con la nuova configurazione.

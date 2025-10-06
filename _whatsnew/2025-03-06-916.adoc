@@ -1,0 +1,11 @@
+= Cloud Volumes ONTAP 9.16.1 GA
+:allow-uri-read: 
+
+
+
+
+=== Cloud Volumes ONTAP 9.16.1 GA
+
+Ora puoi utilizzare BlueXP per distribuire e gestire la versione General Availability Cloud Volumes ONTAP 9.16.1 in Azure e Google Cloud. Tuttavia, questa versione non è disponibile per la distribuzione e l'aggiornamento in AWS.
+
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-9161-relnotes/["Scopri le nuove funzionalità incluse in questa versione di Cloud Volumes ONTAP"^] .

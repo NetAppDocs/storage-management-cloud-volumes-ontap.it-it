@@ -1,0 +1,13 @@
+= Disponibilità limitata delle licenze BYOL per Cloud Volumes ONTAP
+:allow-uri-read: 
+
+
+
+
+=== Disponibilità limitata delle licenze BYOL per Cloud Volumes ONTAP
+
+A partire dal 25 giugno 2025, NetApp ha limitato il modello di licenza Bring Your Own License (BYOL) per Cloud Volumes ONTAP. La restrizione si applica a tutti i clienti e a tutte le distribuzioni Cloud Volumes ONTAP in AWS, Azure e Google Cloud. Le uniche eccezioni riguardano i clienti del settore pubblico statunitense e le distribuzioni nella regione Cina.
+
+Il supporto e i servizi NetApp continueranno fino alla scadenza del contratto BYOL, ma le licenze scadute non verranno rinnovate né estese. Alla scadenza delle licenze BYOL, è necessario sostituirle con licenze basate sulla capacità acquistate tramite gli abbonamenti al marketplace cloud. Un modello di licenza basato sulla capacità, tramite i marketplace hyperscaler, semplifica l'esperienza di gestione delle licenze e offre maggiori vantaggi aziendali. Contatta il team Account NetApp o i rappresentanti del Customer Success per discutere le opzioni di conversione.
+
+Per ulteriori informazioni, fare riferimento a questo comunicato clienti:  https://mysupport.netapp.com/info/communications/CPC-00661.html["CPC-00661: Modifiche alla politica BYOL Cloud Volumes ONTAP"^] .

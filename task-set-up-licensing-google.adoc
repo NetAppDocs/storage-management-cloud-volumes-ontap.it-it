@@ -1,0 +1,168 @@
+---
+sidebar: sidebar 
+permalink: task-set-up-licensing-google.html 
+keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, digital wallet 
+summary: Dopo aver deciso quale opzione di licenza utilizzare per Cloud Volumes ONTAP, sono necessari alcuni passaggi prima di poter scegliere tale opzione di licenza quando si distribuisce un nuovo sistema. 
+---
+= Impostare le licenze per Cloud Volumes ONTAP in Google Cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Dopo aver deciso quale opzione di licenza utilizzare con Cloud Volumes ONTAP, sono necessari alcuni passaggi prima di poter scegliere tale opzione di licenza durante la creazione di un nuovo sistema.
+
+
+
+== Freemium
+
+Seleziona l'offerta Freemium per utilizzare Cloud Volumes ONTAP gratuitamente con una capacità fornita fino a 500 GiB. link:concept-licensing.html#packages["Scopri di più sull'offerta Freemium"] .
+
+.Passi
+. Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
+. Nella pagina *Sistemi*, fare clic su *Aggiungi sistema* e seguire i passaggi nella console NetApp .
++
+.. Nella pagina *Dettagli e credenziali*, fai clic su *Modifica credenziali > Aggiungi abbonamento* e segui le istruzioni per abbonarti all'offerta a pagamento in Google Cloud Marketplace.
++
+Non ti verrà addebitato alcun costo tramite l'abbonamento al marketplace a meno che tu non superi i 500 GiB di capacità fornita, momento in cui il sistema verrà automaticamente convertito inlink:concept-licensing.html#packages["Pacchetto essenziale"] .
+
+.. Dopo essere tornato alla Console, seleziona *Freemium* quando arrivi alla pagina dei metodi di addebito.
++
+image:screenshot-freemium.png["Uno screenshot dell'opzione Freemium durante la creazione di un sistema Cloud Volumes ONTAP ."]
+
+
+
+
+
+link:task-deploying-gcp.html["Visualizza le istruzioni dettagliate per avviare Cloud Volumes ONTAP in Google Cloud"] .
+
+
+
+== Licenza basata sulla capacità
+
+Le licenze basate sulla capacità consentono di pagare Cloud Volumes ONTAP per TiB di capacità. Le licenze basate sulla capacità sono disponibili sotto forma di _pacchetto_: il pacchetto Essentials o Professional.
+
+I pacchetti Essentials e Professional sono disponibili con i seguenti modelli di consumo:
+
+* Una licenza (Bring Your Own License (BYOL)) acquistata da NetApp
+* Un abbonamento orario a consumo (PAYGO) da Google Cloud Marketplace
+* Un contratto annuale
+
+
+link:concept-licensing.html#capacity-based-licensing["Scopri di più sulle licenze basate sulla capacità"] .
+
+Le sezioni seguenti descrivono come iniziare a utilizzare ciascuno di questi modelli di consumo.
+
+
+
+=== BYOL
+
+Paga in anticipo acquistando una licenza (BYOL) da NetApp per distribuire i sistemi Cloud Volumes ONTAP in qualsiasi provider cloud.
+
+
+NOTE: NetApp ha limitato l'acquisto, l'estensione e il rinnovo delle licenze BYOL. Per ulteriori informazioni, consulta  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Disponibilità limitata delle licenze BYOL per Cloud Volumes ONTAP"^] .
+
+.Passi
+. https://bluexp.netapp.com/contact-cds["Contatta NetApp Sales per ottenere una licenza"^]
+. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html#add-an-nss-account["Aggiungi il tuo account del sito di supporto NetApp alla console NetApp"^]
++
+La Console interroga automaticamente il servizio licenze di NetApp per ottenere dettagli sulle licenze associate al tuo account NetApp Support Site.  Se non ci sono errori, la Console aggiunge le licenze.
+
++
+La licenza deve essere disponibile nella Console prima di poterla utilizzare con Cloud Volumes ONTAP.  Se necessario, puoilink:task-manage-capacity-licenses.html#add-purchased-licenses-to-your-account["aggiungere manualmente la licenza alla Console"] .
+
+. Nella pagina *Sistemi*, fare clic su *Aggiungi sistema* e seguire i passaggi.
++
+.. Nella pagina *Dettagli e credenziali*, fai clic su *Modifica credenziali > Aggiungi abbonamento* e segui le istruzioni per abbonarti all'offerta a pagamento in Google Cloud Marketplace.
++
+La licenza acquistata da NetApp viene sempre addebitata per prima, ma ti verrà addebitata la tariffa oraria del marketplace se superi la capacità della licenza o se scade il termine della licenza.
+
+.. Dopo essere tornati alla Console, selezionate un pacchetto basato sulla capacità quando raggiungete la pagina dei metodi di ricarica.
++
+image:screenshot-professional.png["Uno screenshot dell'opzione Professional durante la creazione di un sistema Cloud Volumes ONTAP ."]
+
+
+
+
+
+link:task-deploying-gcp.html["Visualizza le istruzioni dettagliate per avviare Cloud Volumes ONTAP in Google Cloud"] .
+
+
+
+=== Abbonamento PAYGO
+
+Paga a ore sottoscrivendo l'offerta dal marketplace del tuo provider cloud.
+
+Quando si crea un sistema Cloud Volumes ONTAP , la Console richiede di sottoscrivere il contratto disponibile in Google Cloud Marketplace.  Tale abbonamento viene poi associato al sistema di addebito.  È possibile utilizzare lo stesso abbonamento per sistemi aggiuntivi.
+
+.Passi
+. Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
+. Nella pagina *Sistemi*, fare clic su *Aggiungi sistema* e seguire i passaggi.
++
+.. Nella pagina *Dettagli e credenziali*, fai clic su *Modifica credenziali > Aggiungi abbonamento* e segui le istruzioni per abbonarti all'offerta a pagamento in Google Cloud Marketplace.
+.. Dopo essere tornati alla Console, selezionate un pacchetto basato sulla capacità quando raggiungete la pagina dei metodi di ricarica.
++
+image:screenshot-professional.png["Uno screenshot dell'opzione Professional durante la creazione di un sistema Cloud Volumes ONTAP ."]
+
+
+
+
+
+link:task-deploying-gcp.html["Visualizza le istruzioni dettagliate per avviare Cloud Volumes ONTAP in Google Cloud"] .
+
+
+TIP: Puoi gestire gli abbonamenti a Google Cloud Marketplace associati ai tuoi account dalla pagina Impostazioni > Credenziali. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html["Scopri come gestire le tue credenziali e i tuoi abbonamenti Google Cloud"^]
+
+
+
+=== Contratto annuale
+
+Paga annualmente Cloud Volumes ONTAP acquistando un contratto annuale.
+
+.Passi
+. Contatta il tuo rappresentante commerciale NetApp per acquistare un contratto annuale.
++
+Il contratto è disponibile come offerta _privata_ nel Google Cloud Marketplace.
+
++
+Dopo che NetApp avrà condiviso con te l'offerta privata, potrai selezionare il piano annuale quando ti iscrivi da Google Cloud Marketplace durante la creazione del sistema.
+
+. Nella pagina *Sistemi*, fare clic su *Aggiungi sistema* e seguire i passaggi.
++
+.. Nella pagina *Dettagli e credenziali*, fai clic su *Modifica credenziali > Aggiungi abbonamento* e segui le istruzioni per abbonarti al piano annuale in Google Cloud Marketplace.
+.. In Google Cloud, seleziona il piano annuale condiviso con il tuo account, quindi fai clic su *Iscriviti*.
+.. Dopo essere tornati alla Console, selezionate un pacchetto basato sulla capacità quando raggiungete la pagina dei metodi di ricarica.
++
+image:screenshot-professional.png["Uno screenshot dell'opzione Professional durante la creazione di un sistema Cloud Volumes ONTAP ."]
+
+
+
+
+
+link:task-deploying-gcp.html["Visualizza le istruzioni dettagliate per avviare Cloud Volumes ONTAP in Google Cloud"] .
+
+
+
+== Abbonamento Keystone
+
+Un abbonamento Keystone è un servizio basato su un abbonamento con pagamento in base alla crescita. link:concept-licensing.html#keystone-subscription["Scopri di più sugli abbonamenti NetApp Keystone"] .
+
+.Passi
+. Se non hai ancora un abbonamento, https://www.netapp.com/forms/keystone-sales-contact/["contattare NetApp"^]
+. mailto:ng-keystone-success@netapp.com[Contatta NetApp] per autorizzare il tuo account utente Console con uno o più abbonamenti Keystone .
+. Dopo che NetApp autorizza il tuo account,link:task-manage-keystone.html#link-a-subscription["collega i tuoi abbonamenti per utilizzarli con Cloud Volumes ONTAP"] .
+. Nella pagina *Sistemi*, fare clic su *Aggiungi sistema* e seguire i passaggi.
++
+.. Quando ti viene richiesto di scegliere un metodo di addebito, seleziona il metodo di addebito Keystone Subscription.
++
+image:screenshot-keystone.png["Uno screenshot dell'opzione Keystone Subscription durante la creazione di un sistema Cloud Volumes ONTAP ."]
+
+
+
+
+
+link:task-deploying-gcp.html["Visualizza le istruzioni dettagliate per avviare Cloud Volumes ONTAP in Google Cloud"] .

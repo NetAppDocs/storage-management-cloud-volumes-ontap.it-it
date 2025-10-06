@@ -1,0 +1,537 @@
+---
+sidebar: sidebar 
+permalink: reference-networking-gcp.html 
+keywords: networking, network, requirements, connection, connections, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, bucket, private google access, set up data requirement, gcp networking, google networking, shared vpc, host project, service project 
+summary: Configura la tua rete Google Cloud in modo che i sistemi Cloud Volumes ONTAP possano funzionare correttamente. 
+---
+= Configurare la rete Google Cloud per Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La console NetApp gestisce la configurazione dei componenti di rete per Cloud Volumes ONTAP, come indirizzi IP, maschere di rete e percorsi.  È necessario assicurarsi che l'accesso a Internet in uscita sia disponibile, che siano disponibili sufficienti indirizzi IP privati, che siano attive le connessioni giuste e altro ancora.
+
+Se si desidera distribuire una coppia HA, è necessariolink:concept-ha-google-cloud.html["Scopri come funzionano le coppie HA in Google Cloud"] .
+
+
+
+== Requisiti per Cloud Volumes ONTAP
+
+In Google Cloud devono essere soddisfatti i seguenti requisiti.
+
+
+
+=== Requisiti specifici per i sistemi a nodo singolo
+
+Se si desidera implementare un sistema a nodo singolo, assicurarsi che la rete soddisfi i seguenti requisiti.
+
+
+
+==== Una VPC
+
+Per un sistema a nodo singolo è necessario un Virtual Private Cloud (VPC).
+
+
+
+==== Indirizzi IP privati
+
+Per un sistema a nodo singolo in Google Cloud, la Console assegna indirizzi IP privati a quanto segue:
+
+* Nodo
+* Grappolo
+* VM di archiviazione
+* Dati NAS LIF
+* Dati iSCSI LIF
+
+
+È possibile saltare la creazione del LIF di gestione della VM di archiviazione (SVM) se si distribuisce Cloud Volumes ONTAP tramite l'API e si specifica il seguente flag:
+
+`skipSvmManagementLif: true`
+
+
+NOTE: Un LIF è un indirizzo IP associato a una porta fisica.  Per strumenti di gestione come SnapCenter è necessario un LIF di gestione della VM di archiviazione (SVM).
+
+
+
+=== Requisiti specifici per le coppie HA
+
+Se si desidera distribuire una coppia HA, assicurarsi che la rete soddisfi i seguenti requisiti.
+
+
+
+==== Una o più zone
+
+È possibile garantire l'elevata disponibilità dei dati distribuendo una configurazione HA su più zone o in una singola zona.  Quando si crea la coppia HA, la Console chiede di scegliere più zone o una singola zona.
+
+* Zone multiple (consigliato)
++
+L'implementazione di una configurazione HA su tre zone garantisce la disponibilità continua dei dati in caso di guasto in una zona.  Si noti che le prestazioni di scrittura sono leggermente inferiori rispetto all'utilizzo di una singola zona, ma sono minime.
+
+* Zona singola
++
+Quando distribuita in una singola zona, una configurazione Cloud Volumes ONTAP HA utilizza una politica di posizionamento distribuito.  Questa politica garantisce che una configurazione HA sia protetta da un singolo punto di errore all'interno della zona, senza dover utilizzare zone separate per ottenere l'isolamento degli errori.
+
++
+Questo modello di distribuzione riduce i costi perché non ci sono costi per l'uscita dei dati tra le zone.
+
+
+
+
+
+==== Quattro cloud privati virtuali
+
+Per una configurazione HA sono necessari quattro Virtual Private Cloud (VPC).  Sono necessarie quattro VPC perché Google Cloud richiede che ogni interfaccia di rete risieda in una rete VPC separata.
+
+Quando si crea la coppia HA, la Console chiede di scegliere quattro VPC:
+
+* VPC-0 per le connessioni in entrata ai dati e ai nodi
+* VPC-1, VPC-2 e VPC-3 per la comunicazione interna tra i nodi e il mediatore HA
+
+
+image:diagram_gcp_ha.png["Un'immagine concettuale che mostra una coppia Cloud Volume HA e le quattro VPC necessarie per la configurazione."]
+
+
+
+==== Sottoreti
+
+Per ogni VPC è richiesta una subnet privata.
+
+Se si posiziona l'agente della console in VPC-0, sarà necessario abilitare l'accesso privato di Google sulla subnet per accedere alle API e abilitare il tiering dei dati.
+
+Le subnet in queste VPC devono avere intervalli CIDR distinti.  Non possono avere intervalli CIDR sovrapposti.
+
+
+
+==== Indirizzi IP privati
+
+La console assegna automaticamente il numero richiesto di indirizzi IP privati ​​a Cloud Volumes ONTAP in Google Cloud.  Devi assicurarti che la tua rete disponga di un numero sufficiente di indirizzi privati.
+
+Il numero di LIF allocati per Cloud Volumes ONTAP varia a seconda che si distribuisca un sistema a nodo singolo o una coppia HA.  Un LIF è un indirizzo IP associato a una porta fisica.  Per strumenti di gestione come SnapCenter è necessario un LIF di gestione SVM.
+
+* *Singolo nodo* La console assegna 4 indirizzi IP a un sistema a nodo singolo:
++
+** Gestione dei nodi LIF
+** Gestione dei cluster LIF
+** dati iSCSI LIF
++
+
+NOTE: Un iSCSI LIF fornisce l'accesso client tramite il protocollo iSCSI e viene utilizzato dal sistema per altri importanti flussi di lavoro di rete.  Questi LIF sono obbligatori e non devono essere eliminati.
+
+** NAS LIF
++
+È possibile saltare la creazione del LIF di gestione della VM di archiviazione (SVM) se si distribuisce Cloud Volumes ONTAP tramite l'API e si specifica il seguente flag:
+
++
+`skipSvmManagementLif: true`
+
+
+
+* *Coppia HA* La console assegna 12-13 indirizzi IP a una coppia HA:
++
+** 2 LIF di gestione dei nodi (e0a)
+** 1 Gestione del cluster LIF (e0a)
+** 2 iSCSI LIF (e0a)
++
+
+NOTE: Un iSCSI LIF fornisce l'accesso client tramite il protocollo iSCSI e viene utilizzato dal sistema per altri importanti flussi di lavoro di rete.  Questi LIF sono obbligatori e non devono essere eliminati.
+
+** 1 o 2 NAS LIF (e0a)
+** 2 Cluster LIF (e0b)
+** 2 indirizzi IP di interconnessione HA (e0c)
+** 2 indirizzi IP iSCSI RSM (e0d)
++
+È possibile saltare la creazione del LIF di gestione della VM di archiviazione (SVM) se si distribuisce Cloud Volumes ONTAP tramite l'API e si specifica il seguente flag:
+
++
+`skipSvmManagementLif: true`
+
+
+
+
+
+
+
+==== Bilanciatori di carico interni
+
+La console crea quattro bilanciatori del carico interni di Google Cloud (TCP/UDP) che gestiscono il traffico in entrata verso la coppia Cloud Volumes ONTAP HA.  Non è richiesta alcuna configurazione da parte tua.  Abbiamo inserito questa informazione come requisito semplicemente per informarti sul traffico di rete e per mitigare eventuali problemi di sicurezza.
+
+Un bilanciatore del carico è per la gestione del cluster, uno è per la gestione della VM di archiviazione (SVM), uno è per il traffico NAS verso il nodo 1 e l'ultimo è per il traffico NAS verso il nodo 2.
+
+La configurazione per ciascun bilanciatore del carico è la seguente:
+
+* Un indirizzo IP privato condiviso
+* Un controllo sanitario globale
++
+Per impostazione predefinita, le porte utilizzate dal controllo dello stato sono 63001, 63002 e 63003.
+
+* Un servizio backend TCP regionale
+* Un servizio di backend UDP regionale
+* Una regola di inoltro TCP
+* Una regola di inoltro UDP
+* L'accesso globale è disabilitato
++
+Anche se l'accesso globale è disabilitato per impostazione predefinita, è supportata la sua abilitazione dopo la distribuzione.  L'abbiamo disabilitato perché il traffico tra regioni avrà latenze significativamente più elevate.  Volevamo assicurarci che non aveste esperienze negative a causa di montaggi accidentali tra regioni diverse.  L'attivazione di questa opzione è specifica per le esigenze della tua azienda.
+
+
+
+
+
+=== VPC condivise
+
+Cloud Volumes ONTAP e l'agente Console sono supportati in una VPC condivisa di Google Cloud e anche in VPC autonome.
+
+Per un sistema a nodo singolo, la VPC può essere una VPC condivisa o una VPC autonoma.
+
+Per una coppia HA sono necessarie quattro VPC.  Ciascuna di queste VPC può essere condivisa o autonoma.  Ad esempio, VPC-0 potrebbe essere una VPC condivisa, mentre VPC-1, VPC-2 e VPC-3 potrebbero essere VPC autonome.
+
+Una VPC condivisa consente di configurare e gestire centralmente reti virtuali su più progetti.  È possibile configurare reti VPC condivise nel _progetto host_ e distribuire l'agente Console e le istanze della macchina virtuale Cloud Volumes ONTAP in un _progetto di servizio_.
+
+https://cloud.google.com/vpc/docs/shared-vpc["Documentazione di Google Cloud: Panoramica della VPC condivisa"^] .
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Esaminare le autorizzazioni VPC condivise richieste trattate nella distribuzione dell'agente della console"^]
+
+
+
+=== Mirroring dei pacchetti nelle VPC
+
+https://cloud.google.com/vpc/docs/packet-mirroring["Mirroring dei pacchetti"^]deve essere disabilitato nella subnet di Google Cloud in cui distribuisci Cloud Volumes ONTAP.
+
+
+
+=== Accesso a Internet in uscita
+
+I sistemi Cloud Volumes ONTAP necessitano di accesso a Internet in uscita per accedere agli endpoint esterni per varie funzioni.  Cloud Volumes ONTAP non può funzionare correttamente se questi endpoint sono bloccati in ambienti con requisiti di sicurezza rigorosi.
+
+L'agente della console contatta anche diversi endpoint per le operazioni quotidiane.  Per informazioni sugli endpoint, fare riferimento a https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking["Visualizza gli endpoint contattati dall'agente della console"^] E https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html["Preparare la rete per l'utilizzo della console"^] .
+
+
+
+==== Endpoint Cloud Volumes ONTAP
+
+Cloud Volumes ONTAP utilizza questi endpoint per comunicare con vari servizi.
+
+[cols="5*"]
+|===
+| Punti finali | Applicabile per | Scopo | Modalità di distribuzione | Impatto se l'endpoint non è disponibile 
+
+
+| \ https://netapp-cloud-account.auth0.com | Autenticazione | Utilizzato per l'autenticazione nella Console. | Modalità standard e limitata.  a| 
+L'autenticazione dell'utente fallisce e i seguenti servizi rimangono non disponibili:
+
+* Servizi Cloud Volumes ONTAP
+* Servizi ONTAP
+* Protocolli e servizi proxy
+
+
+
+
+| \ https://api.bluexp.netapp.com/tenancy | Locazione | Utilizzato per recuperare la risorsa Cloud Volumes ONTAP dalla Console per autorizzare risorse e utenti. | Modalità standard e limitata. | Le risorse Cloud Volumes ONTAP e gli utenti non sono autorizzati. 
+
+
+| \ https://mysupport.netapp.com/aods/asupmessage \ https://mysupport.netapp.com/asupprod/post/1.0/postAsup | AutoSupport | Utilizzato per inviare i dati di telemetria AutoSupport al supporto NetApp . | Modalità standard e limitata. | Le informazioni AutoSupport non vengono recapitate. 
+
+
+| \ https://www.googleapis.com/compute/v1/projects/ \ https://cloudresourcemanager.googleapis.com/v1/projects \ https://www.googleapis.com/compute/beta \ https://storage.googleapis.com/storage/v1 \ https://www.googleapis.com/storage/v1 \ https://iam.googleapis.com/v1 \ https://cloudkms.googleapis.com/v1 \ https://www.googleapis.com/deploymentmanager/v2/projects \ https://compute.googleapis.com/compute/v1 | Google Cloud (uso commerciale). | Comunicazione con i servizi Google Cloud. | Modalità standard, limitata e privata. | Cloud Volumes ONTAP non riesce a comunicare con il servizio Google Cloud per eseguire operazioni specifiche per la Console in Google Cloud. 
+|===
+
+
+=== Connessioni ai sistemi ONTAP in altre reti
+
+Per replicare i dati tra un sistema Cloud Volumes ONTAP in Google Cloud e sistemi ONTAP in altre reti, è necessario disporre di una connessione VPN tra la VPC e l'altra rete, ad esempio la rete aziendale.
+
+https://cloud.google.com/vpn/docs/concepts/overview["Documentazione di Google Cloud: panoramica di Cloud VPN"^] .
+
+
+
+=== Regole del firewall
+
+La console crea regole firewall di Google Cloud che includono le regole in entrata e in uscita di cui Cloud Volumes ONTAP ha bisogno per funzionare correttamente.  Potresti voler fare riferimento alle porte a scopo di test o se preferisci utilizzare le tue regole firewall.
+
+Le regole del firewall per Cloud Volumes ONTAP richiedono regole sia in entrata che in uscita.  Se si sta distribuendo una configurazione HA, queste sono le regole del firewall per Cloud Volumes ONTAP in VPC-0.
+
+Si noti che per una configurazione HA sono necessari due set di regole del firewall:
+
+* Un set di regole per i componenti HA in VPC-0.  Queste regole consentono l'accesso ai dati su Cloud Volumes ONTAP.
+* Un altro set di regole per i componenti HA in VPC-1, VPC-2 e VPC-3.  Queste regole sono aperte alla comunicazione in entrata e in uscita tra i componenti HA. <<rules-for-vpc,Saperne di più>> .
+
+
+
+TIP: Cerchi informazioni sull'agente Console? https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-gcp.html["Visualizza le regole del firewall per l'agente della console"^]
+
+
+
+==== Regole in entrata
+
+Quando si aggiunge un sistema Cloud Volumes ONTAP , è possibile scegliere il filtro di origine per la policy firewall predefinita durante la distribuzione:
+
+* *Solo VPC selezionata*: il filtro di origine per il traffico in entrata è l'intervallo di subnet della VPC per il sistema Cloud Volumes ONTAP e l'intervallo di subnet della VPC in cui risiede l'agente della console.  Questa è l'opzione consigliata.
+* *Tutte le VPC*: il filtro di origine per il traffico in entrata è l'intervallo IP 0.0.0.0/0.
+
+
+Se utilizzi una tua policy firewall, assicurati di aggiungere tutte le reti che devono comunicare con Cloud Volumes ONTAP, ma assicurati anche di aggiungere entrambi gli intervalli di indirizzi per consentire al Google Load Balancer interno di funzionare correttamente.  Questi indirizzi sono 130.211.0.0/22 ​​e 35.191.0.0/16. Per maggiori informazioni, fare riferimento al https://cloud.google.com/load-balancing/docs/tcp#firewall_rules["Documentazione di Google Cloud: regole del firewall del bilanciatore del carico"^] .
+
+[cols="10,10,80"]
+|===
+| Protocollo | Porta | Scopo 
+
+
+| Tutti gli ICMP | Tutto | Ping dell'istanza 
+
+
+| HTTP | 80 | Accesso HTTP alla console Web di ONTAP System Manager tramite l'indirizzo IP del LIF di gestione del cluster 
+
+
+| HTTPS | 443 | Connettività con l'agente Console e accesso HTTPS alla console Web ONTAP System Manager utilizzando l'indirizzo IP del LIF di gestione del cluster 
+
+
+| SSH | 22 | Accesso SSH all'indirizzo IP del LIF di gestione del cluster o di un LIF di gestione del nodo 
+
+
+| TCP | 111 | Chiamata di procedura remota per NFS 
+
+
+| TCP | 139 | Sessione del servizio NetBIOS per CIFS 
+
+
+| TCP | 161-162 | Protocollo semplice di gestione della rete 
+
+
+| TCP | 445 | Microsoft SMB/CIFS su TCP con framing NetBIOS 
+
+
+| TCP | 635 | Montaggio NFS 
+
+
+| TCP | 749 | Kerberos 
+
+
+| TCP | 2049 | Demone del server NFS 
+
+
+| TCP | 3260 | Accesso iSCSI tramite i dati iSCSI LIF 
+
+
+| TCP | 4045 | Demone di blocco NFS 
+
+
+| TCP | 4046 | Monitoraggio dello stato di rete per NFS 
+
+
+| TCP | 10000 | Backup tramite NDMP 
+
+
+| TCP | 11104 | Gestione delle sessioni di comunicazione intercluster per SnapMirror 
+
+
+| TCP | 11105 | Trasferimento dati SnapMirror tramite LIF intercluster 
+
+
+| TCP | 63001-63050 | Porte di sonda per il bilanciamento del carico per determinare quale nodo è integro (richiesto solo per coppie HA) 
+
+
+| UDP | 111 | Chiamata di procedura remota per NFS 
+
+
+| UDP | 161-162 | Protocollo semplice di gestione della rete 
+
+
+| UDP | 635 | Montaggio NFS 
+
+
+| UDP | 2049 | Demone del server NFS 
+
+
+| UDP | 4045 | Demone di blocco NFS 
+
+
+| UDP | 4046 | Monitoraggio dello stato di rete per NFS 
+
+
+| UDP | 4049 | Protocollo NFS rquotad 
+|===
+
+
+==== Regole in uscita
+
+Il gruppo di sicurezza predefinito per Cloud Volumes ONTAP apre tutto il traffico in uscita. Se ciò è accettabile, seguite le regole di base per le comunicazioni in uscita. Se hai bisogno di regole più rigide, usa le regole in uscita avanzate.
+
+.Regole di base in uscita
+Il gruppo di sicurezza predefinito per Cloud Volumes ONTAP include le seguenti regole in uscita.
+
+[cols="20,20,60"]
+|===
+| Protocollo | Porta | Scopo 
+
+
+| Tutti gli ICMP | Tutto | Tutto il traffico in uscita 
+
+
+| Tutti gli TCP | Tutto | Tutto il traffico in uscita 
+
+
+| Tutti gli UDP | Tutto | Tutto il traffico in uscita 
+|===
+.Regole in uscita avanzate
+Se hai bisogno di regole rigide per il traffico in uscita, puoi utilizzare le seguenti informazioni per aprire solo le porte necessarie per la comunicazione in uscita da parte di Cloud Volumes ONTAP.  I cluster Cloud Volumes ONTAP utilizzano le seguenti porte per regolare il traffico dei nodi.
+
+
+NOTE: La sorgente è l'interfaccia (indirizzo IP) del sistema Cloud Volumes ONTAP .
+
+[cols="10,10,6,20,20,34"]
+|===
+| Servizio | Protocollo | Porta | Fonte | Destinazione | Scopo 
+
+
+.18+| Directory attiva | TCP | 88 | Gestione dei nodi LIF | Foresta di Active Directory | Autenticazione Kerberos V 
+
+
+| UDP | 137 | Gestione dei nodi LIF | Foresta di Active Directory | Servizio di denominazione NetBIOS 
+
+
+| UDP | 138 | Gestione dei nodi LIF | Foresta di Active Directory | Servizio datagramma NetBIOS 
+
+
+| TCP | 139 | Gestione dei nodi LIF | Foresta di Active Directory | Sessione del servizio NetBIOS 
+
+
+| TCP e UDP | 389 | Gestione dei nodi LIF | Foresta di Active Directory | LDAP 
+
+
+| TCP | 445 | Gestione dei nodi LIF | Foresta di Active Directory | Microsoft SMB/CIFS su TCP con framing NetBIOS 
+
+
+| TCP | 464 | Gestione dei nodi LIF | Foresta di Active Directory | Kerberos V cambia e imposta la password (SET_CHANGE) 
+
+
+| UDP | 464 | Gestione dei nodi LIF | Foresta di Active Directory | Amministrazione delle chiavi Kerberos 
+
+
+| TCP | 749 | Gestione dei nodi LIF | Foresta di Active Directory | Kerberos V modifica e imposta password (RPCSEC_GSS) 
+
+
+| TCP | 88 | Dati LIF (NFS, CIFS, iSCSI) | Foresta di Active Directory | Autenticazione Kerberos V 
+
+
+| UDP | 137 | Dati LIF (NFS, CIFS) | Foresta di Active Directory | Servizio di denominazione NetBIOS 
+
+
+| UDP | 138 | Dati LIF (NFS, CIFS) | Foresta di Active Directory | Servizio datagramma NetBIOS 
+
+
+| TCP | 139 | Dati LIF (NFS, CIFS) | Foresta di Active Directory | Sessione del servizio NetBIOS 
+
+
+| TCP e UDP | 389 | Dati LIF (NFS, CIFS) | Foresta di Active Directory | LDAP 
+
+
+| TCP | 445 | Dati LIF (NFS, CIFS) | Foresta di Active Directory | Microsoft SMB/CIFS su TCP con framing NetBIOS 
+
+
+| TCP | 464 | Dati LIF (NFS, CIFS) | Foresta di Active Directory | Kerberos V cambia e imposta la password (SET_CHANGE) 
+
+
+| UDP | 464 | Dati LIF (NFS, CIFS) | Foresta di Active Directory | Amministrazione delle chiavi Kerberos 
+
+
+| TCP | 749 | Dati LIF (NFS, CIFS) | Foresta di Active Directory | Kerberos V modifica e imposta password (RPCSEC_GSS) 
+
+
+.3+| AutoSupport | HTTPS | 443 | Gestione dei nodi LIF | mysupport.netapp.com | AutoSupport (HTTPS è l'impostazione predefinita) 
+
+
+| HTTP | 80 | Gestione dei nodi LIF | mysupport.netapp.com | AutoSupport (solo se il protocollo di trasporto viene modificato da HTTPS a HTTP) 
+
+
+| TCP | 3128 | Gestione dei nodi LIF | Agente console | Invio di messaggi AutoSupport tramite un server proxy sull'agente Console, se non è disponibile una connessione Internet in uscita 
+
+
+| Backup di configurazione | HTTP | 80 | Gestione dei nodi LIF | \http://<indirizzo-IP-agente-console>/occm/offboxconfig | Inviare i backup della configurazione all'agente della console.link:https://docs.netapp.com/us-en/ontap/system-admin/node-cluster-config-backed-up-automatically-concept.html["Documentazione ONTAP"^] 
+
+
+| DHCP | UDP | 68 | Gestione dei nodi LIF | DHCP | Client DHCP per la prima configurazione 
+
+
+| DHCP | UDP | 67 | Gestione dei nodi LIF | DHCP | server DHCP 
+
+
+| DNS | UDP | 53 | Gestione dei nodi LIF e dati LIF (NFS, CIFS) | DNS | DNS 
+
+
+| NDMP | TCP | 18600–18699 | Gestione dei nodi LIF | Server di destinazione | Copia NDMP 
+
+
+| SMTP | TCP | 25 | Gestione dei nodi LIF | Server di posta | Avvisi SMTP, possono essere utilizzati per AutoSupport 
+
+
+.4+| SNMP | TCP | 161 | Gestione dei nodi LIF | Monitorare il server | Monitoraggio tramite trappole SNMP 
+
+
+| UDP | 161 | Gestione dei nodi LIF | Monitorare il server | Monitoraggio tramite trappole SNMP 
+
+
+| TCP | 162 | Gestione dei nodi LIF | Monitorare il server | Monitoraggio tramite trappole SNMP 
+
+
+| UDP | 162 | Gestione dei nodi LIF | Monitorare il server | Monitoraggio tramite trappole SNMP 
+
+
+.2+| SnapMirror | TCP | 11104 | Intercluster LIF | LIF intercluster ONTAP | Gestione delle sessioni di comunicazione intercluster per SnapMirror 
+
+
+| TCP | 11105 | Intercluster LIF | LIF intercluster ONTAP | Trasferimento dati SnapMirror 
+
+
+| Registro di sistema | UDP | 514 | Gestione dei nodi LIF | Server Syslog | Messaggi di inoltro Syslog 
+|===
+
+
+==== Regole per VPC-1, VPC-2 e VPC-3
+
+In Google Cloud, una configurazione HA viene distribuita su quattro VPC.  Le regole del firewall necessarie per la configurazione HA in VPC-0 sono<<Regole del firewall,elencati sopra per Cloud Volumes ONTAP>> .
+
+Nel frattempo, le regole firewall predefinite create per le istanze in VPC-1, VPC-2 e VPC-3 abilitano la comunicazione in ingresso su _tutti_ i protocolli e le porte.  Queste regole consentono la comunicazione tra nodi HA.
+
+La comunicazione dai nodi HA al mediatore HA avviene tramite la porta 3260 (iSCSI).
+
+
+NOTE: Per consentire un'elevata velocità di scrittura per le nuove distribuzioni di coppie Google Cloud HA, è richiesta un'unità di trasmissione massima (MTU) di almeno 8.896 byte per VPC-1, VPC-2 e VPC-3.  Se si sceglie di aggiornare VPC-1, VPC-2 e VPC-3 esistenti a un MTU di 8.896 byte, è necessario arrestare tutti i sistemi HA esistenti che utilizzano queste VPC durante il processo di configurazione.
+
+
+
+== Requisiti per l'agente della console
+
+Se non hai ancora creato un agente Console, dovresti rivedere i requisiti di rete.
+
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Visualizza i requisiti di rete per l'agente della console"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-gcp.html["Regole del firewall in Google Cloud"^]
+
+
+
+
+=== Configurazioni di rete per supportare il proxy dell'agente della console
+
+È possibile utilizzare i server proxy configurati per l'agente Console per abilitare l'accesso a Internet in uscita da Cloud Volumes ONTAP.  La console supporta due tipi di proxy:
+
+* *Proxy esplicito*: il traffico in uscita da Cloud Volumes ONTAP utilizza l'indirizzo HTTP del server proxy specificato durante la configurazione del proxy dell'agente della console.  L'amministratore dell'agente della console potrebbe anche aver configurato le credenziali utente e i certificati CA radice per un'autenticazione aggiuntiva.  Se è disponibile un certificato CA radice per il proxy esplicito, assicurarsi di ottenere e caricare lo stesso certificato sul sistema Cloud Volumes ONTAP utilizzando https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html["ONTAP CLI: installazione del certificato di sicurezza"^] comando.
+* *Proxy trasparente*: la rete è configurata per instradare automaticamente il traffico in uscita da Cloud Volumes ONTAP tramite il proxy dell'agente della console.  Quando si configura un proxy trasparente, l'amministratore dell'agente della console deve fornire solo un certificato CA radice per la connettività da Cloud Volumes ONTAP, non l'indirizzo HTTP del server proxy.  Assicurati di ottenere e caricare lo stesso certificato CA radice sul tuo sistema Cloud Volumes ONTAP utilizzando https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html["ONTAP CLI: installazione del certificato di sicurezza"^] comando.
+
+
+Per informazioni sulla configurazione dei server proxy per l'agente Console, fare riferimento a https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurare un agente Console per utilizzare un server proxy"^] .
+
+.Configurare i tag di rete per Cloud Volumes ONTAP in Google Cloud
+Durante la configurazione del proxy trasparente dell'agente Console, l'amministratore aggiunge un tag di rete per Google Cloud.  È necessario ottenere e aggiungere manualmente lo stesso tag di rete per la configurazione Cloud Volumes ONTAP .  Questo tag è necessario affinché il server proxy funzioni correttamente.
+
+. Nella console di Google Cloud, individua il tuo sistema Cloud Volumes ONTAP .
+. Vai a *Dettagli > Networking > Tag di rete*.
+. Aggiungere il tag utilizzato per l'agente Console e salvare la configurazione.
+
+
+.Argomenti correlati
+* link:task-verify-autosupport.html["Verifica la configurazione AutoSupport per Cloud Volumes ONTAP"]
+* https://docs.netapp.com/us-en/ontap/networking/ontap_internal_ports.html["Scopri di più sulle porte interne ONTAP"^] .
+

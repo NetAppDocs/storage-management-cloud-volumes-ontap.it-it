@@ -1,0 +1,126 @@
+---
+sidebar: sidebar 
+permalink: concept-ha-azure.html 
+keywords: high-availability, HA, concepts, understanding, overview, takeover, giveback, rpo, rto, nondisruptive, ha pairs, node, nodes, recovery point objective, recovery time objective, nas, nfs, cifs, iscsi, mpio, alua, failover, failure, azure, shared storage, active, passive, load balancer, storage accounts, page blobs 
+summary: 'Una coppia ad alta disponibilità (HA) Cloud Volumes ONTAP garantisce affidabilità aziendale e operazioni continue in caso di guasti nell"ambiente cloud. In Azure, lo storage è condiviso tra i due nodi.' 
+---
+= Scopri di più sulle coppie Cloud Volumes ONTAP HA in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Una coppia ad alta disponibilità (HA) Cloud Volumes ONTAP garantisce affidabilità aziendale e operazioni continue in caso di guasti nell'ambiente cloud. In Azure, lo storage è condiviso tra i due nodi.
+
+
+
+== Componenti HA
+
+
+
+=== Configurazione della zona di disponibilità singola HA con blob di pagina
+
+Una configurazione del blob di pagine HA di Cloud Volumes ONTAP in Azure include i seguenti componenti:
+
+image:diagram_ha_azure.png["Un'immagine concettuale che mostra un bilanciatore del carico che gestisce il traffico in entrata dalla console NetApp e dai client, due nodi Cloud Volumes ONTAP in un VMSS Flex, dischi SSD per i dati di avvio e Page Blob per i dati dei clienti."]
+
+Tieni presente quanto segue sui componenti di Azure che NetApp Console distribuisce per te:
+
+Bilanciamento del carico standard di Azure:: Il bilanciatore del carico gestisce il traffico in entrata verso la coppia Cloud Volumes ONTAP HA.
+VM in singole zone di disponibilità:: A partire da Cloud Volumes ONTAP 9.15.1, è possibile creare e gestire macchine virtuali (VM) eterogenee in un'unica zona di disponibilità (AZ).  È possibile distribuire nodi ad alta disponibilità (HA) in domini di errore separati all'interno della stessa AZ, garantendo una disponibilità ottimale.  Per saperne di più sulla modalità di orchestrazione flessibile che abilita questa capacità, fare riferimento a https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/["Documentazione di Microsoft Azure: set di scalabilità di macchine virtuali"^] .
+Dischi:: I dati dei clienti risiedono nei blob delle pagine Premium Storage.  Ogni nodo ha accesso allo storage dell'altro nodo.  È inoltre necessario ulteriore spazio di archiviazione perlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["dati di avvio, root e core"^] .
+Account di archiviazione::
++
+--
+* Per i dischi gestiti è necessario un account di archiviazione.
+* Sono necessari uno o più account di archiviazione per i blob di pagine di archiviazione Premium, poiché è stato raggiunto il limite di capacità del disco per account di archiviazione.
++
+https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-targets["Documentazione di Microsoft Azure: obiettivi di scalabilità e prestazioni di Azure Storage per gli account di archiviazione"^] .
+
+* Per la suddivisione in livelli dei dati nell'archiviazione BLOB di Azure è necessario un account di archiviazione.
+* A partire da Cloud Volumes ONTAP 9.7, gli account di archiviazione creati dalla Console per le coppie HA sono account di archiviazione v2 generici.
+* È possibile abilitare una connessione HTTPS da una coppia Cloud Volumes ONTAP 9.7 HA agli account di archiviazione di Azure quando si aggiunge un sistema Cloud Volumes ONTAP .  Tieni presente che l'abilitazione di questa opzione può influire sulle prestazioni di scrittura.  Non è possibile modificare l'impostazione dopo aver creato il sistema.
+
+
+--
+
+
+
+NOTE: A partire da Cloud Volumes ONTAP 9.15.0P1, i BLOB di pagine di Azure non sono più supportati per le nuove distribuzioni di coppie ad alta disponibilità.  Se attualmente si utilizzano BLOB di pagine di Azure in distribuzioni di coppie ad alta disponibilità esistenti, è possibile eseguire la migrazione a tipi di istanze di VM più recenti nelle VM della serie Edsv4 e nelle VM della serie Edsv5. link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#ha-pairs["Scopri di più sulle configurazioni supportate in Azure"^] .
+
+
+
+=== Configurazione della zona di disponibilità singola HA con dischi gestiti condivisi
+
+Una configurazione di zona di disponibilità singola Cloud Volumes ONTAP HA eseguita su un disco gestito condiviso include i seguenti componenti:
+
+image:diagram_ha_azure_saz_lrs.png["Un'immagine concettuale che mostra un bilanciatore del carico che gestisce il traffico in entrata dalla console e dai client, due nodi Cloud Volumes ONTAP in VMSS Flex, dischi SSD per i dati di avvio e dischi gestiti da LRS per i dati dei clienti."]
+
+Tieni presente quanto segue sui componenti di Azure che la console distribuisce per te:
+
+Bilanciamento del carico standard di Azure:: Il bilanciatore del carico gestisce il traffico in entrata verso la coppia Cloud Volumes ONTAP HA.
+VM in singole zone di disponibilità:: A partire da Cloud Volumes ONTAP 9.15.1, è possibile creare e gestire macchine virtuali (VM) eterogenee in un'unica zona di disponibilità (AZ).  È possibile distribuire nodi ad alta disponibilità (HA) in domini di errore separati all'interno della stessa AZ, garantendo una disponibilità ottimale.  Per saperne di più sulla modalità di orchestrazione flessibile che abilita questa capacità, fare riferimento a https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/["Documentazione di Microsoft Azure: set di scalabilità di macchine virtuali"^] .
++
+--
+La distribuzione zonale utilizza Premium SSD v2 Managed Disks quando sono soddisfatte le seguenti condizioni:
+
+* La versione di Cloud Volumes ONTAP è 9.15.1 o successiva.
+* La regione e la zona selezionate supportano i dischi gestiti Premium SSD v2.  Per informazioni sulle regioni supportate, fare riferimento a https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/["Sito Web di Microsoft Azure: prodotti disponibili per regione"^] .
+* L'abbonamento è registrato per Microsoftlink:task-saz-feature.html["Funzionalità Microsoft.Compute/VMOrchestratorZonalMultiFD"] .
+
+
+--
+Dischi:: I dati dei clienti risiedono su dischi gestiti con archiviazione ridondante locale (LRS).  Ogni nodo ha accesso allo storage dell'altro nodo.  È inoltre necessario ulteriore spazio di archiviazione perlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["dati di avvio, root, root partner, core e NVRAM"^] .
+Account di archiviazione:: Gli account di archiviazione vengono utilizzati per le distribuzioni basate su dischi gestiti per gestire i log diagnostici e la suddivisione in livelli nell'archiviazione BLOB.
+
+
+
+
+=== Configurazione di più zone di disponibilità HA
+
+Una configurazione di più zone di disponibilità HA di Cloud Volumes ONTAP in Azure include i seguenti componenti:
+
+image:diagram_ha_azure_maz.png["Un'immagine concettuale che mostra un bilanciatore del carico che gestisce il traffico in entrata dalla console e dai client, due nodi Cloud Volumes ONTAP in due zone di disponibilità, dischi SSD per i dati di avvio e dischi gestiti per i dati dei clienti."]
+
+Tieni presente quanto segue sui componenti di Azure che la console distribuisce per te:
+
+Bilanciamento del carico standard di Azure:: Il bilanciatore del carico gestisce il traffico in entrata verso la coppia Cloud Volumes ONTAP HA.
+Zone di disponibilità:: La configurazione HA con più zone di disponibilità utilizza un modello di distribuzione in cui due nodi Cloud Volumes ONTAP vengono distribuiti in diverse zone di disponibilità, garantendo che i nodi si trovino in domini di errore diversi per garantire ridondanza e disponibilità.  Per informazioni su come i set di scalabilità di macchine virtuali in modalità di orchestrazione flessibile possono utilizzare le zone di disponibilità in Azure, fare riferimento a https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones?tabs=cli-1%2Cportal-2["Documentazione di Microsoft Azure: creare un set di scalabilità di macchine virtuali che utilizza zone di disponibilità"^] .
+Dischi:: I dati dei clienti risiedono su dischi gestiti con archiviazione ridondante di zona (ZRS).  Ogni nodo ha accesso allo storage dell'altro nodo.  È inoltre necessario ulteriore spazio di archiviazione perlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["dati di avvio, root, root partner e core"^] .
+Account di archiviazione:: Gli account di archiviazione vengono utilizzati per le distribuzioni basate su dischi gestiti per gestire i log diagnostici e la suddivisione in livelli nell'archiviazione BLOB.
+
+
+
+
+== RPO e RTO
+
+Una configurazione HA mantiene un'elevata disponibilità dei dati come segue:
+
+* L'obiettivo del punto di ripristino (RPO) è 0 secondi.  I tuoi dati sono coerenti a livello transazionale e non subiscono perdite.
+* L'obiettivo del tempo di recupero (RTO) è di 120 secondi.  In caso di interruzione, i dati dovrebbero essere disponibili entro 120 secondi o meno.
+
+
+
+
+== Acquisizione e restituzione dello spazio di archiviazione
+
+Analogamente a un cluster ONTAP fisico, lo storage in una coppia Azure HA è condiviso tra i nodi.  Le connessioni allo storage del partner consentono a ciascun nodo di accedere allo storage dell'altro in caso di _acquisizione_.  I meccanismi di failover del percorso di rete garantiscono che i client e gli host continuino a comunicare con il nodo superstite.  Il partner _restituisce_ spazio di archiviazione quando il nodo viene riportato online.
+
+Per le configurazioni NAS, gli indirizzi IP dei dati migrano automaticamente tra i nodi HA in caso di guasti.
+
+Per iSCSI, Cloud Volumes ONTAP utilizza Multipath I/O (MPIO) e Asymmetric Logical Unit Access (ALUA) per gestire il failover del percorso tra i percorsi ottimizzati attivi e quelli non ottimizzati.
+
+
+NOTE: Per informazioni sulle configurazioni host specifiche che supportano ALUA, fare riferimento a http://mysupport.netapp.com/matrix["Strumento matrice di interoperabilità NetApp"^] e il https://docs.netapp.com/us-en/ontap-sanhost/["Guida agli host SAN e ai client cloud"] per il sistema operativo host.
+
+L'acquisizione, la risincronizzazione e la restituzione dello storage sono tutte operazioni automatiche per impostazione predefinita. Non è richiesta alcuna azione da parte dell'utente.
+
+
+
+== Configurazioni di archiviazione
+
+È possibile utilizzare una coppia HA come configurazione attiva-attiva, in cui entrambi i nodi forniscono dati ai client, oppure come configurazione attiva-passiva, in cui il nodo passivo risponde alle richieste di dati solo se ha preso in carico lo storage per il nodo attivo.

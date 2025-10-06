@@ -1,0 +1,244 @@
+---
+sidebar: sidebar 
+permalink: task-planning-your-config.html 
+keywords: license, disk, ebs, storage, size, write speed, volume usage, ec2, capacity, limit, configurations, virtual machine, vm, regions, supported disks, disk types, general purpose, gp2 provisioned IOPS, piops, throughput optimized, cold, SSD, HDD, st1, use profile, thin provisioning, deduplication, compression, shared instance, dedicated instance, write speed, high write speed, normal write speed, network information, worksheet, limit, limits, storage limits, volume limit, aggregate limit, maximum volume size, maximum aggregate size, supported instances, instances, instances supported, supported ec2 instances, supported instance, aws outpost, outpost, outposts, deploy in outpost, deploy in aws outpost 
+summary: Quando distribuisci Cloud Volumes ONTAP in AWS, puoi scegliere un sistema preconfigurato che soddisfi i requisiti del tuo carico di lavoro oppure puoi creare una configurazione personalizzata.  Se scegli una configurazione personalizzata, dovresti conoscere le opzioni a tua disposizione. 
+---
+= Pianifica la configurazione Cloud Volumes ONTAP in AWS
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Quando distribuisci Cloud Volumes ONTAP in AWS, puoi scegliere un sistema preconfigurato che soddisfi i requisiti del tuo carico di lavoro oppure puoi creare una configurazione personalizzata.  Se scegli una configurazione personalizzata, dovresti conoscere le opzioni a tua disposizione.
+
+
+
+== Scegli una licenza Cloud Volumes ONTAP
+
+Sono disponibili diverse opzioni di licenza per Cloud Volumes ONTAP. Ogni opzione ti consente di scegliere il modello di consumo più adatto alle tue esigenze.
+
+* link:concept-licensing.html["Scopri le opzioni di licenza per Cloud Volumes ONTAP"]
+* link:task-set-up-licensing-aws.html["Scopri come impostare le licenze"]
+
+
+
+
+== Scegli una regione supportata
+
+Cloud Volumes ONTAP è supportato nella maggior parte delle regioni AWS. https://bluexp.netapp.com/cloud-volumes-global-regions["Visualizza l'elenco completo delle regioni supportate"^] .
+
+Per poter creare e gestire risorse in tali regioni, è necessario abilitare le regioni AWS più recenti. https://docs.aws.amazon.com/general/latest/gr/rande-manage.html["Documentazione AWS: scopri come abilitare una regione"^] .
+
+
+
+=== Scegli una zona locale supportata
+
+La selezione di una zona locale è facoltativa.  Cloud Volumes ONTAP è supportato in alcune zone locali AWS, tra cui Singapore.  Cloud Volumes ONTAP in AWS supporta solo la modalità ad alta disponibilità (HA) in una singola zona di disponibilità.  Le distribuzioni a nodo singolo non sono supportate.
+
+
+NOTE: Cloud Volumes ONTAP non supporta il tiering dei dati e il tiering del cloud nelle zone locali AWS.  Inoltre, le zone locali con istanze che non sono state qualificate per Cloud Volumes ONTAP non sono supportate.  Un esempio è Miami, che non è disponibile come zona locale perché ha solo istanze Gen6 non supportate e non qualificate.
+
+link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/?nc=sn&loc=3["Documentazione AWS: visualizza l'elenco completo delle zone locali"^] . Le zone locali devono essere abilitate prima di poter creare e gestire risorse in tali zone.
+
+link:https://docs.aws.amazon.com/local-zones/latest/ug/getting-started.html["Documentazione AWS: Introduzione alle zone locali AWS"^] .
+
+
+
+== Scegli un'istanza supportata
+
+Cloud Volumes ONTAP supporta diversi tipi di istanza, a seconda del tipo di licenza scelto.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html["Configurazioni supportate per Cloud Volumes ONTAP in AWS"^]
+
+
+
+== Comprendere i limiti di archiviazione
+
+Il limite di capacità raw per un sistema Cloud Volumes ONTAP è legato alla licenza.  Ulteriori limiti incidono sulle dimensioni degli aggregati e sui volumi.  Quando pianifichi la tua configurazione, dovresti essere consapevole di questi limiti.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html["Limiti di archiviazione per Cloud Volumes ONTAP in AWS"^]
+
+
+
+== Dimensiona il tuo sistema in AWS
+
+Il dimensionamento del sistema Cloud Volumes ONTAP può aiutarti a soddisfare i requisiti di prestazioni e capacità.  Quando si sceglie un tipo di istanza, un tipo di disco e una dimensione del disco, è necessario tenere presenti alcuni punti chiave:
+
+Tipo di istanza::
++
+--
+* Adatta i requisiti del carico di lavoro alla velocità effettiva e agli IOPS massimi per ogni tipo di istanza EC2.
+* Se più utenti scrivono contemporaneamente sul sistema, scegliere un tipo di istanza che abbia CPU sufficienti per gestire le richieste.
+* Se hai un'applicazione che legge principalmente, scegli un sistema con RAM sufficiente.
++
+** https://aws.amazon.com/ec2/instance-types/["Documentazione AWS: Tipi di istanze Amazon EC2"^]
+** https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html["Documentazione AWS: istanze ottimizzate per Amazon EBS"^]
+
+
+
+
+--
+Tipo di disco EBS:: A livello generale, le differenze tra i tipi di dischi EBS sono le seguenti.  Per saperne di più sui casi d'uso dei dischi EBS, fare riferimento a http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html["Documentazione AWS: Tipi di volume EBS"^] .
++
+--
+* I dischi _General Purpose SSD (gp3)_ sono gli SSD più economici che bilanciano costi e prestazioni per un'ampia gamma di carichi di lavoro.  Le prestazioni sono definite in termini di IOPS e throughput. I dischi gp3 sono supportati con Cloud Volumes ONTAP 9.7 e versioni successive.
++
+Quando si seleziona un disco gp3, la console NetApp inserisce i valori IOPS e di throughput predefiniti che garantiscono prestazioni equivalenti a quelle di un disco gp2 in base alle dimensioni del disco selezionato. È possibile aumentare i valori per ottenere prestazioni migliori a un costo maggiore, ma non supportiamo valori inferiori perché potrebbero comportare prestazioni inferiori. In breve, mantenete i valori predefiniti oppure aumentateli. Non abbassarli. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#gp3-ebs-volume-type["Documentazione AWS: Scopri di più sui dischi gp3 e sulle loro prestazioni"^] .
+
++
+Si noti che Cloud Volumes ONTAP supporta la funzionalità Amazon EBS Elastic Volumes con dischi gp3. link:concept-aws-elastic-volumes.html["Scopri di più sul supporto di Elastic Volumes"] .
+
+* I dischi _SSD per uso generale (gp2)_ bilanciano costi e prestazioni per un'ampia gamma di carichi di lavoro.  Le prestazioni sono definite in termini di IOPS.
+* I dischi SSD _Provisioned IOPS (io1)_ sono destinati ad applicazioni critiche che richiedono le massime prestazioni a un costo più elevato.
++
+Si noti che Cloud Volumes ONTAP supporta la funzionalità Amazon EBS Elastic Volumes con dischi io1. link:concept-aws-elastic-volumes.html["Scopri di più sul supporto di Elastic Volumes"] .
+
+* I dischi _Throughput Optimized HDD (st1)_ sono adatti a carichi di lavoro a cui si accede frequentemente e che richiedono un throughput rapido e costante a un prezzo inferiore.
++
+
+NOTE: Il tiering dei dati su AWS S3 non è disponibile nelle zone locali AWS a causa della mancanza di connettività.
+
+
+
+--
+Dimensione del disco EBS:: Se si sceglie una configurazione che non supporta illink:concept-aws-elastic-volumes.html["Funzionalità Amazon EBS Elastic Volumes"] , è necessario scegliere una dimensione iniziale del disco quando si avvia un sistema Cloud Volumes ONTAP .  Dopo di che puoilink:concept-storage-management.html["lascia che la Console gestisca la capacità di un sistema per te"] , ma se vuoilink:task-create-aggregates.html["crea aggregati tu stesso"] , tieni presente quanto segue:
++
+--
+* Tutti i dischi di un aggregato devono avere le stesse dimensioni.
+* Le prestazioni dei dischi EBS sono legate alle dimensioni del disco.  La dimensione determina gli IOPS di base e la durata massima del burst per i dischi SSD e la velocità effettiva di base e di burst per i dischi HDD.
+* In definitiva, dovresti scegliere la dimensione del disco che ti garantisce le _prestazioni sostenute_ di cui hai bisogno.
+* Anche se si scelgono dischi più grandi (ad esempio, sei dischi da 4 TiB), è possibile che non si ottengano tutti gli IOPS perché l'istanza EC2 potrebbe raggiungere il limite di larghezza di banda.
++
+Per maggiori dettagli sulle prestazioni del disco EBS, fare riferimento a http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html["Documentazione AWS: Tipi di volume EBS"^] .
+
++
+Come indicato in precedenza, la scelta della dimensione del disco non è supportata con le configurazioni Cloud Volumes ONTAP che supportano la funzionalità Amazon EBS Elastic Volumes. link:concept-aws-elastic-volumes.html["Scopri di più sul supporto di Elastic Volumes"] .
+
+
+
+--
+
+
+
+
+== Visualizza i dischi di sistema predefiniti
+
+Oltre allo storage per i dati utente, la Console acquista anche storage cloud per i dati di sistema Cloud Volumes ONTAP (dati di avvio, dati root, dati core e NVRAM).  Ai fini della pianificazione, potrebbe essere utile rivedere questi dettagli prima di distribuire Cloud Volumes ONTAP.
+
+link:reference-default-configs.html#aws["Visualizza i dischi predefiniti per i dati di sistema Cloud Volumes ONTAP in AWS"] .
+
+
+TIP: L'agente Console richiede anche un disco di sistema. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-connector-default-config.html["Visualizza i dettagli sulla configurazione predefinita dell'agente della console"^] .
+
+
+
+== Preparati a distribuire Cloud Volumes ONTAP in un AWS Outpost
+
+Se disponi di un AWS Outpost, puoi distribuire Cloud Volumes ONTAP in quell'Outpost selezionando l'Outpost VPC durante il processo di distribuzione. L'esperienza è la stessa di qualsiasi altra VPC residente in AWS. Tieni presente che dovrai prima distribuire un agente Console nel tuo AWS Outpost.
+
+Ci sono alcune limitazioni da sottolineare:
+
+* Al momento sono supportati solo i sistemi Cloud Volumes ONTAP a nodo singolo
+* Le istanze EC2 che puoi utilizzare con Cloud Volumes ONTAP sono limitate a quelle disponibili nel tuo Outpost
+* Al momento sono supportati solo gli SSD General Purpose (gp2)
+
+
+
+
+== Raccogliere informazioni di rete
+
+Quando avvii Cloud Volumes ONTAP in AWS, devi specificare i dettagli sulla tua rete VPC.  Puoi utilizzare un foglio di lavoro per raccogliere le informazioni dal tuo amministratore.
+
+
+
+=== Singolo nodo o coppia HA in una singola AZ
+
+[cols="30,70"]
+|===
+| Informazioni AWS | Il tuo valore 
+
+
+| Regione |  
+
+
+| VPC |  
+
+
+| Sottorete |  
+
+
+| Gruppo di sicurezza (se ne utilizzi uno tuo) |  
+|===
+
+
+=== Coppia HA in più AZ
+
+[cols="30,70"]
+|===
+| Informazioni AWS | Il tuo valore 
+
+
+| Regione |  
+
+
+| VPC |  
+
+
+| Gruppo di sicurezza (se ne utilizzi uno tuo) |  
+
+
+| Zona di disponibilità del nodo 1 |  
+
+
+| Sottorete del nodo 1 |  
+
+
+| Zona di disponibilità del nodo 2 |  
+
+
+| Sottorete del nodo 2 |  
+
+
+| Zona di disponibilità del mediatore |  
+
+
+| Sottorete mediatrice |  
+
+
+| Coppia di chiavi per il mediatore |  
+
+
+| Indirizzo IP mobile per la porta di gestione del cluster |  
+
+
+| Indirizzo IP mobile per i dati sul nodo 1 |  
+
+
+| Indirizzo IP mobile per i dati sul nodo 2 |  
+
+
+| Tabelle di routing per indirizzi IP mobili |  
+|===
+
+
+== Scegli una velocità di scrittura
+
+La console consente di scegliere un'impostazione della velocità di scrittura per Cloud Volumes ONTAP.  Prima di scegliere una velocità di scrittura, è necessario comprendere le differenze tra le impostazioni normale e alta, nonché i rischi e i consigli relativi all'utilizzo di una velocità di scrittura elevata. link:concept-write-speed.html["Scopri di più sulla velocità di scrittura"] .
+
+
+
+== Scegli un profilo di utilizzo del volume
+
+ONTAP include diverse funzionalità di efficienza di archiviazione che possono ridurre la quantità totale di spazio di archiviazione necessario.  Quando si crea un volume nella Console, è possibile scegliere un profilo che abiliti queste funzionalità oppure un profilo che le disabiliti.  Dovresti saperne di più su queste funzionalità per decidere quale profilo utilizzare.
+
+Le funzionalità di efficienza dello storage NetApp offrono i seguenti vantaggi:
+
+Provisioning sottile:: Offre agli host o agli utenti più spazio di archiviazione logica di quello effettivamente disponibile nel pool di archiviazione fisico.  Invece di preallocare lo spazio di archiviazione, lo spazio di archiviazione viene allocato dinamicamente a ciascun volume man mano che i dati vengono scritti.
+Deduplicazione:: Migliora l'efficienza individuando blocchi di dati identici e sostituendoli con riferimenti a un singolo blocco condiviso.  Questa tecnica riduce i requisiti di capacità di archiviazione eliminando i blocchi ridondanti di dati che risiedono nello stesso volume.
+Compressione:: Riduce la capacità fisica necessaria per archiviare i dati comprimendoli all'interno di un volume su storage primario, secondario e di archivio.
+

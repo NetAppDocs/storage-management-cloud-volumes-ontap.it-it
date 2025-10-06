@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: task-manage-aggregates.html 
+keywords: aggregates, delete aggregates, add disks, view aggregates 
+summary: Gestisci autonomamente gli aggregati aggiungendo dischi, visualizzando informazioni sugli aggregati ed eliminandoli. 
+---
+= Gestisci gli aggregati per i cluster Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Gestisci autonomamente gli aggregati aggiungendo dischi, visualizzando informazioni sugli aggregati ed eliminandoli.
+
+
+CAUTION: Tutti i dischi e gli aggregati devono essere creati ed eliminati direttamente dalla console NetApp . Non dovresti eseguire queste azioni da un altro strumento di gestione. Ciò potrebbe compromettere la stabilità del sistema, ostacolare la possibilità di aggiungere dischi in futuro e potenzialmente generare commissioni ridondanti per il provider cloud.
+
+.Prima di iniziare
+Per eliminare un aggregato, è necessario prima eliminare i volumi nell'aggregato.
+
+.Informazioni su questo compito
+Se un aggregato sta esaurendo lo spazio, è possibile spostare i volumi su un altro aggregato utilizzando ONTAP System Manager.
+
+.Passi
+. Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
+. Nella pagina *Sistemi*, fare doppio clic sul sistema Cloud Volumes ONTAP su cui si desidera gestire gli aggregati.
+. Dai dettagli del sistema, fare clic sulla scheda *Aggregati*.
+. Per l'aggregato richiesto, fare clic suimage:icon-action.png[""] icona per le azioni di gestione.
++
+image:screenshot_aggr_menu_options.png["Uno screenshot delle opzioni del menu Aggregati."]
+
+. Gestisci i tuoi aggregati dalle opzioni disponibili inimage:icon-action.png[""] menu.
+
+
+
+NOTE: Per aggiungere dischi a un aggregato, tutti i dischi nell'aggregato devono avere le stesse dimensioni.
+
+ifdef::aws[]
+
+Per AWS, è possibile aumentare la capacità di un aggregato che supporta Amazon EBS Elastic Volumes.
+
+. Sotto ilimage:icon-action.png[""] menu, fare clic su *Aumenta capacità*.
+. Inserisci la capacità aggiuntiva che desideri aggiungere e poi clicca su *Aumenta*.
+
+
+Si noti che è necessario aumentare la capacità dell'aggregato di almeno 256 GiB o del 10% delle dimensioni dell'aggregato.  Ad esempio, se si dispone di un aggregato di 1,77 TiB, il 10% equivale a 181 GiB.  Si tratta di una quantità inferiore a 256 GiB, quindi la dimensione dell'aggregato deve essere aumentata del minimo di 256 GiB.
+
+endif::aws[]

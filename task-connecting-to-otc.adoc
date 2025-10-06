@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: task-connecting-to-otc.html 
+keywords: connecting, cli, command, command line, connect, shell, interface 
+summary: 'Cloud Volumes ONTAP CLI consente di eseguire tutti i comandi amministrativi ed è una buona scelta per attività avanzate o se si ha più dimestichezza con l"utilizzo della CLI.  È possibile connettersi alla CLI tramite SSH.' 
+---
+= Amministra Cloud Volumes ONTAP dalla CLI
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP CLI consente di eseguire tutti i comandi amministrativi ed è una buona scelta per attività avanzate o se si ha più dimestichezza con l'utilizzo della CLI.  È possibile connettersi alla CLI tramite Secure Shell (SSH).
+
+.Prima di iniziare
+L'host da cui si utilizza SSH per connettersi a Cloud Volumes ONTAP deve disporre di una connessione di rete a Cloud Volumes ONTAP.  Ad esempio, potrebbe essere necessario effettuare una connessione SSH da un jump host presente nella rete del tuo provider cloud.
+
+ifdef::aws[]
+
+
+NOTE: Se distribuite in più AZ, le configurazioni Cloud Volumes ONTAP HA utilizzano un indirizzo IP mobile per l'interfaccia di gestione del cluster, il che significa che il routing esterno non è disponibile.  È necessario connettersi da un host che faccia parte dello stesso dominio di routing.
+
+endif::aws[]
+
+.Passi
+. Nella console NetApp , identificare l'indirizzo IP dell'interfaccia di gestione del cluster:
++
+.. Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
+.. Nella pagina *Sistemi*, selezionare il sistema Cloud Volumes ONTAP .
+.. Copiare l'indirizzo IP di gestione del cluster visualizzato nel riquadro di destra.
+
+
+. Utilizzare SSH per connettersi all'indirizzo IP dell'interfaccia di gestione del cluster utilizzando l'account amministratore.
++
+*Esempio*
+
++
+L'immagine seguente mostra un esempio che utilizza PuTTY:
+
++
+image:screenshot_cli2.gif["Screenshot: mostra la destinazione admin@192.168.11.5 sulla porta 22."]
+
+. Al prompt di accesso, immettere la password per l'account amministratore.
++
+*Esempio*
+
++
+....
+Password: ********
+COT2::>
+....
+

@@ -1,0 +1,138 @@
+---
+sidebar: sidebar 
+permalink: concept-storage-management.html 
+keywords: provisioning, capacity management, storage provisioning, manual, automatic, advanced allocation, aggregates, thin provisioning, free space, mode, BlueXP, NetApp Consolecloud manager 
+summary: La console offre una gestione semplificata e avanzata dello storage Cloud Volumes ONTAP . 
+---
+= Gestione dello storage Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La console NetApp offre una gestione semplificata e avanzata dello storage Cloud Volumes ONTAP .
+
+
+CAUTION: È necessario creare ed eliminare tutti i dischi e gli aggregati direttamente dalla Console. Non dovresti eseguire queste azioni da un altro strumento di gestione. Ciò potrebbe compromettere la stabilità del sistema, ostacolare la possibilità di aggiungere dischi in futuro e potenzialmente generare commissioni ridondanti per il provider cloud.
+
+
+
+== Provisioning dello storage
+
+La Console semplifica il provisioning dello storage per Cloud Volumes ONTAP acquistando dischi e gestendo gli aggregati per te.  Devi solo creare volumi.  Se lo desideri, puoi utilizzare un'opzione di allocazione avanzata per effettuare autonomamente il provisioning degli aggregati.
+
+
+
+=== Provisioning semplificato
+
+Gli aggregati forniscono spazio di archiviazione cloud ai volumi.  La console crea aggregati per te quando avvii un'istanza e quando esegui il provisioning di volumi aggiuntivi.
+
+Quando si crea un volume, la Console esegue una delle tre operazioni seguenti:
+
+* Colloca il volume su un aggregato esistente che dispone di spazio libero sufficiente.
+* Colloca il volume su un aggregato esistente acquistando più dischi per quell'aggregato.
+
+
+ifdef::aws[]
+
++ Nel caso di un aggregato in AWS che supporta Elastic Volumes, aumenta anche la dimensione dei dischi in un gruppo RAID. link:concept-aws-elastic-volumes.html["Scopri di più sul supporto per Elastic Volumes"] .
+
+endif::aws[]
+
+* Acquista dischi per un nuovo aggregato e posiziona il volume su quell'aggregato.
+
+
+La console determina dove posizionare un nuovo volume prendendo in considerazione diversi fattori: la dimensione massima di un aggregato, se il thin provisioning è abilitato e le soglie di spazio libero per gli aggregati.
+
+ifdef::aws[]
+
+
+
+==== Selezione delle dimensioni del disco per gli aggregati in AWS
+
+Quando la Console crea nuovi aggregati per Cloud Volumes ONTAP in AWS, aumenta gradualmente le dimensioni del disco man mano che aumentano i numeri degli aggregati per massimizzare la capacità del sistema prima di raggiungere i limiti dei dischi dati AWS.
+
+Ad esempio, la Console potrebbe scegliere le seguenti dimensioni del disco:
+
+[cols="3*"]
+|===
+| Numero aggregato | Dimensione del disco | Capacità massima aggregata 
+
+
+| 1 | 500 GB | 3 TiB 
+
+
+| 4 | 1 TiB | 6 TiB 
+
+
+| 6 | 2 TiB | 12 TiB 
+|===
+
+NOTE: Questo comportamento non si applica agli aggregati che supportano la funzionalità Amazon EBS Elastic Volumes.  Gli aggregati in cui è abilitato Elastic Volumes sono composti da uno o due gruppi RAID.  Ogni gruppo RAID è composto da quattro dischi identici con la stessa capacità. link:concept-aws-elastic-volumes.html["Scopri di più sul supporto per Elastic Volumes"] .
+
+È possibile scegliere autonomamente la dimensione del disco utilizzando l'opzione di allocazione avanzata.
+
+endif::aws[]
+
+
+
+=== Assegnazione anticipata
+
+È anche possibile gestire gli aggregati. link:task-create-aggregates.html["Dalla pagina *Assegnazione avanzata*"] , è possibile creare nuovi aggregati che includono un numero specifico di dischi, aggiungere dischi a un aggregato esistente e creare volumi in aggregati specifici.
+
+
+
+== Gestione della capacità
+
+L'amministratore dell'organizzazione o dell'account può configurare la Console in modo che ti informi sulle decisioni relative alla capacità di archiviazione o che gestisca automaticamente i requisiti di capacità per te.
+
+Questo comportamento è determinato dalla _Modalità di gestione della capacità_ su un agente della console.  La modalità di gestione della capacità interessa tutti i sistemi Cloud Volumes ONTAP gestiti da quell'agente della console.  Se si dispone di un altro agente Console, è possibile configurarlo in modo diverso.
+
+
+
+=== Gestione automatica della capacità
+
+Per impostazione predefinita, la modalità di gestione della capacità è impostata su automatica.  In questa modalità, la console controlla il rapporto di spazio libero ogni 15 minuti per determinare se tale rapporto scende al di sotto della soglia specificata.  Se è necessaria maggiore capacità, avvia l'acquisto di nuovi dischi, elimina le raccolte di dischi non utilizzate (aggregati), sposta i volumi tra gli aggregati secondo necessità e tenta di impedire guasti ai dischi.
+
+Gli esempi seguenti illustrano il funzionamento di questa modalità:
+
+* Se un aggregato raggiunge la soglia di capacità e ha spazio per altri dischi, la Console acquista automaticamente nuovi dischi per quell'aggregato, in modo che i volumi possano continuare a crescere.
++
+ifdef::aws[]
+
+
+
+Nel caso di un aggregato in AWS che supporta Elastic Volumes, aumenta anche la dimensione dei dischi in un gruppo RAID. link:concept-aws-elastic-volumes.html["Scopri di più sul supporto per Elastic Volumes"] .
+
+endif::aws[]
+
++ * Se un aggregato raggiunge la soglia di capacità e non può supportare dischi aggiuntivi, la Console sposta automaticamente un volume da quell'aggregato a un aggregato con capacità disponibile o a un nuovo aggregato.
+
++ Se la Console crea un nuovo aggregato per il volume, sceglie una dimensione del disco che si adatti alla dimensione di quel volume.
+
++ Si noti che ora è disponibile spazio libero sull'aggregato originale.  Tale spazio può essere utilizzato sia da volumi esistenti che da nuovi volumi.  In questo scenario lo spazio non può essere restituito al provider cloud.
+
+* Se un aggregato non contiene volumi per più di 12 ore, la Console lo elimina.
+
+
+
+
+==== Gestione delle LUN con gestione automatica della capacità
+
+La gestione automatica della capacità della Console non si applica alle LUN.  Quando crea un LUN, disabilita la funzionalità di aumento automatico.
+
+
+
+=== Gestione manuale della capacità
+
+Se l'amministratore dell'organizzazione o dell'account imposta la modalità di gestione della capacità su manuale, la console ti informa di intraprendere le azioni appropriate per le decisioni sulla capacità.  Gli stessi esempi descritti nella modalità automatica si applicano alla modalità manuale, ma spetta a te accettare le azioni.
+
+
+
+=== Saperne di più
+
+link:task-manage-capacity-settings.html["Scopri come modificare la modalità di gestione della capacità"] .

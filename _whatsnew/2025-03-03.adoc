@@ -1,0 +1,11 @@
+= Supporto per la regione Nuova Zelanda settentrionale in Azure
+:allow-uri-read: 
+
+
+
+
+=== Supporto per la regione Nuova Zelanda settentrionale in Azure
+
+La regione Nuova Zelanda settentrionale è ora supportata in Azure per le configurazioni a nodo singolo e ad alta disponibilità (HA) di Cloud Volumes ONTAP 9.12.1 GA e versioni successive.  Si noti che il tipo di istanza Lsv3 non è supportato in questa regione.
+
+Per un elenco di tutte le regioni supportate, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .

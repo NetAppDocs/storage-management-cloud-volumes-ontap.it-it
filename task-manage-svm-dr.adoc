@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: task-manage-svm-dr.html 
+keywords: storage virtual machine, vserver, svm, storage vm, svm dr, disaster recovery, svm disaster recovery, storage vm dr 
+summary: NetApp Console non fornisce alcun supporto di configurazione o orchestrazione per il disaster recovery delle VM di storage.  È necessario utilizzare System Manager o la CLI. 
+---
+= Configurare il disaster recovery della VM di archiviazione per Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La console NetApp non offre supporto per la configurazione o l'orchestrazione per il ripristino di emergenza delle VM di archiviazione (SVM).  Per eseguire queste attività, utilizzare ONTAP System Manager o ONTAP CLI.
+
+Se si imposta la replica SnapMirror SVM tra due sistemi Cloud Volumes ONTAP , la replica deve essere effettuata tra due sistemi a coppia HA o due sistemi a nodo singolo.  Non è possibile impostare la replica SnapMirror SVM tra una coppia HA e un sistema a nodo singolo.
+
+Per le istruzioni di ONTAP CLI, fare riferimento ai seguenti documenti.
+
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856["Guida rapida alla preparazione al ripristino di emergenza SVM"^]
+* https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857["Guida rapida al ripristino di emergenza SVM"^]
+

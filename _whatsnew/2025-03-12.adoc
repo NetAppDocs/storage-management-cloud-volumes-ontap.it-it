@@ -1,0 +1,15 @@
+= Nuove regioni supportate per distribuzioni con più zone di disponibilità in Azure
+:allow-uri-read: 
+
+
+
+
+=== Nuove regioni supportate per distribuzioni con più zone di disponibilità in Azure
+
+Le seguenti regioni ora supportano distribuzioni HA con più zone di disponibilità in Azure per Cloud Volumes ONTAP 9.12.1 GA e versioni successive:
+
+* Stati Uniti centrali
+* Governo degli Stati Uniti Virginia (Regione del governo degli Stati Uniti - Virginia)
+
+
+Per un elenco di tutte le regioni, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .

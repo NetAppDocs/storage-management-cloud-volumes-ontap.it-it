@@ -1,0 +1,45 @@
+---
+sidebar: sidebar 
+permalink: concept-active-iq.html 
+keywords: autosupport, digital advisor, active iq digital advisor, telemetry 
+summary: 'Il componente AutoSupport di ONTAP raccoglie i dati di telemetria e li invia per l"analisi.  Digital Advisor analizza i dati di AutoSupport e fornisce assistenza e ottimizzazione proattive.  Utilizzando l"intelligenza artificiale, Digital Advisor può identificare potenziali problemi e aiutarti a risolverli prima che abbiano ripercussioni sulla tua attività.' 
+---
+= Scopri come AutoSupport e Digital Advisor vengono utilizzati per Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il componente AutoSupport di ONTAP raccoglie i dati di telemetria e li invia per l'analisi.  Active IQ Digital Advisor (noto anche come Digital Advisor) analizza i dati di AutoSupport e fornisce assistenza e ottimizzazione proattive.  Utilizzando l'intelligenza artificiale, Digital Advisor può identificare potenziali problemi e aiutarti a risolverli prima che abbiano ripercussioni sulla tua attività.
+
+Digital Advisor ti consente di ottimizzare la tua infrastruttura dati nel tuo cloud ibrido globale offrendo analisi predittive fruibili e supporto proattivo tramite un portale basato su cloud e un'app mobile.  Le informazioni e le raccomandazioni basate sui dati di Digital Advisor sono disponibili per tutti i clienti NetApp con un contratto SupportEdge attivo (le funzionalità variano in base al prodotto e al livello di supporto).
+
+Ecco alcune cose che puoi fare con Digital Advisor:
+
+* Pianificare gli aggiornamenti.
++
+Digital Advisor individua i problemi nel tuo ambiente che possono essere risolti aggiornando a una versione più recente di ONTAP e il componente Upgrade Advisor ti aiuta a pianificare un aggiornamento riuscito.
+
+* Visualizza il benessere del sistema.
++
+La dashboard del tuo Digital Advisor segnala eventuali problemi relativi al benessere e ti aiuta a risolverli.  Monitora la capacità del sistema per assicurarti di non rimanere mai senza spazio di archiviazione.  Visualizza i casi di supporto per il tuo sistema.
+
+* Gestire le prestazioni.
++
+Digital Advisor mostra le prestazioni del sistema per un periodo di tempo più lungo di quello visualizzabile in ONTAP System Manager.  Identifica i problemi di configurazione e di sistema che incidono sulle tue prestazioni.  Massimizzare l'efficienza.  Visualizza le metriche di efficienza dell'archiviazione e identifica i modi per archiviare più dati in meno spazio.
+
+* Visualizza inventario e configurazione.
++
+Digital Advisor visualizza informazioni complete sull'inventario e sulla configurazione software e hardware.  Controlla quando scadono i contratti di servizio e rinnovali per assicurarti di continuare a ricevere supporto.
+
+
+
+.Link correlati
+* https://docs.netapp.com/us-en/active-iq/["Documentazione NetApp : Digital Advisor"^]
+* https://aiq.netapp.com/custom-dashboard/search["Avvia il Digital Advisor"^]
+* https://www.netapp.com/us/services/support-edge.aspx["Servizi SupportEdge"^]
+

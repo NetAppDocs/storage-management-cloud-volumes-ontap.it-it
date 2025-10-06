@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: task-configure-placement-group-failure-aws.html 
+keywords: placement group, failure, HA single zone, app.conf, rollback, AWS 
+summary: Cloud Volumes ONTAP utilizza un collegamento privato di Azure per le connessioni ai relativi account di archiviazione associati.  Se necessario, è possibile disabilitare i collegamenti privati ​​di Azure e utilizzare invece gli endpoint del servizio. 
+---
+= Configurare la creazione di gruppi di posizionamento per coppie Cloud Volumes ONTAP HA nelle singole zone di disponibilità AWS
+:allow-uri-read: 
+
+
+[role="lead"]
+Le distribuzioni ad alta disponibilità (HA) Cloud Volumes ONTAP nella zona di disponibilità singola (AZ) di AWS possono non riuscire e subire il rollback se la creazione del gruppo di posizionamento non riesce.  Anche la creazione del gruppo di posizionamento fallisce e la distribuzione viene annullata se il nodo Cloud Volumes ONTAP e l'istanza del mediatore non sono disponibili.  Per evitare questo problema, è possibile modificare la configurazione per consentire il completamento della distribuzione anche se la creazione del gruppo di posizionamento non riesce.
+
+Se si ignora il processo di rollback, il processo di distribuzione Cloud Volumes ONTAP viene completato correttamente e viene notificato che la creazione del gruppo di posizionamento non è completa.
+
+.Passi
+. Utilizzare SSH per connettersi all'host dell'agente della console NetApp ed effettuare l'accesso.
+. Vai a `/opt/application/netapp/cloudmanager/docker_occm/data` .
+. Modificare `app.conf` modificando il valore del `rollback-on-placement-group-failure` parametro a `false` .  Il valore predefinito di questo parametro è `true` .
++
+[listing]
+----
+{
+    "occm" : {
+        "aws" : {
+            "rollback-on-placement-group-failure" : false
+        }
+    }
+}
+----
+. Salvare il file e disconnettersi dall'agente della console.  Non è necessario riavviare l'agente Console.
+

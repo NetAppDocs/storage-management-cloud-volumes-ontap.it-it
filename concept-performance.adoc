@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: concept-performance.html 
+keywords: performance, technical report, TR, workload, cpu 
+summary: È possibile esaminare i risultati delle prestazioni per decidere quali carichi di lavoro sono appropriati per Cloud Volumes ONTAP. 
+---
+= Scopri di più sul monitoraggio delle prestazioni per i carichi di lavoro Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile esaminare i risultati delle prestazioni per decidere quali carichi di lavoro sono appropriati per Cloud Volumes ONTAP.
+
+
+
+== Rapporti tecnici sulle prestazioni
+
+ifdef::aws[]
+
+* Cloud Volumes ONTAP per AWS
++
+link:https://www.netapp.com/pdf.html?item=/media/9088-tr4383pdf.pdf["Rapporto tecnico NetApp 4383: Caratterizzazione delle prestazioni di Cloud Volumes ONTAP in Amazon Web Services con carichi di lavoro applicativi"^]
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Cloud Volumes ONTAP per Microsoft Azure
++
+link:https://www.netapp.com/pdf.html?item=/media/9089-tr-4671pdf.pdf["Report tecnico NetApp 4671: caratterizzazione delle prestazioni di Cloud Volumes ONTAP in Azure con carichi di lavoro applicativi"^]
+
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+* Cloud Volumes ONTAP per Google Cloud
++
+link:https://www.netapp.com/pdf.html?item=/media/9090-tr4816pdf.pdf["Rapporto tecnico NetApp 4816: Caratterizzazione delle prestazioni di Cloud Volumes ONTAP per Google Cloud"^]
+
+
+
+endif::gcp[]
+
+
+
+== Prestazioni della CPU
+
+I nodi Cloud Volumes ONTAP risultano altamente utilizzati (oltre il 90%) dagli strumenti di monitoraggio del tuo provider cloud.  Ciò avviene perché ONTAP riserva tutte le vCPU presentate alla macchina virtuale, in modo che siano disponibili quando necessario.
+
+Per informazioni fare riferimento al https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/Monitoring_CPU_utilization_before_an_ONTAP_upgrade["Articolo della knowledge base NetApp su come monitorare l'utilizzo della CPU ONTAP tramite la CLI"^]

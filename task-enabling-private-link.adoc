@@ -1,0 +1,147 @@
+---
+sidebar: sidebar 
+permalink: task-enabling-private-link.html 
+keywords: azure private link, private link connection, private link to storage, service endpoints, enable service endpoint, disable private link 
+summary: Cloud Volumes ONTAP utilizza un collegamento privato di Azure per le connessioni ai relativi account di archiviazione associati.  Se necessario, è possibile disabilitare i collegamenti privati ​​di Azure e utilizzare invece gli endpoint del servizio. 
+---
+= Utilizzare un collegamento privato di Azure o endpoint di servizio per i sistemi Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP utilizza un collegamento privato di Azure per le connessioni ai relativi account di archiviazione associati.  Se necessario, è possibile disabilitare i collegamenti privati ​​di Azure e utilizzare invece gli endpoint del servizio.
+
+
+
+== Panoramica
+
+Per impostazione predefinita, la console NetApp abilita un collegamento privato di Azure per le connessioni tra Cloud Volumes ONTAP e i relativi account di archiviazione associati.  Un collegamento privato di Azure protegge le connessioni tra gli endpoint in Azure e offre vantaggi in termini di prestazioni.
+
+Se necessario, è possibile configurare Cloud Volumes ONTAP in modo che utilizzi endpoint di servizio anziché un collegamento privato di Azure.
+
+Con entrambe le configurazioni, la Console limita sempre l'accesso alla rete per le connessioni tra Cloud Volumes ONTAP e gli account di archiviazione.  L'accesso alla rete è limitato alla rete virtuale in cui è distribuito Cloud Volumes ONTAP e alla rete virtuale in cui è distribuito l'agente Console.
+
+
+
+== Disabilitare i collegamenti privati di Azure e utilizzare invece gli endpoint del servizio
+
+Se richiesto dalla tua azienda, puoi modificare un'impostazione nella Console in modo che Cloud Volumes ONTAP venga configurato per utilizzare endpoint di servizio anziché un collegamento privato di Azure.  La modifica di questa impostazione si applica ai nuovi sistemi Cloud Volumes ONTAP creati.  Gli endpoint del servizio sono supportati solo inlink:https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies["Coppie di regioni di Azure"^] tra l'agente della console e le reti virtuali Cloud Volumes ONTAP .
+
+L'agente della console deve essere distribuito nella stessa regione di Azure dei sistemi Cloud Volumes ONTAP che gestisce oppure nella https://docs.microsoft.com/en-us/azure/availability-zones/cross-region-replication-azure#azure-cross-region-replication-pairings-for-all-geographies["Coppia di regioni di Azure"^] per i sistemi Cloud Volumes ONTAP .
+
+.Passi
+. Dal riquadro di navigazione a sinistra, vai su *Amministrazione > Agenti*.
+. Fare clic suimage:icon-action.png[""] icona per l'agente Console che gestisce il sistema Cloud Volumes ONTAP .
+. Selezionare *Impostazioni Cloud Volumes ONTAP *.
++
+image::screenshot-settings-cloud-volumes-ontap.png[Uno screenshot dell'opzione Impostazioni Cloud Volumes ONTAP sotto l'icona Impostazioni.]
+
+. In *Azure*, fare clic su *Usa collegamento privato di Azure*.
+. Deseleziona *Collegamento privato tra Cloud Volumes ONTAP e gli account di archiviazione*.
+. Fare clic su *Salva*.
+
+
+.Dopo aver finito
+Se hai disabilitato i collegamenti privati di Azure e l'agente della console utilizza un server proxy, devi abilitare il traffico API diretto.
+
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html#enable-a-proxy-on-a-connector["Scopri come abilitare il traffico API diretto sull'agente Console"^]
+
+
+
+== Lavorare con i collegamenti privati di Azure
+
+Nella maggior parte dei casi, non è necessario fare nulla per configurare i collegamenti privati ​​di Azure con Cloud Volumes ONTAP.  La console gestisce per te i collegamenti privati ​​di Azure.  Tuttavia, se si utilizza una zona DNS privato di Azure esistente, sarà necessario modificare un file di configurazione.
+
+
+
+=== Requisito per DNS personalizzato
+
+Facoltativamente, se si lavora con DNS personalizzato, è necessario creare un inoltro condizionale alla zona DNS privata di Azure dai server DNS personalizzati. Per saperne di più, fare riferimento alink:https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns#on-premises-workloads-using-a-dns-forwarder["Documentazione di Azure sull'utilizzo di un inoltro DNS"^] .
+
+
+
+=== Come funzionano le connessioni Private Link
+
+Quando la console distribuisce Cloud Volumes ONTAP in Azure, crea un endpoint privato nel gruppo di risorse.  L'endpoint privato è associato agli account di archiviazione per Cloud Volumes ONTAP.  Di conseguenza, l'accesso allo storage Cloud Volumes ONTAP avviene tramite la rete backbone di Microsoft.
+
+L'accesso client avviene tramite collegamento privato quando i client si trovano nella stessa VNet di Cloud Volumes ONTAP, in VNet peering o nella rete locale quando si utilizza una connessione VPN privata o ExpressRoute alla VNet.
+
+Ecco un esempio che mostra l'accesso client tramite un collegamento privato dall'interno della stessa VNet e da una rete locale dotata di una connessione VPN privata o ExpressRoute.
+
+image:diagram_azure_private_link.png["Un'immagine concettuale che mostra l'accesso ai dati verso Cloud Volumes ONTAP e tramite un endpoint privato e un collegamento privato all'account di archiviazione."]
+
+
+NOTE: Se l'agente Console e i sistemi Cloud Volumes ONTAP vengono distribuiti in reti virtuali diverse, è necessario configurare il peering tra la rete virtuale in cui è distribuito l'agente Console e la rete virtuale in cui sono distribuiti i sistemi Cloud Volumes ONTAP .
+
+
+
+=== Fornisci dettagli sul tuo DNS privato di Azure
+
+Se usi https://docs.microsoft.com/en-us/azure/dns/private-dns-overview["DNS privato di Azure"^] , è necessario modificare un file di configurazione su ciascun agente della console.  In caso contrario, la console non può impostare la connessione Azure Private Link tra Cloud Volumes ONTAP e i relativi account di archiviazione associati.
+
+Si noti che il nome DNS deve corrispondere ai requisiti di denominazione DNS di Azure https://docs.microsoft.com/en-us/azure/storage/common/storage-private-endpoints#dns-changes-for-private-endpoints["come mostrato nella documentazione di Azure"^] .
+
+.Passi
+. Eseguire l'SSH sull'host dell'agente della console ed effettuare l'accesso.
+. Vai a  `/opt/application/netapp/cloudmanager/docker_occm/data` elenco.
+. Modificare  `app.conf` aggiungendo il  `user-private-dns-zone-settings` parametro con le seguenti coppie parola chiave-valore:
++
+[source, cli]
+----
+ "user-private-dns-zone-settings" : {
+    "resource-group" : "<resource group name of the DNS zone>",
+    "subscription" : "<subscription ID>",
+    "use-existing" : true,
+    "create-private-dns-zone-link" : true
+ }
+----
++
+IL `subscription` La parola chiave è obbligatoria solo se la zona DNS privata si trova in un abbonamento diverso da quello dell'agente Console.
+
+. Salvare il file e disconnettersi dall'agente della console.
++
+Non è necessario riavviare il computer.
+
+
+
+
+
+=== Abilita il rollback in caso di errori
+
+Se la console non riesce a creare un collegamento privato di Azure come parte di azioni specifiche, completa l'azione senza la connessione al collegamento privato di Azure.  Ciò può verificarsi quando si crea un nuovo sistema (nodo singolo o coppia HA) o quando si verificano le seguenti azioni su una coppia HA: creazione di un nuovo aggregato, aggiunta di dischi a un aggregato esistente o creazione di un nuovo account di archiviazione quando si superano i 32 TiB.
+
+È possibile modificare questo comportamento predefinito abilitando il rollback se la console non riesce a creare il collegamento privato di Azure.  Ciò può contribuire a garantire la piena conformità alle normative di sicurezza della tua azienda.
+
+Se si abilita il rollback, la Console interrompe l'azione e ripristina tutte le risorse create come parte dell'azione.
+
+È possibile abilitare il rollback tramite l'API o aggiornando il file app.conf.
+
+*Abilita il rollback tramite l'API*
+
+.Fare un passo
+. Utilizzare il `PUT /occm/config` Chiamata API con il seguente corpo della richiesta:
++
+[source, json]
+----
+{ "rollbackOnAzurePrivateLinkFailure": true }
+----
+
+
+*Abilita il rollback aggiornando app.conf*
+
+.Passi
+. Accedere tramite SSH all'host dell'agente della console ed effettuare l'accesso.
+. Passare alla seguente directory: /opt/application/netapp/cloudmanager/docker_occm/data
+. Modifica app.conf aggiungendo il seguente parametro e valore:
++
+ "rollback-on-private-link-failure": true
+. Salvare il file e disconnettersi dall'agente della console.
++
+Non è necessario riavviare il computer.
+
+

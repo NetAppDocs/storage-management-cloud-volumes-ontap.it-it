@@ -1,0 +1,15 @@
+= Configurazione del proxy di rete dell'agente NetApp Console
+:allow-uri-read: 
+
+
+
+
+=== Configurazione del proxy di rete dell'agente NetApp Console
+
+È possibile utilizzare la configurazione dei server proxy dell'agente NetApp Console per abilitare l'accesso a Internet in uscita da Cloud Volumes ONTAP.  La console supporta due tipi di proxy:
+
+* *Proxy esplicito*: il traffico in uscita da Cloud Volumes ONTAP utilizza l'indirizzo HTTP del server proxy specificato durante la configurazione del proxy dell'agente della console.  L'amministratore potrebbe anche aver configurato le credenziali utente e i certificati CA radice per un'autenticazione aggiuntiva.  Se è disponibile un certificato CA radice per il proxy esplicito, assicurarsi di ottenere e caricare lo stesso certificato sul sistema Cloud Volumes ONTAP utilizzando https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html["ONTAP CLI: installazione del certificato di sicurezza"^] comando.
+* *Proxy trasparente*: la rete è configurata per instradare automaticamente il traffico in uscita da Cloud Volumes ONTAP tramite il proxy per l'agente della console.  Quando si configura un proxy trasparente, l'amministratore deve fornire solo un certificato CA radice per la connettività da Cloud Volumes ONTAP, non l'indirizzo HTTP del server proxy.  Assicurati di ottenere e caricare lo stesso certificato CA radice sul tuo sistema Cloud Volumes ONTAP utilizzando https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html["ONTAP CLI: installazione del certificato di sicurezza"^] comando.
+
+
+Per informazioni sulla configurazione dei server proxy, fare riferimento a https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurare l'agente della console per utilizzare un server proxy"^] .

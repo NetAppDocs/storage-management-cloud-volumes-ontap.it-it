@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: task-managing-svms.html 
+keywords: storage virtual machine, vserver, svm, storage vm, supported number, number supported 
+summary: 'Una VM di archiviazione è una macchina virtuale in esecuzione all"interno di ONTAP che fornisce servizi di archiviazione e dati ai tuoi client.  Potresti conoscerlo come SVM o vserver.  Per impostazione predefinita, Cloud Volumes ONTAP è configurato con una VM di archiviazione, ma alcune configurazioni supportano VM di archiviazione aggiuntive.' 
+---
+= Gestisci le VM di archiviazione per Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Una VM di archiviazione è una macchina virtuale in esecuzione all'interno di ONTAP che fornisce servizi di archiviazione e dati ai tuoi client.  Potresti conoscerlo come _SVM_ o _vserver_.  Per impostazione predefinita, Cloud Volumes ONTAP è configurato con una VM di archiviazione, ma alcune configurazioni supportano VM di archiviazione aggiuntive.
+
+
+
+== Numero supportato di VM di archiviazione
+
+Con determinate configurazioni sono supportate più VM di archiviazione.  Vai al https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Note sulla versione Cloud Volumes ONTAP"^] per verificare il numero supportato di VM di archiviazione per la tua versione di Cloud Volumes ONTAP.
+
+
+
+== Lavora con più VM di storage
+
+La console NetApp supporta qualsiasi VM di storage aggiuntiva creata da ONTAP System Manager o da ONTAP CLI.
+
+Ad esempio, l'immagine seguente mostra come scegliere una VM di archiviazione quando si crea un volume.
+
+image:screenshot_create_volume_svm.gif["Uno screenshot che mostra la possibilità di selezionare la VM di archiviazione in cui si desidera creare un volume."]
+
+L'immagine seguente mostra come scegliere una VM di archiviazione quando si replica un volume su un altro sistema.
+
+image:screenshot_replicate_volume_svm.gif["Uno screenshot che mostra la possibilità di selezionare la VM di archiviazione in cui si desidera replicare un volume."]
+
+
+
+== Modificare il nome della VM di archiviazione predefinita
+
+La console assegna automaticamente un nome alla singola VM di archiviazione creata per Cloud Volumes ONTAP.  Da ONTAP System Manager, dalla CLI ONTAP o dall'API, è possibile modificare il nome della VM di archiviazione se si hanno standard di denominazione rigorosi.  Ad esempio, potresti voler far corrispondere il nome assegnato alle VM di archiviazione per i tuoi cluster ONTAP .

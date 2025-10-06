@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: task-azure-download-digest-file.html 
+keywords: Azure, image, image signature, download, digest file, decompress, Linux, macOS, md5, sha256 
+summary: 'È possibile scaricare il file digest dell"immagine di Azure dal sito di supporto NetApp .' 
+---
+= Scarica il file immagine di Azure per Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile scaricare il file immagine di Azure da https://mysupport.netapp.com/site/["Sito di supporto NetApp"^] .
+
+Il file _tar.gz_ contiene i file necessari per la verifica della firma dell'immagine.  Insieme al file _tar.gz_, dovresti scaricare anche il file _checksum_ per l'immagine.  Il file di checksum contiene il `md5` E `sha256` checksum del file _tar.gz_.
+
+.Passi
+. Vai al https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab["Pagina del prodotto Cloud Volumes ONTAP sul sito di supporto NetApp"^] e scaricare la versione software richiesta dalla sezione *Download*.
+. Nella pagina di download Cloud Volumes ONTAP , fare clic sul file scaricabile per l'immagine di Azure e scaricare il file _tar.gz_.
++
+image::screenshot_cloud_volumes_ontap_tar.gz.png[screenshot cloud volumi ontap tar.gz]
+
+. Su Linux, esegui `md5sum  AZURE-<version>_PKG.TAR.GZ` .
++
+Su macOS, esegui `sha256sum AZURE-<version>_PKG.TAR.GZ` .
+
+. Verificare che il `md5sum` E `sha256sum` i valori corrispondono a quelli nell'immagine di Azure scaricata.
+. Su Linux e macOS, estrarre il file _tar.gz_ utilizzando `tar -xzf` comando.
++
+Il file _tar.gz_ estratto contiene il file digest (_.sig_), il file del certificato della chiave pubblica (_.pem_) e il file del certificato della catena (_.pem_).
+
++
+*Esempio di output dopo l'estrazione del file tar.gz:*
+
++
+[source, cli]
+----
+$ ls cert/ -l
+-rw-r----- 1 netapp netapp  384 May  13 13:00 9.15.0P1_azure_digest.sig
+-rw-r----- 1 netapp netapp 2365 May  13 13:00 Certificate-9.15.0P1_azure.pem
+-rw-r----- 1 netapp netapp 8537 May  13 13:00 Certificate-Chain-9.15.0P1_azure.pem
+-rw-r----- 1 netapp netapp 8537 May  13 13:00 version_readme
+----
+

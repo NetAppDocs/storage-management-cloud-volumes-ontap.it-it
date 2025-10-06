@@ -1,0 +1,152 @@
+---
+sidebar: sidebar 
+permalink: task-managing-svms-azure.html 
+keywords: storage virtual machine, vserver, svm, storage vm, supported number, number supported 
+summary: 'Una VM di archiviazione è una macchina virtuale in esecuzione all"interno di ONTAP che fornisce servizi di archiviazione e dati ai tuoi client.  Potresti conoscerlo come SVM o vserver.  Per impostazione predefinita, Cloud Volumes ONTAP è configurato con una VM di archiviazione, ma alcune configurazioni supportano VM di archiviazione aggiuntive.' 
+---
+= Gestisci le VM di archiviazione per il servizio dati per Cloud Volumes ONTAP in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Una VM di archiviazione è una macchina virtuale in esecuzione all'interno di ONTAP che fornisce servizi di archiviazione e dati ai tuoi client.  Potresti conoscerlo come _SVM_ o _vserver_.  Per impostazione predefinita, Cloud Volumes ONTAP è configurato con una VM di archiviazione, ma è possibile creare VM di archiviazione aggiuntive quando si esegue Cloud Volumes ONTAP in Azure.
+
+Per creare e gestire ulteriori VM di archiviazione dati in Azure, è necessario utilizzare le API.  Questo perché le API automatizzano il processo di creazione delle VM di archiviazione e di configurazione delle interfacce di rete richieste.  Durante la creazione delle VM di storage, la console NetApp configura i servizi LIF richiesti, nonché un LIF iSCSI necessario per le comunicazioni SMB/CIFS in uscita dalla VM di storage.
+
+Per informazioni sull'esecuzione delle chiamate API Cloud Volumes ONTAP , fare riferimento a https://docs.netapp.com/us-en/bluexp-automation/cm/your_api_call.html#step-1-select-the-identifie["La tua prima chiamata API"^] .
+
+
+
+== Numero supportato di VM di archiviazione
+
+A partire da Cloud Volumes ONTAP 9.9.0, in base alla licenza, sono supportate più VM di archiviazione con configurazioni specifiche.  Fare riferimento al https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html["Note sulla versione Cloud Volumes ONTAP"^] per verificare il numero supportato di VM di archiviazione per la tua versione di Cloud Volumes ONTAP.
+
+Tutte le versioni di Cloud Volumes ONTAP precedenti alla 9.9.0 supportano una VM di archiviazione dati e una VM di archiviazione di destinazione utilizzata per il ripristino di emergenza.  È possibile attivare la VM di archiviazione di destinazione per l'accesso ai dati in caso di interruzione della VM di archiviazione di origine.
+
+
+
+== Creare una VM di archiviazione
+
+In base alla configurazione e al tipo di licenza, è possibile creare più VM di storage su un singolo sistema a nodo o in una configurazione ad alta disponibilità (HA) utilizzando le API per la console NetApp .
+
+.Informazioni su questo compito
+Quando si creano VM di archiviazione utilizzando le API, insieme alla configurazione delle interfacce di rete richieste, la Console modifica anche `default-data-files` policy sulle VM di archiviazione dati rimuovendo i seguenti servizi dal LIF dati NAS e aggiungendoli al LIF dati iSCSI utilizzato per le connessioni di gestione in uscita:
+
+* `data-fpolicy-client`
+* `management-ad-client`
+* `management-dns-client`
+* `management-ldap-client`
+* `management-nis-client`
+
+
+.Prima di iniziare
+L'agente della console richiede autorizzazioni specifiche per creare VM di archiviazione per Cloud Volumes ONTAP.  Le autorizzazioni richieste sono incluse in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["le policy fornite da NetApp"^] .
+
+
+
+=== Sistema a nodo singolo
+
+Utilizzare la seguente chiamata API per creare una VM di archiviazione su un sistema a nodo singolo.
+
+`POST /azure/vsa/working-environments/{workingEnvironmentId}/svm`
+
+Includi i seguenti parametri nel corpo della richiesta:
+
+[source, json]
+----
+{ "svmName": "myNewSvm1"
+   "svmPassword": "optional, the API takes the cluster password if not provided"
+   "mgmtLif": "optional, to create an additional management LIF, if you want to use the storage VM for management purposes"}
+----
+
+
+=== coppia HA
+
+Utilizzare la seguente chiamata API per creare una VM di archiviazione su una coppia HA:
+
+`POST /azure/ha/working-environments/{workingEnvironmentId}/svm`
+
+Includi i seguenti parametri nel corpo della richiesta:
+
+[source, json]
+----
+{ "svmName": "NewSvmName"
+   "svmPassword": "optional value, the API takes the cluster password if not provided"
+   "mgmtLif": "optional value, to create an additional management LIF, if you want to use the storage VM for management purposes"}
+----
+
+
+== Gestire le VM di storage su sistemi a nodo singolo e coppie HA
+
+Utilizzando le API, è possibile rinominare ed eliminare le VM di storage sia nelle configurazioni a nodo singolo che in quelle HA.
+
+.Prima di iniziare
+L'agente Console richiede autorizzazioni specifiche per gestire le VM di archiviazione per Cloud Volumes ONTAP.  Le autorizzazioni richieste sono incluse in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["le policy fornite da NetApp"^] .
+
+
+
+=== Rinominare una VM di archiviazione
+
+Per rinominare una VM di archiviazione, è necessario fornire come parametri i nomi della VM di archiviazione esistente e della nuova VM di archiviazione.
+
+.Passi
+* Utilizzare la seguente chiamata API per rinominare una VM di archiviazione su un sistema a nodo singolo:
++
+`PUT /azure/vsa/working-environments/{workingEnvironmentId}/svm`
+
++
+Includi i seguenti parametri nel corpo della richiesta:
+
++
+[source, json]
+----
+{
+  "svmNewName": "NewSvmName",
+  "svmName": "OldSvmName"
+}
+----
+* Utilizzare la seguente chiamata API per rinominare una VM di archiviazione su una coppia HA:
++
+`PUT /azure/ha/working-environments/{workingEnvironmentId}/svm`
+
++
+Includi i seguenti parametri nel corpo della richiesta:
+
++
+[source, json]
+----
+{
+  "svmNewName": "NewSvmName",
+  "svmName": "OldSvmName"
+}
+----
+
+
+
+
+=== Elimina una VM di archiviazione
+
+In una configurazione a nodo singolo o HA, è possibile rimuovere una VM di archiviazione se non dispone di volumi attivi.
+
+.Passi
+* Utilizzare la seguente chiamata API per eliminare una VM di archiviazione su un sistema a nodo singolo:
++
+`DELETE /azure/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
+
+* Utilizzare la seguente chiamata API per eliminare una VM di archiviazione su una coppia HA:
++
+`DELETE /azure/ha/working-environments/{workingEnvironmentId}/svm/{svmName}`
+
+
+
+.Informazioni correlate
+* https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html["Preparati a utilizzare l'API"^]
+* https://docs.netapp.com/us-en/bluexp-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows["Flussi di lavoro Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/bluexp-automation/platform/get_identifiers.html#get-the-connector-identifier["Ottieni gli identificatori richiesti"^]
+* https://docs.netapp.com/us-en/bluexp-automation/platform/use_rest_apis.html["Utilizzare le API REST per NetApp Console"^]
+

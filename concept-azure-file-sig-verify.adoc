@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: concept-azure-file-sig-verify.html 
+keywords: Azure, image, VHD, file signature verification, encryption, sha256, ONTAP, Cloud Volumes, CLI, 
+summary: Informazioni su come verificare la firma di un file VHD esportato tramite lo strumento File digest immagine Cloud Volumes ONTAP . 
+---
+= Verifica della firma dell'immagine di Azure Marketplace per Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il processo di verifica dell'immagine di Azure genera un file digest dal file VHD eliminando 1 MB all'inizio e 512 byte alla fine, quindi applicando una funzione hash.  Per abbinare la procedura di firma, per l'hashing viene utilizzato _sha256_.
+
+
+
+== Riepilogo del flusso di lavoro di verifica della firma del file
+
+Di seguito è riportata una panoramica del processo di verifica della firma del file.
+
+image::graphic_azure_check_signature.png[firma di controllo grafica di Azure]
+
+* Scaricamento dell'immagine di Azure da https://mysupport.netapp.com/site/["Sito di supporto NetApp"^] ed estraendo il file digest (.sig), il file del certificato della chiave pubblica (.pem) e il file del certificato della catena (.pem). Fare riferimento a link:task-azure-download-digest-file.html["Scarica il file digest dell'immagine di Azure"] per maggiori informazioni.
+* Verifica della catena di fiducia.
+* Estrazione della chiave pubblica (.pub) dal certificato della chiave pubblica (.pem).
+* Decifrare il file digest utilizzando la chiave pubblica estratta.
+* Confronto del risultato con un digest appena generato di un file temporaneo creato dal file immagine dopo aver rimosso 1 MB all'inizio e 512 byte alla fine.  Questo passaggio viene eseguito utilizzando lo strumento da riga di comando OpenSSL.  Lo strumento OpenSSL CLI visualizza un messaggio appropriato in caso di successo o fallimento nella corrispondenza dei file.
++
+[source, cli]
+----
+openssl dgst -verify <public_key> -keyform <form> <hash_function>
+-signature <digest_file> -binary <temporary_file>
+----
+

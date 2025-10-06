@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: task-overriding-cifs-locks.html 
+keywords: CIFS locks, azure maintenance, maintenance events, cifs sessions, storage failover, storage giveback, giveback 
+summary: 'L"amministratore dell"organizzazione o dell"account può abilitare un"impostazione nella console NetApp che impedisce problemi con la restituzione dello storage Cloud Volumes ONTAP durante gli eventi di manutenzione di Azure.  Quando si abilita questa impostazione, Cloud Volumes ONTAP pone il veto ai blocchi CIFS e reimposta le sessioni CIFS attive.' 
+---
+= Sostituisci i blocchi CIFS per le coppie Cloud Volumes ONTAP HA in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+L'amministratore dell'organizzazione o dell'account può abilitare un'impostazione nella console NetApp che impedisce problemi con la restituzione dello storage Cloud Volumes ONTAP durante gli eventi di manutenzione di Azure.  Quando si abilita questa impostazione, Cloud Volumes ONTAP pone il veto ai blocchi CIFS e reimposta le sessioni CIFS attive.
+
+.Informazioni su questo compito
+Microsoft Azure pianifica periodicamente eventi di manutenzione sulle sue macchine virtuali.  Quando si verifica un evento di manutenzione su una coppia Cloud Volumes ONTAP HA, la coppia HA avvia l'acquisizione dello storage.  Se durante questo evento di manutenzione sono presenti sessioni CIFS attive, i blocchi sui file CIFS possono impedire la restituzione dello spazio di archiviazione.
+
+Se si abilita questa impostazione, Cloud Volumes ONTAP porrà il veto ai blocchi e reimposterà le sessioni CIFS attive.  Di conseguenza, la coppia HA può completare la restituzione dello storage durante questi eventi di manutenzione.
+
+
+CAUTION: Questo processo potrebbe risultare disfunzionale per i client CIFS.  I dati non inviati dai client CIFS potrebbero andare persi.
+
+.Prima di iniziare
+Prima di poter modificare le impostazioni della console, è necessario creare un agente della console. https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html#how-to-create-a-connector["Scopri come"^] .
+
+.Passi
+. Dal riquadro di navigazione a sinistra, vai su *Amministrazione > Agenti*.
+. Fare clic suimage:icon-action.png[""] icona per l'agente Console che gestisce il sistema Cloud Volumes ONTAP .
+. Selezionare *Impostazioni Cloud Volumes ONTAP *.
++
+image::screenshot-settings-cloud-volumes-ontap.png[Uno screenshot dell'opzione Impostazioni Cloud Volumes ONTAP sotto l'icona Impostazioni.]
+
+. In *Azure*, fare clic su *Blocchi CIFS di Azure per sistemi Azure HA*.
+. Fare clic sulla casella di controllo per abilitare la funzionalità, quindi fare clic su *Salva*.
+

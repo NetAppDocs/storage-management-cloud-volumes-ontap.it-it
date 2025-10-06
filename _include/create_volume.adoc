@@ -1,0 +1,26 @@
+= 
+:allow-uri-read: 
+
+
+[cols="25,75"]
+|===
+| Campo | Descrizione 
+
+
+| Misurare | La dimensione massima che è possibile immettere dipende in larga misura dall'attivazione o meno del thin provisioning, che consente di creare un volume più grande dello spazio di archiviazione fisico attualmente disponibile. 
+
+
+| Controllo degli accessi (solo per NFS) | Una policy di esportazione definisce i client nella subnet che possono accedere al volume. Per impostazione predefinita, la Console immette un valore che fornisce l'accesso a tutte le istanze nella subnet. 
+
+
+| Autorizzazioni e utenti/gruppi (solo per CIFS) | Questi campi consentono di controllare il livello di accesso a una condivisione per utenti e gruppi (chiamati anche elenchi di controllo degli accessi o ACL). È possibile specificare utenti o gruppi Windows locali o di dominio oppure utenti o gruppi UNIX. Se si specifica un nome utente di dominio Windows, è necessario includere il dominio dell'utente utilizzando il formato dominio\nomeutente. 
+
+
+| Politica di snapshot | Una policy di copia snapshot specifica la frequenza e il numero di copie Snapshot NetApp create automaticamente. Una copia Snapshot NetApp è un'immagine del file system in un dato momento che non ha alcun impatto sulle prestazioni e richiede uno spazio di archiviazione minimo. È possibile scegliere la policy predefinita o nessuna.  Per i dati temporanei è possibile scegliere "nessuno": ad esempio, tempdb per Microsoft SQL Server. 
+
+
+| Opzioni avanzate (solo per NFS) | Selezionare una versione NFS per il volume: NFSv3 o NFSv4. 
+
+
+| Gruppo iniziatore e IQN (solo per iSCSI) | Le destinazioni di archiviazione iSCSI sono chiamate LUN (unità logiche) e vengono presentate agli host come dispositivi a blocchi standard.  I gruppi di iniziatori sono tabelle di nomi di nodi host iSCSI e controllano quali iniziatori hanno accesso a quali LUN. Le destinazioni iSCSI si connettono alla rete tramite schede di rete Ethernet standard (NIC), schede TCP offload engine (TOE) con iniziatori software, schede di rete convergenti (CNA) o adattatori host bus dedicati (HBA) e sono identificate da nomi qualificati iSCSI (IQN).  Quando si crea un volume iSCSI, la Console crea automaticamente un LUN.  Abbiamo semplificato il tutto creando una sola LUN per volume, quindi non è richiesta alcuna gestione.  Dopo aver creato il volume,link:task-connect-lun.html["utilizzare l'IQN per connettersi al LUN dai tuoi host"] . 
+|===

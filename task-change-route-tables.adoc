@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: task-change-route-tables.html 
+keywords: route tables, update route tables, modify route tables, change route table 
+summary: È possibile modificare le tabelle di routing AWS che includono i percorsi verso gli indirizzi IP mobili per una coppia HA distribuita in più zone di disponibilità AWS.  Questa operazione può essere eseguita se nuovi client NFS o CIFS devono accedere a una coppia HA in AWS. 
+---
+= Modificare le tabelle di routing per le coppie Cloud Volumes ONTAP HA in più zone di disponibilità AWS
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile modificare le tabelle di routing AWS che includono i percorsi verso gli indirizzi IP mobili per una coppia HA distribuita in più zone di disponibilità (AZ) AWS.  Questa operazione può essere eseguita se nuovi client NFS o CIFS devono accedere a una coppia HA in AWS.
+
+.Passi
+. Nella pagina *Sistemi*, seleziona il sistema.
+. Nella scheda Panoramica, fare clic sul pannello Funzionalità e quindi sull'icona della matita accanto a *Tabelle di routing*.
+. Modificare l'elenco delle tabelle di routing selezionate e quindi fare clic su *Salva*.
+
+
+.Risultato
+La console NetApp invia una richiesta AWS per modificare le tabelle di routing.

@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: reference-limitations.html 
+keywords: limitations, flexgroup, ontap s3, s3 configuration, svm dr, svm disaster recovery, disaster recovery, storage vm dr, BlueXP, Console, cloud manager 
+summary: Le limitazioni note identificano piattaforme, dispositivi o funzioni che non sono supportati da questa versione del prodotto o che non interagiscono correttamente con esso. Esamina attentamente queste limitazioni. 
+---
+= Limitazioni note
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le limitazioni note identificano piattaforme, dispositivi o funzioni che non sono supportati da questa versione del prodotto o che non interagiscono correttamente con esso. Esamina attentamente queste limitazioni.
+
+Queste limitazioni sono specifiche della gestione Cloud Volumes ONTAP nella console NetApp .  Per visualizzare le limitazioni del software Cloud Volumes ONTAP stesso, https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limitations.html["vai alle Note sulla versione Cloud Volumes ONTAP"^] .
+
+
+
+== La console non supporta la creazione di volumi FlexGroup
+
+Sebbene Cloud Volumes ONTAP supporti i volumi FlexGroup , la Console al momento non supporta la creazione di volumi FlexGroup .  Se si crea un volume FlexGroup da ONTAP System Manager o da ONTAP CLI, è necessario impostare la modalità di gestione della capacità nella console su `Manual` . `Automatic` la modalità potrebbe non funzionare correttamente con i volumi FlexGroup .
+
+
+NOTE: La possibilità di creare volumi FlexGroup nella Console è prevista per una versione futura.
+
+
+
+== La console non supporta S3 con Cloud Volumes ONTAP
+
+Sebbene Cloud Volumes ONTAP supporti S3 come opzione per l'archiviazione scalabile, la Console non fornisce alcuna funzionalità di gestione per questa funzionalità.  L'utilizzo della CLI è la procedura consigliata per configurare l'accesso client S3 da Cloud Volumes ONTAP.  Per i dettagli, fare riferimento al http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-s3-cg/home.html["Guida all'alimentazione della configurazione S3"^] .
+
+link:concept-client-protocols.html["Scopri di più sul supporto Cloud Volumes ONTAP per S3 e altri protocolli client"] .
+
+
+
+== La console non supporta il ripristino di emergenza per le VM di archiviazione
+
+La console non fornisce alcun supporto di configurazione o orchestrazione per il ripristino di emergenza delle VM di archiviazione (SVM).  È necessario utilizzare ONTAP System Manager o ONTAP CLI.
+
+link:task-manage-svm-dr.html["Scopri di più sul disaster recovery SVM"] .

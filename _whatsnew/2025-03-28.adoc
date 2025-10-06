@@ -1,0 +1,11 @@
+= Distribuzioni in modalità privata abilitate per Cloud Volumes ONTAP 9.14.1
+:allow-uri-read: 
+
+
+
+
+=== Distribuzioni in modalità privata abilitate per Cloud Volumes ONTAP 9.14.1
+
+Ora puoi distribuire Cloud Volumes ONTAP 9.14.1 in modalità privata su AWS, Azure e Google Cloud.  La modalità privata è abilitata sia per le distribuzioni a nodo singolo che per quelle ad alta disponibilità (HA) di Cloud Volumes ONTAP 9.14.1.
+
+Per ulteriori informazioni sulle distribuzioni in modalità privata, fare riferimento ahttps://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#restricted-mode["Scopri di più sulle modalità di distribuzione di BlueXP"^] .

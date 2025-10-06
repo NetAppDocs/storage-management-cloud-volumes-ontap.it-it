@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: task-google-key-manager.html 
+keywords: google cloud, encryption, NVE, NetApp volume encryption, KMIP, GCP, GCP KMS, key manager service, encryption 
+summary: Utilizza il servizio di gestione delle chiavi di Google per il tuo servizio di gestione delle chiavi di terze parti. 
+---
+= Gestisci le chiavi di crittografia Cloud Volumes ONTAP con Google Cloud KMS
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puoi usarelink:https://cloud.google.com/kms/docs["Servizio di gestione delle chiavi di Google Cloud Platform (Cloud KMS)"^] per proteggere le chiavi di crittografia Cloud Volumes ONTAP in un'applicazione distribuita su Google Cloud Platform.
+
+La gestione delle chiavi con Cloud KMS può essere abilitata tramite ONTAP CLI o ONTAP REST API.
+
+Quando si utilizza Cloud KMS, tenere presente che per impostazione predefinita viene utilizzato il LIF di un SVM di dati per comunicare con l'endpoint di gestione delle chiavi cloud.  Per comunicare con i servizi di autenticazione del provider cloud (oauth2.googleapis.com) viene utilizzata una rete di gestione dei nodi.  Se la rete del cluster non è configurata correttamente, il cluster non utilizzerà correttamente il servizio di gestione delle chiavi.
+
+.Prima di iniziare
+* Il tuo sistema dovrebbe eseguire Cloud Volumes ONTAP 9.10.1 o versione successiva
+* È necessario utilizzare una SVM dati.  Cloud KMS può essere configurato solo su una SVM dati.
+* Devi essere un amministratore del cluster o SVM
+* La licenza Volume Encryption (VE) deve essere installata sull'SVM
+* A partire da Cloud Volumes ONTAP 9.12.1 GA, è necessario installare anche la licenza MTEKM (Multi-tenant Encryption Key Management)
+* È richiesto un abbonamento attivo a Google Cloud Platform
+
+
+
+
+== Configurazione
+
+.Google Cloud
+. Nel tuo ambiente Google Cloud,link:https://cloud.google.com/kms/docs/creating-keys["creare un portachiavi GCP simmetrico e una chiave"^] .
+. Assegna un ruolo personalizzato alla chiave Cloud KMS e all'account di servizio Cloud Volumes ONTAP .
++
+.. Crea il ruolo personalizzato:
++
+[listing]
+----
+gcloud iam roles create kmsCustomRole
+    --project=<project_id>
+    --title=<kms_custom_role_name>
+    --description=<custom_role_description>
+    --permissions=cloudkms.cryptoKeyVersions.get,cloudkms.cryptoKeyVersions.list,cloudkms.cryptoKeyVersions.useToDecrypt,cloudkms.cryptoKeyVersions.useToEncrypt,cloudkms.cryptoKeys.get,cloudkms.keyRings.get,cloudkms.locations.get,cloudkms.locations.list,resourcemanager.projects.get
+    --stage=GA
+----
+.. Assegna il ruolo personalizzato che hai creato:
+`gcloud kms keys add-iam-policy-binding _key_name_ --keyring _key_ring_name_ --location _key_location_ --member serviceAccount:_service_account_Name_ --role projects/_customer_project_id_/roles/kmsCustomRole`
++
+
+NOTE: Se utilizzi Cloud Volumes ONTAP 9.13.0 o versione successiva, non è necessario creare un ruolo personalizzato.  È possibile assegnare il predefinito[`cloudkms.cryptoKeyEncrypterDecrypter` ^] ruolo.
+
+
+
+. Scarica la chiave JSON dell'account di servizio:
+`gcloud iam service-accounts keys create key-file --iam-account=_sa-name_@_project-id_.iam.gserviceaccount.com`
+
+
+.Cloud Volumes ONTAP
+. Connettiti al LIF di gestione del cluster con il tuo client SSH preferito.
+. Passa al livello di privilegio avanzato:
+`set -privilege advanced`
+. Creare un DNS per i dati SVM.
+`dns create -domains c._<project>_.internal -name-servers _server_address_ -vserver _SVM_name_`
+. Crea voce CMEK:
+`security key-manager external gcp enable -vserver _SVM_name_ -project-id _project_ -key-ring-name _key_ring_name_ -key-ring-location _key_ring_location_ -key-name _key_name_`
+. Quando richiesto, inserisci la chiave JSON dell'account di servizio dal tuo account GCP.
+. Conferma che il processo abilitato è riuscito:
+`security key-manager external gcp check -vserver _svm_name_`
+. FACOLTATIVO: creare un volume per testare la crittografia `vol create _volume_name_ -aggregate _aggregate_ -vserver _vserver_name_ -size 10G`
+
+
+
+
+== Risoluzione dei problemi
+
+Se hai bisogno di risolvere un problema, puoi seguire i log REST API non elaborati negli ultimi due passaggi sopra:
+
+. `set d`
+. `systemshell -node _node_ -command tail -f /mroot/etc/log/mlog/kmip2_client.log`
+

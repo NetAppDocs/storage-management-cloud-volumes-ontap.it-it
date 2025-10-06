@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: task-create-aggregates.html 
+keywords: storage, provisioning, aggregates, provision, create, advanced allocation, creating aggregates, adding an aggregate, add an aggregate, create an aggregate 
+summary: 'Puoi creare gli aggregati autonomamente oppure lasciare che NetApp Console lo faccia per te quando crea i volumi.  Il vantaggio di creare autonomamente gli aggregati è che puoi scegliere la dimensione del disco sottostante, il che ti consente di dimensionare l"aggregato in base alla capacità o alle prestazioni di cui hai bisogno.' 
+---
+= Creare un aggregato per i sistemi Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puoi creare gli aggregati autonomamente oppure lasciare che sia la console NetApp a farlo per te quando crea i volumi.  Il vantaggio di creare autonomamente gli aggregati è che puoi scegliere la dimensione del disco sottostante, il che ti consente di dimensionare l'aggregato in base alla capacità o alle prestazioni di cui hai bisogno.
+
+
+CAUTION: Tutti i dischi e gli aggregati devono essere creati ed eliminati direttamente dalla Console. Non dovresti eseguire queste azioni da un altro strumento di gestione. Ciò potrebbe compromettere la stabilità del sistema, ostacolare la possibilità di aggiungere dischi in futuro e potenzialmente generare commissioni ridondanti per il provider cloud.
+
+.Passi
+. Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
+. Nella pagina *Sistemi*, fare doppio clic sul nome del sistema Cloud Volumes ONTAP su cui si desidera gestire gli aggregati.
+. Nella scheda Aggregati, fare clic su *Aggiungi aggregato* e quindi specificare i dettagli per l'aggregato.
++
+[role="tabbed-block"]
+====
+ifdef::aws[]
+
+.AWS
+--
+** Se ti viene chiesto di scegliere un tipo e una dimensione del disco, fai riferimento alink:task-planning-your-config.html["Pianifica la configurazione Cloud Volumes ONTAP in AWS"] .
+** Se ti viene chiesto di immettere la dimensione della capacità dell'aggregato, significa che stai creando un aggregato su una configurazione che supporta la funzionalità Amazon EBS Elastic Volumes.  La seguente schermata mostra un esempio di un nuovo aggregato composto da dischi gp3.
++
+image:screenshot-aggregate-size-ev.png["Uno screenshot della schermata Dischi aggregati per un disco gp3 in cui si immette la dimensione aggregata in TiB."]
+
++
+link:concept-aws-elastic-volumes.html["Scopri di più sul supporto per Elastic Volumes"] .
+
+
+
+--
+endif::aws[]
+
+ifdef::azure[]
+
+.Azzurro
+--
+Per assistenza sul tipo e la dimensione del disco, fare riferimento alink:task-planning-your-config-azure.html["Pianifica la configurazione Cloud Volumes ONTAP in Azure"] .
+
+--
+endif::azure[]
+
+ifdef::gcp[]
+
+.Google Cloud
+--
+Per assistenza sul tipo e la dimensione del disco, fare riferimento alink:task-planning-your-config-gcp.html["Pianifica la configurazione Cloud Volumes ONTAP in Google Cloud"] .
+
+--
+endif::gcp[]
+
+====
+. Fare clic su *Aggiungi*, quindi su *Approva e acquista*.
+

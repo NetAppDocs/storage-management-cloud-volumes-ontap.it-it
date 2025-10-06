@@ -1,0 +1,153 @@
+---
+sidebar: sidebar 
+permalink: task-planning-your-config-azure.html 
+keywords: license, disk, storage, size, write speed, volume usage, capacity, limit, configurations, virtual machine, vm, regions, supported disks, disk types, premium storage, standard storage, use profile, thin provisioning, deduplication, compression, shared instance, dedicated instance, write speed, high write speed, normal write speed, network information, worksheet, limit, limits, storage limits, volume limit, aggregate limit, maximum volume size, maximum aggregate size, supported vm type, supported virtual machines, supported virtual machine types, supported instances, space, size, azure, disk size 
+summary: Quando distribuisci Cloud Volumes ONTAP in Azure, puoi scegliere un sistema preconfigurato che soddisfi i requisiti del tuo carico di lavoro oppure puoi creare una configurazione personalizzata.  Se scegli una configurazione personalizzata, dovresti conoscere le opzioni a tua disposizione. 
+---
+= Pianifica la configurazione Cloud Volumes ONTAP in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Quando distribuisci Cloud Volumes ONTAP in Azure, puoi scegliere un sistema preconfigurato che soddisfi i requisiti del tuo carico di lavoro oppure puoi creare una configurazione personalizzata.  Se scegli una configurazione personalizzata, dovresti conoscere le opzioni a tua disposizione.
+
+
+
+== Scegli una licenza Cloud Volumes ONTAP
+
+Sono disponibili diverse opzioni di licenza per Cloud Volumes ONTAP. Ogni opzione ti consente di scegliere il modello di consumo più adatto alle tue esigenze.
+
+* link:concept-licensing.html["Scopri le opzioni di licenza per Cloud Volumes ONTAP"]
+* link:task-set-up-licensing-azure.html["Scopri come impostare le licenze"]
+
+
+
+
+== Scegli una regione supportata
+
+Cloud Volumes ONTAP è supportato nella maggior parte delle regioni Microsoft Azure. https://bluexp.netapp.com/cloud-volumes-global-regions["Visualizza l'elenco completo delle regioni supportate"^] .
+
+
+
+== Scegli un tipo di VM supportato
+
+Cloud Volumes ONTAP supporta diversi tipi di VM, a seconda del tipo di licenza scelto.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Configurazioni supportate per Cloud Volumes ONTAP in Azure"^]
+
+
+
+== Comprendere i limiti di archiviazione
+
+Il limite di capacità raw per un sistema Cloud Volumes ONTAP è legato alla licenza.  Ulteriori limiti incidono sulle dimensioni degli aggregati e sui volumi.  Quando pianifichi la tua configurazione, dovresti essere consapevole di questi limiti.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-azure.html["Limiti di archiviazione per Cloud Volumes ONTAP in Azure"^]
+
+
+
+== Dimensiona il tuo sistema in Azure
+
+Il dimensionamento del sistema Cloud Volumes ONTAP può aiutarti a soddisfare i requisiti di prestazioni e capacità.  Quando si sceglie un tipo di macchina virtuale, un tipo di disco e una dimensione del disco, è necessario tenere presenti alcuni punti chiave:
+
+Tipo di macchina virtuale:: Guarda i tipi di macchine virtuali supportati in https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Note sulla versione Cloud Volumes ONTAP"^] e quindi rivedere i dettagli su ciascun tipo di VM supportato.  Tieni presente che ogni tipo di VM supporta un numero specifico di dischi dati.
++
+--
+* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-general#dsv2-series["Documentazione di Azure: dimensioni delle macchine virtuali per uso generico"^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/sizes-memory#dsv2-series-11-15["Documentazione di Azure: dimensioni delle macchine virtuali con memoria ottimizzata"^]
+
+
+--
+Tipo di disco di Azure con sistemi a nodo singolo:: Quando si creano volumi per Cloud Volumes ONTAP, è necessario scegliere lo storage cloud sottostante che Cloud Volumes ONTAP utilizza come disco.
++
+--
+I sistemi a nodo singolo possono utilizzare questi tipi di Azure Managed Disks:
+
+* I dischi gestiti SSD Premium offrono prestazioni elevate per carichi di lavoro ad alta intensità di I/O a un costo più elevato.
+* I dischi gestiti Premium SSD v2 offrono prestazioni più elevate con una latenza inferiore a un costo inferiore rispetto ai dischi gestiti Premium SSD.
+* I dischi gestiti SSD standard garantiscono prestazioni costanti per carichi di lavoro che richiedono IOPS bassi.
+* I dischi gestiti HDD standard sono una buona scelta se non hai bisogno di IOPS elevati e vuoi ridurre i costi.
+
+
+Per ulteriori dettagli sui casi d'uso di questi dischi, fare riferimento a https://docs.microsoft.com/en-us/azure/virtual-machines/disks-types["Documentazione di Microsoft Azure: quali tipi di dischi sono disponibili in Azure?"^] .
+
+--
+Tipo di disco di Azure con coppie HA:: I sistemi HA utilizzano dischi gestiti condivisi Premium SSD, entrambi in grado di garantire prestazioni elevate per carichi di lavoro ad alta intensità di I/O a un costo più elevato.  Le distribuzioni HA create prima della versione 9.12.1 utilizzano blob di pagine Premium.
+Dimensioni del disco di Azure::
++
+--
+Quando si avviano istanze Cloud Volumes ONTAP , è necessario scegliere la dimensione del disco predefinita per gli aggregati.  NetApp Console utilizza questa dimensione del disco per l'aggregato iniziale e per tutti gli aggregati aggiuntivi creati quando si utilizza l'opzione di provisioning semplice.  È possibile creare aggregati che utilizzano una dimensione del disco diversa da quella predefinitalink:task-create-aggregates.html["utilizzando l'opzione di allocazione avanzata"] .
+
+
+TIP: Tutti i dischi di un aggregato devono avere le stesse dimensioni.
+
+Quando si sceglie la dimensione del disco, è necessario prendere in considerazione diversi fattori.  Le dimensioni del disco influiscono sul costo dell'archiviazione, sulle dimensioni dei volumi che è possibile creare in aggregato, sulla capacità totale disponibile per Cloud Volumes ONTAP e sulle prestazioni di archiviazione.
+
+Le prestazioni di Azure Premium Storage sono legate alle dimensioni del disco.  I dischi più grandi garantiscono IOPS e throughput più elevati.  Ad esempio, la scelta di dischi da 1 TiB può garantire prestazioni migliori rispetto a dischi da 500 GiB, ma a un costo più elevato.
+
+Non ci sono differenze di prestazioni tra le dimensioni dei dischi per Standard Storage.  Dovresti scegliere la dimensione del disco in base alla capacità di cui hai bisogno.
+
+Per informazioni su IOPS e velocità effettiva in base alle dimensioni del disco, fare riferimento ad Azure:
+
+* https://azure.microsoft.com/en-us/pricing/details/managed-disks/["Microsoft Azure: prezzi di Managed Disks"^]
+* https://azure.microsoft.com/en-us/pricing/details/storage/page-blobs/["Microsoft Azure: prezzi dei Page Blobs"^]
+
+
+--
+
+
+
+
+== Visualizza i dischi di sistema predefiniti
+
+Oltre allo storage per i dati utente, la Console acquista anche storage cloud per i dati di sistema Cloud Volumes ONTAP (dati di avvio, dati root, dati core e NVRAM).  Ai fini della pianificazione, potrebbe essere utile rivedere questi dettagli prima di distribuire Cloud Volumes ONTAP.
+
+link:reference-default-configs.html#azure-single-node["Visualizza i dischi predefiniti per i dati di sistema Cloud Volumes ONTAP in Azure"] .
+
+
+TIP: L'agente Console richiede anche un disco di sistema. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-connector-default-config.html["Visualizza i dettagli sulla configurazione predefinita dell'agente della console"^] .
+
+
+
+== Raccogliere informazioni di rete
+
+Quando si distribuisce Cloud Volumes ONTAP in Azure, è necessario specificare i dettagli sulla rete virtuale.  Puoi utilizzare un foglio di lavoro per raccogliere le informazioni dal tuo amministratore.
+
+[cols="30,70"]
+|===
+| Informazioni su Azure | Il tuo valore 
+
+
+| Regione |  
+
+
+| Rete virtuale (VNet) |  
+
+
+| Sottorete |  
+
+
+| Gruppo di sicurezza di rete (se ne utilizzi uno tuo) |  
+|===
+
+
+== Scegli una velocità di scrittura
+
+La console consente di scegliere un'impostazione della velocità di scrittura per Cloud Volumes ONTAP.  Prima di scegliere una velocità di scrittura, è necessario comprendere le differenze tra le impostazioni normale e alta, nonché i rischi e i consigli relativi all'utilizzo di una velocità di scrittura elevata. link:concept-write-speed.html["Scopri di più sulla velocità di scrittura"] .
+
+
+
+== Scegli un profilo di utilizzo del volume
+
+ONTAP include diverse funzionalità di efficienza di archiviazione che possono ridurre la quantità totale di spazio di archiviazione necessario.  Quando si crea un volume nella Console, è possibile scegliere un profilo che abiliti queste funzionalità oppure un profilo che le disabiliti.  Dovresti saperne di più su queste funzionalità per decidere quale profilo utilizzare.
+
+Le funzionalità di efficienza dello storage NetApp offrono i seguenti vantaggi:
+
+Provisioning sottile:: Offre agli host o agli utenti più spazio di archiviazione logica di quello effettivamente disponibile nel pool di archiviazione fisico.  Invece di preallocare lo spazio di archiviazione, lo spazio di archiviazione viene allocato dinamicamente a ciascun volume man mano che i dati vengono scritti.
+Deduplicazione:: Migliora l'efficienza individuando blocchi di dati identici e sostituendoli con riferimenti a un singolo blocco condiviso.  Questa tecnica riduce i requisiti di capacità di archiviazione eliminando i blocchi ridondanti di dati che risiedono nello stesso volume.
+Compressione:: Riduce la capacità fisica necessaria per archiviare i dati comprimendoli all'interno di un volume su storage primario, secondario e di archivio.
+

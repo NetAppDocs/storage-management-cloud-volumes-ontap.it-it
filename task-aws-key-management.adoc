@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: task-aws-key-management.html 
+keywords: aws, amazon, encryption, NVE, NetApp volume encryption, KMIP, kms, key manager service 
+summary: Utilizza il servizio di gestione delle chiavi di AWS per il tuo servizio di gestione delle chiavi di terze parti. 
+---
+= Gestisci le chiavi di crittografia Cloud Volumes ONTAP con AWS Key Management Service
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puoi usarelink:https://docs.aws.amazon.com/kms/latest/developerguide/overview.html["Servizio di gestione delle chiavi (KMS) di AWS"^] per proteggere le chiavi di crittografia ONTAP in un'applicazione distribuita su AWS.
+
+La gestione delle chiavi con AWS KMS può essere abilitata tramite la CLI o l'API REST ONTAP .
+
+Quando si utilizza il KMS, tenere presente che per impostazione predefinita viene utilizzato il LIF di un SVM di dati per comunicare con l'endpoint di gestione delle chiavi cloud.  Per comunicare con i servizi di autenticazione di AWS viene utilizzata una rete di gestione dei nodi.  Se la rete del cluster non è configurata correttamente, il cluster non utilizzerà correttamente il servizio di gestione delle chiavi.
+
+.Prima di iniziare
+* Cloud Volumes ONTAP deve eseguire la versione 9.12.0 o successiva
+* È necessario aver installato la licenza Volume Encryption (VE) e
+* È necessario aver installato la licenza Multi-tenant Encryption Key Management (MTEKM).
+* Devi essere un amministratore del cluster o SVM
+* Devi avere un abbonamento AWS attivo
+
+
+
+NOTE: È possibile configurare le chiavi solo per una SVM dati.
+
+
+
+== Configurazione
+
+.AWS
+. Devi creare unlink:https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant["concessione"^] per la chiave AWS KMS che verrà utilizzata dal ruolo IAM che gestisce la crittografia.  Il ruolo IAM deve includere una policy che consenta le seguenti operazioni:
++
+** `DescribeKey`
+** `Encrypt`
+** `Decrypt`Per creare una sovvenzione, fare riferimento alink:https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html["Documentazione AWS"^] .
+
+
+. link:https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html["Aggiungere un criterio al ruolo IAM appropriato."^]La politica dovrebbe sostenere l' `DescribeKey` , `Encrypt` , E `Decrypt` operazioni.
+
+
+.Cloud Volumes ONTAP
+. Passa al tuo ambiente Cloud Volumes ONTAP .
+. Passa al livello di privilegio avanzato:
+`set -privilege advanced`
+. Abilitare il gestore delle chiavi AWS:
+`security key-manager external aws enable -vserver _data_svm_name_ -region _AWS_region_ -key-id _key_ID_ -encryption-context _encryption_context_`
+. Quando richiesto, immettere la chiave segreta.
+. Verifica che AWS KMS sia stato configurato correttamente:
+`security key-manager external aws show -vserver _svm_name_`
+

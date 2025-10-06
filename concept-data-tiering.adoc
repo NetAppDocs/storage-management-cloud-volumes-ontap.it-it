@@ -1,0 +1,220 @@
+---
+sidebar: sidebar 
+permalink: concept-data-tiering.html 
+keywords: storage tiering, tier, tiering, data tiering, s3, s3 tiering, capacity, performance, s3 endpoint, fabric pool, fabricpool, s3 bucket, requirement, vpc endpoint, policy, policies, tiering policies, auto, snapshot only, backup, none, cooling period, volume tiering policies, blob, standard, infrequent access, hot, cool, tiering level, storage tier, storage class 
+summary: Riduci i costi di archiviazione abilitando la suddivisione automatica dei dati inattivi in un archivio di oggetti a basso costo. 
+---
+= Scopri di più sulla suddivisione in livelli dei dati con Cloud Volumes ONTAP in AWS, Azure o Google Cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Riduci i costi di archiviazione abilitando la suddivisione automatica dei dati inattivi in un archivio di oggetti a basso costo.  I dati attivi rimangono negli SSD o HDD ad alte prestazioni, mentre i dati inattivi vengono archiviati in sistemi di archiviazione a oggetti a basso costo.  Ciò consente di recuperare spazio sullo storage primario e di ridurre lo storage secondario.
+
+image:diagram_data_tiering.png["Questa è un'immagine concettuale che mostra i dati attivi che vanno allo storage EBS e i dati inattivi che vanno allo storage S3."]
+
+La suddivisione in livelli dei dati è basata sulla tecnologia FabricPool .  Cloud Volumes ONTAP fornisce livelli di dati per tutti i cluster Cloud Volumes ONTAP senza una licenza aggiuntiva.  Quando si abilita il tiering dei dati, i dati suddivisi in livelli per l'archiviazione degli oggetti comportano dei costi.  Per maggiori dettagli sui costi di archiviazione degli oggetti, consulta la documentazione del tuo provider cloud.
+
+ifdef::aws[]
+
+
+
+== Livelli di dati in AWS
+
+Quando si abilita la suddivisione in livelli dei dati in AWS, Cloud Volumes ONTAP utilizza EBS come livello di prestazioni per i dati attivi e AWS S3 come livello di capacità per i dati inattivi.
+
+Livello di prestazione:: Il livello di prestazioni può essere costituito da SSD per uso generico (gp3 o gp2) o SSD Provisioned IOPS (io1).
++
+--
+Si sconsiglia di suddividere i dati in livelli per l'archiviazione di oggetti quando si utilizzano HDD Throughput Optimized (st1).
+
+--
+Livello di capacità:: Un sistema Cloud Volumes ONTAP suddivide i dati inattivi in ​​un singolo bucket S3.
++
+--
+La console NetApp crea un singolo bucket S3 per ciascun sistema e lo denomina fabric-pool-_cluster unique identifier_.  Non viene creato un bucket S3 diverso per ogni volume.
+
+Quando la Console crea il bucket S3, utilizza le seguenti impostazioni predefinite:
+
+* Classe di stoccaggio: Standard
+* Crittografia predefinita: disabilitata
+* Blocca l'accesso pubblico: blocca tutto l'accesso pubblico
+* Proprietà dell'oggetto: ACL abilitati
+* Versionamento del bucket: disabilitato
+* Blocco oggetto: disabilitato
+
+
+--
+Classi di archiviazione:: La classe di archiviazione predefinita per i dati a livelli in AWS è _Standard_.  Standard è ideale per i dati a cui si accede frequentemente e che sono archiviati in più zone di disponibilità.
++
+--
+Se non si prevede di accedere ai dati inattivi, è possibile ridurre i costi di archiviazione modificando la classe di archiviazione in una delle seguenti: _Intelligent Tiering_, _One-Zone Infrequent Access_, _Standard-Infrequent Access_ o _S3 Glacier Instant Retrieval_.  Quando si modifica la classe di archiviazione, i dati inattivi iniziano nella classe di archiviazione Standard e passano alla classe di archiviazione selezionata, se non si accede ai dati dopo 30 giorni.
+
+I costi di accesso sono più elevati se si accede ai dati, quindi è opportuno tenerne conto prima di modificare la classe di archiviazione. https://aws.amazon.com/s3/storage-classes["Documentazione di Amazon S3: Scopri di più sulle classi di archiviazione di Amazon S3"^] .
+
+È possibile selezionare una classe di archiviazione quando si crea il sistema e modificarla in qualsiasi momento successivo.  Per istruzioni sulla modifica della classe di archiviazione, fare riferimento alink:task-tiering.html["Suddividi i dati inattivi in un archivio di oggetti a basso costo"] .
+
+La classe di archiviazione per la suddivisione in livelli dei dati è a livello di sistema e non per volume.
+
+--
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+
+
+== Livelli di dati in Azure
+
+Quando si abilita la suddivisione in livelli dei dati in Azure, Cloud Volumes ONTAP utilizza i dischi gestiti di Azure come livello di prestazioni per i dati attivi e l'archiviazione BLOB di Azure come livello di capacità per i dati inattivi.
+
+Livello di prestazione:: Il livello di prestazioni può essere costituito da SSD o HDD.
+Livello di capacità:: Un sistema Cloud Volumes ONTAP suddivide i dati inattivi in ​​livelli in un singolo contenitore BLOB.
++
+--
+La console crea un nuovo account di archiviazione con un contenitore per ogni sistema Cloud Volumes ONTAP .  Il nome dell'account di archiviazione è casuale.  Non viene creato un contenitore diverso per ogni volume.
+
+La console crea l'account di archiviazione con le seguenti impostazioni:
+
+* Livello di accesso: Caldo
+* Prestazioni: Standard
+* Ridondanza: in base alla distribuzione di Cloud Volume ONTAP
++
+** Zona di disponibilità singola: archiviazione ridondante locale (LRS)
+** Zona di disponibilità multipla: archiviazione con ridondanza di zona (ZRS)
+
+
+* Account: StorageV2 (uso generale v2)
+* Richiedi trasferimento sicuro per le operazioni API REST: abilitato
+* Accesso alla chiave dell'account di archiviazione: abilitato
+* Versione TLS minima: versione 1.2
+* Crittografia dell'infrastruttura: disabilitata
+
+
+--
+Livelli di accesso all'archiviazione:: Il livello di accesso all'archiviazione predefinito per i dati a livelli in Azure è il livello _hot_.  Il livello caldo è ideale per i dati a cui si accede frequentemente nel livello di capacità.
++
+--
+Se non si prevede di accedere ai dati inattivi nel livello di capacità, è possibile scegliere il livello di archiviazione _cool_, in cui i dati inattivi vengono conservati per un minimo di 30 giorni.  È anche possibile optare per il livello _cold_, in cui i dati inattivi vengono archiviati per un minimo di 90 giorni.  In base alle tue esigenze di archiviazione e alle considerazioni sui costi, puoi selezionare il livello più adatto alle tue esigenze.  Quando si modifica il livello di archiviazione in _cool_ o _cold_, i dati del livello di capacità inattivo vengono spostati direttamente nel livello di archiviazione cool o cold.  I livelli cool e cold offrono costi di archiviazione inferiori rispetto al livello hot, ma comportano costi di accesso più elevati, quindi tienilo in considerazione prima di cambiare livello di archiviazione. Fare riferimento a https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers["Documentazione di Microsoft Azure: Scopri di più sui livelli di accesso all'archiviazione BLOB di Azure"^] .
+
+È possibile selezionare un livello di archiviazione quando si aggiunge un sistema Cloud Volumes ONTAP e modificarlo in qualsiasi momento successivo.  Per i dettagli sulla modifica del livello di archiviazione, fare riferimento alink:task-tiering.html["Suddividi i dati inattivi in un archivio di oggetti a basso costo"] .
+
+Il livello di accesso all'archiviazione per la suddivisione in livelli dei dati è a livello di sistema e non per volume.
+
+--
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+
+
+== Livelli dei dati in Google Cloud
+
+Quando si abilita la suddivisione in livelli dei dati in Google Cloud, Cloud Volumes ONTAP utilizza dischi persistenti come livello di prestazioni per i dati attivi e un bucket Google Cloud Storage come livello di capacità per i dati inattivi.
+
+Livello di prestazione:: Il livello di prestazioni può essere costituito da dischi persistenti SSD, dischi persistenti bilanciati o dischi persistenti standard.
+Livello di capacità:: Un sistema Cloud Volumes ONTAP suddivide i dati inattivi in ​​un singolo bucket di Google Cloud Storage.
++
+--
+La console crea un bucket per ciascun sistema e lo denomina fabric-pool-_cluster unique identifier_.  Non viene creato un bucket diverso per ogni volume.
+
+Quando la Console crea il bucket, utilizza le seguenti impostazioni predefinite:
+
+* Tipo di posizione: Regione
+* Classe di stoccaggio: Standard
+* Accesso pubblico: soggetto agli ACL degli oggetti
+* Controllo degli accessi: a grana fine
+* Protezione: Nessuna
+* Crittografia dei dati: chiave gestita da Google
+
+
+--
+Classi di archiviazione:: La classe di archiviazione predefinita per i dati a livelli è la classe _Standard Storage_.  Se l'accesso ai dati avviene raramente, è possibile ridurre i costi di archiviazione passando a _Nearline Storage_ o _Coldline Storage_.  Quando si modifica la classe di archiviazione, i dati inattivi successivi vengono spostati direttamente nella classe selezionata.
++
+--
+
+NOTE: Tutti i dati inattivi esistenti manterranno la classe di archiviazione predefinita quando si modifica la classe di archiviazione.  Per modificare la classe di archiviazione per i dati inattivi esistenti, è necessario eseguire la designazione manualmente.
+
+I costi di accesso sono più elevati se si accede ai dati, quindi è opportuno tenerne conto prima di modificare la classe di archiviazione.  Per saperne di più, fare riferimento al https://cloud.google.com/storage/docs/storage-classes["Documentazione di Google Cloud: Classi di archiviazione"^] .
+
+È possibile selezionare un livello di archiviazione quando si crea il sistema e modificarlo in qualsiasi momento successivo.  Per i dettagli sulla modifica della classe di archiviazione, fare riferimento alink:task-tiering.html["Suddividi i dati inattivi in un archivio di oggetti a basso costo"] .
+
+La classe di archiviazione per la suddivisione in livelli dei dati è a livello di sistema e non per volume.
+
+--
+
+
+endif::gcp[]
+
+
+
+== Livelli di dati e limiti di capacità
+
+Se si abilita la suddivisione in livelli dei dati, il limite di capacità del sistema rimane invariato.  Il limite è suddiviso tra il livello di prestazioni e il livello di capacità.
+
+
+
+== Criteri di suddivisione in livelli del volume
+
+Per abilitare la suddivisione in livelli dei dati, è necessario selezionare un criterio di suddivisione in livelli del volume quando si crea, si modifica o si replica un volume.  È possibile selezionare una policy diversa per ogni volume.
+
+Alcune policy di suddivisione in livelli prevedono un periodo di raffreddamento minimo associato, che stabilisce il tempo per cui i dati utente in un volume devono rimanere inattivi affinché vengano considerati "freddi" e spostati nel livello di capacità.  Il periodo di raffreddamento inizia quando i dati vengono scritti nell'aggregato.
+
+
+TIP: È possibile modificare il periodo minimo di raffreddamento e la soglia aggregata predefinita del 50% (maggiori dettagli di seguito). http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-AD522711-01F9-4413-A254-929EAE871EBF.html["Scopri come modificare il periodo di raffreddamento"^] E http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-8FC4BFD5-F258-4AA6-9FCB-663D42D92CAA.html["impara come cambiare la soglia"^] .
+
+La Console consente di scegliere tra i seguenti criteri di suddivisione in livelli del volume quando si crea o si modifica un volume:
+
+Solo istantanea:: Dopo che un aggregato ha raggiunto il 50% della capacità, Cloud Volumes ONTAP suddivide i dati utente inattivi delle copie Snapshot non associate al file system attivo nel livello di capacità.  Il periodo di raffreddamento è di circa 2 giorni.
++
+--
+Se letti, i blocchi di dati freddi sul livello di capacità diventano caldi e vengono spostati sul livello di prestazioni.
+
+--
+Tutto:: Tutti i dati (esclusi i metadati) vengono immediatamente contrassegnati come cold e trasferiti nell'archiviazione degli oggetti il prima possibile. Non è necessario attendere 48 ore affinché i nuovi blocchi di un volume si raffreddino. Si noti che i blocchi presenti nel volume prima dell'impostazione del criterio All richiedono 48 ore per raffreddarsi.
++
+--
+Se letti, i blocchi di dati freddi sul livello cloud restano freddi e non vengono riscritti sul livello delle prestazioni. Questa policy è disponibile a partire da ONTAP 9.6.
+
+--
+Auto:: Dopo che un aggregato ha raggiunto il 50% della capacità, Cloud Volumes ONTAP suddivide i blocchi di dati freddi in un volume in un livello di capacità.  I dati freddi includono non solo le copie Snapshot, ma anche i dati utente freddi provenienti dal file system attivo.  Il periodo di raffreddamento è di circa 31 giorni.
++
+--
+Questa policy è supportata a partire da Cloud Volumes ONTAP 9.4.
+
+Se letti tramite letture casuali, i blocchi di dati freddi nel livello di capacità diventano caldi e passano al livello di prestazioni.  Se letti tramite letture sequenziali, come quelle associate alle scansioni di indici e antivirus, i blocchi di dati freddi rimangono freddi e non passano al livello di prestazioni.
+
+--
+Nessuno:: Mantiene i dati di un volume nel livello delle prestazioni, impedendone lo spostamento nel livello della capacità.
+
+
+Quando si replica un volume, è possibile scegliere se suddividere i dati in livelli di archiviazione degli oggetti.  In tal caso, la Console applica il criterio *Backup* al volume di protezione dei dati.  A partire da Cloud Volumes ONTAP 9.6, la policy di tiering *All* sostituisce la policy di backup.
+
+
+
+=== La disattivazione di Cloud Volumes ONTAP influisce sul periodo di raffreddamento
+
+I blocchi di dati vengono raffreddati tramite scansioni di raffreddamento.  Durante questo processo, la temperatura dei blocchi non utilizzati viene spostata (raffreddata) al valore immediatamente inferiore.  Il tempo di raffreddamento predefinito dipende dalla politica di suddivisione in livelli del volume:
+
+* Auto: 31 giorni
+* Solo snapshot: 2 giorni
+
+
+Per far funzionare la scansione di raffreddamento, è necessario che Cloud Volumes ONTAP sia in esecuzione.  Se Cloud Volumes ONTAP è disattivato, anche il raffreddamento verrà interrotto.  Di conseguenza, è possibile ottenere tempi di raffreddamento più lunghi.
+
+
+TIP: Quando Cloud Volumes ONTAP è disattivato, la temperatura di ciascun blocco viene mantenuta fino al riavvio del sistema.  Ad esempio, se la temperatura di un blocco è 5 quando si spegne il sistema, la temperatura sarà ancora 5 quando si riaccende il sistema.
+
+
+
+== Impostazione della suddivisione in livelli dei dati
+
+Per istruzioni e un elenco delle configurazioni supportate, fare riferimento alink:task-tiering.html["Suddividi i dati inattivi in un archivio di oggetti a basso costo"] .

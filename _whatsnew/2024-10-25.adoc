@@ -1,0 +1,22 @@
+= Elenco delle VM supportate aggiornato per Google Cloud per allinearlo alle best practice
+:allow-uri-read: 
+
+
+
+
+=== Elenco delle VM supportate aggiornato per Google Cloud per allinearlo alle best practice
+
+Le macchine della serie n1 non sono più disponibili per la selezione su BlueXP quando si distribuiscono nuove istanze di Cloud Volumes ONTAP in Google Cloud. Le macchine della serie n1 saranno mantenute e supportate solo nei sistemi più vecchi ed esistenti. Le nuove distribuzioni di Cloud Volumes ONTAP sono supportate in Google Cloud solo a partire dalla versione 9.8.  Ti consigliamo di passare ai tipi di macchine della serie n2 compatibili con Cloud Volumes ONTAP 9.8 e versioni successive. Le macchine della serie n1, tuttavia, saranno disponibili per nuove distribuzioni eseguite tramite API.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Configurazioni supportate in Google Cloud"^] .
+
+
+
+=== Supporto delle zone locali per Amazon Web Services in modalità privata
+
+BlueXP ora supporta le distribuzioni ad alta disponibilità (HA) di AWS Local Zones for Cloud Volumes ONTAP in modalità privata.  Il supporto che in precedenza era limitato alla sola modalità standard è stato ora esteso per includere la modalità privata.
+
+
+NOTE: Le zone locali AWS non sono supportate quando si utilizza BlueXP in modalità limitata.
+
+Per ulteriori informazioni sulle zone locali AWS con distribuzioni HA, fare riferimento alink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html#aws-local-zones["Zone locali AWS"^] .

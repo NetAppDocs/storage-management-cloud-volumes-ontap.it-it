@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: concept-azure-mktplace-direct.html 
+keywords: azure marketplace direct, cvo in azure marketplace 
+summary:  
+---
+= Scopri le opzioni di distribuzione di Cloud Volumes ONTAP in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp offre due opzioni per distribuire Cloud Volumes ONTAP su Azure.  Cloud Volumes ONTAP si affida tradizionalmente alla console NetApp per la distribuzione e l'orchestrazione.  A partire da Cloud Volumes ONTAP 9.16.1, puoi sfruttare la distribuzione diretta di Azure Marketplace, un processo semplificato che fornisce accesso a un set limitato, ma comunque potente, di funzionalità e opzioni di Cloud Volumes ONTAP .
+
+Quando distribuisci Cloud Volumes ONTAP direttamente da Azure Marketplace, non è necessario configurare l'agente della console o soddisfare altri criteri di sicurezza e onboarding richiesti per distribuire Cloud Volumes ONTAP tramite la console.  Dall'Azure Marketplace puoi distribuire rapidamente Cloud Volumes ONTAP in pochi clic ed esplorare le sue funzionalità e capacità principali nel tuo ambiente.
+
+Una volta completata la distribuzione in Azure Marketplace, è possibile individuare questi sistemi nella Console.  Dopo l'individuazione, è possibile gestirli come sistemi Cloud Volumes ONTAP e sfruttare tutte le funzionalità della Console. Fare riferimento a link:task-deploy-cvo-azure-mktplc.html["Scopri i sistemi distribuiti nella Console"] .
+
+Ecco il confronto delle funzionalità tra le due opzioni.  Si noti che le funzionalità di un'istanza autonoma distribuita tramite Azure Marketplace cambiano quando viene rilevata nella Console.
+
+[cols="3*"]
+|===
+|  | Mercato di Azure | Console NetApp 
+
+
+| *Integrazione* | Più breve e più semplice, minima preparazione richiesta per l'impiego diretto | Processo di onboarding più lungo, inclusa l'installazione dell'agente della console 
+
+
+| *Tipi di macchine virtuali (VM) supportati*  a| 
+Tipi di istanza Eds_v5 e Ls_v3
+| Gamma completa di tipi di VM.https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Configurazioni supportate in Azure"^] 
+
+
+| *Licenza* | Licenza gratuita | Qualsiasi licenza basata sulla capacità.link:concept-licensing.html["Licenza Cloud Volumes ONTAP"] 
+
+
+| * Supporto NetApp * | Non incluso | Disponibile, in base al tipo di licenza 
+
+
+| *Capacità* | Fino a 500 GiB | Espandibile tramite configurazione 
+
+
+| *Modello di distribuzione* | Distribuzione in modalità ad alta disponibilità (HA) in una singola zona di disponibilità (AZ) | Tutte le configurazioni supportate, comprese le modalità a nodo singolo e HA, le distribuzioni AZ singole e multiple 
+
+
+| *Tipo di disco supportato* | Dischi gestiti Premium SSD v2 | Supporto più ampio.link:concept-storage.html#azure-storage["Configurazione predefinita per Cloud Volumes ONTAP"] 
+
+
+| *Velocità di scrittura (modalità di scrittura veloce)* | Non supportato | Supportato, in base alla configurazione. link:concept-write-speed.html["Scopri di più sulle velocità di scrittura in Cloud Volumes ONTAP"] . 
+
+
+| *Capacità di orchestrazione* | Non disponibile | Disponibile tramite NetApp Console, in base al tipo di licenza 
+
+
+| *Numero di VM di archiviazione supportate* | Uno per distribuzione | Più VM di archiviazione, in base alla configurazione.link:task-managing-svms-azure.html#supported-number-of-storage-vms["Numero supportato di VM di archiviazione"] 
+
+
+| *Modifica del tipo di istanza* | Non supportato | Supportato 
+
+
+| * Livelli FabricPool * | Non supportato | Supportato 
+|===
+.Link correlati
+* Distribuzione diretta di Azure Marketplace:link:task-deploy-cvo-azure-mktplc.html["Distribuisci Cloud Volumes ONTAP dal marketplace di Azure"]
+* Distribuzione tramite la console:link:task-getting-started-azure.html["Avvio rapido per Cloud Volumes ONTAP in Azure"]
+* https://docs.netapp.com/us-en/bluexp-family/index.html["Documentazione della console NetApp"^]
+

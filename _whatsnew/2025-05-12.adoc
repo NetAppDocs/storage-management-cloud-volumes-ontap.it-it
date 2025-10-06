@@ -1,0 +1,11 @@
+= Individuazione delle distribuzioni effettuate tramite Azure Marketplace in BlueXP
+:allow-uri-read: 
+
+
+
+
+=== Individuazione delle distribuzioni effettuate tramite Azure Marketplace in BlueXP
+
+BlueXP è ora in grado di individuare i sistemi Cloud Volumes ONTAP distribuiti direttamente tramite Azure Marketplace.  Ciò significa che ora è possibile aggiungere e gestire questi sistemi come ambienti di lavoro in BlueXP, proprio come qualsiasi altro sistema Cloud Volumes ONTAP .
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploy-cvo-azure-mktplc.html["Distribuisci Cloud Volumes ONTAP dal marketplace di Azure"^]

@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: concept-degraded-ha-pair.html 
+keywords: storage takeover, storage giveback, degraded, degraded status, degraded state, ha pair, ha takeover, takeover, giveback 
+summary: 'Quando un nodo in una coppia HA non è disponibile, l"altro nodo fornisce dati al partner per garantire un servizio dati continuo.  Questo fenomeno è chiamato "acquisizione dello storage".  Diverse azioni non saranno disponibili finché non sarà completata la restituzione in magazzino.' 
+---
+= Operazioni non disponibili quando un nodo nella coppia Cloud Volumes ONTAP HA è offline
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Quando un nodo in una coppia HA non è disponibile, l'altro nodo fornisce dati al partner per garantire un servizio dati continuo.  Questo fenomeno è chiamato _acquisizione dello storage_.  Diverse azioni non saranno disponibili finché non sarà completata la restituzione in magazzino.
+
+
+TIP: Quando un nodo in una coppia HA non è disponibile, lo stato del sistema nella console NetApp è _Degradato_.
+
+Le seguenti azioni non sono disponibili durante l'acquisizione dello storage:
+
+* Registrazione del supporto
+* Modifiche alla licenza
+* Modifiche al tipo di istanza o VM
+* Cambiamenti nella velocità di scrittura
+* Configurazione CIFS
+* Modifica della posizione dei backup di configurazione
+* Impostazione della password del cluster
+* Gestione di dischi e aggregati (allocazione avanzata)
+
+
+Queste azioni saranno nuovamente disponibili una volta completata la restituzione dello spazio di archiviazione e quando lo stato del sistema tornerà alla normalità.
