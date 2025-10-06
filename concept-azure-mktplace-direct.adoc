@@ -14,7 +14,7 @@ summary:
 
 
 [role="lead"]
-NetApp offre due opzioni per distribuire Cloud Volumes ONTAP su Azure.  Cloud Volumes ONTAP si affida tradizionalmente alla console NetApp per la distribuzione e l'orchestrazione.  A partire da Cloud Volumes ONTAP 9.16.1, puoi sfruttare la distribuzione diretta di Azure Marketplace, un processo semplificato che fornisce accesso a un set limitato, ma comunque potente, di funzionalità e opzioni di Cloud Volumes ONTAP .
+NetApp offre due opzioni per distribuire Cloud Volumes ONTAP su Azure.  Cloud Volumes ONTAP si affida tradizionalmente alla NetApp Console per la distribuzione e l'orchestrazione.  A partire da Cloud Volumes ONTAP 9.16.1, puoi sfruttare la distribuzione diretta di Azure Marketplace, un processo semplificato che fornisce accesso a un set limitato, ma comunque potente, di funzionalità e opzioni di Cloud Volumes ONTAP .
 
 Quando distribuisci Cloud Volumes ONTAP direttamente da Azure Marketplace, non è necessario configurare l'agente della console o soddisfare altri criteri di sicurezza e onboarding richiesti per distribuire Cloud Volumes ONTAP tramite la console.  Dall'Azure Marketplace puoi distribuire rapidamente Cloud Volumes ONTAP in pochi clic ed esplorare le sue funzionalità e capacità principali nel tuo ambiente.
 
@@ -24,7 +24,7 @@ Ecco il confronto delle funzionalità tra le due opzioni.  Si noti che le funzio
 
 [cols="3*"]
 |===
-|  | Mercato di Azure | Console NetApp 
+|  | Mercato di Azure | NetApp Console 
 
 
 | *Integrazione* | Più breve e più semplice, minima preparazione richiesta per l'impiego diretto | Processo di onboarding più lungo, inclusa l'installazione dell'agente della console 
@@ -67,5 +67,5 @@ Tipi di istanza Eds_v5 e Ls_v3
 .Link correlati
 * Distribuzione diretta di Azure Marketplace:link:task-deploy-cvo-azure-mktplc.html["Distribuisci Cloud Volumes ONTAP dal marketplace di Azure"]
 * Distribuzione tramite la console:link:task-getting-started-azure.html["Avvio rapido per Cloud Volumes ONTAP in Azure"]
-* https://docs.netapp.com/us-en/bluexp-family/index.html["Documentazione della console NetApp"^]
+* https://docs.netapp.com/us-en/bluexp-family/index.html["Documentazione NetApp Console"^]
 

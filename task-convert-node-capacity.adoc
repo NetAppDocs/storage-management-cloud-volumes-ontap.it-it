@@ -14,9 +14,9 @@ summary: 'Dopo la fine della disponibilità (EOA) delle licenze basate sui nodi,
 
 
 [role="lead"]
-Dopo la fine della disponibilità (EOA) delle licenze basate sui nodi, è necessario passare alle licenze basate sulla capacità utilizzando lo strumento di conversione delle licenze nella console NetApp .
+Dopo la fine della disponibilità (EOA) delle licenze basate sui nodi, è necessario passare alle licenze basate sulla capacità utilizzando lo strumento di conversione delle licenze nella NetApp Console.
 
-Per impegni annuali o a lungo termine, NetApp consiglia di contattare il proprio rappresentante NetApp prima della data EOA (11 novembre 2024) o della data di scadenza della licenza per assicurarsi che siano soddisfatti i prerequisiti per la transizione.  Se non si dispone di un contratto a lungo termine per un nodo Cloud Volumes ONTAP e si esegue il sistema con un abbonamento on-demand pay-as-you-go (PAYGO), è importante pianificare la conversione prima della fine del supporto (EOS) il 31 dicembre 2024.  In entrambi i casi, è necessario assicurarsi che il sistema soddisfi i requisiti prima di utilizzare lo strumento di conversione delle licenze nella console NetApp per una transizione senza problemi.
+Per impegni annuali o a lungo termine, NetApp consiglia di contattare il proprio rappresentante NetApp prima della data EOA (11 novembre 2024) o della data di scadenza della licenza per assicurarsi che siano soddisfatti i prerequisiti per la transizione.  Se non si dispone di un contratto a lungo termine per un nodo Cloud Volumes ONTAP e si esegue il sistema con un abbonamento on-demand pay-as-you-go (PAYGO), è importante pianificare la conversione prima della fine del supporto (EOS) il 31 dicembre 2024.  In entrambi i casi, è necessario assicurarsi che il sistema soddisfi i requisiti prima di utilizzare lo strumento di conversione delle licenze nella NetApp Console per una transizione senza problemi.
 
 Per informazioni su EOA ed EOS, fare riferimento alink:concept-licensing.html#end-of-availability-of-node-based-licenses["Fine della disponibilità delle licenze basate sui nodi"] .
 
@@ -37,7 +37,7 @@ Per informazioni su EOA ed EOS, fare riferimento alink:concept-licensing.html#en
 * Il tuo account NSS deve essere registrato con le credenziali utente utilizzate per accedere alla Console.
 * Il sistema Cloud Volumes ONTAP deve essere collegato all'account NSS con accesso cliente o amministratore.
 * È necessario disporre di una licenza valida basata sulla capacità, ovvero una licenza BYOL o un abbonamento al marketplace.
-* Nel tuo account dovrebbe essere disponibile una licenza basata sulla capacità.  Questa licenza può essere un abbonamento al marketplace o un pacchetto di offerte BYOL/private disponibile in *Licenze e abbonamenti* nella Console.
+* Nel tuo account dovrebbe essere disponibile una licenza basata sulla capacità.  Questa licenza può essere un abbonamento al marketplace o un pacchetto di offerte BYOL/private disponibile in * Licenses and subscriptions* nella Console.
 * Prima di selezionare un pacchetto di destinazione, è necessario comprendere i seguenti criteri:
 +
 ** Se l'account dispone di una licenza BYOL basata sulla capacità, il pacchetto di destinazione selezionato deve essere allineato alle licenze BYOL basate sulla capacità dell'account:
@@ -78,13 +78,13 @@ TIP: L'icona è disabilitata se il sistema Cloud Volumes ONTAP è già caricato 
 
 
 .Dopo aver finito
-Visualizza il nuovo numero di serie della licenza e verifica le modifiche nel menu *Licenze e abbonamenti* della Console.
+Visualizza il nuovo numero di serie della licenza e verifica le modifiche nel menu * Licenses and subscriptions* della Console.
 
 
 
 == Prezzi in diversi iperscalari
 
-Per i dettagli sui prezzi, vai a https://bluexp.netapp.com/pricing/["Sito web della console NetApp"^] .
+Per i dettagli sui prezzi, vai a https://bluexp.netapp.com/pricing/["Sito web NetApp Console"^] .
 
 Per informazioni sulle offerte private in specifici iperscalari, scrivere a:
 

@@ -25,7 +25,7 @@ I dati Cloud Volumes ONTAP vengono crittografati automaticamente in Azure utiliz
 Se si desidera utilizzare una chiave gestita dal cliente con Cloud Volumes ONTAP, è necessario completare i seguenti passaggi:
 
 . Da Azure, crea un archivio chiavi e quindi genera una chiave in tale archivio.
-. Dalla console NetApp , utilizzare l'API per creare un sistema Cloud Volumes ONTAP che utilizzi la chiave.
+. Dalla NetApp Console, utilizzare l'API per creare un sistema Cloud Volumes ONTAP che utilizzi la chiave.
 
 
 

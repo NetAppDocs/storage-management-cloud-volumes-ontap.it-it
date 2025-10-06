@@ -88,7 +88,7 @@ Tipo di disco EBS:: A livello generale, le differenze tra i tipi di dischi EBS s
 --
 * I dischi _General Purpose SSD (gp3)_ sono gli SSD più economici che bilanciano costi e prestazioni per un'ampia gamma di carichi di lavoro.  Le prestazioni sono definite in termini di IOPS e throughput. I dischi gp3 sono supportati con Cloud Volumes ONTAP 9.7 e versioni successive.
 +
-Quando si seleziona un disco gp3, la console NetApp inserisce i valori IOPS e di throughput predefiniti che garantiscono prestazioni equivalenti a quelle di un disco gp2 in base alle dimensioni del disco selezionato. È possibile aumentare i valori per ottenere prestazioni migliori a un costo maggiore, ma non supportiamo valori inferiori perché potrebbero comportare prestazioni inferiori. In breve, mantenete i valori predefiniti oppure aumentateli. Non abbassarli. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#gp3-ebs-volume-type["Documentazione AWS: Scopri di più sui dischi gp3 e sulle loro prestazioni"^] .
+Quando si seleziona un disco gp3, la NetApp Console inserisce i valori IOPS e di throughput predefiniti che garantiscono prestazioni equivalenti a quelle di un disco gp2 in base alle dimensioni del disco selezionato. È possibile aumentare i valori per ottenere prestazioni migliori a un costo maggiore, ma non supportiamo valori inferiori perché potrebbero comportare prestazioni inferiori. In breve, mantenete i valori predefiniti oppure aumentateli. Non abbassarli. https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html#gp3-ebs-volume-type["Documentazione AWS: Scopri di più sui dischi gp3 e sulle loro prestazioni"^] .
 
 +
 Si noti che Cloud Volumes ONTAP supporta la funzionalità Amazon EBS Elastic Volumes con dischi gp3. link:concept-aws-elastic-volumes.html["Scopri di più sul supporto di Elastic Volumes"] .
@@ -139,7 +139,7 @@ TIP: L'agente Console richiede anche un disco di sistema. https://docs.netapp.co
 
 == Preparati a distribuire Cloud Volumes ONTAP in un AWS Outpost
 
-Se disponi di un AWS Outpost, puoi distribuire Cloud Volumes ONTAP in quell'Outpost selezionando l'Outpost VPC durante il processo di distribuzione. L'esperienza è la stessa di qualsiasi altra VPC residente in AWS. Tieni presente che dovrai prima distribuire un agente Console nel tuo AWS Outpost.
+Se disponi di un AWS Outpost, puoi distribuire Cloud Volumes ONTAP in quell'Outpost selezionando l'Outpost VPC durante il processo di distribuzione. L'esperienza è la stessa di qualsiasi altra VPC residente in AWS.  Tieni presente che dovrai prima distribuire un agente Console nel tuo AWS Outpost.
 
 Ci sono alcune limitazioni da sottolineare:
 

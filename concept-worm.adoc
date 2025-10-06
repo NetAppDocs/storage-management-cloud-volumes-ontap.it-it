@@ -40,7 +40,7 @@ A partire da Cloud Volumes ONTAP 9.10.1, è possibile abilitare o disabilitare W
 
 Quando si aggiunge un sistema Cloud Volumes ONTAP , viene richiesto di abilitare o disabilitare l'archiviazione WORM:
 
-* Se si abilita l'archiviazione WORM quando si aggiunge un sistema, ogni volume creato dalla console NetApp avrà WORM abilitato.  Ma è possibile utilizzare ONTAP System Manager o ONTAP CLI per creare volumi con WORM disabilitato.
+* Se si abilita l'archiviazione WORM quando si aggiunge un sistema, ogni volume creato dalla NetApp Console avrà WORM abilitato.  Ma è possibile utilizzare ONTAP System Manager o ONTAP CLI per creare volumi con WORM disabilitato.
 * Se si disabilita l'archiviazione WORM quando si aggiunge un sistema, in ogni volume creato dalla Console, da ONTAP System Manager o da ONTAP CLI la funzionalità WORM sarà disabilitata.
 
 

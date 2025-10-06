@@ -4,7 +4,7 @@ permalink: task-removing.html
 keywords: systems, removing, remove, rediscover 
 summary: È possibile rimuovere un sistema Cloud Volumes ONTAP per spostarlo su un altro sistema o per risolvere problemi di individuazione. 
 ---
-= Rimuovere un sistema Cloud Volumes ONTAP dalla console NetApp
+= Rimuovere un sistema Cloud Volumes ONTAP dalla NetApp Console
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -17,7 +17,7 @@ summary: È possibile rimuovere un sistema Cloud Volumes ONTAP per spostarlo su 
 È possibile rimuovere un sistema Cloud Volumes ONTAP per spostarlo su un altro sistema o per risolvere problemi di individuazione.
 
 .Informazioni su questo compito
-La rimozione di un sistema Cloud Volumes ONTAP lo rimuove dalla console NetApp .  Non elimina il sistema Cloud Volumes ONTAP .  Se necessario, potrai riscoprire il sistema in un secondo momento.
+La rimozione di un sistema Cloud Volumes ONTAP lo rimuove dalla NetApp Console.  Non elimina il sistema Cloud Volumes ONTAP .  Se necessario, potrai riscoprire il sistema in un secondo momento.
 
 .Passi
 . Nella pagina *Sistemi*, fare doppio clic sul sistema che si desidera rimuovere.

@@ -47,7 +47,7 @@ Per i dettagli, fare riferimento alink:reference-networking-aws.html["Requisiti 
 
 == Avvia un sistema Cloud Volumes ONTAP a nodo singolo in AWS
 
-Se si desidera avviare Cloud Volumes ONTAP in AWS, è necessario creare un nuovo sistema nella console NetApp .
+Se si desidera avviare Cloud Volumes ONTAP in AWS, è necessario creare un nuovo sistema nella NetApp Console.
 
 .Informazioni su questo compito
 Subito dopo aver creato il sistema, la Console avvia un'istanza di prova nella VPC specificata per verificare la connettività.  In caso di esito positivo, la Console termina immediatamente l'istanza e avvia la distribuzione del sistema Cloud Volumes ONTAP .  Se la connettività non può essere verificata, la creazione del sistema fallisce.  L'istanza di prova è una `t2.nano` (per la locazione VPC predefinita) o `m3.medium` (per tenancy VPC dedicata).
@@ -77,7 +77,7 @@ Alcuni campi di questa pagina sono autoesplicativi.  Nella tabella seguente veng
 | Nome utente e password | Queste sono le credenziali per l'account amministratore del cluster Cloud Volumes ONTAP .  È possibile utilizzare queste credenziali per connettersi a Cloud Volumes ONTAP tramite ONTAP System Manager o ONTAP CLI.  Mantenere il nome utente predefinito _admin_ oppure modificarlo con un nome utente personalizzato. 
 
 
-| Modifica credenziali | Seleziona le credenziali AWS associate all'account in cui desideri distribuire questo sistema.  È anche possibile associare l'abbonamento AWS Marketplace da utilizzare con questo sistema Cloud Volumes ONTAP . Fai clic su *Aggiungi abbonamento* per associare le credenziali selezionate a un nuovo abbonamento al marketplace AWS. L'abbonamento può essere stipulato con un contratto annuale o con il pagamento di Cloud Volumes ONTAP a tariffa oraria. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html["Scopri come aggiungere ulteriori credenziali AWS alla console NetApp"^] . 
+| Modifica credenziali | Seleziona le credenziali AWS associate all'account in cui desideri distribuire questo sistema.  È anche possibile associare l'abbonamento AWS Marketplace da utilizzare con questo sistema Cloud Volumes ONTAP . Fai clic su *Aggiungi abbonamento* per associare le credenziali selezionate a un nuovo abbonamento al marketplace AWS. L'abbonamento può essere stipulato con un contratto annuale o con il pagamento di Cloud Volumes ONTAP a tariffa oraria. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html["Scopri come aggiungere ulteriori credenziali AWS alla NetApp Console"^] . 
 |===
 +
 
@@ -85,7 +85,7 @@ TIP: Se più utenti IAM lavorano nello stesso account AWS, ogni utente deve abbo
 
 . *Servizi*: mantieni abilitati i servizi o disabilita i singoli servizi che non desideri utilizzare con Cloud Volumes ONTAP.
 +
-** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Scopri di più sulla classificazione dei dati NetApp"^]
+** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Scopri di più sulla NetApp Data Classification"^]
 ** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Scopri di più su NetApp Backup and Recovery"^]
 +
 
@@ -246,7 +246,7 @@ image:screenshot_cot_vol.gif["Screenshot: mostra la pagina Volume compilata per 
 | Dominio DNS | Dominio DNS per la macchina virtuale di archiviazione (SVM) Cloud Volumes ONTAP .  Nella maggior parte dei casi, il dominio è lo stesso del dominio AD. 
 
 
-| Server NTP | Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API. Fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione della console NetApp"^] per i dettagli.  Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS. 
+| Server NTP | Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API. Fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione NetApp Console"^] per i dettagli.  Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS. 
 |===
 . *Profilo di utilizzo, tipo di disco e criterio di suddivisione in livelli*: scegli se abilitare le funzionalità di efficienza dell'archiviazione e modificare il criterio di suddivisione in livelli del volume, se necessario.
 +
@@ -329,7 +329,7 @@ TIP: Se più utenti IAM lavorano nello stesso account AWS, ogni utente deve abbo
 
 . *Servizi*: mantieni abilitati i servizi o disabilita i singoli servizi che non desideri utilizzare con questo sistema Cloud Volumes ONTAP .
 +
-** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Scopri di più sulla classificazione dei dati NetApp"^]
+** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Scopri di più sulla NetApp Data Classification"^]
 ** https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Scopri di più su Backup e Ripristino"^]
 +
 
@@ -500,7 +500,7 @@ image:screenshot_cot_vol.gif["Screenshot: mostra la pagina Volume compilata per 
 | Dominio DNS | Dominio DNS per la macchina virtuale di archiviazione (SVM) Cloud Volumes ONTAP .  Nella maggior parte dei casi, il dominio è lo stesso del dominio AD. 
 
 
-| Server NTP | Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API. Fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione della console NetApp"^] per i dettagli.  Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS. 
+| Server NTP | Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API. Fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione NetApp Console"^] per i dettagli.  Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS. 
 |===
 . *Profilo di utilizzo, tipo di disco e criterio di suddivisione in livelli*: scegli se abilitare le funzionalità di efficienza dell'archiviazione e modificare il criterio di suddivisione in livelli del volume, se necessario.
 +

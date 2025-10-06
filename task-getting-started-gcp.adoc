@@ -21,7 +21,7 @@ Inizia a usare Cloud Volumes ONTAP in Google Cloud in pochi passaggi.
 Se non hai un https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Agente console"^] eppure devi crearne uno. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Scopri come creare un agente Console in Google Cloud"^]
 
 [role="quick-margin-para"]
-Tieni presente che se desideri distribuire Cloud Volumes ONTAP in una subnet in cui non è disponibile l'accesso a Internet, dovrai installare manualmente l'agente Console e accedere alla console NetApp in esecuzione su tale agente Console. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["Scopri come installare manualmente l'agente Console in una posizione senza accesso a Internet"^]
+Tieni presente che se desideri distribuire Cloud Volumes ONTAP in una subnet in cui non è disponibile l'accesso a Internet, dovrai installare manualmente l'agente Console e accedere alla NetApp Console in esecuzione su tale agente Console. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["Scopri come installare manualmente l'agente Console in una posizione senza accesso a Internet"^]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"]Pianifica la tua configurazione
 [role="quick-margin-para"]
@@ -47,7 +47,7 @@ link:reference-networking-gcp.html["Scopri di più sui requisiti di rete"] .
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quattro"]Configurare un account di servizio
 [role="quick-margin-para"]
-Cloud Volumes ONTAP richiede un account di servizio Google Cloud per due scopi.  Il primo è quando abilitilink:concept-data-tiering.html["livelli di dati"] per suddividere i dati inutilizzati in un archivio di oggetti a basso costo su Google Cloud.  Il secondo è quando si abilita il https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Backup e ripristino NetApp"^] per eseguire il backup di volumi su storage di oggetti a basso costo.
+Cloud Volumes ONTAP richiede un account di servizio Google Cloud per due scopi.  Il primo è quando abilitilink:concept-data-tiering.html["livelli di dati"] per suddividere i dati inutilizzati in un archivio di oggetti a basso costo su Google Cloud.  Il secondo è quando si abilita il https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery"^] per eseguire il backup di volumi su storage di oggetti a basso costo.
 
 [role="quick-margin-para"]
 È possibile configurare un account di servizio e utilizzarlo per entrambi gli scopi.  L'account di servizio deve avere il ruolo *Amministratore archiviazione*.

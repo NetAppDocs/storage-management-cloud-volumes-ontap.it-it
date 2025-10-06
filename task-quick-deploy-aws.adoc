@@ -17,7 +17,7 @@ summary: È possibile distribuire rapidamente le istanze Cloud Volumes ONTAP in 
 È possibile distribuire Cloud Volumes ONTAP in AWS utilizzando un metodo di distribuzione rapido sia per configurazioni a nodo singolo che ad alta disponibilità (HA).  Questo processo semplificato riduce i passaggi di distribuzione rispetto al metodo avanzato.  Offre inoltre maggiore chiarezza nel flusso di lavoro impostando automaticamente i valori predefiniti su una singola pagina e riducendo al minimo la navigazione.
 
 .Prima di iniziare
-Per aggiungere un sistema Cloud Volumes ONTAP in AWS dalla console NetApp , è necessario quanto segue.
+Per aggiungere un sistema Cloud Volumes ONTAP in AWS dalla NetApp Console, è necessario quanto segue.
 
 [[licensing]]
 * Un agente Console attivo e funzionante.
@@ -41,7 +41,7 @@ Per i dettagli, fare riferimento alink:reference-networking-aws.html["Requisiti 
 
 
 .Informazioni su questo compito
-Subito dopo aver creato il sistema Cloud Volumes ONTAP , la console NetApp avvia un'istanza di prova nella VPC specificata per verificare la connettività.  In caso di esito positivo, la Console termina immediatamente l'istanza e quindi avvia la distribuzione del sistema.  Se la console non riesce a verificare la connettività, la creazione del sistema fallisce.  L'istanza di prova è una `t2.nano` (per la locazione VPC predefinita) o un `m3.medium` (per tenancy VPC dedicata).
+Subito dopo aver creato il sistema Cloud Volumes ONTAP , la NetApp Console avvia un'istanza di prova nella VPC specificata per verificare la connettività.  In caso di esito positivo, la Console termina immediatamente l'istanza e quindi avvia la distribuzione del sistema.  Se la console non riesce a verificare la connettività, la creazione del sistema fallisce.  L'istanza di prova è una `t2.nano` (per la locazione VPC predefinita) o un `m3.medium` (per tenancy VPC dedicata).
 
 .Passi
 . Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.

@@ -18,7 +18,7 @@ Riduci i costi di archiviazione abilitando la suddivisione automatica dei dati i
 
 image:diagram_data_tiering.png["Questa è un'immagine concettuale che mostra i dati attivi che vanno allo storage EBS e i dati inattivi che vanno allo storage S3."]
 
-La suddivisione in livelli dei dati è basata sulla tecnologia FabricPool .  Cloud Volumes ONTAP fornisce livelli di dati per tutti i cluster Cloud Volumes ONTAP senza una licenza aggiuntiva.  Quando si abilita il tiering dei dati, i dati suddivisi in livelli per l'archiviazione degli oggetti comportano dei costi.  Per maggiori dettagli sui costi di archiviazione degli oggetti, consulta la documentazione del tuo provider cloud.
+La suddivisione in livelli dei dati è basata sulla tecnologia FabricPool .  Cloud Volumes ONTAP fornisce livelli di dati per tutti i cluster Cloud Volumes ONTAP senza una licenza aggiuntiva.  Quando si abilita il data tiering, i dati suddivisi in livelli per l'archiviazione degli oggetti comportano dei costi.  Per maggiori dettagli sui costi di archiviazione degli oggetti, consulta la documentazione del tuo provider cloud.
 
 ifdef::aws[]
 
@@ -37,7 +37,7 @@ Si sconsiglia di suddividere i dati in livelli per l'archiviazione di oggetti qu
 Livello di capacità:: Un sistema Cloud Volumes ONTAP suddivide i dati inattivi in ​​un singolo bucket S3.
 +
 --
-La console NetApp crea un singolo bucket S3 per ciascun sistema e lo denomina fabric-pool-_cluster unique identifier_.  Non viene creato un bucket S3 diverso per ogni volume.
+La NetApp Console crea un singolo bucket S3 per ciascun sistema e lo denomina fabric-pool-_cluster unique identifier_.  Non viene creato un bucket S3 diverso per ogni volume.
 
 Quando la Console crea il bucket S3, utilizza le seguenti impostazioni predefinite:
 
@@ -70,7 +70,7 @@ ifdef::azure[]
 
 
 
-== Livelli di dati in Azure
+== Livelli dei dati in Azure
 
 Quando si abilita la suddivisione in livelli dei dati in Azure, Cloud Volumes ONTAP utilizza i dischi gestiti di Azure come livello di prestazioni per i dati attivi e l'archiviazione BLOB di Azure come livello di capacità per i dati inattivi.
 
@@ -179,10 +179,10 @@ Solo istantanea:: Dopo che un aggregato ha raggiunto il 50% della capacità, Clo
 Se letti, i blocchi di dati freddi sul livello di capacità diventano caldi e vengono spostati sul livello di prestazioni.
 
 --
-Tutto:: Tutti i dati (esclusi i metadati) vengono immediatamente contrassegnati come cold e trasferiti nell'archiviazione degli oggetti il prima possibile. Non è necessario attendere 48 ore affinché i nuovi blocchi di un volume si raffreddino. Si noti che i blocchi presenti nel volume prima dell'impostazione del criterio All richiedono 48 ore per raffreddarsi.
+Tutto:: Tutti i dati (esclusi i metadati) vengono immediatamente contrassegnati come cold e trasferiti nell'archiviazione degli oggetti il prima possibile.  Non è necessario attendere 48 ore affinché i nuovi blocchi di un volume si raffreddino.  Si noti che i blocchi presenti nel volume prima dell'impostazione del criterio All richiedono 48 ore per raffreddarsi.
 +
 --
-Se letti, i blocchi di dati freddi sul livello cloud restano freddi e non vengono riscritti sul livello delle prestazioni. Questa policy è disponibile a partire da ONTAP 9.6.
+Se letti, i blocchi di dati freddi sul livello cloud restano freddi e non vengono riscritti sul livello delle prestazioni.  Questa policy è disponibile a partire da ONTAP 9.6.
 
 --
 Auto:: Dopo che un aggregato ha raggiunto il 50% della capacità, Cloud Volumes ONTAP suddivide i blocchi di dati freddi in un volume in un livello di capacità.  I dati freddi includono non solo le copie Snapshot, ma anche i dati utente freddi provenienti dal file system attivo.  Il periodo di raffreddamento è di circa 31 giorni.

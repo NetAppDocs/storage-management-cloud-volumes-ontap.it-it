@@ -43,7 +43,7 @@ image:screenshot-keystone-overview.png["Uno screenshot che mostra un elenco degl
 
 == Collega un abbonamento
 
-Dopo che NetApp avrà autorizzato il tuo account, potrai collegare gli abbonamenti Keystone per utilizzarli con Cloud Volumes ONTAP. Questa azione consente agli utenti di selezionare l'abbonamento come metodo di addebito per i nuovi sistemi Cloud Volumes ONTAP .
+Dopo che NetApp avrà autorizzato il tuo account, potrai collegare gli abbonamenti Keystone per utilizzarli con Cloud Volumes ONTAP.  Questa azione consente agli utenti di selezionare l'abbonamento come metodo di addebito per i nuovi sistemi Cloud Volumes ONTAP .
 
 .Passi
 . Dal menu di navigazione BlueXP , seleziona *Governance > Portafoglio digitale*.
@@ -89,7 +89,7 @@ https://docs.netapp.com/us-en/keystone-staas/integrations/aiq-keystone-details.h
 
 == Scollegare un abbonamento
 
-Se non desideri più utilizzare un abbonamento Keystone con BlueXP, puoi scollegarlo. Tieni presente che puoi scollegare solo un abbonamento che non è collegato a un abbonamento Cloud Volumes ONTAP esistente.
+Se non desideri più utilizzare un abbonamento Keystone con BlueXP, puoi scollegarlo.  Tieni presente che puoi scollegare solo un abbonamento che non è collegato a un abbonamento Cloud Volumes ONTAP esistente.
 
 .Passi
 . Dal menu di navigazione BlueXP , seleziona *Governance > Portafoglio digitale*.

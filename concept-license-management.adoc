@@ -74,6 +74,6 @@ Se la console non riesce ad accedere al file di licenza tramite la connessione I
 
 Una licenza BYOL basata su nodi è trasferibile tra sistemi Cloud Volumes ONTAP quando si elimina un sistema esistente e poi ne si crea uno nuovo utilizzando la stessa licenza.
 
-Ad esempio, potresti voler eliminare un sistema con licenza esistente e quindi utilizzare la licenza con un nuovo sistema BYOL in un VPC/VNet o provider cloud diverso.  Tieni presente che solo i numeri di serie _cloud-agnostic_ funzionano con qualsiasi provider cloud.  I numeri di serie indipendenti dal cloud iniziano con il prefisso _908xxxx_.
+Ad esempio, potresti voler eliminare un sistema con licenza esistente e quindi utilizzare la licenza con un nuovo sistema BYOL in un diverso provider VPC/VNet o cloud.  Tieni presente che solo i numeri di serie _cloud-agnostic_ funzionano con qualsiasi provider cloud.  I numeri di serie indipendenti dal cloud iniziano con il prefisso _908xxxx_.
 
 È importante notare che la licenza BYOL è legata alla tua azienda e a un set specifico di credenziali del sito di supporto NetApp .

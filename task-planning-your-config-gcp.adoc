@@ -76,7 +76,7 @@ Per maggiori dettagli fare riferimento al https://cloud.google.com/compute/docs/
 
 
 --
-Dimensione del disco GCP:: Quando si distribuisce un sistema Cloud Volumes ONTAP , è necessario scegliere una dimensione iniziale del disco.  Dopodiché puoi lasciare che la console NetApp gestisca la capacità di un sistema per te, ma se vuoi creare aggregati autonomamente, tieni presente quanto segue:
+Dimensione del disco GCP:: Quando si distribuisce un sistema Cloud Volumes ONTAP , è necessario scegliere una dimensione iniziale del disco.  Dopodiché puoi lasciare che la NetApp Console gestisca la capacità di un sistema per te, ma se vuoi creare aggregati autonomamente, tieni presente quanto segue:
 +
 --
 * Tutti i dischi di un aggregato devono avere le stesse dimensioni.

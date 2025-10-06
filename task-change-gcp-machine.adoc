@@ -31,7 +31,7 @@ Per le coppie HA, il cambiamento non è dirompente.  Le coppie HA continuano a f
 
 +
 
-TIP: La console NetApp modifica un nodo alla volta avviando l'acquisizione e attendendo la restituzione.  Il team di controllo qualità di NetApp ha testato sia la scrittura che la lettura dei file durante questo processo e non ha riscontrato alcun problema sul lato client.  Con la modifica delle connessioni, sono stati osservati alcuni nuovi tentativi a livello di I/O, ma il livello applicativo ha superato il ricollegamento delle connessioni NFS/CIFS.
+TIP: La NetApp Console modifica un nodo alla volta avviando l'acquisizione e attendendo la restituzione.  Il team di controllo qualità di NetApp ha testato sia la scrittura che la lettura dei file durante questo processo e non ha riscontrato alcun problema sul lato client.  Con la modifica delle connessioni, sono stati osservati alcuni nuovi tentativi a livello di I/O, ma il livello applicativo ha superato il ricollegamento delle connessioni NFS/CIFS.
 
 
 

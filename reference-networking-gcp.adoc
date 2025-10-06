@@ -14,7 +14,7 @@ summary: Configura la tua rete Google Cloud in modo che i sistemi Cloud Volumes 
 
 
 [role="lead"]
-La console NetApp gestisce la configurazione dei componenti di rete per Cloud Volumes ONTAP, come indirizzi IP, maschere di rete e percorsi.  È necessario assicurarsi che l'accesso a Internet in uscita sia disponibile, che siano disponibili sufficienti indirizzi IP privati, che siano attive le connessioni giuste e altro ancora.
+La NetApp Console gestisce la configurazione dei componenti di rete per Cloud Volumes ONTAP, come indirizzi IP, maschere di rete e percorsi.  È necessario assicurarsi che l'accesso a Internet in uscita sia disponibile, che siano disponibili sufficienti indirizzi IP privati, che siano attive le connessioni giuste e altro ancora.
 
 Se si desidera distribuire una coppia HA, è necessariolink:concept-ha-google-cloud.html["Scopri come funzionano le coppie HA in Google Cloud"] .
 
@@ -191,7 +191,7 @@ Per una coppia HA sono necessarie quattro VPC.  Ciascuna di queste VPC può esse
 
 Una VPC condivisa consente di configurare e gestire centralmente reti virtuali su più progetti.  È possibile configurare reti VPC condivise nel _progetto host_ e distribuire l'agente Console e le istanze della macchina virtuale Cloud Volumes ONTAP in un _progetto di servizio_.
 
-https://cloud.google.com/vpc/docs/shared-vpc["Documentazione di Google Cloud: Panoramica della VPC condivisa"^] .
+https://cloud.google.com/vpc/docs/shared-vpc["Documentazione di Google Cloud: panoramica della VPC condivisa"^] .
 
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Esaminare le autorizzazioni VPC condivise richieste trattate nella distribuzione dell'agente della console"^]
 
@@ -524,7 +524,7 @@ Se non hai ancora creato un agente Console, dovresti rivedere i requisiti di ret
 Per informazioni sulla configurazione dei server proxy per l'agente Console, fare riferimento a https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurare un agente Console per utilizzare un server proxy"^] .
 
 .Configurare i tag di rete per Cloud Volumes ONTAP in Google Cloud
-Durante la configurazione del proxy trasparente dell'agente Console, l'amministratore aggiunge un tag di rete per Google Cloud.  È necessario ottenere e aggiungere manualmente lo stesso tag di rete per la configurazione Cloud Volumes ONTAP .  Questo tag è necessario affinché il server proxy funzioni correttamente.
+Durante la configurazione del proxy trasparente dell'agente Console, l'amministratore aggiunge un tag di rete per Google Cloud.  È necessario ottenere e aggiungere manualmente lo stesso tag di rete per la configurazione Cloud Volumes ONTAP .  Questo tag è necessario per il corretto funzionamento del server proxy.
 
 . Nella console di Google Cloud, individua il tuo sistema Cloud Volumes ONTAP .
 . Vai a *Dettagli > Networking > Tag di rete*.

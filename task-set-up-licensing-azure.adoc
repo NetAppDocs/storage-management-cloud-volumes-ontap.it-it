@@ -23,7 +23,7 @@ Dopo aver deciso quale opzione di licenza utilizzare con Cloud Volumes ONTAP, so
 Seleziona l'offerta Freemium per utilizzare Cloud Volumes ONTAP gratuitamente con una capacità fornita fino a 500 GiB. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#packages["Scopri di più sull'offerta Freemium"^] .
 
 .Passi
-. Dal menu di navigazione a sinistra della console NetApp , selezionare *Storage > Gestione*.
+. Dal menu di navigazione a sinistra della NetApp Console, selezionare *Storage > Gestione*.
 . Nella pagina *Sistemi*, fare clic su *Aggiungi sistema* e seguire i passaggi.
 +
 .. Nella pagina *Dettagli e credenziali*, fare clic su *Modifica credenziali > Aggiungi sottoscrizione* e quindi seguire le istruzioni per sottoscrivere l'offerta con pagamento in base al consumo in Azure Marketplace.

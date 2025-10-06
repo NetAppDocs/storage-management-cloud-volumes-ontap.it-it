@@ -6,6 +6,6 @@
 
 === Creazione automatizzata di VM di archiviazione tramite le API in Azure
 
-Ora puoi usare le API BlueXP per creare, rinominare ed eliminare ulteriori VM di archiviazione dati per Cloud Volumes ONTAP in Azure.  L'utilizzo delle API automatizza il processo di creazione della VM di archiviazione, inclusa la configurazione delle interfacce di rete richieste, dei LIF e di un LIF di gestione, se è necessario utilizzare una VM di archiviazione per scopi di gestione.
+Ora puoi usare le API BlueXP per creare, rinominare ed eliminare VM di archiviazione dati aggiuntive per Cloud Volumes ONTAP in Azure.  L'utilizzo delle API automatizza il processo di creazione della VM di archiviazione, inclusa la configurazione delle interfacce di rete richieste, dei LIF e di un LIF di gestione, se è necessario utilizzare una VM di archiviazione per scopi di gestione.
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-azure.html["Gestisci le VM di archiviazione per il servizio dati per Cloud Volumes ONTAP in Azure"^]

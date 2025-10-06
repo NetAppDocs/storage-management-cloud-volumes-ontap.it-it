@@ -14,7 +14,7 @@ summary: NetApp Console consente di scegliere tra diverse versioni ONTAP quando 
 
 
 [role="lead"]
-La console NetApp consente di scegliere tra diverse versioni ONTAP quando si aggiunge un sistema Cloud Volumes ONTAP .
+La NetApp Console consente di scegliere tra diverse versioni ONTAP quando si aggiunge un sistema Cloud Volumes ONTAP .
 
 Le versioni Cloud Volumes ONTAP diverse da quelle elencate qui non sono disponibili per nuove distribuzioni.  Per informazioni sull'aggiornamento, fare riferimento alink:task-updating-ontap-cloud.html#supported-upgrade-paths["Percorsi di aggiornamento supportati"] .
 

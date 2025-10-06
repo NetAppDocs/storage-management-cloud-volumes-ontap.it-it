@@ -14,7 +14,7 @@ summary: La console offre una gestione semplificata e avanzata dello storage Clo
 
 
 [role="lead"]
-La console NetApp offre una gestione semplificata e avanzata dello storage Cloud Volumes ONTAP .
+La NetApp Console offre una gestione semplificata e avanzata dello storage Cloud Volumes ONTAP .
 
 
 CAUTION: È necessario creare ed eliminare tutti i dischi e gli aggregati direttamente dalla Console. Non dovresti eseguire queste azioni da un altro strumento di gestione. Ciò potrebbe compromettere la stabilità del sistema, ostacolare la possibilità di aggiungere dischi in futuro e potenzialmente generare commissioni ridondanti per il provider cloud.

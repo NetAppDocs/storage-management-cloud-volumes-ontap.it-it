@@ -30,7 +30,7 @@ image:diagram-aws-vpc-sharing.png["Immagine concettuale di una distribuzione Clo
 
 Come descritto nei passaggi seguenti, dovrai condividere le subnet con l'account del partecipante e quindi creare il ruolo IAM e il gruppo di sicurezza nell'account del proprietario della VPC.
 
-Quando si crea il sistema Cloud Volumes ONTAP , la console NetApp crea automaticamente e associa un ruolo IAM al mediatore.  Questo ruolo assume il ruolo IAM creato nell'account proprietario VPC per apportare modifiche alle tabelle di routing associate alla coppia HA.
+Quando si crea il sistema Cloud Volumes ONTAP , la NetApp Console crea automaticamente e associa un ruolo IAM al mediatore.  Questo ruolo assume il ruolo IAM creato nell'account proprietario VPC per apportare modifiche alle tabelle di routing associate alla coppia HA.
 
 .Passi
 . Condividere le subnet nell'account proprietario della VPC con l'account partecipante.

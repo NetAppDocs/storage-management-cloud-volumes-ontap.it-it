@@ -14,7 +14,7 @@ summary: Il supporto per la funzionalità Amazon EBS Elastic Volumes con un aggr
 
 
 [role="lead"]
-Il supporto per la funzionalità Amazon EBS Elastic Volumes con un aggregato Cloud Volumes ONTAP garantisce prestazioni migliori e capacità aggiuntiva, consentendo al contempo alla console NetApp di aumentare automaticamente la capacità del disco sottostante in base alle necessità.
+Il supporto per la funzionalità Amazon EBS Elastic Volumes con un aggregato Cloud Volumes ONTAP garantisce prestazioni migliori e capacità aggiuntiva, consentendo al contempo alla NetApp Console di aumentare automaticamente la capacità del disco sottostante in base alle necessità.
 
 
 
@@ -57,7 +57,7 @@ Ad esempio, la funzionalità Elastic Volumes non è supportata se hai creato un 
 
 === Tipi di dischi EBS
 
-La funzionalità Elastic Volumes viene abilitata automaticamente a livello aggregato quando si utilizzano SSD General Purpose (gp3) o SSD Provisioned IOPS (io1).  La funzionalità Elastic Volumes non è supportata con aggregati che utilizzano altri tipi di disco.
+La funzionalità Elastic Volumes viene abilitata automaticamente a livello aggregato quando si utilizzano SSD per uso generico (gp3) o SSD Provisioned IOPS (io1).  La funzionalità Elastic Volumes non è supportata con aggregati che utilizzano altri tipi di disco.
 
 
 
@@ -83,7 +83,7 @@ Quando la console crea un aggregato, inizia con un gruppo RAID.  Se è necessari
 
 Ad esempio, se si dispone di un aggregato da 1 TiB, ogni disco è da 250 GiB.  Il 10% della capacità dell'aggregato è pari a 100 GiB.  Si tratta di una quantità inferiore a 256 GiB, quindi la dimensione dell'aggregato aumenta del minimo di 256 GiB (o 64 GiB per ciascun disco).
 
-La console aumenta le dimensioni dei dischi mentre il sistema Cloud Volumes ONTAP è in esecuzione e i dischi sono ancora collegati.  Il cambiamento non è dirompente.
+La console aumenta le dimensioni dei dischi mentre il sistema Cloud Volumes ONTAP è in esecuzione e mentre i dischi sono ancora collegati.  Il cambiamento non è dirompente.
 
 Se un aggregato raggiunge 64 TiB (o 16 TiB su ciascun disco), la Console crea un secondo gruppo RAID per capacità aggiuntiva.  Questo secondo gruppo RAID funziona esattamente come il primo: è composto da quattro dischi che hanno esattamente la stessa capacità e possono arrivare fino a 64 TiB.  Ciò significa che un aggregato può avere una capacità massima di 128 TiB.
 
@@ -98,7 +98,7 @@ image:diagram-aws-elastic-volumes-two-raid-groups.png["Un'immagine concettuale c
 Se si crea un volume che utilizza dischi gp3 o io1, la Console crea il volume su un aggregato come segue:
 
 * Se è presente un aggregato gp3 o io1 esistente con Elastic Volumes abilitato, la Console crea il volume su tale aggregato.
-* Se sono presenti più aggregati gp3 o io1 con Elastic Volumes abilitato, la Console crea il volume sull'aggregato che richiede la minor quantità di risorse.
+* Se sono presenti più aggregati gp3 o io1 con Elastic Volumes abilitato, la Console crea il volume sull'aggregato che richiede la quantità minima di risorse.
 * Se il sistema dispone solo di aggregati gp3 o io1 non abilitati per Elastic Volumes, il volume viene creato su tale aggregato.
 +
 [NOTE]

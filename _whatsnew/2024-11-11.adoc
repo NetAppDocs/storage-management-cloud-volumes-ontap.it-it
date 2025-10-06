@@ -23,7 +23,7 @@ NetApp riconosce i seguenti requisiti di licenza univoci in conformità con gli 
 * Clienti del settore pubblico statunitense
 * Distribuzioni in modalità privata
 * Distribuzioni nella regione cinese di Cloud Volumes ONTAP in AWS
-* Se hai una licenza BYOL valida e non scaduta (licenza BYOL)
+* Se hai una licenza BYOL (licenza BY-NODE) valida e non scaduta
 
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Fine della disponibilità delle licenze basate sui nodi"^]
@@ -34,7 +34,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#
 
 BlueXP ora consente di selezionare un livello freddo per archiviare i dati del livello di capacità inattivo nell'archiviazione BLOB di Azure.  Aggiungendo il livello freddo ai livelli caldo e freddo esistenti, si ottiene un'opzione di stoccaggio più conveniente e una migliore efficienza dei costi.
 
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html#data-tiering-in-azure["Livelli di dati in Azure"^]
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html#data-tiering-in-azure["Livelli dei dati in Azure"^]
 
 
 

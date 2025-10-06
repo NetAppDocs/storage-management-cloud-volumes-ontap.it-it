@@ -16,7 +16,7 @@ summary: 'Una VM di archiviazione è una macchina virtuale in esecuzione all"int
 [role="lead"]
 Una VM di archiviazione è una macchina virtuale in esecuzione all'interno di ONTAP che fornisce servizi di archiviazione e dati ai tuoi client.  Potresti conoscerlo come _SVM_ o _vserver_.  Per impostazione predefinita, Cloud Volumes ONTAP è configurato con una VM di archiviazione, ma è possibile creare VM di archiviazione aggiuntive quando si esegue Cloud Volumes ONTAP in Azure.
 
-Per creare e gestire ulteriori VM di archiviazione dati in Azure, è necessario utilizzare le API.  Questo perché le API automatizzano il processo di creazione delle VM di archiviazione e di configurazione delle interfacce di rete richieste.  Durante la creazione delle VM di storage, la console NetApp configura i servizi LIF richiesti, nonché un LIF iSCSI necessario per le comunicazioni SMB/CIFS in uscita dalla VM di storage.
+Per creare e gestire ulteriori VM di archiviazione dati in Azure, è necessario utilizzare le API.  Questo perché le API automatizzano il processo di creazione delle VM di archiviazione e di configurazione delle interfacce di rete richieste.  Durante la creazione delle VM di storage, la NetApp Console configura i servizi LIF richiesti, nonché un LIF iSCSI necessario per le comunicazioni SMB/CIFS in uscita dalla VM di storage.
 
 Per informazioni sull'esecuzione delle chiamate API Cloud Volumes ONTAP , fare riferimento a https://docs.netapp.com/us-en/bluexp-automation/cm/your_api_call.html#step-1-select-the-identifie["La tua prima chiamata API"^] .
 
@@ -32,7 +32,7 @@ Tutte le versioni di Cloud Volumes ONTAP precedenti alla 9.9.0 supportano una VM
 
 == Creare una VM di archiviazione
 
-In base alla configurazione e al tipo di licenza, è possibile creare più VM di storage su un singolo sistema a nodo o in una configurazione ad alta disponibilità (HA) utilizzando le API per la console NetApp .
+In base alla configurazione e al tipo di licenza, è possibile creare più VM di storage su un singolo sistema a nodo o in una configurazione ad alta disponibilità (HA) utilizzando le API per la NetApp Console.
 
 .Informazioni su questo compito
 Quando si creano VM di archiviazione utilizzando le API, insieme alla configurazione delle interfacce di rete richieste, la Console modifica anche `default-data-files` policy sulle VM di archiviazione dati rimuovendo i seguenti servizi dal LIF dati NAS e aggiungendoli al LIF dati iSCSI utilizzato per le connessioni di gestione in uscita:

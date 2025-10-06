@@ -14,7 +14,7 @@ summary: A ciascun nodo Cloud Volumes ONTAP devono essere associati ruoli IAM co
 
 
 [role="lead"]
-A ciascun nodo Cloud Volumes ONTAP devono essere associati i ruoli AWS Identity and Access Management (IAM) con le autorizzazioni richieste. Lo stesso vale per il mediatore HA.  È più semplice lasciare che sia la console NetApp a creare i ruoli IAM per te, ma puoi anche utilizzare i tuoi ruoli.
+A ciascun nodo Cloud Volumes ONTAP devono essere associati i ruoli AWS Identity and Access Management (IAM) con le autorizzazioni richieste. Lo stesso vale per il mediatore HA.  È più semplice lasciare che sia la NetApp Console a creare i ruoli IAM per te, ma puoi anche utilizzare i tuoi ruoli.
 
 Questo compito è facoltativo.  Quando si crea un sistema Cloud Volumes ONTAP , l'opzione predefinita è quella di lasciare che la Console crei i ruoli IAM per conto dell'utente.  Se le policy di sicurezza della tua azienda richiedono di creare autonomamente i ruoli IAM, segui i passaggi indicati di seguito.
 

@@ -17,7 +17,7 @@ summary: 'Comprendere come Cloud Volumes ONTAP utilizza l"archiviazione cloud pu
 Comprendere come Cloud Volumes ONTAP utilizza l'archiviazione cloud può aiutarti a comprendere i costi di archiviazione.
 
 
-CAUTION: È necessario creare ed eliminare tutti i dischi e gli aggregati dalla console NetApp . Non dovresti eseguire queste azioni da un altro strumento di gestione. Ciò potrebbe compromettere la stabilità del sistema, ostacolare la possibilità di aggiungere dischi in futuro e potenzialmente generare commissioni ridondanti per il provider cloud.
+CAUTION: È necessario creare ed eliminare tutti i dischi e gli aggregati dalla NetApp Console. Non dovresti eseguire queste azioni da un altro strumento di gestione. Ciò potrebbe compromettere la stabilità del sistema, ostacolare la possibilità di aggiungere dischi in futuro e potenzialmente generare commissioni ridondanti per il provider cloud.
 
 
 

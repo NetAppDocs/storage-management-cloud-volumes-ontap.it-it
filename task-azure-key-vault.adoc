@@ -29,7 +29,7 @@ Quando si utilizza AKV, tenere presente che per impostazione predefinita viene u
 
 
 .Limitazioni
-* AKV può essere configurato solo su una SVM dati
+* AKV può essere configurato solo su un SVM dati
 * NAE non può essere utilizzato con AKV.  NAE richiede un server KMIP supportato esternamente.
 * I nodi Cloud Volumes ONTAP interrogano AKV ogni 15 minuti per confermare l'accessibilità e la disponibilità delle chiavi.  Questo periodo di polling non è configurabile e, dopo quattro errori consecutivi nel tentativo di polling (per un totale di 1 ora), i volumi vengono messi offline.
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-deploying-otc-azure.html 
 keywords: Cloud Volumes ONTAP, deploying, launching, creating, deploy, launch, create, azure, license key, serial number, tags, azure tags, location, license, preconfigured packages, programmatic deployments, disk size, write speed, access control, volume protection, usage profile, register, CIFS share, quota, qtree, HA, HA pair, associate subscription, azure marketplace, marketplace subscription, cloud data sense, cloud backup 
-summary: È possibile avviare un singolo sistema Cloud Volumes ONTAP in Azure creando un sistema Cloud Volumes ONTAP nella console NetApp . 
+summary: È possibile avviare un singolo sistema Cloud Volumes ONTAP in Azure creando un sistema Cloud Volumes ONTAP nella NetApp Console. 
 ---
 = Avvia Cloud Volumes ONTAP in Azure
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: È possibile avviare un singolo sistema Cloud Volumes ONTAP in Azure cr
 
 
 [role="lead"]
-È possibile avviare un sistema a nodo singolo o una coppia HA in Azure creando un sistema Cloud Volumes ONTAP nella console NetApp .
+È possibile avviare un sistema a nodo singolo o una coppia HA in Azure creando un sistema Cloud Volumes ONTAP nella NetApp Console.
 
 .Prima di iniziare
 Prima di iniziare, ti occorre quanto segue.
@@ -81,7 +81,7 @@ Nella tabella seguente vengono descritti i campi per i quali potrebbe essere nec
 |===
 . *Servizi*: abilita o disabilita i singoli servizi che desideri o non desideri utilizzare con Cloud Volumes ONTAP.
 +
-** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Scopri di più sulla classificazione dei dati NetApp"^]
+** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Scopri di più sulla NetApp Data Classification"^]
 ** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Scopri di più su NetApp Backup and Recovery"^]
 +
 
@@ -237,7 +237,7 @@ image:screenshot_cot_vol.gif["Screenshot: mostra la pagina Volume compilata per 
 | Dominio DNS | Dominio DNS per la macchina virtuale di archiviazione (SVM) Cloud Volumes ONTAP .  Nella maggior parte dei casi, il dominio è lo stesso del dominio AD. 
 
 
-| Server NTP | Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API. Fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione della console NetApp"^] per i dettagli.  Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS. 
+| Server NTP | Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API. Fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione NetApp Console"^] per i dettagli.  Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS. 
 |===
 . *Profilo di utilizzo, tipo di disco e criterio di suddivisione in livelli*: scegli se abilitare le funzionalità di efficienza dell'archiviazione e modificare il criterio di suddivisione in livelli del volume, se necessario.
 +
@@ -301,7 +301,7 @@ Nella tabella seguente vengono descritti i campi per i quali potrebbe essere nec
 |===
 . *Servizi*: abilita o disabilita i singoli servizi a seconda che tu voglia utilizzarli con Cloud Volumes ONTAP.
 +
-** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Scopri di più sulla classificazione dei dati NetApp"^]
+** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Scopri di più sulla NetApp Data Classification"^]
 ** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Scopri di più su NetApp Backup and Recovery"^]
 +
 
@@ -484,7 +484,7 @@ image:screenshot_cot_vol.gif["Screenshot: mostra la pagina Volume compilata per 
 | Dominio DNS | Dominio DNS per la macchina virtuale di archiviazione (SVM) Cloud Volumes ONTAP .  Nella maggior parte dei casi, il dominio è lo stesso del dominio AD. 
 
 
-| Server NTP | Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API. Fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione della console NetApp"^] per i dettagli.  Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS. 
+| Server NTP | Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API. Fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione NetApp Console"^] per i dettagli.  Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS. 
 |===
 . *Profilo di utilizzo, tipo di disco e criterio di suddivisione in livelli*: scegli se abilitare le funzionalità di efficienza dell'archiviazione e modificare il criterio di suddivisione in livelli del volume, se necessario.
 +

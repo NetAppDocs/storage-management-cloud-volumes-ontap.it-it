@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-networking-aws.html 
 keywords: networking, network, requirements, connection, connections, vpc, security group, security groups, subnets, vpn, internet, nat, s3, dns, ad, active directory, az, availability zone, floating IP, floating, SVM, management LIF, route, route tables, proxy, HTTP, private, tier, s3 endpoint, proxy server, nat device, vpn, snapmanager, snapcenter, iscsi, nfs, cifs, nas, san, outbound, inbound, connections, autosupport, ha, ha pair, high availability 
-summary: 'La console NetApp gestisce la configurazione dei componenti di rete per Cloud Volumes ONTAP, come indirizzi IP, maschere di rete e percorsi.  È necessario assicurarsi che l"accesso a Internet in uscita sia disponibile, che siano disponibili sufficienti indirizzi IP privati, che siano attive le connessioni giuste e altro ancora.' 
+summary: 'La NetApp Console gestisce la configurazione dei componenti di rete per Cloud Volumes ONTAP, come indirizzi IP, maschere di rete e percorsi.  È necessario assicurarsi che l"accesso a Internet in uscita sia disponibile, che siano disponibili sufficienti indirizzi IP privati, che siano attive le connessioni giuste e altro ancora.' 
 ---
 = Configurare la rete AWS per Cloud Volumes ONTAP
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'La console NetApp gestisce la configurazione dei componenti di rete pe
 
 
 [role="lead"]
-La console NetApp gestisce la configurazione dei componenti di rete per Cloud Volumes ONTAP, come indirizzi IP, maschere di rete e percorsi.  È necessario assicurarsi che l'accesso a Internet in uscita sia disponibile, che siano disponibili sufficienti indirizzi IP privati, che siano attive le connessioni giuste e altro ancora.
+La NetApp Console gestisce la configurazione dei componenti di rete per Cloud Volumes ONTAP, come indirizzi IP, maschere di rete e percorsi.  È necessario assicurarsi che l'accesso a Internet in uscita sia disponibile, che siano disponibili sufficienti indirizzi IP privati, che siano attive le connessioni giuste e altro ancora.
 
 
 
@@ -59,7 +59,7 @@ L'autenticazione dell'utente fallisce e i seguenti servizi rimangono non disponi
 | \ https://mysupport.netapp.com/aods/asupmessage \ https://mysupport.netapp.com/asupprod/post/1.0/postAsup | AutoSupport | Utilizzato per inviare i dati di telemetria AutoSupport al supporto NetApp . | Modalità standard e limitata. | Le informazioni AutoSupport non vengono recapitate. 
 
 
-| L'endpoint commerciale esatto per il servizio AWS (con suffisso `amazonaws.com` ) dipende dalla regione AWS che stai utilizzando. Fare riferimento al https://docs.aws.amazon.com/general/latest/gr/rande.html["Documentazione AWS per i dettagli"^] .  a| 
+| L'endpoint commerciale esatto per il servizio AWS (con suffisso `amazonaws.com` ) dipende dalla regione AWS che stai utilizzando.  Fare riferimento al https://docs.aws.amazon.com/general/latest/gr/rande.html["Documentazione AWS per i dettagli"^] .  a| 
 * Formazione delle nuvole
 * Elastic Compute Cloud (EC2)
 * Gestione dell'identità e degli accessi (IAM)
@@ -84,7 +84,7 @@ L'autenticazione dell'utente fallisce e i seguenti servizi rimangono non disponi
 
 === Accesso Internet in uscita per il mediatore HA
 
-L'istanza del mediatore HA deve disporre di una connessione in uscita al servizio AWS EC2 in modo da poter supportare il failover dello storage.  Per fornire la connessione, è possibile aggiungere un indirizzo IP pubblico, specificare un server proxy o utilizzare un'opzione manuale.
+L'istanza del mediatore HA deve disporre di una connessione in uscita al servizio AWS EC2 per poter supportare il failover dell'archiviazione.  Per fornire la connessione, è possibile aggiungere un indirizzo IP pubblico, specificare un server proxy o utilizzare un'opzione manuale.
 
 L'opzione manuale può essere un gateway NAT o un endpoint VPC di interfaccia dalla subnet di destinazione al servizio AWS EC2.  Per i dettagli sugli endpoint VPC, fare riferimento a http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-interface.html["Documentazione AWS: Endpoint VPC dell'interfaccia (AWS PrivateLink)"^] .
 
@@ -136,7 +136,7 @@ La tabella seguente fornisce dettagli sui LIF associati a ciascun indirizzo IP p
 | dati iSCSI | Accesso client tramite protocollo iSCSI.  Utilizzato dal sistema anche per altri importanti flussi di lavoro di rete.  Questo LIF è obbligatorio e non deve essere eliminato. 
 
 
-| Gestione delle VM di archiviazione | Un LIF di gestione delle VM di archiviazione viene utilizzato con strumenti di gestione come SnapCenter. 
+| Gestione delle VM di archiviazione | Un LIF di gestione delle VM di storage viene utilizzato con strumenti di gestione come SnapCenter. 
 |===
 
 

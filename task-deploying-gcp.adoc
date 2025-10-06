@@ -53,7 +53,7 @@ link:task-set-up-licensing-google.html["Scopri come impostare le licenze"] .
 
 == Avvia un sistema a nodo singolo in Google Cloud
 
-Crea un sistema nella console NetApp per avviare Cloud Volumes ONTAP in Google Cloud.
+Crea un sistema nella NetApp Console per avviare Cloud Volumes ONTAP in Google Cloud.
 
 .Passi
 . Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
@@ -73,7 +73,7 @@ Nella tabella seguente vengono descritti i campi per i quali potrebbe essere nec
 | Nome del sistema | La console utilizza il nome del sistema per denominare sia il sistema Cloud Volumes ONTAP sia l'istanza Google Cloud VM.  Se si seleziona questa opzione, il nome viene utilizzato anche come prefisso per il gruppo di sicurezza predefinito. 
 
 
-| Nome dell'account di servizio | Se hai intenzione di utilizzarelink:concept-data-tiering.html["livelli di dati"] O https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Backup e ripristino NetApp"^] con Cloud Volumes ONTAP, è necessario abilitare *Account di servizio* e selezionare un account di servizio che abbia il ruolo di amministratore di archiviazione predefinito. link:task-creating-gcp-service-account.html["Scopri come creare un account di servizio"^] . 
+| Nome dell'account di servizio | Se hai intenzione di utilizzarelink:concept-data-tiering.html["livelli di dati"] O https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery"^] con Cloud Volumes ONTAP, è necessario abilitare *Account di servizio* e selezionare un account di servizio che abbia il ruolo di amministratore di archiviazione predefinito. link:task-creating-gcp-service-account.html["Scopri come creare un account di servizio"^] . 
 
 
 | Aggiungi etichette | Le etichette sono metadati per le tue risorse Google Cloud.  La console aggiunge le etichette al sistema Cloud Volumes ONTAP e alle risorse Google Cloud associate al sistema.  È possibile aggiungere fino a quattro etichette dall'interfaccia utente durante la creazione di un sistema, per poi aggiungerne altre dopo la creazione.  Tieni presente che l'API non ti limita a quattro etichette quando crei un sistema.  Per informazioni sulle etichette, fare riferimento a https://cloud.google.com/compute/docs/labeling-resources["Documentazione di Google Cloud: Etichettatura delle risorse"^] . 
@@ -249,7 +249,7 @@ image:screenshot_cot_vol.gif["Screenshot: mostra la pagina Volume compilata per 
 | Dominio DNS | Dominio DNS per la macchina virtuale di archiviazione (SVM) Cloud Volumes ONTAP .  Nella maggior parte dei casi, il dominio è lo stesso del dominio AD. 
 
 
-| Server NTP | Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API.  Per informazioni fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione della console NetApp"^] per i dettagli.  Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS. 
+| Server NTP | Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API.  Per informazioni fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione NetApp Console"^] per i dettagli.  Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS. 
 |===
 . *Profilo di utilizzo, tipo di disco e criterio di suddivisione in livelli*: scegli se abilitare le funzionalità di efficienza dell'archiviazione e modificare il criterio di suddivisione in livelli del volume, se necessario.
 +
@@ -258,7 +258,7 @@ Per maggiori informazioni, fare riferimento alink:task-planning-your-config-gcp.
 . *Rivedi e approva*: rivedi e conferma le tue selezioni.
 +
 .. Esaminare i dettagli sulla configurazione.
-.. Fai clic su *Ulteriori informazioni* per esaminare i dettagli sul supporto e sulle risorse Google Cloud che la Console acquisterà.
+.. Fai clic su *Ulteriori informazioni* per visualizzare i dettagli sul supporto e sulle risorse Google Cloud che la Console acquisterà.
 .. Seleziona le caselle di controllo *Ho capito...*.
 .. Fare clic su *Vai*.
 
@@ -290,7 +290,7 @@ Crea un sistema nella Console per avviare Cloud Volumes ONTAP in Google Cloud.
 . Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
 . Nella pagina *Sistemi*, fare clic su *Archiviazione > Sistema* e seguire le istruzioni.
 . *Scegli una posizione*: seleziona *Google Cloud* e * Cloud Volumes ONTAP HA*.
-. *Dettagli e credenziali*: seleziona un progetto, specifica un nome cluster, seleziona facoltativamente un account di servizio, aggiungi facoltativamente delle etichette e quindi specifica le credenziali.
+. *Dettagli e credenziali*: seleziona un progetto, specifica un nome per il cluster, seleziona facoltativamente un account di servizio, aggiungi facoltativamente delle etichette e quindi specifica le credenziali.
 +
 Nella tabella seguente vengono descritti i campi per i quali potrebbe essere necessaria una guida:
 
@@ -482,7 +482,7 @@ image:screenshot_cot_vol.gif["Screenshot: mostra la pagina Volume compilata per 
 | Dominio DNS | Dominio DNS per la macchina virtuale di archiviazione (SVM) Cloud Volumes ONTAP .  Nella maggior parte dei casi, il dominio è lo stesso del dominio AD. 
 
 
-| Server NTP | Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API. Fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione della console NetApp"^] per i dettagli.  Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS. 
+| Server NTP | Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API. Fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione NetApp Console"^] per i dettagli.  Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS. 
 |===
 . *Profilo di utilizzo, tipo di disco e criterio di suddivisione in livelli*: scegli se abilitare le funzionalità di efficienza dell'archiviazione e modificare il criterio di suddivisione in livelli del volume, se necessario.
 +
@@ -491,7 +491,7 @@ Per maggiori informazioni, fare riferimento alink:task-planning-your-config-gcp.
 . *Rivedi e approva*: rivedi e conferma le tue selezioni.
 +
 .. Esaminare i dettagli sulla configurazione.
-.. Fai clic su *Ulteriori informazioni* per esaminare i dettagli sul supporto e sulle risorse Google Cloud che la Console acquisterà.
+.. Fai clic su *Ulteriori informazioni* per visualizzare i dettagli sul supporto e sulle risorse Google Cloud che la Console acquisterà.
 .. Seleziona le caselle di controllo *Ho capito...*.
 .. Fare clic su *Vai*.
 

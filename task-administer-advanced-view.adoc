@@ -14,7 +14,7 @@ summary: 'Se è necessario eseguire una gestione avanzata di Cloud Volumes ONTAP
 
 
 [role="lead"]
-Le funzionalità avanzate di gestione dello storage in Cloud Volumes ONTAP sono disponibili tramite ONTAP System Manager, un'interfaccia di gestione fornita con i sistemi ONTAP . È possibile accedere a System Manager direttamente dalla console NetApp .
+Le funzionalità avanzate di gestione dello storage in Cloud Volumes ONTAP sono disponibili tramite ONTAP System Manager, un'interfaccia di gestione fornita con i sistemi ONTAP . È possibile accedere a System Manager direttamente dalla NetApp Console.
 
 
 

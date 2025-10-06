@@ -40,7 +40,7 @@ I passaggi seguenti illustrano come impostare una configurazione simile.
 
 . Creare percorsi nella tabella di routing del gateway di transito specificando gli indirizzi IP flottanti della coppia HA.
 +
-Puoi trovare gli indirizzi IP mobili nella pagina delle informazioni di sistema nella console NetApp . Ecco un esempio:
+Puoi trovare gli indirizzi IP mobili nella pagina delle informazioni di sistema nella NetApp Console. Ecco un esempio:
 
 +
 image:screenshot_floating_ips.gif["Uno screenshot che mostra gli indirizzi IP mobili per l'interfaccia di gestione del cluster, due interfacce dati NFS e CIFS e l'interfaccia di gestione SVM."]

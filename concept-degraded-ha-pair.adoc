@@ -17,7 +17,7 @@ summary: 'Quando un nodo in una coppia HA non è disponibile, l"altro nodo forni
 Quando un nodo in una coppia HA non è disponibile, l'altro nodo fornisce dati al partner per garantire un servizio dati continuo.  Questo fenomeno è chiamato _acquisizione dello storage_.  Diverse azioni non saranno disponibili finché non sarà completata la restituzione in magazzino.
 
 
-TIP: Quando un nodo in una coppia HA non è disponibile, lo stato del sistema nella console NetApp è _Degradato_.
+TIP: Quando un nodo in una coppia HA non è disponibile, lo stato del sistema nella NetApp Console è _Degradato_.
 
 Le seguenti azioni non sono disponibili durante l'acquisizione dello storage:
 

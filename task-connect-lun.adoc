@@ -14,7 +14,7 @@ summary: 'Quando crei un volume iSCSI, NetApp Console crea automaticamente un LU
 
 
 [role="lead"]
-Quando si crea un volume iSCSI, la console NetApp crea automaticamente un LUN.  Abbiamo semplificato il tutto creando una sola LUN per volume, eliminando così ogni attività di gestione.  Dopo aver creato il volume, utilizzare l'IQN per connettersi alla LUN dagli host.
+Quando si crea un volume iSCSI, la NetApp Console crea automaticamente un LUN.  Abbiamo semplificato il tutto creando una sola LUN per volume, eliminando così ogni attività di gestione.  Dopo aver creato il volume, utilizzare l'IQN per connettersi alla LUN dagli host.
 
 Notare quanto segue:
 

@@ -14,7 +14,7 @@ Le distribuzioni ad alta disponibilità (HA) Cloud Volumes ONTAP nella zona di d
 Se si ignora il processo di rollback, il processo di distribuzione Cloud Volumes ONTAP viene completato correttamente e viene notificato che la creazione del gruppo di posizionamento non è completa.
 
 .Passi
-. Utilizzare SSH per connettersi all'host dell'agente della console NetApp ed effettuare l'accesso.
+. Utilizzare SSH per connettersi all'host dell'agente NetApp Console ed effettuare l'accesso.
 . Vai a `/opt/application/netapp/cloudmanager/docker_occm/data` .
 . Modificare `app.conf` modificando il valore del `rollback-on-placement-group-failure` parametro a `false` .  Il valore predefinito di questo parametro è `true` .
 +

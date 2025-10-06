@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-managing-state.html 
 keywords: schedule, schedules, scheduling, shutdowns, shut down, restart, stop, stopping, turn off, weekday, weekend 
-summary: È possibile arrestare e avviare Cloud Volumes ONTAP dalla console NetApp per gestire i costi di elaborazione cloud. 
+summary: È possibile arrestare e avviare Cloud Volumes ONTAP dalla NetApp Console per gestire i costi di elaborazione cloud. 
 ---
 = Avviare e arrestare un sistema Cloud Volumes ONTAP
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: È possibile arrestare e avviare Cloud Volumes ONTAP dalla console NetA
 
 
 [role="lead"]
-È possibile arrestare e avviare Cloud Volumes ONTAP dalla console NetApp per gestire i costi di elaborazione cloud.
+È possibile arrestare e avviare Cloud Volumes ONTAP dalla NetApp Console per gestire i costi di elaborazione cloud.
 
 
 

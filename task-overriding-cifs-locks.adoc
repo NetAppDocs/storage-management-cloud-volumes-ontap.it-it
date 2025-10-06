@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-overriding-cifs-locks.html 
 keywords: CIFS locks, azure maintenance, maintenance events, cifs sessions, storage failover, storage giveback, giveback 
-summary: 'L"amministratore dell"organizzazione o dell"account può abilitare un"impostazione nella console NetApp che impedisce problemi con la restituzione dello storage Cloud Volumes ONTAP durante gli eventi di manutenzione di Azure.  Quando si abilita questa impostazione, Cloud Volumes ONTAP pone il veto ai blocchi CIFS e reimposta le sessioni CIFS attive.' 
+summary: 'L"amministratore dell"organizzazione o dell"account può abilitare un"impostazione nella NetApp Console che impedisce problemi con la restituzione dello storage Cloud Volumes ONTAP durante gli eventi di manutenzione di Azure.  Quando si abilita questa impostazione, Cloud Volumes ONTAP pone il veto ai blocchi CIFS e reimposta le sessioni CIFS attive.' 
 ---
 = Sostituisci i blocchi CIFS per le coppie Cloud Volumes ONTAP HA in Azure
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'L"amministratore dell"organizzazione o dell"account può abilitare un"
 
 
 [role="lead"]
-L'amministratore dell'organizzazione o dell'account può abilitare un'impostazione nella console NetApp che impedisce problemi con la restituzione dello storage Cloud Volumes ONTAP durante gli eventi di manutenzione di Azure.  Quando si abilita questa impostazione, Cloud Volumes ONTAP pone il veto ai blocchi CIFS e reimposta le sessioni CIFS attive.
+L'amministratore dell'organizzazione o dell'account può abilitare un'impostazione nella NetApp Console che impedisce problemi con la restituzione dello storage Cloud Volumes ONTAP durante gli eventi di manutenzione di Azure.  Quando si abilita questa impostazione, Cloud Volumes ONTAP pone il veto ai blocchi CIFS e reimposta le sessioni CIFS attive.
 
 .Informazioni su questo compito
 Microsoft Azure pianifica periodicamente eventi di manutenzione sulle sue macchine virtuali.  Quando si verifica un evento di manutenzione su una coppia Cloud Volumes ONTAP HA, la coppia HA avvia l'acquisizione dello storage.  Se durante questo evento di manutenzione sono presenti sessioni CIFS attive, i blocchi sui file CIFS possono impedire la restituzione dello spazio di archiviazione.

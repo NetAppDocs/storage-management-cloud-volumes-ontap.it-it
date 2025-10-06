@@ -19,7 +19,7 @@ summary:
 Per maggiori informazioni su questa offerta, fare riferimento alink:concept-azure-mktplace-direct.html["Scopri di più sulle offerte Cloud Volumes ONTAP nella NetApp Console e nel marketplace"] .
 
 .Informazioni su questo compito
-Il sistema Cloud Volumes ONTAP distribuito tramite la distribuzione diretta di Azure Marketplace presenta le seguenti proprietà.  Si noti che le funzionalità di un'istanza autonoma distribuita tramite Azure Marketplace cambiano quando viene rilevata nella console NetApp .
+Il sistema Cloud Volumes ONTAP distribuito tramite la distribuzione diretta di Azure Marketplace presenta le seguenti proprietà.  Si noti che le funzionalità di un'istanza autonoma distribuita tramite Azure Marketplace cambiano quando viene rilevata nella NetApp Console.
 
 * L'ultima versione Cloud Volumes ONTAP (9.16.1 o successiva).
 * Una licenza gratuita per Cloud Volumes ONTAP limitata a 500 GiB di capacità fornita.  Questa licenza non include alcun supporto NetApp e non ha una data di scadenza.

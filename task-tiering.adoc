@@ -33,7 +33,7 @@ endif::aws[]
 
 ifdef::azure[]
 
-* Per Azure, non sarà necessario fare nulla finché la console NetApp avrà le autorizzazioni necessarie. <<Requisiti per suddividere i dati inattivi in livelli nell'archiviazione BLOB di Azure,Saperne di più>> .
+* Per Azure, non sarà necessario fare nulla finché la NetApp Console avrà le autorizzazioni necessarie. <<Requisiti per suddividere i dati inattivi in livelli nell'archiviazione BLOB di Azure,Saperne di più>> .
 
 
 endif::azure[]
@@ -51,7 +51,7 @@ Per abilitare la suddivisione in livelli dei dati su un aggregato, è necessario
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quattro"]Scegliere una politica di suddivisione in livelli durante la creazione, la modifica o la replica di un volume
 [role="quick-margin-para"]
-La console NetApp richiede di scegliere una policy di suddivisione in livelli quando si crea, si modifica o si replica un volume.
+La NetApp Console richiede di scegliere una policy di suddivisione in livelli quando si crea, si modifica o si replica un volume.
 
 [role="quick-margin-list"]
 * link:task-tiering.html#tier-data-from-read-write-volumes["Suddivisione dei dati dai volumi di lettura-scrittura"]

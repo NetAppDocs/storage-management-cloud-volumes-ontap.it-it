@@ -56,7 +56,7 @@ L'addebito avviene sempre per primo sulla tua licenza, ma nei seguenti casi ti v
 
 == Modifica dei pacchetti
 
-Dopo la distribuzione, è possibile modificare il pacchetto per un sistema Cloud Volumes ONTAP che utilizza licenze basate sulla capacità. Ad esempio, se hai distribuito un sistema Cloud Volumes ONTAP con il pacchetto Essentials, puoi modificarlo con il pacchetto Professional se le tue esigenze aziendali cambiano.
+Dopo la distribuzione, è possibile modificare il pacchetto per un sistema Cloud Volumes ONTAP che utilizza licenze basate sulla capacità.  Ad esempio, se hai distribuito un sistema Cloud Volumes ONTAP con il pacchetto Essentials, puoi modificarlo con il pacchetto Professional se le tue esigenze aziendali cambiano.
 
 link:task-manage-capacity-licenses.html["Scopri come cambiare i metodi di ricarica"] .
 
@@ -66,7 +66,7 @@ Per informazioni sulla conversione delle licenze basate sui nodi in licenze basa
 
 == Prezzi e configurazioni supportate
 
-Per i dettagli sui prezzi, vai a https://bluexp.netapp.com/pricing/["Sito web della console NetApp"^] .
+Per i dettagli sui prezzi, vai a https://bluexp.netapp.com/pricing/["Sito web NetApp Console"^] .
 
 I pacchetti di licenze basati sulla capacità sono disponibili con Cloud Volumes ONTAP 9.7 e versioni successive.
 
@@ -109,7 +109,7 @@ Per informazioni sui limiti di capacità di ciascun provider cloud, fare riferim
 
 == Numero massimo di sistemi
 
-Con le licenze basate sulla capacità, il numero massimo di sistemi Cloud Volumes ONTAP è limitato a 24 per account NetApp Console.  Un _sistema_ è una coppia Cloud Volumes ONTAP HA, un sistema a nodo singolo Cloud Volumes ONTAP o qualsiasi VM di storage aggiuntiva creata.  La VM di archiviazione predefinita non viene conteggiata nel limite.  Questo limite si applica a tutti i modelli di licenza.
+Con le licenze basate sulla capacità, il numero massimo di sistemi Cloud Volumes ONTAP è limitato a 24 per account NetApp Console .  Un _sistema_ è una coppia Cloud Volumes ONTAP HA, un sistema a nodo singolo Cloud Volumes ONTAP o qualsiasi VM di storage aggiuntiva creata.  La VM di archiviazione predefinita non viene conteggiata nel limite.  Questo limite si applica a tutti i modelli di licenza.
 
 Ad esempio, supponiamo di avere tre sistemi:
 
@@ -143,7 +143,7 @@ I seguenti dettagli possono aiutarti a capire come funziona la tariffazione con 
 
 
 
-=== Addebito minimo
+=== Costo minimo
 
 È previsto un costo minimo di 4 TiB per ogni VM di archiviazione dati che abbia almeno un volume primario (lettura-scrittura).  Se la somma dei volumi primari è inferiore a 4 TiB, la Console applica la tariffa minima di 4 TiB a quella VM di archiviazione.
 
@@ -180,17 +180,17 @@ Se hai acquistato una licenza Essentials da NetApp (BYOL) e superi la capacità 
 
 Ecco un esempio. Supponiamo che tu abbia le seguenti licenze per il pacchetto Essentials:
 
-* Una licenza _Essentials Secondary HA_ da 500 TiB con 500 TiB di capacità impegnata
+* Una licenza _Essentials Secondary HA_ da 500 TiB con capacità impegnata di 500 TiB
 * Una licenza _Essentials Single Node_ da 500 TiB che ha solo 100 TiB di capacità impegnata
 
 
 Altri 50 TiB sono forniti su una coppia HA con volumi secondari.  Invece di addebitare quei 50 TiB a PAYGO, la Console addebita l'eccedenza di 50 TiB sulla licenza _Essentials Single Node_.  Questa licenza ha un prezzo più alto rispetto a _Essentials Secondary HA_, ma utilizza una licenza che hai già acquistato e non aggiungerà costi alla tua fattura mensile.
 
-In *Amministrazione > Licenze e abbonamenti*, puoi vedere 50 TiB addebitati sulla licenza _Essentials Single Node_.
+In *Amministrazione > Licenses and subscriptions*, puoi vedere 50 TiB addebitati sulla licenza _Essentials Single Node_.
 
 Ecco un altro esempio.  Supponiamo che tu abbia le seguenti licenze per il pacchetto Essentials:
 
-* Una licenza _Essentials Secondary HA_ da 500 TiB con 500 TiB di capacità impegnata
+* Una licenza _Essentials Secondary HA_ da 500 TiB con capacità impegnata di 500 TiB
 * Una licenza _Essentials Single Node_ da 500 TiB che ha solo 100 TiB di capacità impegnata
 
 

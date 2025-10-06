@@ -23,4 +23,4 @@ summary: È possibile modificare le tabelle di routing AWS che includono i perco
 
 
 .Risultato
-La console NetApp invia una richiesta AWS per modificare le tabelle di routing.
+La NetApp Console invia una richiesta AWS per modificare le tabelle di routing.

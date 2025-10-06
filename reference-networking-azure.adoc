@@ -14,7 +14,7 @@ summary: Configura la rete di Azure in modo che i sistemi Cloud Volumes ONTAP po
 
 
 [role="lead"]
-La console NetApp gestisce la configurazione dei componenti di rete per Cloud Volumes ONTAP, come indirizzi IP, maschere di rete e percorsi.  È necessario assicurarsi che l'accesso a Internet in uscita sia disponibile, che siano disponibili sufficienti indirizzi IP privati, che siano attive le connessioni giuste e altro ancora.
+La NetApp Console gestisce la configurazione dei componenti di rete per Cloud Volumes ONTAP, come indirizzi IP, maschere di rete e percorsi.  È necessario assicurarsi che l'accesso a Internet in uscita sia disponibile, che siano disponibili sufficienti indirizzi IP privati, che siano attive le connessioni giuste e altro ancora.
 
 
 
@@ -218,7 +218,7 @@ Quando aggiungi un sistema Cloud Volumes ONTAP e scegli un gruppo di sicurezza p
 
 * *Solo VNet selezionata*: l'origine del traffico in entrata è l'intervallo di subnet della VNet per il sistema Cloud Volumes ONTAP e l'intervallo di subnet della VNet in cui risiede l'agente della console.  Questa è l'opzione consigliata.
 * *Tutte le reti virtuali*: l'origine del traffico in entrata è l'intervallo IP 0.0.0.0/0.
-* *Disabilitato*: questa opzione limita l'accesso alla rete pubblica al tuo account di archiviazione e disabilita la suddivisione in livelli dei dati per i sistemi Cloud Volumes ONTAP .  Questa è un'opzione consigliata se i tuoi indirizzi IP privati ​​non devono essere esposti nemmeno all'interno della stessa VNet a causa delle normative e delle policy di sicurezza.
+* *Disabilitato*: questa opzione limita l'accesso alla rete pubblica al tuo account di archiviazione e disabilita la suddivisione in livelli dei dati per i sistemi Cloud Volumes ONTAP .  Questa è un'opzione consigliata se i tuoi indirizzi IP privati ​​non devono essere esposti nemmeno all'interno della stessa rete virtuale a causa delle normative e delle policy di sicurezza.
 
 
 [cols="4*"]
@@ -310,7 +310,7 @@ Quando aggiungi un sistema Cloud Volumes ONTAP e scegli un gruppo di sicurezza p
 
 NOTE: I sistemi HA hanno meno regole in ingresso rispetto ai sistemi a nodo singolo perché il traffico dati in ingresso passa attraverso Azure Standard Load Balancer.  Per questo motivo, il traffico proveniente dal Load Balancer dovrebbe essere aperto, come mostrato nella regola "AllowAzureLoadBalancerInBound".
 
-* *Disabilitato*: questa opzione limita l'accesso alla rete pubblica al tuo account di archiviazione e disabilita la suddivisione in livelli dei dati per i sistemi Cloud Volumes ONTAP .  Questa è un'opzione consigliata se i tuoi indirizzi IP privati ​​non devono essere esposti nemmeno all'interno della stessa VNet a causa delle normative e delle policy di sicurezza.
+* *Disabilitato*: questa opzione limita l'accesso alla rete pubblica al tuo account di archiviazione e disabilita la suddivisione in livelli dei dati per i sistemi Cloud Volumes ONTAP .  Questa è un'opzione consigliata se i tuoi indirizzi IP privati ​​non devono essere esposti nemmeno all'interno della stessa rete virtuale a causa delle normative e delle policy di sicurezza.
 
 
 [cols="4*"]

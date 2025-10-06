@@ -14,7 +14,7 @@ summary: 'Potrebbe essere necessario modificare la configurazione dei sistemi Cl
 
 
 [role="lead"]
-Nella console NetApp è possibile scegliere una velocità di scrittura normale o elevata per Cloud Volumes ONTAP .  La velocità di scrittura predefinita è normale.  È possibile passare a una velocità di scrittura elevata se il carico di lavoro richiede prestazioni di scrittura rapide.
+È possibile scegliere una velocità di scrittura normale o elevata per Cloud Volumes ONTAP nella NetApp Console.  La velocità di scrittura predefinita è normale.  È possibile passare a una velocità di scrittura elevata se il carico di lavoro richiede prestazioni di scrittura rapide.
 
 L'elevata velocità di scrittura è supportata da tutti i tipi di sistemi a nodo singolo e da alcune configurazioni di coppie HA.  Visualizza le configurazioni supportate in https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Note sulla versione Cloud Volumes ONTAP"^]
 

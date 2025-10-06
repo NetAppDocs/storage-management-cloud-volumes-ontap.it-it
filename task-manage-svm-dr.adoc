@@ -14,7 +14,7 @@ summary: NetApp Console non fornisce alcun supporto di configurazione o orchestr
 
 
 [role="lead"]
-La console NetApp non offre supporto per la configurazione o l'orchestrazione per il ripristino di emergenza delle VM di archiviazione (SVM).  Per eseguire queste attività, utilizzare ONTAP System Manager o ONTAP CLI.
+La NetApp Console non offre supporto per la configurazione o l'orchestrazione per il ripristino di emergenza delle VM di archiviazione (SVM).  Per eseguire queste attività, utilizzare ONTAP System Manager o ONTAP CLI.
 
 Se si imposta la replica SnapMirror SVM tra due sistemi Cloud Volumes ONTAP , la replica deve essere effettuata tra due sistemi a coppia HA o due sistemi a nodo singolo.  Non è possibile impostare la replica SnapMirror SVM tra una coppia HA e un sistema a nodo singolo.
 

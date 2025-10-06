@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-manage-capacity-licenses.html 
 keywords: license, licensing, capacity license, capacity based license, add license, install license, digital wallet 
-summary: Gestisci le tue licenze basate sulla capacità dalla console NetApp per assicurarti che il tuo account NetApp disponga di capacità sufficiente per i tuoi sistemi Cloud Volumes ONTAP . 
+summary: Gestisci le tue licenze basate sulla capacità dalla NetApp Console per assicurarti che il tuo account NetApp disponga di capacità sufficiente per i tuoi sistemi Cloud Volumes ONTAP . 
 ---
 = Gestisci le licenze basate sulla capacità per Cloud Volumes ONTAP
 :hardbreaks:
@@ -14,11 +14,11 @@ summary: Gestisci le tue licenze basate sulla capacità dalla console NetApp per
 
 
 [role="lead"]
-Gestisci le tue licenze basate sulla capacità dalla console NetApp per assicurarti che il tuo account NetApp disponga di capacità sufficiente per i tuoi sistemi Cloud Volumes ONTAP .
+Gestisci le tue licenze basate sulla capacità dalla NetApp Console per assicurarti che il tuo account NetApp disponga di capacità sufficiente per i tuoi sistemi Cloud Volumes ONTAP .
 
 Le _licenze basate sulla capacità_ consentono di pagare Cloud Volumes ONTAP per TiB di capacità.
 
-È possibile gestire le licenze Cloud Volumes ONTAP basate sulla capacità dalla console NetApp .
+È possibile gestire le licenze Cloud Volumes ONTAP basate sulla capacità dalla NetApp Console.
 
 
 NOTE: Sebbene l'utilizzo effettivo e la misurazione dei prodotti e dei servizi gestiti nella Console siano sempre calcolati in GiB e TiB, i termini GB/GiB e TB/TiB vengono utilizzati in modo intercambiabile.  Ciò si riflette negli elenchi di Cloud Marketplace, nei preventivi di prezzo, nelle descrizioni degli elenchi e in altra documentazione di supporto
@@ -27,7 +27,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[
 
 
 
-== Come vengono aggiunte le licenze alla console NetApp
+== Come vengono aggiunte le licenze alla NetApp Console
 
 Dopo aver acquistato una licenza dal tuo rappresentante commerciale NetApp , NetApp ti invierà un'e-mail con il numero di serie e ulteriori dettagli sulla licenza.
 
@@ -39,10 +39,10 @@ Se la Console non riesce ad aggiungere la licenza, sarà necessario aggiungerla 
 
 == Visualizza la capacità consumata nel tuo account
 
-La Console mostra la capacità totale consumata nel tuo account e la capacità consumata per pacchetto di licenza. Questo può aiutarti a capire come ti vengono addebitati i costi e se devi acquistare capacità aggiuntiva.
+La Console mostra la capacità totale consumata nel tuo account e la capacità consumata per pacchetto di licenza.  Questo può aiutarti a capire come ti vengono addebitati i costi e se devi acquistare capacità aggiuntiva.
 
 .Passi
-. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenze e abbonamenti*.
+. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenses and subscriptions*.
 . Nella scheda *Panoramica*, il riquadro Cloud Volumes ONTAP mostra la capacità corrente fornita per il tuo account.
 +
 image:screenshot_cvo_licensing_card.png["width=300 uno screenshot che mostra il riepilogo della capacità per le licenze e gli abbonamenti Cloud Volumes ONTAP ."]
@@ -62,9 +62,9 @@ Per comprendere meglio le capacità visualizzate nel pacchetto Essentials, è ne
 +
 Vedrai solo gli abbonamenti associati all'organizzazione che stai visualizzando in quel momento.
 
-. Mentre visualizzi le informazioni sui tuoi abbonamenti, puoi interagire con i dettagli nella tabella. Espandi una riga per visualizzare maggiori dettagli.
+. Mentre visualizzi le informazioni sui tuoi abbonamenti, puoi interagire con i dettagli nella tabella.  Espandi una riga per visualizzare maggiori dettagli.
 +
-** Selezionareimage:icon-column-selector.png["l'icona più alla fine dell'intestazione della tabella"] per scegliere quali colonne visualizzare nella tabella. Si noti che le colonne Termine e Rinnovo automatico non vengono visualizzate per impostazione predefinita. La colonna Rinnovo automatico visualizza le informazioni sul rinnovo solo per i contratti Azure.
+** Selezionareimage:icon-column-selector.png["l'icona più alla fine dell'intestazione della tabella"] per scegliere quali colonne visualizzare nella tabella.  Si noti che le colonne Termine e Rinnovo automatico non vengono visualizzate per impostazione predefinita.  La colonna Rinnovo automatico visualizza le informazioni sul rinnovo solo per i contratti Azure.
 
 
 
@@ -75,7 +75,7 @@ Vedrai solo gli abbonamenti associati all'organizzazione che stai visualizzando 
 
 È possibile visualizzare i dettagli sulla capacità utilizzata per pacchetto passando alla modalità legacy nella pagina Cloud Volumes ONTAP .
 
-. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenze e abbonamenti*.
+. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenses and subscriptions*.
 . Nella scheda *Panoramica*, il riquadro Cloud Volumes ONTAP mostra la capacità corrente fornita per il tuo account.
 . Selezionare *Visualizza* per visualizzare la capacità fornita per ciascuno dei pacchetti di licenza.
 . Seleziona *Passa alla visualizzazione avanzata*.
@@ -105,7 +105,7 @@ La console tenta sempre di addebitare prima una licenza.  Se una licenza non è 
 
 
 .Passi
-. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenze e abbonamenti*.
+. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenses and subscriptions*.
 . Selezionare la scheda *Panoramica*.
 . Nel riquadro Cloud Volumes ONTAP , seleziona *Visualizza*.
 . Seleziona *Passa alla visualizzazione avanzata*.
@@ -180,7 +180,7 @@ NOTE: I volumi FlexClone non sono inclusi in questo report perché questi tipi d
 
 
 .Passi
-. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenze e abbonamenti*.
+. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenses and subscriptions*.
 . Nella scheda *Panoramica*, seleziona *Visualizza* dal riquadro Cloud Volumes ONTAP .
 . Selezionare *Report di utilizzo*.
 +

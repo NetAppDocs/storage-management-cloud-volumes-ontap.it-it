@@ -16,7 +16,7 @@ summary: 'Quando si sceglie di bloccare l"ambiente Google con VPC Service Contro
 [role="lead"]
 Quando si sceglie di bloccare l'ambiente Google Cloud con VPC Service Controls, è necessario comprendere come NetApp Console e Cloud Volumes ONTAP interagiscono con le API di Google Cloud, nonché come configurare il perimetro del servizio per distribuire Console e Cloud Volumes ONTAP.
 
-I controlli del servizio VPC consentono di controllare l'accesso ai servizi gestiti da Google al di fuori di un perimetro attendibile, di bloccare l'accesso ai dati da posizioni non attendibili e di mitigare i rischi di trasferimento dati non autorizzato. https://cloud.google.com/vpc-service-controls/docs["Scopri di più sui controlli del servizio Google Cloud VPC"^] .
+I controlli del servizio VPC consentono di controllare l'accesso ai servizi gestiti da Google al di fuori di un perimetro attendibile, di bloccare l'accesso ai dati da posizioni non attendibili e di mitigare i rischi di trasferimento dati non autorizzato. https://cloud.google.com/vpc-service-controls/docs["Scopri di più sui controlli del servizio VPC di Google Cloud"^] .
 
 
 
@@ -44,8 +44,8 @@ L'utente che distribuisce un agente Console deve essere in grado di fare riferim
 
 === Distribuzione di Cloud Volumes ONTAP
 
-* L'account del servizio Console deve fare riferimento a un'immagine ospitata nel projectId _netapp-cloudmanager_ e al numero di progetto _14190056516_ dal progetto del servizio.
-* L'account di servizio per l'agente di servizio predefinito delle API di Google deve fare riferimento a un'immagine ospitata nel projectId _netapp-cloudmanager_ e al numero di progetto _14190056516_ del progetto di servizio.
+* L'account del servizio Console deve fare riferimento a un'immagine ospitata nel projectId _netapp-cloudmanager_ e al numero di progetto _14190056516_ del progetto del servizio.
+* L'account di servizio per l'agente di servizio predefinito delle API di Google deve fare riferimento a un'immagine ospitata nel projectId _netapp-cloudmanager_ e al numero di progetto _14190056516_ dal progetto di servizio.
 
 
 Di seguito sono definiti alcuni esempi delle regole necessarie per estrarre queste immagini con VPC Service Controls.

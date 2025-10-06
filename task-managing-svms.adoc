@@ -26,7 +26,7 @@ Con determinate configurazioni sono supportate più VM di archiviazione.  Vai al
 
 == Lavora con più VM di storage
 
-La console NetApp supporta qualsiasi VM di storage aggiuntiva creata da ONTAP System Manager o da ONTAP CLI.
+La NetApp Console supporta qualsiasi VM di storage aggiuntiva creata da ONTAP System Manager o da ONTAP CLI.
 
 Ad esempio, l'immagine seguente mostra come scegliere una VM di archiviazione quando si crea un volume.
 

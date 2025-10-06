@@ -14,7 +14,7 @@ summary: NetApp Console crea gruppi di sicurezza AWS che includono le regole in 
 
 
 [role="lead"]
-La console NetApp crea gruppi di sicurezza AWS che includono le regole in entrata e in uscita di cui Cloud Volumes ONTAP ha bisogno per funzionare correttamente.  Potresti voler fare riferimento alle porte per scopi di test o se preferisci utilizzare i tuoi gruppi di sicurezza.
+La NetApp Console crea gruppi di sicurezza AWS che includono le regole in entrata e in uscita di cui Cloud Volumes ONTAP ha bisogno per funzionare correttamente.  Potresti voler fare riferimento alle porte per scopi di test o se preferisci utilizzare i tuoi gruppi di sicurezza.
 
 
 

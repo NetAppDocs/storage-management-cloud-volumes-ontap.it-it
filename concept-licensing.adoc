@@ -42,7 +42,7 @@ Ad esempio, è possibile acquistare una singola licenza da 20 TiB, distribuire q
 La licenza basata sulla capacità è disponibile sotto forma di _pacchetto_. Quando distribuisci un sistema Cloud Volumes ONTAP , puoi scegliere tra diversi pacchetti di licenze in base alle tue esigenze aziendali.
 
 
-NOTE: Sebbene l'utilizzo effettivo e la misurazione dei prodotti e dei servizi gestiti nella console NetApp siano sempre calcolati in GiB e TiB, i termini GB/GiB e TB/TiB vengono utilizzati in modo intercambiabile.  Ciò si riflette negli elenchi del Cloud Marketplace, nei preventivi di prezzo, nelle descrizioni degli elenchi e in altra documentazione di supporto.
+NOTE: Sebbene l'utilizzo effettivo e la misurazione dei prodotti e dei servizi gestiti nella NetApp Console siano sempre calcolati in GiB e TiB, i termini GB/GiB e TB/TiB vengono utilizzati in modo intercambiabile.  Ciò si riflette negli elenchi del Cloud Marketplace, nei preventivi di prezzo, nelle descrizioni degli elenchi e in altra documentazione di supporto.
 
 
 
@@ -81,7 +81,7 @@ Fornisce gratuitamente tutte le funzionalità Cloud Volumes ONTAP di NetApp (si 
 Non appena un sistema viene convertito nel pacchetto Essentials,link:concept-licensing-charging.html#minimum-charge["tariffa minima"] si applica ad esso.
 
 +
-Un sistema Cloud Volumes ONTAP convertito in un pacchetto Essentials non può essere riportato a Freemium anche se la capacità fornita viene ridotta a meno di 500 GiB.  Altri sistemi con capacità fornita inferiore a 500 GiB restano su Freemium (purché siano stati distribuiti utilizzando l'offerta Freemium).
+Un sistema Cloud Volumes ONTAP convertito in un pacchetto Essentials non può essere riportato a Freemium anche se la capacità fornita viene ridotta a meno di 500 GiB.  Altri sistemi con capacità di provisioning inferiore a 500 GiB restano su Freemium (purché siano stati distribuiti utilizzando l'offerta Freemium).
 
 
 
@@ -242,7 +242,7 @@ Per saperne di più su ciascun tipo di licenza e sull'impatto dell'EOA su di ess
  a| 
 Licenza valida basata su nodi acquistata tramite Bring Your Own License (BYOL)
  a| 
-La licenza rimane valida fino alla scadenza.  Le licenze esistenti basate su nodi non utilizzate possono essere utilizzate per distribuire nuovi sistemi Cloud Volumes ONTAP .
+La licenza rimane valida fino alla scadenza.  Le licenze basate su nodi non utilizzate esistenti possono essere utilizzate per distribuire nuovi sistemi Cloud Volumes ONTAP .
 
 
 

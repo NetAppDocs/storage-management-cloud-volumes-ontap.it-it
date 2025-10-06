@@ -18,7 +18,7 @@ Un volume FlexCache è un volume di archiviazione che memorizza nella cache i da
 
 È possibile utilizzare i volumi FlexCache per velocizzare l'accesso ai dati o per scaricare il traffico dai volumi a cui si accede più frequentemente.  I volumi FlexCache contribuiscono a migliorare le prestazioni, soprattutto quando i client devono accedere ripetutamente agli stessi dati, perché i dati possono essere forniti direttamente senza dover accedere al volume di origine.  I volumi FlexCache sono adatti per carichi di lavoro di sistema che richiedono molta lettura.
 
-NetApp Console fornisce la gestione dei volumi FlexCache conlink:https://docs.netapp.com/us-en/bluexp-volume-caching/index.html["Caching del volume NetApp"^] .
+NetApp Console fornisce la gestione dei volumi FlexCache conlink:https://docs.netapp.com/us-en/bluexp-volume-caching/index.html["NetApp Volume Caching"^] .
 
 È anche possibile utilizzare ONTAP CLI o ONTAP System Manager per creare e gestire i volumi FlexCache :
 

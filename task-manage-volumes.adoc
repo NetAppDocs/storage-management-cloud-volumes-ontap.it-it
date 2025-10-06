@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-manage-volumes.html 
 keywords: volumes, managing, cloning, editing, CIFS server, edit, flexclone, snapshot copy, restore, mount, delete, cifs setup, DNS, active directory, AD, domain, NetBIOS, identify, move, capacity, action required, clone, snapshot copies, restoring, vol move, volume move, move a volume, volume move slow, volume move performance 
-summary: La console NetApp consente di gestire volumi e server CIFS.  Ti chiede anche di spostare i volumi per evitare problemi di capacità. 
+summary: La NetApp Console consente di gestire volumi e server CIFS.  Ti chiede anche di spostare i volumi per evitare problemi di capacità. 
 ---
 = Gestisci i volumi sui sistemi Cloud Volumes ONTAP
 :hardbreaks:
@@ -14,9 +14,9 @@ summary: La console NetApp consente di gestire volumi e server CIFS.  Ti chiede 
 
 
 [role="lead"]
-È possibile gestire volumi e server CIFS nella console NetApp .  È anche possibile spostare i volumi per evitare problemi di capacità.
+È possibile gestire volumi e server CIFS nella NetApp Console.  È anche possibile spostare i volumi per evitare problemi di capacità.
 
-È possibile gestire i volumi nella vista standard della console NetApp oppure tramite ONTAP System Manager, incluso nella console per la gestione avanzata dei volumi.  La vista standard fornisce un set limitato di opzioni per modificare i volumi.  System Manager offre un livello avanzato di gestione, come la clonazione, il ridimensionamento, la modifica delle impostazioni anti-ransomware, l'analisi, la protezione e il monitoraggio delle attività, nonché lo spostamento di volumi tra livelli.  Per informazioni, fare riferimento alink:task-administer-advanced-view.html["Amministrare Cloud Volumes ONTAP utilizzando System Manager"] .
+È possibile gestire i volumi nella vista standard NetApp Console oppure tramite ONTAP System Manager, incluso nella console per la gestione avanzata dei volumi.  La vista standard fornisce un set limitato di opzioni per modificare i volumi.  System Manager offre un livello avanzato di gestione, come la clonazione, il ridimensionamento, la modifica delle impostazioni anti-ransomware, l'analisi, la protezione e il monitoraggio delle attività, nonché lo spostamento di volumi tra livelli.  Per informazioni, fare riferimento alink:task-administer-advanced-view.html["Amministrare Cloud Volumes ONTAP utilizzando System Manager"] .
 
 
 

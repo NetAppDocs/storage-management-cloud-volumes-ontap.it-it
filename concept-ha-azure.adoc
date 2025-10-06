@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: concept-ha-azure.html 
 keywords: high-availability, HA, concepts, understanding, overview, takeover, giveback, rpo, rto, nondisruptive, ha pairs, node, nodes, recovery point objective, recovery time objective, nas, nfs, cifs, iscsi, mpio, alua, failover, failure, azure, shared storage, active, passive, load balancer, storage accounts, page blobs 
-summary: 'Una coppia ad alta disponibilità (HA) Cloud Volumes ONTAP garantisce affidabilità aziendale e operazioni continue in caso di guasti nell"ambiente cloud. In Azure, lo storage è condiviso tra i due nodi.' 
+summary: 'Una coppia ad alta disponibilità (HA) Cloud Volumes ONTAP garantisce affidabilità aziendale e continuità operativa in caso di guasti nell"ambiente cloud. In Azure, lo storage è condiviso tra i due nodi.' 
 ---
 = Scopri di più sulle coppie Cloud Volumes ONTAP HA in Azure
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Una coppia ad alta disponibilità (HA) Cloud Volumes ONTAP garantisce 
 
 
 [role="lead"]
-Una coppia ad alta disponibilità (HA) Cloud Volumes ONTAP garantisce affidabilità aziendale e operazioni continue in caso di guasti nell'ambiente cloud. In Azure, lo storage è condiviso tra i due nodi.
+Una coppia ad alta disponibilità (HA) Cloud Volumes ONTAP garantisce affidabilità aziendale e continuità operativa in caso di guasti nell'ambiente cloud. In Azure, lo storage è condiviso tra i due nodi.
 
 
 
@@ -26,11 +26,11 @@ Una coppia ad alta disponibilità (HA) Cloud Volumes ONTAP garantisce affidabili
 
 Una configurazione del blob di pagine HA di Cloud Volumes ONTAP in Azure include i seguenti componenti:
 
-image:diagram_ha_azure.png["Un'immagine concettuale che mostra un bilanciatore del carico che gestisce il traffico in entrata dalla console NetApp e dai client, due nodi Cloud Volumes ONTAP in un VMSS Flex, dischi SSD per i dati di avvio e Page Blob per i dati dei clienti."]
+image:diagram_ha_azure.png["Un'immagine concettuale che mostra un bilanciatore del carico che gestisce il traffico in entrata dalla NetApp Console e dai client, due nodi Cloud Volumes ONTAP in un VMSS Flex, dischi SSD per i dati di avvio e Page Blob per i dati dei clienti."]
 
 Tieni presente quanto segue sui componenti di Azure che NetApp Console distribuisce per te:
 
-Bilanciamento del carico standard di Azure:: Il bilanciatore del carico gestisce il traffico in entrata verso la coppia Cloud Volumes ONTAP HA.
+Azure Standard Load Balancer:: Il bilanciatore del carico gestisce il traffico in entrata verso la coppia Cloud Volumes ONTAP HA.
 VM in singole zone di disponibilità:: A partire da Cloud Volumes ONTAP 9.15.1, è possibile creare e gestire macchine virtuali (VM) eterogenee in un'unica zona di disponibilità (AZ).  È possibile distribuire nodi ad alta disponibilità (HA) in domini di errore separati all'interno della stessa AZ, garantendo una disponibilità ottimale.  Per saperne di più sulla modalità di orchestrazione flessibile che abilita questa capacità, fare riferimento a https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/["Documentazione di Microsoft Azure: set di scalabilità di macchine virtuali"^] .
 Dischi:: I dati dei clienti risiedono nei blob delle pagine Premium Storage.  Ogni nodo ha accesso allo storage dell'altro nodo.  È inoltre necessario ulteriore spazio di archiviazione perlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["dati di avvio, root e core"^] .
 Account di archiviazione::
@@ -62,7 +62,7 @@ image:diagram_ha_azure_saz_lrs.png["Un'immagine concettuale che mostra un bilanc
 
 Tieni presente quanto segue sui componenti di Azure che la console distribuisce per te:
 
-Bilanciamento del carico standard di Azure:: Il bilanciatore del carico gestisce il traffico in entrata verso la coppia Cloud Volumes ONTAP HA.
+Azure Standard Load Balancer:: Il bilanciatore del carico gestisce il traffico in entrata verso la coppia Cloud Volumes ONTAP HA.
 VM in singole zone di disponibilità:: A partire da Cloud Volumes ONTAP 9.15.1, è possibile creare e gestire macchine virtuali (VM) eterogenee in un'unica zona di disponibilità (AZ).  È possibile distribuire nodi ad alta disponibilità (HA) in domini di errore separati all'interno della stessa AZ, garantendo una disponibilità ottimale.  Per saperne di più sulla modalità di orchestrazione flessibile che abilita questa capacità, fare riferimento a https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/["Documentazione di Microsoft Azure: set di scalabilità di macchine virtuali"^] .
 +
 --
@@ -88,7 +88,7 @@ image:diagram_ha_azure_maz.png["Un'immagine concettuale che mostra un bilanciato
 
 Tieni presente quanto segue sui componenti di Azure che la console distribuisce per te:
 
-Bilanciamento del carico standard di Azure:: Il bilanciatore del carico gestisce il traffico in entrata verso la coppia Cloud Volumes ONTAP HA.
+Azure Standard Load Balancer:: Il bilanciatore del carico gestisce il traffico in entrata verso la coppia Cloud Volumes ONTAP HA.
 Zone di disponibilità:: La configurazione HA con più zone di disponibilità utilizza un modello di distribuzione in cui due nodi Cloud Volumes ONTAP vengono distribuiti in diverse zone di disponibilità, garantendo che i nodi si trovino in domini di errore diversi per garantire ridondanza e disponibilità.  Per informazioni su come i set di scalabilità di macchine virtuali in modalità di orchestrazione flessibile possono utilizzare le zone di disponibilità in Azure, fare riferimento a https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones?tabs=cli-1%2Cportal-2["Documentazione di Microsoft Azure: creare un set di scalabilità di macchine virtuali che utilizza zone di disponibilità"^] .
 Dischi:: I dati dei clienti risiedono su dischi gestiti con archiviazione ridondante di zona (ZRS).  Ogni nodo ha accesso allo storage dell'altro nodo.  È inoltre necessario ulteriore spazio di archiviazione perlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["dati di avvio, root, root partner e core"^] .
 Account di archiviazione:: Gli account di archiviazione vengono utilizzati per le distribuzioni basate su dischi gestiti per gestire i log diagnostici e la suddivisione in livelli nell'archiviazione BLOB.

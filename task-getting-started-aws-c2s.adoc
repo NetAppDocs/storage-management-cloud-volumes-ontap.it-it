@@ -14,7 +14,7 @@ summary: Analogamente a una regione AWS standard, puoi distribuire Cloud Volumes
 
 
 [role="lead"]
-Simile a una regione AWS standard, puoi utilizzare la console NetApp inlink:https://aws.amazon.com/federal/secret-cloud/["Cloud segreto AWS"^] e inlink:https://aws.amazon.com/federal/top-secret-cloud/["Cloud top secret di AWS"^] per distribuire Cloud Volumes ONTAP, che fornisce funzionalità di livello aziendale per il tuo storage cloud.  AWS Secret Cloud e Top Secret Cloud sono regioni chiuse specifiche della US Intelligence Community; le istruzioni in questa pagina si applicano solo agli utenti delle regioni AWS Secret Cloud e Top Secret Cloud.
+Simile a una regione AWS standard, puoi utilizzare la NetApp Console inlink:https://aws.amazon.com/federal/secret-cloud/["Cloud segreto AWS"^] e inlink:https://aws.amazon.com/federal/top-secret-cloud/["Cloud top secret di AWS"^] per distribuire Cloud Volumes ONTAP, che fornisce funzionalità di livello aziendale per il tuo storage cloud.  AWS Secret Cloud e Top Secret Cloud sono regioni chiuse specifiche della US Intelligence Community; le istruzioni in questa pagina si applicano solo agli utenti delle regioni AWS Secret Cloud e Top Secret Cloud.
 
 .Prima di iniziare
 Prima di iniziare, controlla le versioni supportate in AWS Secret Cloud e Top Secret Cloud e scopri di più sulla modalità privata nella Console.
@@ -583,7 +583,7 @@ docker restart <docker-id>
 Se hai acquistato una licenza da NetApp, devi aggiungerla alla Console, in modo da poterla selezionare quando crei un nuovo sistema Cloud Volumes ONTAP .  Queste licenze rimangono non assegnate finché non vengono associate a un nuovo sistema Cloud Volumes ONTAP .
 
 .Passi
-. Dal menu di navigazione a sinistra, seleziona *Licenze e abbonamenti*.
+. Dal menu di navigazione a sinistra, seleziona * Licenses and subscriptions*.
 . Nel pannello * Cloud Volumes ONTAP*, selezionare *Visualizza*.
 . Nella scheda * Cloud Volumes ONTAP*, seleziona *Licenze > Licenze basate su nodi*.
 . Fare clic su *Non assegnato*.
@@ -600,7 +600,7 @@ Se hai acquistato una licenza da NetApp, devi aggiungerla alla Console, in modo 
 
 
 .Risultato
-La Console aggiunge la licenza come non assegnata finché non la si associa a un nuovo sistema Cloud Volumes ONTAP .  Puoi visualizzare la licenza nel menu di navigazione a sinistra in *Licenze e abbonamenti > Cloud Volumes ONTAP > Visualizza > Licenze*.
+La Console aggiunge la licenza come non assegnata finché non la si associa a un nuovo sistema Cloud Volumes ONTAP .  Puoi visualizzare la licenza nel menu di navigazione a sinistra in * Licenses and subscriptions > Cloud Volumes ONTAP > Visualizza > Licenze*.
 
 
 

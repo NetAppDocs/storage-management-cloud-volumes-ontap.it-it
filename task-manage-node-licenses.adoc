@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-manage-node-licenses.html 
 keywords: license, licensing, install, updating license, system license, add system license, adding a system license,  update byol license, nlf, license generator, extra, by-node, NetApp Console, cloud backup, cloud data sense, cloud tiering 
-summary: Gestisci le tue licenze basate sui nodi nella console NetApp per assicurarti che ogni sistema Cloud Volumes ONTAP disponga di una licenza valida con la capacità richiesta. 
+summary: Gestisci le tue licenze basate sui nodi nella NetApp Console per assicurarti che ogni sistema Cloud Volumes ONTAP disponga di una licenza valida con la capacità richiesta. 
 ---
 = Gestisci le licenze basate sui nodi per Cloud Volumes ONTAP
 :hardbreaks:
@@ -15,7 +15,7 @@ summary: Gestisci le tue licenze basate sui nodi nella console NetApp per assicu
 
 
 [role="lead"]
-Gestire le licenze basate sui nodi nella console NetApp per garantire che ogni sistema Cloud Volumes ONTAP disponga di una licenza valida con la capacità richiesta.
+Gestire le licenze basate sui nodi nella NetApp Console per garantire che ogni sistema Cloud Volumes ONTAP disponga di una licenza valida con la capacità richiesta.
 
 Le _licenze basate su nodi_ rappresentano il modello di licenza della generazione precedente (e non sono disponibili per i nuovi clienti):
 
@@ -23,7 +23,7 @@ Le _licenze basate su nodi_ rappresentano il modello di licenza della generazion
 * Abbonamenti orari a consumo (PAYGO) dal marketplace del tuo provider cloud
 
 
-È possibile gestire le licenze Cloud Volumes ONTAP basate sui nodi dalla console NetApp .
+È possibile gestire le licenze Cloud Volumes ONTAP basate su nodi dalla NetApp Console.
 
 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["Scopri di più sulle licenze Cloud Volumes ONTAP"] .
 
@@ -31,17 +31,17 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[
 
 == Gestire le licenze PAYGO
 
-Il menu Licenze e abbonamenti consente di visualizzare i dettagli su ciascuno dei sistemi PAYGO Cloud Volumes ONTAP , tra cui il numero di serie e il tipo di licenza PAYGO.
+Il menu Licenses and subscriptions consente di visualizzare i dettagli su ciascuno dei sistemi PAYGO Cloud Volumes ONTAP , tra cui il numero di serie e il tipo di licenza PAYGO.
 
 .Passi
-. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenze e abbonamenti*.
+. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenses and subscriptions*.
 . Selezionare la scheda *Panoramica*.
 . Nel riquadro Cloud Volumes ONTAP , seleziona *Visualizza*.
 . Selezionare *Licenze basate su nodi* dal menu a discesa.
 . Fare clic su *PAYGO*.
 . Visualizza i dettagli nella tabella per ciascuna delle tue licenze PAYGO.
 +
-image:screenshot_paygo_licenses.png["Uno screenshot che mostra una tabella nella pagina Licenze e abbonamenti con tre licenze paygo.  Ogni riga mostra il nome, il tipo di sistema, il numero di serie, il pacchetto e un collegamento per gestire la licenza."]
+image:screenshot_paygo_licenses.png["Uno screenshot che mostra una tabella nella pagina Licenses and subscriptions con tre licenze paygo.  Ogni riga mostra il nome, il tipo di sistema, il numero di serie, il pacchetto e un collegamento per gestire la licenza."]
 
 . Se necessario, fare clic su *Gestisci licenza PAYGO* per modificare la licenza PAYGO o per modificare il tipo di istanza.
 
@@ -62,7 +62,7 @@ NOTE: NetApp ha limitato l'acquisto, l'estensione e il rinnovo delle licenze BYO
 Aggiungere una licenza basata su nodi alla Console in modo da poter selezionare la licenza quando si crea un nuovo sistema Cloud Volumes ONTAP .  La Console identifica queste licenze come _non assegnate_.
 
 .Passi
-. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenze e abbonamenti*.
+. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenses and subscriptions*.
 . Selezionare la scheda *Panoramica*.
 . Nel riquadro Cloud Volumes ONTAP , seleziona *Visualizza*.
 . Selezionare *Licenze basate su nodi* dal menu a discesa.
@@ -76,13 +76,13 @@ Se non si dispone ancora del file di licenza, fare riferimento alla sezione segu
 
 
 .Risultato
-La console aggiunge la licenza.  La licenza verrà identificata come non assegnata finché non la assocerai a un nuovo sistema Cloud Volumes ONTAP .  Dopodiché la licenza viene spostata nella scheda *BYOL* in *Licenze e abbonamenti*.
+La console aggiunge la licenza.  La licenza verrà identificata come non assegnata finché non la assocerai a un nuovo sistema Cloud Volumes ONTAP .  Dopodiché la licenza viene spostata nella scheda *BYOL* in * Licenses and subscriptions*.
 
 
 
 === Scambia licenze basate su nodi non assegnati
 
-Se disponi di una licenza basata su nodi non assegnata per Cloud Volumes ONTAP che non hai utilizzato, puoi scambiare la licenza convertendola in una licenza NetApp Backup and Recovery, una licenza NetApp Data Classification o una licenza NetApp Cloud Tiering.
+Se disponi di una licenza basata su nodi non assegnata per Cloud Volumes ONTAP che non hai utilizzato, puoi scambiare la licenza convertendola in una licenza NetApp Backup and Recovery , una licenza NetApp Data Classification o una licenza NetApp Cloud Tiering .
 
 Lo scambio della licenza revoca la licenza Cloud Volumes ONTAP e crea una licenza equivalente in dollari per il servizio:
 
@@ -95,7 +95,7 @@ La licenza convertita ha la stessa data di scadenza della licenza Cloud Volumes 
 link:https://mydemo.netapp.com/player/?demoId=c96ef113-c338-4e44-9bda-81a8d252de63&showGuide=true&showGuidesToolbar=true&showHotspots=true&source=app["Visualizza la procedura dettagliata su come scambiare licenze basate su nodi."^]
 
 .Passi
-. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenze e abbonamenti*.
+. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenses and subscriptions*.
 . Selezionare la scheda *Panoramica*.
 . Nel riquadro Cloud Volumes ONTAP , seleziona *Visualizza*.
 . Selezionare *Licenze basate su nodi* dal menu a discesa.
@@ -137,7 +137,7 @@ image:screenshot-license-generator.png["Screenshot: mostra un esempio della pagi
 Quando si rinnova un abbonamento BYOL contattando un rappresentante NetApp , la Console ottiene automaticamente la nuova licenza da NetApp e la installa sul sistema Cloud Volumes ONTAP .  Se la Console non riesce ad accedere al file di licenza tramite la connessione Internet protetta, puoi ottenere il file autonomamente e poi caricarlo manualmente.
 
 .Passi
-. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenze e abbonamenti*.
+. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenses and subscriptions*.
 . Selezionare la scheda *Panoramica*.
 . Nel riquadro Cloud Volumes ONTAP , seleziona *Visualizza*.
 . Selezionare *Licenze basate su nodi* dal menu a discesa.
@@ -165,7 +165,7 @@ Il numero di licenze acquistabili per un singolo sistema a nodo o per una coppia
 Acquista una licenza con capacità extra contattandoci tramite l'icona della chat in basso a destra della Console.  Dopo aver acquistato la licenza, è possibile applicarla a un sistema Cloud Volumes ONTAP .
 
 .Passi
-. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenze e abbonamenti*.
+. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenses and subscriptions*.
 . Selezionare la scheda *Panoramica*.
 . Nel riquadro Cloud Volumes ONTAP , seleziona *Visualizza*.
 . Selezionare *Licenze basate su nodi* dal menu a discesa.
@@ -182,7 +182,7 @@ Acquista una licenza con capacità extra contattandoci tramite l'icona della cha
 Se hai esteso la durata di una licenza con capacità extra, dovrai aggiornare la licenza nella Console.
 
 .Passi
-. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenze e abbonamenti*.
+. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenses and subscriptions*.
 . Selezionare la scheda *Panoramica*.
 . Nel riquadro Cloud Volumes ONTAP , seleziona *Visualizza*.
 . Selezionare *Licenze basate su nodi* dal menu a discesa.
@@ -199,7 +199,7 @@ Se hai esteso la durata di una licenza con capacità extra, dovrai aggiornare la
 Se una licenza con capacità extra è scaduta e non è più in uso, è possibile rimuoverla in qualsiasi momento.
 
 .Passi
-. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenze e abbonamenti*.
+. Dal riquadro di navigazione a sinistra, seleziona *Amministrazione > Licenses and subscriptions*.
 . Selezionare la scheda *Panoramica*.
 . Nel riquadro Cloud Volumes ONTAP , seleziona *Visualizza*.
 . Selezionare *Licenze basate su nodi* dal menu a discesa.

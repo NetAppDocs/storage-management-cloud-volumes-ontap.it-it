@@ -17,7 +17,7 @@ summary: Gestisci autonomamente gli aggregati aggiungendo dischi, visualizzando 
 Gestisci autonomamente gli aggregati aggiungendo dischi, visualizzando informazioni sugli aggregati ed eliminandoli.
 
 
-CAUTION: Tutti i dischi e gli aggregati devono essere creati ed eliminati direttamente dalla console NetApp . Non dovresti eseguire queste azioni da un altro strumento di gestione. Ciò potrebbe compromettere la stabilità del sistema, ostacolare la possibilità di aggiungere dischi in futuro e potenzialmente generare commissioni ridondanti per il provider cloud.
+CAUTION: Tutti i dischi e gli aggregati devono essere creati ed eliminati direttamente dalla NetApp Console. Non dovresti eseguire queste azioni da un altro strumento di gestione. Ciò potrebbe compromettere la stabilità del sistema, ostacolare la possibilità di aggiungere dischi in futuro e potenzialmente generare commissioni ridondanti per il provider cloud.
 
 .Prima di iniziare
 Per eliminare un aggregato, è necessario prima eliminare i volumi nell'aggregato.

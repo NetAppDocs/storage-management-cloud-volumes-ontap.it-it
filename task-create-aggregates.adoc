@@ -14,7 +14,7 @@ summary: 'Puoi creare gli aggregati autonomamente oppure lasciare che NetApp Con
 
 
 [role="lead"]
-Puoi creare gli aggregati autonomamente oppure lasciare che sia la console NetApp a farlo per te quando crea i volumi.  Il vantaggio di creare autonomamente gli aggregati è che puoi scegliere la dimensione del disco sottostante, il che ti consente di dimensionare l'aggregato in base alla capacità o alle prestazioni di cui hai bisogno.
+Puoi creare gli aggregati autonomamente oppure lasciare che sia la NetApp Console a farlo per te quando crea i volumi.  Il vantaggio di creare autonomamente gli aggregati è che puoi scegliere la dimensione del disco sottostante, il che ti consente di dimensionare l'aggregato in base alla capacità o alle prestazioni di cui hai bisogno.
 
 
 CAUTION: Tutti i dischi e gli aggregati devono essere creati ed eliminati direttamente dalla Console. Non dovresti eseguire queste azioni da un altro strumento di gestione. Ciò potrebbe compromettere la stabilità del sistema, ostacolare la possibilità di aggiungere dischi in futuro e potenzialmente generare commissioni ridondanti per il provider cloud.

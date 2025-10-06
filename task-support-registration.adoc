@@ -28,7 +28,7 @@ Per attivare il diritto al sostegno sono previste due modalità di registrazione
 
 * Registrando il numero di serie del tuo account BlueXP (il numero di serie di 20 cifre 960xxxxxxxxx che si trova nella pagina Risorse di supporto in BlueXP).
 +
-Questo funge da ID di abbonamento unico per qualsiasi servizio all'interno di BlueXP. Ogni abbonamento al supporto a livello di account BlueXP deve essere registrato.
+Questo funge da ID di abbonamento unico per qualsiasi servizio all'interno di BlueXP.  Ogni abbonamento al supporto a livello di account BlueXP deve essere registrato.
 
 * Registrazione dei numeri di serie di Cloud Volumes ONTAP associati a un abbonamento nel marketplace del tuo provider cloud (si tratta di numeri di serie a 20 cifre 909201xxxxxxxx).
 +
@@ -54,7 +54,7 @@ Se sei un cliente NetApp con un account NSS, devi semplicemente registrarti per 
 . Nell'angolo in alto a destra della console BlueXP , seleziona l'icona Impostazioni e seleziona *Credenziali*.
 . Selezionare *Credenziali utente*.
 . Selezionare *Aggiungi credenziali NSS* e seguire la richiesta di autenticazione del sito di supporto NetApp (NSS).
-. Per confermare che il processo di registrazione è andato a buon fine, seleziona l'icona Aiuto e seleziona *Supporto*.
+. Per confermare che il processo di registrazione è andato a buon fine, seleziona l'icona Aiuto e poi *Supporto*.
 +
 La pagina *Risorse* dovrebbe mostrare che la tua organizzazione BlueXP è registrata per il supporto.
 
@@ -62,7 +62,7 @@ La pagina *Risorse* dovrebbe mostrare che la tua organizzazione BlueXP è regist
 image:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/screenshot-support-registration.png["Uno screenshot che mostra il numero di serie dell'account, una casella di controllo verde e il testo Registrato per supporto."]
 
 +
-Tieni presente che gli altri utenti BlueXP non vedranno lo stesso stato di registrazione del supporto se non hanno associato un account del sito di supporto NetApp al loro accesso BlueXP . Tuttavia, ciò non significa che la tua organizzazione BlueXP non sia registrata per il supporto. Se almeno un utente dell'organizzazione ha seguito questi passaggi, la tua organizzazione è stata registrata.
+Tieni presente che gli altri utenti BlueXP non vedranno lo stesso stato di registrazione del supporto se non hanno associato un account del sito di supporto NetApp al loro accesso BlueXP .  Tuttavia, ciò non significa che la tua organizzazione BlueXP non sia registrata per il supporto.  Se almeno un utente dell'organizzazione ha seguito questi passaggi, la tua organizzazione è stata registrata.
 
 
 
@@ -140,7 +140,7 @@ Per attivare il supporto per il tuo sistema e accedere alle risorse di supporto 
 
 L'associazione delle credenziali NSS alla tua organizzazione BlueXP è diversa dall'associazione dell'account NSS all'accesso di un utente BlueXP .
 
-Queste credenziali NSS sono associate al tuo ID organizzazione BlueXP specifico. Gli utenti che appartengono all'organizzazione BlueXP possono accedere a queste credenziali da *Supporto > Gestione NSS*.
+Queste credenziali NSS sono associate al tuo ID organizzazione BlueXP specifico.  Gli utenti che appartengono all'organizzazione BlueXP possono accedere a queste credenziali da *Supporto > Gestione NSS*.
 
 * Se disponi di un account a livello cliente, puoi aggiungere uno o più account NSS.
 * Se disponi di un account partner o rivenditore, puoi aggiungere uno o più account NSS, ma non possono essere aggiunti insieme agli account a livello di cliente.
@@ -170,13 +170,13 @@ Notare quanto segue:
 "Il tipo di cliente NSS non è consentito per questo account poiché sono già presenti utenti NSS di tipo diverso."
 
 +
-Lo stesso vale se si dispone già di account NSS a livello di cliente e si tenta di aggiungere un account a livello di partner.
+Lo stesso vale se si dispone di account NSS preesistenti a livello di cliente e si tenta di aggiungere un account a livello di partner.
 
 ** Dopo aver effettuato l'accesso, NetApp memorizzerà il nome utente NSS.
 +
 Si tratta di un ID generato dal sistema che corrisponde al tuo indirizzo email. Nella pagina *Gestione NSS*, puoi visualizzare la tua email daimage:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/icon-nss-menu.png["Un'icona di tre punti orizzontali"] menu.
 
-** Se hai bisogno di aggiornare i token delle tue credenziali di accesso, c'è anche un'opzione *Aggiorna credenziali* inimage:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/icon-nss-menu.png["Un'icona di tre punti orizzontali"] menu.
+** Se hai bisogno di aggiornare i token delle credenziali di accesso, è disponibile anche l'opzione *Aggiorna credenziali* inimage:https://raw.githubusercontent.com/NetAppDocs/bluexp-family/main/media/icon-nss-menu.png["Un'icona di tre punti orizzontali"] menu.
 +
 Utilizzando questa opzione ti verrà richiesto di effettuare nuovamente l'accesso. Si noti che il token per questi account scade dopo 90 giorni. Verrà pubblicata una notifica per avvisarti di ciò.
 

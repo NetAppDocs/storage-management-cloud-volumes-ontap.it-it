@@ -36,13 +36,13 @@ La quantità di dati che può andare persa in caso di interruzione imprevista de
 
 === Quando utilizzare un'elevata velocità di scrittura
 
-Un'elevata velocità di scrittura è una buona scelta se per il carico di lavoro sono richieste prestazioni di scrittura rapide e si può resistere al rischio di perdita di dati in caso di interruzione imprevista del sistema o di un guasto a cascata che comporta un'interruzione imprevista del sistema (solo coppie HA).
+Un'elevata velocità di scrittura è una buona scelta se sono richieste prestazioni di scrittura rapide per il carico di lavoro e si può resistere al rischio di perdita di dati in caso di interruzione imprevista del sistema o di un guasto a cascata che comporta un'interruzione imprevista del sistema (solo coppie HA).
 
 
 
 === Raccomandazioni per l'utilizzo di velocità di scrittura elevate
 
-Se si abilita un'elevata velocità di scrittura, è necessario garantire la protezione da scrittura a livello applicativo o che le applicazioni siano in grado di tollerare la perdita di dati, qualora si verifichi.
+Se si abilita un'elevata velocità di scrittura, è necessario garantire la protezione da scrittura a livello di applicazione o che le applicazioni siano in grado di tollerare la perdita di dati, qualora si verifichi.
 
 ifdef::aws[]
 
@@ -135,14 +135,14 @@ Quando ciò accade, Cloud Volumes ONTAP dovrebbe essere in grado di avviarsi e c
 
 == Come interrompere l'accesso ai dati in caso di perdita di dati
 
-Se si è preoccupati per la perdita di dati e si desidera che le applicazioni smettano di funzionare in caso di perdita di dati e che l'accesso ai dati venga ripreso dopo che il problema di perdita di dati è stato risolto correttamente, è possibile utilizzare l'opzione NVFAIL dalla CLI per raggiungere tale obiettivo.
+Se si teme la perdita di dati e si desidera che le applicazioni smettano di funzionare in caso di perdita di dati e che l'accesso ai dati venga ripreso dopo aver risolto correttamente il problema della perdita di dati, è possibile utilizzare l'opzione NVFAIL dalla CLI per raggiungere tale obiettivo.
 
 Per abilitare l'opzione NVFAIL:: `vol modify -volume <vol-name> -nvfail on`
 Per controllare le impostazioni NVFAIL:: `vol show -volume <vol-name> -fields nvfail`
 Per disabilitare l'opzione NVFAIL:: `vol modify -volume <vol-name> -nvfail off`
 
 
-Quando si verifica una perdita di dati, un volume NFS o iSCSI con NVFAIL abilitato dovrebbe smettere di elaborare dati (non vi è alcun impatto su CIFS, che è un protocollo stateless).  Per maggiori dettagli, fare riferimento a https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-mgmt-dr/GUID-40D04B8A-01F7-4E87-8161-E30BD80F5B7F.html["In che modo NVFAIL influisce sull'accesso ai volumi NFS o LUN"^] .
+Quando si verifica una perdita di dati, un volume NFS o iSCSI con NVFAIL abilitato dovrebbe smettere di fornire dati (non vi è alcun impatto su CIFS, che è un protocollo stateless).  Per maggiori dettagli, fare riferimento a https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mcc-mgmt-dr/GUID-40D04B8A-01F7-4E87-8161-E30BD80F5B7F.html["In che modo NVFAIL influisce sull'accesso ai volumi NFS o LUN"^] .
 
 Per controllare lo stato NVFAIL:: `vol show -fields in-nvfailed-state`
 
