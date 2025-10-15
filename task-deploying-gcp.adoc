@@ -272,6 +272,9 @@ Se riscontri problemi durante la distribuzione del sistema Cloud Volumes ONTAP ,
 
 Per ulteriore assistenza, vai a https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab["Supporto NetApp Cloud Volumes ONTAP"^] .
 
+
+CAUTION: Una volta completato il processo di distribuzione, non modificare le configurazioni Cloud Volumes ONTAP generate dal sistema nel portale Google Cloud, in particolare i tag di sistema. Qualsiasi modifica apportata a queste configurazioni potrebbe causare comportamenti imprevisti o perdite di dati.
+
 .Dopo aver finito
 * Se hai predisposto una condivisione CIFS, assegna agli utenti o ai gruppi le autorizzazioni per i file e le cartelle e verifica che tali utenti possano accedere alla condivisione e creare un file.
 * Se si desidera applicare quote ai volumi, utilizzare ONTAP System Manager o ONTAP CLI.
@@ -511,4 +514,11 @@ Per ulteriore assistenza, vai a https://mysupport.netapp.com/site/products/all/d
 +
 Le quote consentono di limitare o tenere traccia dello spazio su disco e del numero di file utilizzati da un utente, un gruppo o un qtree.
 
+
+
+
+CAUTION: Una volta completato il processo di distribuzione, non modificare le configurazioni Cloud Volumes ONTAP generate dal sistema nel portale Google Cloud, in particolare i tag di sistema. Qualsiasi modifica apportata a queste configurazioni potrebbe causare comportamenti imprevisti o perdite di dati.
+
+.Link correlati
+* link:task-planning-your-config-gcp.html["Pianificazione della configurazione Cloud Volumes ONTAP in Google Cloud"]
 

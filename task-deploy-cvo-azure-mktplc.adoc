@@ -138,6 +138,9 @@ Assicurarsi che la distribuzione sia completa su Azure Marketplace.  L'agente de
 .Passi
 Nella Console, segui la procedura standard per rilevare i sistemi esistenti. Fare riferimento a link:task-adding-systems.html["Aggiungere un sistema Cloud Volumes ONTAP esistente alla console"] .
 
+
+CAUTION: Durante l'individuazione, potrebbero essere visualizzati messaggi di errore, ma è possibile ignorarli finché il processo di individuazione non sarà completato. Non modificare le configurazioni Cloud Volumes ONTAP generate dal sistema nel portale di Azure Marketplace durante l'individuazione, in particolare i tag di sistema. Qualsiasi modifica apportata a queste configurazioni potrebbe causare comportamenti imprevisti del sistema.
+
 .Dopo aver finito
 Una volta completata l'individuazione, è possibile visualizzare i sistemi elencati nella pagina *Sistemi* nella Console.  È possibile eseguire varie attività di gestione, come ad esempiolink:task-manage-aggregates.html["espandendo l'aggregato"] ,link:task-create-volumes.html["aggiunta di volumi"] ,link:task-managing-svms-azure.html["provisioning di VM di storage aggiuntive"] , Elink:task-change-azure-vm.html["modifica dei tipi di istanza"] .
 

@@ -110,6 +110,9 @@ TIP: Se si desidera utilizzare WORM e il tiering dei dati, è necessario disabil
 .Riepilogo
 Controlla o modifica i dettagli inseriti, quindi fai clic su *Crea*.
 
+
+CAUTION: Una volta completato il processo di distribuzione, non modificare le configurazioni Cloud Volumes ONTAP generate dal sistema nel portale cloud AWS, in particolare i tag di sistema. Qualsiasi modifica apportata a queste configurazioni potrebbe causare comportamenti imprevisti o perdite di dati.
+
 .Link correlati
 * link:task-planning-your-config.html["Pianificazione della configurazione Cloud Volumes ONTAP"]
 * link:task-deploying-otc-aws.html["Distribuisci Cloud Volumes ONTAP in AWS utilizzando la distribuzione avanzata"]

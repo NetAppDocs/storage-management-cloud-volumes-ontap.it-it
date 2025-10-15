@@ -14,7 +14,7 @@ summary: 'Gestisci i tuoi abbonamenti Keystone abilitandoli per l"uso con Cloud 
 
 
 [role="lead lead"]
-Gestisci i tuoi abbonamenti Keystone dal BlueXP digital wallet abilitando gli abbonamenti per l'uso con Cloud Volumes ONTAP e richiedendo modifiche alla capacità impegnata per i livelli di servizio del tuo abbonamento.  Richiedendo capacità aggiuntiva per un livello di servizio si ottiene più spazio di archiviazione per i cluster ONTAP locali o per i sistemi Cloud Volumes ONTAP .
+Gestisci i tuoi abbonamenti Keystone nella NetApp Console abilitando gli abbonamenti per l'uso con Cloud Volumes ONTAP e richiedendo modifiche alla capacità impegnata per i livelli di servizio del tuo abbonamento. Richiedendo capacità aggiuntiva per un livello di servizio si ottiene più spazio di archiviazione per i sistemi Cloud Volumes ONTAP .
 
 NetApp Keystone è un servizio flessibile basato su abbonamento con pagamento in base alla crescita che offre un'esperienza cloud ibrida ai clienti che preferiscono OpEx a CapEx o leasing.
 
@@ -24,19 +24,16 @@ https://www.netapp.com/services/keystone/["Scopri di più su Keystone"^]
 
 == Autorizza il tuo account
 
-Prima di poter utilizzare e gestire gli abbonamenti Keystone in BlueXP, è necessario contattare NetApp per autorizzare il proprio account utente BlueXP con gli abbonamenti Keystone .
+Prima di poter utilizzare e gestire gli abbonamenti Keystone nella Console, è necessario contattare NetApp per autorizzare l'account Console con gli abbonamenti Keystone .
 
 .Passi
-. Dal menu di navigazione BlueXP , seleziona *Governance > Portafoglio digitale*.
+. Dal menu NetApp Console , selezionare *Governance > Licenses and subscriptions*.
 . Seleziona *Abbonamenti Keystone *.
 . Se vedi la pagina *Benvenuti in NetApp Keystone*, invia un'e-mail all'indirizzo indicato nella pagina.
 +
-Un rappresentante NetApp elaborerà la tua richiesta autorizzando il tuo account utente ad accedere agli abbonamenti.
+Un rappresentante NetApp elaborerà la tua richiesta autorizzando il tuo account ad accedere agli abbonamenti.
 
 . Torna alla scheda *Abbonamenti Keystone * per visualizzare i tuoi abbonamenti.
-+
-image:screenshot-keystone-overview.png["Uno screenshot che mostra un elenco degli abbonamenti Keystone ."]
-
 
 
 
@@ -46,31 +43,25 @@ image:screenshot-keystone-overview.png["Uno screenshot che mostra un elenco degl
 Dopo che NetApp avrà autorizzato il tuo account, potrai collegare gli abbonamenti Keystone per utilizzarli con Cloud Volumes ONTAP.  Questa azione consente agli utenti di selezionare l'abbonamento come metodo di addebito per i nuovi sistemi Cloud Volumes ONTAP .
 
 .Passi
-. Dal menu di navigazione BlueXP , seleziona *Governance > Portafoglio digitale*.
+. Dal menu NetApp Console , selezionare *Governance > Licenses and subscriptions*.
 . Seleziona *Abbonamenti Keystone *.
 . Per l'abbonamento che vuoi collegare, cliccaimage:icon-action.png["Un'icona composta da tre punti affiancati"] e seleziona *Collegamento*.
-+
-image:screenshot-keystone-link.png["Uno screenshot che mostra l'opzione del collegamento per un abbonamento."]
-
 
 
 .Risultato
-L'abbonamento è ora collegato alla tua organizzazione o al tuo account BlueXP e può essere selezionato durante la creazione di un ambiente di lavoro Cloud Volumes ONTAP .
+L'abbonamento è ora collegato all'organizzazione o all'account della console e può essere selezionato durante la creazione di un ambiente di lavoro Cloud Volumes ONTAP .
 
 
 
 == Richiedi più o meno capacità impegnata
 
-Se desideri modificare la capacità impegnata per i livelli di servizio del tuo abbonamento, puoi inviare una richiesta a NetApp direttamente da BlueXP.  Richiedendo capacità aggiuntiva per un livello di servizio si ottiene più spazio di archiviazione per i cluster locali o per i sistemi Cloud Volumes ONTAP .
+Se desideri modificare la capacità impegnata per i livelli di servizio del tuo abbonamento, puoi inviare una richiesta a NetApp direttamente dalla Console. Richiedendo capacità aggiuntiva per un livello di servizio si ottiene più spazio di archiviazione per i sistemi Cloud Volumes ONTAP .
 
 .Passi
-. Dal menu di navigazione BlueXP , seleziona *Governance > Portafoglio digitale*.
+. Dal menu NetApp Console , selezionare *Governance > Licenses and subscriptions*.
 . Seleziona *Abbonamenti Keystone *.
-. Per l'abbonamento di cui vuoi regolare la capacità, cliccaimage:icon-action.png["Un'icona composta da tre punti affiancati"] e seleziona *Visualizza dettagli e modifica*.
+. Per l'abbonamento di cui si desidera regolare la capacità, fare clic su image:icon-action.png["Un'icona composta da tre punti affiancati"] e seleziona *Visualizza dettagli e modifica*.
 . Inserisci la capacità impegnata richiesta per uno o più abbonamenti.
-+
-image:screenshot-keystone-request.png["Uno screenshot che mostra la possibilità di richiedere una modifica alla capacità impegnata per un abbonamento."]
-
 . Scorri verso il basso, inserisci eventuali dettagli aggiuntivi per la richiesta, quindi fai clic su *Invia*.
 
 
@@ -81,7 +72,7 @@ La tua richiesta crea un ticket nel sistema NetApp per l'elaborazione.
 
 == Monitorare l'utilizzo
 
-La dashboard BlueXP digital advisor consente di monitorare l'utilizzo dell'abbonamento Keystone e di generare report.
+La dashboard Digital Advisor consente di monitorare l'utilizzo dell'abbonamento Keystone e di generare report.
 
 https://docs.netapp.com/us-en/keystone-staas/integrations/aiq-keystone-details.html["Scopri di più sul monitoraggio dell'utilizzo degli abbonamenti"^]
 
@@ -89,13 +80,13 @@ https://docs.netapp.com/us-en/keystone-staas/integrations/aiq-keystone-details.h
 
 == Scollegare un abbonamento
 
-Se non desideri più utilizzare un abbonamento Keystone con BlueXP, puoi scollegarlo.  Tieni presente che puoi scollegare solo un abbonamento che non è collegato a un abbonamento Cloud Volumes ONTAP esistente.
+Se non desideri più utilizzare un abbonamento Keystone con la Console, puoi scollegarlo. Tieni presente che puoi scollegare solo un abbonamento che non è collegato a un abbonamento Cloud Volumes ONTAP esistente.
 
 .Passi
-. Dal menu di navigazione BlueXP , seleziona *Governance > Portafoglio digitale*.
+. Dal menu NetApp Console , selezionare *Governance > Licenses and subscriptions*.
 . Seleziona * Keystone*.
 . Per l'abbonamento che vuoi scollegare, cliccaimage:icon-action.png["Un'icona composta da tre punti affiancati"] e seleziona *Scollega*.
 
 
 .Risultato
-L'abbonamento è scollegato dall'organizzazione o dall'account BlueXP e non è più disponibile per la selezione durante la creazione di un ambiente di lavoro Cloud Volumes ONTAP .
+L'abbonamento è scollegato dall'organizzazione o dall'account della Console e non è più disponibile per la selezione durante la creazione di un ambiente di lavoro Cloud Volumes ONTAP .
