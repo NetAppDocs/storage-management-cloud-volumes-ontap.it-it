@@ -44,6 +44,137 @@ La console offre due modi per aggiornare Cloud Volumes ONTAP:
 
 La versione di Cloud Volumes ONTAP a cui puoi effettuare l'aggiornamento dipende dalla versione di Cloud Volumes ONTAP attualmente in esecuzione.
 
+ifdef::aws[]
+
+[cols="2*"]
+|===
+| Versione attuale | Versioni a cui puoi effettuare l'aggiornamento diretto 
+
+
+| 9.15.0 | 9.15.1 
+
+
+.2+| 9.14.1 | 9.15.1 
+
+
+| 9.15.0 
+
+
+| 9.14.0 | 9.14.1 
+
+
+.2+| 9.13.1 | 9.14.1 
+
+
+| 9.14.0 
+
+
+| 9.13.0 | 9.13.1 
+
+
+.2+| 9.12.1 | 9.13.1 
+
+
+| 9.13.0 
+
+
+| 9.12.0 | 9.12.1 
+
+
+.2+| 9.11.1 | 9.12.1 
+
+
+| 9.12.0 
+
+
+| 9.11.0 | 9.11.1 
+
+
+.2+| 9.10.1 | 9.11.1 
+
+
+| 9.11.0 
+
+
+| 9.10.0 | 9.10.1 
+
+
+.2+| 9.9.1 | 9.10.1 
+
+
+| 9.10.0 
+
+
+| 9.9.0 | 9.9.1 
+
+
+| 9,8 | 9.9.1 
+
+
+| 9,7 | 9,8 
+
+
+| 9,6 | 9,7 
+
+
+| 9,5 | 9,6 
+
+
+| 9,4 | 9,5 
+
+
+| 9,3 | 9,4 
+
+
+| 9,2 | 9,3 
+
+
+| 9,1 | 9,2 
+
+
+| 9,0 | 9,1 
+
+
+| 8,3 | 9,0 
+|===
+endif::aws[]
+
+ifdef::azure[]
+
+[cols="2*"]
+|===
+| Versione attuale | Versioni a cui puoi effettuare l'aggiornamento diretto 
+
+
+| 9.16.1 P3 | 9.17.1 RC1 
+
+
+| 9.15.1 P10 | 9.16.1 P3 
+
+
+| 9.14.1 P13 | 9.15.1 P10 
+
+
+| 9.13.1 P16 | 9.14.1 P13 
+
+
+| 9.12.1 P18 | 9.13.1 P16 
+
+
+| 9.11.1 P20 | 9.12.1 P18 
+|===
+Se disponi di una versione precedente di Cloud Volumes ONTAP in Azure, devi prima eseguire l'aggiornamento alla versione successiva e seguire i percorsi di aggiornamento supportati per raggiungere la versione di destinazione.  Ad esempio, se si dispone di Cloud Volumes ONTAP 9.7 P7, seguire questo percorso di aggiornamento:
+
+* 9.7 P7 -> 9.8 P18
+* 9.8 P18 -> 9.9.1 P15
+* 9.9.1 P15 -> 9.10.1 P12
+* 9.10.1 P12 -> 9.11.1 P20
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
 [cols="2*"]
 |===
 | Versione attuale | Versioni a cui puoi effettuare l'aggiornamento diretto 
@@ -141,6 +272,8 @@ La versione di Cloud Volumes ONTAP a cui puoi effettuare l'aggiornamento dipende
 
 | 8,3 | 9,0 
 |===
+endif::gcp[]
+
 Notare quanto segue:
 
 * I percorsi di aggiornamento supportati per Cloud Volumes ONTAP sono diversi da quelli per un cluster ONTAP locale.
@@ -158,14 +291,16 @@ Ad esempio, se stai utilizzando la versione 9.8 e vuoi eseguire l'aggiornamento 
 
 A partire da gennaio 2024, gli aggiornamenti delle patch saranno disponibili solo se sarà disponibile una patch per le tre versioni più recenti di Cloud Volumes ONTAP.  Occasionalmente sono disponibili versioni patch per la distribuzione, quando la versione RC o GA non è disponibile per la distribuzione.
 
-Utilizziamo l'ultima versione GA per determinare le tre versioni più recenti da visualizzare nella Console.  Ad esempio, se la versione GA corrente è 9.13.1, nella Console vengono visualizzate le patch per 9.11.1-9.13.1.  Se si desidera eseguire l'aggiornamento a una versione patch per le versioni 9.11.1 o precedenti, sarà necessario utilizzare la procedura di aggiornamento manuale tramite<<Aggiorna da un'immagine disponibile a un URL,scaricando l'immagine ONTAP>> .
+Utilizziamo l'ultima versione GA per determinare le tre versioni più recenti da visualizzare nella Console. Ad esempio, se la versione GA corrente è 9.13.1, nella Console vengono visualizzate le patch per 9.11.1-9.13.1.
 
-Come regola generale per le versioni patch (P), è possibile effettuare l'aggiornamento da una versione a qualsiasi versione P della versione corrente in esecuzione o della versione successiva.
+Per le versioni di patch 9.11.1 o precedenti, sarà necessario utilizzare una procedura di aggiornamento manuale tramite<<Aggiorna da un'immagine disponibile a un URL,scaricando l'immagine ONTAP>> .
+
+Come regola generale per le versioni di patch, è possibile eseguire l'aggiornamento da una versione di patch inferiore a qualsiasi versione di patch superiore nella stessa versione o in quella successiva Cloud Volumes ONTAP .
 
 Ecco un paio di esempi:
 
-* 9.13.0 > 9.13.1P15
-* 9.12.1 > 9.13.1P2
+* 9.13.0 -> 9.13.1 P15
+* 9.12.1 -> 9.13.1 P2
 
 
 

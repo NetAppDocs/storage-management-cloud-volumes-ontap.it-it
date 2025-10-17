@@ -92,7 +92,7 @@ TIP: Se si desidera utilizzare WORM e il data tiering, è necessario disabilitar
 . *Posizione*: selezionare una regione, una zona di disponibilità, una rete virtuale e una subnet, quindi selezionare la casella di controllo per confermare la connettività di rete tra l'agente della console e la posizione di destinazione.
 +
 
-NOTE: Per le regioni della Cina, le distribuzioni a nodo singolo sono supportate solo in Cloud Volumes ONTAP 9.12.1 GA e 9.13.0 GA.  È possibile aggiornare queste versioni a patch e release successive di Cloud Volumes ONTAP.  Se desideri distribuire versioni successive di Cloud Volumes ONTAP nelle regioni della Cina, contatta l'assistenza NetApp .  Nelle regioni della Cina sono supportate solo le licenze acquistate direttamente da NetApp ; gli abbonamenti al marketplace non sono disponibili.
+NOTE: Per le regioni della Cina, le distribuzioni a nodo singolo sono supportate solo in Cloud Volumes ONTAP 9.12.1 GA e 9.13.0 GA. È possibile aggiornare queste versioni a patch e release successive di Cloud Volumes ONTAP comelink:task-updating-ontap-cloud.html["supportato in Azure"] . Se desideri distribuire versioni successive di Cloud Volumes ONTAP nelle regioni della Cina, contatta l'assistenza NetApp . Nelle regioni della Cina sono supportate solo le licenze acquistate direttamente da NetApp ; gli abbonamenti al marketplace non sono disponibili.
 
 . *Connettività*: scegli un gruppo di risorse nuovo o esistente e poi scegli se utilizzare il gruppo di sicurezza predefinito o il tuo.
 +
@@ -136,7 +136,7 @@ Se si sceglie uno dei pacchetti, è sufficiente specificare un volume e quindi r
 . *Licenze*: se necessario, modifica la versione di Cloud Volumes ONTAP e seleziona un tipo di macchina virtuale.
 +
 
-NOTE: Se per la versione selezionata è disponibile una versione Release Candidate, una versione General Availability o una patch più recente, la Console aggiorna il sistema a tale versione durante la sua creazione.  Ad esempio, l'aggiornamento avviene se si seleziona Cloud Volumes ONTAP 9.13.1 e se è disponibile la versione 9.13.1 P4.  L'aggiornamento non avviene da una versione all'altra, ad esempio dalla 9.13 alla 9.14.
+NOTE: Se per la versione selezionata è disponibile una versione Release Candidate, una versione General Availability o una patch più recente, BlueXP aggiorna il sistema a tale versione durante la creazione dell'ambiente di lavoro.  Ad esempio, l'aggiornamento avviene se si seleziona Cloud Volumes ONTAP 9.16.1 P3 e 9.16.1 P4 è disponibile. L'aggiornamento non avviene da una versione all'altra, ad esempio dalla 9.15 alla 9.16.
 
 . *Iscriviti da Azure Marketplace*: questa pagina viene visualizzata se la console non è riuscita ad abilitare le distribuzioni programmatiche di Cloud Volumes ONTAP.  Seguire i passaggi elencati sullo schermo. fare riferimento a https://learn.microsoft.com/en-us/marketplace/programmatic-deploy-of-marketplace-products["Distribuzione programmatica dei prodotti Marketplace"^] per maggiori informazioni.
 . *Risorse di archiviazione sottostanti*: scegli le impostazioni per l'aggregato iniziale: un tipo di disco, una dimensione per ciascun disco e se abilitare la suddivisione dei dati in livelli nell'archiviazione BLOB.
