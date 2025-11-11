@@ -116,4 +116,5 @@ Quando si crea un nuovo sistema Cloud Volumes ONTAP 9.8 o versione successiva, Ã
 
 .Link correlato
 * link:reference-worm-snaplock.html["Crea copie Snapshot a prova di manomissione per l'archiviazione WORM"]
+* link:concept-licensing-charging.html["Licenze e addebiti in Cloud Volumes ONTAP"]
 

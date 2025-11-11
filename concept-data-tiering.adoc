@@ -196,7 +196,8 @@ Se letti tramite letture casuali, i blocchi di dati freddi nel livello di capaci
 Nessuno:: Mantiene i dati di un volume nel livello delle prestazioni, impedendone lo spostamento nel livello della capacità.
 
 
-Quando si replica un volume, è possibile scegliere se suddividere i dati in livelli di archiviazione degli oggetti.  In tal caso, la Console applica il criterio *Backup* al volume di protezione dei dati.  A partire da Cloud Volumes ONTAP 9.6, la policy di tiering *All* sostituisce la policy di backup.
+.Replicazione
+Quando si replica un volume, è possibile scegliere se suddividere i dati in livelli di archiviazione degli oggetti. In tal caso, la Console applica il criterio *Backup* al volume di protezione dei dati. A partire da Cloud Volumes ONTAP 9.6, la policy di tiering *All* sostituisce la policy di backup. Quando una relazione di replicazione viene eliminata, il volume di destinazione mantiene la politica di suddivisione in livelli in vigore durante la replicazione.
 
 
 

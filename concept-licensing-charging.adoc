@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-licensing-charging.html 
-keywords: capacity-based license charging, consumption for licenses, pricing for licenses, CVO licensing, CVO charging 
+keywords: capacity-based license charging, consumption for licenses, pricing for licenses, CVO licensing, CVO charging, SnapLock charging, CIFS charging, audit volumes, primary volumes, volume-based charging 
 summary: Acquisire familiarità con la tariffazione, il modello di consumo, i prezzi e le configurazioni delle licenze basate sulla capacità. 
 ---
 = Scopri di più sulle licenze basate sulla capacità per Cloud Volumes ONTAP
@@ -64,11 +64,11 @@ Per informazioni sulla conversione delle licenze basate sui nodi in licenze basa
 
 
 
-== Prezzi e configurazioni supportate
+== Addebiti e configurazioni supportate nelle licenze basate sulla capacità
+
+La fatturazione in Cloud Volumes ONTAP si basa su una serie di fattori, come pacchetti e tipi di volume. I pacchetti di licenze basati sulla capacità sono disponibili con Cloud Volumes ONTAP 9.7 e versioni successive.
 
 Per i dettagli sui prezzi, vai a https://bluexp.netapp.com/pricing/["Sito web NetApp Console"^] .
-
-I pacchetti di licenze basati sulla capacità sono disponibili con Cloud Volumes ONTAP 9.7 e versioni successive.
 
 
 
@@ -109,7 +109,7 @@ Per informazioni sui limiti di capacità di ciascun provider cloud, fare riferim
 
 == Numero massimo di sistemi
 
-Con le licenze basate sulla capacità, il numero massimo di sistemi Cloud Volumes ONTAP è limitato a 24 per account NetApp Console .  Un _sistema_ è una coppia Cloud Volumes ONTAP HA, un sistema a nodo singolo Cloud Volumes ONTAP o qualsiasi VM di storage aggiuntiva creata.  La VM di archiviazione predefinita non viene conteggiata nel limite.  Questo limite si applica a tutti i modelli di licenza.
+Con le licenze basate sulla capacità, il numero massimo di sistemi Cloud Volumes ONTAP è limitato a 24 per organizzazione NetApp Console . Un _sistema_ è una coppia Cloud Volumes ONTAP HA, un sistema a nodo singolo Cloud Volumes ONTAP o qualsiasi VM di storage aggiuntiva creata. La VM di archiviazione predefinita non viene conteggiata nel limite. Questo limite si applica a tutti i modelli di licenza.
 
 Ad esempio, supponiamo di avere tre sistemi:
 
@@ -127,13 +127,17 @@ Questo sistema conta come tre sistemi: uno per la coppia HA e due per le VM di s
 
 
 
-In totale sono sei sistemi.  A quel punto avresti spazio per altri 14 sistemi nel tuo account.
+In totale sono sei sistemi. A quel punto nella tua organizzazione ci sarebbe spazio per altri 14 sistemi.
 
-Se hai una distribuzione di grandi dimensioni che richiede più di 24 sistemi, contatta il tuo rappresentante o il team di vendita.
-
-https://docs.netapp.com/us-en/bluexp-setup-admin/concept-netapp-accounts.html["Scopri di più sugli account Console"^] .
+Se hai una distribuzione di grandi dimensioni che richiede più di 24 sistemi, contatta il tuo rappresentante commerciale o il team di vendita.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Scopri i limiti di archiviazione per AWS, Azure e Google Cloud"^] .
+
+
+
+== Addebito per volumi di lettura/scrittura
+
+Se si crea o si utilizza un volume scrivibile (lettura/scrittura), questo viene considerato un volume primario e viene addebitato il costo della capacità fornita in base alla tariffa minima per VM di archiviazione (SVM).  Tra gli esempi rientrano i volumi di lettura/scrittura FlexVol , i volumi di controllo SnapLock e i volumi di controllo CIFS/NFS.  Tutti i volumi di dati creati dall'utente vengono addebitati in base al tipo di abbonamento e pacchetto.  I volumi interni ONTAP creati automaticamente e che non possono memorizzare dati, come i volumi root SVM, non vengono addebitati.
 
 
 

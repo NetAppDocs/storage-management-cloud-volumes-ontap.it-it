@@ -14,7 +14,10 @@ summary: È possibile individuare e aggiungere sistemi Cloud Volumes ONTAP esist
 
 
 [role="lead"]
-È possibile scoprire e aggiungere sistemi Cloud Volumes ONTAP esistenti a NetApp Console.  Potresti farlo se hai implementato un nuovo sistema.
+È possibile scoprire e aggiungere sistemi Cloud Volumes ONTAP esistenti alla NetApp Console. Potresti farlo se hai implementato un nuovo sistema.
+
+
+NOTE: È possibile aggiungere solo i sistemi registrati con l'account utilizzato per accedere alla Console.  Se disponi di più account o organizzazioni, assicurati di aver effettuato l'accesso all'account corretto prima di aggiungere sistemi.  Non è possibile scoprire, visualizzare o gestire sistemi registrati con un account o un'organizzazione diversi.
 
 .Prima di iniziare
 È necessario conoscere la password per l'account utente amministratore Cloud Volumes ONTAP .

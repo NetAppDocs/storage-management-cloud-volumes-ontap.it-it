@@ -20,6 +20,20 @@ I miglioramenti descritti in questa pagina sono specifici per la gestione di Clo
 
 
 
+== 10 novembre 2025
+
+
+
+=== Supporto NVMe-TCP migliorato
+
+In precedenza, quando si distribuivano istanze Cloud Volumes ONTAP su NVMe-TCP, era necessario ottenere e applicare manualmente le licenze NVMe prima della distribuzione.  Con questo aggiornamento, Cloud Volumes ONTAP ora installa automaticamente le licenze NVMe richieste durante la distribuzione, semplificando il processo di configurazione.
+
+Per le distribuzioni NVMe-TCP esistenti prive di licenze, Cloud Volumes ONTAP applica le licenze automaticamente.  È necessario riavviare il sistema affinché le licenze abbiano effetto.
+
+Per maggiori informazioni, vedere https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-client-protocols.html#nvme-tcp["Protocolli client supportati per Cloud Volumes ONTAP: NVMe-TCP"^] .
+
+
+
 == 17 ottobre 2025
 
 

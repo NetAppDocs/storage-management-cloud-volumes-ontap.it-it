@@ -48,6 +48,8 @@ link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/index.html#how-s3-mult
 
 == NVMe-TCP
 
-A partire dalla versione 9.12.1 ONTAP , NVMe-TCP è supportato dai provider cloud.  NetApp Console non fornisce alcuna funzionalità di gestione per NVMe-TCP.
+A partire dalla versione 9.12.1 ONTAP , NVMe-TCP è supportato da tutti i provider cloud.  Cloud Volumes ONTAP supporta NVMe-TCP come protocollo a blocchi per le VM di archiviazione (SVM) durante la distribuzione e installa automaticamente le licenze NVMe richieste.
+
+NetApp Console non fornisce alcuna funzionalità di gestione per NVMe-TCP.
 
 Per ulteriori informazioni sulla configurazione di NVMe tramite ONTAP, fare riferimento a https://docs.netapp.com/us-en/ontap/san-admin/configure-svm-nvme-task.html["Documentazione ONTAP : configurare una VM di archiviazione per NVMe"^] .

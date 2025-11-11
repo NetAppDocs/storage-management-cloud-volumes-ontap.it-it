@@ -29,3 +29,8 @@ Le copie Snapshot ereditano le proprietà WORM del volume, rendendole a prova di
 
 
 NOTE: Anche se una copia Snapshot è protetta per un periodo di conservazione specifico, il volume di origine può essere eliminato da un amministratore del cluster, poiché l'archiviazione WORM in Cloud Volumes ONTAP funziona secondo un modello di "amministratore di archiviazione attendibile".  Inoltre, un amministratore cloud fidato può eliminare i dati WORM agendo sulle risorse di archiviazione cloud.
+
+.Link correlati
+* Per ulteriori informazioni su WORM, fare riferimento alink:concept-worm.html["Scopri di più sullo storage WORM su Cloud Volumes ONTAP"] .
+* Per informazioni sulla ricarica dei volumi SnapLock , fare riferimento alink:concept-licensing-charging.html["Licenze e addebiti in Cloud Volumes ONTAP"] .
+
