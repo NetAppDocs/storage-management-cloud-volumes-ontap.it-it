@@ -5910,7 +5910,6 @@
   <block id="049b7b9fab1242f5e715952973c9474d" category="list-text">Gestisci un caso esistente selezionando<block ref="7381d9baeaf62eb099ce84f1a21ed5ca" category="inline-image-macro-rx" type="image"></block> e selezionando una delle opzioni disponibili:</block>
   <block id="a58a19877ed0bf7f9b6d06fdd8387763" category="paragraph">Gestisci i tuoi abbonamenti Keystone nella NetApp Console abilitando gli abbonamenti per l'uso con Cloud Volumes ONTAP e richiedendo modifiche alla capacità impegnata per i livelli di servizio del tuo abbonamento. Richiedendo capacità aggiuntiva per un livello di servizio si ottiene più spazio di archiviazione per i sistemi Cloud Volumes ONTAP .</block>
   <block id="df5e66b5e7999995b53a0f100212d79f" category="paragraph">Prima di poter utilizzare e gestire gli abbonamenti Keystone nella Console, è necessario contattare NetApp per autorizzare l'account Console con gli abbonamenti Keystone .</block>
-  <block id="0aa8bceb217782b5e4390aefe60d271f" category="list-text">Dal menu NetApp Console , selezionare *Governance &gt; Licenses and subscriptions*.</block>
   <block id="a53c428d90f592127da49a8d5a558130" category="paragraph">Un rappresentante NetApp elaborerà la tua richiesta autorizzando il tuo account ad accedere agli abbonamenti.</block>
   <block id="9c2f6d6e4376237ad065b1baa0ad822d" category="paragraph">L'abbonamento è ora collegato all'organizzazione o all'account della console e può essere selezionato durante la creazione di un ambiente di lavoro Cloud Volumes ONTAP .</block>
   <block id="10d2905ee5dfcb309d64e3633fb774c1" category="paragraph">Se desideri modificare la capacità impegnata per i livelli di servizio del tuo abbonamento, puoi inviare una richiesta a NetApp direttamente dalla Console. Richiedendo capacità aggiuntiva per un livello di servizio si ottiene più spazio di archiviazione per i sistemi Cloud Volumes ONTAP .</block>
@@ -6029,4 +6028,6 @@
   <block id="d3a90b06c127d63ce537a10a93397d85" category="paragraph">È possibile scoprire e aggiungere sistemi Cloud Volumes ONTAP esistenti alla NetApp Console. Potresti farlo se hai implementato un nuovo sistema.</block>
   <block id="b478e45f14d8c22f3f75f65edd503adc" category="admonition">È possibile aggiungere solo i sistemi registrati con l'account utilizzato per accedere alla Console.  Se disponi di più account o organizzazioni, assicurati di aver effettuato l'accesso all'account corretto prima di aggiungere sistemi.  Non è possibile scoprire, visualizzare o gestire sistemi registrati con un account o un'organizzazione diversi.</block>
   <block id="77750efa6f5ff153acdc42067058017f" category="section-title">10 novembre 2025</block>
+  <block id="02fd9216d7e373ffe2ab6061c04d9957" category="list-text">9.17.1 P1</block>
+  <block id="9ef810f213faea9695f8494f68387049" category="list-text">Dal menu NetApp Console , selezionare *Amministrazione &gt; Licenses and subscriptions*.</block>
 </blocks>

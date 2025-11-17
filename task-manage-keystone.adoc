@@ -27,7 +27,7 @@ https://www.netapp.com/services/keystone/["Scopri di più su Keystone"^]
 Prima di poter utilizzare e gestire gli abbonamenti Keystone nella Console, è necessario contattare NetApp per autorizzare l'account Console con gli abbonamenti Keystone .
 
 .Passi
-. Dal menu NetApp Console , selezionare *Governance > Licenses and subscriptions*.
+. Dal menu NetApp Console , selezionare *Amministrazione > Licenses and subscriptions*.
 . Seleziona *Abbonamenti Keystone *.
 . Se vedi la pagina *Benvenuti in NetApp Keystone*, invia un'e-mail all'indirizzo indicato nella pagina.
 +
@@ -43,7 +43,7 @@ Un rappresentante NetApp elaborerà la tua richiesta autorizzando il tuo account
 Dopo che NetApp avrà autorizzato il tuo account, potrai collegare gli abbonamenti Keystone per utilizzarli con Cloud Volumes ONTAP.  Questa azione consente agli utenti di selezionare l'abbonamento come metodo di addebito per i nuovi sistemi Cloud Volumes ONTAP .
 
 .Passi
-. Dal menu NetApp Console , selezionare *Governance > Licenses and subscriptions*.
+. Dal menu NetApp Console , selezionare *Amministrazione > Licenses and subscriptions*.
 . Seleziona *Abbonamenti Keystone *.
 . Per l'abbonamento che vuoi collegare, cliccaimage:icon-action.png["Un'icona composta da tre punti affiancati"] e seleziona *Collegamento*.
 
@@ -58,7 +58,7 @@ L'abbonamento è ora collegato all'organizzazione o all'account della console e 
 Se desideri modificare la capacità impegnata per i livelli di servizio del tuo abbonamento, puoi inviare una richiesta a NetApp direttamente dalla Console. Richiedendo capacità aggiuntiva per un livello di servizio si ottiene più spazio di archiviazione per i sistemi Cloud Volumes ONTAP .
 
 .Passi
-. Dal menu NetApp Console , selezionare *Governance > Licenses and subscriptions*.
+. Dal menu NetApp Console , selezionare *Amministrazione > Licenses and subscriptions*.
 . Seleziona *Abbonamenti Keystone *.
 . Per l'abbonamento di cui si desidera regolare la capacità, fare clic su image:icon-action.png["Un'icona composta da tre punti affiancati"] e seleziona *Visualizza dettagli e modifica*.
 . Inserisci la capacità impegnata richiesta per uno o più abbonamenti.
@@ -83,7 +83,7 @@ https://docs.netapp.com/us-en/keystone-staas/integrations/aiq-keystone-details.h
 Se non desideri più utilizzare un abbonamento Keystone con la Console, puoi scollegarlo. Tieni presente che puoi scollegare solo un abbonamento che non è collegato a un abbonamento Cloud Volumes ONTAP esistente.
 
 .Passi
-. Dal menu NetApp Console , selezionare *Governance > Licenses and subscriptions*.
+. Dal menu NetApp Console , selezionare *Amministrazione > Licenses and subscriptions*.
 . Seleziona * Keystone*.
 . Per l'abbonamento che vuoi scollegare, cliccaimage:icon-action.png["Un'icona composta da tre punti affiancati"] e seleziona *Scollega*.
 
