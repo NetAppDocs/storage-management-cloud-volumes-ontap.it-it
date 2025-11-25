@@ -54,7 +54,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.
 
 Il dimensionamento del sistema Cloud Volumes ONTAP può aiutarti a soddisfare i requisiti di prestazioni e capacità.  Quando si sceglie un tipo di macchina, un tipo di disco e una dimensione del disco, è necessario tenere presenti alcuni punti chiave:
 
-Tipo di macchina:: Guarda i tipi di macchina supportati in http://docs.netapp.com/cloud-volumes-ontap/us-en/index.html["Note sulla versione Cloud Volumes ONTAP"^] e poi rivedere i dettagli di Google su ciascun tipo di macchina supportato.  Adatta i requisiti del carico di lavoro al numero di vCPU e di memoria per il tipo di macchina.  Si noti che ogni core della CPU aumenta le prestazioni di rete.
+Tipo di macchina:: Guarda i tipi di macchina supportati in https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Note sulla versione Cloud Volumes ONTAP"^] e poi rivedere i dettagli di Google su ciascun tipo di macchina supportato. Adatta i requisiti del carico di lavoro al numero di vCPU e di memoria per il tipo di macchina. Si noti che ogni core della CPU aumenta le prestazioni di rete.
 +
 --
 Per maggiori dettagli fare riferimento a quanto segue:
@@ -102,7 +102,7 @@ Per maggiori dettagli fare riferimento a quanto segue:
 Oltre allo storage per i dati utente, la Console acquista anche storage cloud per i dati di sistema Cloud Volumes ONTAP (dati di avvio, dati root, dati core e NVRAM).  Ai fini della pianificazione, potrebbe essere utile rivedere questi dettagli prima di distribuire Cloud Volumes ONTAP.
 
 * link:reference-default-configs.html#google-cloud-single-node["Visualizza i dischi predefiniti per i dati di sistema Cloud Volumes ONTAP in Google Cloud"] .
-* https://cloud.google.com/compute/quotas["Documentazione di Google Cloud: quote di risorse"^]
+* https://docs.cloud.google.com/docs/quotas/overview["Documentazione di Google Cloud: panoramica delle quote Cloud"^]
 +
 Google Cloud Compute Engine impone delle quote sull'utilizzo delle risorse, quindi assicurati di non aver raggiunto il limite prima di distribuire Cloud Volumes ONTAP.
 

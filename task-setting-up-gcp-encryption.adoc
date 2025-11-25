@@ -19,7 +19,7 @@ Sebbene Google Cloud Storage crittografi sempre i dati prima che vengano scritti
 .Passi
 . Assicurarsi che l'account del servizio agente della console disponga delle autorizzazioni corrette a livello di progetto, nel progetto in cui è archiviata la chiave.
 +
-I permessi sono forniti nel https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html["le autorizzazioni dell'account di servizio per impostazione predefinita"^] , ma potrebbe non essere applicato se si utilizza un progetto alternativo per il Cloud Key Management Service.
+I permessi sono forniti nel https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["le autorizzazioni dell'account di servizio per impostazione predefinita"^] , ma potrebbe non essere applicato se si utilizza un progetto alternativo per il Cloud Key Management Service.
 
 +
 I permessi sono i seguenti:

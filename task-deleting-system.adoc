@@ -24,7 +24,7 @@ NOTE: Altre risorse, come i backup gestiti da NetApp Backup and Recovery e le is
 Quando la Console distribuisce Cloud Volumes ONTAP nel tuo provider cloud, abilita la protezione dalla terminazione sulle istanze.  Questa opzione aiuta a prevenire la chiusura accidentale.
 
 .Passi
-. Se hai abilitato Backup e Ripristino sul sistema, determina se i dati sottoposti a backup sono ancora necessari e quindi https://docs.netapp.com/us-en/bluexp-backup-recovery/task-manage-backups-ontap.html#deleting-backups["eliminare i backup, se necessario"^] .
+. Se hai abilitato Backup e Ripristino sul sistema, determina se i dati sottoposti a backup sono ancora necessari e quindi https://docs.netapp.com/us-en/data-services-backup-recovery/prev-ontap-backup-manage.html#delete-backups["eliminare i backup, se necessario"^] .
 +
 Backup e ripristino sono progettati in modo indipendente da Cloud Volumes ONTAP .  Backup and Recovery non elimina automaticamente i backup quando si elimina un sistema Cloud Volumes ONTAP e attualmente nell'interfaccia utente non è presente alcun supporto per eliminare i backup dopo l'eliminazione del sistema.
 

@@ -27,7 +27,7 @@ Prima di iniziare, ti occorre quanto segue.
 +
 ** Dovresti avere un https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Agente console associato al tuo sistema"^] .
 ** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Dovresti essere pronto a lasciare l'agente della console sempre in esecuzione"^] .
-** L'account di servizio associato all'agente della console https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html["dovrebbe avere i permessi richiesti"^]
+** L'account di servizio associato all'agente della console https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["dovrebbe avere i permessi richiesti"^]
 
 
 * Una comprensione della configurazione che si desidera utilizzare.

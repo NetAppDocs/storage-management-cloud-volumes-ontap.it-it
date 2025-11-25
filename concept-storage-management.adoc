@@ -129,7 +129,7 @@ La gestione automatica della capacità della Console non si applica alle LUN.  Q
 
 === Gestione manuale della capacità
 
-Se l'amministratore dell'organizzazione o dell'account imposta la modalità di gestione della capacità su manuale, la console ti informa di intraprendere le azioni appropriate per le decisioni sulla capacità.  Gli stessi esempi descritti nella modalità automatica si applicano alla modalità manuale, ma spetta a te accettare le azioni.
+Se l'amministratore dell'organizzazione o dell'account imposta la *Modalità di gestione della capacità* su manuale, la Console ti informa di intraprendere le azioni appropriate per le decisioni sulla capacità. Gli stessi esempi descritti nella modalità automatica si applicano alla modalità manuale, ma spetta a te accettare le azioni.
 
 
 

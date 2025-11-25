@@ -70,7 +70,7 @@ Paga in anticipo acquistando una licenza (BYOL) da NetApp per distribuire i sist
 NOTE: NetApp ha limitato l'acquisto, l'estensione e il rinnovo delle licenze BYOL. Per ulteriori informazioni, consulta  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Disponibilità limitata delle licenze BYOL per Cloud Volumes ONTAP"^] .
 
 .Passi
-. https://bluexp.netapp.com/contact-cds["Contatta NetApp Sales per ottenere una licenza"^]
+. https://www.netapp.com/forms/sales-contact/["Contatta NetApp Sales per ottenere una licenza"^]
 . https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html#add-an-nss-account["Aggiungi il tuo account del sito di supporto NetApp alla console"^]
 +
 La Console interroga automaticamente il servizio licenze di NetApp per ottenere dettagli sulle licenze associate al tuo account NetApp Support Site.  Se non ci sono errori, la Console aggiunge automaticamente le licenze alla Console.

@@ -45,7 +45,7 @@ Quando si creano VM di archiviazione utilizzando le API, insieme alla configuraz
 
 
 .Prima di iniziare
-L'agente della console richiede autorizzazioni specifiche per creare VM di archiviazione per coppie Cloud Volumes ONTAP HA.  Le autorizzazioni richieste sono incluse in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html["le policy fornite da NetApp"^] .
+L'agente della console richiede autorizzazioni specifiche per creare VM di archiviazione per coppie Cloud Volumes ONTAP HA. Le autorizzazioni richieste sono incluse in https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["le policy fornite da NetApp"^] .
 
 
 
@@ -86,7 +86,7 @@ Includi i seguenti parametri nel corpo della richiesta:
 Utilizzando le API, è possibile rinominare ed eliminare le VM di storage sia nelle configurazioni a nodo singolo che in quelle HA.
 
 .Prima di iniziare
-L'agente della console richiede autorizzazioni specifiche per gestire le VM di archiviazione per le coppie Cloud Volumes ONTAP HA.  Le autorizzazioni richieste sono incluse in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-gcp.html["le policy fornite da NetApp"^] .
+L'agente della console richiede autorizzazioni specifiche per gestire le VM di archiviazione per le coppie Cloud Volumes ONTAP HA. Le autorizzazioni richieste sono incluse in https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["le policy fornite da NetApp"^] .
 
 
 
