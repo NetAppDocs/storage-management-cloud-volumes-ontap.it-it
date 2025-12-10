@@ -74,6 +74,11 @@ La distribuzione zonale utilizza Premium SSD v2 Managed Disks quando sono soddis
 
 
 --
+
+
+
+NOTE: Se si sceglie Premium SSD Managed Disks per un ambiente che soddisfa i criteri sopra indicati, la Console distribuisce automaticamente Premium SSD v2 Managed Disks. Non è possibile passare ai dischi gestiti Premium SSD v1.
+
 Dischi:: I dati dei clienti risiedono su dischi gestiti con archiviazione ridondante locale (LRS).  Ogni nodo ha accesso allo storage dell'altro nodo.  È inoltre necessario ulteriore spazio di archiviazione perlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["dati di avvio, root, root partner, core e NVRAM"^] .
 Account di archiviazione:: Gli account di archiviazione vengono utilizzati per le distribuzioni basate su dischi gestiti per gestire i log diagnostici e la suddivisione in livelli nell'archiviazione BLOB.
 

@@ -22,7 +22,7 @@ Sono disponibili diverse opzioni di licenza per Cloud Volumes ONTAP. Ogni opzion
 
 Per i nuovi clienti sono disponibili le seguenti opzioni di licenza.
 
-Licenza basata sulla capacità:: Paga più sistemi Cloud Volumes ONTAP nel tuo account NetApp in base alla capacità fornita.  Include la possibilità di acquistare servizi aggiuntivi di dati cloud.  Per ulteriori informazioni sui modelli di consumo nelle licenze basate sulla capacità, fare riferimento alink:concept-licensing-charging.html["Scopri di più sulle licenze basate sulla capacità"] .
+Licenza basata sulla capacità:: Paga più sistemi Cloud Volumes ONTAP nel tuo account NetApp in base alla capacità fornita. Include la possibilità di acquistare servizi aggiuntivi di dati cloud. Per ulteriori informazioni sui modelli di consumo o sulle opzioni di acquisto nelle licenze basate sulla capacità, fare riferimento alink:concept-licensing-charging.html["Scopri di più sulle licenze basate sulla capacità"] .
 Abbonamento Keystone:: Un servizio basato su abbonamento con pagamento in base alla crescita che offre un'esperienza cloud ibrida senza interruzioni per coppie ad alta disponibilità (HA).
 
 

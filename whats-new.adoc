@@ -20,6 +20,34 @@ I miglioramenti descritti in questa pagina sono specifici per la gestione di Clo
 
 
 
+== 10 dicembre 2025
+
+
+
+=== Possibilità di migliorare le prestazioni dei dischi Premium SSD v2 in Azure
+
+Ora puoi migliorare le prestazioni di Premium SSD v2 Managed Disks in Azure modificando i parametri IOPS e velocità effettiva.  Utilizzando questa funzionalità, puoi ottimizzare le prestazioni di archiviazione dei tuoi sistemi in base ai requisiti del carico di lavoro.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-perf-params-azure.html["Gestisci le prestazioni del disco Premium SSD v2 per Cloud Volumes ONTAP in Azure"^].
+
+
+
+=== Semplificazione della tariffazione eccedente per le licenze Essentials
+
+Per i contratti annuali/offerte private del marketplace Cloud Volumes ONTAP , i calcoli del sovrapprezzo per le licenze Essentials sono ora allineati con i pacchetti Bring Your Own License (BYOL).  In precedenza, gli eccessi venivano fatturati in base alle tariffe orarie di mercato per l'esatto pacchetto Essentials.  Ora, se il tuo contratto annuale sul marketplace include più pacchetti Essentials, la NetApp Console addebita i costi aggiuntivi per un pacchetto Essentials rispetto alla capacità disponibile di un pacchetto Essentials più costoso nel tuo abbonamento.  Ciò semplifica i calcoli del sovrapprezzo per i pacchetti Essentials e garantisce una transizione graduale dalla licenza BYOL a un modello basato su abbonamento.
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing-charging.html#how-overages-are-charged-for-essentials-licenses["Come vengono addebitati gli eccessi per le licenze Essentials"^]
+
+
+
+=== Supporto per le serie di dimensioni Azure Edsv6
+
+A partire da Cloud Volumes ONTAP 9.17.1, è possibile distribuire VM della serie Azure Edsv6 tramite la NetApp Console per le nuove istanze Cloud Volumes ONTAP .  Cloud Volumes ONTAP 9.17.1 e versioni successive supporteranno solo le VM di seconda generazione per le nuove distribuzioni.  Queste macchine di seconda generazione sono compatibili con le tecnologie più recenti, come Unified Extensible Firmware Interface (UEFI), sistemi Azure Boost e NVMe.  Sono ideali per sistemi e applicazioni ad alta intensità di memoria che necessitano di un'archiviazione locale veloce, come server di database e motori di analisi.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#supported-configurations-by-license["Configurazioni supportate per Cloud Volumes ONTAP in Azure"^]
+
+
+
 == 10 novembre 2025
 
 
@@ -47,6 +75,18 @@ Per maggiori dettagli, fare riferimento a:
 * Distribuzione: https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-versions.html#azure["Versioni ONTAP supportate per le distribuzioni Cloud Volumes ONTAP"^]
 * Aggiornamento: https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-updating-ontap-cloud.html#supported-upgrade-paths["Percorsi di aggiornamento supportati per Azure"^]
 
+
+
+
+== 11 novembre 2025
+
+
+
+=== Opzione di fatturazione preferita per Cloud Volumes ONTAP
+
+Ora puoi scegliere l'opzione di fatturazione che preferisci per calcolare i tuoi consumi e le eccedenze.  A seguito della disponibilità limitata delle licenze BYOL a partire dal 25 giugno 2025, NetApp offre metodi di addebito preferenziali nella sezione *Licenze e abbonamenti* della NetApp Console.  Per la fatturazione e gli eccedenti puoi utilizzare l'abbonamento annuale al marketplace oppure il modello di licenza esistente (BYOL).  Ciò ti offre la flessibilità di scegliere il metodo di addebito più adatto alla strategia finanziaria e ai modelli di utilizzo della tua organizzazione.
+
+Per informazioni, fare riferimento a https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing-charging.html#minimum-charge["Fatturazione e sovrapprezzi"^] .
 
 
 

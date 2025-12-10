@@ -46,7 +46,7 @@ link:task-deploying-gcp.html["Visualizza le istruzioni dettagliate per avviare C
 
 Le licenze basate sulla capacità consentono di pagare Cloud Volumes ONTAP per TiB di capacità. Le licenze basate sulla capacità sono disponibili sotto forma di _pacchetto_: il pacchetto Essentials o Professional.
 
-I pacchetti Essentials e Professional sono disponibili con i seguenti modelli di consumo:
+I pacchetti Essentials e Professional sono disponibili con i seguenti modelli di consumo o opzioni di acquisto:
 
 * Una licenza (Bring Your Own License (BYOL)) acquistata da NetApp
 * Un abbonamento orario a consumo (PAYGO) da Google Cloud Marketplace
@@ -161,8 +161,20 @@ Un abbonamento Keystone è un servizio basato su un abbonamento con pagamento in
 +
 image:screenshot-keystone.png["Uno screenshot dell'opzione Keystone Subscription durante la creazione di un sistema Cloud Volumes ONTAP ."]
 
-
-
-
-
++
 link:task-deploying-gcp.html["Visualizza le istruzioni dettagliate per avviare Cloud Volumes ONTAP in Google Cloud"] .
+
+
+
+
+
+
+
+== Licenza basata su nodi
+
+Una licenza basata su nodi è la licenza di precedente generazione per Cloud Volumes ONTAP. Una licenza basata su nodi può essere acquistata da NetApp (BYOL) ed è disponibile per i rinnovi di licenza solo in casi specifici. Per informazioni, fare riferimento a:
+
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#end-of-availability-for-node-based-licenses["Fine della disponibilità delle licenze basate su nodi"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Fine della disponibilità delle licenze basate sui nodi"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html["Convertire una licenza basata su nodi in una licenza basata sulla capacità"^]
+
