@@ -951,6 +951,16 @@ Ora viene visualizzata una notifica ogni volta che si accede a Cloud Volumes ONT
 
 
 
+=== Nuove autorizzazioni aggiunte alla policy AWS IAM per i mediatori HA
+
+Queste nuove autorizzazioni AWS sono state aggiunte alla policy IAM per i mediatori HA negli ambienti ad alta disponibilità (HA) Cloud Volumes ONTAP :
+
+* sts:AssumeRole
+* ec2:Descrivi sottoreti
+
+
+
+
 == 04 aprile 2023
 
 

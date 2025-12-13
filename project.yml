@@ -178,9 +178,13 @@ sidebar:
         url: "/task-manage-aggregates.html"
       - title: Gestisci le impostazioni di capacità
         url: "/task-manage-capacity-settings.html"
-      - title: Gestire le prestazioni del disco Premium SSD v2 in Azure
+      - title: Gestire le prestazioni del disco in Azure
         flavor: azure
-        url: "/task-manage-perf-params-azure.html"
+        entries:
+        - title: Gestire le prestazioni del disco Premium SSD v2 in Azure
+          url: "/task-manage-perf-params-azure.html"
+        - title: Aggiorna il livello di prestazioni del disco in Azure
+          url: "/task-upgrade-disk-perf-azure.html"
     - title: Amministrazione della VM di archiviazione
       entries:
       - title: Lavorare con le VM di archiviazione
