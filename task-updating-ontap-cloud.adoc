@@ -186,10 +186,10 @@ ifdef::gcp[]
 | Versione attuale | Versioni a cui puoi effettuare l'aggiornamento diretto 
 
 
-| 9.16.1 (solo per Azure e Google Cloud) | 9.17.1 (solo per Azure e Google Cloud) 
+| 9.16.1 | 9.17.1 
 
 
-| 9.15.1 | 9.16.1 (solo per Azure e Google Cloud) 
+| 9.15.1 | 9.16.1 
 
 
 | 9.15.0 | 9.15.1 

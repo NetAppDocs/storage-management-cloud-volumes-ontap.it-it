@@ -16,6 +16,9 @@ summary: Configurare i parametri delle prestazioni nei dischi Premium SSD v2 in 
 [role="lead"]
 È possibile aggiornare il livello di prestazioni dei dischi gestiti Premium SSD in Cloud Volumes ONTAP in Azure tramite il portale di Azure. Si tratta di un processo manuale che prevede la modifica del livello del disco di ciascun disco Premium SSD in un livello con prestazioni più elevate. Modificando il livello di prestazioni del disco NVRAM è possibile ridurre i colli di bottiglia delle prestazioni e migliorare l'efficienza del sistema Cloud Volumes ONTAP , garantendo IOPS e capacità di throughput più elevati.
 
+
+NOTE: Assicurati di collaborare con il supporto NetApp per determinare se il collo di bottiglia riscontrato nel tuo ambiente è dovuto al disco NVRAM e che l'aggiornamento del livello risolve il problema.
+
 .Informazioni su questo compito
 * Per impostazione predefinita, Cloud Volumes ONTAP in Azure distribuisce dischi SSD Premium per NVRAM nel livello P20. Il livello P20 offre prestazioni bilanciate adatte alla maggior parte dei carichi di lavoro. Tuttavia, se il carico di lavoro richiede prestazioni più elevate, è possibile aggiornare il disco NVRAM a un livello superiore, ad esempio P30.
 +
@@ -26,12 +29,8 @@ TIP: Attualmente è possibile aggiornare un disco NVRAM dal livello P20 al livel
 
 
 .Prima di iniziare
+* Valutare attentamente la necessità di questa modifica, perché l'aggiornamento del disco NVRAM a un livello di prestazioni più elevato comporta costi aggiuntivi.
 * La versione Cloud Volumes ONTAP deve essere 9.11.1 o successiva. Per le versioni precedenti, è possibile effettuare l'aggiornamento alla versione 9.11.1 o successiva oppure inviare una richiesta di variazione della policy sulle funzionalità (FPVR) con il supporto NetApp .
-* Assicurati di collaborare con il supporto NetApp per determinare se il collo di bottiglia riscontrato nel tuo ambiente è dovuto al disco NVRAM e che l'aggiornamento del livello risolve il problema.
-+
-
-NOTE: L'aggiornamento del disco NVRAM a un livello di prestazioni più elevato comporta costi aggiuntivi, pertanto è importante valutare attentamente la necessità di questa modifica.
-
 
 
 .Passi
