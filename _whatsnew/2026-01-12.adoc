@@ -1,0 +1,11 @@
+= Opzione di fatturazione preferita per Cloud Volumes ONTAP
+:allow-uri-read: 
+
+
+
+
+=== Opzione di fatturazione preferita per Cloud Volumes ONTAP
+
+Ora puoi selezionare un'opzione di fatturazione preferita per calcolare l'utilizzo e gli eccedenti Cloud Volumes ONTAP . Dal 25 giugno 2025, data di disponibilità limitata del modello di licenza Bring Your Own Licenses (BYOL), NetApp ha aggiunto metodi di addebito preferiti nella sezione *Licenze e abbonamenti* della NetApp Console. Puoi utilizzare l'abbonamento annuale al marketplace per la fatturazione e gli eccedenti oppure il modello BYOL esistente come opzione preferita. Ciò ti offre la flessibilità di scegliere il metodo di addebito più adatto alla strategia finanziaria e ai modelli di utilizzo della tua organizzazione.
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing-charging.html#billing-preferences-and-overages["Preferenze di fatturazione e superamenti"^].

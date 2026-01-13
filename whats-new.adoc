@@ -20,6 +20,18 @@ I miglioramenti descritti in questa pagina sono specifici per la gestione di Clo
 
 
 
+== 12 gennaio 2026
+
+
+
+=== Opzione di fatturazione preferita per Cloud Volumes ONTAP
+
+Ora puoi selezionare un'opzione di fatturazione preferita per calcolare l'utilizzo e gli eccedenti Cloud Volumes ONTAP . Dal 25 giugno 2025, data di disponibilità limitata del modello di licenza Bring Your Own Licenses (BYOL), NetApp ha aggiunto metodi di addebito preferiti nella sezione *Licenze e abbonamenti* della NetApp Console. Puoi utilizzare l'abbonamento annuale al marketplace per la fatturazione e gli eccedenti oppure il modello BYOL esistente come opzione preferita. Ciò ti offre la flessibilità di scegliere il metodo di addebito più adatto alla strategia finanziaria e ai modelli di utilizzo della tua organizzazione.
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing-charging.html#billing-preferences-and-overages["Preferenze di fatturazione e superamenti"^].
+
+
+
 == 10 dicembre 2025
 
 
@@ -75,18 +87,6 @@ Per maggiori dettagli, fare riferimento a:
 * Distribuzione: https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-versions.html#azure["Versioni ONTAP supportate per le distribuzioni Cloud Volumes ONTAP"^]
 * Aggiornamento: https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-updating-ontap-cloud.html#supported-upgrade-paths["Percorsi di aggiornamento supportati per Azure"^]
 
-
-
-
-== 11 novembre 2025
-
-
-
-=== Opzione di fatturazione preferita per Cloud Volumes ONTAP
-
-Ora puoi scegliere l'opzione di fatturazione che preferisci per calcolare i tuoi consumi e le eccedenze.  A seguito della disponibilità limitata delle licenze BYOL a partire dal 25 giugno 2025, NetApp offre metodi di addebito preferenziali nella sezione *Licenze e abbonamenti* della NetApp Console.  Per la fatturazione e gli eccedenti puoi utilizzare l'abbonamento annuale al marketplace oppure il modello di licenza esistente (BYOL).  Ciò ti offre la flessibilità di scegliere il metodo di addebito più adatto alla strategia finanziaria e ai modelli di utilizzo della tua organizzazione.
-
-Per informazioni, fare riferimento a https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing-charging.html#minimum-charge["Fatturazione e sovrapprezzi"^] .
 
 
 
