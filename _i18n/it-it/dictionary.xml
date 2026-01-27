@@ -6121,4 +6121,6 @@
   <block id="1d593c3f7480ada9580d93cd753c3f93" category="paragraph">Si tratta di un ID generato dal sistema che corrisponde al tuo indirizzo email. Nella pagina *Gestione NSS*, puoi visualizzare la tua email da<block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block> menu.</block>
   <block id="872eaae7deb6035c20f9bfe6deefd03d" category="list-text">Se hai bisogno di aggiornare i token delle credenziali di accesso, è disponibile anche l'opzione *Aggiorna credenziali* in<block ref="5444f6f0c3983523c8933a1864b2b390" category="inline-image-macro-rx" type="image"></block> menu.</block>
   <block id="667dffcf5676fe0bd645082d2a512fef" category="section-title">12 gennaio 2026</block>
+  <block id="96401f578ab9670c6924f2e5ad91441b" category="section-title">Percorsi di aggiornamento supportati per AWS</block>
+  <block id="070381386d1bf4bdb6bab9bb39eef15d" category="section-title">Percorsi di aggiornamento supportati per Google Cloud</block>
 </blocks>
