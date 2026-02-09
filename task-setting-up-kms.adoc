@@ -102,7 +102,7 @@ Per ulteriori dettagli su questo processo, fare riferimento a https://docs.aws.a
 
 . Se si utilizza una CMK gestita dal cliente, modificare la policy delle chiavi per la CMK aggiungendo il ruolo IAM Cloud Volumes ONTAP come _utente chiave_.
 +
-Questo passaggio è obbligatorio se hai abilitato la suddivisione in livelli dei dati su Cloud Volumes ONTAP e desideri crittografare i dati archiviati nel bucket S3.
+Questo passaggio è obbligatorio se hai abilitato il tiering dei dati su Cloud Volumes ONTAP e desideri crittografare i dati archiviati nel bucket Amazon Simple Storage Service (Amazon S3).
 
 
 

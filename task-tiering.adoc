@@ -26,7 +26,7 @@ Sono supportate la maggior parte delle configurazioni.  Se disponi di un sistema
 [role="quick-margin-list"]
 ifdef::aws[]
 
-* Per AWS, avrai bisogno di un endpoint VPC su S3. <<Requisiti per suddividere i dati inattivi in AWS S3,Saperne di più>> .
+* Per AWS, avrai bisogno di un endpoint VPC per Amazon Simple Storage Service (Amazon S3). <<Requirements to tier cold data to AWS S3,Saperne di più>>.
 
 
 endif::aws[]
@@ -142,9 +142,9 @@ ifdef::aws[]
 
 
 
-=== Requisiti per suddividere i dati inattivi in AWS S3
+=== Requisiti per il tiering dei dati cold su Amazon S3
 
-Assicurarsi che Cloud Volumes ONTAP abbia una connessione a S3.  Il modo migliore per fornire tale connessione è creare un endpoint VPC per il servizio S3.  Per le istruzioni, fare riferimento al https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint["Documentazione AWS: creazione di un endpoint gateway"^] .
+Assicurarsi che Cloud Volumes ONTAP abbia una connessione ad Amazon S3. Il modo migliore per fornire tale connessione è creare un endpoint VPC per il servizio S3. Per istruzioni, fare riferimento a https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint["Documentazione AWS: creazione di un endpoint gateway"^].
 
 Quando crei l'endpoint VPC, assicurati di selezionare la regione, la VPC e la tabella di routing che corrispondono all'istanza Cloud Volumes ONTAP .  È inoltre necessario modificare il gruppo di sicurezza per aggiungere una regola HTTPS in uscita che consenta il traffico verso l'endpoint S3.  In caso contrario, Cloud Volumes ONTAP non potrà connettersi al servizio S3.
 
@@ -184,7 +184,7 @@ link:task-creating-gcp-service-account.html["Scopri come configurare questo acco
 Quando si crea un sistema Cloud Volumes ONTAP , viene richiesto di selezionare questo account di servizio.
 
 +
-Se non selezioni un account di servizio durante la distribuzione, dovrai arrestare Cloud Volumes ONTAP, accedere alla console Google Cloud e quindi collegare l'account di servizio alle istanze di Cloud Volumes ONTAP .  È quindi possibile abilitare la suddivisione in livelli dei dati come descritto nella sezione successiva.
+Se non selezioni un account di servizio durante la distribuzione, dovrai arrestare Cloud Volumes ONTAP, accedere a Google Cloud Console e quindi collegare l'account di servizio alle istanze di Cloud Volumes ONTAP. Puoi quindi abilitare il tiering dei dati come descritto nella sezione successiva.
 
 * Per crittografare il bucket con chiavi di crittografia gestite dal cliente, abilitare il bucket di archiviazione Google Cloud in modo che utilizzi la chiave.
 +

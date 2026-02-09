@@ -23,7 +23,7 @@ summary: È possibile avviare Cloud Volumes ONTAP in una configurazione a sistem
 Prima di iniziare, ti occorre quanto segue.
 
 [[licensing]]
-* Un agente Console attivo e funzionante.
+* Un agente NetApp Console attivo e funzionante.
 +
 ** Dovresti avere un https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Agente console associato al tuo sistema"^] .
 ** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Dovresti essere pronto a lasciare l'agente della console sempre in esecuzione"^] .
@@ -85,7 +85,7 @@ Nella tabella seguente vengono descritti i campi per i quali potrebbe essere nec
 | Modifica progetto  a| 
 Seleziona il progetto in cui desideri che risieda Cloud Volumes ONTAP .  Il progetto predefinito è il progetto in cui si trova la Console.
 
-Se non vedi altri progetti nell'elenco a discesa, significa che non hai ancora associato l'account di servizio ad altri progetti. Vai alla console di Google Cloud, apri il servizio IAM e seleziona il progetto.  Aggiungere l'account di servizio con il ruolo utilizzato per la Console a quel progetto. Sarà necessario ripetere questo passaggio per ogni progetto.
+Se non vedi altri progetti nell'elenco a discesa, significa che non hai ancora associato l'account di servizio ad altri progetti. Vai alla Google Cloud Console, apri il servizio IAM e seleziona il progetto. Aggiungi l'account di servizio con il ruolo che usi per la Console a quel progetto. Dovrai ripetere questo passaggio per ogni progetto.
 
 
 NOTE: Questo è l'account di servizio che hai configurato per la Console,link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["come descritto in questa pagina"^] .
@@ -100,7 +100,7 @@ Per creare un sistema Cloud Volumes ONTAP con pagamento in base al consumo, è n
 
 TIP: Se si desidera utilizzare WORM e il data tiering, è necessario disabilitare Backup e Recovery e distribuire un sistema Cloud Volumes ONTAP con versione 9.8 o successiva.
 
-. *Posizione e connettività*: seleziona una posizione, scegli un criterio firewall e conferma la connettività di rete allo storage Google Cloud per la suddivisione in livelli dei dati.
+. *Posizione e connettività*: seleziona la regione e la zona di Google Cloud per il tuo sistema, scegli una policy firewall e conferma la connettività di rete allo storage di Google Cloud per il data tiering.
 +
 Nella tabella seguente vengono descritti i campi per i quali potrebbe essere necessaria una guida:
 
@@ -182,7 +182,7 @@ Notare quanto segue:
 ** La console imposta l'account di servizio sull'istanza di Cloud Volumes ONTAP . Questo account di servizio fornisce le autorizzazioni per il tiering dei dati in un bucket di Google Cloud Storage.  Assicurati di aggiungere l'account del servizio agente della console come utente dell'account del servizio di suddivisione in livelli, altrimenti non potrai selezionarlo dalla console.
 ** Per assistenza con l'aggiunta di un account Google Cloud, fare riferimento a https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html["Configurazione e aggiunta di account Google Cloud per la suddivisione in livelli dei dati con 9.6"^] .
 ** Quando si crea o si modifica un volume, è possibile scegliere una specifica politica di suddivisione in livelli del volume.
-** Se disabiliti la suddivisione in livelli dei dati, puoi abilitarla sugli aggregati successivi, ma dovrai disattivare il sistema e aggiungere un account di servizio dalla console di Google Cloud.
+** Se disabiliti il data tiering, puoi abilitarlo sugli aggregati successivi, ma dovrai disattivare il sistema e aggiungere un account di servizio dal Google Cloud Console.
 +
 link:concept-data-tiering.html["Scopri di più sulla suddivisione in livelli dei dati"^] .
 
@@ -272,9 +272,6 @@ Se riscontri problemi durante la distribuzione del sistema Cloud Volumes ONTAP ,
 
 Per ulteriore assistenza, vai a https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab["Supporto NetApp Cloud Volumes ONTAP"^] .
 
-
-CAUTION: Una volta completato il processo di distribuzione, non modificare le configurazioni Cloud Volumes ONTAP generate dal sistema nel portale Google Cloud, in particolare i tag di sistema. Qualsiasi modifica apportata a queste configurazioni potrebbe causare comportamenti imprevisti o perdite di dati.
-
 .Dopo aver finito
 * Se hai predisposto una condivisione CIFS, assegna agli utenti o ai gruppi le autorizzazioni per i file e le cartelle e verifica che tali utenti possano accedere alla condivisione e creare un file.
 * Se si desidera applicare quote ai volumi, utilizzare ONTAP System Manager o ONTAP CLI.
@@ -282,6 +279,9 @@ CAUTION: Una volta completato il processo di distribuzione, non modificare le co
 Le quote consentono di limitare o tenere traccia dello spazio su disco e del numero di file utilizzati da un utente, un gruppo o un qtree.
 
 
+
+
+CAUTION: Al termine del processo di distribuzione, non modificare le configurazioni di Cloud Volumes ONTAP generate dal sistema nel portale Google Cloud, come i tag di sistema e le etichette impostate nelle risorse Google Cloud. Qualsiasi modifica apportata a queste configurazioni potrebbe causare comportamenti imprevisti o perdita di dati.
 
 
 
@@ -318,7 +318,7 @@ Nella tabella seguente vengono descritti i campi per i quali potrebbe essere nec
 | Modifica progetto  a| 
 Seleziona il progetto in cui desideri che risieda Cloud Volumes ONTAP .  Il progetto predefinito è il progetto della Console.
 
-Se non vedi altri progetti nell'elenco a discesa, significa che non hai ancora associato l'account di servizio ad altri progetti. Vai alla console di Google Cloud, apri il servizio IAM e seleziona il progetto.  Aggiungere l'account di servizio con il ruolo utilizzato per la Console a quel progetto. Sarà necessario ripetere questo passaggio per ogni progetto.
+Se non vedi altri progetti nell'elenco a discesa, significa che non hai ancora associato l'account di servizio ad altri progetti. Vai alla Google Cloud Console, apri il servizio IAM e seleziona il progetto. Aggiungi l'account di servizio con il ruolo che usi per la Console a quel progetto. Dovrai ripetere questo passaggio per ogni progetto.
 
 
 NOTE: Questo è l'account di servizio che hai configurato per la Console,link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["come descritto in questa pagina"^] .
@@ -333,7 +333,7 @@ Per creare un sistema Cloud Volumes ONTAP con pagamento in base al consumo, è n
 
 TIP: Se si desidera utilizzare WORM e il data tiering, è necessario disabilitare Backup e Recovery e distribuire un sistema Cloud Volumes ONTAP con versione 9.8 o successiva.
 
-. *Modelli di distribuzione HA*: scegliere più zone (consigliato) o una singola zona per la configurazione HA.  Quindi seleziona una regione e delle zone.
+. *Modelli di deployment HA*: scegli più zone (consigliato) o una singola zona per la configurazione HA. Quindi seleziona una regione e una zona.
 +
 link:concept-ha-google-cloud.html["Scopri di più sui modelli di distribuzione HA"^] .
 
@@ -418,7 +418,7 @@ Notare quanto segue:
 +
 ** La console imposta l'account di servizio sull'istanza di Cloud Volumes ONTAP . Questo account di servizio fornisce le autorizzazioni per il tiering dei dati in un bucket di Google Cloud Storage.  Assicurati di aggiungere l'account del servizio agente della console come utente dell'account del servizio di suddivisione in livelli, altrimenti non potrai selezionarlo dalla console.
 ** Quando si crea o si modifica un volume, è possibile scegliere una specifica politica di suddivisione in livelli del volume.
-** Se disabiliti la suddivisione in livelli dei dati, puoi abilitarla sugli aggregati successivi, ma dovrai disattivare il sistema e aggiungere un account di servizio dalla console di Google Cloud.
+** Se disabiliti il data tiering, puoi abilitarlo sugli aggregati successivi, ma dovrai disattivare il sistema e aggiungere un account di servizio dal Google Cloud Console.
 +
 link:concept-data-tiering.html["Scopri di più sulla suddivisione in livelli dei dati"^] .
 
@@ -517,7 +517,7 @@ Le quote consentono di limitare o tenere traccia dello spazio su disco e del num
 
 
 
-CAUTION: Una volta completato il processo di distribuzione, non modificare le configurazioni Cloud Volumes ONTAP generate dal sistema nel portale Google Cloud, in particolare i tag di sistema. Qualsiasi modifica apportata a queste configurazioni potrebbe causare comportamenti imprevisti o perdite di dati.
+CAUTION: Al termine del processo di distribuzione, non modificare le configurazioni di Cloud Volumes ONTAP generate dal sistema nel portale Google Cloud, come i tag di sistema e le etichette impostate nelle risorse Google Cloud. Qualsiasi modifica apportata a queste configurazioni potrebbe causare comportamenti imprevisti o perdita di dati.
 
 .Link correlati
 * link:task-planning-your-config-gcp.html["Pianificazione della configurazione Cloud Volumes ONTAP in Google Cloud"]

@@ -30,7 +30,7 @@ A seconda dello stile di distribuzione dell'agente della console, potrebbe esser
 
 == Immagini
 
-Sia Cloud Volumes ONTAP che la Console utilizzano immagini da un progetto all'interno di GCP gestito da NetApp.  Ciò può influire sulla distribuzione dell'agente Console e Cloud Volumes ONTAP, se l'organizzazione dispone di una policy che blocca l'uso di immagini non ospitate al suo interno.
+Sia Cloud Volumes ONTAP che la Console utilizzano immagini provenienti da un progetto all'interno di Google Cloud gestito da NetApp. Ciò può influire sulla distribuzione dell'agente della Console e di Cloud Volumes ONTAP, se l'organizzazione dispone di una policy che blocca l'utilizzo di immagini non ospitate all'interno dell'organizzazione.
 
 È possibile distribuire manualmente un agente Console utilizzando il metodo di installazione manuale, ma Cloud Volumes ONTAP dovrà anche estrarre le immagini dal progetto NetApp .  Per poter distribuire un agente Console e Cloud Volumes ONTAP, è necessario fornire un elenco consentito.
 
@@ -54,7 +54,7 @@ Di seguito sono definiti alcuni esempi delle regole necessarie per estrarre ques
 
 == Criteri perimetrali dei controlli del servizio VPC
 
-I criteri consentono eccezioni ai set di regole dei controlli del servizio VPC.  Per maggiori informazioni sulle politiche, visitare il sito https://cloud.google.com/vpc-service-controls/docs/ingress-egress-rules#policy-model["Documentazione sulla politica di controllo del servizio VPC GCP"^] .
+Le policy consentono eccezioni ai set di regole dei VPC Service Controls. Per ulteriori informazioni sulle policy, visitare il https://cloud.google.com/vpc-service-controls/docs/ingress-egress-rules#policy-model["Documentazione sui criteri di controllo del servizio VPC di Google Cloud"^].
 
 Per impostare i criteri richiesti dalla Console, accedi al perimetro dei controlli del servizio VPC all'interno della tua organizzazione e aggiungi i seguenti criteri.  I campi devono corrispondere alle opzioni fornite nella pagina dei criteri di controllo del servizio VPC.  Si noti inoltre che *tutte* le regole sono obbligatorie e che nel set di regole devono essere utilizzati i parametri *OR*.
 

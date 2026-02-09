@@ -101,7 +101,7 @@ Si noti che Cloud Volumes ONTAP supporta la funzionalità Amazon EBS Elastic Vol
 * I dischi _Throughput Optimized HDD (st1)_ sono adatti a carichi di lavoro a cui si accede frequentemente e che richiedono un throughput rapido e costante a un prezzo inferiore.
 +
 
-NOTE: Il tiering dei dati su AWS S3 non è disponibile nelle zone locali AWS a causa della mancanza di connettività.
+NOTE: Il tiering dei dati su Amazon Simple Storage Service (Amazon S3) non è supportato se il tuo sistema Cloud Volumes ONTAP si trova in una AWS Local Zone, perché l'accesso ai bucket Amazon S3 al di fuori della Local Zone comporta una latenza maggiore e influisce sulle attività di Cloud Volumes ONTAP.
 
 
 

@@ -34,7 +34,7 @@ La Console offre pacchetti preconfigurati che soddisfano i requisiti del tuo car
 +
 Questo passaggio non è necessario se si distribuisce Cloud Volumes ONTAP in una posizione in cui non è disponibile l'accesso a Internet.
 
-. Configurare un endpoint VPC per il servizio S3.
+. Configura un endpoint VPC per il servizio Amazon Simple Storage Service (Amazon S3).
 +
 È necessario un endpoint VPC se si desidera suddividere i dati inattivi da Cloud Volumes ONTAP in un archivio di oggetti a basso costo.
 

@@ -197,7 +197,7 @@ L'unico tipo di disco supportato è GP2.  Attualmente sono supportate le seguent
 
 
 
-NOTE: Cloud Volumes ONTAP supporta solo queste configurazioni.  La selezione di tipi di disco non supportati o di istanze non qualificate nella configurazione della zona locale AWS potrebbe causare errori di distribuzione.  Il tiering dei dati su AWS S3 non è disponibile nelle zone locali AWS a causa della mancanza di connettività.
+NOTE: Cloud Volumes ONTAP supporta solo queste configurazioni. La selezione di tipi di disco non supportati o di istanze non qualificate nella configurazione AWS Local Zone potrebbe causare errori di distribuzione. Il tiering dei dati su Amazon Simple Storage Service (Amazon S3) non è supportato se il tuo sistema Cloud Volumes ONTAP si trova in una AWS Local Zone, perché l'accesso ai bucket Amazon S3 al di fuori della Local Zone comporta una latenza maggiore e influisce sulle attività di Cloud Volumes ONTAP.
 
 link:https://aws.amazon.com/about-aws/global-infrastructure/localzones/features/?nc=sn&loc=2["Documentazione AWS: Tipi di istanza EC2 nelle zone locali"^] .
 

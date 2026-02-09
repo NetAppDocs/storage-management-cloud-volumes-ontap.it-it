@@ -268,6 +268,8 @@ sidebar:
         entries:
         - title: Cambia il tipo di macchina
           url: "/task-change-gcp-machine.html"
+        - title: Converti le distribuzioni esistenti in Infrastructure Manager
+          url: "/task-gcp-dm-im-conv.html"
       - title: Amministrazione da System Manager
         url: "/task-administer-advanced-view.html"
       - title: Amministrazione dalla CLI

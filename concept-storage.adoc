@@ -45,7 +45,7 @@ Deposito EBS:: In AWS, un aggregato può contenere fino a 6 dischi tutti della s
 --
 La dimensione massima del disco è 16 TiB.
 
-Il tipo di disco EBS sottostante può essere un SSD per uso generico (gp3 o gp2), un SSD Provisioned IOPS (io1) o un HDD Throughput Optimized (st1).  È possibile associare un disco EBS con Amazon S3 perlink:concept-data-tiering.html["archiviazione di oggetti a basso costo"] .
+Il tipo di disco EBS sottostante può essere un SSD per uso generico (gp3 o gp2), un SSD Provisioned IOPS (io1) o un HDD Throughput Optimized (st1). È possibile associare un disco EBS ad Amazon Simple Storage Service (Amazon S3) per link:concept-data-tiering.html["archiviazione di oggetti a basso costo"].
 
 
 NOTE: Si sconsiglia di suddividere i dati in livelli per l'archiviazione di oggetti quando si utilizzano HDD Throughput Optimized (st1).

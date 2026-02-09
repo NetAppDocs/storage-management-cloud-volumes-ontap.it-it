@@ -26,7 +26,7 @@ ifdef::aws[]
 
 == Livelli di dati in AWS
 
-Quando si abilita la suddivisione in livelli dei dati in AWS, Cloud Volumes ONTAP utilizza EBS come livello di prestazioni per i dati attivi e AWS S3 come livello di capacità per i dati inattivi.
+Quando si abilita il data tiering in AWS, Cloud Volumes ONTAP utilizza EBS come livello di prestazioni per i dati hot e Amazon Simple Storage Service (Amazon S3) come livello di capacità per i dati inattivi.
 
 Livello di prestazione:: Il livello di prestazioni può essere costituito da SSD per uso generico (gp3 o gp2) o SSD Provisioned IOPS (io1).
 +

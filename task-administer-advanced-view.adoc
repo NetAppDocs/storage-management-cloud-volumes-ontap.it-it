@@ -29,7 +29,7 @@ Le funzionalità avanzate di gestione dello storage in Cloud Volumes ONTAP sono 
 * Eventi e processi: visualizza registri eventi, avvisi di sistema, processi e registri di controllo.
 * Protezione avanzata dei dati: proteggi le VM di storage, le LUN e i gruppi di coerenza.
 * Gestione host: configurazione di gruppi di iniziatori SAN e client NFS.
-* Gestione dell'archiviazione degli oggetti S3: le funzionalità di gestione dell'archiviazione S3 in Cloud Volumes ONTAP sono disponibili solo in System Manager e non nella Console.
+* Gestione dello storage a oggetti ONTAP S3: le funzionalità di gestione dello storage ONTAP S3 in Cloud Volumes ONTAP sono disponibili solo in System Manager e non nella Console.
 
 
 

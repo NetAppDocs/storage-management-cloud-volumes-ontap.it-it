@@ -38,7 +38,7 @@ Cloud Volumes ONTAP è supportato nella maggior parte delle regioni Google Cloud
 
 Cloud Volumes ONTAP supporta diversi tipi di macchine, a seconda del tipo di licenza scelto.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Configurazioni supportate per Cloud Volumes ONTAP in GCP"^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Configurazioni supportate per Cloud Volumes ONTAP in Google Cloud"^]
 
 
 
@@ -46,11 +46,11 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp
 
 Il limite di capacità raw per un sistema Cloud Volumes ONTAP è legato alla licenza.  Ulteriori limiti incidono sulle dimensioni degli aggregati e sui volumi.  Quando pianifichi la tua configurazione, dovresti essere consapevole di questi limiti.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html["Limiti di archiviazione per Cloud Volumes ONTAP in GCP"^]
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html["Limiti di storage per Cloud Volumes ONTAP in Google Cloud"^]
 
 
 
-== Dimensiona il tuo sistema in GCP
+== Dimensiona il tuo sistema in Google Cloud
 
 Il dimensionamento del sistema Cloud Volumes ONTAP può aiutarti a soddisfare i requisiti di prestazioni e capacità.  Quando si sceglie un tipo di macchina, un tipo di disco e una dimensione del disco, è necessario tenere presenti alcuni punti chiave:
 
@@ -64,7 +64,7 @@ Per maggiori dettagli fare riferimento a quanto segue:
 
 
 --
-Tipo di disco GCP:: Quando si creano volumi per Cloud Volumes ONTAP, è necessario scegliere lo storage cloud sottostante che Cloud Volumes ONTAP utilizza per un disco.  Il tipo di disco può essere uno dei seguenti:
+Tipi di disco:: Quando si creano volumi per Cloud Volumes ONTAP, è necessario scegliere lo storage cloud sottostante che Cloud Volumes ONTAP utilizza per un disco.  Il tipo di disco può essere uno dei seguenti:
 +
 --
 * _Dischi persistenti SSD zonali_: i dischi persistenti SSD sono ideali per carichi di lavoro che richiedono elevati tassi di IOPS casuali.
@@ -76,7 +76,7 @@ Per maggiori dettagli fare riferimento al https://cloud.google.com/compute/docs/
 
 
 --
-Dimensione del disco GCP:: Quando si distribuisce un sistema Cloud Volumes ONTAP , è necessario scegliere una dimensione iniziale del disco.  Dopodiché puoi lasciare che la NetApp Console gestisca la capacità di un sistema per te, ma se vuoi creare aggregati autonomamente, tieni presente quanto segue:
+Dimensione del disco:: Quando si distribuisce un sistema Cloud Volumes ONTAP , è necessario scegliere una dimensione iniziale del disco.  Dopodiché puoi lasciare che la NetApp Console gestisca la capacità di un sistema per te, ma se vuoi creare aggregati autonomamente, tieni presente quanto segue:
 +
 --
 * Tutti i dischi di un aggregato devono avere le stesse dimensioni.
@@ -115,13 +115,13 @@ TIP: L'agente Console richiede anche un disco di sistema. https://docs.netapp.co
 
 == Raccogliere informazioni di rete
 
-Quando distribuisci Cloud Volumes ONTAP in GCP, devi specificare i dettagli sulla tua rete virtuale.  Puoi utilizzare un foglio di lavoro per raccogliere le informazioni dal tuo amministratore.
+Quando distribuisci Cloud Volumes ONTAP in Google Cloud, devi specificare i dettagli della tua rete virtuale. Puoi utilizzare un foglio di lavoro per raccogliere le informazioni dal tuo amministratore.
 
 *Informazioni di rete per un sistema a nodo singolo*
 
 [cols="30,70"]
 |===
-| Informazioni GCP | Il tuo valore 
+| Informazioni su Google Cloud | Il tuo valore 
 
 
 | Regione |  
@@ -142,7 +142,7 @@ Quando distribuisci Cloud Volumes ONTAP in GCP, devi specificare i dettagli sull
 
 [cols="30,70"]
 |===
-| Informazioni GCP | Il tuo valore 
+| Informazioni su Google Cloud | Il tuo valore 
 
 
 | Regione |  
@@ -175,7 +175,7 @@ Quando distribuisci Cloud Volumes ONTAP in GCP, devi specificare i dettagli sull
 
 [cols="30,70"]
 |===
-| Informazioni GCP | Il tuo valore 
+| Informazioni su Google Cloud | Il tuo valore 
 
 
 | Regione |  

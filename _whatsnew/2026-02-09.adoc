@@ -1,0 +1,23 @@
+= Supporto per Google Cloud Infrastructure Manager
+:allow-uri-read: 
+
+
+
+
+=== Supporto per Google Cloud Infrastructure Manager
+
+Cloud Volumes ONTAP 9.16.1 e versioni successive ora supportano https://docs.cloud.google.com/infrastructure-manager/docs/overview["Google Cloud Infrastructure Manager"^] (IM) invece di https://docs.cloud.google.com/deployment-manager/docs/deprecations["Cloud Deployment Manager"^] (DM) per le nuove distribuzioni in Google Cloud. Google ritirerà Deployment Manager come servizio infrastrutturale nel prossimo futuro per il più avanzato Infrastructure Manager.
+
+Ora, distribuisci automaticamente Cloud Volumes ONTAP per utilizzare Infrastructure Manager oppure passa le tue distribuzioni esistenti in Deployment Manager a Infrastructure Manager eseguendo uno strumento di conversione. La conversione è un processo una tantum, dopo il quale i tuoi sistemi inizieranno automaticamente a utilizzare Infrastructure Manager. Consulta  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html["Configura le distribuzioni Cloud Volumes ONTAP esistenti per Google Cloud Infrastructure Manager"^] per le istruzioni su come eseguire lo strumento di transizione.
+
+I sistemi Cloud Volumes ONTAP che utilizzano Infrastructure Manager utilizzano i bucket di Google Cloud Storage per archiviare dati e record nella zona del primo deployment, in modo da archiviare i record di deployment, che vengono riutilizzati per i deployment successivi. Potresti incorrere in costi aggiuntivi per questi bucket, ma non modificare o eliminare i bucket o il loro contenuto:
+
+* `gs://netapp-cvo-infrastructure-manager-<project id>/dm-to-im-convert`: per archiviare i file Terraform di Cloud Volumes ONTAP
+* `<gcp project number>-<region>-blueprint-config`: per l'archiviazione degli artefatti di Google Cloud Terraform
+
+
+.Link correlati
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-getting-started-gcp.html["Introduzione a Cloud Volumes ONTAP in Google Cloud"^]
+* https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0["NetApp Console Agent 4.2.0 Note sulla versione"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#gcp-permissions-change-log["Autorizzazioni richieste per Google Cloud Infrastructure Manager"^]
+
