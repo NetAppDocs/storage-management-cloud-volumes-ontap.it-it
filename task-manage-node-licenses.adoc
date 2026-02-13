@@ -156,7 +156,7 @@ La console aggiorna la licenza sul sistema Cloud Volumes ONTAP .
 
 È possibile acquistare licenze di capacità extra per un sistema Cloud Volumes ONTAP BYOL per allocare una capacità superiore ai 368 TiB forniti con una licenza di sistema BYOL.  Ad esempio, potresti acquistare una licenza di capacità aggiuntiva per allocare fino a 736 TiB di capacità a Cloud Volumes ONTAP.  Oppure puoi acquistare tre licenze di capacità extra per arrivare fino a 1,4 PiB.
 
-Il numero di licenze acquistabili per un singolo sistema a nodo o per una coppia HA è illimitato.
+Il numero di licenze che è possibile acquistare per un sistema a nodo singolo o una coppia HA è illimitato.
 
 
 

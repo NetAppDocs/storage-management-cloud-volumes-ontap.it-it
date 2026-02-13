@@ -24,7 +24,7 @@ http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-hacg/GUID-3F50DE15-0D
 * La modifica del tipo di macchina virtuale può influire sui costi del servizio Microsoft Azure.
 * L'operazione riavvia Cloud Volumes ONTAP.
 +
-Nei sistemi a nodo singolo, l'I/O viene interrotto.
+Per i sistemi a nodo singolo, l'I/O viene interrotto.
 
 +
 Per le coppie HA, il cambiamento non è dirompente.  Le coppie HA continuano a fornire dati.

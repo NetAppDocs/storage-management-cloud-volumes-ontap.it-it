@@ -32,7 +32,7 @@ Tutte le versioni di Cloud Volumes ONTAP precedenti alla 9.11.1 supportano una V
 
 == Creare una VM di archiviazione
 
-In base alla configurazione e al tipo di licenza, è possibile creare più VM di archiviazione su un singolo sistema a nodo o in una configurazione ad alta disponibilità (HA) utilizzando le API.
+In base alla configurazione e al tipo di licenza, puoi creare più storage VM su un sistema a nodo singolo o in una configurazione ad alta disponibilità (coppia HA) utilizzando le API.
 
 .Informazioni su questo compito
 Quando si creano VM di archiviazione utilizzando le API, insieme alla configurazione delle interfacce di rete richieste, la Console modifica anche `default-data-files` policy sulle VM di archiviazione dati rimuovendo i seguenti servizi dal LIF dati NAS e aggiungendoli al LIF dati iSCSI utilizzato per le connessioni di gestione in uscita:
@@ -49,9 +49,9 @@ L'agente della console richiede autorizzazioni specifiche per creare VM di archi
 
 
 
-=== Sistema a nodo singolo
+=== sistema a nodo singolo
 
-Utilizzare la seguente chiamata API per creare una VM di archiviazione su un sistema a nodo singolo.
+Utilizzare la seguente chiamata API per creare una storage VM su un sistema a nodo singolo.
 
 `POST /gcp/vsa/working-environments/{workingEnvironmentId}/svm`
 
@@ -95,7 +95,7 @@ L'agente della console richiede autorizzazioni specifiche per gestire le VM di a
 Per rinominare una VM di archiviazione, è necessario fornire come parametri i nomi della VM di archiviazione esistente e della nuova VM di archiviazione.
 
 .Passi
-* Utilizzare la seguente chiamata API per rinominare una VM di archiviazione su un sistema a nodo singolo:
+* Utilizzare la seguente chiamata API per rinominare una storage VM su un sistema a nodo singolo:
 +
 `PUT /gcp/vsa/working-environments/{workingEnvironmentId}/svm`
 
@@ -134,7 +134,7 @@ Includi i seguenti parametri nel corpo della richiesta:
 In una configurazione a nodo singolo o HA, è possibile rimuovere una VM di archiviazione se non dispone di volumi attivi.
 
 .Passi
-* Utilizzare la seguente chiamata API per eliminare una VM di archiviazione su un sistema a nodo singolo:
+* Utilizzare la seguente chiamata API per eliminare una storage VM su un sistema a nodo singolo:
 +
 `DELETE /gcp/vsa/working-environments/{workingEnvironmentId}/svm/{svmName}`
 

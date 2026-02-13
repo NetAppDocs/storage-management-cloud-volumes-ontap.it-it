@@ -28,19 +28,19 @@ In Google Cloud devono essere soddisfatti i seguenti requisiti.
 
 === Requisiti specifici per i sistemi a nodo singolo
 
-Se si desidera implementare un sistema a nodo singolo, assicurarsi che la rete soddisfi i seguenti requisiti.
+Se si desidera implementare un sistema a nodo singolo, assicurarsi che il networking soddisfi i seguenti requisiti.
 
 
 
 ==== Una VPC
 
-Per un sistema a nodo singolo è necessario un Virtual Private Cloud (VPC).
+È richiesto un Virtual Private Cloud (VPC) per un sistema a nodo singolo.
 
 
 
 ==== Indirizzi IP privati
 
-Per un sistema a nodo singolo in Google Cloud, la Console assegna indirizzi IP privati a quanto segue:
+Per un sistema a nodo singolo in Google Cloud, la Console assegna indirizzi IP privati ai seguenti:
 
 * Nodo
 * Grappolo
@@ -111,9 +111,9 @@ Le subnet in queste VPC devono avere intervalli CIDR distinti.  Non possono aver
 
 La console assegna automaticamente il numero richiesto di indirizzi IP privati ​​a Cloud Volumes ONTAP in Google Cloud.  Devi assicurarti che la tua rete disponga di un numero sufficiente di indirizzi privati.
 
-Il numero di LIF allocati per Cloud Volumes ONTAP varia a seconda che si distribuisca un sistema a nodo singolo o una coppia HA.  Un LIF è un indirizzo IP associato a una porta fisica.  Per strumenti di gestione come SnapCenter è necessario un LIF di gestione SVM.
+Il numero di LIF allocati per Cloud Volumes ONTAP dipende dal fatto che si distribuisca un sistema a nodo singolo o una coppia HA. Un LIF è un indirizzo IP associato a una porta fisica. Un LIF di gestione SVM è necessario per strumenti di gestione come SnapCenter.
 
-* *Singolo nodo* La console assegna 4 indirizzi IP a un sistema a nodo singolo:
+* *Singolo nodo* La NetApp Console assegna 4 indirizzi IP a un sistema a nodo singolo:
 +
 ** Gestione dei nodi LIF
 ** Gestione dei cluster LIF
@@ -185,7 +185,7 @@ Anche se l'accesso globale è disabilitato per impostazione predefinita, è supp
 
 Cloud Volumes ONTAP e l'agente Console sono supportati in una VPC condivisa di Google Cloud e anche in VPC autonome.
 
-Per un sistema a nodo singolo, la VPC può essere una VPC condivisa o una VPC autonoma.
+Per un sistema a nodo singolo, la VPC può essere una VPC condivisa o una VPC standalone.
 
 Per una coppia HA sono necessarie quattro VPC.  Ciascuna di queste VPC può essere condivisa o autonoma.  Ad esempio, VPC-0 potrebbe essere una VPC condivisa, mentre VPC-1, VPC-2 e VPC-3 potrebbero essere VPC autonome.
 

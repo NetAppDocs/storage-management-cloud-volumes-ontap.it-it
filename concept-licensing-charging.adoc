@@ -49,7 +49,7 @@ L'addebito avviene sempre per primo sulla tua licenza, ma nei seguenti casi ti v
 
 
 * Se hai un contratto annuale da un marketplace, _tutti_ i sistemi Cloud Volumes ONTAP che distribuisci vengono addebitati su quel contratto.  Non è possibile combinare un contratto annuale di marketplace con BYOL.
-* Nelle regioni cinesi sono supportati solo sistemi a singolo nodo con BYOL. Le distribuzioni nella regione cinese sono esenti dalle restrizioni di licenza BYOL.
+* Solo i sistemi a nodo singolo con BYOL sono supportati nelle regioni della Cina. Le distribuzioni nella regione della Cina sono esenti dalle restrizioni di licenza BYOL.
 
 
 
@@ -133,7 +133,7 @@ Per informazioni sui limiti di capacità di ciascun provider cloud, fare riferim
 
 == Numero massimo di sistemi
 
-Con le licenze basate sulla capacità, il numero massimo di sistemi Cloud Volumes ONTAP è limitato a 24 per organizzazione NetApp Console . Un _sistema_ è una coppia Cloud Volumes ONTAP HA, un sistema a nodo singolo Cloud Volumes ONTAP o qualsiasi VM di storage aggiuntiva creata. La VM di archiviazione predefinita non viene conteggiata nel limite. Questo limite si applica a tutti i modelli di licenza.
+Con le licenze basate sulla capacità, il numero massimo di sistemi Cloud Volumes ONTAP è limitato a 24 per organizzazione della NetApp Console. Un _sistema_ è una coppia HA Cloud Volumes ONTAP, un sistema Cloud Volumes ONTAP a nodo singolo o qualsiasi VM di storage aggiuntiva che crei. La VM di storage predefinita non viene conteggiata nel limite. Questo limite si applica a tutti i modelli di licenza.
 
 Ad esempio, supponiamo di avere tre sistemi:
 
@@ -143,7 +143,7 @@ Questo sistema conta come un unico sistema.
 
 * Un sistema Cloud Volumes ONTAP a nodo singolo con due VM di storage (la VM di storage predefinita, più una VM di storage aggiuntiva creata dall'utente)
 +
-Questo sistema conta come due sistemi: uno per il sistema a nodo singolo e uno per la VM di archiviazione aggiuntiva.
+Questo sistema conta come due sistemi: uno per il sistema a nodo singolo e uno per la storage VM aggiuntiva.
 
 * Una coppia Cloud Volumes ONTAP HA con tre VM di storage (la VM di storage predefinita, più due VM di storage aggiuntive create dall'utente)
 +

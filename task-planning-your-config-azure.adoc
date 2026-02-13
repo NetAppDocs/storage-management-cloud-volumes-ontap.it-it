@@ -62,7 +62,7 @@ Tipo di macchina virtuale:: Guarda i tipi di macchine virtuali supportati in htt
 
 
 --
-Tipo di disco di Azure con sistemi a nodo singolo:: Quando si creano volumi per Cloud Volumes ONTAP, è necessario scegliere lo storage cloud sottostante che Cloud Volumes ONTAP utilizza come disco.
+Tipo di disco Azure con sistemi a nodo singolo:: Quando si creano volumi per Cloud Volumes ONTAP, è necessario scegliere lo storage cloud sottostante che Cloud Volumes ONTAP utilizza come disco.
 +
 --
 I sistemi a nodo singolo possono utilizzare questi tipi di Azure Managed Disks:

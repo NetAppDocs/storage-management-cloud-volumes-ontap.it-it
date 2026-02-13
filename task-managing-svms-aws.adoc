@@ -44,7 +44,7 @@ Ogni istanza EC2 supporta un numero massimo di indirizzi IPv4 privati per interf
 
 Prima di creare LIF per la nuova VM di archiviazione, è necessario assegnare indirizzi IPv4 privati alla porta e0a in AWS.
 
-Si noti che un LIF di gestione facoltativo per una VM di storage richiede un indirizzo IP privato su un singolo sistema a nodo e su una coppia HA in una singola AZ.  Questo LIF di gestione fornisce una connessione a strumenti di gestione come SnapCenter.
+Si noti che un LIF di gestione opzionale per una VM di storage richiede un indirizzo IP privato su un sistema a nodo singolo e su una coppia HA in una singola AZ. Questo LIF di gestione fornisce una connessione a strumenti di gestione come SnapCenter.
 
 .Passi
 . Accedi ad AWS e apri il servizio EC2.
@@ -72,7 +72,7 @@ Se un indirizzo IP non è in uso, è possibile utilizzarlo con la nuova VM di ar
 
 . Tornando alla console AWS, fai clic su *Assegna nuovo indirizzo IP* per assegnare indirizzi IP aggiuntivi in base alla quantità necessaria per la nuova VM di archiviazione.
 +
-** Sistema a nodo singolo: è richiesto un IP privato secondario non utilizzato.
+** sistema a nodo singolo: è necessario un IP privato secondario non utilizzato.
 +
 Se si desidera creare un LIF di gestione sulla VM di archiviazione, è necessario un IP privato secondario facoltativo.
 
@@ -90,9 +90,9 @@ Se si desidera creare un LIF di gestione sulla VM di archiviazione, è necessari
 
 
 
-== Creare una VM di archiviazione su un sistema a nodo singolo
+== Crea una VM di archiviazione su un sistema a nodo singolo
 
-Questi passaggi creano una nuova VM di archiviazione su un sistema a nodo singolo.  Per creare un LIF NAS è necessario un indirizzo IP privato, mentre se si desidera creare un LIF di gestione è necessario un altro indirizzo IP privato facoltativo.
+Questi passaggi creano una nuova VM di storage su un sistema a nodo singolo. È necessario un indirizzo IP privato per creare un LIF NAS e un altro indirizzo IP privato facoltativo se si desidera creare un LIF di gestione.
 
 .Passi
 . Creare la VM di archiviazione e un percorso verso la VM di archiviazione.

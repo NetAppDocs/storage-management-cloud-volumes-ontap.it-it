@@ -101,7 +101,7 @@ ifdef::azure[]
 
 * In Azure è supportata la suddivisione in livelli dei dati come segue:
 +
-** Versione 9.4 con sistemi a nodo singolo
+** Versione 9.4 in con sistemi a nodo singolo
 ** Versione 9.6 con coppie HA
 
 

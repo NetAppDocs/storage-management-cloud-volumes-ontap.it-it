@@ -70,7 +70,7 @@ ifdef::azure[]
 
 == Archiviazione di Azure
 
-In Azure, un aggregato può contenere fino a 12 dischi tutti della stessa dimensione.  Il tipo di disco e la dimensione massima del disco dipendono dal fatto che si utilizzi un sistema a nodo singolo o una coppia HA:
+In Azure, un aggregato può contenere fino a 12 dischi che sono tutti della stessa dimensione. Il tipo di disco e la dimensione massima del disco dipendono dal fatto che si utilizzi un sistema a nodo singolo o una coppia HA:
 
 Sistemi a nodo singolo:: I sistemi a nodo singolo possono utilizzare questi tipi di Azure Managed Disks:
 +

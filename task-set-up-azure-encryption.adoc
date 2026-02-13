@@ -153,7 +153,7 @@ Tenere presente i seguenti requisiti per il key vault:
 +
 *** *Eliminazione temporanea* (questa opzione è abilitata per impostazione predefinita, ma _non_ deve essere disabilitata)
 *** *Protezione anti-spurgo*
-*** *Azure Disk Encryption per la crittografia dei volumi* (per sistemi a nodo singolo, coppie HA in più zone e distribuzioni HA con una sola zona di disponibilità)
+*** *Azure Disk Encryption per la crittografia dei volumi* (per sistemi a nodo singolo, coppia HA in più zone e distribuzioni HA in una sola zona di disponibilità)
 +
 
 NOTE: L'utilizzo delle chiavi di crittografia gestite dal cliente di Azure è subordinato all'abilitazione della crittografia del disco di Azure per l'insieme di credenziali delle chiavi.

@@ -94,7 +94,7 @@ Per informazioni sulla configurazione dei server proxy, fare riferimento a https
 
 La console assegna automaticamente il numero richiesto di indirizzi IP privati ​​a Cloud Volumes ONTAP in Azure.  Devi assicurarti che la tua rete disponga di un numero sufficiente di indirizzi IP privati.
 
-Il numero di LIF allocati per Cloud Volumes ONTAP varia a seconda che si distribuisca un sistema a nodo singolo o una coppia HA.  Un LIF è un indirizzo IP associato a una porta fisica.  Per strumenti di gestione come SnapCenter è necessario un LIF di gestione SVM.
+Il numero di LIF allocati per Cloud Volumes ONTAP dipende dal fatto che si distribuisca un sistema a nodo singolo o una coppia HA. Un LIF è un indirizzo IP associato a una porta fisica. Un LIF di gestione SVM è necessario per strumenti di gestione come SnapCenter.
 
 
 NOTE: Un iSCSI LIF fornisce l'accesso client tramite il protocollo iSCSI e viene utilizzato dal sistema per altri importanti flussi di lavoro di rete.  Questi LIF sono obbligatori e non devono essere eliminati.
@@ -103,7 +103,7 @@ NOTE: Un iSCSI LIF fornisce l'accesso client tramite il protocollo iSCSI e viene
 
 ==== Indirizzi IP per un sistema a nodo singolo
 
-La console assegna 5 o 6 indirizzi IP a un singolo sistema di nodi:
+La NetApp Console assegna 5 o 6 indirizzi IP a un sistema a nodo singolo:
 
 * IP di gestione del cluster
 * IP di gestione dei nodi
@@ -123,7 +123,7 @@ NOTE: L'IP iSCSI fornisce l'accesso client tramite il protocollo iSCSI.  Viene u
 
 Durante la distribuzione, la console assegna indirizzi IP a 4 NIC (per nodo).
 
-Si noti che la console crea un LIF di gestione SVM sulle coppie HA, ma non sui sistemi a nodo singolo in Azure.
+Si noti che la NetApp Console crea un LIF di gestione SVM sulle coppie HA, ma non sui sistemi a nodo singolo in Azure.
 
 *NIC0*
 
@@ -308,7 +308,7 @@ Quando aggiungi un sistema Cloud Volumes ONTAP e scegli un gruppo di sicurezza p
 
 
 
-NOTE: I sistemi HA hanno meno regole in ingresso rispetto ai sistemi a nodo singolo perché il traffico dati in ingresso passa attraverso Azure Standard Load Balancer.  Per questo motivo, il traffico proveniente dal Load Balancer dovrebbe essere aperto, come mostrato nella regola "AllowAzureLoadBalancerInBound".
+NOTE: I sistemi HA hanno meno regole in ingresso rispetto ai sistemi a nodo singolo perché il traffico dati in ingresso passa attraverso l'Azure Standard Load Balancer. Per questo motivo, il traffico proveniente dal Load Balancer dovrebbe essere aperto, come mostrato nella regola "AllowAzureLoadBalancerInBound".
 
 * *Disabilitato*: questa opzione limita l'accesso alla rete pubblica al tuo account di archiviazione e disabilita la suddivisione in livelli dei dati per i sistemi Cloud Volumes ONTAP .  Questa è un'opzione consigliata se i tuoi indirizzi IP privati ​​non devono essere esposti nemmeno all'interno della stessa rete virtuale a causa delle normative e delle policy di sicurezza.
 

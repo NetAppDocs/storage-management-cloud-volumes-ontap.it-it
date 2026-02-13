@@ -82,7 +82,7 @@ ifdef::azure[]
 
 ==== Azzurro
 
-Se si utilizza un sistema a nodo singolo, Cloud Volumes ONTAP supporta un'elevata velocità di scrittura con tutti i tipi di VM.
+Se si utilizza un sistema a nodo singolo, Cloud Volumes ONTAP supporta un'elevata velocità di scrittura con tutti i tipi di istanze di macchine virtuali.
 
 Se si utilizza una coppia HA, Cloud Volumes ONTAP supporta un'elevata velocità di scrittura con diversi tipi di VM, a partire dalla versione 9.8.  Vai al https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Note sulla versione Cloud Volumes ONTAP"^] per visualizzare i tipi di VM che supportano un'elevata velocità di scrittura.
 

@@ -172,7 +172,7 @@ link:https://docs.netapp.com/us-en/keystone-staas/index.html["Scopri di più su 
 
 === Configurazioni supportate
 
-Gli abbonamenti Keystone sono supportati con coppie HA.  Al momento questa opzione di licenza non è supportata nei sistemi a nodo singolo.
+Gli abbonamenti Keystone sono supportati con coppie HA. Questa opzione di licenza non è supportata con sistemi a nodo singolo.
 
 
 

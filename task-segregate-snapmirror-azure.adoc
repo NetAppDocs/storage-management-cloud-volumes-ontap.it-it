@@ -131,7 +131,7 @@ dest::> network ipspace create -ipspace <new_ipspace>
 ----
 dest::> network port show
 ----
-. Per i sistemi a nodo singolo, la porta appena aggiunta è _e0b_.  Per le distribuzioni HA-pair con dischi gestiti, la porta appena aggiunta è _e0d_.  Per le distribuzioni HA-pair con blob di pagine, la porta appena aggiunta è _e0e_.  Utilizzare il nome del nodo, non il nome della VM.  Trova il nome del nodo eseguendo `node show` .
+. Per i sistemi a nodo singolo, la porta appena aggiunta è _e0b_. Per le distribuzioni a coppia HA con dischi gestiti, la porta appena aggiunta è _e0d_. Per le distribuzioni a coppia HA con page blob, la porta appena aggiunta è _e0e_. Usa il nome del nodo, non il nome della VM. Trova il nome del nodo eseguendo  `node show`.
 +
 [source, cli]
 ----

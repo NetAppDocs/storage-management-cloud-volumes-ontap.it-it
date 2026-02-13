@@ -106,13 +106,13 @@ Per informazioni sulla configurazione dei server proxy, fare riferimento a https
 
 La console assegna automaticamente il numero richiesto di indirizzi IP privati ​​a Cloud Volumes ONTAP.  È necessario assicurarsi che la rete disponga di un numero sufficiente di indirizzi IP privati.
 
-Il numero di LIF che la Console alloca per Cloud Volumes ONTAP varia a seconda che si distribuisca un sistema a nodo singolo o una coppia HA.  Un LIF è un indirizzo IP associato a una porta fisica.
+Il numero di LIF che la Console assegna per Cloud Volumes ONTAP dipende dal fatto che si distribuisca un sistema a nodo singolo o una coppia HA. Un LIF è un indirizzo IP associato a una porta fisica.
 
 
 
 ==== Indirizzi IP per un sistema a nodo singolo
 
-La console assegna 6 indirizzi IP a un singolo sistema di nodi.
+La NetApp Console assegna 6 indirizzi IP a un sistema a nodo singolo.
 
 La tabella seguente fornisce dettagli sui LIF associati a ciascun indirizzo IP privato.
 
@@ -142,7 +142,7 @@ La tabella seguente fornisce dettagli sui LIF associati a ciascun indirizzo IP p
 
 ==== Indirizzi IP per coppie HA
 
-Le coppie HA richiedono più indirizzi IP rispetto a un sistema a nodo singolo.  Questi indirizzi IP sono distribuiti su diverse interfacce Ethernet, come mostrato nell'immagine seguente:
+Le coppie HA richiedono più indirizzi IP rispetto a un sistema a nodo singolo. Questi indirizzi IP sono distribuiti su diverse interfacce ethernet, come mostrato nell'immagine seguente:
 
 image:diagram_cvo_aws_networking_ha.png["Un diagramma che mostra eth0, eth1, eth2 su una configurazione Cloud Volumes ONTAP HA in AWS."]
 
