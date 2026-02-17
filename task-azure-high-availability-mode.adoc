@@ -14,13 +14,12 @@ summary: La modalità ad alta disponibilità di Microsoft Azure dovrebbe essere 
 
 
 [role="lead"]
-La modalità ad alta disponibilità (HA) di Microsoft Azure dovrebbe essere abilitata per ridurre i tempi di failover non pianificati e abilitare il supporto NFSv4 per Cloud Volumes ONTAP.  In questa modalità, i nodi Cloud Volumes ONTAP HA possono raggiungere un obiettivo di tempo di ripristino (RTO) basso (60 secondi) durante i failover non pianificati sui client CIFS e NFSv4.
+È consigliabile abilitare la modalità ad alta disponibilità (HA) di Microsoft Azure per ridurre i tempi di failover non pianificati e abilitare il supporto NFSv4 per Cloud Volumes ONTAP. Se abiliti questa modalità, i nodi HA di Cloud Volumes ONTAP possono raggiungere un recovery time objective (RTO) basso (60 secondi) durante i failover non pianificati sui client CIFS e NFSv4.
 
 A partire da Cloud Volumes ONTAP 9.10.1, abbiamo ridotto il tempo di failover non pianificato per le coppie Cloud Volumes ONTAP HA in esecuzione in Microsoft Azure e aggiunto il supporto per NFSv4.  Per rendere disponibili questi miglioramenti a Cloud Volumes ONTAP, è necessario abilitare la funzionalità di alta disponibilità nella sottoscrizione di Azure.
 
-NetApp Console ti chiede di fornire questi dettagli quando la funzionalità deve essere abilitata su un abbonamento Azure.
-
-Notare quanto segue:
+.Informazioni su questo compito
+NetApp Console ti richiede questi dettagli quando la funzionalità deve essere abilitata su un abbonamento Azure. Nota quanto segue:
 
 * Non ci sono problemi con l'elevata disponibilità della coppia Cloud Volumes ONTAP HA.  Questa funzionalità di Azure interagisce con ONTAP per ridurre i tempi di interruzione delle applicazioni osservati dal client per i protocolli NFS, derivanti da eventi di failover non pianificati.
 * L'abilitazione di questa funzionalità non comporta interruzioni per le coppie Cloud Volumes ONTAP HA.
@@ -29,9 +28,9 @@ Notare quanto segue:
 * Quando la modalità HA è abilitata, la console esegue la scansione del sistema ogni 12 ore per aggiornare le regole interne di Azure Load Balancer.
 
 
-Un utente di Azure con privilegi di "Proprietario" può abilitare la funzionalità dall'interfaccia della riga di comando di Azure.
-
 .Passi
+Un utente Azure con privilegi di _Owner_ può abilitare la funzionalità dall'Azure CLI.
+
 . https://docs.microsoft.com/en-us/azure/cloud-shell/quickstart["Accedi ad Azure Cloud Shell dal portale di Azure"^]
 . Registra la funzionalità della modalità ad alta disponibilità:
 +
@@ -62,4 +61,9 @@ L'interfaccia della riga di comando di Azure dovrebbe restituire un risultato si
   "type": "Microsoft.Features/providers/features"
 }
 ----
+
+
+.Link correlati
+. https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-ha-ports-overview["Microsoft Azure documentation: panoramica delle porte ad alta disponibilità"^]
+. https://learn.microsoft.com/en-us/cli/azure/get-started-with-azure-cli?view=azure-cli-latest["Microsoft Azure documentazione: Introduzione all'Azure CLI"^]
 

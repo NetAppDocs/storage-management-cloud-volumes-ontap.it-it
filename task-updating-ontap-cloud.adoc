@@ -200,6 +200,9 @@ ifdef::gcp[]
 | Versione attuale | Versioni a cui puoi effettuare l'aggiornamento diretto 
 
 
+| 9.17.1 P1 | 9.18.1 
+
+
 | 9.16.1 | 9.17.1 P1 
 
 

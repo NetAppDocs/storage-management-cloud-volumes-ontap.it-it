@@ -178,6 +178,16 @@ link:task-enabling-private-link.html["Scopri di più sull'utilizzo di Azure Priv
 
 
 
+=== Networking per la crittografia di Azure VNet
+
+Cloud Volumes ONTAP supporta  https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-encryption-overview["Crittografia di Azure Virtual Network (VNet)"^] la crittografia del traffico da VM a VM all'interno di una VNet o tra VNets in peering. Questa funzionalità è configurata a livello di VNet di Azure ed è indipendente dalla topologia di Cloud Volumes ONTAP (nodo singolo o HA).
+
+È sufficiente assicurarsi che Accelerated Networking sia abilitato sulle schede di rete della macchina virtuale e verificare i requisiti e le limitazioni di crittografia della rete virtuale di Azure prima di abilitare la funzionalità. Non si devono modificare gli oggetti del servizio di bilanciamento del carico gestito NetApp.
+
+https://learn.microsoft.com/en-us/azure/virtual-network/accelerated-networking-overview?tabs=NetworkManager["Documentazione Azure: crittografia VNet e Accelerated Networking"^].
+
+
+
 === Collegamenti ad altri sistemi ONTAP
 
 Per replicare i dati tra un sistema Cloud Volumes ONTAP in Azure e sistemi ONTAP in altre reti, è necessario disporre di una connessione VPN tra la rete virtuale di Azure e l'altra rete, ad esempio la rete aziendale.
