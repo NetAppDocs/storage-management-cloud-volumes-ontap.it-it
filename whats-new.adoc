@@ -20,6 +20,22 @@ I miglioramenti descritti in questa pagina sono specifici per la gestione di Clo
 
 
 
+== 19 febbraio 2026
+
+
+
+=== Nuove regioni supportate in Azure
+
+Ora puoi distribuire Cloud Volumes ONTAP 9.12.1 GA e versioni successive in zone di disponibilità singole e multiple in Azure nelle seguenti regioni. Ciò include il supporto sia per distribuzioni a nodo singolo che ad alta disponibilità (HA).
+
+* Giappone occidentale (japanwest)
+* Indonesia centrale (indonesiacentral)
+
+
+Per un elenco di tutte le regioni, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .
+
+
+
 == 17 febbraio 2026
 
 
