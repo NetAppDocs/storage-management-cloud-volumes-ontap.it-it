@@ -57,15 +57,7 @@ link:task-creating-gcp-service-account.html["Leggi le istruzioni passo passo"] .
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinque"]Abilita le API di Google Cloud
 [role="quick-margin-para"]
-https://cloud.google.com/apis/docs/getting-started#enabling_apis["Abilita le seguenti API di Google Cloud nel tuo progetto"^] . Queste API sono necessarie per distribuire l'agente Console e Cloud Volumes ONTAP.
-
-[role="quick-margin-list"]
-* API di Cloud Deployment Manager V2
-* API di registrazione cloud
-* API di Cloud Resource Manager
-* API di Compute Engine
-* API di gestione dell'identità e dell'accesso (IAM)
-
+https://cloud.google.com/apis/docs/getting-started#enabling_apis["Abilita le API di Google Cloud nel tuo progetto"^]. https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Queste API"^], che potresti aver già abilitato durante la creazione dell'agente Console, sono necessari per distribuire Cloud Volumes ONTAP in Google Cloud.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sei"]Avvia Cloud Volumes ONTAP tramite la console
 [role="quick-margin-para"]

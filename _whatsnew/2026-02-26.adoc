@@ -1,0 +1,50 @@
+= Supporto per Google Infrastructure Manager per distribuzioni in modalità privata
+:allow-uri-read: 
+
+
+
+
+=== Supporto per Google Infrastructure Manager per distribuzioni in modalità privata
+
+Cloud Volumes ONTAP 9.16.1 e versioni successive ora supportano  https://docs.cloud.google.com/infrastructure-manager/docs/overview["Google Cloud Infrastructure Manager"^] (IM) invece di  https://docs.cloud.google.com/deployment-manager/docs/deprecations["Cloud Deployment Manager"^] (DM) per le nuove distribuzioni in modalità privata in Google Cloud. Google ritirerà Deployment Manager come servizio infrastrutturale nel prossimo futuro per il più avanzato Infrastructure Manager.
+
+A partire dal 25 febbraio 2026, Cloud Volumes ONTAP utilizza Infrastructure Manager per le nuove ed esistenti distribuzioni in modalità privata. Questa tabella illustra i flussi di lavoro di base per te:
+
+[cols="1,4,1,1,1,1"]
+|===
+| Scenario | Azione | Nuove API per l'agente | Nuove autorizzazioni per l'agente | Nuove API Google Cloud per Cloud Volumes ONTAP | Risorse di documentazione 
+
+
+| Agente esistente e distribuzione esistente in modalità privata | Aggiorna all'ultima versione dell'agente NetApp Console scaricando il programma di installazione dal NetApp Support Site e poi installando manualmente l'agente sul tuo host, così che possa utilizzare le API di Infrastructure Manager. Successivamente, converti i sistemi Cloud Volumes ONTAP esistenti per utilizzare Infrastructure Manager.  a| 
+* API di Cloud Infrastructure Manager
+* API delle quote cloud
+* API Cloud Build
+
+ a| 
+Tutti i permessi elencati per la release Console su:
+
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#08-december-2025["8 dicembre 2025"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#09-february-2026["09 febbraio 2026"^]
+* cloudbuild.workerpools.get
+* cloudbuild.workerpools.get
+
+ a| 
+* \https://cloudbuild.googleapis.com/v1
+* \https://www.googleapis.com/upload/storage/v1
+* \https://config.googleapis.com/v1
+
+| https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-gcp-dm-im-conv.html["Configura le distribuzioni Cloud Volumes ONTAP esistenti per Google Cloud Infrastructure Manager"^] 
+
+
+| Nuovo agente e nuova distribuzione | Crea un nuovo agente e distribuisci un nuovo sistema Cloud Volumes ONTAP in modalità privata. |  |  |   a| 
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html["Crea un agente Console da Google Cloud"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Avvio rapido per le distribuzioni in modalità privata"^]
+
+
+|===
+Nelle distribuzioni in modalità privata, sono necessarie alcune modifiche alla configurazione affinché Cloud Volumes ONTAP possa iniziare a utilizzare Infrastructure Manager. Fare riferimento a https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments["Configurazione di Infrastructure Manager per distribuzioni in modalità privata"^].
+
+.Link correlati
+* https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0["NetApp Console Agent 4.2.0 Note sulla versione"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#gcp-permissions-change-log["Autorizzazioni richieste per Google Cloud Infrastructure Manager"^]
+

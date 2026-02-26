@@ -4,7 +4,7 @@
 
 
 
-== Supporto per VM Ebdsv5 e E104ids_v5 in Azure
+=== Supporto per VM Ebdsv5 e E104ids_v5 in Azure
 
 A partire da Cloud Volumes ONTAP 9.18.1, è possibile distribuire Ebdsv5 ed E104ids_v5 VM per distribuzioni e aggiornamenti a nodo singolo e a coppia HA.
 

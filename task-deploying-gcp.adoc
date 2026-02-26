@@ -311,7 +311,7 @@ Nella tabella seguente vengono descritti i campi per i quali potrebbe essere nec
 
 
 | Modifica progetto  a| 
-Seleziona il progetto in cui desideri che risieda Cloud Volumes ONTAP .  Il progetto predefinito è il progetto della Console.
+Seleziona il progetto in cui desideri che risieda Cloud Volumes ONTAP.
 
 Se non vedi altri progetti nell'elenco a discesa, significa che non hai ancora associato l'account di servizio ad altri progetti. Vai alla Google Cloud Console, apri il servizio IAM e seleziona il progetto. Aggiungi l'account di servizio con il ruolo che usi per la Console a quel progetto. Dovrai ripetere questo passaggio per ogni progetto.
 
