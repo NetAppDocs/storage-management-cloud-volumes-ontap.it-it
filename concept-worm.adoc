@@ -54,7 +54,7 @@ Quando si aggiunge un sistema Cloud Volumes ONTAP , viene richiesto di abilitare
 
 == Commit di file su WORM
 
-È possibile utilizzare un'applicazione per eseguire il commit dei file in WORM tramite NFS o CIFS oppure utilizzare ONTAP CLI per eseguire automaticamente il commit dei file in WORM.  È anche possibile utilizzare un file WORM aggiungibile per conservare i dati scritti in modo incrementale, come le informazioni di registro.
+È possibile utilizzare un'applicazione per eseguire il commit dei file in WORM tramite NFS o CIFS, oppure utilizzare la ONTAP CLI per eseguire automaticamente il commit dei file in WORM. È inoltre possibile utilizzare un file WORM appendibile per conservare i dati scritti in modo incrementale, come le informazioni di log. Per informazioni, consultare  https://docs.netapp.com/us-en/ontap/snaplock/commit-files-worm-state-manual-task.html#commit-files-to-worm-manually["Esegui il commit dei file in WORM utilizzando ONTAP SnapLock"^].
 
 Dopo aver attivato l'archiviazione WORM su un sistema Cloud Volumes ONTAP , è necessario utilizzare l'interfaccia a riga di comando ONTAP per tutta la gestione dell'archiviazione WORM.  Per le istruzioni, fare riferimento al http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-arch-con/home.html["Documentazione ONTAP su SnapLock"^] .
 

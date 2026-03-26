@@ -1,0 +1,105 @@
+= Attività che non puoi eseguire, per scheda
+:allow-uri-read: 
+
+
+
+
+=== Attività che non puoi eseguire, per scheda
+
+La tabella seguente riassume le attività soggette a restrizioni per scheda.
+
+[cols="1,4"]
+|===
+| Scheda | Attività che non puoi svolgere 
+
+
+| Panoramica  a| 
+* Aggiungi un volume
+* Aggiungi un aggregato
+* Aprire System Manager
+* Utilizzare il pulsante On/Off
+* Imposta una password
+* Aggiorna la versione di ONTAP
+* Rimuovere il sistema dall'area di lavoro
+* Elimina il sistema
+* Usa *Upgrade now*
+* Modifica *System tags* dal menu a matita di tutte le funzioni
+* Modifica *Scheduled downtime* dal menu a matita con tutte le funzioni
+* Modifica *Storage classes* dal menu a matita di tutte le funzioni
+* Modifica *Instance type* dal menu a matita di tutte le funzioni
+* Modifica *Charging method* dal menu a matita di tutte le funzioni
+* Modifica *License type* dal menu a matita di tutte le funzioni
+* Modifica *Write speed* dal menu della matita con tutte le funzioni
+* Modifica *Ransomware protection* dal menu a matita di tutte le funzioni
+* Modifica *Support registration* dal menu a matita di tutte le funzioni
+* Modifica *WORM* dal menu a matita con tutte le funzioni
+* Modifica *Data tiering* dal menu a matita di tutte le funzioni
+* Modifica *CIFS setup* dal menu a matita con tutte le funzioni
+* Modifica *Route tables* dal menu a matita di tutte le funzionalità
+
+
+
+
+| Volumi  a| 
+In questa scheda non sono consentiti aggiornamenti dei volumi e non è possibile aggiungere volumi.
+
+* Clonare un volume
+* Modifica le impostazioni del volume
+* Elimina un volume
+* Crea una copia snapshot
+* Ripristina da una copia snapshot
+* Modifica il tipo di disco (opzione avanzata)
+* Modifica la policy di tiering (opzione avanzata)
+
+
+
+
+| Aggregati  a| 
+* Aggiungi un aggregato
+* Aggiungi un volume
+* Aumenta la capacità
+* Elimina un aggregato
+
+
+
+
+| Replicazione  a| 
+* Interrompi la replicazione
+* Risincronizzazione della replica
+* Replica di risincronizzazione inversa
+* Modifica la pianificazione
+* Modifica la velocità di trasferimento massima
+* Aggiorna replica
+* Elimina replica
+
+
+
+
+| Tela principale  a| 
+* Aggiungi un sistema
+* Scopri un sistema (per tutti gli operatori)
+* Utilizza drag-and-drop per *Copy and sync*
+* Utilizzare drag-and-drop per *Volume caching*
+* Utilizza drag-and-drop per *Replication*
+* Aggiungi un volume
+* Accesso a *costo e prestazioni ottimizzati*
+* Aprire System Manager
+* Utilizzare *Replication* per Cloud Volumes ONTAP solo quando è disponibile l'autorizzazione CVO necessaria (non applicabile a FSx for ONTAP o sistemi on-premises)
+* Utilizzare la *caching dei volumi* per Cloud Volumes ONTAP solo quando è disponibile l'autorizzazione CVO necessaria (non applicabile a FSx for ONTAP o sistemi on-premises)
+* Immettere un sistema
+* Utilizza il pulsante di gestione AVS
+
+
+
+
+| Senza ruoli  a| 
+Quando non viene assegnato alcun ruolo, tutte le azioni sono disabilitate.
+
+* Accedere all'ambiente di lavoro
+* Replica dell'accesso
+* Utilizzare la procedura guidata di creazione di Cloud Volumes ONTAP
+* Utilizzare la procedura guidata di creazione della replica
+* Scopri Cloud Volumes ONTAP
+
+
+|===
