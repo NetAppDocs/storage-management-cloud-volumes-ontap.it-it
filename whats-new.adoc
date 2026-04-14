@@ -20,6 +20,32 @@ I miglioramenti descritti in questa pagina sono specifici per la gestione di Clo
 
 
 
+== 13 aprile 2026
+
+
+
+=== Supporto migliorato per Cloud Volumes ONTAP con le VM C3 di Google Cloud
+
+Cloud Volumes ONTAP ora offre un supporto migliorato per le VM della serie C3 di Google Cloud, abilitando queste funzionalità aggiuntive:
+
+* Nelle implementazioni di Cloud Volumes ONTAP, è possibile passare da un tipo di istanza all'altro scegliendo tra le diverse varianti della famiglia C3.
+* Quando si modifica il tipo di istanza, se si seleziona c3-standard-44 o c3-standard-88 e le relative varianti LSSD come VM di destinazione, il servizio di rete di Google egress network tier Tier-1 viene applicato automaticamente. Se si passa a qualsiasi altra variante C3, il livello di rete in uscita viene impostato su Standard.
++
+
+NOTE: Il passaggio al livello Tier-1 della rete di uscita comporta costi aggiuntivi. Pianificare l'implementazione e l'aggiornamento di conseguenza.
+
+* Se si selezionano le varianti local SSD (LSSD) di C3, Flash Cache viene abilitato per impostazione predefinita. Non è possibile passare da una variante C3 LSSD all'altra nella distribuzione Cloud Volumes ONTAP, anche se la variante di destinazione supporta Flash Cache.
+* Sulle tue VM C3, ora puoi aggiungere volumi sia ad aggregati nuovi che esistenti.
+* È possibile modificare le impostazioni di IOPS e throughput durante l'aggiunta di volumi tramite la NetApp Console o utilizzando l' `PUT /gcp/vsa/aggregates/{workingEnvironmentId}/{aggregateName}`API.
+
+
+.Link correlati
+* https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Configurazioni supportate per Cloud Volumes ONTAP in Google Cloud"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#cloud-volumes-ontap-support-for-next-generation-google-cloud-vms["Cloud Volumes ONTAP supporto per le VM Google Cloud di nuova generazione"^]
+
+
+
+
 == 10 marzo 2026
 
 

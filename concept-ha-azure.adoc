@@ -129,3 +129,9 @@ L'acquisizione, la risincronizzazione e la restituzione dello storage sono tutte
 == Configurazioni di archiviazione
 
 È possibile utilizzare una coppia HA come configurazione attiva-attiva, in cui entrambi i nodi forniscono dati ai client, oppure come configurazione attiva-passiva, in cui il nodo passivo risponde alle richieste di dati solo se ha preso in carico lo storage per il nodo attivo.
+
+
+NOTE: Cloud Volumes ONTAP utilizza bilanciatori di carico in modalità attivo-passivo per le sonde. In Azure, solo il nodo attivo risponde a una sonda. Il nodo passivo potrebbe apparire inattivo con una X. Questo è il comportamento previsto e non deve destare preoccupazione.
+
+.Link correlato
+link:task-azure-high-availability-mode.html["Abilita la modalità ad alta disponibilità per Cloud Volumes ONTAP in Azure"^]

@@ -48,7 +48,7 @@ L'addebito avviene sempre per primo sulla tua licenza, ma nei seguenti casi ti v
 ** Se scade il termine della tua licenza
 
 
-* Se hai un contratto annuale da un marketplace, _tutti_ i sistemi Cloud Volumes ONTAP che distribuisci vengono addebitati su quel contratto.  Non è possibile combinare un contratto annuale di marketplace con BYOL.
+* Se disponi di una licenza BYOL e di un contratto annuale con un marketplace, i tuoi consumi e gli eventuali extra vengono addebitati in base alle preferenze di fatturazione che hai impostato. Per capire come sei addebitato, consulta link:concept-licensing-charging.html#concept-licensing-charging.html#billing-preferences-and-overages["Preferenze di fatturazione e superamenti"].
 * Solo i sistemi a nodo singolo con BYOL sono supportati nelle regioni della Cina. Le distribuzioni nella regione della Cina sono esenti dalle restrizioni di licenza BYOL.
 
 
