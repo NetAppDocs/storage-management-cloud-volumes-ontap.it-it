@@ -3518,17 +3518,14 @@
   <block id="06f358c39bc3b4633cefd78beb67e671" category="section-title">Collega un abbonamento</block>
   <block id="8afaab6946e4a914b70539d7502e26ac" category="paragraph">Dopo che NetApp avrà autorizzato il tuo account, potrai collegare gli abbonamenti Keystone per utilizzarli con Cloud Volumes ONTAP.  Questa azione consente agli utenti di selezionare l'abbonamento come metodo di addebito per i nuovi sistemi Cloud Volumes ONTAP .</block>
   <block id="b0afff19aa3343a6f86619d833dbd316" category="inline-image-macro">Un'icona composta da tre punti affiancati</block>
-  <block id="fc6ada65ff8f08c80e7d6167f68c89c2" category="list-text">Per l'abbonamento che vuoi collegare, clicca<block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block> e seleziona *Collegamento*.</block>
   <block id="1b02ed65c5ea56c85fffa6b88378d762" category="section-title">Richiedi più o meno capacità impegnata</block>
   <block id="56ecf988dec174f4d23028e78eeed82c" category="list-text">Inserisci la capacità impegnata richiesta per uno o più abbonamenti.</block>
-  <block id="dbae9df22f08344d5508b91cb73c6d15" category="list-text">Scorri verso il basso, inserisci eventuali dettagli aggiuntivi per la richiesta, quindi fai clic su *Invia*.</block>
   <block id="8f140d9c4d508c36e3d4c57102f117eb" category="paragraph">La tua richiesta crea un ticket nel sistema NetApp per l'elaborazione.</block>
   <block id="ec6e0d1bd46f010ced65478c609b1636" category="section-title">Monitorare l'utilizzo</block>
   <block id="20ea4c62f4c9e4254314fe7fbbef0319" category="inline-link">Scopri di più sul monitoraggio dell'utilizzo degli abbonamenti</block>
   <block id="d7105dd212dc96a8b292b6b48f84916f" category="paragraph"><block ref="d7105dd212dc96a8b292b6b48f84916f" category="inline-link-rx"></block></block>
   <block id="0c0401d1e9169d6dd38462b1e0d04126" category="section-title">Scollegare un abbonamento</block>
   <block id="492847bcbc9ec0bd3075b612aa43e4a7" category="list-text">Seleziona * Keystone*.</block>
-  <block id="a666a430e484ea214384aefaa30da852" category="list-text">Per l'abbonamento che vuoi scollegare, clicca<block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block> e seleziona *Scollega*.</block>
   <block id="6e1a9790b199742bec95dea2070e2f3f" category="summary">Gestisci le tue licenze basate sui nodi nella NetApp Console per assicurarti che ogni sistema Cloud Volumes ONTAP disponga di una licenza valida con la capacità richiesta.</block>
   <block id="160221c1e99e53b72af8a65c2440852b" category="doc">Gestisci le licenze basate sui nodi per Cloud Volumes ONTAP</block>
   <block id="63e5ea33dc9b9a10458ac73abae91075" category="paragraph">Gestire le licenze basate sui nodi nella NetApp Console per garantire che ogni sistema Cloud Volumes ONTAP disponga di una licenza valida con la capacità richiesta.</block>
@@ -3600,7 +3597,6 @@
   <block id="f979ec1d84a4416797fae20cc61f839b" category="inline-link">Scopri come eliminare un sistema Cloud Volumes ONTAP</block>
   <block id="0d0947c9b1ebe3ee650df057f8192855" category="paragraph"><block ref="87175a08736eca79154ad91c69792fcd" category="inline-link-rx"></block> .</block>
   <block id="342dcce6bda294bb4b60fc9333bcafbe" category="inline-link-macro">Convertire le licenze basate sui nodi in licenze basate sulla capacità</block>
-  <block id="cb90b48918ed9cd8ea355c04c171177b" category="paragraph">collegamento:<block ref="7f9a8649ca2d86db235ba56502d14f92" category="inline-link-macro-rx"></block> <block ref="431f655d5a9ac309b561fc62a4c619ea" category="inline-link-macro-rx"></block></block>
   <block id="bd0ed9183db9306d8ce58c50abb4a96b" category="summary">NetApp Console non fornisce alcun supporto di configurazione o orchestrazione per il disaster recovery delle VM di storage.  È necessario utilizzare System Manager o la CLI.</block>
   <block id="76872305ddb703eedd7fbe3e66263d83" category="doc">Configurare il disaster recovery della VM di archiviazione per Cloud Volumes ONTAP</block>
   <block id="d25bf5fb042a0cc652d82492e5410fb6" category="paragraph">La NetApp Console non offre supporto per la configurazione o l'orchestrazione per il ripristino di emergenza delle VM di archiviazione (SVM).  Per eseguire queste attività, utilizzare ONTAP System Manager o ONTAP CLI.</block>
@@ -5731,7 +5727,6 @@
   <block id="a53c428d90f592127da49a8d5a558130" category="paragraph">Un rappresentante NetApp elaborerà la tua richiesta autorizzando il tuo account ad accedere agli abbonamenti.</block>
   <block id="9c2f6d6e4376237ad065b1baa0ad822d" category="paragraph">L'abbonamento è ora collegato all'organizzazione o all'account della console e può essere selezionato durante la creazione di un ambiente di lavoro Cloud Volumes ONTAP .</block>
   <block id="10d2905ee5dfcb309d64e3633fb774c1" category="paragraph">Se desideri modificare la capacità impegnata per i livelli di servizio del tuo abbonamento, puoi inviare una richiesta a NetApp direttamente dalla Console. Richiedendo capacità aggiuntiva per un livello di servizio si ottiene più spazio di archiviazione per i sistemi Cloud Volumes ONTAP .</block>
-  <block id="e45b542fbde799582edd5059bc1991a9" category="list-text">Per l'abbonamento di cui si desidera regolare la capacità, fare clic su <block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block> e seleziona *Visualizza dettagli e modifica*.</block>
   <block id="a3a13a09504a7f25eb72dede89db4f24" category="paragraph">La dashboard Digital Advisor consente di monitorare l'utilizzo dell'abbonamento Keystone e di generare report.</block>
   <block id="e29343f0ee1c0051a367e02b49c1c5ff" category="paragraph">Se non desideri più utilizzare un abbonamento Keystone con la Console, puoi scollegarlo. Tieni presente che puoi scollegare solo un abbonamento che non è collegato a un abbonamento Cloud Volumes ONTAP esistente.</block>
   <block id="0e1096776546966fb22c4752766d55a9" category="paragraph">L'abbonamento è scollegato dall'organizzazione o dall'account della Console e non è più disponibile per la selezione durante la creazione di un ambiente di lavoro Cloud Volumes ONTAP .</block>
@@ -6438,4 +6433,9 @@
   <block id="fe4b627e339ef56fd051464a11d7b4aa" category="paragraph"><block ref="fe4b627e339ef56fd051464a11d7b4aa" category="inline-link-macro-rx"></block></block>
   <block id="9472db468c3c681023f3ca03b59df38b" category="list-text">Se disponi di una licenza BYOL e di un contratto annuale con un marketplace, i tuoi consumi e gli eventuali extra vengono addebitati in base alle preferenze di fatturazione che hai impostato. Per capire come sei addebitato, consulta <block ref="0b707007d6575618559747cfb2737b16" category="inline-link-macro-rx"></block>.</block>
   <block id="403f4a170e2d1c03d329e0f0dd8d1b84" category="section-title">13 aprile 2026</block>
+  <block id="b3590df4b69c4ddf7017e6977baebe49" category="list-text">Per l'abbonamento che desideri collegare, seleziona <block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block> e seleziona *Collega*.</block>
+  <block id="665103db45058514d7e3b032c990783d" category="list-text">Per l'abbonamento di cui si desidera modificare la capacità, selezionare <block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block> e scegliere *Visualizza dettagli e modifica*.</block>
+  <block id="f638b98047aa1e2c9642d2de1bcdd0d0" category="list-text">Scorri verso il basso, inserisci eventuali dettagli aggiuntivi per la richiesta e poi seleziona *Invia*.</block>
+  <block id="dc96e19fba7ac18b79e69398a4792825" category="list-text">Per l'abbonamento che desideri scollegare, seleziona <block ref="c9c50c6d591d91ccce1ee232fa490fb4" category="inline-image-macro-rx" type="image"></block> e seleziona *Scollega*.</block>
+  <block id="5e5b6fbbd6a3b4edf3913541e4fecf17" category="list-text"><block ref="5e5b6fbbd6a3b4edf3913541e4fecf17" category="inline-link-rx"></block></block>
 </blocks>
