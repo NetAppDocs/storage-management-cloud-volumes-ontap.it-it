@@ -88,6 +88,12 @@ L'istanza del mediatore HA deve disporre di una connessione in uscita al servizi
 
 L'opzione manuale può essere un gateway NAT o un endpoint VPC di interfaccia dalla subnet di destinazione al servizio AWS EC2.  Per i dettagli sugli endpoint VPC, fare riferimento a http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-interface.html["Documentazione AWS: Endpoint VPC dell'interfaccia (AWS PrivateLink)"^] .
 
+Durante la distribuzione di Cloud Volumes ONTAP, il campo proxy del mediatore AWS accetta un indirizzo server. Se si inserisce un fully qualified domain name (FQDN) invece di un indirizzo IP, l'FQDN non verrà risolto a meno che la AWS VPC non sia configurata con un DNS server personalizzato. Questo perché il DNS fornito di default da AWS risolve solo i record DNS pubblici e gli host interni AWS e non può risolvere FQDN esterni come i proxy server dei clienti. Se questo scenario si applica a te, hai due opzioni:
+
+* Aggiungi l'indirizzo IP del proxy server direttamente nel campo proxy del mediatore invece del fully qualified domain.
+* Configura un set di opzioni DHCP nella tua VPC che includa gli indirizzi dei tuoi server DNS personalizzati. Ciò consente ad AWS di risolvere il fully qualified domain quando lo inserisci nel campo proxy server durante la distribuzione. Consulta la  https://docs.aws.amazon.com/vpc/latest/userguide/DHCPOptionSet.html["Documentazione AWS"^] per ulteriori dettagli.
+
+
 
 
 === Configurazione del proxy di rete dell'agente NetApp Console

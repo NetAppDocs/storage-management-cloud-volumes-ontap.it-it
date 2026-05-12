@@ -218,35 +218,29 @@ Se si desidera utilizzare una chiave gestita dal cliente con un sistema Cloud Vo
 https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["Visualizza l'elenco più recente delle autorizzazioni"^]
 
 .Passi
-. Ottieni l'elenco degli archivi di chiavi nella tua sottoscrizione di Azure utilizzando la seguente chiamata API.
+. Ottieni l'elenco degli insiemi di chiavi nella tua sottoscrizione di Azure utilizzando le seguenti chiamate API.
 +
-Per una coppia HA: `GET /azure/ha/metadata/vaults`
+https://docs.netapp.com/us-en/console-automation/cvo/get-azure-ha-metadata-keys-vault.html["Per una coppia HA"^]: `GET /azure/ha/metadata/vaults`
 
 +
-Per nodo singolo: `GET /azure/vsa/metadata/vaults`
+https://docs.netapp.com/us-en/console-automation/cvo/get-azure-vsa-metadata-keys-vault.html["Per singolo nodo"^]: `GET /azure/vsa/metadata/vaults`
 
 +
 Prendi nota di *nome* e *resourceGroup*.  Sarà necessario specificare tali valori nel passaggio successivo.
 
-+
-https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-hametadata["Scopri di più su questa chiamata API"^] .
-
 . Ottieni l'elenco delle chiavi all'interno del vault utilizzando la seguente chiamata API.
 +
-Per una coppia HA: `GET /azure/ha/metadata/keys-vault`
+Per una coppia HA: `GET /azure/ha/metadata/keys-vault?resourceGroupName=KeyVaultResourceGroup&vaultName=KeyVault`
 
 +
-Per nodo singolo: `GET /azure/vsa/metadata/keys-vault`
+Per nodo singolo: `GET /azure/vsa/metadata/keys-vault?resourceGroupName=KeyVaultResourceGroup&vaultName=KeyVault`
 
 +
 Prendi nota di *keyName*.  Sarà necessario specificare tale valore (insieme al nome del vault) nel passaggio successivo.
 
-+
-https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-hametadata["Scopri di più su questa chiamata API"^] .
-
 . Creare un sistema Cloud Volumes ONTAP utilizzando la seguente chiamata API.
 +
-.. Per una coppia HA:
+.. Per una coppia HA utilizzare  https://docs.netapp.com/us-en/console-automation/cvo/post-azure-ha-working-environments.html["questa chiamata API"^]:
 +
 `POST /azure/ha/working-environments`
 
@@ -265,10 +259,7 @@ Il corpo della richiesta deve includere i seguenti campi:
 
 NOTE: Includi il `"userAssignedIdentity": " userAssignedIdentityId"` campo se hai creato questa risorsa per utilizzarla per la crittografia dell'account di archiviazione.
 
-+
-https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-haworking-environments["Scopri di più su questa chiamata API"^] .
-
-.. Per un sistema a nodo singolo:
+.. Per un sistema a nodo singolo utilizzare  https://docs.netapp.com/us-en/console-automation/cvo/post-azure-vsa-working-environments.html["questa chiamata API"^]:
 +
 `POST /azure/vsa/working-environments`
 
@@ -287,12 +278,14 @@ Il corpo della richiesta deve includere i seguenti campi:
 
 NOTE: Includi il `"userAssignedIdentity": " userAssignedIdentityId"` campo se hai creato questa risorsa per utilizzarla per la crittografia dell'account di archiviazione.
 
-+
-https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-vsaworking-environments["Scopri di più su questa chiamata API"^] .
-
 
 
 
 
 .Risultato
 Hai un nuovo sistema Cloud Volumes ONTAP configurato per utilizzare la chiave gestita dal cliente per la crittografia dei dati.
+
+.Link correlati
+* https://docs.netapp.com/us-en/console-automation/cm/wf_cvo_before.html["Preparati a utilizzare i workflow delle API di Cloud Volumes ONTAP"^].
+* https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#azure-haworking-environments["Scopri le ONTAP management REST API"^].
+
