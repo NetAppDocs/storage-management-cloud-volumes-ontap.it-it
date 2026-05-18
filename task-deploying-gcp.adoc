@@ -496,8 +496,6 @@ La console distribuisce il sistema Cloud Volumes ONTAP .  È possibile monitorar
 
 Se riscontri problemi durante la distribuzione del sistema Cloud Volumes ONTAP , rivedi il messaggio di errore.  È anche possibile selezionare il sistema e fare clic su *Ricrea ambiente*.
 
-Per ulteriore assistenza, vai a https://mysupport.netapp.com/site/products/all/details/cloud-volumes-ontap/guideme-tab["Supporto NetApp Cloud Volumes ONTAP"^] .
-
 .Dopo aver finito
 * Se hai predisposto una condivisione CIFS, assegna agli utenti o ai gruppi le autorizzazioni per i file e le cartelle e verifica che tali utenti possano accedere alla condivisione e creare un file.
 * Se si desidera applicare quote ai volumi, utilizzare ONTAP System Manager o ONTAP CLI.

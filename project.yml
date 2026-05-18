@@ -5,7 +5,7 @@ settings:
     release_notes_repo: console-relnotes
   harmony_integration: maestro
   internal:
-    pdf_enabled: true
+    pdf_enabled: false
   prod:
     pdf_enabled: true
     harmony_enabled: false
@@ -68,11 +68,9 @@ sidebar:
         url: "/task-set-up-iam-roles.html"
       - title: Impostare la licenza
         url: "/task-set-up-licensing-aws.html"
-      - title: Utilizzare il metodo di distribuzione rapida per Cloud Volumes ONTAP
-          in AWS
+      - title: Distribuisci Cloud Volumes ONTAP con i valori predefiniti in AWS
         url: "/task-quick-deploy-aws.html"
-      - title: Utilizzare il metodo di distribuzione avanzato per Cloud Volumes ONTAP
-          in AWS
+      - title: Distribuisci Cloud Volumes ONTAP con opzioni avanzate in AWS
         url: "/task-deploying-otc-aws.html"
       - title: Distribuisci Cloud Volumes ONTAP nelle regioni segrete AWS
         url: "/task-getting-started-aws-c2s.html"
@@ -97,7 +95,9 @@ sidebar:
           url: "/task-azure-high-availability-mode.html"
         - title: Abilita VMOrchestratorZonalMultiFD per singole zone di disponibilità
           url: "/task-saz-feature.html"
-        - title: Avvia Cloud Volumes ONTAP in Azure
+        - title: Distribuisci Cloud Volumes ONTAP con i valori predefiniti in Azure
+          url: "/task-quick-deploy-azure.html"
+        - title: Distribuisci Cloud Volumes ONTAP con opzioni avanzate in Azure
           url: "/task-deploying-otc-azure.html"
         - title: Verifica l'immagine della piattaforma Azure
           entries:

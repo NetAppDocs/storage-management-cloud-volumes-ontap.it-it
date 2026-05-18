@@ -1,0 +1,17 @@
+= Distribuzione semplificata di Cloud Volumes ONTAP in Azure
+:allow-uri-read: 
+
+
+
+
+=== Distribuzione semplificata di Cloud Volumes ONTAP in Azure
+
+Ora è possibile utilizzare la creazione rapida per distribuire Cloud Volumes ONTAP in Azure sia per configurazioni a nodo singolo che ad alta disponibilità (HA). Questo processo semplificato riduce il numero di passaggi rispetto al metodo avanzato, imposta automaticamente i valori predefiniti in un'unica pagina e minimizza la navigazione, rendendo la distribuzione più rapida e semplice.
+
+
+NOTE: Se si utilizza la creazione rapida per distribuire un nuovo sistema Cloud Volumes ONTAP in Azure, la NetApp Console seleziona per impostazione predefinita le credenziali di Azure. È possibile distribuire tutti i sistemi Cloud Volumes ONTAP utilizzando le credenziali di Azure iniziali. Se si desidera utilizzare un'altra sottoscrizione e/o credenziali, è necessario passare alla distribuzione con il metodo avanzato. Questa limitazione verrà risolta in una versione futura.
+
+.Link correlati
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-azure.html["Distribuisci Cloud Volumes ONTAP in Azure con la creazione rapida"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["Distribuisci Cloud Volumes ONTAP utilizzando le opzioni avanzate in Azure"^]
+

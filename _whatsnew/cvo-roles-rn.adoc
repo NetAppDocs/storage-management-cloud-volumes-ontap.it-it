@@ -41,8 +41,9 @@ La tabella seguente riassume le attività soggette a restrizioni per scheda.
 
 
 | Volumi  a| 
-In questa scheda non sono consentiti aggiornamenti dei volumi e non è possibile aggiungere volumi.
+Non è possibile eseguire le seguenti operazioni sui volumi:
 
+* Aggiungi un volume
 * Clonare un volume
 * Modifica le impostazioni del volume
 * Elimina un volume
@@ -93,7 +94,7 @@ In questa scheda non sono consentiti aggiornamenti dei volumi e non è possibile
 
 
 | Senza ruoli  a| 
-Quando non viene assegnato alcun ruolo, tutte le azioni sono disabilitate.
+Quando non è assegnato alcun ruolo, non è possibile eseguire alcuna azione, tra cui:
 
 * Accedere all'ambiente di lavoro
 * Replica dell'accesso

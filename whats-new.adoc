@@ -20,6 +20,24 @@ I miglioramenti descritti in questa pagina sono specifici per la gestione di Clo
 
 
 
+== 18 maggio 2026
+
+
+
+=== Distribuzione semplificata di Cloud Volumes ONTAP in Azure
+
+Ora è possibile utilizzare la creazione rapida per distribuire Cloud Volumes ONTAP in Azure sia per configurazioni a nodo singolo che ad alta disponibilità (HA). Questo processo semplificato riduce il numero di passaggi rispetto al metodo avanzato, imposta automaticamente i valori predefiniti in un'unica pagina e minimizza la navigazione, rendendo la distribuzione più rapida e semplice.
+
+
+NOTE: Se si utilizza la creazione rapida per distribuire un nuovo sistema Cloud Volumes ONTAP in Azure, la NetApp Console seleziona per impostazione predefinita le credenziali di Azure. È possibile distribuire tutti i sistemi Cloud Volumes ONTAP utilizzando le credenziali di Azure iniziali. Se si desidera utilizzare un'altra sottoscrizione e/o credenziali, è necessario passare alla distribuzione con il metodo avanzato. Questa limitazione verrà risolta in una versione futura.
+
+.Link correlati
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-azure.html["Distribuisci Cloud Volumes ONTAP in Azure con la creazione rapida"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["Distribuisci Cloud Volumes ONTAP utilizzando le opzioni avanzate in Azure"^]
+
+
+
+
 == 12 maggio 2026
 
 
@@ -2356,7 +2374,7 @@ NOTE: La capacità massima del sistema con soli dischi rimane a 256 TB a causa d
 
 === Nuovi tipi di macchine in Google Cloud
 
-Cloud Volumes ONTAP ora supporta i seguenti tipi di macchine:
+Cloud Volumes ONTAP ora supporta i seguenti tipi di macchine con queste licenze PAYGO in Google Cloud:
 
 * n2-standard-4 con licenza Explore e con BYOL
 * n2-standard-8 con licenza Standard e con BYOL

@@ -1,16 +1,5 @@
----
-sidebar: sidebar 
-permalink: task-quick-deploy-aws.html 
-keywords: aws quick deploy, quick deploy, aws, single screen deployment AWS, SAZ, MAZ, single node, HA pair 
-summary: È possibile distribuire rapidamente le istanze Cloud Volumes ONTAP in una configurazione a sistema singolo o come coppia HA in AWS. 
----
-= Distribuisci Cloud Volumes ONTAP con creazione rapida
-:hardbreaks:
+= 
 :allow-uri-read: 
-:nofooter: 
-:icons: font
-:linkattrs: 
-:imagesdir: ./media/
 
 
 [role="lead"]
@@ -176,6 +165,18 @@ TIP: Se si desidera utilizzare WORM e il tiering dei dati, è necessario disabil
 . Controlla o modifica i dettagli inseriti, quindi fai clic su *Crea*.
 
 
+ifdef::azure[]
+
+In Azure, la sezione *Panoramica* mostra le risorse che verranno allocate al termine del processo di distribuzione.
+
+endif::azure[]
+
+ifdef::aws[]
+
+In _AWS_, subito dopo aver creato il sistema Cloud Volumes ONTAP, la NetApp Console avvia un'istanza di test nella VPC specificata per verificare la connettività. In caso di esito positivo, la Console termina immediatamente l'istanza e quindi avvia la distribuzione del sistema. Se la Console non riesce a verificare la connettività, la creazione del sistema fallisce. L'istanza di test può essere una  `t2.nano` (per tenancy VPC predefinita) o una  `m3.medium` (per tenancy VPC dedicata).
+
+endif::aws[]
+
 .Dopo aver finito
 La console distribuisce il sistema Cloud Volumes ONTAP .  È possibile monitorare i progressi nella pagina Audit.
 
@@ -183,8 +184,3 @@ Se riscontri problemi durante la distribuzione del sistema Cloud Volumes ONTAP, 
 
 
 CAUTION: Una volta completata la procedura di distribuzione, non modificare le configurazioni di Cloud Volumes ONTAP generate dal sistema nel portale cloud di AWS o Azure, in particolare i tag di sistema. Qualsiasi modifica apportata a queste configurazioni potrebbe causare comportamenti imprevisti o la perdita di dati.
-
-.Link correlati
-* link:task-planning-your-config.html["Pianificazione della configurazione Cloud Volumes ONTAP"] *
-* link:task-deploying-otc-aws.html["Distribuisci Cloud Volumes ONTAP in AWS utilizzando la distribuzione avanzata"]
-
