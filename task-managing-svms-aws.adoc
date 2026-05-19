@@ -254,7 +254,7 @@ network interface create -vserver svm_2 -service-policy default-data-iscsi -home
 ----
 +
 ** Questo iSCSI LIF è necessario per supportare la migrazione LIF degli IP mobili nella VM di archiviazione.  Non deve essere necessariamente un iSCSI LIF, ma non può essere configurato per la migrazione tra nodi.
-** `-service-policy default-data-block`indica che un indirizzo IP non migra tra i nodi.
+** `-service-policy default-data-iscsi`indica che un indirizzo IP non migra tra i nodi.
 ** _private_ip_ è un indirizzo IP privato secondario non utilizzato su eth0 (e0a) di cvo_node1.
 
 
@@ -266,7 +266,7 @@ network interface create -vserver svm_2 -service-policy default-data-iscsi -home
 ----
 +
 ** Questo iSCSI LIF è necessario per supportare la migrazione LIF degli IP mobili nella VM di archiviazione.  Non deve essere necessariamente un iSCSI LIF, ma non può essere configurato per la migrazione tra nodi.
-** `-service-policy default-data-block`indica che un indirizzo IP non migra tra i nodi.
+** `-service-policy default-data-iscsi`indica che un indirizzo IP non migra tra i nodi.
 ** _private_ip_ è un indirizzo IP privato secondario non utilizzato su eth0 (e0a) di cvo_node2.
 
 

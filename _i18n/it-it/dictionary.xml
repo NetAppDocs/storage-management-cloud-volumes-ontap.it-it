@@ -3833,7 +3833,6 @@
   <block id="f2feb7d422d422c2517d2196d66d00bc" category="list-text"><block ref="7746ebc5fdfe5251edf41796732ea010" prefix="" category="inline-code"></block>indica che gli IP possono migrare al nodo partner.</block>
   <block id="05bdf9757241650a006a0bd9021d3169" category="list-text">Creare un iSCSI LIF sul nodo 1.</block>
   <block id="849dd632a2c28933451bca01b48c3973" category="list-text">Questo iSCSI LIF è necessario per supportare la migrazione LIF degli IP mobili nella VM di archiviazione.  Non deve essere necessariamente un iSCSI LIF, ma non può essere configurato per la migrazione tra nodi.</block>
-  <block id="d68a88edd93f0fd2099f8bff543a11a3" category="list-text"><block ref="0e101bbae12005006f38a776a7e27d49" prefix="" category="inline-code"></block>indica che un indirizzo IP non migra tra i nodi.</block>
   <block id="111daac7647573990b5b56876902380e" category="list-text">_private_ip_ è un indirizzo IP privato secondario non utilizzato su eth0 (e0a) di cvo_node1.</block>
   <block id="5414bcb74ffdbf70d2afb028e1eb0d0b" category="list-text">Creare un iSCSI LIF sul nodo 2.</block>
   <block id="0a2292629d42074cb011142b9cd8f433" category="list-text">_private_ip_ è un indirizzo IP privato secondario non utilizzato su eth0 (e0a) di cvo_node2.</block>
@@ -6526,4 +6525,5 @@
   <block id="75903a04d1a65d3e18c839c67b54316d" category="sidebar">Distribuisci Cloud Volumes ONTAP con opzioni avanzate in Azure</block>
   <block id="8af1ad3469dad38ef46da37595e3b758" category="inline-link-macro">Scopri i ruoli di Licenses and subscriptions per NetApp Console</block>
   <block id="1ccb85040042290f711464fbb5e06609" category="paragraph">*Ruolo richiesto nella Console* Per eseguire questa attività, è necessario il ruolo di amministratore Licenses and subscriptions <block ref="f7bfd1d1e66654a9d76ee2fffeede42a" category="inline-link-macro-rx"></block>.</block>
+  <block id="1c568211164221a5a183fa65ce0d8ad7" category="list-text"><block ref="f5fb311c04d189ade108ad02dc187c52" prefix="" category="inline-code"></block>indica che un indirizzo IP non migra tra i nodi.</block>
 </blocks>
