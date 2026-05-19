@@ -6524,4 +6524,6 @@
   <block id="690f86e0be68ddfe1eb22f837c53e53c" category="sidebar">Distribuisci Cloud Volumes ONTAP con opzioni avanzate in AWS</block>
   <block id="7fa0d9a7585aaeb29c655dac03f5e3d6" category="sidebar">Distribuisci Cloud Volumes ONTAP con i valori predefiniti in Azure</block>
   <block id="75903a04d1a65d3e18c839c67b54316d" category="sidebar">Distribuisci Cloud Volumes ONTAP con opzioni avanzate in Azure</block>
+  <block id="8af1ad3469dad38ef46da37595e3b758" category="inline-link-macro">Scopri i ruoli di Licenses and subscriptions per NetApp Console</block>
+  <block id="1ccb85040042290f711464fbb5e06609" category="paragraph">*Ruolo richiesto nella Console* Per eseguire questa attività, è necessario il ruolo di amministratore Licenses and subscriptions <block ref="f7bfd1d1e66654a9d76ee2fffeede42a" category="inline-link-macro-rx"></block>.</block>
 </blocks>
