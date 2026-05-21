@@ -44,7 +44,7 @@ NOTE: Se si utilizza la creazione rapida per distribuire un nuovo sistema Cloud 
 
 === Fatturazione flessibile per Cloud Volumes ONTAP e servizi dati in AWS
 
-NetApp offre opzioni di fatturazione migliorate per i tuoi abbonamenti Cloud Volumes ONTAP in AWS, dandoti un maggiore controllo su come paghi la capacità di Cloud Volumes ONTAP e i servizi dati NetApp, come BlueXP backup e recovery. In precedenza, tutto l'utilizzo di Cloud Volumes ONTAP e dei servizi dati veniva fatturato insieme tramite la voce NetApp Intelligent Services (NIS) nel marketplace AWS.
+NetApp offre opzioni di fatturazione migliorate per le tue sottoscrizioni Cloud Volumes ONTAP in AWS, dandoti un maggiore controllo su come paghi la capacità di Cloud Volumes ONTAP e i servizi dati NetApp, come NetApp Backup and Recovery. In precedenza, tutto l'utilizzo di Cloud Volumes ONTAP e dei servizi dati veniva fatturato insieme tramite la voce NetApp Intelligent Services (NIS) nel marketplace AWS.
 
 A seguito delle modifiche apportate al Programma di sconti per le imprese (EDP) di AWS, NetApp ha introdotto un abbonamento Cloud Volumes ONTAP autonomo nel marketplace AWS che consente di separare la fatturazione della capacità Cloud Volumes ONTAP dai servizi dati. Questa separazione offre maggiore flessibilità nella gestione dei crediti e dei costi EDP. NetApp consiglia di utilizzare l'abbonamento autonomo per una migliore gestione dei costi relativi all'utilizzo di Cloud Volumes ONTAP, continuando a utilizzare l'abbonamento NIS per la fatturazione dei servizi dati dopo il 31 luglio 2026, data di entrata in vigore dei requisiti EDP.
 
