@@ -49,7 +49,7 @@ L'agente della console richiede autorizzazioni specifiche per creare VM di archi
 
 
 
-=== sistema a nodo singolo
+=== Sistema a nodo singolo
 
 Utilizzare la seguente chiamata API per creare una storage VM su un sistema a nodo singolo.
 
