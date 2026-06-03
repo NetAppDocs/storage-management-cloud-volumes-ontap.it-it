@@ -53,7 +53,7 @@ L'autenticazione dell'utente fallisce e i seguenti servizi rimangono non disponi
 
 
 
-| https://vault.azure.net[] | Deposito chiavi | Utilizzato per recuperare le chiavi segrete del client da Azure Key Vault quando si utilizzano chiavi gestite dal cliente (CMK). | Modalità standard, limitata e privata. | I servizi Cloud Volumes ONTAP non sono disponibili. 
+| \https://vault.azure.net | Deposito chiavi | Utilizzato per recuperare le chiavi segrete del client da Azure Key Vault quando si utilizzano chiavi gestite dal cliente (CMK). | Modalità standard, limitata e privata. | I servizi Cloud Volumes ONTAP non sono disponibili. 
 
 
 | \ https://api.bluexp.netapp.com/tenancy | Locazione | Utilizzato per recuperare le risorse Cloud Volumes ONTAP dalla Console per autorizzare risorse e utenti. | Modalità standard e limitata. | Le risorse Cloud Volumes ONTAP e gli utenti non sono autorizzati. 

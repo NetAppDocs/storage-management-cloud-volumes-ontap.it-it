@@ -142,7 +142,7 @@ PS /home/user1> Get-AzureStorageBlobCopyState –Container $containerName –Con
 wget <URL of filename/Containers/vm-images/9150.01000024.05090105.vhd>
 ----
 +
-L'URL segue un formato standard.  Per l'automazione, è possibile ricavare la stringa URL come mostrato di seguito.  In alternativa, puoi usare l'interfaccia della riga di comando di Azure `az` comando per ottenere l'URL.  Esempio di URL:https://examplesaname.bluexpinfraprod.eastus2.data.azurecr.io/vm-images/9150.01000024.05090105.vhd[]
+L'URL segue un formato standard. Per l'automazione, puoi ricavare la stringa URL come mostrato di seguito. In alternativa, puoi utilizzare il comando Azure CLI `az` per ottenere l'URL. Esempio di URL: +https://examplesaname.bluexpinfraprod.eastus2.data.azurecr.io/vm-images/9150.01000024.05090105.vhd+
 
 . Pulisci il disco gestito
 +
@@ -256,7 +256,7 @@ Puoi anche usare il `az` comando per questo passaggio.
 wget <URL of file examplesaname/Containers/vm-images/9150.01000024.05090105.vhd>
 ----
 +
-L'URL segue un formato standard.  Per l'automazione, è possibile ricavare la stringa URL come mostrato di seguito.  In alternativa, puoi usare l'interfaccia della riga di comando di Azure `az` comando per ottenere l'URL.  Esempio di URL:https://examplesaname.bluexpinfraprod.eastus2.data.azurecr.io/vm-images/9150.01000024.05090105.vhd[]
+L'URL segue un formato standard. Per l'automazione, puoi ricavare la stringa URL come mostrato di seguito. In alternativa, puoi utilizzare il comando Azure CLI `az` per ottenere l'URL. Esempio di URL: +https://examplesaname.bluexpinfraprod.eastus2.data.azurecr.io/vm-images/9150.01000024.05090105.vhd+
 
 . Pulisci il disco gestito
 +

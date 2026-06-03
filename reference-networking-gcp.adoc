@@ -524,7 +524,7 @@ Il pool di worker deve avere la seguente configurazione:
 ** Dimensione del disco: 100 GB
 ** Assegna IP esterno: False
 ** Rete: predefinita o una privata.
-** La subnet configurata per accedere http://googleapis.com/["Google APIs"]. Esegui questi passaggi per assicurarti che la subnet possa accedere alle Google API:
+** La subnet configurata per accedere https://cloud.google.com/apis["API di Google Cloud"^]. Esegui questi passaggi per assicurarti che la subnet possa accedere alle Google API:
 +
 ... Assicurarsi che "Private Google Access" sia attivato per la subnet.
 ... Vai a *VPC Network level > Scheda Private Service Access > Allocated IP ranges for services*.
