@@ -1,10 +1,10 @@
-= Nuove istanze EC2 supportate per Cloud Volumes ONTAP in AWS
+= Supporto per nuove istanze EC2 per Cloud Volumes ONTAP in AWS
 :allow-uri-read: 
 
 
 
 
-=== Nuove istanze EC2 supportate per Cloud Volumes ONTAP in AWS
+=== Supporto per nuove istanze EC2 per Cloud Volumes ONTAP in AWS
 
 Cloud Volumes ONTAP 9.16.1 e versioni successive supportano le famiglie di istanze EC2 M6id e M6idn sia per le nuove implementazioni che per quelle esistenti a nodo singolo e in configurazione ad alta disponibilità (HA) su AWS. Queste istanze di sesta generazione offrono una maggiore potenza di elaborazione, funzionalità di rete più avanzate e prestazioni superiori rispetto ai sistemi di quinta generazione per uso generico.
 
