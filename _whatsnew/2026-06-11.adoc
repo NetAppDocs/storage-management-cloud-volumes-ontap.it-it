@@ -1,0 +1,11 @@
+= Supporto per una nuova regione di Azure in Cloud Volumes ONTAP
+:allow-uri-read: 
+
+
+
+
+=== Supporto per una nuova regione di Azure in Cloud Volumes ONTAP
+
+Ora è possibile distribuire Cloud Volumes ONTAP 9.12.1 GA e versioni successive in zone di disponibilità singole e multiple in Azure nella regione Malaysia West (malaysiawest). Ciò include il supporto sia per le distribuzioni a nodo singolo che per quelle ad alta disponibilità (HA).
+
+Per un elenco di tutte le regioni, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .
