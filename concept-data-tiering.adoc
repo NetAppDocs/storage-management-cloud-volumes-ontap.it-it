@@ -118,7 +118,7 @@ ifdef::gcp[]
 
 == Livelli dei dati in Google Cloud
 
-Quando si abilita la suddivisione in livelli dei dati in Google Cloud, Cloud Volumes ONTAP utilizza dischi persistenti come livello di prestazioni per i dati attivi e un bucket Google Cloud Storage come livello di capacità per i dati inattivi.
+Quando abiliti il tiering dei dati in Google Cloud, Cloud Volumes ONTAP utilizza dischi persistenti come tier di performance per i dati attivi e un bucket di Google Cloud Storage come tier di capacità per i dati inattivi. Puoi selezionare un tier di storage quando crei un sistema e cambiarlo in qualsiasi momento successivo. Per informazioni sulla modifica della classe di storage, consulta link:task-tiering.html["Suddividi i dati inattivi in un archivio di oggetti a basso costo"].
 
 Livello di prestazione:: Il livello di prestazioni può essere costituito da dischi persistenti SSD, dischi persistenti bilanciati o dischi persistenti standard.
 Livello di capacità:: Un sistema Cloud Volumes ONTAP suddivide i dati inattivi in ​​un singolo bucket di Google Cloud Storage.
@@ -137,16 +137,9 @@ Quando la Console crea il bucket, utilizza le seguenti impostazioni predefinite:
 
 
 --
-Classi di archiviazione:: La classe di archiviazione predefinita per i dati a livelli è la classe _Standard Storage_.  Se l'accesso ai dati avviene raramente, è possibile ridurre i costi di archiviazione passando a _Nearline Storage_ o _Coldline Storage_.  Quando si modifica la classe di archiviazione, i dati inattivi successivi vengono spostati direttamente nella classe selezionata.
+Classi di archiviazione:: Google Cloud utilizza  https://cloud.google.com/storage/docs/storage-classes["classi di archiviazione"^] per gestire i costi e la disponibilità dei dati. Ti consigliamo di selezionare una classe di archiviazione in base alla frequenza prevista di accesso ai dati, perché accedere ai dati comporta costi più elevati. La classe di archiviazione predefinita per i dati a livelli è _Archiviazione Standard_. A meno che non venga modificata manualmente, tutti i dati inattivi mantengono la classe di archiviazione predefinita. Per modificare la classe di archiviazione dei dati inattivi, consulta  https://docs.cloud.google.com/storage/docs/managing-lifecycles["Documentazione Google Cloud: Gestione del ciclo di vita degli oggetti"^].
 +
 --
-
-NOTE: Tutti i dati inattivi esistenti manterranno la classe di archiviazione predefinita quando si modifica la classe di archiviazione.  Per modificare la classe di archiviazione per i dati inattivi esistenti, è necessario eseguire la designazione manualmente.
-
-I costi di accesso sono più elevati se si accede ai dati, quindi è opportuno tenerne conto prima di modificare la classe di archiviazione.  Per saperne di più, fare riferimento al https://cloud.google.com/storage/docs/storage-classes["Documentazione di Google Cloud: Classi di archiviazione"^] .
-
-È possibile selezionare un livello di archiviazione quando si crea il sistema e modificarlo in qualsiasi momento successivo.  Per i dettagli sulla modifica della classe di archiviazione, fare riferimento alink:task-tiering.html["Suddividi i dati inattivi in un archivio di oggetti a basso costo"] .
-
 La classe di archiviazione per la suddivisione in livelli dei dati è a livello di sistema e non per volume.
 
 --
