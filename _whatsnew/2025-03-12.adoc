@@ -4,6 +4,7 @@
 
 
 
+[[new-regions-supported-for-multiple-availability-zone-deployments-in-azure]]
 === Nuove regioni supportate per distribuzioni con più zone di disponibilità in Azure
 
 Le seguenti regioni ora supportano distribuzioni HA con più zone di disponibilità in Azure per Cloud Volumes ONTAP 9.12.1 GA e versioni successive:

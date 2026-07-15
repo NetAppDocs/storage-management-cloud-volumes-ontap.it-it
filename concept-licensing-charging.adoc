@@ -18,6 +18,7 @@ summary: Acquisire familiarità con la tariffazione, il modello di consumo, i pr
 
 
 
+[[consumption-models-or-license-purchase-options]]
 == Modelli di consumo o opzioni di acquisto della licenza
 
 Sono disponibili pacchetti di licenze basati sulla capacità con i seguenti modelli di consumo o opzioni di acquisto:
@@ -48,12 +49,13 @@ L'addebito avviene sempre per primo sulla tua licenza, ma nei seguenti casi ti v
 ** Se scade il termine della tua licenza
 
 
-* Se disponi di una licenza BYOL e di un contratto annuale con un marketplace, i tuoi consumi e gli eventuali extra vengono addebitati in base alle preferenze di fatturazione che hai impostato. Per capire come sei addebitato, consulta link:concept-licensing-charging.html#concept-licensing-charging.html#billing-preferences-and-overages["Preferenze di fatturazione e superamenti"].
+* Se disponi di una licenza BYOL e di un contratto annuale con un marketplace, i tuoi consumi e gli eventuali extra vengono addebitati in base alle preferenze di fatturazione che hai impostato. Per capire come sei addebitato, consulta link:concept-licensing-charging.html#billing-preferences-and-overages["Preferenze di fatturazione e superamenti"].
 * Solo i sistemi a nodo singolo con BYOL sono supportati nelle regioni della Cina. Le distribuzioni nella regione della Cina sono esenti dalle restrizioni di licenza BYOL.
 
 
 
 
+[[changing-of-license-packages]]
 == Modifica dei pacchetti di licenza
 
 Dopo la distribuzione, è possibile modificare il pacchetto per un sistema Cloud Volumes ONTAP che utilizza licenze basate sulla capacità.  Ad esempio, se hai distribuito un sistema Cloud Volumes ONTAP con il pacchetto Essentials, puoi modificarlo con il pacchetto Professional se le tue esigenze aziendali cambiano.
@@ -64,6 +66,7 @@ Per informazioni sulla conversione delle licenze basate sui nodi in licenze basa
 
 
 
+[[how-you-are-charged-for-supported-storage-types-and-packages]]
 == Come vengono addebitati i tipi di archiviazione e i pacchetti supportati
 
 La fatturazione in Cloud Volumes ONTAP si basa su una serie di fattori, come pacchetti e tipi di volume. I pacchetti di licenze basati sulla capacità sono disponibili con Cloud Volumes ONTAP 9.7 e versioni successive.
@@ -72,6 +75,7 @@ Per i dettagli sui prezzi, vai a https://bluexp.netapp.com/pricing/["Sito web Ne
 
 
 
+[[storage-vms]]
 === VM di archiviazione
 
 * Non sono previsti costi di licenza aggiuntivi per le VM di archiviazione dati (SVM) aggiuntive, ma è previsto un costo di capacità minima di 4 TiB per ogni SVM di archiviazione dati.
@@ -80,12 +84,14 @@ Per i dettagli sui prezzi, vai a https://bluexp.netapp.com/pricing/["Sito web Ne
 
 
 
+[[ha-pairs]]
 === coppie HA
 
 Per le coppie HA, ti verrà addebitata solo la capacità fornita su un nodo.  Non ti verrà addebitato alcun costo per i dati che vengono replicati in modo sincrono sul nodo partner.
 
 
 
+[[flexclone-and-flexcache-volumes]]
 === Volumi FlexClone e FlexCache
 
 * Non ti verrà addebitato alcun costo per la capacità utilizzata dai volumi FlexClone .
@@ -94,12 +100,14 @@ Per le coppie HA, ti verrà addebitata solo la capacità fornita su un nodo.  No
 
 
 
+[[readwrite-volumes]]
 === Volumi di lettura/scrittura
 
 Se si crea o si utilizza un volume scrivibile (lettura/scrittura), questo viene considerato un volume primario e viene addebitato il costo della capacità fornita in base alla tariffa minima per VM di archiviazione (SVM).  Tra gli esempi rientrano i volumi di lettura/scrittura FlexVol , i volumi di controllo SnapLock e i volumi di controllo CIFS/NFS.  Tutti i volumi di dati creati dall'utente vengono addebitati in base al tipo di abbonamento e pacchetto.  I volumi interni ONTAP creati automaticamente e che non possono memorizzare dati, come i volumi root SVM, non vengono addebitati.
 
 
 
+[[essentials-packages]]
 === Pacchetti essenziali
 
 Con il pacchetto Essentials, la fatturazione avviene in base al tipo di distribuzione (HA o nodo singolo) e al tipo di volume (primario o secondario).  I prezzi dal più alto al più basso sono nel seguente ordine: _Essentials Primary HA_, _Essentials Primary Single Node_, _Essentials Secondary HA_ e _Essentials Secondary Single Node_.  In alternativa, quando si acquista un contratto di marketplace o si accetta un'offerta privata, i costi di capacità sono gli stessi per qualsiasi tipo di distribuzione o volume.
@@ -118,6 +126,7 @@ NOTE: Se un volume di sola lettura/DP diventa un volume primario, la Console lo 
 
 
 
+[[capacity-limit]]
 == Limite di capacità
 
 Nel modello di licenza basato sulla capacità, ogni sistema Cloud Volumes ONTAP supporta la suddivisione in livelli per l'archiviazione di oggetti e la capacità totale suddivisa in livelli può essere scalata fino al limite del bucket del provider cloud. Sebbene la licenza non imponga restrizioni di capacità, seguire le https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["Migliori pratiche FabricPool"^] per garantire prestazioni ottimali, affidabilità ed efficienza dei costi durante la configurazione e la gestione del tiering.
@@ -131,6 +140,7 @@ Per informazioni sui limiti di capacità di ciascun provider cloud, fare riferim
 
 
 
+[[max-number-of-systems]]
 == Numero massimo di sistemi
 
 Con le licenze basate sulla capacità, il numero massimo di sistemi Cloud Volumes ONTAP è limitato a 24 per organizzazione della NetApp Console. Un _sistema_ è una coppia HA Cloud Volumes ONTAP, un sistema Cloud Volumes ONTAP a nodo singolo o qualsiasi VM di storage aggiuntiva che crei. La VM di storage predefinita non viene conteggiata nel limite. Questo limite si applica a tutti i modelli di licenza.
@@ -159,6 +169,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Scopri i 
 
 
 
+[[minimum-charge]]
 == Costo minimo
 
 È previsto un costo minimo di 4 TiB per ogni VM di archiviazione dati che abbia almeno un volume primario (lettura-scrittura).  Se la somma dei volumi primari è inferiore a 4 TiB, la Console applica la tariffa minima di 4 TiB a quella VM di archiviazione.
@@ -169,6 +180,7 @@ Per il pacchetto Essentials, la tariffa per la capacità minima di 4 TiB non si 
 
 
 
+[[billing-preferences-and-overages]]
 == Preferenze di fatturazione e superamenti
 
 Puoi scegliere la modalità di addebito nella sezione * Licenses and subscriptions* della Console. Si verificano eccedenze quando l'utilizzo supera la capacità specificata nel pacchetto di licenza o nell'abbonamento annuale.
@@ -181,6 +193,7 @@ Per ulteriori informazioni sulle preferenze di fatturazione, fare riferimento a 
 
 
 
+[[how-overages-are-charged-for-essentials-licenses]]
 === Come vengono addebitati gli eccessi per le licenze Essentials
 
 Se acquisti una licenza Essentials da NetApp (BYOL) e superi la capacità concessa in licenza per uno specifico pacchetto Essentials, la Console addebita le eccedenze su una licenza Essentials più costosa (se ne hai una con capacità disponibile).  La Console utilizza innanzitutto la capacità disponibile per cui hai pagato prima di addebitare l'importo sul marketplace.  Se non è disponibile capacità con la tua licenza BYOL, la capacità eccedente verrà addebitata in base alle tariffe orarie on-demand del marketplace (PAYGO) e aggiunta alla tua fattura mensile.

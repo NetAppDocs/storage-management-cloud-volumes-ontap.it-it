@@ -4,6 +4,7 @@
 
 
 
+[[support-for-google-infrastructure-manager-for-private-mode-deployments]]
 === Supporto per Google Infrastructure Manager per distribuzioni in modalità privata
 
 Cloud Volumes ONTAP 9.16.1 e versioni successive ora supportano  https://docs.cloud.google.com/infrastructure-manager/docs/overview["Google Cloud Infrastructure Manager"^] (IM) invece di  https://docs.cloud.google.com/deployment-manager/docs/deprecations["Cloud Deployment Manager"^] (DM) per le nuove distribuzioni in modalità privata in Google Cloud. Google ritirerà Deployment Manager come servizio infrastrutturale nel prossimo futuro per il più avanzato Infrastructure Manager.

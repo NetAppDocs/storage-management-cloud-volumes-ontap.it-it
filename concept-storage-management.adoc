@@ -21,12 +21,14 @@ CAUTION: È necessario creare ed eliminare tutti i dischi e gli aggregati dirett
 
 
 
+[[storage-provisioning]]
 == Provisioning dello storage
 
 La Console semplifica il provisioning dello storage per Cloud Volumes ONTAP acquistando dischi e gestendo gli aggregati per te.  Devi solo creare volumi.  Se lo desideri, puoi utilizzare un'opzione di allocazione avanzata per effettuare autonomamente il provisioning degli aggregati.
 
 
 
+[[simplified-provisioning]]
 === Provisioning semplificato
 
 Gli aggregati forniscono spazio di archiviazione cloud ai volumi.  La console crea aggregati per te quando avvii un'istanza e quando esegui il provisioning di volumi aggiuntivi.
@@ -80,12 +82,14 @@ endif::aws[]
 
 
 
+[[advanced-allocation]]
 === Assegnazione anticipata
 
 È anche possibile gestire gli aggregati. link:task-create-aggregates.html["Dalla pagina *Assegnazione avanzata*"] , è possibile creare nuovi aggregati che includono un numero specifico di dischi, aggiungere dischi a un aggregato esistente e creare volumi in aggregati specifici.
 
 
 
+[[capacity-management]]
 == Gestione della capacità
 
 L'amministratore dell'organizzazione o dell'account può configurare la Console in modo che ti informi sulle decisioni relative alla capacità di archiviazione o che gestisca automaticamente i requisiti di capacità per te.
@@ -94,6 +98,7 @@ Questo comportamento è determinato dalla _Modalità di gestione della capacità
 
 
 
+[[automatic-capacity-management]]
 === Gestione automatica della capacità
 
 Per impostazione predefinita, la modalità di gestione della capacità è impostata su automatica.  In questa modalità, la console controlla il rapporto di spazio libero ogni 15 minuti per determinare se tale rapporto scende al di sotto della soglia specificata.  Se è necessaria maggiore capacità, avvia l'acquisto di nuovi dischi, elimina le raccolte di dischi non utilizzate (aggregati), sposta i volumi tra gli aggregati secondo necessità e tenta di impedire guasti ai dischi.
@@ -127,12 +132,14 @@ La gestione automatica della capacità della Console non si applica alle LUN.  Q
 
 
 
+[[manual-capacity-management]]
 === Gestione manuale della capacità
 
 Se l'amministratore dell'organizzazione o dell'account imposta la *Modalità di gestione della capacità* su manuale, la Console ti informa di intraprendere le azioni appropriate per le decisioni sulla capacità. Gli stessi esempi descritti nella modalità automatica si applicano alla modalità manuale, ma spetta a te accettare le azioni.
 
 
 
+[[learn-more]]
 === Saperne di più
 
 link:task-manage-capacity-settings.html["Scopri come modificare la modalità di gestione della capacità"] .

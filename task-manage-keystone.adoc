@@ -24,6 +24,7 @@ https://www.netapp.com/services/keystone/["Scopri di più su Keystone"^]
 
 
 
+[[authorize-your-account]]
 == Autorizza il tuo account
 
 Prima di poter utilizzare e gestire gli abbonamenti Keystone nella Console, è necessario contattare NetApp per autorizzare l'account Console con gli abbonamenti Keystone .
@@ -40,6 +41,7 @@ Un rappresentante NetApp elaborerà la tua richiesta autorizzando il tuo account
 
 
 
+[[link-a-subscription]]
 == Collega un abbonamento
 
 Dopo che NetApp avrà autorizzato il tuo account, potrai collegare gli abbonamenti Keystone per utilizzarli con Cloud Volumes ONTAP.  Questa azione consente agli utenti di selezionare l'abbonamento come metodo di addebito per i nuovi sistemi Cloud Volumes ONTAP .
@@ -55,6 +57,7 @@ L'abbonamento è ora collegato all'organizzazione o all'account della console e 
 
 
 
+[[request-more-or-less-committed-capacity]]
 == Richiedi più o meno capacità impegnata
 
 Se desideri modificare la capacità impegnata per i livelli di servizio del tuo abbonamento, puoi inviare una richiesta a NetApp direttamente dalla Console. Richiedendo capacità aggiuntiva per un livello di servizio si ottiene più spazio di archiviazione per i sistemi Cloud Volumes ONTAP .
@@ -72,6 +75,7 @@ La tua richiesta crea un ticket nel sistema NetApp per l'elaborazione.
 
 
 
+[[monitor-usage]]
 == Monitorare l'utilizzo
 
 La dashboard Digital Advisor consente di monitorare l'utilizzo dell'abbonamento Keystone e di generare report.
@@ -80,6 +84,7 @@ https://docs.netapp.com/us-en/keystone-staas/integrations/aiq-keystone-details.h
 
 
 
+[[unlink-a-subscription]]
 == Scollegare un abbonamento
 
 Se non desideri più utilizzare un abbonamento Keystone con la Console, puoi scollegarlo. Tieni presente che puoi scollegare solo un abbonamento che non è collegato a un abbonamento Cloud Volumes ONTAP esistente.

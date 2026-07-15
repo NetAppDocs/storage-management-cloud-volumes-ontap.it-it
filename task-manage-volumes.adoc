@@ -20,6 +20,7 @@ summary: La NetApp Console consente di gestire volumi e server CIFS.  Ti chiede 
 
 
 
+[[manage-volumes]]
 == Gestire i volumi
 
 Utilizzando la Visualizzazione standard della Console, è possibile gestire i volumi in base alle proprie esigenze di archiviazione.  È possibile visualizzare, modificare, clonare, ripristinare ed eliminare i volumi.
@@ -122,6 +123,7 @@ NOTE: La console sposta il volume in un aggregato esistente che utilizza il tipo
 
 
 
+[[resize-a-volume]]
 == Ridimensionare un volume
 
 Per impostazione predefinita, un volume aumenta automaticamente fino a raggiungere la dimensione massima quando lo spazio è esaurito.  Il valore predefinito è 1.000, il che significa che il volume può aumentare fino a 11 volte la sua dimensione.  Questo valore è configurabile nelle impostazioni dell'agente Console.
@@ -144,6 +146,7 @@ Quando si ridimensionano i volumi, assicurarsi di tenere in considerazione i lim
 
 
 
+[[modify-the-cifs-server]]
 == Modificare il server CIFS
 
 Se si modificano i server DNS o il dominio Active Directory, è necessario modificare il server CIFS in Cloud Volumes ONTAP in modo che possa continuare a fornire spazio di archiviazione ai client.
@@ -209,6 +212,7 @@ Cloud Volumes ONTAP aggiorna il server CIFS con le modifiche.
 
 
 
+[[move-a-volume]]
 == Spostare un volume
 
 Spostare i volumi per sfruttare al meglio la capacità, migliorare le prestazioni e soddisfare gli accordi sul livello di servizio.
@@ -227,6 +231,7 @@ Per le istruzioni, fare riferimento allink:http://docs.netapp.com/ontap-9/topic/
 
 
 
+[[move-a-volume-when-console-displays-an-action-required-message]]
 == Spostare un volume quando la console visualizza un messaggio di azione richiesta
 
 La console potrebbe visualizzare un messaggio di azione richiesta che indica che è necessario spostare un volume per evitare problemi di capacità, ma che è necessario correggere il problema autonomamente.  In tal caso, è necessario individuare il modo per correggere il problema e quindi spostare uno o più volumi.
@@ -246,6 +251,7 @@ TIP: La Console visualizza questi messaggi di azione richiesta quando un aggrega
 
 
 
+[[identify-how-to-correct-capacity-issues]]
 === Identificare come correggere i problemi di capacità
 
 Se la Console non è in grado di fornire suggerimenti per lo spostamento di un volume per evitare problemi di capacità, è necessario identificare i volumi da spostare e se spostarli su un altro aggregato sullo stesso sistema o su un altro sistema.
@@ -289,6 +295,7 @@ Per informazioni, fare riferimento a<<move-volumes-aggregate-capacity,Spostare i
 
 
 
+[[move-volumes-to-another-system-to-avoid-capacity-issues]]
 === Spostare i volumi su un altro sistema per evitare problemi di capacità
 
 È possibile spostare uno o più volumi su un altro sistema Cloud Volumes ONTAP per evitare problemi di capacità.  Potrebbe essere necessario eseguire questa operazione se il sistema ha raggiunto il limite del disco.
@@ -323,6 +330,8 @@ Per informazioni, fare riferimento alink:task-manage-volumes.html#manage-volumes
 
 
 
+[[move-volumes-to-another-aggregate-to-avoid-capacity-issues]]
+[[move-volumes-aggregate-capacity]]
 === Spostare i volumi su un altro aggregato per evitare problemi di capacità
 
 È possibile spostare uno o più volumi su un altro aggregato per evitare problemi di capacità.
@@ -364,6 +373,7 @@ Per le istruzioni, fare riferimento allink:http://docs.netapp.com/ontap-9/topic/
 
 
 
+[[reasons-why-a-volume-move-might-perform-slowly]]
 == Motivi per cui un movimento di volume potrebbe essere lento
 
 Lo spostamento di un volume potrebbe richiedere più tempo del previsto se una delle seguenti condizioni è vera per Cloud Volumes ONTAP:
@@ -382,6 +392,7 @@ Se la suddivisione in livelli dei dati è stata abilitata su un aggregato nella 
 
 
 
+[[view-flexgroup-volumes]]
 == Visualizza i volumi FlexGroup
 
 È possibile visualizzare i volumi FlexGroup creati tramite ONTAP System Manager o ONTAP CLI direttamente tramite la scheda Volumi nella Console.  È possibile visualizzare informazioni dettagliate sui volumi FleGroup tramite un riquadro dedicato *Volumi*, in cui è possibile identificare ciascun gruppo di volumi FlexGroup tramite il testo passante sull'icona.  Inoltre, è possibile identificare e ordinare i volumi FlexGroup nella vista elenco volumi tramite la colonna Stile volume.

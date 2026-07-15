@@ -4,6 +4,7 @@
 
 
 
+[[introducing-azure-marketplace-direct-deployment]]
 === Introduzione alla distribuzione diretta di Azure Marketplace
 
 Ora puoi sfruttare la distribuzione diretta di Azure Marketplace per distribuire in modo semplice e rapido Cloud Volumes ONTAP direttamente da Azure Marketplace.  Utilizzando questo metodo semplificato, puoi esplorare le funzionalità e le capacità principali di Cloud Volumes ONTAP nel tuo ambiente senza dover configurare BlueXP Connector o soddisfare altri criteri di onboarding richiesti per la distribuzione di Cloud Volumes ONTAP tramite BlueXP.

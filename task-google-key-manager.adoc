@@ -29,6 +29,7 @@ Quando si utilizza Cloud KMS, tenere presente che per impostazione predefinita v
 
 
 
+[[configuration]]
 == Configurazione
 
 .Google Cloud
@@ -74,6 +75,7 @@ NOTE: Se utilizzi Cloud Volumes ONTAP 9.13.0 o versione successiva, non è neces
 
 
 
+[[troubleshoot]]
 == Risoluzione dei problemi
 
 Se hai bisogno di risolvere un problema, puoi seguire i log REST API non elaborati negli ultimi due passaggi sopra:

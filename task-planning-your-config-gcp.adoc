@@ -18,6 +18,7 @@ Quando distribuisci Cloud Volumes ONTAP in Google Cloud, puoi scegliere un siste
 
 
 
+[[choose-a-cloud-volumes-ontap-license]]
 == Scegli una licenza Cloud Volumes ONTAP
 
 Sono disponibili diverse opzioni di licenza per Cloud Volumes ONTAP. Ogni opzione ti consente di scegliere il modello di consumo più adatto alle tue esigenze.
@@ -28,12 +29,14 @@ Sono disponibili diverse opzioni di licenza per Cloud Volumes ONTAP. Ogni opzion
 
 
 
+[[choose-a-supported-region]]
 == Scegli una regione supportata
 
 Cloud Volumes ONTAP è supportato nella maggior parte delle regioni Google Cloud. https://bluexp.netapp.com/cloud-volumes-global-regions["Visualizza l'elenco completo delle regioni supportate"^] .
 
 
 
+[[choose-a-supported-machine-type]]
 == Scegli un tipo di macchina supportato
 
 Cloud Volumes ONTAP supporta diversi tipi di macchine, a seconda del tipo di licenza scelto.
@@ -42,6 +45,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp
 
 
 
+[[understand-storage-limits]]
 == Comprendere i limiti di archiviazione
 
 Il limite di capacità raw per un sistema Cloud Volumes ONTAP è legato alla licenza.  Ulteriori limiti incidono sulle dimensioni degli aggregati e sui volumi.  Quando pianifichi la tua configurazione, dovresti essere consapevole di questi limiti.
@@ -50,6 +54,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.
 
 
 
+[[size-your-system-in-google-cloud]]
 == Dimensiona il tuo sistema in Google Cloud
 
 Il dimensionamento del sistema Cloud Volumes ONTAP può aiutarti a soddisfare i requisiti di prestazioni e capacità.  Quando si sceglie un tipo di macchina, un tipo di disco e una dimensione del disco, è necessario tenere presenti alcuni punti chiave:
@@ -97,6 +102,7 @@ Per maggiori dettagli fare riferimento a quanto segue:
 
 
 
+[[view-default-system-disks]]
 == Visualizza i dischi di sistema predefiniti
 
 Oltre allo storage per i dati utente, la Console acquista anche storage cloud per i dati di sistema Cloud Volumes ONTAP (dati di avvio, dati root, dati core e NVRAM).  Ai fini della pianificazione, potrebbe essere utile rivedere questi dettagli prima di distribuire Cloud Volumes ONTAP.
@@ -113,6 +119,7 @@ TIP: L'agente Console richiede anche un disco di sistema. https://docs.netapp.co
 
 
 
+[[collect-networking-information]]
 == Raccogliere informazioni di rete
 
 Quando distribuisci Cloud Volumes ONTAP in Google Cloud, devi specificare i dettagli della tua rete virtuale. Puoi utilizzare un foglio di lavoro per raccogliere le informazioni dal tuo amministratore.
@@ -200,12 +207,14 @@ Quando distribuisci Cloud Volumes ONTAP in Google Cloud, devi specificare i dett
 |===
 
 
+[[choose-a-write-speed]]
 == Scegli una velocità di scrittura
 
 La Console consente di scegliere un'impostazione della velocità di scrittura per Cloud Volumes ONTAP, ad eccezione delle coppie ad alta disponibilità (HA) in Google Cloud.  Prima di scegliere una velocità di scrittura, è necessario comprendere le differenze tra le impostazioni normale e alta, nonché i rischi e i consigli relativi all'utilizzo di una velocità di scrittura elevata. link:concept-write-speed.html["Scopri di più sulla velocità di scrittura"] .
 
 
 
+[[choose-a-volume-usage-profile]]
 == Scegli un profilo di utilizzo del volume
 
 ONTAP include diverse funzionalità di efficienza di archiviazione che possono ridurre la quantità totale di spazio di archiviazione necessario.  Quando si crea un volume nella Console, è possibile scegliere un profilo che abiliti queste funzionalità oppure un profilo che le disabiliti.  Dovresti saperne di più su queste funzionalità per decidere quale profilo utilizzare.

@@ -18,6 +18,7 @@ Il supporto per la funzionalità Amazon EBS Elastic Volumes con un aggregato Clo
 
 
 
+[[benefits]]
 == Benefici
 
 * Crescita dinamica del disco
@@ -41,12 +42,14 @@ https://aws.amazon.com/ebs/features/["Documentazione AWS: Scopri di più su Elas
 
 
 
+[[supported-configurations]]
 == Configurazioni supportate
 
 La funzionalità Amazon EBS Elastic Volumes è supportata con specifiche versioni Cloud Volumes ONTAP e specifici tipi di dischi EBS.
 
 
 
+[[cloud-volumes-ontap-version]]
 === Versione Cloud Volumes ONTAP
 
 La funzionalità Elastic Volumes è supportata con i _nuovi_ sistemi Cloud Volumes ONTAP creati a partire dalla versione 9.11.0 o successive.  La funzionalità _non_ è supportata con i sistemi Cloud Volumes ONTAP esistenti distribuiti prima della versione 9.11.0.
@@ -55,12 +58,14 @@ Ad esempio, la funzionalità Elastic Volumes non è supportata se hai creato un 
 
 
 
+[[ebs-disk-types]]
 === Tipi di dischi EBS
 
 La funzionalità Elastic Volumes viene abilitata automaticamente a livello aggregato quando si utilizzano SSD per uso generico (gp3) o SSD Provisioned IOPS (io1).  La funzionalità Elastic Volumes non è supportata con aggregati che utilizzano altri tipi di disco.
 
 
 
+[[required-aws-permissions]]
 == Autorizzazioni AWS richieste
 
 A partire dalla versione 3.9.19, l'agente Console richiede le seguenti autorizzazioni per abilitare e gestire la funzionalità Elastic Volumes su un aggregato Cloud Volumes ONTAP :
@@ -73,6 +78,7 @@ Questi permessi sono inclusi in https://docs.netapp.com/us-en/bluexp-setup-admin
 
 
 
+[[how-support-for-elastic-volumes-works]]
 == Come funziona il supporto per Elastic Volumes
 
 Un aggregato con la funzionalità Elastic Volumes abilitata è composto da uno o due gruppi RAID.  Ogni gruppo RAID è composto da quattro dischi identici con la stessa capacità.  Ecco un esempio di un aggregato da 10 TiB con quattro dischi da 2,5 TiB ciascuno:
@@ -93,6 +99,7 @@ image:diagram-aws-elastic-volumes-two-raid-groups.png["Un'immagine concettuale c
 
 
 
+[[what-happens-when-you-create-a-volume]]
 === Cosa succede quando si crea un volume
 
 Se si crea un volume che utilizza dischi gp3 o io1, la Console crea il volume su un aggregato come segue:
@@ -118,6 +125,7 @@ La dimensione dell'aggregato si basa sul volume richiesto più un ulteriore 10% 
 
 
 
+[[capacity-management-mode]]
 === Modalità di gestione della capacità
 
 La modalità di gestione della capacità per un agente della console funziona con Elastic Volumes in modo simile a come funziona con altri tipi di aggregati:
@@ -130,12 +138,14 @@ link:concept-storage-management.html#capacity-management["Scopri di più sulla m
 
 
 
+[[limitations]]
 == Limitazioni
 
 L'aumento delle dimensioni di un aggregato può richiedere fino a 6 ore.  Durante tale periodo, la Console non può richiedere alcuna capacità aggiuntiva per tale aggregato.
 
 
 
+[[how-to-work-with-elastic-volumes]]
 == Come lavorare con i volumi elastici
 
 Con Elastic Volumes puoi eseguire queste attività:

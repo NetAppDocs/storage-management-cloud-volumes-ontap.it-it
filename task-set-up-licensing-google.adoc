@@ -18,6 +18,7 @@ Dopo aver deciso quale opzione di licenza utilizzare con Cloud Volumes ONTAP, so
 
 
 
+[[freemium]]
 == Freemium
 
 Seleziona l'offerta Freemium per utilizzare Cloud Volumes ONTAP gratuitamente con una capacità fornita fino a 500 GiB. link:concept-licensing.html#packages["Scopri di più sull'offerta Freemium"] .
@@ -42,6 +43,7 @@ link:task-deploying-gcp.html["Visualizza le istruzioni dettagliate per avviare C
 
 
 
+[[capacity-based-license]]
 == Licenza basata sulla capacità
 
 Le licenze basate sulla capacità consentono di pagare Cloud Volumes ONTAP per TiB di capacità. Le licenze basate sulla capacità sono disponibili sotto forma di _pacchetto_: il pacchetto Essentials o Professional.
@@ -59,6 +61,7 @@ Le sezioni seguenti descrivono come iniziare a utilizzare ciascuno di questi mod
 
 
 
+[[byol]]
 === BYOL
 
 Paga in anticipo acquistando una licenza (BYOL) da NetApp per distribuire i sistemi Cloud Volumes ONTAP in qualsiasi provider cloud.
@@ -93,6 +96,7 @@ link:task-deploying-gcp.html["Visualizza le istruzioni dettagliate per avviare C
 
 
 
+[[paygo-subscription]]
 === Abbonamento PAYGO
 
 Paga a ore sottoscrivendo l'offerta dal marketplace del tuo provider cloud.
@@ -119,6 +123,7 @@ TIP: Puoi gestire gli abbonamenti a Google Cloud Marketplace associati ai tuoi a
 
 
 
+[[annual-contract]]
 === Contratto annuale
 
 Paga annualmente Cloud Volumes ONTAP acquistando un contratto annuale.
@@ -147,6 +152,7 @@ link:task-deploying-gcp.html["Visualizza le istruzioni dettagliate per avviare C
 
 
 
+[[keystone-subscription]]
 == Abbonamento Keystone
 
 Un abbonamento Keystone è un servizio basato su un abbonamento con pagamento in base alla crescita. link:concept-licensing.html#keystone-subscription["Scopri di più sugli abbonamenti NetApp Keystone"] .
@@ -170,6 +176,7 @@ link:task-deploying-gcp.html["Visualizza le istruzioni dettagliate per avviare C
 
 
 
+[[node-based-license]]
 == Licenza basata su nodi
 
 Una licenza basata su nodi è la licenza di precedente generazione per Cloud Volumes ONTAP. Una licenza basata su nodi può essere acquistata da NetApp (BYOL) ed è disponibile per i rinnovi di licenza solo in casi specifici. Per informazioni, fare riferimento a:

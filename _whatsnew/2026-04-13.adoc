@@ -4,6 +4,7 @@
 
 
 
+[[improved-cloud-volumes-ontap-support-with-google-cloud-c3-vms]]
 === Supporto migliorato per Cloud Volumes ONTAP con le VM C3 di Google Cloud
 
 Cloud Volumes ONTAP ora offre un supporto migliorato per le VM della serie C3 di Google Cloud, abilitando queste funzionalità aggiuntive:

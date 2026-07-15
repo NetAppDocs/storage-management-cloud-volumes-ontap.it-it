@@ -4,6 +4,7 @@
 
 
 
+[[new-regions-supported-in-azure]]
 === Nuove regioni supportate in Azure
 
 Ora puoi distribuire Cloud Volumes ONTAP 9.12.1 GA e versioni successive in zone di disponibilità singole e multiple in Azure nelle seguenti regioni. Ciò include il supporto sia per distribuzioni a nodo singolo che ad alta disponibilità (HA).

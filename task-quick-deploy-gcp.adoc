@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
-permalink: task-quick-deploy-aws.html 
-keywords: aws quick deploy, quick deploy, aws, single screen deployment AWS, SAZ, MAZ, single node, HA pair 
-summary: È possibile distribuire rapidamente le istanze Cloud Volumes ONTAP in una configurazione a sistema singolo o come coppia HA in AWS. 
+permalink: task-quick-deploy-gcp.html 
+keywords: google cloud quick deploy, quick deploy, GCP, single screen deployment Google Cloud, SAZ, MAZ, single node, HA pair 
+summary: Puoi implementare rapidamente le istanze di Cloud Volumes ONTAP in una configurazione a sistema singolo o come coppia HA in Google Cloud. 
 ---
 = Distribuisci Cloud Volumes ONTAP con creazione rapida
 :hardbreaks:
@@ -221,6 +221,6 @@ Se riscontri problemi durante la distribuzione del sistema Cloud Volumes ONTAP, 
 CAUTION: Una volta completata la procedura di distribuzione, non modificare le configurazioni di Cloud Volumes ONTAP generate dal sistema nel portale cloud di AWS o Azure, in particolare i tag di sistema. Qualsiasi modifica apportata a queste configurazioni potrebbe causare comportamenti imprevisti o la perdita di dati.
 
 .Link correlati
-* link:task-planning-your-config.html["Pianificazione della configurazione Cloud Volumes ONTAP"]
-* link:task-deploying-otc-aws.html["Distribuisci Cloud Volumes ONTAP in AWS utilizzando la distribuzione avanzata"]
+* link:task-planning-your-config-gcp.html["Pianificazione della configurazione Cloud Volumes ONTAP"]
+* link:task-deploying-gcp.html["Distribuisci Cloud Volumes ONTAP in Google Cloud utilizzando la distribuzione avanzata"]
 

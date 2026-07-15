@@ -18,6 +18,7 @@ summary: È possibile arrestare e avviare Cloud Volumes ONTAP dalla NetApp Conso
 
 
 
+[[scheduling-automatic-shutdowns-of-cloud-volumes-ontap]]
 == Pianificazione degli arresti automatici di Cloud Volumes ONTAP
 
 Potrebbe essere necessario arrestare Cloud Volumes ONTAP durante intervalli di tempo specifici per ridurre i costi di elaborazione.  Invece di procedere manualmente, è possibile configurare la Console in modo che arresti e riavvii automaticamente i sistemi in momenti specifici.
@@ -63,6 +64,7 @@ Il programma è stato salvato.  La voce corrispondente della riga Tempo di inatt
 
 
 
+[[stopping-cloud-volumes-ontap]]
 == Arresto di Cloud Volumes ONTAP
 
 L'arresto di Cloud Volumes ONTAP consente di evitare l'accumulo di costi di elaborazione e di creare snapshot dei dischi root e boot, utili per la risoluzione dei problemi.

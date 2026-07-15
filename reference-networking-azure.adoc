@@ -18,12 +18,14 @@ La NetApp Console gestisce la configurazione dei componenti di rete per Cloud Vo
 
 
 
+[[requirements-for-cloud-volumes-ontap]]
 == Requisiti per Cloud Volumes ONTAP
 
 In Azure devono essere soddisfatti i seguenti requisiti di rete.
 
 
 
+[[outbound-internet-access]]
 === Accesso a Internet in uscita
 
 I sistemi Cloud Volumes ONTAP necessitano di accesso a Internet in uscita per accedere agli endpoint esterni per varie funzioni.  Cloud Volumes ONTAP non può funzionare correttamente se questi endpoint sono bloccati in ambienti con requisiti di sicurezza rigorosi.
@@ -78,6 +80,7 @@ L'autenticazione dell'utente fallisce e i seguenti servizi rimangono non disponi
 |===
 
 
+[[network-proxy-configuration-of-netapp-console-agent]]
 === Configurazione del proxy di rete dell'agente NetApp Console
 
 È possibile utilizzare la configurazione dei server proxy dell'agente NetApp Console per abilitare l'accesso a Internet in uscita da Cloud Volumes ONTAP.  La console supporta due tipi di proxy:
@@ -90,6 +93,7 @@ Per informazioni sulla configurazione dei server proxy, fare riferimento a https
 
 
 
+[[ip-addresses]]
 === indirizzi IP
 
 La console assegna automaticamente il numero richiesto di indirizzi IP privati ​​a Cloud Volumes ONTAP in Azure.  Devi assicurarti che la tua rete disponga di un numero sufficiente di indirizzi IP privati.
@@ -166,6 +170,7 @@ Inoltre, 4 IP frontend (FIP) sono configurati per migrare in caso di eventi di f
 
 
 
+[[secure-connections-to-azure-services]]
 === Connessioni sicure ai servizi di Azure
 
 Per impostazione predefinita, la console abilita un collegamento privato di Azure per le connessioni tra Cloud Volumes ONTAP e gli account di archiviazione BLOB di pagine di Azure.
@@ -178,6 +183,7 @@ link:task-enabling-private-link.html["Scopri di più sull'utilizzo di Azure Priv
 
 
 
+[[networking-for-azure-vnet-encryption]]
 === Networking per la crittografia di Azure VNet
 
 Cloud Volumes ONTAP supporta  https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-encryption-overview["Crittografia di Azure Virtual Network (VNet)"^] la crittografia del traffico da VM a VM all'interno di una VNet o tra VNets in peering. Questa funzionalità è configurata a livello di VNet di Azure ed è indipendente dalla topologia di Cloud Volumes ONTAP (nodo singolo o HA).
@@ -188,6 +194,7 @@ https://learn.microsoft.com/en-us/azure/virtual-network/accelerated-networking-o
 
 
 
+[[connections-to-other-ontap-systems]]
 === Collegamenti ad altri sistemi ONTAP
 
 Per replicare i dati tra un sistema Cloud Volumes ONTAP in Azure e sistemi ONTAP in altre reti, è necessario disporre di una connessione VPN tra la rete virtuale di Azure e l'altra rete, ad esempio la rete aziendale.
@@ -196,6 +203,7 @@ Per le istruzioni, fare riferimento al https://docs.microsoft.com/en-us/azure/vp
 
 
 
+[[port-for-the-ha-interconnect]]
 === Porta per l'interconnessione HA
 
 Una coppia Cloud Volumes ONTAP HA include un'interconnessione HA, che consente a ciascun nodo di verificare continuamente se il partner funziona e di eseguire il mirroring dei dati di registro per la memoria non volatile dell'altro.  L'interconnessione HA utilizza la porta TCP 10006 per la comunicazione.
@@ -204,6 +212,7 @@ Per impostazione predefinita, la comunicazione tra i LIF di interconnessione HA 
 
 
 
+[[only-one-ha-pair-in-an-azure-resource-group]]
 === Solo una coppia HA in un gruppo di risorse di Azure
 
 È necessario utilizzare un gruppo di risorse _dedicato_ per ogni coppia Cloud Volumes ONTAP HA distribuita in Azure.  In un gruppo di risorse è supportata solo una coppia HA.
@@ -212,6 +221,7 @@ La console riscontra problemi di connessione se si tenta di distribuire una seco
 
 
 
+[[security-group-rules]]
 === Regole del gruppo di sicurezza
 
 La console crea gruppi di sicurezza di Azure che includono le regole in ingresso e in uscita affinché Cloud Volumes ONTAP funzioni correttamente. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-azure.html["Visualizza le regole del gruppo di sicurezza per l'agente della console"^] .
@@ -490,6 +500,7 @@ NOTE: La sorgente è l'interfaccia (indirizzo IP) sul sistema Cloud Volumes ONTA
 |===
 
 
+[[requirements-for-the-console-agent]]
 == Requisiti per l'agente della console
 
 Se non hai ancora creato un agente Console, dovresti anche esaminare i requisiti di rete per l'agente Console.

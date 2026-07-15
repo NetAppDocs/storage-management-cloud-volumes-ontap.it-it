@@ -21,6 +21,7 @@ CAUTION: È necessario creare ed eliminare tutti i dischi e gli aggregati dalla 
 
 
 
+[[overview]]
 == Panoramica
 
 Cloud Volumes ONTAP utilizza lo storage del provider cloud come dischi e li raggruppa in uno o più aggregati.  Gli aggregati forniscono spazio di archiviazione a uno o più volumi.
@@ -36,6 +37,7 @@ ifdef::aws[]
 
 
 
+[[aws-storage]]
 == Deposito AWS
 
 In AWS, Cloud Volumes ONTAP utilizza l'archiviazione EBS per i dati utente e l'archiviazione NVMe locale come cache Flash su alcuni tipi di istanze EC2.
@@ -68,6 +70,7 @@ ifdef::azure[]
 
 
 
+[[azure-storage]]
 == Archiviazione di Azure
 
 In Azure, un aggregato può contenere fino a 12 dischi che sono tutti della stessa dimensione. Il tipo di disco e la dimensione massima del disco dipendono dal fatto che si utilizzi un sistema a nodo singolo o una coppia HA:
@@ -113,11 +116,14 @@ ifdef::gcp[]
 
 
 
+[[google-cloud-storage]]
 == Archiviazione Google Cloud
 
 In Google Cloud, un aggregato può contenere fino a 6 dischi tutti della stessa dimensione.  La dimensione massima del disco è 64 TiB.
 
 Il tipo di disco può essere _dischi persistenti SSD zonali_, _dischi persistenti bilanciati zonali_ o _dischi persistenti standard zonali_.  È possibile associare dischi persistenti a un bucket di Google Storage perlink:concept-data-tiering.html["archiviazione di oggetti a basso costo"] .
+
+Cloud Volumes ONTAP supporta i dischi Hyperdisk Balanced per le implementazioni a nodo singolo a partire dalla versione 9.18.1 e per le configurazioni ad alta disponibilità (coppia HA) in zone di disponibilità (AZ) singole a partire dalla versione 9.19.1 e versioni successive.
 
 *Link correlati*
 
@@ -129,12 +135,14 @@ endif::gcp[]
 
 
 
+[[raid-type]]
 == Tipo RAID
 
 Il tipo RAID per ogni aggregato Cloud Volumes ONTAP è RAID0 (striping).  Cloud Volumes ONTAP si affida al provider cloud per la disponibilità e la durabilità dei dischi.  Non sono supportati altri tipi di RAID.
 
 
 
+[[hot-spares]]
 === Ricambi a caldo
 
 RAID0 non supporta l'uso di hot spare per la ridondanza.

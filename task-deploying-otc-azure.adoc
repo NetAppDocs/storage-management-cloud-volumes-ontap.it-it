@@ -49,6 +49,7 @@ Si sconsiglia di distribuire Cloud Volumes ONTAP in un gruppo di risorse condivi
 ====
 
 
+[[launch-a-single-node-cloud-volumes-ontap-system-in-azure]]
 == Avvia un sistema Cloud Volumes ONTAP a nodo singolo in Azure
 
 Se si desidera avviare un sistema Cloud Volumes ONTAP a nodo singolo in Azure, è necessario creare un sistema a nodo singolo nella Console.
@@ -273,6 +274,7 @@ Le quote consentono di limitare o tenere traccia dello spazio su disco e del num
 
 
 
+[[launch-a-cloud-volumes-ontap-ha-pair-in-azure]]
 == Avvia una coppia Cloud Volumes ONTAP HA in Azure
 
 Se si desidera avviare una coppia Cloud Volumes ONTAP HA in Azure, è necessario creare un sistema HA nella console.

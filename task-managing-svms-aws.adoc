@@ -20,6 +20,7 @@ Per creare ulteriori VM di archiviazione per la distribuzione dei dati, è neces
 
 
 
+[[supported-number-of-storage-vms]]
 == Numero supportato di VM di archiviazione
 
 A partire dalla versione 9.7, sono supportate più VM di storage con configurazioni specifiche Cloud Volumes ONTAP .  Vai al https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Note sulla versione Cloud Volumes ONTAP"^] per verificare il numero supportato di VM di archiviazione per la tua versione di Cloud Volumes ONTAP.
@@ -28,6 +29,7 @@ Tutte le altre configurazioni Cloud Volumes ONTAP supportano una VM di storage p
 
 
 
+[[verify-limits-for-your-configuration]]
 == Verifica i limiti per la tua configurazione
 
 Ogni istanza EC2 supporta un numero massimo di indirizzi IPv4 privati per interfaccia di rete.  È necessario verificare il limite prima di allocare indirizzi IP in AWS per la nuova VM di archiviazione.
@@ -40,6 +42,7 @@ Ogni istanza EC2 supporta un numero massimo di indirizzi IPv4 privati per interf
 
 
 
+[[allocate-ip-addresses-in-aws]]
 == Assegnare indirizzi IP in AWS
 
 Prima di creare LIF per la nuova VM di archiviazione, è necessario assegnare indirizzi IPv4 privati alla porta e0a in AWS.
@@ -90,6 +93,7 @@ Se si desidera creare un LIF di gestione sulla VM di archiviazione, è necessari
 
 
 
+[[create-a-storage-vm-on-a-single-node-system]]
 == Crea una VM di archiviazione su un sistema a nodo singolo
 
 Questi passaggi creano una nuova VM di storage su un sistema a nodo singolo. È necessario un indirizzo IP privato per creare un LIF NAS e un altro indirizzo IP privato facoltativo se si desidera creare un LIF di gestione.
@@ -137,6 +141,7 @@ Questo passaggio è necessario perché la nuova VM di archiviazione deve avere a
 
 
 
+[[create-a-storage-vm-on-an-ha-pair-in-a-single-az]]
 == Crea una VM di archiviazione su una coppia HA in una singola AZ
 
 Questi passaggi creano una nuova VM di archiviazione su una coppia HA in una singola AZ.  Per creare un LIF NAS è necessario un indirizzo IP privato, mentre se si desidera creare un LIF di gestione è necessario un altro indirizzo IP privato facoltativo.
@@ -209,6 +214,7 @@ network interface service-policy add-service -vserver <svm-name> -policy default
 
 
 
+[[create-a-storage-vm-on-an-ha-pair-in-multiple-azs]]
 == Creare una VM di archiviazione su una coppia HA in più AZ
 
 Questi passaggi creano una nuova VM di archiviazione su una coppia HA in più AZ.

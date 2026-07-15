@@ -4,6 +4,7 @@
 
 
 
+[[private-mode-deployments-enabled-for-cloud-volumes-ontap-9-14-1]]
 === Distribuzioni in modalità privata abilitate per Cloud Volumes ONTAP 9.14.1
 
 Ora puoi distribuire Cloud Volumes ONTAP 9.14.1 in modalità privata su AWS, Azure e Google Cloud.  La modalità privata è abilitata sia per le distribuzioni a nodo singolo che per quelle ad alta disponibilità (HA) di Cloud Volumes ONTAP 9.14.1.

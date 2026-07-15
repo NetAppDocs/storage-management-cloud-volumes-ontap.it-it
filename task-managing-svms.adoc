@@ -18,12 +18,14 @@ Una VM di archiviazione è una macchina virtuale in esecuzione all'interno di ON
 
 
 
+[[supported-number-of-storage-vms]]
 == Numero supportato di VM di archiviazione
 
 Con determinate configurazioni sono supportate più VM di archiviazione.  Vai al https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Note sulla versione Cloud Volumes ONTAP"^] per verificare il numero supportato di VM di archiviazione per la tua versione di Cloud Volumes ONTAP.
 
 
 
+[[work-with-multiple-storage-vms]]
 == Lavora con più VM di storage
 
 La NetApp Console supporta qualsiasi VM di storage aggiuntiva creata da ONTAP System Manager o da ONTAP CLI.
@@ -38,6 +40,7 @@ image:screenshot_replicate_volume_svm.gif["Uno screenshot che mostra la possibil
 
 
 
+[[modify-the-name-of-the-default-storage-vm]]
 == Modificare il nome della VM di archiviazione predefinita
 
 La console assegna automaticamente un nome alla singola VM di archiviazione creata per Cloud Volumes ONTAP.  Da ONTAP System Manager, dalla CLI ONTAP o dall'API, è possibile modificare il nome della VM di archiviazione se si hanno standard di denominazione rigorosi.  Ad esempio, potresti voler far corrispondere il nome assegnato alle VM di archiviazione per i tuoi cluster ONTAP .

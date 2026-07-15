@@ -25,6 +25,7 @@ link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-l
 
 
 
+[[byol-system-licenses]]
 == Licenze del sistema BYOL
 
 Le licenze basate su nodi possono essere acquistate da NetApp. Il numero di licenze che puoi acquistare per un sistema a nodo singolo o una coppia HA è illimitato.
@@ -38,6 +39,7 @@ Tieni presente che i limiti del disco possono impedirti di raggiungere il limite
 
 
 
+[[license-management-for-a-new-system]]
 == Gestione delle licenze per un nuovo sistema
 
 Quando si crea un sistema BYOL basato su nodi, la Console richiede il numero di serie della licenza e l'account del sito di supporto NetApp .  La console utilizza l'account per scaricare il file di licenza da NetApp e installarlo sul sistema Cloud Volumes ONTAP .
@@ -48,6 +50,7 @@ Se la console non riesce ad accedere al file di licenza tramite la connessione I
 
 
 
+[[license-expiration]]
 == Scadenza della licenza
 
 La Console visualizza un avviso 30 giorni prima della scadenza di una licenza basata su nodo e nuovamente alla scadenza della licenza.  L'immagine seguente mostra un avviso di scadenza di 30 giorni che appare nell'interfaccia utente:
@@ -62,6 +65,7 @@ Se non si rinnova la licenza in tempo, il sistema Cloud Volumes ONTAP si arresta
 
 
 
+[[license-renewal]]
 == Rinnovo della licenza
 
 Se si rinnova un abbonamento BYOL basato su nodi contattando un rappresentante NetApp , la Console ottiene automaticamente la nuova licenza da NetApp e la installa sul sistema Cloud Volumes ONTAP .
@@ -70,6 +74,7 @@ Se la console non riesce ad accedere al file di licenza tramite la connessione I
 
 
 
+[[license-transfer-to-a-new-system]]
 == Trasferimento della licenza a un nuovo sistema
 
 Una licenza BYOL basata su nodi è trasferibile tra sistemi Cloud Volumes ONTAP quando si elimina un sistema esistente e poi ne si crea uno nuovo utilizzando la stessa licenza.

@@ -72,6 +72,7 @@ La console crea un archivio oggetti per i dati freddi quando crea il sistema,<<A
 ====
 
 
+[[configurations-that-support-data-tiering]]
 == Configurazioni che supportano la suddivisione in livelli dei dati
 
 È possibile abilitare la suddivisione in livelli dei dati quando si utilizzano configurazioni e funzionalità specifiche.
@@ -80,6 +81,7 @@ ifdef::aws[]
 
 
 
+[[support-in-aws]]
 === Supporto in AWS
 
 * La suddivisione in livelli dei dati è supportata in AWS a partire da Cloud Volumes ONTAP 9.2.
@@ -97,6 +99,7 @@ ifdef::azure[]
 
 
 
+[[support-in-azure]]
 === Supporto in Azure
 
 * In Azure è supportata la suddivisione in livelli dei dati come segue:
@@ -115,6 +118,7 @@ ifdef::gcp[]
 
 
 
+[[support-in-google-cloud]]
 === Supporto in Google Cloud
 
 * La suddivisione in livelli dei dati è supportata in Google Cloud a partire da Cloud Volumes ONTAP 9.6.
@@ -126,6 +130,7 @@ endif::gcp[]
 
 
 
+[[feature-interoperability]]
 === Interoperabilità delle funzionalità
 
 * La suddivisione in livelli dei dati è supportata da tecnologie di crittografia.
@@ -134,6 +139,7 @@ endif::gcp[]
 
 
 
+[[requirements]]
 == Requisiti
 
 A seconda del provider cloud, è necessario impostare determinate connessioni e autorizzazioni affinché Cloud Volumes ONTAP possa suddividere i dati inattivi nell'archiviazione degli oggetti.
@@ -142,6 +148,7 @@ ifdef::aws[]
 
 
 
+[[requirements-to-tier-cold-data-to-amazon-s3]]
 === Requisiti per il tiering dei dati cold su Amazon S3
 
 Assicurarsi che Cloud Volumes ONTAP abbia una connessione ad Amazon S3. Il modo migliore per fornire tale connessione è creare un endpoint VPC per il servizio S3. Per istruzioni, fare riferimento a https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpce-gateway.html#create-gateway-endpoint["Documentazione AWS: creazione di un endpoint gateway"^].
@@ -156,6 +163,7 @@ ifdef::azure[]
 
 
 
+[[requirements-to-tier-cold-data-to-azure-blob-storage]]
 === Requisiti per suddividere i dati inattivi in livelli nell'archiviazione BLOB di Azure
 
 Non è necessario impostare una connessione tra il livello di prestazioni e il livello di capacità, purché la Console disponga delle autorizzazioni richieste.  La Console abilita un endpoint del servizio VNet se il ruolo personalizzato per l'agente della Console dispone delle seguenti autorizzazioni:
@@ -173,6 +181,7 @@ ifdef::gcp[]
 
 
 
+[[requirements-to-tier-cold-data-to-a-google-cloud-storage-bucket]]
 === Requisiti per suddividere i dati inattivi in un bucket di Google Cloud Storage
 
 * La subnet in cui risiede Cloud Volumes ONTAP deve essere configurata per l'accesso privato a Google.  Per le istruzioni, fare riferimento a https://cloud.google.com/vpc/docs/configure-private-google-access["Documentazione di Google Cloud: configurazione dell'accesso privato a Google"^] .
@@ -196,6 +205,7 @@ endif::gcp[]
 
 
 
+[[enable-data-tiering-after-implementing-the-requirements]]
 === Abilitare la suddivisione in livelli dei dati dopo aver implementato i requisiti
 
 La console crea un archivio oggetti per i dati inattivi quando viene creato il sistema, a condizione che non vi siano problemi di connettività o di autorizzazioni.  Se non hai implementato i requisiti elencati sopra prima di aver creato il sistema, dovrai abilitare manualmente la suddivisione in livelli tramite l'API o ONTAP System Manager, che crea l'archivio oggetti.
@@ -205,6 +215,7 @@ NOTE: La possibilità di abilitare la suddivisione in livelli tramite la Console
 
 
 
+[[ensure-that-tiering-is-enabled-on-aggregates]]
 == Assicurarsi che la suddivisione in livelli sia abilitata sugli aggregati
 
 Per abilitare la suddivisione in livelli dei dati su un volume, è necessario abilitare la suddivisione in livelli dei dati su un aggregato.  È necessario conoscere i requisiti per i nuovi volumi e per quelli esistenti.
@@ -239,6 +250,7 @@ Ora è possibile abilitare la suddivisione in livelli dei dati su volumi nuovi e
 
 
 
+[[tier-data-from-read-write-volumes]]
 == Suddivisione dei dati dai volumi di lettura-scrittura
 
 Cloud Volumes ONTAP può suddividere i dati inattivi sui volumi di lettura-scrittura in un archivio di oggetti conveniente, liberando il livello delle prestazioni per i dati attivi.
@@ -273,6 +285,7 @@ La console crea un nuovo aggregato per il volume se non esiste già un aggregato
 
 
 
+[[tier-data-from-data-protection-volumes]]
 == Livelli di dati dai volumi di protezione dei dati
 
 Cloud Volumes ONTAP può suddividere i dati da un volume di protezione dati a un livello di capacità.  Se si attiva il volume di destinazione, i dati vengono gradualmente spostati al livello di prestazioni durante la lettura.
@@ -294,6 +307,7 @@ Per assistenza con la replica dei dati, fare riferimento a https://docs.netapp.c
 
 
 
+[[change-the-storage-class-for-tiered-data]]
 == Modificare la classe di archiviazione per i dati a livelli
 
 Dopo aver distribuito Cloud Volumes ONTAP, puoi ridurre i costi di archiviazione modificando la classe di archiviazione per i dati inattivi a cui non si è avuto accesso per 30 giorni.  I costi di accesso sono più elevati se si accede ai dati, quindi è necessario tenerne conto prima di modificare la classe di archiviazione.
@@ -309,6 +323,7 @@ Per informazioni sulle classi di archiviazione supportate, fare riferimento alin
 
 
 
+[[change-the-free-space-ratio-for-data-tiering]]
 == Modifica il rapporto di spazio libero per la suddivisione in livelli dei dati
 
 Il rapporto di spazio libero per il tiering dei dati definisce la quantità di spazio libero richiesta sugli SSD/HDD Cloud Volumes ONTAP quando si suddividono i dati in livelli per l'archiviazione degli oggetti.  L'impostazione predefinita è il 10% di spazio libero, ma è possibile modificarla in base alle proprie esigenze.
@@ -336,6 +351,7 @@ image:screenshot-cvo-settings-page.png["Panoramica delle impostazioni di capacit
 
 
 
+[[change-the-cooling-period-for-the-auto-tiering-policy]]
 == Modificare il periodo di raffreddamento per la politica di suddivisione automatica in livelli
 
 Se hai abilitato il tiering dei dati su un volume Cloud Volumes ONTAP utilizzando il criterio di tiering _auto_, puoi adattare il periodo di raffreddamento predefinito in base alle tue esigenze aziendali.  Questa azione è supportata solo tramite ONTAP CLI e API.
@@ -354,6 +370,7 @@ Il periodo di raffreddamento predefinito per la politica di suddivisione automat
 
 
 
+[[remove-an-s3-bucket-on-decommissioning-a-system]]
 == Rimuovere un bucket S3 durante la dismissione di un sistema
 
 È possibile eliminare un bucket S3 con i dati suddivisi in livelli da un sistema Cloud Volumes ONTAP quando si dismette l'ambiente.

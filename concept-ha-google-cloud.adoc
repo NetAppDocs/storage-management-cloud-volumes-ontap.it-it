@@ -18,13 +18,14 @@ Una configurazione ad alta disponibilità (HA) Cloud Volumes ONTAP garantisce op
 
 
 
+[[ha-components]]
 == Componenti HA
 
 Le configurazioni Cloud Volumes ONTAP HA in Google Cloud includono i seguenti componenti:
 
 * Due nodi Cloud Volumes ONTAP i cui dati vengono replicati in modo sincrono tra loro.
 * Un'istanza di mediazione che fornisce un canale di comunicazione tra i nodi per agevolare i processi di acquisizione e restituzione dello storage.
-* Una zona o tre zone (consigliato).
+* Zona di disponibilità singola (AZ) o disponibilità su più/tre zone (consigliata).
 +
 Se si scelgono tre zone, i due nodi e il mediatore si trovano in zone Google Cloud separate.
 
@@ -43,7 +44,10 @@ image:diagram_gcp_ha.png["Immagine concettuale di una coppia Cloud Volumes ONTAP
 
 
 
+[[mediator]]
 === Mediatore
+
+Tradizionalmente, le configurazioni HA di Cloud Volumes ONTAP in Google Cloud utilizzano un modello non condiviso, in cui un'istanza mediatrice viene utilizzata per gestire le operazioni di failover o monitorare lo stato di salute dei nodi. Questo richiede la creazione di una VM aggiuntiva in Google Cloud e due set di dischi per ciascun nodo.
 
 Ecco alcuni dettagli chiave sull'istanza del mediatore in Google Cloud:
 
@@ -63,6 +67,14 @@ Agenti terzi:: Gli agenti di terze parti o le estensioni VM non sono supportati 
 
 
 
+[[shared-disks-for-single-az-ha-configurations]]
+=== Dischi condivisi per configurazioni HA a zona di disponibilità singola
+
+Cloud Volumes ONTAP 9.19.1 e versioni successive supportano la configurazione HA condivisa per una singola AZ. Nell'architettura HA condivisa, entrambi i nodi possono condividere un disco, quindi il metodo di creazione degli aggregati cambia. Invece di creare due dischi per due VM, viene creato un solo disco e collegato alle VM. L'HA condivisa non richiede il mirror del disco.
+
+
+
+[[storage-takeover-and-giveback]]
 == Acquisizione e restituzione dello spazio di archiviazione
 
 Se un nodo si interrompe, l'altro nodo può fornire dati al suo partner per garantire la continuità del servizio dati.  I client possono accedere agli stessi dati dal nodo partner perché i dati sono stati replicati in modo sincrono sul partner.
@@ -73,6 +85,7 @@ L'acquisizione, la risincronizzazione e la restituzione dello storage sono tutte
 
 
 
+[[rpo-and-rto]]
 == RPO e RTO
 
 Una configurazione HA mantiene un'elevata disponibilità dei dati come segue:
@@ -89,39 +102,41 @@ In caso di interruzione, i dati dovrebbero essere disponibili entro 120 secondi 
 
 
 
+[[ha-deployment-models]]
 == Modelli di distribuzione HA
 
 È possibile garantire l'elevata disponibilità dei dati distribuendo una configurazione HA in più zone o in una singola zona.
 
-Zone multiple (consigliato):: L'implementazione di una configurazione HA su tre zone garantisce la disponibilità continua dei dati in caso di guasto in una zona.  Si noti che le prestazioni di scrittura sono leggermente inferiori rispetto all'utilizzo di una singola zona, ma sono minime.
-Zona singola:: Quando distribuita in una singola zona, una configurazione Cloud Volumes ONTAP HA utilizza una politica di posizionamento distribuito.  Questa politica garantisce che una configurazione HA sia protetta da un singolo punto di errore all'interno della zona, senza dover utilizzare zone separate per ottenere l'isolamento degli errori.
+Zone di disponibilità multiple (consigliate):: L'implementazione di una configurazione HA su tre zone garantisce la disponibilità continua dei dati in caso di guasto in una zona.  Si noti che le prestazioni di scrittura sono leggermente inferiori rispetto all'utilizzo di una singola zona, ma sono minime.
+Zona di disponibilità unica:: Quando distribuita in una singola zona di disponibilità (AZ), una configurazione HA di Cloud Volumes ONTAP utilizza una policy di posizionamento distribuito. Questa policy garantisce che una configurazione HA sia protetta da un single point of failure all'interno della zona, senza dover utilizzare zone separate per ottenere l'isolamento dei guasti.
 +
 --
 Questo modello di distribuzione riduce i costi perché non ci sono costi per l'uscita dei dati tra le zone.
 
+== Come funziona lo storage in una coppia HA
+
 --
 
-
-
-
-== Come funziona l'archiviazione in una coppia HA
 
 A differenza di un cluster ONTAP , lo storage in una coppia Cloud Volumes ONTAP HA in GCP non è condiviso tra i nodi.  Al contrario, i dati vengono replicati in modo sincrono tra i nodi, in modo che siano disponibili anche in caso di guasto.
 
 
 
+[[storage-allocation]]
 === Assegnazione dello spazio di archiviazione
 
 Quando si crea un nuovo volume e sono necessari dischi aggiuntivi, la Console alloca lo stesso numero di dischi a entrambi i nodi, crea un aggregato con mirroring e quindi crea il nuovo volume.  Ad esempio, se per il volume sono necessari due dischi, la Console alloca due dischi per nodo, per un totale di quattro dischi.
 
 
 
+[[storage-configurations]]
 === Configurazioni di archiviazione
 
 È possibile utilizzare una coppia HA come configurazione attiva-attiva, in cui entrambi i nodi forniscono dati ai client, oppure come configurazione attiva-passiva, in cui il nodo passivo risponde alle richieste di dati solo se ha preso in carico lo storage per il nodo attivo.
 
 
 
+[[performance-expectations-for-an-ha-configuration]]
 === Aspettative di prestazioni per una configurazione HA
 
 Una configurazione Cloud Volumes ONTAP HA replica in modo sincrono i dati tra i nodi, consumando larghezza di banda della rete.  Di conseguenza, è possibile aspettarsi le seguenti prestazioni rispetto a una configurazione Cloud Volumes ONTAP a nodo singolo:
@@ -134,6 +149,7 @@ Per maggiori dettagli sulle prestazioni Cloud Volumes ONTAP , fare riferimento a
 
 
 
+[[client-access-to-storage]]
 === Accesso del cliente allo storage
 
 I client devono accedere ai volumi NFS e CIFS utilizzando l'indirizzo IP dei dati del nodo su cui risiede il volume.  Se i client NAS accedono a un volume utilizzando l'indirizzo IP del nodo partner, il traffico viene trasmesso tra entrambi i nodi, riducendo le prestazioni.
@@ -147,6 +163,7 @@ image::screenshot_mount_option.png[400]
 
 
 
+[[related-links]]
 === Link correlati
 
 * link:reference-networking-gcp.html["Scopri i requisiti di rete"]

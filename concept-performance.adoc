@@ -18,6 +18,7 @@ summary: È possibile esaminare i risultati delle prestazioni per decidere quali
 
 
 
+[[performance-technical-reports]]
 == Rapporti tecnici sulle prestazioni
 
 ifdef::aws[]
@@ -52,6 +53,7 @@ endif::gcp[]
 
 
 
+[[cpu-performance]]
 == Prestazioni della CPU
 
 I nodi Cloud Volumes ONTAP risultano altamente utilizzati (oltre il 90%) dagli strumenti di monitoraggio del tuo provider cloud.  Ciò avviene perché ONTAP riserva tutte le vCPU presentate alla macchina virtuale, in modo che siano disponibili quando necessario.

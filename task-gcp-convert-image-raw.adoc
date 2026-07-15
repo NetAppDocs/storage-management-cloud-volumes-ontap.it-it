@@ -18,6 +18,7 @@ L'immagine utilizzata per distribuire nuove istanze, aggiornamenti o utilizzata 
 
 
 
+[[why-is-this-step-needed]]
 == Perché è necessario questo passaggio?
 
 Le immagini da Google Cloud non possono essere scaricate direttamente.  Per verificare l'immagine rispetto al digest firmato e ai certificati, è necessario disporre di un meccanismo per confrontare i due file e scaricare l'immagine.  Per farlo, è necessario esportare/convertire l'immagine in formato disk.raw e salvare i risultati in un bucket di archiviazione in Google Cloud.  Durante il processo, il file disk.raw viene compresso con tar e gzip.
@@ -35,6 +36,7 @@ Per verificare l'immagine, è necessario convertirla in formato disk.raw e poi s
 
 
 
+[[use-google-cloud-command-line-to-export-google-cloud-image]]
 == Utilizza la riga di comando di Google Cloud per esportare l'immagine di Google Cloud
 
 Il modo preferito per esportare un'immagine su Cloud Storage è utilizzare https://cloud.google.com/sdk/gcloud/reference/compute/images/export["comando di esportazione delle immagini di calcolo gcloud"^] .  Questo comando prende l'immagine fornita e la converte in un file disk.raw che viene compresso con tar e gzip.  Il file generato viene salvato nell'URL di destinazione e può quindi essere scaricato per la verifica.

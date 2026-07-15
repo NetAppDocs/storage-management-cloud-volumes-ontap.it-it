@@ -18,6 +18,7 @@ Per verificare l'immagine firmata da Google Cloud esportata, è necessario scari
 
 
 
+[[signed-image-verification-workflow-summary]]
 == Riepilogo del flusso di lavoro di verifica delle immagini firmate
 
 Di seguito è riportata una panoramica del processo di verifica delle immagini firmate di Google Cloud.

@@ -22,6 +22,7 @@ Per informazioni sull'esecuzione delle chiamate API Cloud Volumes ONTAP , fare r
 
 
 
+[[supported-number-of-storage-vms]]
 == Numero supportato di VM di archiviazione
 
 A partire da Cloud Volumes ONTAP 9.11.1, in base alla licenza, sono supportate più VM di archiviazione con configurazioni specifiche.  Fare riferimento al https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/index.html["Note sulla versione Cloud Volumes ONTAP"^] per verificare il numero supportato di VM di archiviazione per la tua versione di Cloud Volumes ONTAP.
@@ -30,6 +31,7 @@ Tutte le versioni di Cloud Volumes ONTAP precedenti alla 9.11.1 supportano una V
 
 
 
+[[create-a-storage-vm]]
 == Creare una VM di archiviazione
 
 In base alla configurazione e al tipo di licenza, puoi creare più storage VM su un sistema a nodo singolo o in una configurazione ad alta disponibilità (coppia HA) utilizzando le API.
@@ -49,6 +51,7 @@ L'agente della console richiede autorizzazioni specifiche per creare VM di archi
 
 
 
+[[single-node-system]]
 === Sistema a nodo singolo
 
 Utilizzare la seguente chiamata API per creare una storage VM su un sistema a nodo singolo.
@@ -65,6 +68,7 @@ Includi i seguenti parametri nel corpo della richiesta:
 ----
 
 
+[[ha-pair]]
 === coppia HA
 
 Utilizzare la seguente chiamata API per creare una VM di archiviazione su una coppia HA:
@@ -81,6 +85,7 @@ Includi i seguenti parametri nel corpo della richiesta:
 ----
 
 
+[[manage-storage-vms]]
 == Gestire le VM di archiviazione
 
 Utilizzando le API, è possibile rinominare ed eliminare le VM di storage sia nelle configurazioni a nodo singolo che in quelle HA.
@@ -90,6 +95,7 @@ L'agente della console richiede autorizzazioni specifiche per gestire le VM di a
 
 
 
+[[rename-a-storage-vm]]
 === Rinominare una VM di archiviazione
 
 Per rinominare una VM di archiviazione, è necessario fornire come parametri i nomi della VM di archiviazione esistente e della nuova VM di archiviazione.
@@ -129,6 +135,7 @@ Includi i seguenti parametri nel corpo della richiesta:
 
 
 
+[[delete-a-storage-vm]]
 === Elimina una VM di archiviazione
 
 In una configurazione a nodo singolo o HA, è possibile rimuovere una VM di archiviazione se non dispone di volumi attivi.

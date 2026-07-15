@@ -18,6 +18,7 @@ Il processo di verifica dell'immagine di Azure genera un file digest dal file VH
 
 
 
+[[file-signature-verification-workflow-summary]]
 == Riepilogo del flusso di lavoro di verifica della firma del file
 
 Di seguito è riportata una panoramica del processo di verifica della firma del file.

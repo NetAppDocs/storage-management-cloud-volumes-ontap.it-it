@@ -39,6 +39,7 @@ Per saperne di più sul funzionamento della modalità privata, fare riferimento 
 
 
 
+[[step-1-set-up-your-networking]]
 == Passaggio 1: configura la tua rete
 
 Configura la tua rete AWS in modo che Cloud Volumes ONTAP possa funzionare correttamente.
@@ -54,6 +55,7 @@ Configura la tua rete AWS in modo che Cloud Volumes ONTAP possa funzionare corre
 
 
 
+[[step-2-set-up-permissions]]
 == Passaggio 2: impostare le autorizzazioni
 
 Imposta policy e ruoli IAM che forniscono all'agente della console e a Cloud Volumes ONTAP le autorizzazioni necessarie per eseguire azioni in AWS Secret Cloud o Top Secret Cloud.
@@ -415,6 +417,7 @@ Quando si avvia l'istanza dell'agente Console, è necessario selezionare il ruol
 
 
 
+[[step-3-set-up-the-aws-kms]]
 == Passaggio 3: configurazione di AWS KMS
 
 Se si desidera utilizzare la crittografia Amazon con Cloud Volumes ONTAP, assicurarsi che siano soddisfatti i requisiti per AWS Key Management Service (KMS).
@@ -436,6 +439,7 @@ Ciò fornisce alla Console le autorizzazioni per utilizzare CMK con Cloud Volume
 
 
 
+[[step-4-install-the-console-agent-and-set-up-the-console]]
 == Passaggio 4: installare l'agente Console e configurare la Console
 
 Prima di poter iniziare a utilizzare la Console per distribuire Cloud Volumes ONTAP in AWS, è necessario installare e configurare l'agente della Console.  Consente alla Console di gestire risorse e processi all'interno del tuo ambiente cloud pubblico (incluso Cloud Volumes ONTAP).
@@ -489,6 +493,7 @@ Questo account utente viene eseguito localmente sul sistema.  Non è disponibile
 
 
 
+[[step-5-optional-install-a-private-mode-certificate]]
 == Passaggio 5: (facoltativo) Installa un certificato in modalità privata
 
 Questo passaggio è facoltativo per le regioni AWS Secret Cloud e Top Secret Cloud ed è obbligatorio solo se si dispone di certificati aggiuntivi oltre ai certificati radice installati nel passaggio precedente.
@@ -578,6 +583,7 @@ docker restart <docker-id>
 --
 
 
+[[step-6-add-a-license-to-the-console]]
 == Passaggio 6: aggiungere una licenza alla console
 
 Se hai acquistato una licenza da NetApp, devi aggiungerla alla Console, in modo da poterla selezionare quando crei un nuovo sistema Cloud Volumes ONTAP .  Queste licenze rimangono non assegnate finché non vengono associate a un nuovo sistema Cloud Volumes ONTAP .
@@ -604,6 +610,7 @@ La Console aggiunge la licenza come non assegnata finché non la si associa a un
 
 
 
+[[step-7-launch-cloud-volumes-ontap-from-the-console]]
 == Passaggio 7: avviare Cloud Volumes ONTAP dalla console
 
 È possibile avviare istanze Cloud Volumes ONTAP in AWS Secret Cloud e Top Secret Cloud creando nuovi sistemi nella Console.
@@ -665,6 +672,7 @@ Viene avviata l'istanza Cloud Volumes ONTAP .  Puoi monitorare i progressi nella
 
 
 
+[[step-8-install-security-certificates-for-data-tiering]]
 == Passaggio 8: installare i certificati di sicurezza per la suddivisione in livelli dei dati
 
 È necessario installare manualmente i certificati di sicurezza per abilitare la suddivisione in livelli dei dati nelle regioni AWS Secret Cloud e Top Secret Cloud.

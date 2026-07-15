@@ -18,6 +18,7 @@ NetApp Console consente di scegliere una velocità di scrittura normale o elevat
 
 
 
+[[normal-write-speed]]
 == Velocità di scrittura normale
 
 Quando si sceglie la velocità di scrittura normale, i dati vengono scritti direttamente sul disco.  Quando i dati vengono scritti direttamente su disco, si riduce la probabilità di perdita di dati in caso di interruzione imprevista del sistema o di un guasto a cascata che comporta un'interruzione imprevista del sistema (solo coppie HA).
@@ -26,6 +27,7 @@ L'opzione predefinita è la velocità di scrittura normale.
 
 
 
+[[high-write-speed]]
 == Alta velocità di scrittura
 
 Quando si sceglie un'elevata velocità di scrittura, i dati vengono memorizzati in un buffer nella memoria prima di essere scritti sul disco, il che garantisce prestazioni di scrittura più rapide.  A causa di questa memorizzazione nella cache, esiste il rischio di perdita di dati in caso di interruzione imprevista del sistema.
@@ -34,12 +36,14 @@ La quantità di dati che può andare persa in caso di interruzione imprevista de
 
 
 
+[[when-to-use-high-write-speed]]
 === Quando utilizzare un'elevata velocità di scrittura
 
 Un'elevata velocità di scrittura è una buona scelta se sono richieste prestazioni di scrittura rapide per il carico di lavoro e si può resistere al rischio di perdita di dati in caso di interruzione imprevista del sistema o di un guasto a cascata che comporta un'interruzione imprevista del sistema (solo coppie HA).
 
 
 
+[[recommendations-when-using-high-write-speed]]
 === Raccomandazioni per l'utilizzo di velocità di scrittura elevate
 
 Se si abilita un'elevata velocità di scrittura, è necessario garantire la protezione da scrittura a livello di applicazione o che le applicazioni siano in grado di tollerare la perdita di dati, qualora si verifichi.
@@ -48,6 +52,7 @@ ifdef::aws[]
 
 
 
+[[high-write-speed-with-an-ha-pair-in-aws]]
 === Elevata velocità di scrittura con una coppia HA in AWS
 
 Se si prevede di abilitare un'elevata velocità di scrittura su una coppia HA in AWS, è necessario comprendere la differenza nei livelli di protezione tra una distribuzione con più zone di disponibilità (AZ) e una distribuzione con una sola AZ.  L'implementazione di una coppia HA su più AZ garantisce maggiore resilienza e può contribuire a ridurre il rischio di perdita di dati.
@@ -58,6 +63,7 @@ endif::aws[]
 
 
 
+[[configurations-that-support-high-write-speed]]
 === Configurazioni che supportano un'elevata velocità di scrittura
 
 Non tutte le configurazioni Cloud Volumes ONTAP supportano velocità di scrittura elevate.  Per impostazione predefinita, queste configurazioni utilizzano la velocità di scrittura normale.
@@ -104,12 +110,14 @@ endif::gcp[]
 
 
 
+[[how-to-select-a-write-speed]]
 == Come selezionare una velocità di scrittura
 
 È possibile scegliere una velocità di scrittura quando si aggiunge un nuovo sistema Cloud Volumes ONTAP e si puòlink:task-modify-write-speed.html["modificare la velocità di scrittura per un sistema esistente"] .
 
 
 
+[[what-to-expect-if-data-loss-occurs]]
 == Cosa aspettarsi in caso di perdita di dati
 
 Se si verifica una perdita di dati a causa dell'elevata velocità di scrittura, l'Event Management System (EMS) segnala i due eventi seguenti:
@@ -133,6 +141,7 @@ Quando ciò accade, Cloud Volumes ONTAP dovrebbe essere in grado di avviarsi e c
 
 
 
+[[how-to-stop-data-access-if-data-loss-occurs]]
 == Come interrompere l'accesso ai dati in caso di perdita di dati
 
 Se si teme la perdita di dati e si desidera che le applicazioni smettano di funzionare in caso di perdita di dati e che l'accesso ai dati venga ripreso dopo aver risolto correttamente il problema della perdita di dati, è possibile utilizzare l'opzione NVFAIL dalla CLI per raggiungere tale obiettivo.

@@ -18,6 +18,7 @@ summary: È possibile avviare Cloud Volumes ONTAP in una configurazione a sistem
 
 
 
+[[before-you-begin]]
 == Prima di iniziare
 
 Prima di iniziare, ti occorre quanto segue.
@@ -27,7 +28,7 @@ Prima di iniziare, ti occorre quanto segue.
 +
 ** Dovresti avere un https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Agente console associato al tuo sistema"^] .
 ** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Dovresti essere pronto a lasciare l'agente della console sempre in esecuzione"^] .
-** L'account di servizio associato all'agente della console https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["dovrebbe avere i permessi richiesti"^]
+** L'account di servizio associato all'agente della Console https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["dovrebbe avere i permessi richiesti"^].
 
 
 * Una comprensione della configurazione che si desidera utilizzare.
@@ -51,6 +52,7 @@ link:task-set-up-licensing-google.html["Scopri come impostare le licenze"] .
 
 
 
+[[launch-a-single-node-system-in-google-cloud]]
 == Avvia un sistema a nodo singolo in Google Cloud
 
 Crea un sistema nella NetApp Console per avviare Cloud Volumes ONTAP in Google Cloud.
@@ -280,6 +282,7 @@ CAUTION: Al termine del processo di distribuzione, non modificare le configurazi
 
 
 
+[[launch-an-ha-pair-in-google-cloud]]
 == Avvia una coppia HA in Google Cloud
 
 Crea un sistema nella Console per avviare Cloud Volumes ONTAP in Google Cloud.
@@ -288,7 +291,7 @@ Crea un sistema nella Console per avviare Cloud Volumes ONTAP in Google Cloud.
 . Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
 . Nella pagina *Sistemi*, fare clic su *Archiviazione > Sistema* e seguire le istruzioni.
 . *Scegli una posizione*: seleziona *Google Cloud* e * Cloud Volumes ONTAP HA*.
-. *Dettagli e credenziali*: seleziona un progetto, specifica un nome per il cluster, seleziona facoltativamente un account di servizio, aggiungi facoltativamente delle etichette e quindi specifica le credenziali.
+. *Dettagli del sistema*: Seleziona un progetto, specifica un nome per il cluster, seleziona facoltativamente un Service Account, aggiungi facoltativamente delle etichette e infine specifica le credenziali.
 +
 Nella tabella seguente vengono descritti i campi per i quali potrebbe essere necessaria una guida:
 
@@ -298,41 +301,40 @@ Nella tabella seguente vengono descritti i campi per i quali potrebbe essere nec
 | Campo | Descrizione 
 
 
+| Progetto Google Cloud e abbonamento Marketplace  a| 
+Seleziona il progetto Google e l'abbonamento che vuoi usare per questo sistema. Questo è l'account di servizio che hai configurato per la Console. Per informazioni, consulta la link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Documenti di configurazione della console"^]. La Console usa il progetto per creare il sistema Cloud Volumes ONTAP e l'abbonamento per determinare fatturazione e utilizzo. Se non vedi altri progetti nell'elenco a discesa, significa che non hai ancora associato l'account di servizio ad altri progetti. Vai alla Google Cloud Console, apri il servizio IAM e seleziona il progetto. Aggiungi l'account di servizio con il ruolo che usi per la Console a quel progetto. Dovrai ripetere questo passaggio per ogni progetto.
+
+Fare clic su *Aggiungi abbonamento* per associare le credenziali selezionate a un abbonamento.
+
+Per creare un sistema Cloud Volumes ONTAP pay-as-you-go, devi selezionare un progetto Google Cloud associato a un abbonamento a Cloud Volumes ONTAP dal Google Cloud Marketplace. Consulta il documento di configurazione della Console: https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html["Associazione di un abbonamento al marketplace alle credenziali di Google Cloud"^].
+
+
+
 | Nome del sistema | La console utilizza il nome del sistema per denominare sia il sistema Cloud Volumes ONTAP sia l'istanza Google Cloud VM.  Se si seleziona questa opzione, il nome viene utilizzato anche come prefisso per il gruppo di sicurezza predefinito. 
 
 
 | Nome dell'account di servizio | Se si prevede di utilizzare illink:concept-data-tiering.html["NetApp Cloud Tiering"] O https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Backup e ripristino"^] servizi, è necessario abilitare l'opzione *Account di servizio* e quindi selezionare l'Account di servizio che ha il ruolo di Amministratore di archiviazione predefinito. 
 
 
-| Aggiungi etichette | Le etichette sono metadati per le tue risorse Google Cloud.  La console aggiunge le etichette al sistema Cloud Volumes ONTAP e alle risorse Google Cloud associate al sistema.  È possibile aggiungere fino a quattro etichette dall'interfaccia utente durante la creazione di un sistema, per poi aggiungerne altre dopo la creazione.  Tieni presente che l'API non ti limita a quattro etichette quando crei un sistema.  Per informazioni sulle etichette, fare riferimento a https://cloud.google.com/compute/docs/labeling-resources["Documentazione di Google Cloud: Etichettatura delle risorse"^] . 
+| Etichette | Le etichette sono metadati per le tue risorse Google Cloud.  La console aggiunge le etichette al sistema Cloud Volumes ONTAP e alle risorse Google Cloud associate al sistema.  È possibile aggiungere fino a quattro etichette dall'interfaccia utente durante la creazione di un sistema, per poi aggiungerne altre dopo la creazione.  Tieni presente che l'API non ti limita a quattro etichette quando crei un sistema.  Per informazioni sulle etichette, fare riferimento a https://cloud.google.com/compute/docs/labeling-resources["Documentazione di Google Cloud: Etichettatura delle risorse"^] . 
 
 
-| Nome utente e password | Queste sono le credenziali per l'account amministratore del cluster Cloud Volumes ONTAP .  È possibile utilizzare queste credenziali per connettersi a Cloud Volumes ONTAP tramite ONTAP System Manager o ONTAP CLI.  Mantenere il nome utente predefinito _admin_ oppure modificarlo con un nome utente personalizzato. 
-
-
-| Modifica progetto  a| 
-Seleziona il progetto in cui desideri che risieda Cloud Volumes ONTAP.
-
-Se non vedi altri progetti nell'elenco a discesa, significa che non hai ancora associato l'account di servizio ad altri progetti. Vai alla Google Cloud Console, apri il servizio IAM e seleziona il progetto. Aggiungi l'account di servizio con il ruolo che usi per la Console a quel progetto. Dovrai ripetere questo passaggio per ogni progetto.
-
-
-NOTE: Questo è l'account di servizio che hai configurato per la Console,link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["come descritto in questa pagina"^] .
-
-Fare clic su *Aggiungi abbonamento* per associare le credenziali selezionate a un abbonamento.
-
-Per creare un sistema Cloud Volumes ONTAP con pagamento in base al consumo, è necessario selezionare un progetto Google Cloud associato a un abbonamento a Cloud Volumes ONTAP da Google Cloud Marketplace. Fare riferimento a https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-gcp-accounts.html["Associazione di un abbonamento al marketplace alle credenziali di Google Cloud"^] .
-
+| Nome utente e password ONTAP | Queste sono le credenziali per l'account amministratore del cluster Cloud Volumes ONTAP .  È possibile utilizzare queste credenziali per connettersi a Cloud Volumes ONTAP tramite ONTAP System Manager o ONTAP CLI.  Mantenere il nome utente predefinito _admin_ oppure modificarlo con un nome utente personalizzato. 
 |===
 . *Servizi*: seleziona i servizi che desideri utilizzare su questo sistema.  Per selezionare Backup e ripristino o per utilizzare NetApp Cloud Tiering, è necessario aver specificato l'account di servizio nel passaggio 3.
 +
 
 TIP: Se si desidera utilizzare WORM e il data tiering, è necessario disabilitare Backup e Recovery e distribuire un sistema Cloud Volumes ONTAP con versione 9.8 o successiva.
 
-. *Modelli di deployment HA*: scegli più zone (consigliato) o una singola zona per la configurazione HA. Quindi seleziona una regione e una zona.
+. *Topologia di distribuzione*: Scegli più zone di disponibilità (AZ) (consigliato) o una singola AZ per la configurazione HA.
 +
 link:concept-ha-google-cloud.html["Scopri di più sui modelli di distribuzione HA"^] .
 
-. *Connettività*: seleziona quattro VPC diverse per la configurazione HA, una subnet in ogni VPC, quindi scegli un criterio firewall.
+. *Configurazione di rete e connettività*: Seleziona le regioni e le zone pertinenti. Seleziona quattro VPC diverse per la configurazione HA, una subnet in ciascuna VPC e poi scegli una policy firewall.
++
+
+NOTE: Cloud Volumes ONTAP 9.19.1 e versioni successive supportano link:concept-ha-google-cloud.html["dischi condivisi per configurazioni HA a zona di disponibilità singola"], rendendo l'istanza del mediatore opzionale. In questa configurazione, non devi inserire una zona mediatrice, la VPC corrispondente e la subnet per la replica dei dati.
+
 +
 link:reference-networking-gcp.html["Scopri di più sui requisiti di rete"^] .
 
@@ -364,7 +366,7 @@ Se lasci che sia la Console a generare automaticamente i criteri del firewall, d
 
 . *Pacchetti preconfigurati*: seleziona uno dei pacchetti per distribuire rapidamente un sistema Cloud Volumes ONTAP oppure fai clic su *Crea la mia configurazione*.
 +
-Se si sceglie uno dei pacchetti, è sufficiente specificare un volume e quindi rivedere e approvare la configurazione.
+Se scegli uno dei pacchetti, devi solo specificare un volume e poi rivedere e approvare la configurazione. I pacchetti preconfigurati variano in base alla versione di Cloud Volumes ONTAP selezionata e ai tipi di configurazione. Ad esempio, se selezioni una distribuzione a singola AZ per Cloud Volumes ONTAP 9.19.1 o versioni successive, puoi vedere pacchetti preconfigurati con macchine della serie C3 e dischi Hyperdisk Balanced. Per le versioni precedenti e per più AZ, puoi comunque selezionare macchine n2-standard e Persistent Disks. Puoi modificare le configurazioni, come i parametri IOPS e throughput, in base alle esigenze del tuo carico di lavoro.
 
 . *Licenze*: modifica la versione di Cloud Volumes ONTAP in base alle tue esigenze e seleziona un tipo di macchina.
 +

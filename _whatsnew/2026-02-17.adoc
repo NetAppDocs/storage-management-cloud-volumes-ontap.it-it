@@ -1,12 +1,13 @@
-= Cloud Volumes ONTAP supporto per le VM Google Cloud di nuova generazione
+= Supporto di Cloud Volumes ONTAP per le VM di prossima generazione di Google Cloud
 :allow-uri-read: 
 
 
 
 
-=== Cloud Volumes ONTAP supporto per le VM Google Cloud di nuova generazione
+[[cloud-volumes-ontap-support-for-next-generation-google-cloud-vms]]
+=== Supporto di Cloud Volumes ONTAP per le VM di prossima generazione di Google Cloud
 
-Con la versione 9.18.1, NetApp passa le nuove distribuzioni di Cloud Volumes ONTAP dalle VM N2 alle VM di nuova generazione Google Cloud serie C3 per un'esperienza più veloce e scalabile. Ora puoi sfruttare le VM della serie C3 durante la distribuzione di Cloud Volumes ONTAP 9.18.1 e versioni successive in Google Cloud. Le macchine della serie C3 offrono prestazioni migliorate e limiti di capacità più elevati grazie all'utilizzo di Google Virtual NIC (gVNIC) e dischi Hyperdisk Balanced che garantiscono prestazioni dinamiche per carichi di lavoro intensivi.
+Con la versione 9.18.1, NetApp sposta le nuove implementazioni di Cloud Volumes ONTAP dalle VM N2 alle VM di prossima generazione della serie C3 di Google Cloud, per un'esperienza più veloce e scalabile. Ora puoi sfruttare le VM della serie C3 durante il deployment di Cloud Volumes ONTAP 9.18.1 e versioni successive in Google Cloud. Le macchine della serie C3 offrono prestazioni migliorate e limiti di capacità superiori grazie all'utilizzo di Google Virtual NIC (gVNIC) e dischi Hyperdisk Balanced, che garantiscono prestazioni dinamiche per carichi di lavoro intensivi.
 
 
 NOTE: Per ora, Cloud Volumes ONTAP supporta la serie C3 solo nelle distribuzioni a nodo singolo.
@@ -21,6 +22,7 @@ https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series["D
 
 
 
+[[vnet-security-for-cloud-volumes-ontap-in-azure]]
 === Sicurezza VNet per Cloud Volumes ONTAP in Azure
 
 Cloud Volumes ONTAP 9.18.1 e versioni successive distribuite in zone di disponibilità singole e multiple di Azure supportano la crittografia Azure Virtual Network (VNet) come parte della strategia di sicurezza a più livelli per proteggere i dati in transito. Cloud Volumes ONTAP sfrutta il protocollo Datagram Transport Layer Security (DTLS) nativo di Azure per proteggere la comunicazione tra nodi ONTAP, interfacce di gestione e altri servizi Azure, prevenendo intercettazioni e accessi non autorizzati. Questa crittografia a livello di rete integra le protezioni integrate di ONTAP per l'archiviazione e i dati a riposo, offrendo la sicurezza end-to-end dei dati.

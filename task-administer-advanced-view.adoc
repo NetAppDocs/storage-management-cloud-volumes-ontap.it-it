@@ -18,6 +18,7 @@ Le funzionalità avanzate di gestione dello storage in Cloud Volumes ONTAP sono 
 
 
 
+[[features]]
 == Caratteristiche
 
 È possibile eseguire varie funzioni di gestione dell'archiviazione utilizzando ONTAP System Manager nella Console. L'elenco seguente include alcune di queste funzionalità, sebbene non sia esaustivo:
@@ -34,6 +35,7 @@ Le funzionalità avanzate di gestione dello storage in Cloud Volumes ONTAP sono 
 
 
 
+[[supported-configurations]]
 == Configurazioni supportate
 
 * La gestione avanzata dell'archiviazione tramite ONTAP System Manager è disponibile in Cloud Volumes ONTAP 9.10.0 e versioni successive nelle regioni cloud standard.
@@ -42,6 +44,7 @@ Le funzionalità avanzate di gestione dello storage in Cloud Volumes ONTAP sono 
 
 
 
+[[limitations]]
 == Limitazioni
 
 Alcune funzionalità visualizzate nell'interfaccia di System Manager non sono supportate da Cloud Volumes ONTAP:
@@ -55,6 +58,7 @@ Alcune funzionalità visualizzate nell'interfaccia di System Manager non sono su
 
 
 
+[[configure-authentication-for-accessing-system-manager]]
 == Configurare l'autenticazione per l'accesso a System Manager
 
 In qualità di amministratore, puoi attivare l'autenticazione per gli utenti che accedono a ONTAP System Manager dalla Console.  È possibile determinare il livello corretto di autorizzazioni di accesso in base ai ruoli utente ONTAP e abilitare o disabilitare l'autenticazione in base alle esigenze.  Se si abilita l'autenticazione, gli utenti dovranno immettere le proprie credenziali utente ONTAP ogni volta che accedono a System Manager dalla Console o quando la pagina viene ricaricata, perché la Console non memorizza le credenziali internamente.  Se si disabilita l'autenticazione, gli utenti possono accedere a System Manager utilizzando le credenziali di amministratore.
@@ -78,6 +82,7 @@ NOTE: Se si imposta questo valore su *Abilita*, l'autenticazione viene reimposta
 
 
 
+[[get-started-with-system-manager]]
 == Inizia con System Manager
 
 È possibile accedere a ONTAP System Manager da un sistema Cloud Volumes ONTAP .
@@ -97,6 +102,7 @@ Utilizza System Manager per gestire il tuo sistema Cloud Volumes ONTAP .  Puoi c
 
 
 
+[[help-with-using-system-manager]]
 == Aiuto con l'utilizzo di System Manager
 
 Se hai bisogno di aiuto nell'utilizzo di System Manager con Cloud Volumes ONTAP, puoi fare riferimento a https://docs.netapp.com/us-en/ontap/index.html["Documentazione ONTAP"^] per istruzioni dettagliate.  Ecco alcuni link alla documentazione ONTAP che potrebbero esserti utili:

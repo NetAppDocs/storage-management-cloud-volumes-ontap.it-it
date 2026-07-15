@@ -1,0 +1,86 @@
+= Cloud Volumes ONTAP 9.19.1 RC
+:allow-uri-read: 
+
+
+
+
+[[cloud-volumes-ontap-9-19-1-rc]]
+=== Cloud Volumes ONTAP 9.19.1 RC
+
+Ora puoi usare la NetApp Console per distribuire e gestire la versione Release Candidate (RC) di Cloud Volumes ONTAP 9.19.1 in Google Cloud. Questa versione non è disponibile per la distribuzione e l'aggiornamento in Amazon Web Services (AWS) e Microsoft Azure (Azure).
+
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Scopri di più su questa versione di Cloud Volumes ONTAP"^] .
+
+
+
+[[support-for-next-generation-google-cloud-vms-in-cloud-volumes-ontap-ha]]
+=== Supporto per le macchine virtuali Google Cloud di prossima generazione in Cloud Volumes ONTAP HA
+
+Con la versione 9.19.1, NetApp sposta le implementazioni di Cloud Volumes ONTAP ad alta disponibilità (HA) dalle VM N2 alle VM di prossima generazione della serie C3 di Google Cloud, per offrirti un'esperienza più veloce e scalabile.
+
+
+NOTE: Questo supporto si applica solo alle implementazioni HA con una singola availability zone (AZ).
+
+Ora puoi sfruttare le VM della serie C3 durante la distribuzione di Cloud Volumes ONTAP 9.19.1 e versioni successive in Google Cloud. Queste macchine offrono prestazioni migliorate e limiti di capacità superiori. Utilizzano Google Virtual NIC (gVNIC) e dischi Hyperdisk Balanced per prestazioni dinamiche su carichi di lavoro intensivi.
+
+Se il tuo sistema Cloud Volumes ONTAP esegue la versione 9.19.1 o successiva, i pacchetti preconfigurati che usi per implementazioni semplici in singole AZ utilizzano automaticamente le VM C3, permettendoti di personalizzare i parametri di IOPS e throughput in base alle esigenze del tuo carico di lavoro. Allo stesso modo, durante la creazione degli aggregati, puoi aggiungere dischi Zonal Hyperdisk Balanced per ottenere prestazioni e scalabilità migliori in Google Cloud. Puoi anche selezionare le varianti LSSD delle macchine della serie C3 per il supporto predefinito della Flash Cache.
+
+Nota questi punti:
+
+* Nelle implementazioni di Cloud Volumes ONTAP non puoi cambiare le VM C3 in VM della serie N2 e viceversa. Tuttavia, puoi passare da un tipo di istanza all'altro tra le diverse varianti della famiglia C3.
++
+
+NOTE: La modifica del tipo di istanza all'interno della famiglia C3 potrebbe richiedere più tempo a seconda del numero di dischi dati collegati. Pianifica la configurazione in anticipo per evitare impatti sulle prestazioni.
+
+* Quando cambi il tipo di istanza, se selezioni c3-standard-44 o c3-standard-88 e le relative varianti con SSD locale (LSSD) come VM di destinazione, il servizio di rete egress network tier _Tier-1_ di Google viene applicato automaticamente. Se torni a qualsiasi altra variante C3, il livello di rete in uscita viene impostato su _Standard_.
++
+
+NOTE: Il passaggio al livello _Tier-1_ della rete di uscita comporta costi aggiuntivi. Pianifica l'implementazione e l'aggiornamento di conseguenza.
+
+* Se selezioni le varianti LSSD di C3, la cache Flash viene abilitata per impostazione predefinita. Non puoi passare da una variante LSSD di C3 all'altra nella tua distribuzione Cloud Volumes ONTAP, anche se la variante di destinazione supporta la cache Flash.
+* Sulle tue VM C3, puoi aggiungere volumi sia ad aggregati nuovi che esistenti.
+* Quando replichi un sistema Cloud Volumes ONTAP con tipo di macchina virtuale N2 su un tipo di macchina virtuale C3, il tipo di disco viene impostato di default su Hyperdisk Balanced.
+* Puoi modificare le impostazioni di IOPS e throughput quando aggiungi aggregati tramite la NetApp Console o utilizzando l' `PUT /gcp/ha/aggregates/{workingEnvironmentId}/{aggregateName}`API.
+
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Configurazioni supportate per Cloud Volumes ONTAP in Google Cloud"^]
+
+https://docs.cloud.google.com/compute/docs/general-purpose-machines#c3_series["Documenti Google: serie di macchine C3"^]
+
+
+
+[[simplified-cloud-volumes-ontap-deployment-in-google-cloud]]
+=== Implementazione semplificata di Cloud Volumes ONTAP in Google Cloud
+
+Ora puoi utilizzare la procedura guidata *Creazione rapida* per distribuire Cloud Volumes ONTAP in Google Cloud sia per configurazioni a nodo singolo che ad alta disponibilità (HA). Questo processo semplificato riduce i passaggi, imposta automaticamente i valori predefiniti in un'unica pagina e minimizza la navigazione per una distribuzione più rapida e semplice.
+
+.Link correlati
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-gcp.html["Distribuisci Cloud Volumes ONTAP in Google Cloud con Quick create"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-gcp.html["Distribuisci Cloud Volumes ONTAP utilizzando le opzioni avanzate in Google Cloud"^]
+
+
+
+
+[[introducing-access-roles-for-cloud-volumes-ontap]]
+=== Presentazione dei ruoli di accesso per Cloud Volumes ONTAP
+
+NetApp introduce i ruoli di gestione delle identità e degli accessi (IAM) per Cloud Volumes ONTAP, abilitando il controllo degli accessi in base al ruolo (RBAC) per una maggiore sicurezza e una conformità più semplice. Gli utenti possono continuare ad accedere alla NetApp Console utilizzando le proprie credenziali esistenti per le operazioni su Cloud Volumes ONTAP. Tuttavia, l'autenticazione ora viene instradata tramite la federazione delle identità, consentendo all'amministratore della Console di avere un controllo più granulare su queste funzioni. Ogni utente deve avere uno dei seguenti ruoli per eseguire qualsiasi operazione su Cloud Volumes ONTAP. Senza un ruolo, gli utenti non possono visualizzare o accedere alle istanze di Cloud Volumes ONTAP.
+
+* *Cloud Volumes ONTAP viewer*: Concede l'accesso in sola lettura alle schermate e alle schede di Cloud Volumes ONTAP. Alcune schermate e pulsanti di azione sono disabilitati in questo ruolo.
+* *Cloud Volumes ONTAP operator*: Consente di eseguire attività di gestione quotidiane, come l'aggiunta di volumi, la gestione dello storage e la configurazione della replica.
+* *Cloud Volumes ONTAP admin*: Fornisce accesso completo a tutte le operazioni di Cloud Volumes ONTAP.
+
+
+L'amministratore della NetApp Console assegna i ruoli agli utenti di Cloud Volumes ONTAP da *Administration > Identity*. Le autorizzazioni dei ruoli si basano sull'organizzazione dell'utente e si applicano a tutti i sistemi Cloud Volumes ONTAP di tale organizzazione.
+
+Cloud Volumes ONTAP applica RBAC utilizzando una cache locale delle autorizzazioni di ciascun utente, che viene aggiornata automaticamente ogni ora. Quando a un utente viene assegnato un nuovo ruolo o viene modificato il suo ruolo esistente, la modifica potrebbe richiedere fino a un'ora per avere effetto; dopo di che, tutti i flussi di lavoro consentiti dai ruoli saranno abilitati.
+
+
+NOTE: Quando un agente Console viene distribuito per la prima volta, o un agente Console esistente viene aggiornato a Console 4.9.0 o versioni successive, un processo di inizializzazione una tantum assegna automaticamente i ruoli di Cloud Volumes ONTAP a tutti gli utenti esistenti nell'organizzazione. Questo processo può richiedere fino a 30 minuti per essere completato. E, una volta completato, Console assegna i ruoli appropriati agli utenti esistenti.
+
+I ruoli Cloud Volumes ONTAP si applicano agli ambienti Amazon Web Service (AWS), Microsoft Azure (Azure) e Google Cloud.
+
+.Link correlati
+* https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html["NetApp Console access ruoli"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html["Ruoli di accesso di Cloud Volumes ONTAP nella NetApp Console"^]
+

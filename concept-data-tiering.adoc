@@ -24,6 +24,7 @@ ifdef::aws[]
 
 
 
+[[data-tiering-in-aws]]
 == Livelli di dati in AWS
 
 Quando si abilita il data tiering in AWS, Cloud Volumes ONTAP utilizza EBS come livello di prestazioni per i dati hot e Amazon Simple Storage Service (Amazon S3) come livello di capacità per i dati inattivi.
@@ -70,6 +71,7 @@ ifdef::azure[]
 
 
 
+[[data-tiering-in-azure]]
 == Livelli dei dati in Azure
 
 Quando si abilita la suddivisione in livelli dei dati in Azure, Cloud Volumes ONTAP utilizza i dischi gestiti di Azure come livello di prestazioni per i dati attivi e l'archiviazione BLOB di Azure come livello di capacità per i dati inattivi.
@@ -116,6 +118,7 @@ ifdef::gcp[]
 
 
 
+[[data-tiering-in-google-cloud]]
 == Livelli dei dati in Google Cloud
 
 Quando abiliti il tiering dei dati in Google Cloud, Cloud Volumes ONTAP utilizza dischi persistenti come tier di performance per i dati attivi e un bucket di Google Cloud Storage come tier di capacità per i dati inattivi. Puoi selezionare un tier di storage quando crei un sistema e cambiarlo in qualsiasi momento successivo. Per informazioni sulla modifica della classe di storage, consulta link:task-tiering.html["Suddividi i dati inattivi in un archivio di oggetti a basso costo"].
@@ -149,12 +152,14 @@ endif::gcp[]
 
 
 
+[[data-tiering-and-capacity-limits]]
 == Livelli di dati e limiti di capacità
 
 Se si abilita la suddivisione in livelli dei dati, il limite di capacità del sistema rimane invariato.  Il limite è suddiviso tra il livello di prestazioni e il livello di capacità.
 
 
 
+[[volume-tiering-policies]]
 == Criteri di suddivisione in livelli del volume
 
 Per abilitare la suddivisione in livelli dei dati, è necessario selezionare un criterio di suddivisione in livelli del volume quando si crea, si modifica o si replica un volume.  È possibile selezionare una policy diversa per ogni volume.
@@ -194,6 +199,7 @@ Quando si replica un volume, è possibile scegliere se suddividere i dati in liv
 
 
 
+[[turning-off-cloud-volumes-ontap-impacts-the-cooling-period]]
 === La disattivazione di Cloud Volumes ONTAP influisce sul periodo di raffreddamento
 
 I blocchi di dati vengono raffreddati tramite scansioni di raffreddamento.  Durante questo processo, la temperatura dei blocchi non utilizzati viene spostata (raffreddata) al valore immediatamente inferiore.  Il tempo di raffreddamento predefinito dipende dalla politica di suddivisione in livelli del volume:
@@ -209,6 +215,7 @@ TIP: Quando Cloud Volumes ONTAP è disattivato, la temperatura di ciascun blocco
 
 
 
+[[setting-up-data-tiering]]
 == Impostazione della suddivisione in livelli dei dati
 
 Per istruzioni e un elenco delle configurazioni supportate, fare riferimento alink:task-tiering.html["Suddividi i dati inattivi in un archivio di oggetti a basso costo"] .

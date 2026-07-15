@@ -118,6 +118,7 @@ I sistemi Cloud Volumes ONTAP che utilizzano Infrastructure Manager archiviano d
 
 
 
+[[prepare-the-environment-for-running-the-tool]]
 == Prepara l'ambiente per l'esecuzione dello strumento
 
 Eseguire questi passaggi prima di eseguire lo strumento.
@@ -154,6 +155,7 @@ includedPermissions:
 - deploymentmanager.manifests.get
 - iam.serviceAccounts.get
 - storage.buckets.create
+- storage.buckets.get
 - storage.objects.create
 - storage.objects.delete
 - storage.objects.get
@@ -254,6 +256,7 @@ exec -l $SHELL
 ====
 
 
+[[run-the-conversion-tool]]
 == Esegui lo strumento di conversione
 
 Questi passaggi sono validi sia per Ubuntu che per SUSE Linux Enterprise Server per l'esecuzione dello strumento di conversione.
@@ -313,6 +316,7 @@ Se è necessario annullare la conversione, è necessario utilizzare la stessa VM
 
 
 
+[[roll-back-the-conversion]]
 == Ripristina la conversione
 
 Se non vuoi continuare con la conversione, puoi tornare a Deployment Manager seguendo questi passaggi:

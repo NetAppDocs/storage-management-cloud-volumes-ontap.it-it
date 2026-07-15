@@ -96,6 +96,7 @@ Una volta accessibile, utilizzare ONTAP System Manager o ONTAP CLI per accedere 
 
 
 
+[[troubleshoot-deployment-issues]]
 == Risolvere i problemi di distribuzione
 
 I sistemi Cloud Volumes ONTAP distribuiti direttamente tramite Azure Marketplace non includono il supporto di NetApp.  Se durante la distribuzione si verificano problemi, è possibile risolverli in modo indipendente.
@@ -114,6 +115,7 @@ I sistemi Cloud Volumes ONTAP distribuiti direttamente tramite Azure Marketplace
 
 
 
+[[discover-the-deployed-systems-in-console]]
 == Scopri i sistemi distribuiti nella Console
 
 È possibile individuare i sistemi Cloud Volumes ONTAP distribuiti tramite la distribuzione diretta di Azure Marketplace e gestirli nella pagina *Sistemi* nella Console.  L'agente Console rileva i sistemi, li aggiunge e applica le licenze necessarie, sbloccando così tutte le funzionalità della Console per questi sistemi.  La configurazione HA originale in una singola AZ con dischi gestiti PSSD v2 viene mantenuta e il sistema viene registrato nella stessa sottoscrizione Azure e nello stesso gruppo di risorse della distribuzione originale.

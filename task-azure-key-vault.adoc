@@ -36,6 +36,7 @@ Quando si utilizza AKV, tenere presente che per impostazione predefinita viene u
 
 
 
+[[configuration-process]]
 == Processo di configurazione
 
 I passaggi descritti descrivono come registrare la configurazione di Cloud Volumes ONTAP con Azure e come creare un Azure Key Vault e le relative chiavi.  Se hai già completato questi passaggi, assicurati di avere le impostazioni di configurazione corrette, in particolare in<<create-akv>> , e poi procedere a<<ontap>> .

@@ -29,6 +29,7 @@ NetApp Console fornisce la gestione dei volumi FlexCache conlink:https://docs.ne
 video::PBNPVRUeT1o[youtube,width=848,height=480]
 
 
+[[work-with-flexcache-when-the-origin-is-encrypted]]
 == Lavora con FlexCache quando l'origine è crittografata
 
 Quando si configura FlexCache su un sistema Cloud Volumes ONTAP in cui il volume di origine è crittografato, sono necessari passaggi aggiuntivi per garantire che il volume FlexCache possa accedere correttamente ai dati crittografati e memorizzarli nella cache.
