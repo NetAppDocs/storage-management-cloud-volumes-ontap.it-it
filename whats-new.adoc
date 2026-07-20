@@ -20,6 +20,54 @@ I miglioramenti descritti in questa pagina sono specifici per la gestione di Clo
 
 
 
+[[20-july-2026]]
+== 20 luglio 2026
+
+
+
+[[introducing-simplified-onboarding-of-cloud-volumes-ontap-from-aws-marketplace]]
+=== Presentazione della procedura semplificata di onboarding di Cloud Volumes ONTAP da AWS Marketplace
+
+NetApp introduce un flusso di onboarding semplificato per Cloud Volumes ONTAP da AWS Marketplace, riducendo i passaggi manuali e le difficoltà di onboarding.
+
+In precedenza, l'implementazione Cloud Volumes ONTAP tramite AWS Marketplace richiedeva la navigazione tra diverse schermate e la configurazione manuale di ruoli, policy e credenziali. Questo rendeva l'onboarding lento e soggetto a errori.
+
+Il nuovo flusso di onboarding semplifica la tua transizione da un abbonamento al marketplace a un ambiente Cloud Volumes ONTAP completamente operativo, con le seguenti funzionalità:
+
+. Abbonamento all'inserzione dedicata di Cloud Volumes ONTAP su AWS Marketplace: ti abboni all'inserzione autonoma di Cloud Volumes ONTAP su AWS Marketplace, acquisti un abbonamento e configuri il tuo account AWS (se non ne hai già uno).
+. Percorso guidato nella NetApp Console: configuri il tuo account nella NetApp Console e la Console ti guida automaticamente nel percorso di implementazione, visualizzando il percorso guidato sul lato destro. Se devi uscire dalla Console, puoi riprendere il percorso guidato in un secondo momento.
+. Associazione dell'abbonamento: puoi associare automaticamente il tuo abbonamento alla Console, evitando di doverlo collegare manualmente.
+. Distribuzione dell'agente della console con configurazione delle credenziali AWS: puoi creare automaticamente i ruoli AWS necessari. Il processo distribuisce uno stack AWS CloudFormation nel tuo account AWS con i ruoli e le policy richiesti da esaminare, quindi li associa alla NetApp Console, eliminando la configurazione manuale di IAM. Poi continui con la configurazione dell'agente, la rete e le impostazioni del gruppo di sicurezza per iniziare la distribuzione dell'agente.
+. Distribuisci un nuovo sistema Cloud Volumes ONTAP in AWS: vai direttamente alla  `Quick create`procedura guidata per una distribuzione di Cloud Volumes ONTAP più rapida e semplificata.
+
+
+.Link correlati
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["Distribuisci Cloud Volumes ONTAP con creazione rapida"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws["Fatturazione flessibile per Cloud Volumes ONTAP e servizi dati in AWS"^]
+
+
+
+
+[[well-architected-configuration-analysis-for-cloud-volumes-ontap-in-azure]]
+=== Analisi della configurazione ben strutturata per Cloud Volumes ONTAP in Azure
+
+La NetApp Console ora supporta l'analisi della configurazione well-architected per i sistemi Cloud Volumes ONTAP in esecuzione su Microsoft Azure. La Console analizza quotidianamente le tue distribuzioni e fornisce uno stato well-architected, approfondimenti e raccomandazioni per aiutarti a mantenere sistemi allineati alle best practice di NetApp e al well-architected framework.
+
+La dashboard ben progettata visualizza il numero totale di sistemi analizzati e categorizza le relative risorse in base alla configurazione e al livello di gravità. Se sei un system administrator, puoi visualizzare i suggerimenti per qualsiasi problema di configurazione all'interno della tua organizzazione direttamente dalla dashboard della Console e scaricare un report CSV con tutti i suggerimenti. Le configurazioni sono categorizzate in base a:
+
+* *Affidabilità*: Garantisce che i carichi di lavoro funzionino correttamente e in modo coerente, anche in caso di interruzioni.
+* *Sicurezza*: Protegge dati, sistemi e risorse attraverso valutazioni e mitigazione del rischio.
+* *Eccellenza operativa*: ottimizza l'architettura per massimizzare valore di business.
+* *Ottimizzazione dei costi*: Riduce e ottimizza i costi per un maggiore valore di business.
+
+
+.Link correlati
+* https://docs.netapp.com/us-en/console-well-architected/cvo/configuration-analysis-cvo.html["Analisi della configurazione per Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/console-well-architected/improve-configurations-cvo.html["Implementa configurazioni di sistema ben progettate"^]
+
+
+
+
 [[14-july-2026]]
 == 14 luglio 2026
 
