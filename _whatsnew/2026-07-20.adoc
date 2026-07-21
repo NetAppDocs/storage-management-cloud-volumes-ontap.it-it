@@ -42,5 +42,5 @@ La dashboard ben progettata visualizza il numero totale di sistemi analizzati e 
 
 .Link correlati
 * https://docs.netapp.com/us-en/console-well-architected/cvo/configuration-analysis-cvo.html["Analisi della configurazione per Cloud Volumes ONTAP"^]
-* https://docs.netapp.com/us-en/console-well-architected/improve-configurations-cvo.html["Implementa configurazioni di sistema ben progettate"^]
+* https://docs.netapp.com/us-en/console-well-architected/cvo/improve-configurations-cvo.html["Implementa configurazioni di sistema Cloud Volumes ONTAP ben strutturate"^]
 
