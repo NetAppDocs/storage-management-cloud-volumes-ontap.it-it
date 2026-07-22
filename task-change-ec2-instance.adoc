@@ -36,7 +36,7 @@ TIP: La NetApp Console modifica un nodo alla volta avviando l'acquisizione e att
 
 
 .Riferimento
-Per un elenco dei tipi di istanza supportati in AWS, fare riferimento alink:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html#supported-ec2-compute["Istanze EC2 supportate"^] .
+Per un elenco dei tipi di istanza supportati in AWS, consulta link:reference-configs-aws.html#supported-ec2-compute["Istanze EC2 supportate"].
 
 Se non è possibile modificare il tipo di istanza da c4, m4 o r4, fare riferimento all'articolo della Knowledge Baselink:https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/Converting_an_AWS_Xen_CVO_instance_to_Nitro_(KVM)["Conversione di un'istanza CVO di AWS Xen in Nitro (KVM)"^] .
 

@@ -25,7 +25,7 @@ ifdef::aws[]
 
 * Cloud Volumes ONTAP per AWS
 +
-link:https://www.netapp.com/pdf.html?item=/media/9088-tr4383pdf.pdf["Rapporto tecnico NetApp 4383: Caratterizzazione delle prestazioni di Cloud Volumes ONTAP in Amazon Web Services con carichi di lavoro applicativi"^]
+link:https://www.netapp.com/pdf.html?item=/media/9088-tr4383["Rapporto tecnico NetApp 4383: Caratterizzazione delle prestazioni di Cloud Volumes ONTAP in Amazon Web Services con carichi di lavoro applicativi"^]
 
 
 

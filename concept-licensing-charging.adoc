@@ -221,3 +221,11 @@ Ecco un altro esempio.  Supponiamo che tu abbia le seguenti licenze per il pacch
 Altri 100 TiB sono forniti su una coppia HA con volumi primari.  La licenza acquistata non dispone della capacità impegnata per _Essentials Primary HA_.  La licenza _Essentials Primary HA_ ha un prezzo più alto rispetto alle licenze _Essentials Primary Single Node_ e _Essentials Secondary HA_.
 
 In questo esempio, la Console addebita le eccedenze alla tariffa di mercato per i 100 TiB aggiuntivi.  Gli addebiti per il superamento del limite massimo appariranno sulla tua fattura mensile.
+
+.Link correlati
+* link:concept-licensing.html["Licenze per Cloud Volumes ONTAP"]
+* link:task-manage-capacity-licenses.html["Gestisci le licenze basate sulla capacità per Cloud Volumes ONTAP"]
+* link:task-manage-node-licenses.html["Gestisci le licenze basate sui nodi"]
+* link:task-convert-node-capacity.html["Convertire una licenza basata su nodi in una licenza basata sulla capacità"]
+* link:task-manage-keystone.html["Gestisci gli abbonamenti Keystone"]
+

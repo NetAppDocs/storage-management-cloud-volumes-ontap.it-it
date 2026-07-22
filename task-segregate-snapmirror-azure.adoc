@@ -4,7 +4,7 @@ permalink: task-segregate-snapmirror-azure.html
 keywords: segregate, SnapMirror, SnapMirror traffic, SnapMirror replication, add, additional NIC, new NIC, intercluster LIF, non-routable subnet, subnet 
 summary: Con Cloud Volumes ONTAP in Azure, puoi separare il traffico di replica SnapMirror utilizzando una rete diversa per migliorare la sicurezza e le prestazioni dei dati. 
 ---
-= Separare il traffico SnapMirror in Azure
+= Segrega il traffico SnapMirror in Cloud Volumes ONTAP in Azure
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

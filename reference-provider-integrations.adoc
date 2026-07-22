@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: reference-provider-integrations.html 
+keywords: maintenance event, azure maintenance event, cloud provider, issues, support, SMB CA in CVO 
+summary: Questa pagina descrive come NetApp lavora con i cloud provider per risolvere eventuali problemi che potrebbero sorgere. 
+---
+= Integrazioni di Cloud Volumes ONTAP con i cloud provider
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Scopri come NetApp collabora con i cloud provider per affrontare potenziali problemi.
+
+
+
+[[collaborative-support-best-practices]]
+== Buone pratiche di supporto collaborativo
+
+NetApp si impegna a fornire supporto al Licenziatario e adotterà ogni ragionevole sforzo commerciale per risolvere i problemi di supporto tecnico per Cloud Volumes ONTAP quando segnalati dal Licenziatario. NetApp e il cloud provider non hanno alcun obbligo di supporto diretto per il software o l'infrastruttura concessi in licenza l'uno dell'altro.
+
+NetApp ha implementato strumenti volti a connettersi con i cloud provider applicabili su questioni tecniche dei clienti che possono essere il risultato dei servizi del cloud provider applicabile. Tuttavia, il modo migliore per mantenere un flusso di supporto senza interruzioni è che i clienti (i) mantengano un contratto di supporto aggiornato sia con NetApp sia con il cloud provider applicabile e (ii) coordinino riunioni congiunte di escalation con entrambi NetApp e il cloud provider applicabile quando si verificano problemi tecnici e il cliente ha bisogno di chiarimenti su quali prodotti o servizi stiano causando tali problemi tecnici.
+
+
+
+[[azure-maintenance-events]]
+== Eventi di manutenzione di Azure
+
+Microsoft pianifica e annuncia a livello di codice eventi di manutenzione sulla propria infrastruttura di macchine virtuali (VM) di Azure che potrebbero influire sulle VM di Cloud Volumes ONTAP. Questi eventi vengono annunciati 15 minuti prima della finestra di manutenzione.
+
+È supportata una gestione speciale degli eventi di manutenzione per le coppie HA (high-availability) di Cloud Volumes ONTAP. Per mantenere l'integrità dell'applicazione, eseguiamo un takeover preventivo per dare priorità alla stabilità, poiché qualsiasi perdita di connettività superiore a 15 secondi disabiliterà le funzionalità di failover.
+
+Quando viene annunciata la finestra di manutenzione, il nodo partner del nodo di destinazione eseguirà un takeover. Quando la manutenzione è completa, verrà avviato un giveback. Dopo il giveback, la coppia HA dovrebbe tornare a uno stato di integrità. Se ciò non si verifica, contattare il Supporto NetApp per assistenza. Si noti che gli eventi di manutenzione sono indirizzati a una delle VM in una coppia HA alla volta e, in genere, entrambi i nodi vengono indirizzati in un periodo di tempo relativamente breve.
+
+I client CIFS/SMB che utilizzano le condivisioni CIFS non disponibili in modo continuativo di Cloud Volumes ONTAP subiranno una perdita di sessione sia quando si verifica un takeover, sia quando l'aggregato utilizzato dalla sessione viene restituito al nodo home dell'aggregato. Questa è una limitazione imposta dal protocollo CIFS/SMB stesso. È possibile utilizzare prodotti di terze parti approvati per evitare problemi derivanti da takeover e giveback. Per ulteriore assistenza, contattare il Supporto NetApp.
+
+
+NOTE: https://kb.netapp.com/on-prem/ontap/da/NAS/NAS-KBs/What_are_SMB_Continuous_Availability_CA_Shares["Condivisioni SMB sempre disponibili"^] per operazioni non distruttive non sono supportate in Cloud Volumes ONTAP.

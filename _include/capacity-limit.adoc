@@ -1,0 +1,5 @@
+= 
+:allow-uri-read: 
+
+
+Con la licenza basata sulla capacità, ogni sistema Cloud Volumes ONTAP supporta il tiering verso lo storage a oggetti. La capacità totale suddivisa in livelli può essere scalata fino al limite del bucket del cloud provider. Sebbene la licenza non imponga restrizioni di capacità, è necessario seguire le  https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["Migliori pratiche FabricPool"^] per garantire prestazioni, affidabilità ed efficienza dei costi ottimali durante la configurazione e la gestione del tiering.

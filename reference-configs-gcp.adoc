@@ -1,0 +1,485 @@
+---
+sidebar: sidebar 
+permalink: reference-configs-gcp.html 
+keywords: google, gcp, google cloud platform, explore, standard, premium, byol, paygo, disks, supported, capacity, machine types, sizes, HA, high availability, HA pairs 
+summary: Sono supportate diverse configurazioni di Cloud Volumes ONTAP in Google Cloud. 
+---
+= Configurazioni supportate per Cloud Volumes ONTAP in Google Cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sono supportate diverse configurazioni di Cloud Volumes ONTAP in Google Cloud.
+
+
+
+[[supported-disk-types-in-google-cloud]]
+== Tipi di disco supportati in Google Cloud
+
+Oltre allo storage per i dati degli utenti, NetApp acquista anche cloud storage per i dati di sistema su Google Cloud.
+
+
+
+[[internal-disks-for-system-data-in-single-node-systems]]
+=== Dischi interni per i dati di sistema nei sistemi a nodo singolo
+
+* Un disco persistente SSD da 10 GiB per i dati di avvio
+* Un disco persistente SSD da 64 GiB per i dati di root
+* Un disco persistente SSD da 500 GiB per NVRAM
+* Un disco persistente standard da 315 GiB per il salvataggio dei core
+* Snapshot per i dati di avvio e root
++
+
+NOTE: Gli snapshot vengono creati automaticamente al riavvio.
+
+* Per impostazione predefinita, i dischi di avvio e di root sono crittografati.
+
+
+
+
+[[internal-disks-for-system-data-in-ha-pairs]]
+=== Dischi interni per i dati di sistema in coppia HA
+
+* Due dischi persistenti SSD da 10 GiB per i dati di avvio
+* Quattro dischi SSD persistenti da 64 GiB per i dati di root
+* Due dischi persistenti SSD da 500 GiB per NVRAM
+* Due dischi persistenti standard da 315 GiB per il salvataggio dei core
+* Un disco persistente standard da 10 GiB per i dati del mediatore
+* Un disco persistente standard da 10 GiB per i dati di avvio del mediatore
+* Snapshot per i dati di avvio e root
++
+
+NOTE: Gli snapshot vengono creati automaticamente al riavvio.
+
+* Per impostazione predefinita, i dischi di avvio e di root sono crittografati.
+
+
+
+
+[[google-cloud-storage-for-user-data]]
+=== Google Cloud storage per i dati degli utenti
+
+In Google Cloud, un aggregato può contenere fino a 6 dischi tutti della stessa dimensione.  La dimensione massima del disco è 64 TiB.
+
+Il tipo di disco può essere _dischi persistenti SSD zonali_, _dischi persistenti bilanciati zonali_ o _dischi persistenti standard zonali_.  È possibile associare dischi persistenti a un bucket di Google Storage perlink:concept-data-tiering.html["archiviazione di oggetti a basso costo"] .
+
+Cloud Volumes ONTAP supporta i dischi Hyperdisk Balanced per le implementazioni a nodo singolo a partire dalla versione 9.18.1 e per le configurazioni ad alta disponibilità (coppia HA) in zone di disponibilità (AZ) singole a partire dalla versione 9.19.1 e versioni successive.
+
+
+
+[[supported-disk-sizes]]
+=== Dimensioni del disco supportate
+
+In Google Cloud, un aggregato può contenere fino a 6 dischi che sono tutti dello stesso tipo e dimensione. Le seguenti dimensioni di disco sono supportate:
+
+* 100 GB
+* 500 GB
+* 1 TB
+* 2 TB
+* 4 TB
+* 8 TB
+* 16 TB
+* 64 TB
+
+
+
+
+[[supported-configurations-by-license]]
+== Configurazioni supportate dalla licenza
+
+Cloud Volumes ONTAP è disponibile in Google Cloud come sistema a nodo singolo e come coppia HA di nodi per tolleranza agli errori e operazioni senza interruzioni.
+
+L'aggiornamento di un sistema a nodo singolo a una coppia HA non è supportato. Se si desidera passare da un sistema a nodo singolo a una coppia HA, è necessario implementare un nuovo sistema e replicare i dati dal sistema esistente al nuovo sistema.
+
+Cloud Volumes ONTAP può essere eseguito su una istanza di macchina virtuale Reserved o On-demand del tuo cloud provider. Le soluzioni che utilizzano altri tipi di istanze di macchine virtuali non sono supportate.
+
+
+
+[[single-node-systems]]
+=== Sistemi a nodo singolo
+
+[role="tabbed-block"]
+====
+.Licenze basate sulla capacità
+--
+[cols="h,d,d,d"]
+|===
+|  | Freemium | Ottimizzato ^4^ | Licenza basata sulla capacità (Essentials e Professional) 
+
+
+| Capacità massima del sistema (dischi + storage a oggetti) | 500 GB  a| 
+Con la licenza basata sulla capacità, ogni sistema Cloud Volumes ONTAP supporta il tiering verso lo storage a oggetti. La capacità totale suddivisa in livelli può essere scalata fino al limite del bucket del cloud provider. Sebbene la licenza non imponga restrizioni di capacità, è necessario seguire le  https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["Migliori pratiche FabricPool"^] per garantire prestazioni, affidabilità ed efficienza dei costi ottimali durante la configurazione e la gestione del tiering.
+
+
+
+| Tipi di macchine supportati ^1^  a| 
+* c3-standard-4, c3-standard-4-lssd ^5^
+* c3-standard-8, c3-standard-8-lssd ^5^
+* c3-standard-22, c3-standard-22-lssd ^5^
+* c3-standard-44, c3-standard-44-lssd ^5^
+* c3-standard-88, c3-standard-88-lssd ^5^
+* n1-standard-8 ^1^
+* n1-standard-32 ^1^
+* n2-standard-4
+* n2-standard-8
+* n2-standard-16
+* n2-standard-32
+* n2-standard-48
+* n2-standard-64
+
+ a| 
+* n2-standard-4
+* n2-standard-8
+
+ a| 
+* c3-standard-4, c3-standard-4-lssd ^5^
+* c3-standard-8, c3-standard-8-lssd ^5^
+* c3-standard-22, c3-standard-22-lssd ^5^
+* c3-standard-44, c3-standard-44-lssd ^5^
+* c3-standard-88, c3-standard-88-lssd ^5^
+* n1-standard-8 ^1^
+* n1-standard-32 ^1^
+* n2-standard-4
+* n2-standard-8
+* n2-standard-16
+* n2-standard-32
+* n2-standard-48
+* n2-standard-64
+
+
+
+
+| Tipi di disco supportati ^2^ 3+| Dischi persistenti bilanciati ^3^, dischi persistenti Performance (SSD) ^3^ e dischi persistenti Standard (HDD). Le VM C3 supportano solo dischi Hyperdisk Balanced. 
+|===
+Note:
+
+. ^1^ Le macchine della serie n1 non sono più disponibili per la selezione sulla NetApp Console quando si distribuiscono nuove istanze di Cloud Volumes ONTAP in Google Cloud. Le macchine della serie n1 saranno mantenute e supportate solo nei sistemi esistenti più vecchi. Le nuove distribuzioni di Cloud Volumes ONTAP sono supportate in Google Cloud solo dalla release 9.8. Si consiglia di passare alle macchine della serie n2 che sono compatibili con Cloud Volumes ONTAP 9.8 e versioni successive. Le macchine della serie n1, tuttavia, saranno disponibili per le nuove distribuzioni effettuate tramite l'API.
++
+Il tipo di macchina custom-4-16384 non è più supportato con i nuovi sistemi Cloud Volumes ONTAP. Se si dispone di un sistema esistente in esecuzione su questo tipo di macchina, è possibile continuare a utilizzarlo, ma si consiglia di passare al tipo di macchina n2-standard-4.
+
+. ^2^ I limiti del disco possono impedire di raggiungere il limite massimo di capacità del sistema utilizzando solo i dischi. È possibile raggiungere il limite di capacità https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["suddivisione in livelli dei dati inattivi nell'archiviazione degli oggetti"^].
++
+link:reference-limits-gcp.html["Scopri di più sui limiti del disco in Google Cloud"].
+
+. ^3^ Le prestazioni di scrittura migliorate sono abilitate quando si utilizzano dischi persistenti Balanced e dischi persistenti Performance (SSD).
+. ^4^ A partire dall'11 agosto 2025, la licenza Cloud Volumes ONTAP Optimized sarà deprecata e non sarà più disponibile per l'acquisto o il rinnovo nel marketplace di Google Cloud per abbonamenti pay-as-you-go (PAYGO). Per informazioni, consultare  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html["Novità in Cloud Volumes ONTAP"^].
+. ^5^ Puoi distribuire le VM di prossima generazione della famiglia C3 su https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#improved-cloud-volumes-ontap-support-with-google-cloud-c3-vms["Cloud Volumes ONTAP 9.18.1 e versioni successive"^]. Le macchine c3-standard-44 e c3-standard-88 e le loro varianti LSSD supportano la larghezza di banda Tier-1 nella Google Cloud Console per impostazione predefinita. Consulta link:reference-configs-gcp.html#flash-cache-support["Supporto Flash Cache"] per ulteriori informazioni sulle varianti LSSD.
+
+
+--
+.Altre licenze
+--
+[cols="h,d,d,d,d"]
+|===
+|  | PAYGO Explore | PAYGO Standard | PAYGO Premium | BYOL basato su nodi 
+
+
+| Capacità massima del sistema (dischi + storage a oggetti) | 2 TB ^2^ | 10 TiB | 368 TiB | 368 TiB per licenza 
+
+
+| Tipi di macchine supportate ^3^  a| 
+* c3-standard-4, c3-standard-4-lssd ^5^
+* n2-standard-4
+
+ a| 
+* c3-standard-8, c3-standard-8-lssd ^5^
+* n1-standard-8 ^3^
+* n2-standard-8
+
+ a| 
+* c3-standard-22, c3-standard-22-lssd ^5^
+* c3-standard-44, c3-standard-44-lssd ^5^
+* c3-standard-88, c3-standard-88-lssd ^5^
+* n1-standard-32 ^3^
+* n2-standard-16
+* n2-standard-32
+* n2-standard-48
+* n2-standard-64
+
+ a| 
+* c3-standard-4, c3-standard-4-lssd ^5^
+* c3-standard-8, c3-standard-8-lssd ^5^
+* c3-standard-22, c3-standard-22-lssd ^5^
+* c3-standard-44, c3-standard-44-lssd ^5^
+* c3-standard-88, c3-standard-88-lssd ^5^
+* n1-standard-8 ^3^
+* n1-standard-32 ^3^
+* n2-standard-4
+* n2-standard-8
+* n2-standard-16
+* n2-standard-32
+* n2-standard-48
+* n2-standard-64
+
+
+
+
+| Tipi di disco supportati 4+| Dischi persistenti bilanciati ^4^, dischi persistenti Performance (SSD) ^4^ e dischi persistenti Standard (HDD). Le VM C3 supportano solo dischi Hyperdisk Balanced. 
+|===
+Note:
+
+. ^1^ I limiti del disco possono impedire di raggiungere il limite massimo di capacità del sistema utilizzando solo i dischi. È possibile raggiungere il limite di capacità https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["suddivisione in livelli dei dati inattivi nell'archiviazione degli oggetti"^].
++
+link:reference-limits-gcp.html["Scopri di più sui limiti del disco in Google Cloud"].
+
+. ^2^ Il tiering dei dati su Google Cloud Storage non è supportato con PAYGO Explore.
+. ^3^ Le macchine della serie n1 non sono più disponibili per la selezione nella Console durante la distribuzione di nuove istanze di Cloud Volumes ONTAP in Google Cloud. Le macchine della serie n1 saranno mantenute e supportate solo nei sistemi esistenti più vecchi. Le nuove distribuzioni di Cloud Volumes ONTAP sono supportate in Google Cloud solo dalla release 9.8. Si consiglia di passare alle macchine della serie n2 che sono compatibili con Cloud Volumes ONTAP 9.8 e versioni successive. Le macchine della serie n1, tuttavia, saranno disponibili per le nuove distribuzioni eseguite tramite l'API.
++
+Il tipo di macchina custom-4-16384 non è più supportato con i nuovi sistemi Cloud Volumes ONTAP. Se si dispone di un sistema esistente in esecuzione su questo tipo di macchina, è possibile continuare a utilizzarlo, ma si consiglia di passare al tipo di macchina n2-standard-4.
+
+. ^4^ Le prestazioni di scrittura migliorate sono abilitate quando si utilizzano dischi persistenti Balanced e dischi persistenti Performance (SSD).
+. ^5^ Puoi distribuire le VM di prossima generazione della famiglia C3 su https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#improved-cloud-volumes-ontap-support-with-google-cloud-c3-vms["Cloud Volumes ONTAP 9.18.1 e versioni successive"^]. Le macchine c3-standard-44 e c3-standard-88 e le loro varianti LSSD supportano la larghezza di banda Tier-1 nella Google Cloud Console per impostazione predefinita. Consulta link:reference-configs-gcp.html#flash-cache-support["Supporto Flash Cache"] per ulteriori informazioni sulle varianti LSSD.
+
+
+La Console mostra un tipo di macchina aggiuntivo supportato per Standard e BYOL: n1-highmem-4. Tuttavia, questo tipo di macchina non è pensato per ambienti di produzione. L'abbiamo resa disponibile solo per uno specifico ambiente di laboratorio.
+
+--
+====
+Per ulteriori informazioni sui tipi di macchine specifici, consultare la documentazione di Google Cloud:
+
+* https://cloud.google.com/compute/docs/general-purpose-machines#n1_machines["Tipi di macchine generiche della serie n1"^]
+* https://cloud.google.com/compute/docs/general-purpose-machines#n2_series["Tipi di macchine generiche della serie N2"^]
+
+
+
+
+[[high-availability-ha-pairs]]
+=== Coppie ad alta disponibilità (HA)
+
+[role="tabbed-block"]
+====
+.Licenze basate sulla capacità
+--
+[cols="h,d,d,d"]
+|===
+|  | Freemium | Ottimizzato ^4^ | Licenza basata sulla capacità (Essentials e Professional) 
+
+
+| Capacità massima del sistema in base alla licenza (dischi + storage a oggetti) | 500 GB  a| 
+Con la licenza basata sulla capacità, ogni sistema Cloud Volumes ONTAP supporta il tiering verso lo storage a oggetti. La capacità totale suddivisa in livelli può essere scalata fino al limite del bucket del cloud provider. Sebbene la licenza non imponga restrizioni di capacità, è necessario seguire le  https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["Migliori pratiche FabricPool"^] per garantire prestazioni, affidabilità ed efficienza dei costi ottimali durante la configurazione e la gestione del tiering.
+
+
+
+| Tipi di macchine supportati ^1^  a| 
+* c3-standard-8 ^5^
+* c3-standard-22, c3-standard-22-lssd ^5^
+* c3-standard-44, c3-standard-44-lssd ^5^
+* c3-standard-88, c3-standard-88-lssd ^5^
+* n1-standard-32 ^3^
+* n2-standard-16
+* n2-standard-32
+* n2-standard-48
+* n2-standard-64
+* n1-standard-8 ^1^
+* n1-standard-32 ^1^
+* n2-standard-4
+* n2-standard-8
+* n2-standard-16
+* n2-standard-32
+* n2-standard-48
+* n2-standard-64
+
+ a| 
+* n2-standard-4
+* n2-standard-8
+
+ a| 
+* c3-standard-8 ^5^
+* c3-standard-22, c3-standard-22-lssd ^5^
+* c3-standard-44, c3-standard-44-lssd ^5^
+* c3-standard-88, c3-standard-88-lssd ^5^
+* n1-standard-8 ^1^
+* n1-standard-32 ^1^
+* n2-standard-4
+* n2-standard-8
+* n2-standard-16
+* n2-standard-32
+* n2-standard-48
+* n2-standard-64
+
+
+
+
+| Tipi di disco supportati ^2^ 3+| Dischi persistenti bilanciati ^3^, dischi persistenti Performance (SSD) ^3^ e dischi persistenti Standard (HDD). Le VM C3 supportano solo dischi Hyperdisk Balanced. 
+|===
+Note:
+
+. ^1^ Le macchine della serie n1 non sono più disponibili per la selezione sulla NetApp Console quando si distribuiscono nuove istanze di Cloud Volumes ONTAP in Google Cloud. Le macchine della serie n1 saranno mantenute e supportate solo nei sistemi esistenti più vecchi. Le nuove distribuzioni di Cloud Volumes ONTAP sono supportate in Google Cloud solo dalla release 9.8. Si consiglia di passare alle macchine della serie n2 che sono compatibili con Cloud Volumes ONTAP 9.8 e versioni successive. Le macchine della serie n1, tuttavia, saranno disponibili per le nuove distribuzioni effettuate tramite l'API.
++
+Il tipo di macchina custom-4-16384 non è più supportato con i nuovi sistemi Cloud Volumes ONTAP. Se si dispone di un sistema esistente in esecuzione su questo tipo di macchina, è possibile continuare a utilizzarlo, ma si consiglia di passare al tipo di macchina n2-standard-4.
+
+. ^2^ I limiti del disco possono impedire di raggiungere il limite massimo di capacità del sistema utilizzando solo i dischi. È possibile raggiungere il limite di capacità https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["suddivisione in livelli dei dati inattivi nell'archiviazione degli oggetti"^].
++
+link:reference-limits-gcp.html["Scopri di più sui limiti del disco in Google Cloud"].
+
+. ^3^ Le prestazioni di scrittura migliorate sono abilitate quando si utilizzano dischi persistenti Balanced e dischi persistenti Performance (SSD).
+. ^4^ A partire dall'11 agosto 2025, la licenza Cloud Volumes ONTAP Optimized sarà deprecata e non sarà più disponibile per l'acquisto o il rinnovo nel marketplace di Google Cloud per abbonamenti pay-as-you-go (PAYGO). Per informazioni, consultare  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html["Novità in Cloud Volumes ONTAP"^].
+. ^5^ Puoi distribuire le VM di prossima generazione della famiglia C3 su  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#support-for-next-generation-google-cloud-vms-in-cloud-volumes-ontap-ha["Cloud Volumes ONTAP 9.19.1 e versioni successive per implementazioni HA a singola AZ"^]. Le macchine c3-standard-44 e c3-standard-88 e le loro varianti LSSD supportano la larghezza di banda Tier-1 nella Google Cloud Console per impostazione predefinita. Consulta link:reference-configs-gcp.html#flash-cache-support["Supporto Flash Cache"] per ulteriori informazioni sulle varianti LSSD.
+
+
+--
+.Altre licenze
+--
+[cols="h,d,d,d,d"]
+|===
+|  | PAYGO Explore | PAYGO Standard | PAYGO Premium | BYOL basato su nodi 
+
+
+| Capacità massima del sistema in base alla licenza (dischi + storage a oggetti) | 2 TB ^2^ | 10 TiB | 368 TiB | 368 TiB per licenza 
+
+
+| Tipi di macchine supportate ^3^  a| 
+* n2-standard-4
+
+ a| 
+* c3-standard-8 ^5^
+* c3-standard-22, c3-standard-22-lssd ^5^
+* n1-standard-8 ^3^
+* n2-standard-8
+
+ a| 
+* c3-standard-44, c3-standard-44-lssd ^5^
+* c3-standard-88, c3-standard-88-lssd ^5^
+* n1-standard-32 ^3^
+* n2-standard-16
+* n2-standard-32
+* n2-standard-48
+* n2-standard-64
+
+ a| 
+* c3-standard-8 ^5^
+* c3-standard-22, c3-standard-22-lssd ^5^
+* c3-standard-44, c3-standard-44-lssd ^5^
+* c3-standard-88, c3-standard-88-lssd ^5^
+* n1-standard-8 ^3^
+* n1-standard-32 ^3^
+* n2-standard-4
+* n2-standard-8
+* n2-standard-16
+* n2-standard-32
+* n2-standard-48
+* n2-standard-64
+
+
+
+
+| Tipi di disco supportati 4+| Dischi persistenti bilanciati ^4^, dischi persistenti Performance (SSD) ^4^ e dischi persistenti Standard (HDD). Le VM C3 supportano solo dischi Hyperdisk Balanced. 
+|===
+Note:
+
+. ^1^ I limiti del disco possono impedire di raggiungere il limite massimo di capacità del sistema utilizzando solo i dischi. È possibile raggiungere il limite di capacità https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["suddivisione in livelli dei dati inattivi nell'archiviazione degli oggetti"^].
++
+link:reference-limits-gcp.html["Scopri di più sui limiti del disco in Google Cloud"].
+
+. ^2^ Il tiering dei dati su Google Cloud Storage non è supportato con PAYGO Explore.
+. ^3^ Le macchine della serie n1 non sono più disponibili per la selezione nella Console durante la distribuzione di nuove istanze di Cloud Volumes ONTAP in Google Cloud. Le macchine della serie n1 saranno mantenute e supportate solo nei sistemi esistenti più vecchi. Le nuove distribuzioni di Cloud Volumes ONTAP sono supportate in Google Cloud solo dalla release 9.8. Si consiglia di passare alle macchine della serie n2 che sono compatibili con Cloud Volumes ONTAP 9.8 e versioni successive. Le macchine della serie n1, tuttavia, saranno disponibili per le nuove distribuzioni eseguite tramite l'API.
++
+Il tipo di macchina custom-4-16384 non è più supportato con i nuovi sistemi Cloud Volumes ONTAP. Se si dispone di un sistema esistente in esecuzione su questo tipo di macchina, è possibile continuare a utilizzarlo, ma si consiglia di passare al tipo di macchina n2-standard-4.
+
+. ^4^ Le prestazioni di scrittura migliorate sono abilitate quando si utilizzano dischi persistenti Balanced e dischi persistenti Performance (SSD).
+
+
+La Console mostra un tipo di macchina aggiuntivo supportato per Standard e BYOL: n1-highmem-4. Tuttavia, questo tipo di macchina non è pensato per ambienti di produzione. L'abbiamo resa disponibile solo per uno specifico ambiente di laboratorio. . ^5^ Puoi distribuire le VM di prossima generazione della famiglia C3 su  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#support-for-next-generation-google-cloud-vms-in-cloud-volumes-ontap-ha["Cloud Volumes ONTAP 9.19.1 e versioni successive per implementazioni HA a singola AZ"^]. Le macchine c3-standard-44 e c3-standard-88 e le loro varianti LSSD supportano la larghezza di banda Tier-1 nella Google Cloud Console per impostazione predefinita. Consulta link:reference-configs-gcp.html#flash-cache-support["Supporto Flash Cache"] per ulteriori informazioni sulle varianti LSSD.
+
+--
+====
+
+
+[[flash-cache-support]]
+== Supporto Flash Cache
+
+A partire da Cloud Volumes ONTAP 9.13.0, _Flash Cache_, elevata velocità di scrittura e un'unità di trasmissione massima (MTU) più elevata di 8.896 byte sono disponibili per le seguenti istanze di distribuzione di coppia HA:
+
+* n2-standard-16
+* n2-standard-32
+* n2-standard-48
+* n2-standard-64
+
+
+È possibile abilitare _Flash Cache_ e un'elevata velocità di scrittura durante la distribuzione di un tipo di istanza idoneo. Per abilitare l'unità di trasmissione massima più elevata di 8.896 byte, è necessario scegliere VPC-1, VPC-2 o VPC-3 per la distribuzione. L'MTU più elevato consente un throughput di rete maggiore. Per ulteriori informazioni sull'avvio di una di queste distribuzioni, vedere  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-gcp.html["Avvio di Cloud Volumes ONTAP in Google Cloud"^].
+
+
+NOTE: _Flash Cache_, modalità di scrittura elevata e un MTU di 8,896 sono funzionalità dipendenti e non possono essere disabilitate singolarmente all'interno di un'istanza configurata.
+
+Le varianti Local SSD (LSSD) delle VM della serie C3 sono supportate in Cloud Volumes ONTAP 9.18.1 e versioni successive per le implementazioni a nodo singolo e in Cloud Volumes ONTAP 9.19.1 e versioni successive per le implementazioni HA in una singola AZ. Per queste implementazioni, se selezioni le varianti Local SSD (LSSD) delle VM della serie C3, Flash Cache viene abilitata per impostazione predefinita. Non puoi passare da una variante LSSD della VM C3 all'altra nella tua implementazione di Cloud Volumes ONTAP, anche se la variante di destinazione supporta Flash Cache.
+
+Consulta questa tabella per comprendere la variante di VM e il numero di LSSD supportati da essa:
+
+[cols="1,1"]
+|===
+| Tipo VM | Numero di dischi LSSD collegati 
+
+
+| c3-standard-4-lssd | 1 
+
+
+| c3-standard-8-lssd | 2 
+
+
+| c3-standard-22-lssd | 4 
+
+
+| c3-standard-44-lssd | 8 
+
+
+| c3-standard-88-lssd | 16 
+|===
+
+
+[[maximum-system-capacity-based-on-vm-type]]
+== Capacità massima del sistema in base al tipo di VM
+
+[cols="4*"]
+|===
+| Tipo VM | Numero massimo di dischi dati supportati per implementazioni a nodo singolo | Numero massimo di dischi dati supportati per implementazioni HA a singola AZ | Capacità massima (in TiB) 
+
+
+| c3-standard-4 | 12 | N/A | 256 
+
+
+| c3-standard-8 | 12 | 11 | 256 
+
+
+| c3-standard-22 | 28 | 27 | 256 
+
+
+| c3-standard-44 | 28 | 27 | 512 
+
+
+| c3-standard-88 | 28 | 27 | 512 
+
+
+| c3-standard-4-lssd | 12 | N/A | 256 
+
+
+| c3-standard-8-lssd | 12 | N/A | 256 
+
+
+| c3-standard-22-lssd | 28 | 27 | 256 
+
+
+| c3-standard-44-lssd | 28 | 27 | 512 
+
+
+| c3-standard-88-lssd | 28 | 27 | 512 
+
+
+| n2 (tutte le varianti) | 124 | 124 | 257 
+|===
+
+
+[[supported-regions]]
+== Regioni supportate
+
+Per il supporto delle regioni di Google Cloud, vedere https://bluexp.netapp.com/cloud-volumes-global-regions["Regioni globali di Cloud Volumes"^].
+
+.Link correlati
+* https://cloud.google.com/compute/docs/disks/["Documentazione di Google Cloud: Opzioni di archiviazione"^]
+* https://cloud.google.com/compute/docs/general-purpose-machines#n1_machines["Documentazione Google Cloud: tipologie di macchine general purpose della serie N1"^]
+* https://cloud.google.com/compute/docs/general-purpose-machines#n2_series["Documentazione Google Cloud: tipologie di macchine general purpose della serie N2"^]
+

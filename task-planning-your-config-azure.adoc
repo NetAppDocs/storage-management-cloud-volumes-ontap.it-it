@@ -41,7 +41,7 @@ Cloud Volumes ONTAP è supportato nella maggior parte delle regioni Microsoft Az
 
 Cloud Volumes ONTAP supporta diversi tipi di VM, a seconda del tipo di licenza scelto.
 
-https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Configurazioni supportate per Cloud Volumes ONTAP in Azure"^]
+link:reference-configs-azure.html["Configurazioni supportate per Cloud Volumes ONTAP in Azure"]
 
 
 

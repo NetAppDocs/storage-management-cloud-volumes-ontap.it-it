@@ -1,0 +1,262 @@
+---
+sidebar: sidebar 
+permalink: reference-limits-gcp.html 
+keywords: limits, maximum, storage, aggregates, disks, volumes, capacity, luns, size, storage virtual machine, SVM 
+summary: Cloud Volumes ONTAP ha limiti di configurazione dello storage in Google Cloud per garantire operazioni affidabili. Per prestazioni ottimali, non configurare il sistema ai valori massimi. 
+---
+= Limiti di storage per Cloud Volumes ONTAP in Google Cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP ha limiti di configurazione dello storage per garantire operazioni affidabili. Per prestazioni ottimali, non configurare il sistema ai valori massimi.
+
+
+
+[[maximum-system-capacity-by-license]]
+== Capacità massima del sistema per licenza
+
+La capacità massima di un sistema Cloud Volumes ONTAP è determinata dalla licenza. La capacità massima del sistema include lo storage su disco più lo storage a oggetti utilizzato per il tiering dei dati.
+
+NetApp non supporta il superamento del limite di capacità del sistema. Se si raggiunge il limite di capacità concesso in licenza, la NetApp Console visualizza un messaggio che richiede un'azione e non consente più di aggiungere dischi aggiuntivi.
+
+Per alcune configurazioni, i limiti del disco impediscono di raggiungere il limite di capacità utilizzando solo i dischi. È possibile raggiungere il limite di capacità https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["suddivisione in livelli dei dati inattivi nell'archiviazione degli oggetti"^]. Consultare i limiti del disco riportati di seguito per maggiori dettagli.
+
+[[cap-license-gcp]]
+.Limite di capacità per le licenze basate sulla capacità
+Con la licenza basata sulla capacità, ogni sistema Cloud Volumes ONTAP supporta il tiering verso lo storage a oggetti. La capacità totale suddivisa in livelli può essere scalata fino al limite del bucket del cloud provider. Sebbene la licenza non imponga restrizioni di capacità, è necessario seguire le  https://www.netapp.com/pdf.html?item=/media/17239-tr-4598.pdf["Migliori pratiche FabricPool"^] per garantire prestazioni, affidabilità ed efficienza dei costi ottimali durante la configurazione e la gestione del tiering. Consultare le  https://cloud.google.com/storage/docs/buckets["Documentazione di Google Cloud"^] per ulteriori informazioni.
+
+Limiti di capacità per altri tipi di licenza::
+
+
+[cols="25,75"]
+|===
+| Licenza | Capacità massima del sistema (dischi + storage a oggetti) 
+
+
+| Freemium | 500 GB 
+
+
+| PAYGO Explore | 2 TB (il tiering dei dati non è supportato con Explore) 
+
+
+| PAYGO Standard | 10 TB 
+
+
+| PAYGO Premium | 368 TB 
+
+
+| Licenza basata su nodi | 2 PiB (richiede più licenze) 
+|===
+.Per una coppia HA, il limite di capacità concesso in licenza è per nodo o per l'intera coppia HA?
+Il limite di capacità si riferisce all'intera coppia HA. Non è per nodo. Ad esempio, se si utilizza la licenza Premium, è possibile avere fino a 368 TB di capacità tra entrambi i nodi.
+
+.Per una coppia HA, i dati mirrorati vengono conteggiati nel limite di capacità concesso in licenza?
+No, non lo fa. I dati in una coppia HA vengono sottoposti a mirroring sincrono tra i nodi, in modo che siano disponibili in caso di failure in Google Cloud. Ad esempio, se si acquista un disco da 8 TB sul nodo A, la Console alloca anche un disco da 8 TB sul nodo B che viene utilizzato per dati mirrorati. Sebbene siano impostati 16 TB di capacità, solo 8 TB vengono conteggiati nel limite di licenza.
+
+
+
+[[aggregate-limits]]
+== Limiti degli aggregate
+
+Cloud Volumes ONTAP raggruppa i dischi di Google Cloud Platform in _aggregati_. Gli aggregati forniscono storage ai volumi.
+
+[cols="2*"]
+|===
+| Parametro | Limite 
+
+
+| Numero massimo di aggregati di dati ^1^  a| 
+* 99 per nodo singolo
+* 64 per un'intera coppia HA
+
+
+
+
+| Dimensione massima dell'aggregato | 256 TB di capacità raw ^2^ 
+
+
+| Dischi per aggregato | 1-6 ^3^ 
+
+
+| Numero massimo di gruppi RAID per aggregato | 1 
+|===
+Note:
+
+. Il numero massimo di aggregati di dati non include l'aggregato root.
+. I dischi che compongono l'aggregato determinano il limite di capacità dell'aggregato. Questo limite non include lo storage a oggetti utilizzato per il tiering dei dati.
+. Tutti i dischi di un aggregato devono avere le stesse dimensioni.
+
+
+
+
+[[disk-and-tiering-limits]]
+== Limiti del disco e del tiering
+
+La tabella seguente mostra la capacità massima del sistema con soli dischi e con dischi e data tiering a freddo su storage a oggetti. I limiti dei dischi sono specifici per i dischi che contengono dati utente. I limiti non includono il disco di boot, il disco root o NVRAM.
+
+[cols="60,40"]
+|===
+| Parametro | Limite 
+
+
+| Numero massimo di dischi dati  a| 
+* 124 per sistemi a nodo singolo
+* 123 per nodo per coppia HA
+
+
+
+
+| Dimensione massima del disco | 64 TB 
+
+
+| Capacità massima del sistema con soli dischi | 256 TB ^1^ 
+
+
+| Capacità massima del sistema con dischi e tiering dei dati cold in un bucket di Google Cloud Storage | Dipende dalla licenza. Fare riferimento ai limiti massimi di capacità del sistema sopra. 
+|===
+^1^ Questo limite è definito dai limiti delle macchine virtuali in Google Cloud Platform.
+
+
+
+[[storage-vm-limits]]
+== Limiti delle VM di storage
+
+Alcune configurazioni consentono di creare storage VM (SVM) aggiuntive per Cloud Volumes ONTAP.
+
+Questi sono i limiti testati. La configurazione di più VM di storage non è supportata.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-gcp.html["Scopri come creare storage VM aggiuntive"^].
+
+[cols="2*"]
+|===
+| Tipo di licenza | Limite di Storage VM 
+
+
+| *Freemium*  a| 
+24 storage VM totali ^1^
+
+
+
+| *PAYGO o BYOL basato sulla capacità* ^2^  a| 
+24 storage VM totali ^1^
+
+
+
+| *BYOL basato su nodo* ^3^  a| 
+24 storage VM totali ^1^
+
+
+
+| *PAYGO basato su nodi*  a| 
+* 1 storage VM per la fornitura di dati
+* 1 storage VM per il disaster recovery
+
+
+|===
+. Queste 24 storage VM possono servire dati o essere configurate per il disaster recovery (DR).
+. Per le licenze basate sulla capacità, non sono previsti costi di licenza aggiuntivi per le VM di storage aggiuntive, ma è previsto un costo minimo di capacità di 4 TiB per VM di storage. Ad esempio, se crei due VM di storage e ciascuna ha 2 TiB di capacità provisionata, ti verrà addebitato un totale di 8 TiB.
+. Per il BYOL basato su nodi, è richiesta una licenza aggiuntiva per ogni ulteriore storage VM _data-serving_ oltre alla prima storage VM fornita di default con Cloud Volumes ONTAP. Contatta il tuo account team per ottenere una licenza aggiuntiva per la storage VM.
++
+Le storage VM che configuri per il disaster recovery (DR) non richiedono una licenza aggiuntiva (sono gratuite), ma vengono conteggiate nel limite delle storage VM. Ad esempio, se hai 12 storage VM per il data serving e 12 storage VM configurate per il disaster recovery, hai raggiunto il limite e non puoi creare ulteriori storage VM.
+
+
+
+
+
+[[logical-storage-limits]]
+== Limiti di storage logico
+
+[cols="22,22,56"]
+|===
+| Archiviazione logica | Parametro | Limite 
+
+
+.2+| *File* | Dimensione massima ^2^ | 128 TB 
+
+
+| Massimo per volume | Dipendente dalla dimensione del volume, fino a 2 miliardi 
+
+
+| *Volumi FlexClone* | Profondità di clonazione gerarchica ^12^ | 499 
+
+
+.3+| *Volumi FlexVol* | Massimo per nodo | 500 
+
+
+| Dimensione minima | 20 MB 
+
+
+| Dimensione massima ^3^ | 300 TiB 
+
+
+| *Qtree* | Massimo per FlexVol volume | 4.995 
+
+
+| *Copie Snapshot* | Massimo per FlexVol volume | 1.023 
+|===
+. La profondità di clonazione gerarchica è la profondità massima di una gerarchia nidificata di FlexClone volumi che può essere creata da un singolo FlexVol volume.
+. A partire da ONTAP 9.12.1P2, il limite è 128 TB. In ONTAP 9.11.1 e versioni precedenti, il limite è 16 TB.
+. FlexVol volume
++
+** System Manager e la ONTAP CLI a partire da Cloud Volumes ONTAP 9.12.1 P2 e 9.13.0 P2
+** A partire da Cloud Volumes ONTAP 9.13.1
+
+
+
+
+
+
+[[iscsi-storage-limits]]
+== Limiti di storage iSCSI
+
+[cols="3*"]
+|===
+| storage iSCSI | Parametro | Limite 
+
+
+.4+| *LUN* | Massimo per nodo | 1.024 
+
+
+| Numero massimo di mappe LUN | 1.024 
+
+
+| Dimensione massima | 16 TB 
+
+
+| Massimo per volume | 512 
+
+
+| *igroup* | Massimo per nodo | 256 
+
+
+.2+| *Iniziatori* | Massimo per nodo | 512 
+
+
+| Massimo per igroup | 128 
+
+
+| *sessioni iSCSI* | Massimo per nodo | 1.024 
+
+
+.2+| *LIF* | Massimo per porta | 1 
+
+
+| Massimo per portset | 32 
+
+
+| *Portset* | Massimo per nodo | 256 
+|===
+
+
+[[cloud-volumes-ontap-ha-pairs-do-not-support-immediate-storage-giveback]]
+== Le coppie HA di Cloud Volumes ONTAP non supportano la restituzione immediata dello storage
+
+Dopo il riavvio di un nodo, il partner deve sincronizzare i dati prima di poter restituire lo storage. Il tempo necessario per risincronizzare i dati dipende dalla quantità di dati scritti dai client mentre il nodo era inattivo e dalla velocità di scrittura dei dati durante il periodo di restituzione.
+
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha-google-cloud.html["Scopri come funziona lo storage in una coppia HA Cloud Volumes ONTAP in esecuzione su Google Cloud"^].

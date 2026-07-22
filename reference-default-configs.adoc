@@ -23,7 +23,7 @@ Comprendere come Cloud Volumes ONTAP è configurato per impostazione predefinita
 
 * La NetApp Console crea una VM di storage per la gestione dei dati quando distribuisce Cloud Volumes ONTAP.  Alcune configurazioni supportano VM di archiviazione aggiuntive. link:task-managing-svms.html["Scopri di più sulla gestione delle VM di archiviazione"] .
 +
-A partire dalla versione 3.9.5, la segnalazione dello spazio logico è abilitata sulla VM di archiviazione iniziale.  Quando lo spazio viene segnalato in modo logico, ONTAP segnala lo spazio del volume in modo tale che tutto lo spazio fisico risparmiato dalle funzionalità di efficienza di archiviazione venga segnalato come utilizzato.  Per informazioni sulle funzionalità di efficienza dell'archiviazione in linea, fare riferimento all'articolo della knowledge base https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#["KB: Quali funzionalità di Inline Storage Efficiency sono supportate da CVO?"^]
+La segnalazione dello spazio logico è abilitata sulla storage VM iniziale. Quando lo spazio viene segnalato logicamente, ONTAP segnala lo spazio del volume in modo che anche tutto lo spazio fisico risparmiato grazie alle funzionalità di efficienza dello storage venga segnalato come utilizzato. Per informazioni sulle funzionalità di efficienza dello storage inline, consulta l'articolo della knowledge base https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#["KB: Quali funzionalità di Inline Storage Efficiency sono supportate da CVO?"^]
 
 * La Console installa automaticamente le seguenti licenze delle funzionalità ONTAP su Cloud Volumes ONTAP:
 +
@@ -129,164 +129,6 @@ Per informazioni su questi attributi, fare riferimento alink:https://docs.netapp
 
 
 
-[[internal-disks-for-system-data]]
-== Dischi interni per i dati di sistema
-
-Oltre allo spazio di archiviazione per i dati utente, la Console acquista anche spazio di archiviazione cloud per i dati di sistema.
-
-ifdef::aws[]
-
-
-
-[[aws]]
-=== AWS
-
-* Tre dischi per nodo per dati di avvio, root e core:
-+
-** Disco io1 da 47 GiB per i dati di avvio
-** Disco gp3 da 140 GiB per i dati di root
-** Disco gp2 da 540 GiB per i dati principali
-
-
-* Per coppie HA:
-+
-** Due volumi EBS st1 per l'istanza del mediatore, uno di circa 8 GiB come disco radice e uno di 4 GiB come disco dati
-** Un disco gp3 da 140 GiB in ogni nodo per contenere una copia dei dati radice dell'altro nodo
-+
-
-NOTE: In alcune zone, il tipo di disco EBS disponibile può essere solo gp2.
-
-
-
-* Uno snapshot EBS per ogni disco di avvio e disco di root
-+
-
-NOTE: Gli snapshot vengono creati automaticamente al riavvio.
-
-* Quando si abilita la crittografia dei dati in AWS tramite Key Management Service (KMS), vengono crittografati anche i dischi di avvio e root per Cloud Volumes ONTAP .  Ciò include il disco di avvio per l'istanza del mediatore in una coppia HA.  I dischi vengono crittografati utilizzando la CMK selezionata quando si aggiunge un sistema Cloud Volumes ONTAP .
-
-
-
-TIP: In AWS, la NVRAM si trova sul disco di avvio.
-
-endif::aws[]
-
-ifdef::azure[]
-
-
-
-[[azure-single-node]]
-=== Azure (nodo singolo)
-
-* Tre dischi SSD Premium:
-+
-** Un disco da 10 GiB per i dati di avvio
-** Un disco da 140 GiB per i dati di root
-** Un disco da 512 GiB per NVRAM
-+
-Se la macchina virtuale scelta per Cloud Volumes ONTAP supporta Ultra SSD, il sistema utilizza un Ultra SSD da 32 GiB per NVRAM anziché un Premium SSD.
-
-
-
-* Un disco HDD standard da 1024 GiB per il salvataggio dei core
-* Uno snapshot di Azure per ogni disco di avvio e disco radice
-* Per impostazione predefinita, in Azure ogni disco è crittografato quando è inattivo.
-+
-Se la macchina virtuale scelta per Cloud Volumes ONTAP supporta Premium SSD v2 Managed Disk come disco dati, il sistema utilizza un Premium SSD v2 Managed Disk da 32 GiB per la NVRAM e un altro come disco radice.
-
-
-
-
-
-[[azure-ha-pair]]
-=== Azzurro (coppia HA)
-
-.HA si abbina al blob di pagina
-* Due dischi SSD Premium da 10 GiB per il volume di avvio (uno per nodo)
-* Due blob di pagina Premium Storage da 140 GiB per il volume radice (uno per nodo)
-* Due dischi HDD standard da 1024 GiB per il salvataggio dei core (uno per nodo)
-* Due dischi SSD Premium da 512 GiB per NVRAM (uno per nodo)
-* Uno snapshot di Azure per ogni disco di avvio e disco radice
-+
-
-NOTE: Gli snapshot vengono creati automaticamente al riavvio.
-
-* Per impostazione predefinita, in Azure ogni disco è crittografato quando è inattivo.
-
-
-.Coppie HA con dischi gestiti condivisi in più zone di disponibilità
-* Due dischi SSD Premium da 10 GiB per il volume di avvio (uno per nodo)
-* Due dischi SSD Premium da 512 GiB per il volume root (uno per nodo)
-* Due dischi HDD standard da 1024 GiB per il salvataggio dei core (uno per nodo)
-* Due dischi SSD Premium da 512 GiB per NVRAM (uno per nodo)
-* Uno snapshot di Azure per ogni disco di avvio e disco radice
-+
-
-NOTE: Gli snapshot vengono creati automaticamente al riavvio.
-
-* Per impostazione predefinita, in Azure ogni disco è crittografato quando è inattivo.
-
-
-.Coppie HA con dischi gestiti condivisi in singole zone di disponibilità
-* Due dischi SSD Premium da 10 GiB per il volume di avvio (uno per nodo)
-* Due dischi condivisi gestiti SSD Premium da 512 GiB per il volume root (uno per nodo)
-* Due dischi HDD standard da 1024 GiB per il salvataggio dei core (uno per nodo)
-* Due dischi gestiti SSD Premium da 512 GiB per NVRAM (uno per nodo)
-
-
-Se la macchina virtuale supporta i dischi gestiti Premium SSD v2 come dischi dati, utilizza dischi gestiti Premium SSD v2 da 32 GiB per NVRAM e dischi gestiti condivisi Premium SSD v2 da 512 GiB per il volume root.
-
-È possibile distribuire coppie HA in un'unica zona di disponibilità e utilizzare Premium SSD v2 Managed Disks quando sono soddisfatte le seguenti condizioni:
-
-* La versione di Cloud Volumes ONTAP è 9.15.1 o successiva.
-* La regione e la zona selezionate supportano i dischi gestiti Premium SSD v2.  Per informazioni sulle regioni supportate, fare riferimento a https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/["Sito Web di Microsoft Azure: prodotti disponibili per regione"^] .
-* L'abbonamento è registrato per Microsoftlink:task-saz-feature.html["Funzionalità Microsoft.Compute/VMOrchestratorZonalMultiFD"] .
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-
-
-[[google-cloud-single-node]]
-=== Google Cloud (nodo singolo)
-
-* Un disco persistente SSD da 10 GiB per i dati di avvio
-* Un disco persistente SSD da 64 GiB per i dati di root
-* Un disco persistente SSD da 500 GiB per NVRAM
-* Un disco persistente standard da 315 GiB per il salvataggio dei core
-* Snapshot per i dati di avvio e root
-+
-
-NOTE: Gli snapshot vengono creati automaticamente al riavvio.
-
-* Per impostazione predefinita, i dischi di avvio e di root sono crittografati.
-
-
-
-
-[[google-cloud-ha-pair]]
-=== Google Cloud (coppia HA)
-
-* Due dischi persistenti SSD da 10 GiB per i dati di avvio
-* Quattro dischi SSD persistenti da 64 GiB per i dati di root
-* Due dischi persistenti SSD da 500 GiB per NVRAM
-* Due dischi persistenti standard da 315 GiB per il salvataggio dei core
-* Un disco persistente standard da 10 GiB per i dati del mediatore
-* Un disco persistente standard da 10 GiB per i dati di avvio del mediatore
-* Snapshot per i dati di avvio e root
-+
-
-NOTE: Gli snapshot vengono creati automaticamente al riavvio.
-
-* Per impostazione predefinita, i dischi di avvio e di root sono crittografati.
-
-
-endif::gcp[]
-
-
-
 [[where-the-disks-reside]]
 === Dove risiedono i dischi
 
@@ -299,4 +141,45 @@ Questo disco, che contiene l'immagine di avvio, non è disponibile per Cloud Vol
 * I dati radice, che contengono la configurazione e i registri del sistema, risiedono in aggr0.
 * Il volume radice della macchina virtuale di archiviazione (SVM) risiede in aggr1.
 * I volumi di dati risiedono anche in aggr1.
+
+
+
+
+[[disks-and-aggregates-used-for-cloud-volumes-ontap-clusters]]
+== Dischi e aggregati utilizzati per i cluster Cloud Volumes ONTAP
+
+Comprendere come Cloud Volumes ONTAP utilizza l'archiviazione cloud può aiutarti a comprendere i costi di archiviazione.
+
+
+CAUTION: È necessario creare ed eliminare tutti i dischi e gli aggregati dalla NetApp Console. Non dovresti eseguire queste azioni da un altro strumento di gestione. Ciò potrebbe compromettere la stabilità del sistema, ostacolare la possibilità di aggiungere dischi in futuro e potenzialmente generare commissioni ridondanti per il provider cloud.
+
+Cloud Volumes ONTAP utilizza lo storage del provider cloud come dischi e li raggruppa in uno o più aggregati.  Gli aggregati forniscono spazio di archiviazione a uno o più volumi.
+
+image:diagram_storage.png["Questa illustrazione mostra un aggregato composto da dischi e dai volumi di dati che Cloud Volumes ONTAP mette a disposizione degli host."]
+
+Sono supportati diversi tipi di dischi cloud.  Quando si crea un volume, si sceglie il tipo di disco e quando si distribuisce Cloud Volumes ONTAP si seleziona la dimensione predefinita del disco.
+
+
+TIP: La quantità totale di spazio di archiviazione acquistato da un fornitore cloud è la _capacità grezza_.  La _capacità utilizzabile_ è inferiore perché circa il 12-14 percento è costituito da overhead riservato all'utilizzo Cloud Volumes ONTAP .  Ad esempio, se la Console crea un aggregato da 500 GiB, la capacità utilizzabile è 442,94 GiB.
+
+
+
+[[raid-type]]
+=== Tipo RAID
+
+Il tipo RAID per ogni aggregato Cloud Volumes ONTAP è RAID0 (striping).  Cloud Volumes ONTAP si affida al provider cloud per la disponibilità e la durabilità dei dischi.  Non sono supportati altri tipi di RAID.
+
+
+
+[[hot-spares]]
+=== Ricambi a caldo
+
+RAID0 non supporta l'uso di hot spare per la ridondanza.
+
+La creazione di dischi inutilizzati (hot spare) collegati a un'istanza di Cloud Volumes ONTAP è una spesa non necessaria e potrebbe impedire il provisioning di spazio aggiuntivo secondo necessità.  Pertanto non è consigliabile.
+
+.Link correlati
+* link:reference-configs-aws.html["Configurazioni supportate per Cloud Volumes ONTAP in AWS"]
+* link:reference-configs-azure.html["Configurazioni supportate per Cloud Volumes ONTAP in Azure"]
+* link:reference-configs-gcp.html["Configurazioni supportate per Cloud Volumes ONTAP in Google Cloud"]
 

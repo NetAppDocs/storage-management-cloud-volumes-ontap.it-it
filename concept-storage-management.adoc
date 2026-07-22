@@ -37,48 +37,10 @@ Quando si crea un volume, la Console esegue una delle tre operazioni seguenti:
 
 * Colloca il volume su un aggregato esistente che dispone di spazio libero sufficiente.
 * Colloca il volume su un aggregato esistente acquistando più dischi per quell'aggregato.
-
-
-ifdef::aws[]
-
-+ Nel caso di un aggregato in AWS che supporta Elastic Volumes, aumenta anche la dimensione dei dischi in un gruppo RAID. link:concept-aws-elastic-volumes.html["Scopri di più sul supporto per Elastic Volumes"] .
-
-endif::aws[]
-
 * Acquista dischi per un nuovo aggregato e posiziona il volume su quell'aggregato.
 
 
 La console determina dove posizionare un nuovo volume prendendo in considerazione diversi fattori: la dimensione massima di un aggregato, se il thin provisioning è abilitato e le soglie di spazio libero per gli aggregati.
-
-ifdef::aws[]
-
-
-
-==== Selezione delle dimensioni del disco per gli aggregati in AWS
-
-Quando la Console crea nuovi aggregati per Cloud Volumes ONTAP in AWS, aumenta gradualmente le dimensioni del disco man mano che aumentano i numeri degli aggregati per massimizzare la capacità del sistema prima di raggiungere i limiti dei dischi dati AWS.
-
-Ad esempio, la Console potrebbe scegliere le seguenti dimensioni del disco:
-
-[cols="3*"]
-|===
-| Numero aggregato | Dimensione del disco | Capacità massima aggregata 
-
-
-| 1 | 500 GB | 3 TiB 
-
-
-| 4 | 1 TiB | 6 TiB 
-
-
-| 6 | 2 TiB | 12 TiB 
-|===
-
-NOTE: Questo comportamento non si applica agli aggregati che supportano la funzionalità Amazon EBS Elastic Volumes.  Gli aggregati in cui è abilitato Elastic Volumes sono composti da uno o due gruppi RAID.  Ogni gruppo RAID è composto da quattro dischi identici con la stessa capacità. link:concept-aws-elastic-volumes.html["Scopri di più sul supporto per Elastic Volumes"] .
-
-È possibile scegliere autonomamente la dimensione del disco utilizzando l'opzione di allocazione avanzata.
-
-endif::aws[]
 
 
 
@@ -106,20 +68,12 @@ Per impostazione predefinita, la modalità di gestione della capacità è impost
 Gli esempi seguenti illustrano il funzionamento di questa modalità:
 
 * Se un aggregato raggiunge la soglia di capacità e ha spazio per altri dischi, la Console acquista automaticamente nuovi dischi per quell'aggregato, in modo che i volumi possano continuare a crescere.
+* Se un aggregate raggiunge la soglia di capacità e non può supportare ulteriori dischi, la Console sposta automaticamente un volume da tale aggregate a un aggregate con capacità disponibile o a un nuovo aggregate.
 +
-ifdef::aws[]
+Se la Console crea un nuovo aggregate per il volume, sceglie una dimensione del disco che si adatta alla dimensione di quel volume.
 
-
-
-Nel caso di un aggregato in AWS che supporta Elastic Volumes, aumenta anche la dimensione dei dischi in un gruppo RAID. link:concept-aws-elastic-volumes.html["Scopri di più sul supporto per Elastic Volumes"] .
-
-endif::aws[]
-
-+ * Se un aggregato raggiunge la soglia di capacità e non può supportare dischi aggiuntivi, la Console sposta automaticamente un volume da quell'aggregato a un aggregato con capacità disponibile o a un nuovo aggregato.
-
-+ Se la Console crea un nuovo aggregato per il volume, sceglie una dimensione del disco che si adatti alla dimensione di quel volume.
-
-+ Si noti che ora è disponibile spazio libero sull'aggregato originale.  Tale spazio può essere utilizzato sia da volumi esistenti che da nuovi volumi.  In questo scenario lo spazio non può essere restituito al provider cloud.
++
+Nota che lo spazio libero è ora disponibile sull'aggregato originale. I volumi esistenti o i nuovi volumi possono utilizzare quello spazio. In questo scenario, lo spazio non può essere restituito al cloud provider.
 
 * Se un aggregato non contiene volumi per più di 12 ore, la Console lo elimina.
 
@@ -137,9 +91,7 @@ La gestione automatica della capacità della Console non si applica alle LUN.  Q
 
 Se l'amministratore dell'organizzazione o dell'account imposta la *Modalità di gestione della capacità* su manuale, la Console ti informa di intraprendere le azioni appropriate per le decisioni sulla capacità. Gli stessi esempi descritti nella modalità automatica si applicano alla modalità manuale, ma spetta a te accettare le azioni.
 
+.Link correlati
+* link:task-manage-capacity-settings.html["Scopri come modificare la modalità di gestione della capacità"] .
+* Per informazioni sul provisioning in AWS, consulta link:reference-configs-aws.html["Provisioning del disco per gli aggregati in AWS"].
 
-
-[[learn-more]]
-=== Saperne di più
-
-link:task-manage-capacity-settings.html["Scopri come modificare la modalità di gestione della capacità"] .

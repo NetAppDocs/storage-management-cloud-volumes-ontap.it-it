@@ -93,3 +93,9 @@ Per informazioni sulle offerte private in specifici iperscalari, scrivere a:
 * Azzurro - azurepo@netapp.com
 * Google Cloud - gcppo@netapp.com
 
+
+.Link correlati
+* link:concept-licensing.html["Licenze per Cloud Volumes ONTAP"]
+* link:task-manage-capacity-licenses.html["Gestisci le licenze basate sulla capacità per Cloud Volumes ONTAP"]
+* link:task-manage-node-licenses.html["Gestisci le licenze basate sui nodi"]
+

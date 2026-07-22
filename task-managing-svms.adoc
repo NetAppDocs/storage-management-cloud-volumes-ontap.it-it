@@ -4,7 +4,7 @@ permalink: task-managing-svms.html
 keywords: storage virtual machine, vserver, svm, storage vm, supported number, number supported 
 summary: 'Una VM di archiviazione è una macchina virtuale in esecuzione all"interno di ONTAP che fornisce servizi di archiviazione e dati ai tuoi client.  Potresti conoscerlo come SVM o vserver.  Per impostazione predefinita, Cloud Volumes ONTAP è configurato con una VM di archiviazione, ma alcune configurazioni supportano VM di archiviazione aggiuntive.' 
 ---
-= Gestisci le VM di archiviazione per Cloud Volumes ONTAP
+= Cloud Volumes ONTAP storage VM
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'Una VM di archiviazione è una macchina virtuale in esecuzione all"int
 
 
 [role="lead"]
-Una VM di archiviazione è una macchina virtuale in esecuzione all'interno di ONTAP che fornisce servizi di archiviazione e dati ai tuoi client.  Potresti conoscerlo come _SVM_ o _vserver_.  Per impostazione predefinita, Cloud Volumes ONTAP è configurato con una VM di archiviazione, ma alcune configurazioni supportano VM di archiviazione aggiuntive.
+Una storage VM (SVM) è una macchina virtuale in esecuzione all'interno di ONTAP che fornisce servizi di storage e dati ai tuoi client. Potresti conoscerla come _SVM_ o _vserver_. Cloud Volumes ONTAP è configurato di default con una storage VM, ma alcune configurazioni supportano storage VM aggiuntive.
 
 
 

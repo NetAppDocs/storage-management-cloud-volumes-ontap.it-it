@@ -1,0 +1,75 @@
+---
+sidebar: sidebar 
+permalink: reference-limitations-azure.html 
+keywords: limitations, ha, azure, pay-as-you-go, paygo, cloud solution provider, vm, flash cache; limitations in HA deployment in MAZ, SAZ, multiple availability xone, single availability zone Azure CVO, PSSDv2, premium SSD v2 limitation in CVO, flash cache limitation in CVO 
+summary: Queste limitazioni note sono specifiche di Cloud Volumes ONTAP in Microsoft Azure. 
+---
+= Limitazioni note per Cloud Volumes ONTAP in Azure
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le seguenti limitazioni note sono specifiche di Cloud Volumes ONTAP in Microsoft Azure. Assicurati di leggere anche link:reference-limitations.html["Limitazioni per Cloud Volumes ONTAP in tutti i provider cloud"].
+
+
+
+[[limitations-with-using-azure-vm-extensions]]
+== Limitazioni nell'utilizzo delle estensioni delle VM di Azure
+
+Cloud Volumes ONTAP non supporta le estensioni delle macchine virtuali (VM) di Azure perché influiscono sulle operazioni di gestione nella NetApp Console. Durante la distribuzione, la Console impedisce l'installazione di qualsiasi estensione sulle VM. Se le estensioni sono già installate sulle VM Cloud Volumes ONTAP esistenti, contattare il Supporto Microsoft Azure per rimuoverle. Per istruzioni, consultare l'articolo della knowledge base (KB) https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/Can_Azure_VM_Management_Extensions_be_installed_into_Cloud_Volume_ONTAP["È possibile installare Azure VM Management Extensions in Cloud Volumes ONTAP?"^]
+
+A partire dal 14 luglio 2025, NetApp invierà e-mail e ti informerà nella Console se vengono rilevate estensioni VM sulle tue Cloud Volumes ONTAP VM.
+
+
+
+[[premium-ssd-v2-disks-limitations-for-ha-configurations]]
+== Limitazioni dei dischi Premium SSD v2 per configurazioni HA
+
+I dischi gestiti Premium SSD v2 presentano le seguenti limitazioni per le distribuzioni ad alta disponibilità (HA) in Azure:
+
+* Non supportato nelle distribuzioni HA in regioni non zonali.
+* Non supportato nelle distribuzioni HA su più availability zone.
+* Supportato solo nelle configurazioni HA distribuite all'interno di singole availability zones.
+
+
+Per utilizzare Premium SSD v2 Managed Disks con le configurazioni Cloud Volumes ONTAP HA, assicurarsi che siano soddisfatti i seguenti requisiti:
+
+* La versione di Cloud Volumes ONTAP è 9.15.1 o successiva.
+* La distribuzione HA è in una singola zona di disponibilità di Azure.
+* Le regioni e le zone selezionate supportano i dischi gestiti Premium SSD v2. Per informazioni sulle regioni supportate, consultare il  https://azure.microsoft.com/en-us/explore/global-infrastructure/products-by-region/["Sito Web di Microsoft Azure: prodotti disponibili per regione"^].
+
+
+Per ulteriori informazioni, consulta  https://docs.netapp.com/us-en/cloud-volumes-ontap-9151-relnotes/reference-new.html#support-for-premium-ssd-v2-managed-disks-in-azure["Supporto per Premium SSD v2 Managed Disks in Azure"^].
+
+
+
+[[limitations-with-ha-deployments-in-single-availability-zones]]
+== Limitazioni con le implementazioni HA in singole availability zone
+
+A partire da Cloud Volumes ONTAP 9.15.1, è possibile distribuire istanze di macchine virtuali (VM) in modalità HA in singole zone di disponibilità (AZ) in Azure. Per informazioni sui criteri che supportano questa funzionalità, consultare  https://docs.netapp.com/us-en/cloud-volumes-ontap-9151-relnotes/reference-new.html#deploy-ha-pairs-in-single-availability-zones-in-azure["Distribuisci coppie HA in singole zone di disponibilità in Azure"^].
+
+Se la versione di Cloud Volumes ONTAP è precedente alla 9.15.1 o se una qualsiasi di queste condizioni non è soddisfatta, entra in vigore il precedente modello di distribuzione che utilizza i set di disponibilità. Questo vale solo per le configurazioni HA.
+
+
+
+[[flash-cache-limitations]]
+== Limitazioni di Flash Cache
+
+Cloud Volumes ONTAP utilizza lo storage NVMe locale in alcuni tipi di VM come _Flash Cache_. Nota questa limitazione:
+
+* Il rewarming della cache dopo un riavvio non è supportato.
+
+
+
+
+[[limitations-with-ha-deployments]]
+== Limitazioni con le implementazioni HA
+
+Le coppie HA non sono supportate in alcune regioni.
+
+https://bluexp.netapp.com/cloud-volumes-global-regions["Visualizza l'elenco delle regioni Azure supportate"^].

@@ -57,14 +57,14 @@ Per un elenco dei tipi di VM supportati con i seguenti pacchetti basati sulla ca
 
 ifdef::azure[]
 
-* link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html["Configurazioni supportate in Azure"^]
+* link:link:reference-configs-azure.html["Configurazioni supportate in Azure"]
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html["Configurazioni supportate in Google Cloud"^]
+* link:link:reference-configs-gcp.html["Configurazioni supportate in Google Cloud"^]
 
 
 endif::gcp[]
@@ -296,3 +296,11 @@ Per sapere come eseguire questa conversione, fare riferimento alink:task-convert
 
 
 NOTE: La conversione di un sistema da una licenza basata sulla capacità a una basata sui nodi non è supportata.
+
+.Link correlati
+* link:concept-licensing-charging.html["Scopri di più sulle licenze basate sulla capacità"]
+* link:task-manage-capacity-licenses.html["Gestisci le licenze basate sulla capacità per Cloud Volumes ONTAP"]
+* link:task-manage-node-licenses.html["Gestisci le licenze basate sui nodi"]
+* link:task-convert-node-capacity.html["Convertire una licenza basata su nodi in una licenza basata sulla capacità"]
+* link:task-manage-keystone.html["Gestisci gli abbonamenti Keystone"]
+
