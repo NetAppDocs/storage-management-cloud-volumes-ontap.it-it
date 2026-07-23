@@ -20,6 +20,25 @@ I miglioramenti descritti in questa pagina sono specifici per la gestione di Clo
 
 
 
+[[23-july-2026]]
+== 23 luglio 2026
+
+
+
+[[support-for-chile-central-region-in-azure]]
+=== Supporto per la regione Chile Central in Azure
+
+Ora puoi distribuire Cloud Volumes ONTAP 9.12.1 GA e versioni successive nella regione Chile Central (chilecentral) in Azure. Sono supportati i seguenti tipi di distribuzione:
+
+* Nodo singolo
+* HA in una singola zona di disponibilità tramite storage localmente ridondante (LRS)
+* Alta disponibilità in più zone di disponibilità tramite storage a ridondanza di zona (ZRS)
+
+
+Per un elenco di tutte le regioni supportate, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .
+
+
+
 [[20-july-2026]]
 == 20 luglio 2026
 
