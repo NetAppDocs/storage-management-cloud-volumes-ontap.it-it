@@ -24,7 +24,25 @@ Le principali funzionalità includono:
 * Dagli insight all'azione
 
 
-Direttiva non risolta in  https://raw.githubusercontent.com/NetAppDocs/console-well-architected/main/cvo/configuration-analysis-cvo.adoc[] - include::_include/well-architected-workloads.adoc[]
+
+
+[[how-it-works]]
+== Come funziona
+
+Workload Factory analizza quotidianamente i carichi di lavoro in esecuzione sui sistemi di cloud storage supportati. L'analisi fornisce stato well-architected, approfondimenti e raccomandazioni.
+
+Al termine dell'analisi giornaliera, le configurazioni vengono visualizzate come "ottimizzate" o "non ottimizzate" nella dashboard di Well-architected per la distribuzione. Troverai i problemi di configurazione suddivisi per categoria e un elenco di problemi di configurazione e raccomandazioni. Puoi esaminare le raccomandazioni relative ai problemi di configurazione. Alcuni problemi possono essere risolti automaticamente da Workload Factory, mentre altri richiedono un intervento manuale. In questo caso, Workload Factory fornisce istruzioni dettagliate per aiutarti a implementare le modifiche consigliate.
+
+Puoi ignorare l'analisi delle configurazioni che non si applicano ai tuoi ambienti. Questo evita avvisi non necessari e risultati di ottimizzazione imprecisi.
+
+Puoi anche creare regole personalizzate in linguaggio naturale per convalidare i tuoi ambienti rispetto agli standard della tua organizzazione e alle best practice di NetApp. Prova le regole con una simulazione, poi pianifica la loro esecuzione su tutti i tuoi ambienti. link:https://docs.netapp.com/us-en/console-well-architected/learn-custom-rules.html["Scopri di più sulle regole personalizzate"^].
+
+
+
+[[why-it-matters]]
+== Perché è importante
+
+Workload Factory applica le migliori pratiche agli ambienti di storage, database e VMware di grandi dimensioni, combinando valutazioni continue con suggerimenti e interventi correttivi. Le correzioni automatiche applicate nella NetApp Console riducono gli errori umani, garantiscono una gestione uniforme e preservano prestazioni e affidabilità nelle tue infrastrutture di carico di lavoro.
 
 
 
