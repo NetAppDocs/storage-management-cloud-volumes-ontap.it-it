@@ -26,7 +26,7 @@ Sono disponibili pacchetti di licenze basati sulla capacità con i seguenti mode
 * *BYOL*: Porta la tua patente (BYOL).  Una licenza acquistata da NetApp che può essere utilizzata per distribuire Cloud Volumes ONTAP in qualsiasi provider cloud.
 +
 
-NOTE: NetApp ha limitato l'acquisto, l'estensione e il rinnovo delle licenze BYOL. Per ulteriori informazioni, consulta  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Disponibilità limitata delle licenze BYOL per Cloud Volumes ONTAP"^] .
+NOTE: NetApp ha limitato l'acquisto, l'estensione e il rinnovo delle licenze BYOL e ha limitato la disponibilità in scenari specifici, come nelle implementazioni in modalità privata. Per ulteriori informazioni, consulta  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Disponibilità limitata delle licenze BYOL per Cloud Volumes ONTAP"^].
 
 
 
@@ -35,7 +35,7 @@ ifdef::azure[]
 endif::azure[]
 
 * *PAYGO*: Un abbonamento pay-as-you-go (PAYGO) è un abbonamento orario dal marketplace del tuo provider cloud.
-* *Annuale*: un contratto annuale dal marketplace del tuo provider cloud.
+* *Abbonamenti al marketplace/Contratto annuale*: Un contratto annuale dal marketplace del tuo cloud provider. Le implementazioni in modalità privata non supportano gli abbonamenti al marketplace.
 
 
 Notare quanto segue:

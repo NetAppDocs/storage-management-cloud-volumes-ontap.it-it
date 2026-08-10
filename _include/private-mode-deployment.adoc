@@ -1,0 +1,20 @@
+= Distribuisci Cloud Volumes ONTAP in modalità privata
+:allow-uri-read: 
+
+
+
+
+[[deploy-cloud-volumes-ontap-in-private-mode]]
+== Distribuisci Cloud Volumes ONTAP in modalità privata
+
+Puoi implementare Cloud Volumes ONTAP in modalità privata seguendo una procedura di conversione documentata, passo dopo passo, direttamente all'interno del tuo ambiente esistente. Nella distribuzione in modalità privata, il sistema Cloud Volumes ONTAP viene implementato nel tuo cloud privato (VPC) o virtual network (VNet) e non è connesso a Internet pubblico. Puoi usare la distribuzione in modalità privata per soddisfare i requisiti di sicurezza e conformità della tua organizzazione.
+
+In precedenza, le implementazioni in modalità privata utilizzavano solo licenze basate su nodi che potevi acquistare da NetApp. La licenza basata su nodi è la licenza di generazione precedente per Cloud Volumes ONTAP. NetApp aveva limitato l'acquisto, l'estensione e il rinnovo delle licenze basate su nodi, salvo eccezioni, dal  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["2025-06-25"]. A partire dal 31 luglio 2026, le licenze basate su nodi raggiungeranno la fine della disponibilità (EOA) per questi casi eccezionali, come United States Public Sector (USPS) e altre implementazioni in modalità privata.
+
+Se hai una distribuzione privata con una licenza basata su nodi, dopo questo:
+
+* Non puoi più acquistare o rinnovare la tua licenza basata su nodo.
+* Impossibile accedere alle nuove funzionalità e ai miglioramenti.
+* Continui ad avere una maggiore rigidità operativa a causa dei vincoli basati sui nodi.
+* Dovrai passare alla licenza in modalità cloud privato basata sulla capacità una volta scaduta la licenza basata sui nodi. Per le istruzioni, consulta  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-convert-node-capacity.html["Converti le licenze basate sui nodi in licenze basate sulla capacità"^].
+

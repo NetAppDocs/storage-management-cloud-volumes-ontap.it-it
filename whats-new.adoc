@@ -20,6 +20,35 @@ I miglioramenti descritti in questa pagina sono specifici per la gestione di Clo
 
 
 
+[[10-august-2026]]
+== 10 agosto 2026
+
+
+
+[[cloud-volumes-ontap-9-19-1]]
+=== Cloud Volumes ONTAP 9.19.1
+
+Ora puoi usare la NetApp Console per distribuire e gestire la versione General Availability (GA) di Cloud Volumes ONTAP 9.19.1 in Amazon Web Service (AWS) e Google Cloud. Questa versione non è disponibile per la distribuzione e l'aggiornamento in Microsoft Azure (Azure).
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Scopri di più su questa versione di Cloud Volumes ONTAP"^].
+
+
+
+[[ability-to-convert-node-based-licenses-to-capacity-based-licensing-in-private-mode]]
+=== Possibilità di convertire le licenze basate sui nodi in licenze basate sulla capacità in modalità privata
+
+NetApp è entusiasta di annunciare il modello di licensing basato sulla capacità per le implementazioni di Cloud Volumes ONTAP in modalità privata. Ora puoi ottimizzare i costi per le tue implementazioni di Cloud Volumes ONTAP in modalità privata convertendo la tua licenza basata sui nodi nel modello di licensing basato sulla capacità. Per le tue implementazioni in modalità privata, puoi acquistare un pacchetto Essentials (bring your own license (BYOL)) direttamente da NetApp con una capacità simile alla tua licenza basata sui nodi esistente.
+
+Questa opzione di conversione supporta il piano graduale di NetApp per abbandonare le licenze basate sui nodi a favore delle licenze basate sulla capacità. A differenza delle licenze basate sui nodi, che assegnano una capacità fissa a ciascun sistema, le licenze basate sulla capacità attingono da un pool di capacità condiviso tra i tuoi sistemi Cloud Volumes ONTAP, offrendoti maggiore flessibilità nella ridistribuzione dei carichi di lavoro man mano che cambiano le tue esigenze di storage.
+
+.Link correlati
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Fine della disponibilità delle licenze basate sui nodi"^]
+* https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-convert-node-capacity.html#conversion-in-a-private-mode-deployment["Conversione in una distribuzione in modalità privata"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Gestisci le licenze basate su nodo per Cloud Volumes ONTAP"^]
+
+
+
+
 [[03-august-2026]]
 == 03 agosto 2026
 
@@ -124,12 +153,12 @@ La dashboard ben progettata visualizza il numero totale di sistemi analizzati e 
 
 
 
-[[cloud-volumes-ontap-9-19-1-rc]]
-=== Cloud Volumes ONTAP 9.19.1 RC
+[[cloud-volumes-ontap-9-19-1]]
+=== Cloud Volumes ONTAP 9.19.1
 
-Ora puoi usare la NetApp Console per distribuire e gestire la versione Release Candidate (RC) di Cloud Volumes ONTAP 9.19.1 in Google Cloud. Questa versione non è disponibile per la distribuzione e l'aggiornamento in Amazon Web Services (AWS) e Microsoft Azure (Azure).
+La versione Release Candidate (RC) di Cloud Volumes ONTAP 9.19.1 è disponibile solo su Google Cloud per l'upgrade alla 9.19.1 General Availability (GA).
 
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Scopri di più su questa versione di Cloud Volumes ONTAP"^] .
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Scopri di più su questa versione di Cloud Volumes ONTAP"^].
 
 
 

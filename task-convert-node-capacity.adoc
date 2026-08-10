@@ -20,22 +20,37 @@ Per impegni annuali o a lungo termine, NetApp consiglia di contattare il proprio
 
 Per informazioni su EOA ed EOS, fare riferimento alink:concept-licensing.html#end-of-availability-of-node-based-licenses["Fine della disponibilità delle licenze basate sui nodi"] .
 
+NetApp ha limitato l'acquisto, l'estensione e il rinnovo delle licenze BYOL. Per ulteriori informazioni, consulta  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Disponibilità limitata delle licenze BYOL per Cloud Volumes ONTAP"^] .
+
+
+
+[[conversion-in-a-standard-mode-deployment]]
+== Conversione in una distribuzione in modalità standard
+
+Se hai una distribuzione in modalità standard, puoi convertire la tua licenza basata su nodi in una licenza basata sulla capacità utilizzando lo strumento di conversione delle licenze nella NetApp Console. La conversione è supportata per tutti i cloud provider, AWS, Azure e Google Cloud. Puoi convertire la tua licenza basata su nodi in qualsiasi licenza basata sulla capacità acquistata tramite il marketplace. Ad esempio, se hai una licenza PAYGO Standard basata su nodi, puoi convertirla in qualsiasi licenza basata sulla capacità acquistata tramite il marketplace.
+
 .Informazioni su questo compito
 * Quando si utilizza lo strumento di conversione delle licenze, la transizione dal modello di licenza basato sui nodi a quello basato sulla capacità viene eseguita in loco e online, eliminando la necessità di qualsiasi migrazione dei dati o di provisioning di risorse cloud aggiuntive.
-* Si tratta di un'operazione non dirompente, che non comporta alcuna interruzione del servizio o tempi di inattività delle applicazioni.
-* I dati dell'account e delle applicazioni nel sistema Cloud Volumes ONTAP rimangono intatti.
-* Le risorse cloud sottostanti rimangono inalterate dopo la conversione.
+* È un'operazione non invasiva:
++
+** Non si verifica alcuna interruzione del servizio o downtime applicativo.
+** I dati dell'account e delle applicazioni nel sistema Cloud Volumes ONTAP rimangono intatti.
+** Le risorse cloud sottostanti rimangono inalterate dopo la conversione.
+
+
 * Lo strumento di conversione delle licenze supporta tutti i tipi di distribuzione, ad esempio nodo singolo, alta disponibilità (HA) in una singola zona di disponibilità (AZ), HA in più AZ, Bring Your Own License (BYOL) e PAYGO.
-* Lo strumento supporta tutte le licenze basate su nodi come origine e tutte le licenze basate su capacità come destinazione. Ad esempio, se si dispone di una licenza basata su nodi PAYGO Standard, è possibile convertirla in qualsiasi licenza basata su capacità acquistata tramite il marketplace. NetApp ha limitato l'acquisto, l'estensione e il rinnovo delle licenze BYOL. Per ulteriori informazioni, consulta  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Disponibilità limitata delle licenze BYOL per Cloud Volumes ONTAP"^] .
-* La conversione è supportata da tutti i provider cloud: AWS, Azure e Google Cloud.
-* Dopo la conversione, il numero di serie della licenza basata sul nodo verrà sostituito da un formato basato sulla capacità.  Questa operazione viene eseguita come parte della conversione e si riflette sul tuo account NetApp Support Site (NSS).
+* In modalità standard, lo strumento supporta tutte le licenze basate su nodi come origine e tutte le licenze basate sulla capacità come destinazione. Ad esempio, se hai una licenza BYOL basata su nodi, puoi convertirla in qualsiasi licenza basata sulla capacità acquistata da NetApp.
+* Dopo la conversione, il numero di serie della licenza basata su nodi viene sostituito da un formato basato sulla capacità. Questo avviene come parte della conversione e si riflette sul tuo account NetApp Support Site (NSS).
 * Quando si passa al modello basato sulla capacità, i dati continuano a essere conservati nella stessa posizione della licenza basata sui nodi.  Questo approccio garantisce che non vi siano interruzioni nel posizionamento dei dati e sostiene i principi di sovranità dei dati durante tutta la transizione.
 
 
 .Prima di iniziare
 * Dovresti avere un account NSS con accesso cliente o amministratore.
-* Il tuo account NSS deve essere registrato con le credenziali utente utilizzate per accedere alla Console.
-* Il sistema Cloud Volumes ONTAP deve essere collegato all'account NSS con accesso cliente o amministratore.
++
+** Il tuo account NSS deve essere registrato con le credenziali utente utilizzate per accedere alla Console.
+** Il sistema Cloud Volumes ONTAP deve essere collegato all'account NSS con accesso cliente o amministratore.
+
+
 * È necessario disporre di una licenza valida basata sulla capacità, ovvero una licenza BYOL o un abbonamento al marketplace.
 * Nel tuo account dovrebbe essere disponibile una licenza basata sulla capacità.  Questa licenza può essere un abbonamento al marketplace o un pacchetto di offerte BYOL/private disponibile in * Licenses and subscriptions* nella Console.
 * Prima di selezionare un pacchetto di destinazione, è necessario comprendere i seguenti criteri:
@@ -59,8 +74,9 @@ Per informazioni su EOA ed EOS, fare riferimento alink:concept-licensing.html#en
 NOTE: Se uno qualsiasi di questi requisiti non viene soddisfatto, la conversione della licenza non avviene.  In casi specifici la licenza potrebbe essere convertita, ma non utilizzabile.  Fare clic sull'icona delle informazioni per identificare i problemi e adottare misure correttive.
 
 .Passi
+. Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
 . Nella pagina *Sistemi*, fare doppio clic sul nome del sistema per il quale si desidera modificare il tipo di licenza.
-. Nella scheda Panoramica, fare clic sul pannello Funzionalità.
+. Nella scheda *Panoramica*, fai clic sul pannello *Features*.
 . Seleziona l'icona della matita accanto a *Metodo di ricarica*.  Se il metodo di ricarica per il tuo sistema è `Node Based` , è possibile convertirlo in una ricarica a capacità variabile.
 +
 
@@ -78,7 +94,58 @@ TIP: L'icona è disabilitata se il sistema Cloud Volumes ONTAP è già caricato 
 
 
 .Dopo aver finito
-Visualizza il nuovo numero di serie della licenza e verifica le modifiche nel menu * Licenses and subscriptions* della Console.
+Visualizza il nuovo numero di serie della licenza e verifica le modifiche nel menu *Administration > Licenses and subscriptions* della Console.
+
+
+
+[[conversion-in-a-private-mode-deployment]]
+== Conversione in una distribuzione in modalità privata
+
+Se hai una distribuzione in modalità privata, puoi convertire la tua licenza basata sui nodi in una licenza basata sulla capacità utilizzando lo strumento di conversione delle licenze nella NetApp Console. La conversione è supportata per tutti i cloud provider: AWS, Azure e Google Cloud.
+
+Poiché gli abbonamenti al marketplace non sono supportati in modalità privata, devi acquistare un pacchetto Essentials (bring your own license (BYOL)) da NetApp. Questo ti permette di mantenere i vantaggi del modello di licensing basato sulla capacità all'interno del modello BYOL senza richiedere abbonamenti al marketplace.
+
+
+NOTE: La conversione da licenze basate su nodi a qualsiasi licenza basata sulla capacità diversa da Essentials non è supportata per la modalità privata.
+
+.Informazioni su questo compito
+* Dopo la conversione, l'intera capacità della tua licenza basata su nodi viene tracciata nell'ambito del pacchetto Essentials e continui a essere fatturato tramite il tuo accordo BYOL.
+* Quando usi lo strumento di conversione delle licenze, la transizione dal modello di licensing basato sui nodi a quello basato sulla capacità avviene in loco, eliminando la necessità di qualsiasi migrazione dei dati o provisioning di risorse cloud aggiuntive.
+* È un'operazione non invasiva:
++
+** Non si verifica alcuna interruzione del servizio o downtime applicativo.
+** I dati dell'account e delle applicazioni nel sistema Cloud Volumes ONTAP rimangono intatti.
+** Le risorse cloud sottostanti rimangono inalterate dopo la conversione.
+** I tuoi dati continuano a essere conservati nella stessa posizione della licenza basata sui nodi. Questo approccio garantisce la continuità del posizionamento dei dati e tutela i principi di sovranità dei dati durante tutta la transizione.
+
+
+* Lo strumento di conversione delle licenze supporta tutti i tipi di implementazione, come la configurazione a nodo singolo e ad alta disponibilità (HA) in una singola availability zone (AZ) e in più AZ.
+* Dopo la conversione, i sistemi Cloud Volumes ONTAP vengono aggiornati con nuovi numeri di serie.
+
+
+.Prima di iniziare
+* Poiché le implementazioni di Cloud Volumes ONTAP in modalità privata non supportano gli abbonamenti al marketplace, devi procurarti la tua licenza Essentials basata sulla capacità da NetApp.
+* La licenza basata sulla capacità dovrebbe avere una capacità simile a quella della licenza basata sui nodi per la conversione.
+* Il pacchetto Essentials basato sulla capacità deve corrispondere al tipo di licenza BYOL basata sui nodi. Ad esempio, una distribuzione in modalità privata con volume secondario (HA) dovrebbe avere la rispettiva licenza Essentials Secondary HA o una licenza con la corrispondenza migliore, come Essentials Primary, Essentials Primary HA.
+
+
+.Passi
+. Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
+. Nella pagina *Sistemi*, fare doppio clic sul nome del sistema per il quale si desidera modificare il tipo di licenza.
+. Nella scheda *Panoramica*, fai clic sul pannello *Features*.
+. Seleziona l'icona a forma di matita accanto a *Metodo di addebito*. Se il metodo di addebito per il tuo sistema è  `Node Based`, puoi convertirlo in una licenza basata sulla capacità.
++
+
+TIP: L'icona è disabilitata se il sistema Cloud Volumes ONTAP è già caricato in base alla capacità o se uno qualsiasi dei requisiti non è soddisfatto.
+
+. Nella schermata *Converti licenze basate su nodo in licenze basate su capacità*, verifica il nome del sistema e i dettagli della licenza di origine.
+. Seleziona Essentials come pacchetto di destinazione per la conversione della licenza esistente:
+. Puoi selezionare la casella di controllo per eliminare la licenza basata su nodi dalla Console dopo che la conversione è stata completata. Se la conversione è ancora in corso, selezionando questa casella di controllo non verrà rimossa la licenza dalla Console.
+. Seleziona la casella di controllo per confermare di aver compreso le implicazioni della modifica, quindi fai clic su *Procedi*.
+
+
+.Dopo aver finito
+Visualizza il nuovo numero di serie della licenza e verifica le modifiche nel menu *Administration > Licenses and subscriptions* della Console.
 
 
 
