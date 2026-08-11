@@ -22,7 +22,7 @@ Per maggiori informazioni su questa offerta, fare riferimento alink:concept-azur
 Il sistema Cloud Volumes ONTAP distribuito tramite distribuzione diretta da Azure Marketplace presenta queste caratteristiche. Nota che le funzionalità di un'istanza autonoma distribuita tramite Azure Marketplace cambiano quando viene rilevata nella NetApp Console.
 
 * L'ultima versione Cloud Volumes ONTAP (9.16.1 o successiva).
-* Per Cloud Volumes ONTAP è disponibile una licenza gratuita fino a 500 GiB di capacità allocata, senza NetApp supporto e senza data di scadenza. Per capacità superiori a 500 GiB è necessaria una licenza valida e potrebbero essere applicati dei costi. Per accedere all'esperienza completa di Cloud Volumes ONTAP e alle funzionalità di gestione avanzate, collega il tuo sistema Cloud Volumes ONTAP alla NetApp Console. Il rilevamento e la gestione tramite NetApp Console richiedono un abbonamento valido ad Azure Marketplace associato al tuo account NetApp Console.
+* Per Cloud Volumes ONTAP è disponibile una licenza gratuita fino a 500 GiB di capacità allocata, senza supporto NetApp e senza data di scadenza. Per capacità superiori a 500 GiB è necessaria una licenza valida e potrebbero essere applicati dei costi. Per accedere all’esperienza completa di Cloud Volumes ONTAP e alle funzionalità di gestione avanzate, collega il tuo sistema Cloud Volumes ONTAP alla Console. Il rilevamento e la gestione tramite la Console richiedono un abbonamento valido ad Azure Marketplace associato al tuo account Console.
 * Due nodi configurati in modalità ad alta disponibilità (HA) in un'unica zona di disponibilità (AZ), dotati di numeri di serie predefiniti.  Le macchine virtuali di storage (VM di storage) vengono distribuite in unlink:concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks["modalità di orchestrazione flessibile"] .
 * Un aggregato per l'istanza creata per impostazione predefinita.
 * Un disco gestito Premium SSD v2 con capacità di provisioning di 500 GiB, un disco root e un disco dati.
@@ -39,7 +39,7 @@ Il sistema Cloud Volumes ONTAP distribuito tramite distribuzione diretta da Azur
 
 
 .Prima di iniziare
-* Se hai intenzione di individuare e gestire il sistema distribuito in NetApp Console, assicurati che l'account NetApp Console sia associato a un abbonamento valido di Azure Marketplace. L'individuazione del sistema in NetApp Console richiede un abbonamento valido.
+* Se vuoi individuare e gestire il sistema distribuito nella Console, assicurati che l'account della Console sia associato a un abbonamento valido di Azure Marketplace. L'individuazione del sistema nella Console richiede un abbonamento valido.
 * Assicurati di soddisfare i requisiti di rete per unlink:concept-ha-azure.html#ha-single-availability-zone-configuration-with-shared-managed-disks["Distribuzione HA in una singola AZ"] in Azzurro. Fare riferimento a link:reference-networking-azure.html["Configurare la rete di Azure per Cloud Volumes ONTAP"] .
 * Per distribuire Cloud Volumes ONTAP è necessario che ti venga assegnato uno di questi ruoli di Azure:
 +

@@ -195,8 +195,8 @@ image::screenshot-cvo-s3-onelake-confirm.png[Screenshot che mostra la connession
 
 
 
-[[next-steps-index-data-with-azure-ai-search]]
-== Prossimi passi: indicizza i dati con Azure AI Search
+[[enable-azure-ai-search]]
+== Abilita Azure AI Search
 
 Dopo aver creato il collegamento OneLake, puoi configurare Azure AI Search per indicizzare i dati archiviati nei tuoi volumi Cloud Volumes ONTAP tramite OneLake. L'indicizzazione di Azure AI Search permette ai dati di essere utilizzati da applicazioni AI come Microsoft Copilot e Azure OpenAI.
 
