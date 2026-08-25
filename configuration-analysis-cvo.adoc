@@ -51,6 +51,12 @@ Workload Factory applica le migliori pratiche agli ambienti di storage, database
 
 Per un'analisi completa del sistema Cloud Volumes ONTAP, devi link:https://docs.netapp.com/us-en/console-setup-admin/concept-agent-install-options.html#agent-console-deploy["distribuire un agente NetApp Console"^] configurare la connettività tra i tuoi sistemi e la NetApp Console.
 
+Devi anche stabilire la connettività outbound verso i seguenti endpoint:
+
+* \https://api.workloads.netapp.com
+* \https://ws.workloads.bluexp.netapp.com
+
+
 
 
 [[best-practices-and-recommendations-for-cloud-volumes-ontap-systems]]

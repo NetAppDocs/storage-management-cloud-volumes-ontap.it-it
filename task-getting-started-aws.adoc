@@ -16,6 +16,8 @@ summary: Verifica di aver completato i prerequisiti per la distribuzione di Clou
 [role="lead"]
 Per implementare Cloud Volumes ONTAP, devi prima conoscere il tuo abbonamento AWS e le licenze di Cloud Volumes ONTAP. Devi anche verificare di aver creato un agente della NetApp Console per il tuo account AWS. Gran parte delle informazioni in questo argomento devono essere eseguite come parte della configurazione della Console prima ancora di iniziare a implementare Cloud Volumes ONTAP.
 
+Puoi eseguire l'onboarding di Cloud Volumes ONTAP in AWS utilizzando AWS Marketplace o la NetApp Console. La tabella seguente fornisce una panoramica high-level delle attività che devi completare per distribuire Cloud Volumes ONTAP in AWS. L'onboarding da AWS Marketplace è un'esperienza semplificata che automatizza la distribuzione dell'agente della Console e l'associazione della sottoscrizione. Per informazioni sull'onboarding da AWS Marketplace, vedi link:task-onboard-cvo-aws-marketplace.html["Esegui l'onboarding di Cloud Volumes ONTAP in AWS Marketplace"].
+
 [cols="20,35,25,25"]
 |===
 | Compito | Descrizione | Riferimento | Note per le implementazioni in modalità privata 

@@ -61,6 +61,8 @@ sidebar:
     - title: Distribuisci su Amazon Web Services
       flavor: aws
       entries:
+      - title: Esegui l'onboarding di Cloud Volumes ONTAP da AWS Marketplace
+        url: "/task-onboard-cvo-aws-marketplace.html"
       - title: Panoramica dell'implementazione
         url: "/task-getting-started-aws.html"
       - title: Pianifica la tua configurazione

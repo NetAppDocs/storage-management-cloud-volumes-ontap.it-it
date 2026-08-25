@@ -106,6 +106,7 @@ https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html[
 La Console tenta sempre di addebitare prima su una licenza. Se una licenza non è disponibile, addebita su un abbonamento del marketplace. Non devi convertire un abbonamento BYOL in un abbonamento del marketplace o viceversa.
 
 * Se hai un'offerta privata o un contratto dal marketplace del tuo cloud provider, cambiare metodo di addebito con uno non incluso nel contratto comporterà l'addebito su BYOL (se hai acquistato una licenza da NetApp) o PAYGO.
+* Se vuoi fatturare la capacità di Cloud Volumes ONTAP tramite l'abbonamento autonomo Cloud Volumes ONTAP su AWS marketplace, il sistema Cloud Volumes ONTAP deve utilizzare un pacchetto supportato basato sulla capacità (Essentials o Freemium). Il pacchetto Professional non è supportato per l'inserzione autonoma e continua a essere fatturato tramite l'abbonamento NIS. Dopo aver selezionato il pacchetto che vuoi, usa *Preferenze di fatturazione* in NetApp Console per scegliere l'abbonamento marketplace da usare per la fatturazione di Cloud Volumes ONTAP.
 
 
 .Passi
