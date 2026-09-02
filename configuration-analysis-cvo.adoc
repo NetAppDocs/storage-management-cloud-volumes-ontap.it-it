@@ -81,6 +81,10 @@ Pianifica snapshot locali per un backup efficiente e ripristini rapidi. Gli snap
 +
 La capacità del tier di storage SSD non dovrebbe superare l'80% di utilizzo. Questo potrebbe influire sulle letture e scritture dei dati nel tier di storage della capacity pool e sul throughput del sistema. Quando la capacità si esaurisce, i volumi di dati diventano di sola lettura. Anche i servizi che cercano di scrivere nuovi dati non riescono.
 
+* *Replica dei dati remota*
++
+Proteggi i dati di Cloud Volumes ONTAP tramite la replica remota. La replica dei dati remota offre funzionalità di ripristino di emergenza, mantenendo copie sincronizzate dei tuoi dati in posizioni diverse e garantendo la continuità operativa in caso di guasti o disastri del sistema.
+
 
 
 
