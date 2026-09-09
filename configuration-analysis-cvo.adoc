@@ -14,7 +14,7 @@ summary: La dashboard ben progettata di NetApp Console analizza regolarmente le 
 
 
 [role="lead"]
-La dashboard ben progettata di NetApp Console analizza regolarmente le configurazioni dei sistemi storage per determinare se ci sono problemi di configurazione nei tuoi sistemi Cloud Volumes ONTAP. Quando vengono rilevati problemi, la dashboard ti mostra quali sono e spiega cosa deve essere cambiato per assicurare che i tuoi sistemi storage raggiungano prestazioni ottimali, efficienza dei costi e conformità alle best practice.
+Workload Factory analizza regolarmente le configurazioni dei sistemi storage per individuare eventuali problemi di configurazione nei tuoi sistemi Cloud Volumes ONTAP. Quando vengono rilevati problemi, la dashboard well-architected mostra quali sono i problemi e le raccomandazioni su cosa modificare per assicurarti che i tuoi sistemi storage raggiungano prestazioni massime, efficienza dei costi e conformità alle best practice.
 
 Le principali funzionalità includono:
 
