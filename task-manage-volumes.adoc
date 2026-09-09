@@ -264,7 +264,7 @@ Ad esempio, le informazioni avanzate dovrebbero contenere un messaggio simile a 
 . Identificare uno o più volumi da spostare fuori dall'aggregato:
 +
 .. Nel sistema Cloud Volumes ONTAP , fare clic sulla scheda *Aggregati*.
-.. Nel riquadro aggregato, fare clic suimage:icon-action.png[""] icona e quindi fare clic su *Visualizza dettagli aggregati*.
+.. Nella sezione relativa ai dati aggregati, fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] e poi su *Visualizza dettagli aggregati*.
 .. Nella scheda *Panoramica* della schermata *Dettagli aggregati*, controlla le dimensioni di ciascun volume e scegli uno o più volumi da spostare fuori dall'aggregato.
 +
 Dovresti scegliere volumi sufficientemente grandi da liberare spazio complessivamente, in modo da evitare ulteriori problemi di capacità in futuro.
@@ -348,7 +348,7 @@ Per evitare problemi di capacità è necessario spostare due o più volumi; tutt
 . Verificare se un aggregato esistente ha capacità disponibile per i volumi che è necessario spostare:
 +
 .. Nel sistema Cloud Volumes ONTAP , fare clic sulla scheda *Aggregati*.
-.. Sulla tessera aggregata richiesta, fare clic suimage:icon-action.png[""] icona e quindi *Visualizza dettagli aggregati* per visualizzare la capacità disponibile (dimensione fornita meno capacità aggregata utilizzata).
+.. Sulla tessera dell'aggregato richiesto, fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] e poi su *Visualizza dettagli aggregato* per vedere la capacità disponibile (dimensione prevista meno capacità aggregata utilizzata).
 +
 image::screenshot_aggr_capacity.png[capacità di aggregazione degli screenshot]
 
@@ -356,7 +356,7 @@ image::screenshot_aggr_capacity.png[capacità di aggregazione degli screenshot]
 
 . Se necessario, aggiungere dischi a un aggregato esistente:
 +
-.. Selezionare l'aggregato, quindi fare clic suimage:icon-action.png[""] icona > *Aggiungi dischi*.
+.. Seleziona l'aggregato, quindi fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] > *Aggiungi dischi*.
 .. Selezionare il numero di dischi da aggiungere, quindi fare clic su *Aggiungi*.
 
 

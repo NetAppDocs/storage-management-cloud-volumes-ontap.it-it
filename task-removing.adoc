@@ -21,7 +21,7 @@ La rimozione di un sistema Cloud Volumes ONTAP lo rimuove dalla NetApp Console. 
 
 .Passi
 . Nella pagina *Sistemi*, fare doppio clic sul sistema che si desidera rimuovere.
-. In alto a destra della Console, fare clic suimage:icon-action.png[""] icona e seleziona *Rimuovi dall'area di lavoro*.
+. In alto a destra della Console, fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] e seleziona *Rimuovi dall'area di lavoro*.
 . Nella finestra *Rimuovi dall'area di lavoro*, fare clic su *Rimuovi*.
 
 

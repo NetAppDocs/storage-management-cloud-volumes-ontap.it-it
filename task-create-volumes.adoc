@@ -65,7 +65,7 @@ Selezionare la scheda Volumi e fare clic su *Aggiungi volume*.image:screenshot_a
 --
 .Aggregato specifico
 --
-.. Nella scheda *Aggregati*, vai all'aggregato richiesto e fai clic suimage:icon-action.png[""] icona.
+.. Nella scheda *Aggregati*, vai all'aggregato desiderato e fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"].
 .. Selezionare *Aggiungi volume*.image:screenshot_add_volume_button_agg.png["Uno screenshot del pulsante Aggiungi volume nella scheda Aggregati."]
 
 

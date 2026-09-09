@@ -29,11 +29,11 @@ Se un aggregato sta esaurendo lo spazio, è possibile spostare i volumi su un al
 . Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
 . Nella pagina *Sistemi*, fare doppio clic sul sistema Cloud Volumes ONTAP su cui si desidera gestire gli aggregati.
 . Dai dettagli del sistema, fare clic sulla scheda *Aggregati*.
-. Per l'aggregato richiesto, fare clic suimage:icon-action.png[""] icona per le azioni di gestione.
+. Per l'aggregato richiesto, fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] per le azioni di gestione.
 +
 image:screenshot_aggr_menu_options.png["Uno screenshot delle opzioni del menu Aggregati."]
 
-. Gestisci i tuoi aggregati dalle opzioni disponibili inimage:icon-action.png[""] menu.
+. Gestisci i tuoi aggregati dalle opzioni disponibili nel image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] menu.
 
 
 
@@ -43,7 +43,7 @@ ifdef::aws[]
 
 Per AWS, è possibile aumentare la capacità di un aggregato che supporta Amazon EBS Elastic Volumes.
 
-. Sotto ilimage:icon-action.png[""] menu, fare clic su *Aumenta capacità*.
+. Nel menu image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"], fai clic su *Aumenta capacità*.
 . Inserisci la capacità aggiuntiva che desideri aggiungere e poi clicca su *Aumenta*.
 
 

@@ -457,7 +457,7 @@ Questi passaggi descrivono come utilizzare ONTAP System Manager per la versione 
 
 .Passi
 . Nel sistema Cloud Volumes ONTAP , fare clic sulla scheda *Aggregati*.
-. Sulla tessera aggregata richiesta, fare clic suimage:icon-action.png[""] icona, quindi seleziona *Visualizza dettagli aggregati*.
+. Sulla casella dell'aggregato richiesto, fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] e poi seleziona *Visualizza dettagli aggregato*.
 +
 image:screenshots_aggregate_details_state.png["Screenshot: mostra il campo Stato quando si visualizzano le informazioni per un aggregato."]
 
@@ -574,7 +574,7 @@ Sono disponibili due percorsi.  Il percorso corretto dipende dalla versione dell
 ** `/opt/application/netapp/cloudmanager/ontap/images/`
 
 
-. Nel sistema, fare clic suimage:icon-action.png[""] icona, quindi fare clic su *Aggiorna Cloud Volumes ONTAP*.
+. Sul sistema, fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] e poi su *Aggiorna Cloud Volumes ONTAP*.
 . Nella pagina Aggiorna versione Cloud Volumes ONTAP , immettere l'URL, quindi fare clic su *Modifica immagine*.
 +
 Se hai copiato l'immagine del software nell'agente Console nel percorso indicato sopra, dovresti immettere il seguente URL:

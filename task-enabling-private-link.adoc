@@ -38,7 +38,7 @@ L'agente della console deve essere distribuito nella stessa regione di Azure dei
 
 .Passi
 . Dal riquadro di navigazione a sinistra, vai su *Amministrazione > Agenti*.
-. Fare clic suimage:icon-action.png[""] icona per l'agente Console che gestisce il sistema Cloud Volumes ONTAP .
+. Fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] dell'agente Console che gestisce il tuo sistema Cloud Volumes ONTAP.
 . Selezionare *Impostazioni Cloud Volumes ONTAP *.
 +
 image::screenshot-settings-cloud-volumes-ontap.png[Uno screenshot dell'opzione Impostazioni Cloud Volumes ONTAP sotto l'icona Impostazioni.]
