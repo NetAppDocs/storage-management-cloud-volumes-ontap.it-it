@@ -28,7 +28,7 @@ Se non disponi ancora di un agente Console, creane uno prima di distribuire Clou
  a| 
 Consulta la guida all'installazione della console: https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html["Crea un agente Console in Google Cloud"^]
  a| 
-Se distribuisci in una sottorete senza accesso a Internet, installa manualmente l'agente Console e accedi all'interfaccia utente di NetApp Console in esecuzione su quell'agente Console. Consulta la guida di configurazione di Console: https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["Installa manualmente l'agente della Console senza accesso a Internet"^]
+Se distribuisci in una sottorete senza accesso a Internet, installa manualmente l'agente Console e accedi all'interfaccia utente di NetApp Console in esecuzione su quell'agente Console. Consulta la guida all'installazione della console: https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Installa manualmente l'agente della Console senza accesso a Internet"^]
 
 
 
@@ -70,7 +70,7 @@ Cloud Volumes ONTAP richiede un account di servizio Google Cloud per abilitare i
  a| 
 * link:task-creating-gcp-service-account.html["Configura un account di servizio"]
 * link:concept-data-tiering.html["Scopri la stratificazione dei dati"]
-* Fare riferimento a https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery documenti"^]
+* Fare riferimento a https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["NetApp Backup and Recovery documenti"^]
 
  a| 
 Nessuna considerazione aggiuntiva per le implementazioni in modalità privata.
@@ -109,7 +109,7 @@ Prima di iniziare la distribuzione, assicurati di aver acquistato una licenza Cl
 
 |===
 .Link correlati
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html["Creazione di un agente Console"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html["Installazione del software dell'agente Console su un host Linux"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-google.html["Creazione di un agente Console"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html["Installazione del software dell'agente Console su un host Linux"^]
 * https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html["Autorizzazioni di Google Cloud per l'agente della console"^]
 

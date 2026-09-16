@@ -21,7 +21,7 @@ Dopo aver deciso quale opzione di licenza utilizzare con Cloud Volumes ONTAP, so
 [[freemium]]
 == Freemium
 
-Seleziona l'offerta Freemium per utilizzare Cloud Volumes ONTAP gratuitamente con una capacità fornita fino a 500 GiB. link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#packages["Scopri di più sull'offerta Freemium"^] .
+Seleziona l'offerta Freemium per usare Cloud Volumes ONTAP gratis con una capacità di provisioning fino a 500 GiB. link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#packages["Scopri di più sull'offerta Freemium"^].
 
 .Passi
 . Dal menu di navigazione a sinistra della NetApp Console, selezionare *Storage > Gestione*.
@@ -29,7 +29,7 @@ Seleziona l'offerta Freemium per utilizzare Cloud Volumes ONTAP gratuitamente co
 +
 .. Nella pagina *Dettagli e credenziali*, fare clic su *Modifica credenziali > Aggiungi sottoscrizione* e quindi seguire le istruzioni per sottoscrivere l'offerta con pagamento in base al consumo in Azure Marketplace.
 +
-Non ti verrà addebitato alcun costo tramite l'abbonamento al marketplace a meno che tu non superi i 500 GiB di capacità fornita, momento in cui il sistema verrà automaticamente convertito inlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["Pacchetto essenziale"^] .
+Non ti verrà addebitato alcun costo tramite l'abbonamento al marketplace a meno che tu non superi i 500 GiB di capacità allocata, momento in cui il sistema viene automaticamente convertito a link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing["Pacchetto essenziale"^].
 
 +
 image:screenshot-azure-paygo-subscription.png["Uno screenshot dell'opzione di abbonamento PAYGO durante la creazione di un sistema Cloud Volumes ONTAP ."]
@@ -70,11 +70,11 @@ Le sezioni seguenti descrivono come iniziare a utilizzare ciascuno di questi mod
 Paga in anticipo acquistando una licenza (BYOL) da NetApp per distribuire i sistemi Cloud Volumes ONTAP in qualsiasi provider cloud.
 
 
-NOTE: NetApp ha limitato l'acquisto, l'estensione e il rinnovo delle licenze BYOL. Per ulteriori informazioni, consulta  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Disponibilità limitata delle licenze BYOL per Cloud Volumes ONTAP"^] .
+NOTE: NetApp ha limitato l'acquisto, l'estensione e il rinnovo delle licenze BYOL. Per ulteriori informazioni, consulta  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Disponibilità limitata delle licenze BYOL per Cloud Volumes ONTAP"^].
 
 .Passi
 . https://www.netapp.com/forms/sales-contact/["Contatta NetApp Sales per ottenere una licenza"^]
-. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html#add-an-nss-account["Aggiungi il tuo account del sito di supporto NetApp alla console"^]
+. https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html#add-an-nss-account["Aggiungi il tuo account del sito di supporto NetApp alla console"^]
 +
 La Console interroga automaticamente il servizio licenze di NetApp per ottenere dettagli sulle licenze associate al tuo account NetApp Support Site.  Se non ci sono errori, la Console aggiunge automaticamente le licenze alla Console.
 
@@ -128,7 +128,7 @@ image:screenshot-professional.png["Uno screenshot dell'opzione Professional dura
 link:task-deploying-otc-azure.html["Visualizza le istruzioni dettagliate per avviare Cloud Volumes ONTAP in Azure"] .
 
 
-TIP: Puoi gestire gli abbonamenti di Azure Marketplace associati ai tuoi account Azure dalla pagina Impostazioni > Credenziali. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html["Scopri come gestire i tuoi account e abbonamenti Azure"^]
+TIP: Puoi gestire gli abbonamenti ad Azure Marketplace associati ai tuoi account Azure dalla pagina Impostazioni > Credenziali. https://docs.netapp.com/us-en/console-setup-admin/task-adding-azure-accounts.html["Scopri come gestire i tuoi account e abbonamenti Azure"^]
 
 
 

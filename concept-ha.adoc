@@ -94,7 +94,7 @@ Se non è possibile configurare un gateway di transito, sono disponibili indiriz
 
 Prima di distribuire una configurazione HA su più zone di disponibilità, è opportuno esaminare i requisiti per gli indirizzi IP mobili e le tabelle di routing.  Quando si distribuisce la configurazione, è necessario specificare gli indirizzi IP mobili.  Gli indirizzi IP privati vengono creati automaticamente.
 
-Per ulteriori informazioni, fare riferimento a link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs["Requisiti di rete AWS per Cloud Volumes ONTAP HA in più AZ"^] .
+Per maggiori informazioni, consulta link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs["Requisiti di rete AWS per Cloud Volumes ONTAP HA in più AZ"^].
 
 
 

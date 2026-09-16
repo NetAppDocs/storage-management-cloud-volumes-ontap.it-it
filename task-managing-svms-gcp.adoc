@@ -18,7 +18,7 @@ Una VM di archiviazione è una macchina virtuale in esecuzione all'interno di ON
 
 Per creare e gestire ulteriori VM di archiviazione dati in Google Cloud, è necessario utilizzare le API.  Questo perché le API automatizzano il processo di creazione delle VM di archiviazione e di configurazione delle interfacce di rete richieste.  Durante la creazione delle VM di storage, la NetApp Console configura i servizi LIF richiesti, nonché un LIF iSCSI necessario per le comunicazioni SMB/CIFS in uscita dalla VM di storage.
 
-Per informazioni sull'esecuzione delle chiamate API Cloud Volumes ONTAP , fare riferimento a https://docs.netapp.com/us-en/bluexp-automation/cm/your_api_call.html#step-1-select-the-identifie["La tua prima chiamata API"^] .
+Per informazioni sull'esecuzione delle chiamate API di Cloud Volumes ONTAP, fai riferimento a  https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html#step-1-select-the-identifie["La tua prima chiamata API"^].
 
 
 
@@ -152,8 +152,8 @@ In una configurazione a nodo singolo o HA, è possibile rimuovere una VM di arch
 
 
 .Informazioni correlate
-* https://docs.netapp.com/us-en/bluexp-automation/cm/prepare.html["Preparati a utilizzare l'API"^]
-* https://docs.netapp.com/us-en/bluexp-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows["Flussi di lavoro Cloud Volumes ONTAP"^]
-* https://docs.netapp.com/us-en/bluexp-automation/platform/get_identifiers.html#get-the-connector-identifier["Ottieni gli identificatori richiesti"^]
-* https://docs.netapp.com/us-en/bluexp-automation/platform/use_rest_apis.html["Utilizzare le API REST per la NetApp Console"^]
+* https://docs.netapp.com/us-en/console-automation/cm/prepare.html["Preparati a utilizzare l'API"^]
+* https://docs.netapp.com/us-en/console-automation/cm/workflow_processes.html#organization-of-cloud-volumes-ontap-workflows["Flussi di lavoro Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/console-automation/platform/get_identifiers.html#get-the-connector-identifier["Ottieni gli identificatori richiesti"^]
+* https://docs.netapp.com/us-en/console-automation/platform/use_rest_apis.html["Utilizzare le API REST per la NetApp Console"^]
 

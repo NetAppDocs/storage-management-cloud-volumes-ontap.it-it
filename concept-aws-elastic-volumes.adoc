@@ -74,7 +74,7 @@ A partire dalla versione 3.9.19, l'agente Console richiede le seguenti autorizza
 * ec2:ModificaVolume
 
 
-Questi permessi sono inclusi in https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["le policy fornite da NetApp"^]
+Queste autorizzazioni sono incluse in https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["le policy fornite da NetApp"^]
 
 
 
@@ -196,6 +196,6 @@ link:task-manage-aggregates.html["Scopri come aumentare la capacità aggregata"]
 Se il sistema Cloud Volumes ONTAP di destinazione supporta Elastic Volumes, un volume di destinazione verrà posizionato su un aggregato in cui Elastic Volumes è abilitato (a condizione che si scelga un disco gp3 o io1).
 
 +
-https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["Scopri come impostare la replica dei dati"^]
+https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html["Scopri come impostare la replica dei dati"^]
 
 

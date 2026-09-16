@@ -375,7 +375,7 @@ In Cloud Volumes ONTAP con versione 9.13.0 e successive, non è possibile esegui
 
 I tipi di istanza EC2 c4, m4 e r4 consentono più dischi per nodo rispetto ai tipi di istanza EC2 c5, m5 e r5.  Se il numero di dischi per nodo per l'istanza EC2 c4, m4 o r4 in esecuzione è inferiore al limite massimo di spazio su disco per nodo per le istanze c5, m5 e r5, è possibile modificare il tipo di istanza EC2 in c5, m5 o r5.
 
-link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html#disk-and-tiering-limits-by-ec2-instance["Controlla i limiti del disco e del tiering per istanza EC2"^] link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-change-ec2-instance.html["Modifica il tipo di istanza EC2 per Cloud Volumes ONTAP"^]
+link:https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-aws.html#disk-and-tiering-limits-by-ec2-instance["Controlla i limiti del disco e del tiering per istanza EC2"^] link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-change-ec2-instance.html["Modifica il tipo di istanza EC2 per Cloud Volumes ONTAP"^]
 
 Se non è possibile modificare il tipo di istanza, seguire i passaggi in<<Abilitare una rete avanzata>> .
 
@@ -618,6 +618,6 @@ Il valore per _maxDownloadSessions_ può essere 1 o qualsiasi numero intero magg
 
 Si noti che 32 è un valore di esempio. Il valore da utilizzare dipende dalla configurazione NAT e dal numero di sessioni che è possibile avere contemporaneamente.
 
-https://docs.netapp.com/us-en/bluexp-automation/cm/api_ref_resources.html#occmconfig["Scopri di più sulla chiamata API /occm/config"^] .
+https://docs.netapp.com/us-en/console-automation/cm/api_ref_resources.html#occmconfig["Scopri di più sulla chiamata API /occm/config"^].
 
 endif::gcp[]

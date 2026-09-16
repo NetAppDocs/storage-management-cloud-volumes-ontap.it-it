@@ -26,8 +26,8 @@ Prima di iniziare, ti occorre quanto segue.
 [[licensing]]
 * Un agente Console attivo e funzionante.
 +
-** Dovresti avere un https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["Agente console associato al tuo sistema"^] .
-** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Dovresti essere pronto a lasciare l'agente della console sempre in esecuzione"^] .
+** Dovresti avere un  https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-aws.html["Agente console associato al tuo sistema"^].
+** https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Dovresti essere pronto a lasciare l'agente della console sempre in esecuzione"^].
 
 
 * Una comprensione della configurazione che si desidera utilizzare.
@@ -59,7 +59,7 @@ Subito dopo aver creato il sistema, la Console avvia un'istanza di prova nella V
 . [[subscribe]]Nella pagina *Sistemi*, fare clic su *Aggiungi sistema* e seguire le istruzioni.
 . Selezionare *Amazon Web Services* e * Cloud Volumes ONTAP Single Node*.
 . Seleziona *Creazione avanzata*.  Poiché per impostazione predefinita è selezionata la modalità *Creazione rapida*, potrebbe essere visualizzato un messaggio per i valori predefiniti. Fare clic su *Continua*.
-. Se richiesto, https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["creare un agente Console"^] .
+. Se ti viene richiesto, https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-aws.html["creare un agente Console"^].
 . *Dettagli e credenziali*: facoltativamente, modifica le credenziali e l'abbonamento AWS, inserisci un nome di sistema, aggiungi tag se necessario e quindi inserisci una password.
 +
 Alcuni campi di questa pagina sono autoesplicativi.  Nella tabella seguente vengono descritti i campi per i quali potrebbe essere necessaria una guida:
@@ -79,7 +79,7 @@ Alcuni campi di questa pagina sono autoesplicativi.  Nella tabella seguente veng
 | Nome utente e password | Queste sono le credenziali per l'account amministratore del cluster Cloud Volumes ONTAP .  È possibile utilizzare queste credenziali per connettersi a Cloud Volumes ONTAP tramite ONTAP System Manager o ONTAP CLI.  Mantenere il nome utente predefinito _admin_ oppure modificarlo con un nome utente personalizzato. 
 
 
-| Modifica credenziali | Seleziona le credenziali AWS associate all'account in cui desideri distribuire questo sistema.  È anche possibile associare l'abbonamento AWS Marketplace da utilizzare con questo sistema Cloud Volumes ONTAP . Fai clic su *Aggiungi abbonamento* per associare le credenziali selezionate a un nuovo abbonamento al marketplace AWS. L'abbonamento può essere stipulato con un contratto annuale o con il pagamento di Cloud Volumes ONTAP a tariffa oraria. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html["Scopri come aggiungere ulteriori credenziali AWS alla NetApp Console"^] . 
+| Modifica credenziali | Scegli le credenziali AWS associate all'account in cui vuoi distribuire questo sistema. Puoi anche associare l'abbonamento al marketplace AWS da usare con questo sistema Cloud Volumes ONTAP. Fai clic su *Aggiungi abbonamento* per associare le credenziali selezionate a un nuovo abbonamento al marketplace AWS. L'abbonamento può essere per un contratto annuale oppure per pagare Cloud Volumes ONTAP a tariffa oraria. https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["Scopri come aggiungere ulteriori credenziali AWS alla NetApp Console"^]. 
 |===
 +
 
@@ -87,15 +87,15 @@ TIP: Se più utenti IAM lavorano nello stesso account AWS, ogni utente deve abbo
 
 . *Servizi*: mantieni abilitati i servizi o disabilita i singoli servizi che non desideri utilizzare con Cloud Volumes ONTAP.
 +
-** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Scopri di più sulla NetApp Data Classification"^]
-** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Scopri di più su NetApp Backup and Recovery"^]
+** https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["Scopri di più sulla NetApp Data Classification"^]
+** https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["Scopri di più su NetApp Backup and Recovery"^]
 +
 
 TIP: Se si desidera utilizzare WORM e il data tiering, è necessario disabilitare Backup e Recovery e distribuire un sistema Cloud Volumes ONTAP con versione 9.8 o successiva.
 
 
 
-. *Posizione e connettività*: inserisci le informazioni di rete che hai registrato nel https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#collect-networking-information["Foglio di lavoro AWS"^] .
+. *Posizione e connettività*: Inserisci le informazioni di rete che hai registrato in  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config.html#collect-networking-information["Foglio di lavoro AWS"^].
 +
 Nella tabella seguente vengono descritti i campi per i quali potrebbe essere necessaria una guida:
 
@@ -248,11 +248,11 @@ image:screenshot_cot_vol.gif["Screenshot: mostra la pagina Volume compilata per 
 | Dominio DNS | Dominio DNS per la macchina virtuale di archiviazione (SVM) Cloud Volumes ONTAP .  Nella maggior parte dei casi, il dominio è lo stesso del dominio AD. 
 
 
-| Server NTP | Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API. Fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione NetApp Console"^] per i dettagli.  Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS. 
+| Server NTP | Seleziona *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory. Se devi configurare un server NTP utilizzando un indirizzo diverso, allora dovresti usare l'API. Consulta il  https://docs.netapp.com/us-en/console-automation/index.html["Documentazione sull'automazione NetApp Console"^] per i dettagli. Tieni presente che puoi configurare un server NTP solo durante la creazione di un server CIFS. Non è configurabile dopo che hai creato il server CIFS. 
 |===
 . *Profilo di utilizzo, tipo di disco e criterio di suddivisione in livelli*: scegli se abilitare le funzionalità di efficienza dell'archiviazione e modificare il criterio di suddivisione in livelli del volume, se necessario.
 +
-Per maggiori informazioni, fare riferimento alink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#choose-a-volume-usage-profile["Comprensione dei profili di utilizzo del volume"^] ,link:concept-data-tiering.html["Panoramica della suddivisione in livelli dei dati"^] , E https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#["KB: Quali funzionalità di Inline Storage Efficiency sono supportate da CVO?"^]
+Per ulteriori informazioni, fai riferimento a link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config.html#choose-a-volume-usage-profile["Comprensione dei profili di utilizzo del volume"^], link:concept-data-tiering.html["Panoramica della suddivisione in livelli dei dati"^] e  https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#["KB: Quali funzionalità di Inline Storage Efficiency sono supportate da CVO?"^]
 
 . *Rivedi e approva*: rivedi e conferma le tue selezioni.
 +
@@ -327,7 +327,7 @@ Alcuni campi di questa pagina sono autoesplicativi.  Nella tabella seguente veng
 | Nome utente e password | Queste sono le credenziali per l'account amministratore del cluster Cloud Volumes ONTAP .  È possibile utilizzare queste credenziali per connettersi a Cloud Volumes ONTAP tramite ONTAP System Manager o ONTAP CLI.  Mantenere il nome utente predefinito _admin_ oppure modificarlo con un nome utente personalizzato. 
 
 
-| Modifica credenziali | Seleziona le credenziali AWS e l'abbonamento al marketplace da utilizzare con questo sistema Cloud Volumes ONTAP . Fai clic su *Aggiungi abbonamento* per associare le credenziali selezionate a un nuovo abbonamento al marketplace AWS. L'abbonamento può essere stipulato con un contratto annuale o con il pagamento di Cloud Volumes ONTAP a tariffa oraria. Se hai acquistato una licenza direttamente da NetApp (Bring Your Own License (BYOL)), non è necessario un abbonamento AWS. NetApp ha limitato l'acquisto, l'estensione e il rinnovo delle licenze BYOL. Per ulteriori informazioni, consulta  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Disponibilità limitata delle licenze BYOL per Cloud Volumes ONTAP"^] . https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html["Scopri come aggiungere ulteriori credenziali AWS alla Console"^] . 
+| Modifica credenziali | Scegli le credenziali AWS e l'abbonamento al marketplace da utilizzare con questo sistema Cloud Volumes ONTAP. Fai clic su *Aggiungi abbonamento* per associare le credenziali selezionate a un nuovo abbonamento al marketplace AWS. L'abbonamento può essere per un contratto annuale o per pagare Cloud Volumes ONTAP a una tariffa oraria. Se hai acquistato una licenza direttamente da NetApp (porta la tua licenza (BYOL)), non è necessario un abbonamento AWS. NetApp ha limitato l'acquisto, l'estensione e il rinnovo delle licenze BYOL. Per ulteriori informazioni, consulta  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Disponibilità limitata delle licenze BYOL per Cloud Volumes ONTAP"^]. https://docs.netapp.com/us-en/console-setup-admin/task-adding-aws-accounts.html["Scopri come aggiungere ulteriori credenziali AWS alla Console"^]. 
 |===
 +
 
@@ -335,8 +335,8 @@ TIP: Se più utenti IAM lavorano nello stesso account AWS, ogni utente deve abbo
 
 . *Servizi*: mantieni abilitati i servizi o disabilita i singoli servizi che non desideri utilizzare con questo sistema Cloud Volumes ONTAP .
 +
-** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Scopri di più sulla NetApp Data Classification"^]
-** https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Scopri di più su Backup e Ripristino"^]
+** https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["Scopri di più sulla NetApp Data Classification"^]
+** https://docs.netapp.com/us-en/data-services-backup-recovery/task-backup-to-s3.html["Scopri di più su Backup e Ripristino"^]
 +
 
 TIP: Se si desidera utilizzare WORM e il data tiering, è necessario disabilitare Backup e Recovery e distribuire un sistema Cloud Volumes ONTAP con versione 9.8 o successiva.
@@ -371,7 +371,7 @@ Se lasci che sia la Console a generare il gruppo di sicurezza per te, devi scegl
 . *Connettività e autenticazione SSH*: scegliere i metodi di connessione per la coppia HA e il mediatore.
 . *IP mobili*: se hai scelto più AZ, specifica gli indirizzi IP mobili.
 +
-Gli indirizzi IP devono essere esterni al blocco CIDR per tutte le VPC nella regione.  Per ulteriori dettagli, fare riferimento alink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs["Requisiti di rete AWS per Cloud Volumes ONTAP HA in più AZ"^] .
+Gli indirizzi IP devono essere al di fuori del blocco CIDR per tutte le VPC nella regione. Per ulteriori dettagli, consulta link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-aws.html#requirements-for-ha-pairs-in-multiple-azs["Requisiti di rete AWS per Cloud Volumes ONTAP HA in più AZ"^].
 
 . *Tabelle di routing*: se hai scelto più AZ, seleziona le tabelle di routing che devono includere i percorsi verso gli indirizzi IP mobili.
 +
@@ -506,11 +506,11 @@ image:screenshot_cot_vol.gif["Screenshot: mostra la pagina Volume compilata per 
 | Dominio DNS | Dominio DNS per la macchina virtuale di archiviazione (SVM) Cloud Volumes ONTAP .  Nella maggior parte dei casi, il dominio è lo stesso del dominio AD. 
 
 
-| Server NTP | Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API. Fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione NetApp Console"^] per i dettagli.  Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS. 
+| Server NTP | Seleziona *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory. Se devi configurare un server NTP utilizzando un indirizzo diverso, allora dovresti usare l'API. Consulta il  https://docs.netapp.com/us-en/console-automation/index.html["Documentazione sull'automazione NetApp Console"^] per i dettagli. Tieni presente che puoi configurare un server NTP solo durante la creazione di un server CIFS. Non è configurabile dopo che hai creato il server CIFS. 
 |===
 . *Profilo di utilizzo, tipo di disco e criterio di suddivisione in livelli*: scegli se abilitare le funzionalità di efficienza dell'archiviazione e modificare il criterio di suddivisione in livelli del volume, se necessario.
 +
-Per maggiori informazioni, fare riferimento alink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#choose-a-volume-usage-profile["Scegli un profilo di utilizzo del volume"^] Elink:concept-data-tiering.html["Panoramica della suddivisione in livelli dei dati"^] .
+Per ulteriori informazioni, fare riferimento a link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config.html#choose-a-volume-usage-profile["Scegli un profilo di utilizzo del volume"^] e link:concept-data-tiering.html["Panoramica della suddivisione in livelli dei dati"^].
 
 . *Rivedi e approva*: rivedi e conferma le tue selezioni.
 +

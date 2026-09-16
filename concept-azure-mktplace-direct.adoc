@@ -67,5 +67,5 @@ Tipi di istanza Eds_v5 e Ls_v3
 .Link correlati
 * Distribuzione diretta di Azure Marketplace:link:task-deploy-cvo-azure-mktplc.html["Distribuisci Cloud Volumes ONTAP dal marketplace di Azure"]
 * Distribuzione tramite la console:link:task-getting-started-azure.html["Avvio rapido per Cloud Volumes ONTAP in Azure"]
-* https://docs.netapp.com/us-en/bluexp-family/index.html["Documentazione NetApp Console"^]
+* link:https://docs.netapp.com/us-en/console-family/index.html["Documentazione NetApp Console"^]
 

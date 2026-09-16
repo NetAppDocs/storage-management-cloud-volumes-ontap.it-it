@@ -30,7 +30,7 @@ In Azure devono essere soddisfatti i seguenti requisiti di rete.
 
 I sistemi Cloud Volumes ONTAP necessitano di accesso a Internet in uscita per accedere agli endpoint esterni per varie funzioni.  Cloud Volumes ONTAP non può funzionare correttamente se questi endpoint sono bloccati in ambienti con requisiti di sicurezza rigorosi.
 
-L'agente della console contatta anche diversi endpoint per le operazioni quotidiane.  Per informazioni sugli endpoint, fare riferimento a https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking["Visualizza gli endpoint contattati dall'agente della console"^] E https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html["Preparare la rete per l'utilizzo della console"^] .
+L'agente Console contatta anche diversi endpoint per le operazioni quotidiane. Per informazioni sugli endpoint, fai riferimento a  https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking["Visualizza gli endpoint contattati dall'agente della console"^] e  https://docs.netapp.com/us-en/console-setup-admin/reference-networking-saas-console.html["Preparare la rete per l'utilizzo della console"^].
 
 
 
@@ -89,7 +89,7 @@ L'autenticazione dell'utente fallisce e i seguenti servizi rimangono non disponi
 * *Proxy trasparente*: la rete è configurata per instradare automaticamente il traffico in uscita da Cloud Volumes ONTAP tramite il proxy per l'agente della console.  Quando si configura un proxy trasparente, l'amministratore deve fornire solo un certificato CA radice per la connettività da Cloud Volumes ONTAP, non l'indirizzo HTTP del server proxy.  Assicurati di ottenere e caricare lo stesso certificato CA radice sul tuo sistema Cloud Volumes ONTAP utilizzando https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html["ONTAP CLI: installazione del certificato di sicurezza"^] comando.
 
 
-Per informazioni sulla configurazione dei server proxy, fare riferimento a https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurare l'agente della console per utilizzare un server proxy"^] .
+Per informazioni sulla configurazione dei server proxy, consulta  https://docs.netapp.com/us-en/console-setup-admin/task-configuring-proxy.html["Configurare l'agente della console per utilizzare un server proxy"^].
 
 
 
@@ -224,7 +224,7 @@ La console riscontra problemi di connessione se si tenta di distribuire una seco
 [[security-group-rules]]
 === Regole del gruppo di sicurezza
 
-La console crea gruppi di sicurezza di Azure che includono le regole in ingresso e in uscita affinché Cloud Volumes ONTAP funzioni correttamente. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-azure.html["Visualizza le regole del gruppo di sicurezza per l'agente della console"^] .
+La Console crea gruppi di sicurezza di Azure che includono le regole inbound e outbound per consentire il corretto funzionamento di Cloud Volumes ONTAP  https://docs.netapp.com/us-en/console-setup-admin/reference-ports-azure.html["Visualizza le regole del gruppo di sicurezza per l'agente della console"^].
 
 I gruppi di sicurezza di Azure per Cloud Volumes ONTAP richiedono che le porte appropriate siano aperte per la comunicazione interna tra i nodi. https://docs.netapp.com/us-en/ontap/networking/ontap_internal_ports.html["Scopri di più sulle porte interne ONTAP"^] .
 
@@ -505,8 +505,8 @@ NOTE: La sorgente è l'interfaccia (indirizzo IP) sul sistema Cloud Volumes ONTA
 
 Se non hai ancora creato un agente Console, dovresti anche esaminare i requisiti di rete per l'agente Console.
 
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["Visualizza i requisiti di rete per l'agente della console"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-azure.html["Regole del gruppo di sicurezza in Azure"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["Visualizza i requisiti di rete per l'agente della console"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-ports-azure.html["Regole del gruppo di sicurezza in Azure"^]
 
 
 .Link correlato

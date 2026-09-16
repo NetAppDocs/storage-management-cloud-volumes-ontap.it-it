@@ -371,4 +371,4 @@ Il gruppo di sicurezza predefinito include le seguenti regole in uscita.
 [[rules-for-the-console-agent]]
 == Regole per l'agente della console
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html["Visualizza le regole del gruppo di sicurezza per l'agente della console"^]
+https://docs.netapp.com/us-en/console-setup-admin/reference-ports-aws.html["Visualizza le regole del gruppo di sicurezza per l'agente della console"^]

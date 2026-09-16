@@ -112,10 +112,10 @@ Per informazioni su IOPS e velocità effettiva in base alle dimensioni del disco
 
 Oltre allo storage per i dati utente, la Console acquista anche storage cloud per i dati di sistema Cloud Volumes ONTAP (dati di avvio, dati root, dati core e NVRAM).  Ai fini della pianificazione, potrebbe essere utile rivedere questi dettagli prima di distribuire Cloud Volumes ONTAP.
 
-link:reference-default-configs.html#azure-single-node["Visualizza i dischi predefiniti per i dati di sistema Cloud Volumes ONTAP in Azure"] .
+link:reference-configs-azure.html#azure-single-node["Visualizza i dischi predefiniti per i dati di sistema Cloud Volumes ONTAP in Azure"].
 
 
-TIP: L'agente Console richiede anche un disco di sistema. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-connector-default-config.html["Visualizza i dettagli sulla configurazione predefinita dell'agente della console"^] .
+TIP: Anche l'agente Console richiede un disco di sistema. https://docs.netapp.com/us-en/console-setup-admin/reference-connector-default-config.html["Visualizza i dettagli sulla configurazione predefinita dell'agente della console"^].
 
 
 

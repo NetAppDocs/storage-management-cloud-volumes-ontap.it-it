@@ -22,8 +22,8 @@ Prima di iniziare, ti occorre quanto segue.
 [[licensing]]
 * Un agente Console attivo e funzionante.
 +
-** Dovresti avere un https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["Agente console associato al tuo sistema"^] .
-** https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Dovresti essere pronto a lasciare l'agente della console sempre in esecuzione"^] .
+** Dovresti avere un  https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["Agente console associato al tuo sistema"^].
+** https://docs.netapp.com/us-en/console-setup-admin/concept-connectors.html["Dovresti essere pronto a lasciare l'agente della console sempre in esecuzione"^].
 
 
 * Una comprensione della configurazione che si desidera utilizzare.
@@ -58,7 +58,7 @@ Se si desidera avviare un sistema Cloud Volumes ONTAP a nodo singolo in Azure, �
 . Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
 . [[subscribe]]Nella pagina *Sistemi*, fare clic su *Aggiungi sistema* e seguire le istruzioni.
 . *Scegli una posizione*: seleziona *Microsoft Azure* e * Cloud Volumes ONTAP Single Node*.
-. Se richiesto, https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["creare un agente Console"^] .
+. Se ti viene richiesto https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["creare un agente Console"^].
 . *Dettagli e credenziali*: facoltativamente, modifica le credenziali e la sottoscrizione di Azure, specifica un nome per il cluster, aggiungi tag se necessario e quindi specifica le credenziali.
 +
 Nella tabella seguente vengono descritti i campi per i quali potrebbe essere necessaria una guida:
@@ -78,12 +78,12 @@ Nella tabella seguente vengono descritti i campi per i quali potrebbe essere nec
 | Nome utente e password | Queste sono le credenziali per l'account amministratore del cluster Cloud Volumes ONTAP .  È possibile utilizzare queste credenziali per connettersi a Cloud Volumes ONTAP tramite ONTAP System Manager o ONTAP CLI.  Mantenere il nome utente predefinito _admin_ oppure modificarlo con un nome utente personalizzato. 
 
 
-| Modifica credenziali | È possibile scegliere credenziali Azure diverse e un abbonamento Azure diverso da utilizzare con questo sistema Cloud Volumes ONTAP .  Per distribuire un sistema Cloud Volumes ONTAP con pagamento in base al consumo, è necessario associare una sottoscrizione di Azure Marketplace alla sottoscrizione di Azure selezionata. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html["Scopri come aggiungere le credenziali"^] . 
+| Modifica credenziali | Puoi scegliere credenziali Azure e una sottoscrizione Azure diverse da usare con questo sistema Cloud Volumes ONTAP. Devi associare una sottoscrizione Azure Marketplace alla sottoscrizione Azure selezionata per poter distribuire un sistema Cloud Volumes ONTAP pay-as-you-go. https://docs.netapp.com/us-en/console-setup-admin/task-adding-azure-accounts.html["Scopri come aggiungere le credenziali"^]. 
 |===
 . *Servizi*: abilita o disabilita i singoli servizi che desideri o non desideri utilizzare con Cloud Volumes ONTAP.
 +
-** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Scopri di più sulla NetApp Data Classification"^]
-** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Scopri di più su NetApp Backup and Recovery"^]
+** https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["Scopri di più sulla NetApp Data Classification"^]
+** https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["Scopri di più su NetApp Backup and Recovery"^]
 +
 
 TIP: Se si desidera utilizzare WORM e il data tiering, è necessario disabilitare Backup e Recovery e distribuire un sistema Cloud Volumes ONTAP con versione 9.8 o successiva.
@@ -109,7 +109,7 @@ Nella tabella seguente vengono descritti i campi per i quali potrebbe essere nec
 Crea un nuovo gruppo di risorse per Cloud Volumes ONTAP oppure utilizza un gruppo di risorse esistente.  La procedura consigliata è quella di utilizzare un nuovo gruppo di risorse dedicato per Cloud Volumes ONTAP.  Sebbene sia possibile distribuire Cloud Volumes ONTAP in un gruppo di risorse condiviso esistente, questa operazione non è consigliata a causa del rischio di perdita di dati.  Per maggiori dettagli, vedere l'avviso sopra.
 
 
-TIP: Se l'account Azure che stai utilizzando ha il https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["permessi richiesti"^] , la Console rimuove le risorse Cloud Volumes ONTAP da un gruppo di risorse, in caso di errore di distribuzione o eliminazione.
+TIP: Se l'account Azure che stai utilizzando ha la  https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html["permessi richiesti"^], la Console rimuove le risorse Cloud Volumes ONTAP da un gruppo di risorse, in caso di errore di distribuzione o eliminazione.
 
 
 
@@ -122,7 +122,7 @@ Se lasci che sia la Console a generare il gruppo di sicurezza per te, devi scegl
 
 
 
-| Utilizzare esistente | Se si sceglie un gruppo di sicurezza esistente, questo deve soddisfare i requisiti di Cloud Volumes ONTAP . link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules["Visualizza il gruppo di sicurezza predefinito"^] . 
+| Utilizzare esistente | Se scegli un gruppo di sicurezza esistente, deve soddisfare i requisiti di Cloud Volumes ONTAP. link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules["Visualizza il gruppo di sicurezza predefinito"^]. 
 |===
 . *Metodi di addebito e account NSS*: specifica quale opzione di addebito desideri utilizzare con questo sistema, quindi specifica un account del sito di supporto NetApp .
 +
@@ -149,7 +149,7 @@ Notare quanto segue:
 ** Il tipo di disco è per il volume iniziale.  È possibile scegliere un tipo di disco diverso per i volumi successivi.
 ** La dimensione del disco si riferisce a tutti i dischi nell'aggregato iniziale e a tutti gli aggregati aggiuntivi creati dalla Console quando si utilizza l'opzione di provisioning semplice.  È possibile creare aggregati che utilizzano dimensioni del disco diverse utilizzando l'opzione di allocazione avanzata.
 +
-Per assistenza nella scelta del tipo e della dimensione del disco, fare riferimento alink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure["Dimensionamento del sistema in Azure"^] .
+Per assistenza nella scelta del tipo e delle dimensioni del disco, consulta link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure["Dimensionamento del sistema in Azure"^].
 
 ** Quando si crea o si modifica un volume, è possibile scegliere una specifica politica di suddivisione in livelli del volume.
 ** Se si disabilita la suddivisione in livelli dei dati, è possibile abilitarla sugli aggregati successivi.
@@ -166,7 +166,7 @@ link:concept-write-speed.html["Scopri di più sulla velocità di scrittura"^] .
 
 .. Se lo si desidera, attivare la memorizzazione WORM (write once, read many).
 +
-Questa opzione è disponibile solo per alcuni tipi di VM. Per scoprire quali tipi di VM sono supportati, consulta link:link:reference-configs-azure.html#ha-pairs["Configurazioni supportate per licenza per coppie HA"].
+Questa opzione è disponibile solo per alcuni tipi di VM. Per scoprire quali tipi di VM sono supportati, consulta link:reference-configs-azure.html#ha-pairs["Configurazioni supportate per licenza per coppie HA"].
 
 +
 WORM non può essere abilitato se il tiering dei dati è stato abilitato per Cloud Volumes ONTAP versione 9.7 e precedenti.  Il ripristino o il downgrade a Cloud Volumes ONTAP 9.8 è bloccato dopo l'abilitazione di WORM e del tiering.
@@ -238,11 +238,11 @@ image:screenshot_cot_vol.gif["Screenshot: mostra la pagina Volume compilata per 
 | Dominio DNS | Dominio DNS per la macchina virtuale di archiviazione (SVM) Cloud Volumes ONTAP .  Nella maggior parte dei casi, il dominio è lo stesso del dominio AD. 
 
 
-| Server NTP | Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API. Fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione NetApp Console"^] per i dettagli.  Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS. 
+| Server NTP | Seleziona *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory. Se devi configurare un server NTP utilizzando un indirizzo diverso, allora dovresti usare l'API. Consulta il  https://docs.netapp.com/us-en/console-automation/index.html["Documentazione sull'automazione NetApp Console"^] per i dettagli. Tieni presente che puoi configurare un server NTP solo durante la creazione di un server CIFS. Non è configurabile dopo che hai creato il server CIFS. 
 |===
 . *Profilo di utilizzo, tipo di disco e criterio di suddivisione in livelli*: scegli se abilitare le funzionalità di efficienza dell'archiviazione e modificare il criterio di suddivisione in livelli del volume, se necessario.
 +
-Per maggiori informazioni, fare riferimento alink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#choose-a-volume-usage-profile["Comprensione dei profili di utilizzo del volume"^] Elink:concept-data-tiering.html["Panoramica della suddivisione in livelli dei dati"^] .
+Per ulteriori informazioni, fare riferimento a link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-azure.html#choose-a-volume-usage-profile["Comprensione dei profili di utilizzo del volume"^] e link:concept-data-tiering.html["Panoramica della suddivisione in livelli dei dati"^].
 
 . *Rivedi e approva*: rivedi e conferma le tue selezioni.
 +
@@ -282,7 +282,7 @@ Se si desidera avviare una coppia Cloud Volumes ONTAP HA in Azure, è necessario
 .Passi
 . Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
 . [[subscribe]]Nella pagina *Sistemi*, fare clic su *Aggiungi sistema* e seguire le istruzioni.
-. Se richiesto, https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["creare un agente Console"^] .
+. Se ti viene richiesto https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-connector-azure.html["creare un agente Console"^].
 . *Dettagli e credenziali*: facoltativamente, modifica le credenziali e la sottoscrizione di Azure, specifica un nome per il cluster, aggiungi tag se necessario e quindi specifica le credenziali.
 +
 Nella tabella seguente vengono descritti i campi per i quali potrebbe essere necessaria una guida:
@@ -302,12 +302,12 @@ Nella tabella seguente vengono descritti i campi per i quali potrebbe essere nec
 | Nome utente e password | Queste sono le credenziali per l'account amministratore del cluster Cloud Volumes ONTAP .  È possibile utilizzare queste credenziali per connettersi a Cloud Volumes ONTAP tramite ONTAP System Manager o ONTAP CLI.  Mantenere il nome utente predefinito _admin_ oppure modificarlo con un nome utente personalizzato. 
 
 
-| Modifica credenziali | È possibile scegliere credenziali Azure diverse e un abbonamento Azure diverso da utilizzare con questo sistema Cloud Volumes ONTAP .  Per distribuire un sistema Cloud Volumes ONTAP con pagamento in base al consumo, è necessario associare una sottoscrizione di Azure Marketplace alla sottoscrizione di Azure selezionata. https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html["Scopri come aggiungere le credenziali"^] . 
+| Modifica credenziali | Puoi scegliere credenziali Azure e una sottoscrizione Azure diverse da usare con questo sistema Cloud Volumes ONTAP. Devi associare una sottoscrizione Azure Marketplace alla sottoscrizione Azure selezionata per poter distribuire un sistema Cloud Volumes ONTAP pay-as-you-go. https://docs.netapp.com/us-en/console-setup-admin/task-adding-azure-accounts.html["Scopri come aggiungere le credenziali"^]. 
 |===
 . *Servizi*: abilita o disabilita i singoli servizi a seconda che tu voglia utilizzarli con Cloud Volumes ONTAP.
 +
-** https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html["Scopri di più sulla NetApp Data Classification"^]
-** https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Scopri di più su NetApp Backup and Recovery"^]
+** https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html["Scopri di più sulla NetApp Data Classification"^]
+** https://docs.netapp.com/us-en/data-services-backup-recovery/concept-backup-to-cloud.html["Scopri di più su NetApp Backup and Recovery"^]
 +
 
 TIP: Se si desidera utilizzare WORM e il data tiering, è necessario disabilitare Backup e Recovery e distribuire un sistema Cloud Volumes ONTAP con versione 9.8 o successiva.
@@ -344,7 +344,7 @@ Crea un nuovo gruppo di risorse per Cloud Volumes ONTAP oppure utilizza un grupp
 È necessario utilizzare un gruppo di risorse dedicato per ogni coppia Cloud Volumes ONTAP HA distribuita in Azure.  In un gruppo di risorse è supportata solo una coppia HA.  La console riscontra problemi di connessione se si tenta di distribuire una seconda coppia Cloud Volumes ONTAP HA in un gruppo di risorse di Azure.
 
 
-TIP: Se l'account Azure che stai utilizzando ha il https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["permessi richiesti"^] , la Console rimuove le risorse Cloud Volumes ONTAP da un gruppo di risorse, in caso di errore di distribuzione o eliminazione.
+TIP: Se l'account Azure che stai utilizzando ha la  https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html["permessi richiesti"^], la Console rimuove le risorse Cloud Volumes ONTAP da un gruppo di risorse, in caso di errore di distribuzione o eliminazione.
 
 
 
@@ -357,7 +357,7 @@ Se lasci che sia la Console a generare il gruppo di sicurezza per te, devi scegl
 
 
 
-| Utilizzare esistente | Se si sceglie un gruppo di sicurezza esistente, questo deve soddisfare i requisiti di Cloud Volumes ONTAP . link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules["Visualizza il gruppo di sicurezza predefinito"^] . 
+| Utilizzare esistente | Se scegli un gruppo di sicurezza esistente, deve soddisfare i requisiti di Cloud Volumes ONTAP. link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-azure.html#security-group-rules["Visualizza il gruppo di sicurezza predefinito"^]. 
 |===
 . *Metodi di addebito e account NSS*: specifica quale opzione di addebito desideri utilizzare con questo sistema, quindi specifica un account del sito di supporto NetApp .
 +
@@ -382,7 +382,7 @@ Notare quanto segue:
 +
 ** La dimensione del disco si riferisce a tutti i dischi nell'aggregato iniziale e a tutti gli aggregati aggiuntivi creati dalla Console quando si utilizza l'opzione di provisioning semplice.  È possibile creare aggregati che utilizzano dimensioni del disco diverse utilizzando l'opzione di allocazione avanzata.
 +
-Per assistenza nella scelta della dimensione del disco, fare riferimento alink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure["Dimensiona il tuo sistema in Azure"^] .
+Per assistenza nella scelta della dimensione del disco, fai riferimento a link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure["Dimensiona il tuo sistema in Azure"^].
 
 ** Se l'accesso pubblico al tuo account di archiviazione è disabilitato all'interno della VNet, non puoi abilitare la suddivisione in livelli dei dati nel tuo sistema Cloud Volumes ONTAP .  Per informazioni, fare riferimento alink:reference-networking-azure.html#security-group-rules["Regole del gruppo di sicurezza"] .
 ** Quando si crea o si modifica un volume, è possibile scegliere una specifica politica di suddivisione in livelli del volume.
@@ -392,7 +392,7 @@ link:concept-data-tiering.html["Scopri di più sulla suddivisione in livelli dei
 
 ** A partire da Cloud Volumes ONTAP 9.15.0P1, i BLOB di pagine di Azure non sono più supportati per le nuove distribuzioni di coppie ad alta disponibilità.  Se attualmente si utilizzano BLOB di pagine di Azure in distribuzioni di coppie ad alta disponibilità esistenti, è possibile eseguire la migrazione a tipi di istanze di VM più recenti nelle VM della serie Edsv4 e nelle VM della serie Edsv5.
 +
-link:link:reference-configs-azure.html#ha-pairs["Scopri di più sulle configurazioni supportate in Azure"^].
+link:reference-configs-azure.html#ha-pairs["Scopri di più sulle configurazioni supportate in Azure"^].
 
 
 
@@ -404,7 +404,7 @@ link:concept-write-speed.html["Scopri di più sulla velocità di scrittura"^] .
 
 .. Se lo si desidera, attivare la memorizzazione WORM (write once, read many).
 +
-Questa opzione è disponibile solo per alcuni tipi di VM. Per scoprire quali tipi di VM sono supportati, consulta link:link:reference-configs-azure.html#ha-pairs["Configurazioni supportate per licenza per coppie HA"^].
+Questa opzione è disponibile solo per alcuni tipi di VM. Per scoprire quali tipi di VM sono supportati, consulta link:reference-configs-azure.html#ha-pairs["Configurazioni supportate per licenza per coppie HA"^].
 
 +
 WORM non può essere abilitato se il tiering dei dati è stato abilitato per Cloud Volumes ONTAP versione 9.7 e precedenti.  Il ripristino o il downgrade a Cloud Volumes ONTAP 9.8 è bloccato dopo l'abilitazione di WORM e del tiering.
@@ -489,11 +489,11 @@ image:screenshot_cot_vol.gif["Screenshot: mostra la pagina Volume compilata per 
 | Dominio DNS | Dominio DNS per la macchina virtuale di archiviazione (SVM) Cloud Volumes ONTAP .  Nella maggior parte dei casi, il dominio è lo stesso del dominio AD. 
 
 
-| Server NTP | Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API. Fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione NetApp Console"^] per i dettagli.  Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS. 
+| Server NTP | Seleziona *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory. Se devi configurare un server NTP utilizzando un indirizzo diverso, allora dovresti usare l'API. Consulta il  https://docs.netapp.com/us-en/console-automation/index.html["Documentazione sull'automazione NetApp Console"^] per i dettagli. Tieni presente che puoi configurare un server NTP solo durante la creazione di un server CIFS. Non è configurabile dopo che hai creato il server CIFS. 
 |===
 . *Profilo di utilizzo, tipo di disco e criterio di suddivisione in livelli*: scegli se abilitare le funzionalità di efficienza dell'archiviazione e modificare il criterio di suddivisione in livelli del volume, se necessario.
 +
-Per maggiori informazioni, fare riferimento alink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#choose-a-volume-usage-profile["Scegli un profilo di utilizzo del volume"^] ,link:concept-data-tiering.html["Panoramica della suddivisione in livelli dei dati"^] , E https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#["KB: Quali funzionalità di Inline Storage Efficiency sono supportate da CVO?"^]
+Per ulteriori informazioni, fai riferimento a link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-azure.html#choose-a-volume-usage-profile["Scegli un profilo di utilizzo del volume"^], link:concept-data-tiering.html["Panoramica della suddivisione in livelli dei dati"^] e  https://kb.netapp.com/Cloud/Cloud_Volumes_ONTAP/What_Inline_Storage_Efficiency_features_are_supported_with_CVO#["KB: Quali funzionalità di Inline Storage Efficiency sono supportate da CVO?"^]
 
 . *Rivedi e approva*: rivedi e conferma le tue selezioni.
 +

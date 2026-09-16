@@ -24,7 +24,7 @@ TIP: Un sistema non registrato per il supporto riceverà comunque le notifiche d
 .Passi
 . Se non hai ancora aggiunto il tuo account NetApp Support Site alla Console, vai su *Impostazioni account* e aggiungilo ora.
 +
-https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html["Scopri come aggiungere account al sito di supporto NetApp"^] .
+https://docs.netapp.com/us-en/console-setup-admin/task-adding-nss-accounts.html["Scopri come aggiungere account al sito di supporto NetApp"^].
 
 . Nella pagina *Sistemi*, fare doppio clic sul nome del sistema che si desidera registrare.
 . Nella scheda Panoramica, fare clic sul pannello Funzionalità e quindi sull'icona della matita accanto a *Registrazione supporto*.

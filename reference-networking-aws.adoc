@@ -30,7 +30,7 @@ Assicurati di aver soddisfatto i seguenti requisiti in AWS.
 
 I sistemi Cloud Volumes ONTAP necessitano di accesso a Internet in uscita per accedere agli endpoint esterni per varie funzioni.  Cloud Volumes ONTAP non può funzionare correttamente se questi endpoint sono bloccati in ambienti con requisiti di sicurezza rigorosi.
 
-L'agente della console contatta diversi endpoint per le operazioni quotidiane.  Per informazioni sugli endpoint utilizzati, fare riferimento a https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking["Visualizza gli endpoint contattati dall'agente della console"^] E https://docs.netapp.com/us-en/bluexp-setup-admin/reference-networking-saas-console.html["Preparare la rete per l'utilizzo della console"^] .
+L'agente Console contatta diversi endpoint per le operazioni quotidiane. Per informazioni sugli endpoint utilizzati, fai riferimento a  https://docs.netapp.com/us-en/console-setup-admin/task-install-connector-on-prem.html#step-3-set-up-networking["Visualizza gli endpoint contattati dall'agente della console"^] e  https://docs.netapp.com/us-en/console-setup-admin/reference-networking-saas-console.html["Preparare la rete per l'utilizzo della console"^].
 
 
 
@@ -108,7 +108,7 @@ Durante la distribuzione di Cloud Volumes ONTAP, il campo proxy del mediatore AW
 * *Proxy trasparente*: la rete è configurata per instradare automaticamente il traffico in uscita da Cloud Volumes ONTAP tramite il proxy per l'agente della console.  Quando si configura un proxy trasparente, l'amministratore deve fornire solo un certificato CA radice per la connettività da Cloud Volumes ONTAP, non l'indirizzo HTTP del server proxy.  Assicurati di ottenere e caricare lo stesso certificato CA radice sul tuo sistema Cloud Volumes ONTAP utilizzando https://docs.netapp.com/us-en/ontap-cli/security-certificate-install.html["ONTAP CLI: installazione del certificato di sicurezza"^] comando.
 
 
-Per informazioni sulla configurazione dei server proxy, fare riferimento a https://docs.netapp.com/us-en/bluexp-setup-admin/task-configuring-proxy.html["Configurare l'agente della console per utilizzare un server proxy"^] .
+Per informazioni sulla configurazione dei server proxy, consulta  https://docs.netapp.com/us-en/console-setup-admin/task-configuring-proxy.html["Configurare l'agente della console per utilizzare un server proxy"^].
 
 
 
@@ -228,7 +228,7 @@ TIP: Quando distribuiti in più zone di disponibilità, diversi LIF sono associa
 Non è necessario creare gruppi di sicurezza perché la Console lo fa per te.  Se devi usare il tuo, fai riferimento alink:reference-security-groups.html["Regole del gruppo di sicurezza"] .
 
 
-TIP: Cerchi informazioni sull'agente Console? https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html["Visualizza le regole del gruppo di sicurezza per l'agente della console"^]
+TIP: Cerchi informazioni sull'agente Console? https://docs.netapp.com/us-en/console-setup-admin/reference-ports-aws.html["Visualizza le regole del gruppo di sicurezza per l'agente della console"^]
 
 
 
@@ -340,8 +340,8 @@ image:diagram_ha_networking.png["Immagine concettuale che mostra i componenti di
 
 Se non hai ancora creato un agente Console, dovresti rivedere i requisiti di rete.
 
-* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-install-options-aws.html["Visualizza i requisiti di rete per l'agente della console"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/reference-ports-aws.html["Regole del gruppo di sicurezza in AWS"^]
+* https://docs.netapp.com/us-en/console-setup-admin/concept-install-options-aws.html["Visualizza i requisiti di rete per l'agente della console"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-ports-aws.html["Regole del gruppo di sicurezza in AWS"^]
 
 
 .Link correlato

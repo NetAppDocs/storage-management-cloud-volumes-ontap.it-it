@@ -131,7 +131,7 @@ Per impostazione predefinita, un volume aumenta automaticamente fino a raggiunge
 Se è necessario ridimensionare il volume, è possibile farlo da ONTAP System Manager nella Console.
 
 .Passi
-. Fare clic sulla vista System Manager per ridimensionare un volume tramite ONTAP System Manager. Fare riferimento a link:task-administer-advanced-view.html#how-to-get-started["Come iniziare"] .
+. Seleziona la vista System Manager per ridimensionare un volume tramite ONTAP System Manager. Fai riferimento a link:task-administer-advanced-view.html#get-started-with-system-manager["Inizia con System Manager"].
 . Dal menu di navigazione a sinistra, seleziona *Archiviazione > Volumi*.
 . Dall'elenco dei volumi, identifica quello che vuoi ridimensionare.
 . Fare clic sull'icona delle opzioniimage:screenshot_gallery_options.gif["icona del kebab"] .
@@ -237,7 +237,7 @@ Per le istruzioni, fare riferimento allink:http://docs.netapp.com/ontap-9/topic/
 La console potrebbe visualizzare un messaggio di azione richiesta che indica che è necessario spostare un volume per evitare problemi di capacità, ma che è necessario correggere il problema autonomamente.  In tal caso, è necessario individuare il modo per correggere il problema e quindi spostare uno o più volumi.
 
 
-TIP: La Console visualizza questi messaggi di azione richiesta quando un aggregato ha raggiunto il 90% della capacità utilizzata.  Se la suddivisione in livelli dei dati è abilitata, i messaggi vengono visualizzati quando un aggregato ha raggiunto l'80% della capacità utilizzata.  Per impostazione predefinita, il 10% dello spazio libero è riservato alla suddivisione in livelli dei dati. link:task-tiering.html#changing-the-free-space-ratio-for-data-tiering["Scopri di più sul rapporto di spazio libero per la suddivisione in livelli dei dati"^] .
+TIP: La console visualizza questi messaggi "Azione richiesta" quando un aggregato raggiunge il 90% della capacità utilizzata. Se il data tiering è abilitato, i messaggi vengono visualizzati quando un aggregato raggiunge l'80% della capacità utilizzata. Per impostazione predefinita, il 10% di spazio libero è riservato al data tiering. link:task-tiering.html#change-the-free-space-ratio-for-data-tiering["Scopri di più sul rapporto di spazio libero per la suddivisione in livelli dei dati"^].
 
 .Passi
 . <<Identificare come correggere i problemi di capacità>> .
@@ -312,11 +312,11 @@ Lo spostamento di un volume è necessario per evitare problemi di capacità; tut
 . Identificare un sistema Cloud Volumes ONTAP con capacità disponibile oppure distribuire un nuovo sistema.
 . Trascinare e rilasciare il sistema di origine sul sistema di destinazione per eseguire una replica dei dati una tantum del volume.
 +
-Per informazioni, fare riferimento alink:https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["Replica dei dati tra i sistemi"^] .
+Per ulteriori informazioni, fai riferimento a link:https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html["Replica dei dati tra i sistemi"^].
 
 . Accedere alla pagina Stato replicazione, quindi interrompere la relazione SnapMirror per convertire il volume replicato da un volume di protezione dati a un volume di lettura/scrittura.
 +
-Per informazioni, fare riferimento alink:https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships["Gestione delle pianificazioni e delle relazioni di replicazione dei dati"^] .
+Per ulteriori informazioni, fai riferimento a link:https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html#managing-data-replication-schedules-and-relationships["Gestione delle pianificazioni e delle relazioni di replicazione dei dati"^].
 
 . Configurare il volume per l'accesso ai dati.
 +

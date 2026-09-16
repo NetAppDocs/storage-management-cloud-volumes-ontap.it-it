@@ -62,4 +62,4 @@ Per maggiori informazioni, fare riferimento a https://cloud.google.com/storage/d
 ----
 
 
-Fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione NetApp Console"^] per maggiori dettagli sull'utilizzo del parametro "GcpEncryption".
+Consulta la  https://docs.netapp.com/us-en/console-automation/index.html["Documentazione sull'automazione NetApp Console"^] per maggiori dettagli sull'utilizzo del parametro "GcpEncryption".

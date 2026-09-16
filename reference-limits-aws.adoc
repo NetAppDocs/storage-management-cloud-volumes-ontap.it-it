@@ -25,7 +25,7 @@ La capacità massima del sistema include lo storage su disco più lo storage a o
 
 NetApp non supporta il superamento del limite di capacità del sistema. Se si raggiunge il limite di capacità concesso in licenza, la NetApp Console visualizza un messaggio che richiede un'azione e non consente più di aggiungere dischi aggiuntivi.
 
-Per alcune configurazioni, i limiti del disco impediscono di raggiungere il limite di capacità utilizzando solo i dischi. In questi casi, è possibile raggiungere il limite di capacità  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["suddivisione in livelli dei dati inattivi nell'archiviazione degli oggetti"^]. Consultare di seguito i limiti di capacità e disco per maggiori dettagli.
+Per alcune configurazioni, i limiti del disco impediscono di raggiungere il limite di capacità utilizzando solo i dischi. In questi casi, è possibile raggiungere il limite di capacità  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-data-tiering.html["suddivisione in livelli dei dati inattivi nell'archiviazione degli oggetti"^]. Consultare di seguito i limiti di capacità e disco per maggiori dettagli.
 
 [[cap-license-aws]]
 .Limite di capacità per le licenze basate sulla capacità
@@ -94,7 +94,7 @@ Note:
 
 . Non è possibile creare 18 aggregati su entrambi i nodi in una coppia HA perché ciò supererebbe il limite dei dischi dati.
 . La dimensione dell'aggregato massima dipende dai dischi e non include lo storage a oggetti utilizzato per il tiering dei dati.
-. Se si dispone di una configurazione che supporta la funzionalità Amazon EBS Elastic Volumes, un aggregato può contenere fino a 8 dischi, per una capacità massima di 128 TiB. Per impostazione predefinita, Cloud Volumes ONTAP 9.11.0 e versioni successive hanno Amazon EBS Elastic Volumes abilitato quando si utilizzano dischi gp3 o io1. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-aws-elastic-volumes.html["Scopri di più sul supporto per Elastic Volumes"^]
+. Se si dispone di una configurazione che supporta la funzionalità Amazon EBS Elastic Volumes, un aggregato può contenere fino a 8 dischi, per una capacità massima di 128 TiB. Per impostazione predefinita, Cloud Volumes ONTAP 9.11.0 e versioni successive hanno Amazon EBS Elastic Volumes abilitato quando si utilizzano dischi gp3 o io1. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-aws-elastic-volumes.html["Scopri di più sul supporto per Elastic Volumes"^]
 . Tutti i dischi di un aggregato devono avere le stesse dimensioni.
 
 
@@ -120,7 +120,7 @@ I limiti non includono il disco di boot e il disco di root.
 [[limits-for-different-deployment-modes-of-capacity-based-licensing]]
 === Limiti per le diverse modalità di deployment del modello di licensing basato sulla capacità
 
-I seguenti limiti del disco si applicano ai sistemi Cloud Volumes ONTAP che utilizzano un pacchetto di licensing basato sulla capacità. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["Scopri le opzioni di licensing di Cloud Volumes ONTAP"^]
+I seguenti limiti del disco si applicano ai sistemi Cloud Volumes ONTAP che utilizzano un pacchetto di licensing basato sulla capacità. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Scopri le opzioni di licensing di Cloud Volumes ONTAP"^]
 
 
 NOTE: Per i limiti massimi di capacità del sistema e di capacità di tiering dei dati per configurazioni a nodo singolo e coppia HA, fare riferimento a <<cap-license-aws>>.
@@ -178,7 +178,7 @@ NOTE: Per i limiti massimi di capacità del sistema e di capacità di tiering de
 
 I seguenti limiti di disco si applicano ai sistemi Cloud Volumes ONTAP che utilizzano il modello di licensing basato su nodi, che è il modello di licensing di generazione precedente che consentiva di concedere in licenza Cloud Volumes ONTAP per nodo. La licenza basata su nodi è ancora disponibile per i clienti esistenti.
 
-È possibile acquistare più licenze basate su nodi per un Cloud Volumes ONTAP single node o sistema di coppia HA per allocare più di 368 TiB di capacità, fino al limite massimo di capacità di sistema testato e supportato di 2 PiB. Tenere presente che i limiti del disco possono impedire di raggiungere il limite di capacità utilizzando solo dischi. È possibile superare il limite del disco mediante https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-data-tiering.html["suddivisione in livelli dei dati inattivi nell'archiviazione degli oggetti"^]. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html["Scopri come aggiungere licenze di sistema aggiuntive a Cloud Volumes ONTAP"^]. Sebbene Cloud Volumes ONTAP supporti fino al limite massimo di capacità di sistema testato e supportato di 2 PiB, il superamento del limite di 2 PiB comporta una configurazione di sistema non supportata.
+È possibile acquistare più licenze basate su nodi per un Cloud Volumes ONTAP single node o sistema di coppia HA per allocare più di 368 TiB di capacità, fino al limite massimo di capacità di sistema testato e supportato di 2 PiB. Tenere presente che i limiti del disco possono impedire di raggiungere il limite di capacità utilizzando solo dischi. È possibile superare il limite del disco mediante https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-data-tiering.html["suddivisione in livelli dei dati inattivi nell'archiviazione degli oggetti"^]. https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Scopri come aggiungere licenze di sistema aggiuntive a Cloud Volumes ONTAP"^]. Sebbene Cloud Volumes ONTAP supporti fino al limite massimo di capacità di sistema testato e supportato di 2 PiB, il superamento del limite di 2 PiB comporta una configurazione di sistema non supportata.
 
 Le regioni AWS Secret Cloud e Top Secret Cloud supportano l'acquisto di più licenze basate su nodi a partire da Cloud Volumes ONTAP 9.12.1.
 
@@ -283,7 +283,7 @@ Le regioni AWS Secret Cloud e Top Secret Cloud supportano l'acquisto di più lic
 
 Alcune configurazioni consentono di creare storage VM (SVM) aggiuntive per Cloud Volumes ONTAP.
 
-https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-aws.html["Scopri come creare storage VM aggiuntive"^].
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-managing-svms-aws.html["Scopri come creare storage VM aggiuntive"^].
 
 [cols="40,60"]
 |===

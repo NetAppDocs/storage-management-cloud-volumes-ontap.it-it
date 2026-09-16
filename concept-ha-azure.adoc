@@ -34,7 +34,7 @@ Tieni presente quanto segue sui componenti di Azure che NetApp Console distribui
 
 Azure Standard Load Balancer:: Il bilanciatore del carico gestisce il traffico in entrata verso la coppia Cloud Volumes ONTAP HA.
 VM in singole zone di disponibilità:: A partire da Cloud Volumes ONTAP 9.15.1, è possibile creare e gestire macchine virtuali (VM) eterogenee in un'unica zona di disponibilità (AZ).  È possibile distribuire nodi ad alta disponibilità (HA) in domini di errore separati all'interno della stessa AZ, garantendo una disponibilità ottimale.  Per saperne di più sulla modalità di orchestrazione flessibile che abilita questa capacità, fare riferimento a https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/["Documentazione di Microsoft Azure: set di scalabilità di macchine virtuali"^] .
-Dischi:: I dati dei clienti risiedono nei blob delle pagine Premium Storage.  Ogni nodo ha accesso allo storage dell'altro nodo.  È inoltre necessario ulteriore spazio di archiviazione perlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["dati di avvio, root e core"^] .
+Dischi:: I dati dei clienti risiedono nei blob di pagina di Premium Storage. Ogni nodo ha accesso allo storage dell'altro nodo. È inoltre necessario ulteriore storage per link:reference-configs-azure.html#azure-ha-pair["dati di avvio, root e core"].
 Account di archiviazione::
 +
 --
@@ -52,7 +52,7 @@ https://docs.microsoft.com/en-us/azure/storage/common/storage-scalability-target
 
 
 
-NOTE: A partire da Cloud Volumes ONTAP 9.15.0P1, i blob di pagine di Azure non sono più supportati per le nuove distribuzioni di coppie HA. Se attualmente usi i blob di pagine di Azure in distribuzioni di coppie HA esistenti, puoi migrare a tipi di istanze di macchine virtuali più recenti nelle VM della serie Edsv4 e nelle VM della serie Edsv5. link:link:reference-configs-azure.html#ha-pairs["Scopri di più sulle configurazioni supportate in Azure"].
+NOTE: A partire da Cloud Volumes ONTAP 9.15.0P1, i blob di pagine di Azure non sono più supportati per le nuove distribuzioni di coppie HA. Se attualmente usi i blob di pagine di Azure in distribuzioni di coppie HA esistenti, puoi migrare a tipi di istanze di macchine virtuali più recenti nelle VM della serie Edsv4 e nelle VM della serie Edsv5. link:reference-configs-azure.html#ha-pairs["Scopri di più sulle configurazioni supportate in Azure"].
 
 
 
@@ -82,7 +82,7 @@ La distribuzione zonale utilizza Premium SSD v2 Managed Disks quando sono soddis
 
 NOTE: Se si sceglie Premium SSD Managed Disks per un ambiente che soddisfa i criteri sopra indicati, la Console distribuisce automaticamente Premium SSD v2 Managed Disks. Non è possibile passare ai dischi gestiti Premium SSD v1.
 
-Dischi:: I dati dei clienti risiedono su dischi gestiti con archiviazione ridondante locale (LRS).  Ogni nodo ha accesso allo storage dell'altro nodo.  È inoltre necessario ulteriore spazio di archiviazione perlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["dati di avvio, root, root partner, core e NVRAM"^] .
+Dischi:: I dati dei clienti risiedono su dischi gestiti con ridondanza locale (LRS). Ogni nodo ha accesso allo storage dell'altro nodo. È inoltre necessario ulteriore storage per link:reference-configs-azure.html#azure-ha-pair["dati di avvio, root, root partner, core e NVRAM"].
 Account di archiviazione:: Gli account di archiviazione vengono utilizzati per le distribuzioni basate su dischi gestiti per gestire i log diagnostici e la suddivisione in livelli nell'archiviazione BLOB.
 
 
@@ -99,7 +99,7 @@ Tieni presente quanto segue sui componenti di Azure che la console distribuisce 
 
 Azure Standard Load Balancer:: Il bilanciatore del carico gestisce il traffico in entrata verso la coppia Cloud Volumes ONTAP HA.
 Zone di disponibilità:: La configurazione HA con più zone di disponibilità utilizza un modello di distribuzione in cui due nodi Cloud Volumes ONTAP vengono distribuiti in diverse zone di disponibilità, garantendo che i nodi si trovino in domini di errore diversi per garantire ridondanza e disponibilità.  Per informazioni su come i set di scalabilità di macchine virtuali in modalità di orchestrazione flessibile possono utilizzare le zone di disponibilità in Azure, fare riferimento a https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones?tabs=cli-1%2Cportal-2["Documentazione di Microsoft Azure: creare un set di scalabilità di macchine virtuali che utilizza zone di disponibilità"^] .
-Dischi:: I dati dei clienti risiedono su dischi gestiti con archiviazione ridondante di zona (ZRS).  Ogni nodo ha accesso allo storage dell'altro nodo.  È inoltre necessario ulteriore spazio di archiviazione perlink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/reference-default-configs.html#azure-ha-pair["dati di avvio, root, root partner e core"^] .
+Dischi:: I dati dei clienti risiedono su dischi gestiti con ridondanza di zona (ZRS). Ogni nodo ha accesso allo storage dell'altro nodo. È inoltre necessario ulteriore storage per link:reference-configs-azure.html#azure-ha-pair["dati di avvio, root, root partner e core"].
 Account di archiviazione:: Gli account di archiviazione vengono utilizzati per le distribuzioni basate su dischi gestiti per gestire i log diagnostici e la suddivisione in livelli nell'archiviazione BLOB.
 
 

@@ -173,7 +173,7 @@ Non è necessario impostare una connessione tra il livello di prestazioni e il l
 "Microsoft.Network/virtualNetworks/subnets/write",
 "Microsoft.Network/routeTables/join/action",
 ----
-Il ruolo personalizzato include le autorizzazioni per impostazione predefinita. https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["Visualizza l'autorizzazione di Azure per l'agente della console"^]
+Il ruolo personalizzato include le autorizzazioni per impostazione predefinita. https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html["Visualizza l'autorizzazione di Azure per l'agente della console"^]
 
 endif::azure[]
 
@@ -301,7 +301,7 @@ Cloud Volumes ONTAP può suddividere i dati da un volume di protezione dati a un
 image:screenshot_replication_tiering.gif["Screenshot che mostra l'opzione di suddivisione in livelli S3 durante la replica di un volume."]
 
 +
-Per assistenza con la replica dei dati, fare riferimento a https://docs.netapp.com/us-en/bluexp-replication/task-replicating-data.html["Replica dei dati da e verso il cloud"^] .
+Per assistenza sulla replica dei dati, fai riferimento a  https://docs.netapp.com/us-en/data-services-replication/task-replicating-data.html["Replica dei dati da e verso il cloud"^].
 
 
 

@@ -30,7 +30,7 @@ Esistono diversi modi per creare un nuovo volume:
 
 Alcune note sul provisioning dei volumi:
 
-* Quando si crea un volume iSCSI, la Console crea automaticamente un LUN.  Abbiamo semplificato il tutto creando una sola LUN per volume, eliminando così ogni attività di gestione.  Dopo aver creato il volume,link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-connect-lun.html["utilizzare l'IQN per connettersi al LUN dai tuoi host"^] .
+* Quando crei un volume iSCSI, la Console crea automaticamente un LUN per te. Abbiamo semplificato il processo creando un solo LUN per volume, così non c'è gestione da fare. Dopo aver creato il volume, link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-connect-lun.html["utilizzare l'IQN per connettersi al LUN dai tuoi host"^].
 * È possibile creare LUN aggiuntivi da ONTAP System Manager o da ONTAP CLI.
 
 
@@ -157,7 +157,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 Dominio DNS:: Dominio DNS per la macchina virtuale di archiviazione (SVM) Cloud Volumes ONTAP .  Nella maggior parte dei casi, il dominio è lo stesso del dominio AD.
-Server NTP:: Selezionare *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory.  Se è necessario configurare un server NTP utilizzando un indirizzo diverso, è necessario utilizzare l'API.  Per informazioni fare riferimento al https://docs.netapp.com/us-en/bluexp-automation/index.html["Documentazione sull'automazione NetApp Console"^] .
+Server NTP:: Seleziona *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory. Se devi configurare un server NTP utilizzando un indirizzo diverso, allora dovresti usare l'API. Per informazioni, consulta la  https://docs.netapp.com/us-en/console-automation/index.html["NetApp Console documentazione sull'automazione"^].
 +
 --
 Si noti che è possibile configurare un server NTP solo quando si crea un server CIFS.  Non è configurabile dopo aver creato il server CIFS.
@@ -180,7 +180,7 @@ Iniziatore ospite (IQN):: Le destinazioni iSCSI si connettono alla rete tramite 
 ifdef::aws[]
 
 +
-*** link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#size-your-system-in-aws["Dimensionamento del sistema in AWS"^]
+*** link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config.html#size-your-system-in-aws["Dimensionamento del sistema in AWS"^]
 
 
 
@@ -191,14 +191,14 @@ endif::aws[]
 
 ifdef::azure[]
 
-* link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure["Dimensionamento del sistema in Azure"^]
+* link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure["Dimensionamento del sistema in Azure"^]
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config-gcp.html#size-your-system-in-gcp["Dimensionamento del sistema in Google Cloud"^]
+* link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-gcp.html#size-your-system-in-gcp["Dimensionamento del sistema in Google Cloud"^]
 
 
 endif::gcp[]

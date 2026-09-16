@@ -30,7 +30,7 @@ Backup e ripristino sono progettati in modo indipendente da Cloud Volumes ONTAP 
 
 . Se hai abilitato la classificazione dei dati su questo sistema e nessun altro sistema utilizza questo servizio, devi eliminare l'istanza del servizio.
 +
-https://docs.netapp.com/us-en/bluexp-classification/concept-cloud-compliance.html#the-cloud-data-sense-instance["Scopri di più sull'istanza di classificazione dei dati"^] .
+https://docs.netapp.com/us-en/data-services-data-classification/concept-cloud-compliance.html#the-cloud-data-sense-instance["Scopri di più sull'istanza di classificazione dei dati"^].
 
 . Eliminare il sistema Cloud Volumes ONTAP .
 +

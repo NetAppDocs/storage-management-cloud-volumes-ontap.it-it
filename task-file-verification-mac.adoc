@@ -19,7 +19,7 @@ La verifica della firma di un file VHD esportato su Linux include la convalida d
 .Passi
 . Scarica il file immagine di Azure da https://mysupport.netapp.com/site/["Sito di supporto NetApp"^] ed estrarre il file digest (.sig), il file del certificato della chiave pubblica (.pem) e il file del certificato della catena (.pem).
 +
-Fare riferimento a https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-azure-download-digest-file.html["Scarica il file digest dell'immagine di Azure"^] per maggiori informazioni.
+Consulta  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-azure-download-digest-file.html["Scarica il file digest dell'immagine di Azure"^] per maggiori informazioni.
 
 . Verificare la catena di fiducia.
 +

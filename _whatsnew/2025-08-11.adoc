@@ -11,6 +11,6 @@ A partire dall'11 agosto 2025, la licenza Cloud Volumes ONTAP Optimized sarà de
 
 Tuttavia, la possibilità di aggiungere o rinnovare le licenze ottimizzate sarà disponibile tramite le API.
 
-Per informazioni sui pacchetti di licenza, fare riferimento a https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html["Licenze per Cloud Volumes ONTAP"^] .
+Per informazioni sui pacchetti di licenza, consulta  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html["Licenze per Cloud Volumes ONTAP"^].
 
-Per informazioni sul passaggio a un metodo di ricarica diverso, fare riferimento a https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-capacity-licenses.html["Gestire le licenze basate sulla capacità"^] .
+Per informazioni sul passaggio a un metodo di ricarica diverso, consulta  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-capacity-licenses.html["Gestire le licenze basate sulla capacità"^].

@@ -21,4 +21,4 @@ BlueXP ora supporta le distribuzioni ad alta disponibilità (HA) di AWS Local Zo
 
 NOTE: Le zone locali AWS non sono supportate quando si utilizza BlueXP in modalità limitata.
 
-Per ulteriori informazioni sulle zone locali AWS con distribuzioni HA, fare riferimento alink:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-ha.html#aws-local-zones["Zone locali AWS"^] .
+Per ulteriori informazioni sulle zone locali AWS con implementazioni HA, consulta link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-ha.html#aws-local-zones["Zone locali AWS"^].

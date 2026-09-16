@@ -26,7 +26,7 @@ Sono disponibili pacchetti di licenze basati sulla capacità con i seguenti mode
 * *BYOL*: Porta la tua patente (BYOL).  Una licenza acquistata da NetApp che può essere utilizzata per distribuire Cloud Volumes ONTAP in qualsiasi provider cloud.
 +
 
-NOTE: NetApp ha limitato l'acquisto, l'estensione e il rinnovo delle licenze BYOL e ha limitato la disponibilità in scenari specifici, come nelle implementazioni in modalità privata. Per ulteriori informazioni, consulta  https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Disponibilità limitata delle licenze BYOL per Cloud Volumes ONTAP"^].
+NOTE: NetApp ha limitato l'acquisto, l'estensione e il rinnovo delle licenze BYOL e ha limitato la disponibilità in scenari specifici, come nelle implementazioni in modalità privata. Per ulteriori informazioni, consulta  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Disponibilità limitata delle licenze BYOL per Cloud Volumes ONTAP"^].
 
 
 
@@ -71,7 +71,7 @@ Per informazioni sulla conversione delle licenze basate sui nodi in licenze basa
 
 La fatturazione in Cloud Volumes ONTAP si basa su una serie di fattori, come pacchetti e tipi di volume. I pacchetti di licenze basati sulla capacità sono disponibili con Cloud Volumes ONTAP 9.7 e versioni successive.
 
-Per i dettagli sui prezzi, vai a https://bluexp.netapp.com/pricing/["Sito web NetApp Console"^] .
+Per informazioni dettagliate sui prezzi, vai alla link:https://www.netapp.com/pricing/["sito web dei prezzi NetApp"^].
 
 
 
@@ -200,7 +200,7 @@ Se acquisti una licenza Essentials da NetApp (BYOL) e superi la capacità conces
 
 Allo stesso modo, se si dispone di un contratto annuale di marketplace o di un'offerta privata con più pacchetti Essentials e l'utilizzo supera la capacità impegnata per una distribuzione e un tipo di volume di un pacchetto specifico, la Console addebita le eccedenze su un pacchetto Essentials più costoso in base alla sua capacità disponibile.  Una volta esaurita tale capacità, l'eccedenza residua viene fatturata secondo le tariffe orarie del marketplace on-demand (PAYGO) e aggiunta alla fattura mensile.
 
-Per informazioni sulla tariffazione delle licenze Essentials, fare riferimento alink:concept-licensing-charging.html#essentialscharging["Pacchetti essenziali"] .
+Per informazioni sulla fatturazione delle licenze Essentials, consulta <<Pacchetti essenziali>>.
 
 Ecco un esempio. Supponiamo che tu abbia le seguenti licenze per il pacchetto Essentials:
 
