@@ -38,7 +38,7 @@ Se sei già un cliente con abbonamenti NIS associati all'account AWS, NetApp con
 . Nella scheda AWS, seleziona l'abbonamento autonomo e fai clic sull'icona delle opzioni image:screenshot_gallery_options.gif["icona del kebab"].
 . Nella finestra Modifica configurazione, seleziona il numero di abbonamento dell'inserzione autonoma nel campo *Credenziali dell'account AWS*.
 . Fai clic su *Configura*. Puoi vedere l'abbonamento come opzione preferita per la fatturazione di Cloud Volumes ONTAP in AWS.
-. Quando si implementa un nuovo sistema Cloud Volumes ONTAP, selezionare il pacchetto Essentials per la fatturazione tramite l'abbonamento autonomo. Per informazioni, consultare  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["Distribuisci Cloud Volumes ONTAP con creazione rapida"^].
+. Quando si implementa un nuovo sistema Cloud Volumes ONTAP, selezionare il pacchetto Essentials per la fatturazione tramite l'abbonamento autonomo. Per informazioni, consulta  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["Implementa Cloud Volumes ONTAP con Quick create in AWS"^].
 
 
 Ripeti gli stessi passaggi per l'abbonamento NIS nella scheda *Servizi dati* per utilizzare l'abbonamento NIS per i tuoi servizi dati. Quando implementi un nuovo sistema Cloud Volumes ONTAP, seleziona il pacchetto Professional per la fatturazione tramite l'abbonamento NIS.

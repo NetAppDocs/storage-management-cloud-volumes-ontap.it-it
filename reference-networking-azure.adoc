@@ -228,7 +228,7 @@ La Console crea gruppi di sicurezza di Azure che includono le regole inbound e o
 
 I gruppi di sicurezza di Azure per Cloud Volumes ONTAP richiedono che le porte appropriate siano aperte per la comunicazione interna tra i nodi. https://docs.netapp.com/us-en/ontap/networking/ontap_internal_ports.html["Scopri di più sulle porte interne ONTAP"^] .
 
-Si sconsiglia di modificare i gruppi di sicurezza predefiniti o di utilizzare gruppi di sicurezza personalizzati.  Tuttavia, se necessario, tieni presente che il processo di distribuzione richiede che il sistema Cloud Volumes ONTAP abbia accesso completo all'interno della propria subnet.  Una volta completata la distribuzione, se si decide di modificare il gruppo di sicurezza di rete, assicurarsi di mantenere aperte le porte del cluster e le porte di rete HA.  Ciò garantisce una comunicazione fluida all'interno del cluster Cloud Volumes ONTAP (comunicazione any-to-any tra i nodi).
+Non ti consigliamo di modificare i gruppi di sicurezza predefiniti o di usare gruppi di sicurezza personalizzati. Tuttavia, se proprio devi farlo, tieni presente che il processo di distribuzione richiede che il sistema Cloud Volumes ONTAP abbia pieno accesso alla propria sottorete. Dopo il completamento della distribuzione, se decidi di modificare il gruppo di sicurezza di rete, assicurati di mantenere aperte le porte del cluster e le porte di rete HA, perché la rete HA si basa su una comunicazione illimitata tra i due nodi. Inoltre, gli indirizzi IP dei nodi vengono definiti automaticamente durante la distribuzione. Questo garantisce una comunicazione senza interruzioni all'interno del cluster Cloud Volumes ONTAP (comunicazione any-to-any tra i nodi).
 
 
 

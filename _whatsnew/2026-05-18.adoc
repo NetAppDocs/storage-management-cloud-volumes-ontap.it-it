@@ -10,6 +10,6 @@
 Ora è possibile utilizzare la creazione rapida per distribuire Cloud Volumes ONTAP in Azure sia per configurazioni a nodo singolo che ad alta disponibilità (HA). Questo processo semplificato riduce il numero di passaggi rispetto al metodo avanzato, imposta automaticamente i valori predefiniti in un'unica pagina e minimizza la navigazione, rendendo la distribuzione più rapida e semplice.
 
 .Link correlati
-* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-azure.html["Distribuisci Cloud Volumes ONTAP in Azure con la creazione rapida"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-azure.html["Distribuisci Cloud Volumes ONTAP con Quick create in Azure"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-deploying-otc-azure.html["Distribuisci Cloud Volumes ONTAP utilizzando le opzioni avanzate in Azure"^]
 

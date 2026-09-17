@@ -63,7 +63,7 @@ Quando hai soddisfatto tutti i prerequisiti, puoi completare i passaggi della pr
  a| 
 Fai riferimento a:
 
-* link:task-quick-deploy-azure.html["Distribuisci Cloud Volumes ONTAP con creazione rapida"]
+* link:task-quick-deploy-azure.html["Distribuisci Cloud Volumes ONTAP con Quick create in Azure"]
 * link:task-deploying-otc-azure.html["Distribuisci Cloud Volumes ONTAP utilizzando le opzioni avanzate"]
 
  a| 
@@ -71,7 +71,6 @@ Prima di iniziare la distribuzione, assicurati di aver acquistato una licenza Cl
 
 * link:concept-license-management.html["Gestione delle licenze per BYOL basato su nodi"]
 * link:task-manage-node-licenses.html["Gestisci le licenze BYOL basate su nodi"]
-* link:task-quick-deploy-azure.html["Distribuisci Cloud Volumes ONTAP con creazione rapida"]
 * link:task-deploying-otc-azure.html["Distribuisci Cloud Volumes ONTAP utilizzando le opzioni avanzate"]
 
 
