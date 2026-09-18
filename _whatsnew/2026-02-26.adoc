@@ -43,7 +43,7 @@ Tutti i permessi elencati per la release Console su:
 
 
 |===
-Nelle distribuzioni in modalità privata, sono necessarie alcune modifiche alla configurazione affinché Cloud Volumes ONTAP possa iniziare a utilizzare Infrastructure Manager. Fare riferimento a https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments["Configurazione di Infrastructure Manager per distribuzioni in modalità privata"^].
+Nelle distribuzioni in modalità privata, sono necessarie alcune modifiche alla configurazione affinché Cloud Volumes ONTAP possa iniziare a utilizzare Infrastructure Manager. Consulta  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["Configurazione di Infrastructure Manager per distribuzioni in modalità privata"^].
 
 .Link correlati
 * https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0["NetApp Console Agent 4.2.0 Note sulla versione"^]

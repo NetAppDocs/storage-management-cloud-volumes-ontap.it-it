@@ -79,7 +79,7 @@ NOTE: NetApp ha limitato l'acquisto, l'estensione e il rinnovo delle licenze BYO
 La Console interroga automaticamente il servizio licenze di NetApp per ottenere dettagli sulle licenze associate al tuo account NetApp Support Site.  Se non ci sono errori, la Console aggiunge automaticamente le licenze alla Console.
 
 +
-La licenza deve essere disponibile nella Console prima di poterla utilizzare con Cloud Volumes ONTAP.  Se necessario, puoilink:task-manage-capacity-licenses.html#add-purchased-licenses-to-your-account["aggiungere manualmente la licenza alla Console"] .
+La licenza deve essere disponibile dalla Console prima di poterla utilizzare con Cloud Volumes ONTAP. Se necessario, puoi link:task-manage-capacity-licenses.html#how-licenses-are-added-to-netapp-console["aggiungere manualmente la licenza alla Console"].
 
 . Nella pagina *Sistemi*, fare clic su *Aggiungi sistema* e seguire i passaggi.
 +

@@ -44,7 +44,7 @@ I sistemi Cloud Volumes ONTAP che utilizzano Infrastructure Manager archiviano d
 ====
 ** Assicurati di disporre della versione più recente dell'agente Console. Scarica il programma di installazione del prodotto dal NetApp Support Site e quindi installa manualmente l'agente sul tuo host in modo che l'agente possa utilizzare le API di Infrastructure Manager.
 ** Se esegui lo strumento in modalità privata, assicurati che, insieme alle altre API, tu abbia abilitato l'API Cloud Build. https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Abilita le API di Google Cloud"^].
-** Assicurarsi di aver completato le configurazioni di rete e creato il pool di worker per le distribuzioni in modalità privata. Fare riferimento a link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments["Configurazione di Infrastructure Manager per distribuzioni in modalità privata"].
+** Assicurarsi di aver completato le configurazioni di rete e creato il pool di worker per le distribuzioni in modalità privata. Fai riferimento a link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["Configurazione di Infrastructure Manager per distribuzioni in modalità privata"].
 
 
 ====
@@ -293,7 +293,7 @@ dmconvert \
 .Esegui lo strumento in distribuzioni in modalità privata
 [%collapsible]
 ====
-Specificare il  `--worker-pool` parametro per eseguire lo strumento nelle distribuzioni in modalità privata. Per la configurazione del pool di worker, fare riferimento a link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments["Configurazione di Infrastructure Manager per distribuzioni in modalità privata"].
+Specificare il  `--worker-pool` parametro per eseguire lo strumento nelle distribuzioni in modalità privata. Per la configurazione del pool di worker, fare riferimento a link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["Configurazione di Infrastructure Manager per distribuzioni in modalità privata"].
 
 [source, cli]
 ----
