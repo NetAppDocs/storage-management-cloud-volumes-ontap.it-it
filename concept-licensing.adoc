@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-licensing.html 
-keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, cloud backup, digital wallet, bluexp license conversion for node based, end of support, eos, end of availability, eoa, node-based 
+keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, cloud backup, digital wallet, license conversion for node based, end of support, eos, end of availability, eoa, node-based 
 summary: Sono disponibili diverse opzioni di licenza per Cloud Volumes ONTAP. Ogni opzione ti consente di scegliere la configurazione più adatta alle tue esigenze. 
 ---
 = Licenze per Cloud Volumes ONTAP
@@ -16,7 +16,7 @@ summary: Sono disponibili diverse opzioni di licenza per Cloud Volumes ONTAP. Og
 [role="lead"]
 Sono disponibili diversi modelli di licensing per Cloud Volumes ONTAP. Ogni opzione ti permette di scegliere un modello di consumo che soddisfa le tue esigenze.
 
-Hai la possibilità di acquistare o rinnovare le tue licenze e subscriptions dai cloud marketplace o tramite NetApp (bring your own license (BYOL)). Il marketplace offre abbonamenti annuali e opzioni pay-as-you-go (PAYGO). Per informazioni, vedi link:concept-license-management.html["Scopri di più sulle licenze basate sulla capacità per Cloud Volumes ONTAP"].
+Hai la possibilità di acquistare o rinnovare le tue licenze e abbonamenti tramite i cloud marketplace o attraverso NetApp (Bring-Your-Own License o BYOL). Il marketplace offre abbonamenti annuali e opzioni pay-as-you-go (PAYGO). Per informazioni, consulta link:concept-license-management.html["Scopri di più sulle licenze basate sulla capacità per Cloud Volumes ONTAP"].
 
 Le licenze BYOL sono disponibili per l'acquisto da NetApp e possono essere utilizzate con qualsiasi cloud provider. Per ulteriori informazioni sulla disponibilità delle licenze BYOL, consulta  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#restricted-availability-of-byol-licensing-for-cloud-volumes-ontap["Disponibilità limitata delle licenze BYOL per Cloud Volumes ONTAP"^].
 
@@ -258,21 +258,21 @@ Per saperne di più su ciascun tipo di licenza e sull'impatto dell'EOA su di ess
 
 
  a| 
-Licenza valida basata su nodi acquistata tramite Bring Your Own License (BYOL)
+Licenza valida basata su nodo acquistata da NetApp o BYOL.
  a| 
 La licenza rimane valida fino alla scadenza.  Le licenze basate su nodi non utilizzate esistenti possono essere utilizzate per distribuire nuovi sistemi Cloud Volumes ONTAP .
 
 
 
  a| 
-Licenza basata su nodo scaduta acquistata tramite BYOL
+Licenza BYOL basata su nodo scaduta.
  a| 
 Utilizzando questa licenza non avrai diritto a distribuire nuovi sistemi Cloud Volumes ONTAP .  I sistemi esistenti potrebbero continuare a funzionare, ma non riceverai alcun supporto o aggiornamento per i tuoi sistemi dopo la data di fine del supporto.
 
 
 
  a| 
-Licenza valida basata su nodi con abbonamento PAYGO
+Licenza valida basata su nodo con abbonamento PAYGO.
  a| 
 Non riceverai più supporto NetApp dopo la data di fine del supporto, finché non passerai a una licenza basata sulla capacità.
 
@@ -288,11 +288,13 @@ NOTE: Anche in questi scenari, le nuove licenze basate sui nodi e i rinnovi dell
 
 
 [[license-conversion]]
-== Conversione della licenza
+=== Conversione della licenza
 
-La console consente una conversione senza interruzioni delle licenze basate sui nodi in licenze basate sulla capacità tramite lo strumento di conversione delle licenze.  Per informazioni sull'EOA delle licenze basate sui nodi, fare riferimento alink:concept-licensing.html#end-of-availability-of-node-based-licenses["Fine della disponibilità delle licenze basate sui nodi"] .
+La Console consente una conversione senza interruzioni delle licenze basate su nodi in licenze basate sulla capacità tramite lo strumento di conversione delle licenze. Per informazioni sull'EOA delle licenze basate su nodi, fai riferimento a link:concept-licensing.html#end-of-availability-of-node-based-licenses["Fine della disponibilità delle licenze basate sui nodi"].
 
 Prima di effettuare la transizione, è bene familiarizzare con la differenza tra i due modelli di licenza.  Le licenze basate sui nodi includono una capacità fissa per ogni istanza ONTAP , il che può limitare la flessibilità.  Le licenze basate sulla capacità, d'altro canto, consentono di condividere un pool di storage su più istanze, offrendo maggiore flessibilità, ottimizzando l'utilizzo delle risorse e riducendo il rischio di sanzioni finanziarie durante la ridistribuzione dei carichi di lavoro.  La ricarica basata sulla capacità si adatta perfettamente alle mutevoli esigenze di stoccaggio.
+
+##Se hai abbonamenti al marketplace o implementazioni private con licenze basate su nodi, puoi link:task-convert-node-capacity.html["converti le tue licenze basate sui nodi in licenze basate sulla capacità"] usare lo strumento di conversione delle licenze nella Console.##
 
 Per sapere come eseguire questa conversione, fare riferimento alink:task-convert-node-capacity.html["Convertire una licenza basata su nodi Cloud Volumes ONTAP in una licenza basata sulla capacità"] .
 

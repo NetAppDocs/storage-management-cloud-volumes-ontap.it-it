@@ -22,6 +22,17 @@ Per distribuire Cloud Volumes ONTAP, devi prima conoscere la tua sottoscrizione 
 
 
  a| 
+Verifica i ruoli della NetApp Console
+ a| 
+Prima di poter creare un agente Console ed eseguire altre attività di distribuzione per Cloud Volumes ONTAP, devi verificare che siano presenti i ruoli e le autorizzazioni IAM necessari.
+ a| 
+Consulta la guida all'installazione della Console: https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html["Ruoli di accesso di Cloud Volumes ONTAP nella NetApp Console"^] https://docs.netapp.com/us-en/console-setup-admin/task-cvo-rbac-setup.html["Configura l'accesso in base al ruolo per Cloud Volumes ONTAP"^]
+ a| 
+Verifica che i ruoli siano configurati correttamente.
+
+
+
+ a| 
 Crea un agente della Console
  a| 
 Se non hai ancora un agente Console, creane uno prima di distribuire Cloud Volumes ONTAP.
@@ -67,10 +78,10 @@ Fai riferimento a:
 * link:task-deploying-otc-azure.html["Distribuisci Cloud Volumes ONTAP utilizzando le opzioni avanzate"]
 
  a| 
-Prima di iniziare la distribuzione, assicurati di aver acquistato una licenza Cloud Volumes ONTAP da NetApp. Le distribuzioni in modalità privata richiedono licenze BYOL basate su nodo. Gli abbonamenti al Marketplace non sono supportati per la fatturazione dell'utilizzo di Cloud Volumes ONTAP. Ottieni il file di licenza da NetApp e caricalo durante la distribuzione. Consulta:
+La modalità privata supporta solo l'implementazione avanzata. Prima di iniziare l'implementazione, assicurati di aver acquistato una licenza Cloud Volumes ONTAP da NetApp. Le implementazioni in modalità privata si basano su licenze BYOL. Gli abbonamenti Marketplace non sono supportati per la fatturazione dell'utilizzo di Cloud Volumes ONTAP. Ottieni il file di licenza da NetApp e caricalo durante l'implementazione. Consulta:
 
-* link:concept-license-management.html["Gestione delle licenze per BYOL basato su nodi"]
-* link:task-manage-node-licenses.html["Gestisci le licenze BYOL basate su nodi"]
+* link:concept-license-management.html["Gestione delle licenze"]
+* link:task-manage-node-licenses.html["Gestisci le licenze BYOL"]
 * link:task-deploying-otc-azure.html["Distribuisci Cloud Volumes ONTAP utilizzando le opzioni avanzate"]
 
 

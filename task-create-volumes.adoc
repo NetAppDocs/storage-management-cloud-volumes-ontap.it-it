@@ -36,7 +36,7 @@ Alcune note sul provisioning dei volumi:
 
 ifdef::aws[]
 
-* Se si desidera utilizzare CIFS in AWS, è necessario aver configurato DNS e Active Directory. Per i dettagli, fare riferimento alink:reference-networking-aws.html["Requisiti di rete per Cloud Volumes ONTAP per AWS"] .
+* Se vuoi utilizzare CIFS in AWS, devi aver configurato DNS e Active Directory. Per dettagli, consulta link:reference-networking-aws.html["Requisiti di rete per Cloud Volumes ONTAP in AWS"].
 * Se la configurazione Cloud Volumes ONTAP supporta la funzionalità Amazon EBS Elastic Volumes, potrebbe essere necessariolink:concept-aws-elastic-volumes.html["scopri di più su cosa succede quando crei un volume"] .
 
 

@@ -20,6 +20,29 @@ I miglioramenti descritti in questa pagina sono specifici per la gestione di Clo
 
 
 
+[[21-september-2026]]
+== 21 settembre 2026
+
+
+
+[[support-for-capacity-based-licenses-in-private-mode-deployments]]
+=== Supporto per licenze basate sulla capacità nelle implementazioni in modalità privata
+
+Ora puoi implementare i sistemi Cloud Volumes ONTAP in modalità privata con licenze basate sulla capacità in AWS, Azure e Google Cloud.
+
+NetApp supporta solo il pacchetto Essentials per il modello di licensing basato sulla capacità in modalità privata. Acquista un pacchetto Essentials Bring-Your-Own License (BYOL) basato sulla capacità da NetApp e assegnalo al tuo sistema durante la distribuzione. I primi 500 GiB di capacità consumata non vengono conteggiati ai fini dei costi della licenza. Puoi acquistare pacchetti aggiuntivi man mano che crescono i requisiti del tuo carico di lavoro.
+
+NetApp consiglia il modello di licensing basato sulla capacità per tutte le implementazioni Cloud Volumes ONTAP in modalità privata. Se hai implementazioni esistenti in modalità privata con licenze basate sui nodi, puoi convertirle al modello di licensing basato sulla capacità acquistando un pacchetto Essentials da NetApp. Questa nuova funzionalità di implementazione, insieme all'opzione di conversione, supporta il piano di NetApp di passare gradualmente dalle licenze basate sui nodi a quelle basate sulla capacità.
+
+.Link correlati
+* https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_capacity-license-darkmode/concept-licensing.html["Licenza Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-license-management.html["Scopri Cloud Volumes ONTAP BYOL"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Fine della disponibilità delle licenze basate sui nodi"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Gestisci le licenze basate su nodo per Cloud Volumes ONTAP"^]
+
+
+
+
 [[02-september-2026]]
 == 02 settembre 2026
 
@@ -75,7 +98,7 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/["Scopri di più su q
 [[ability-to-convert-node-based-licenses-to-capacity-based-licensing-in-private-mode]]
 === Possibilità di convertire le licenze basate sui nodi in licenze basate sulla capacità in modalità privata
 
-NetApp è entusiasta di annunciare il modello di licensing basato sulla capacità per le implementazioni di Cloud Volumes ONTAP in modalità privata. Ora puoi ottimizzare i costi per le tue implementazioni di Cloud Volumes ONTAP in modalità privata convertendo la tua licenza basata sui nodi nel modello di licensing basato sulla capacità. Per le tue implementazioni in modalità privata, puoi acquistare un pacchetto Essentials (bring your own license (BYOL)) direttamente da NetApp con una capacità simile alla tua licenza basata sui nodi esistente.
+NetApp è entusiasta di annunciare la licenza basata sulla capacità per le implementazioni di Cloud Volumes ONTAP in modalità privata. Ora puoi ottimizzare i costi per le tue implementazioni di Cloud Volumes ONTAP in modalità privata convertendo la tua licenza basata sui nodi nel modello di licensing basato sulla capacità. Per le tue implementazioni in modalità privata, puoi acquistare un pacchetto Essentials (Bring-Your-Own License o BYOL) direttamente da NetApp con una capacità simile alla tua licenza basata sui nodi esistente.
 
 Questa opzione di conversione supporta il piano graduale di NetApp per abbandonare le licenze basate sui nodi a favore delle licenze basate sulla capacità. A differenza delle licenze basate sui nodi, che assegnano una capacità fissa a ciascun sistema, le licenze basate sulla capacità attingono da un pool di capacità condiviso tra i tuoi sistemi Cloud Volumes ONTAP, offrendoti maggiore flessibilità nella ridistribuzione dei carichi di lavoro man mano che cambiano le tue esigenze di storage.
 
@@ -436,11 +459,11 @@ https://docs.netapp.com/us-en/console-automation/cvo/put-occm-config.html["Confi
 
 
 [[support-for-google-infrastructure-manager-for-private-mode-deployments]]
-=== Supporto per Google Infrastructure Manager per distribuzioni in modalità privata
+=== Supporto per Google Infrastructure Manager per le implementazioni in modalità privata
 
-Cloud Volumes ONTAP 9.16.1 e versioni successive ora supportano  https://docs.cloud.google.com/infrastructure-manager/docs/overview["Google Cloud Infrastructure Manager"^] (IM) invece di  https://docs.cloud.google.com/deployment-manager/docs/deprecations["Cloud Deployment Manager"^] (DM) per le nuove distribuzioni in modalità privata in Google Cloud. Google ritirerà Deployment Manager come servizio infrastrutturale nel prossimo futuro per il più avanzato Infrastructure Manager.
+Cloud Volumes ONTAP 9.16.1 e versioni successive ora supportano  https://docs.cloud.google.com/infrastructure-manager/docs/overview["Google Cloud Infrastructure Manager"^] (IM) invece di  https://docs.cloud.google.com/deployment-manager/docs/deprecations["Cloud Deployment Manager"^] (DM) per le nuove distribuzioni in modalità privata in Google Cloud. Google deprecherà Deployment Manager come servizio di infrastruttura nel prossimo futuro a favore del più avanzato Infrastructure Manager.
 
-A partire dal 25 febbraio 2026, Cloud Volumes ONTAP utilizza Infrastructure Manager per le nuove ed esistenti distribuzioni in modalità privata. Questa tabella illustra i flussi di lavoro di base per te:
+A partire dal 25 febbraio 2026, Cloud Volumes ONTAP utilizza Infrastructure Manager per le nuove e le esistenti implementazioni in modalità privata. Questa tabella spiega i flussi di lavoro di base per te:
 
 [cols="1,4,1,1,1,1"]
 |===
@@ -470,11 +493,11 @@ Tutti i permessi elencati per la release Console su:
 
 | Nuovo agente e nuova distribuzione | Crea un nuovo agente e distribuisci un nuovo sistema Cloud Volumes ONTAP in modalità privata. |  |  |   a| 
 * https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html["Crea un agente Console da Google Cloud"^]
-* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Avvio rapido per le distribuzioni in modalità privata"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-quick-start-private-mode.html["Guida rapida per le implementazioni in modalità privata"^]
 
 
 |===
-Nelle distribuzioni in modalità privata, sono necessarie alcune modifiche alla configurazione affinché Cloud Volumes ONTAP possa iniziare a utilizzare Infrastructure Manager. Consulta  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["Configurazione di Infrastructure Manager per distribuzioni in modalità privata"^].
+Nelle distribuzioni in modalità privata, sono necessarie alcune modifiche di configurazione affinché Cloud Volumes ONTAP inizi a utilizzare Infrastructure Manager. Fai riferimento a  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments["Configurazione di Infrastructure Manager per le implementazioni in modalità privata"^].
 
 .Link correlati
 * https://docs.netapp.com/us-en/console-setup-admin/whats-new.html#console-agent-4-2-0["NetApp Console Agent 4.2.0 Note sulla versione"^]
@@ -667,7 +690,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage
 [[overage-charging-for-essentials-licenses-simplified]]
 === Semplificazione della tariffazione eccedente per le licenze Essentials
 
-Per i contratti annuali/offerte private del marketplace Cloud Volumes ONTAP , i calcoli del sovrapprezzo per le licenze Essentials sono ora allineati con i pacchetti Bring Your Own License (BYOL).  In precedenza, gli eccessi venivano fatturati in base alle tariffe orarie di mercato per l'esatto pacchetto Essentials.  Ora, se il tuo contratto annuale sul marketplace include più pacchetti Essentials, la NetApp Console addebita i costi aggiuntivi per un pacchetto Essentials rispetto alla capacità disponibile di un pacchetto Essentials più costoso nel tuo abbonamento.  Ciò semplifica i calcoli del sovrapprezzo per i pacchetti Essentials e garantisce una transizione graduale dalla licenza BYOL a un modello basato su abbonamento.
+Per i contratti annuali/offerte private del marketplace Cloud Volumes ONTAP, il calcolo degli extra per le licenze Essentials è ora allineato ai pacchetti Bring-Your-Own License (BYOL). In precedenza, gli extra venivano fatturati in base alle tariffe orarie del marketplace per lo specifico pacchetto Essentials. Ora, se il tuo contratto annuale del marketplace include più pacchetti Essentials, la NetApp Console addebita gli extra per un pacchetto Essentials in base alla capacità disponibile di un pacchetto Essentials di prezzo superiore nel tuo abbonamento. Questo semplifica il calcolo degli extra per i pacchetti Essentials e garantisce una transizione fluida dal licensing BYOL a un modello basato su abbonamento.
 
 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing-charging.html#how-overages-are-charged-for-essentials-licenses["Come vengono addebitati gli eccessi per le licenze Essentials"^]
 
@@ -694,7 +717,7 @@ In precedenza, quando si distribuivano istanze Cloud Volumes ONTAP su NVMe-TCP, 
 
 Per le distribuzioni NVMe-TCP esistenti prive di licenze, Cloud Volumes ONTAP applica le licenze automaticamente.  È necessario riavviare il sistema affinché le licenze abbiano effetto.
 
-Per maggiori informazioni, vedere https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-client-protocols.html#nvme-tcp["Protocolli client supportati per Cloud Volumes ONTAP: NVMe-TCP"^] .
+Per ulteriori informazioni, consulta  https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-client-protocols.html#nvme-tcp["Protocolli client supportati per Cloud Volumes ONTAP: NVMe-TCP"^].
 
 
 
@@ -807,7 +830,7 @@ Per ulteriori informazioni, fare riferimento a https://docs.netapp.com/us-en/clo
 [[restricted-availability-of-byol-licensing-for-cloud-volumes-ontap]]
 === Disponibilità limitata delle licenze BYOL per Cloud Volumes ONTAP
 
-A partire dal 25 giugno 2025, NetApp ha limitato il modello di licenza Bring Your Own License (BYOL) per Cloud Volumes ONTAP. La restrizione si applica a tutti i clienti e a tutte le distribuzioni Cloud Volumes ONTAP in AWS, Azure e Google Cloud. Le uniche eccezioni riguardano i clienti del settore pubblico statunitense e le distribuzioni nella regione Cina.
+A partire dal 25 giugno 2025, NetApp ha limitato il modello di licensing Bring-Your-Own License (BYOL) per Cloud Volumes ONTAP. La restrizione si applica a tutti i clienti e a tutte le implementazioni di Cloud Volumes ONTAP su AWS, Azure e Google Cloud. Le uniche eccezioni sono i clienti del settore pubblico statunitense e le implementazioni nella regione Cina.
 
 Il supporto e i servizi NetApp continueranno fino alla scadenza del contratto BYOL, ma le licenze scadute non verranno rinnovate né estese. Alla scadenza delle licenze BYOL, è necessario sostituirle con licenze basate sulla capacità acquistate tramite gli abbonamenti al marketplace cloud. Un modello di licenza basato sulla capacità, tramite i marketplace hyperscaler, semplifica l'esperienza di gestione delle licenze e offre maggiori vantaggi aziendali. Contatta il team Account NetApp o i rappresentanti del Customer Success per discutere le opzioni di conversione.
 
@@ -821,11 +844,11 @@ Per ulteriori informazioni, fare riferimento a questo comunicato clienti:  https
 
 
 [[private-mode-deployments-enabled-for-cloud-volumes-ontap-9-15-1]]
-=== Distribuzioni in modalità privata abilitate per Cloud Volumes ONTAP 9.15.1
+=== Implementazioni in modalità privata abilitate per Cloud Volumes ONTAP 9.15.1
 
 Ora puoi distribuire Cloud Volumes ONTAP 9.15.1 in modalità privata su AWS, Azure e Google Cloud.  La modalità privata è abilitata sia per le distribuzioni a nodo singolo che per quelle ad alta disponibilità (HA) di Cloud Volumes ONTAP 9.15.1.
 
-Per ulteriori informazioni sulle distribuzioni in modalità privata, consulta https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html#restricted-mode["Scopri di più sulle modalità di distribuzione di BlueXP"^].
+Per ulteriori informazioni sulle implementazioni in modalità privata, consulta https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html#restricted-mode["Scopri di più sulle modalità di distribuzione di BlueXP"^].
 
 
 
@@ -895,11 +918,11 @@ Per la disponibilità regionale, fare riferimento a https://bluexp.netapp.com/cl
 
 
 [[private-mode-deployments-enabled-for-cloud-volumes-ontap-9-14-1]]
-=== Distribuzioni in modalità privata abilitate per Cloud Volumes ONTAP 9.14.1
+=== Implementazioni in modalità privata abilitate per Cloud Volumes ONTAP 9.14.1
 
 Ora puoi distribuire Cloud Volumes ONTAP 9.14.1 in modalità privata su AWS, Azure e Google Cloud.  La modalità privata è abilitata sia per le distribuzioni a nodo singolo che per quelle ad alta disponibilità (HA) di Cloud Volumes ONTAP 9.14.1.
 
-Per ulteriori informazioni sulle distribuzioni in modalità privata, consulta https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html#restricted-mode["Scopri di più sulle modalità di distribuzione di BlueXP"^].
+Per ulteriori informazioni sulle implementazioni in modalità privata, consulta https://docs.netapp.com/us-en/console-setup-admin/concept-modes.html#restricted-mode["Scopri di più sulle modalità di distribuzione di BlueXP"^].
 
 
 
@@ -1056,7 +1079,7 @@ NetApp riconosce i seguenti requisiti di licenza univoci in conformità con gli 
 * Clienti del settore pubblico statunitense
 * Distribuzioni in modalità privata
 * Distribuzioni nella regione cinese di Cloud Volumes ONTAP in AWS
-* Se hai una licenza BYOL (licenza BY-NODE) valida e non scaduta
+* Se hai un pacchetto di licenza BYOL (Bring-Your-Own License) per nodo valido e non scaduto
 
 
 https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Fine della disponibilità delle licenze basate sui nodi"^]
@@ -1243,7 +1266,7 @@ I pacchetti di licenze basati sulla capacità di Edge Cache non saranno più dis
 
 La versione minima Cloud Volumes ONTAP richiesta per configurare Flash Cache in Azure è 9.13.1 GA.  È possibile utilizzare solo ONTAP 9.13.1 GA e versioni successive per distribuire Flash Cache sui sistemi Cloud Volumes ONTAP in Azure.
 
-Per le configurazioni supportate, vedere https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#single-node-systems["Configurazioni supportate in Azure"^] .
+Per le configurazioni supportate, fai riferimento a  https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-azure.html#single-node-systems["Configurazioni supportate in Azure"^].
 
 
 
@@ -2687,7 +2710,7 @@ Lo storage Write Once, Read Many (WORM) non è più in anteprima ed è ora dispo
 [[support-for-m5dn-24xlarge-in-aws]]
 === Supporto per m5dn.24xlarge in AWS
 
-A partire dalla versione 9.9.1, Cloud Volumes ONTAP supporta il tipo di istanza m5dn.24xlarge con i seguenti metodi di addebito: PAYGO Premium, Bring Your Own License (BYOL) e Freemium.
+A partire dalla versione 9.9.1, Cloud Volumes ONTAP supporta ora il tipo di istanza m5dn.24xlarge con i seguenti metodi di fatturazione: PAYGO Premium, Bring-Your-Own License (BYOL) e Freemium.
 
 https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-aws.html["Visualizza le configurazioni supportate per Cloud Volumes ONTAP in AWS"^] .
 

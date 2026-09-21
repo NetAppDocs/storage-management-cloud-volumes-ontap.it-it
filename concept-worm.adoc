@@ -16,7 +16,7 @@ summary: 'È possibile attivare l"archiviazione WORM (Write Once, Read Many) su 
 [role="lead"]
 È possibile attivare l'archiviazione WORM (Write Once, Read Many) su un sistema Cloud Volumes ONTAP per conservare i file in formato non modificato per un periodo di conservazione specificato.  L'archiviazione Cloud WORM è basata sulla tecnologia SnapLock , il che significa che i file WORM sono protetti a livello di file.
 
-La funzionalità WORM è disponibile per l'uso con la licenza BYOL (Bring Your Own License) e gli abbonamenti al marketplace per le tue licenze senza costi aggiuntivi.  Contatta il tuo rappresentante commerciale NetApp per aggiungere WORM alla tua licenza attuale.
+La funzionalità WORM è disponibile senza costi aggiuntivi per gli abbonamenti al marketplace e per le licenze Bring-Your-Own License (BYOL). Contatta il tuo NetApp sales representative per aggiungere WORM alla tua licenza attuale.
 
 
 

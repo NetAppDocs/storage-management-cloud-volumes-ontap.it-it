@@ -39,12 +39,12 @@ I sistemi Cloud Volumes ONTAP che utilizzano Infrastructure Manager archiviano d
 * Assicurati che le API di Google Cloud siano abilitate. Fai riferimento a https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Abilita le API di Google Cloud"^]. Assicurati che, insieme alle altre API, sia abilitata anche la Google Cloud Quotas API.
 * Verificare che l'account di servizio dell'agente della NetApp Console disponga di tutte le autorizzazioni necessarie. Fare riferimento a  https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions["Autorizzazioni di Google Cloud per l'agente della console"^].
 +
-.Per le distribuzioni in modalità privata, assicurarsi dei seguenti prerequisiti aggiuntivi:
+.Per le implementazioni in modalità privata, assicurati di soddisfare questi prerequisiti aggiuntivi:
 [%collapsible]
 ====
 ** Assicurati di disporre della versione più recente dell'agente Console. Scarica il programma di installazione del prodotto dal NetApp Support Site e quindi installa manualmente l'agente sul tuo host in modo che l'agente possa utilizzare le API di Infrastructure Manager.
 ** Se esegui lo strumento in modalità privata, assicurati che, insieme alle altre API, tu abbia abilitato l'API Cloud Build. https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Abilita le API di Google Cloud"^].
-** Assicurarsi di aver completato le configurazioni di rete e creato il pool di worker per le distribuzioni in modalità privata. Fai riferimento a link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["Configurazione di Infrastructure Manager per distribuzioni in modalità privata"].
+** Assicurati di aver completato le configurazioni di rete e creato il pool di worker per le distribuzioni in modalità privata. Fai riferimento a link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments["Configurazione di Infrastructure Manager per le implementazioni in modalità privata"].
 
 
 ====
@@ -162,7 +162,7 @@ includedPermissions:
 - storage.objects.list
 ----
 +
-.Includi autorizzazioni aggiuntive per le distribuzioni in modalità privata
+.Includi autorizzazioni aggiuntive per le implementazioni in modalità privata
 [%collapsible]
 ====
 Se si esegue lo strumento in modalità privata, aggiungere l `cloudbuild.workerpools.get`autorizzazione anche al file YAML.
@@ -290,10 +290,10 @@ dmconvert \
 --service-account=<the service account attached to the Console agent>
 ----
 +
-.Esegui lo strumento in distribuzioni in modalità privata
+.Esegui lo strumento nelle distribuzioni in modalità privata
 [%collapsible]
 ====
-Specificare il  `--worker-pool` parametro per eseguire lo strumento nelle distribuzioni in modalità privata. Per la configurazione del pool di worker, fare riferimento a link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["Configurazione di Infrastructure Manager per distribuzioni in modalità privata"].
+Specifica il parametro  `--worker-pool` per eseguire lo strumento nelle distribuzioni in modalità privata. Per la configurazione del pool di worker, consulta link:reference-networking-gcp.html#infrastructure-manager-configuration-for-private-mode-deployments["Configurazione di Infrastructure Manager per le implementazioni in modalità privata"].
 
 [source, cli]
 ----

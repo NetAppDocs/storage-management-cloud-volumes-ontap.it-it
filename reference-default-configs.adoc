@@ -32,7 +32,7 @@ La segnalazione dello spazio logico è abilitata sulla storage VM iniziale. Quan
 ** FlexClone
 ** iSCSI
 ** Gestione delle chiavi di crittografia multi-tenant (MTEKM), a partire da Cloud Volumes ONTAP 9.12.1 GA
-** NetApp Volume Encryption (solo per sistemi BYOL (Bring Your Own License) o PAYGO (Registered Pay-as-You-Go))
+** NetApp Volume Encryption (solo per sistemi Bring-Your-Own License (BYOL) o pay-as-you-go (PAYGO) registrati)
 ** NFS ifdef::aws[] endif::aws[] ifdef::azure[] endif::azure[]
 ** SnapMirror
 ** SnapRestore

@@ -827,7 +827,7 @@ Le seguenti note forniscono indicazioni generali sul comportamento delle istanze
 [[supported-regions]]
 === Regioni supportate
 
-Per il supporto della regione AWS, vedere https://bluexp.netapp.com/cloud-volumes-global-regions["Regioni globali di Cloud Volumes"^].
+Per il supporto delle regioni AWS, consulta  https://bluexp.netapp.com/cloud-volumes-global-regions["Regioni globali di Cloud Volumes"^].
 
 .Informazioni correlate
 * https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html["Tipi di istanze Amazon EC2"^]

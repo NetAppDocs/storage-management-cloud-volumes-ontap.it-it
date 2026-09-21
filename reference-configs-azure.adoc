@@ -1298,7 +1298,7 @@ Le coppie HA utilizzano Azure Managed Disks. Sono supportati i seguenti tipi e d
 [[supported-regions]]
 === Regioni supportate
 
-Per il supporto della regione Azure, vedere  https://bluexp.netapp.com/cloud-volumes-global-regions["Regioni globali di Cloud Volumes"^].
+Per il supporto delle regioni di Azure, fai riferimento a  https://bluexp.netapp.com/cloud-volumes-global-regions["Regioni globali di Cloud Volumes"^].
 
 .Link correlati
 * link:task-planning-your-config-azure.html["Scopri come scegliere i tipi e le dimensioni dei dischi per i tuoi sistemi in Azure"]

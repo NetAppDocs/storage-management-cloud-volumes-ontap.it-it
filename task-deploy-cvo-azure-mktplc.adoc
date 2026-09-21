@@ -149,6 +149,7 @@ Una volta completata l'individuazione, è possibile visualizzare i sistemi elenc
 .Link correlati
 Per ulteriori informazioni sulla creazione di storage, fare riferimento alla documentazione ONTAP :
 
+* link:task-onboard-cvo-aws-marketplace.html["Iscriviti e distribuisci Cloud Volumes ONTAP da AWS Marketplace"]
 * https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html["Aggiungi un nuovo abbonamento al marketplace"^]
 * https://docs.netapp.com/us-en/ontap/volumes/create-volume-task.html["Creare volumi per NFS"^]
 * https://docs.netapp.com/us-en/ontap-cli/lun-create.html["Creare LUN per iSCSI"^]

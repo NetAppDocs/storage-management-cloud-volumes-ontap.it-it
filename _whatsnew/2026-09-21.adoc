@@ -1,0 +1,21 @@
+= Supporto per licenze basate sulla capacità nelle implementazioni in modalità privata
+:allow-uri-read: 
+
+
+
+
+[[support-for-capacity-based-licenses-in-private-mode-deployments]]
+=== Supporto per licenze basate sulla capacità nelle implementazioni in modalità privata
+
+Ora puoi implementare i sistemi Cloud Volumes ONTAP in modalità privata con licenze basate sulla capacità in AWS, Azure e Google Cloud.
+
+NetApp supporta solo il pacchetto Essentials per il modello di licensing basato sulla capacità in modalità privata. Acquista un pacchetto Essentials Bring-Your-Own License (BYOL) basato sulla capacità da NetApp e assegnalo al tuo sistema durante la distribuzione. I primi 500 GiB di capacità consumata non vengono conteggiati ai fini dei costi della licenza. Puoi acquistare pacchetti aggiuntivi man mano che crescono i requisiti del tuo carico di lavoro.
+
+NetApp consiglia il modello di licensing basato sulla capacità per tutte le implementazioni Cloud Volumes ONTAP in modalità privata. Se hai implementazioni esistenti in modalità privata con licenze basate sui nodi, puoi convertirle al modello di licensing basato sulla capacità acquistando un pacchetto Essentials da NetApp. Questa nuova funzionalità di implementazione, insieme all'opzione di conversione, supporta il piano di NetApp di passare gradualmente dalle licenze basate sui nodi a quelle basate sulla capacità.
+
+.Link correlati
+* https://review.docs.netapp.com/us-en/storage-management-cloud-volumes-ontap_capacity-license-darkmode/concept-licensing.html["Licenza Cloud Volumes ONTAP"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-license-management.html["Scopri Cloud Volumes ONTAP BYOL"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Fine della disponibilità delle licenze basate sui nodi"^]
+* https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-manage-node-licenses.html["Gestisci le licenze basate su nodo per Cloud Volumes ONTAP"^]
+

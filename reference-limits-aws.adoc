@@ -105,7 +105,7 @@ Note:
 
 I limiti di capacità sono diversi a seconda della famiglia di tipi di istanze EC2 che si utilizza e se si utilizza un sistema a nodo singolo o una coppia HA.
 
-Le seguenti note forniscono dettagli sui numeri che vedrai nelle tabelle sottostanti:
+Le seguenti note forniscono dettagli sui numeri che vedrai nelle tabelle qui sotto:
 
 * I limiti dei dischi sono specifici per i dischi che contengono dati utente.
 +
