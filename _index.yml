@@ -70,7 +70,7 @@ indexpage:
     - title: Requisiti di rete/requisiti di sicurezza in Google Cloud
       url: reference-networking-gcp.html
     - title: Implementazione rapida
-      url: task-getting-started-gcp.html
+      url: task-quick-deploy-gcp.html
     - title: Gestisci le chiavi di crittografia con Google Cloud KMS
       url: task-google-key-manager.html
   - title: Amministrazione di sistema e di archiviazione
