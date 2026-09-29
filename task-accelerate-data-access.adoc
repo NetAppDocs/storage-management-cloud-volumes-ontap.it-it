@@ -36,25 +36,11 @@ Quando si configura FlexCache su un sistema Cloud Volumes ONTAP in cui il volume
 
 .Prima di iniziare
 . *Configurazione della crittografia*: assicurarsi che il volume di origine sia completamente crittografato e operativo.  Per i sistemi Cloud Volumes ONTAP , ciò comporta l'integrazione con servizi di gestione delle chiavi specifici del cloud.
++
+** *Per AWS*, questo in genere significa utilizzare AWS Key Management Service (KMS). Per informazioni, fai riferimento a link:task-aws-key-management.html["Gestisci le chiavi con AWS Key Management Service"].
+** *Per Azure*, devi configurare Azure Key Vault per NetApp Volume Encryption (NVE). Per informazioni, consulta link:task-azure-key-vault.html["Gestisci le chiavi con Azure Key Vault"].
+** *Per Google Cloud*, usa Google Cloud Key Management Service. Per informazioni, consulta link:task-google-key-manager.html["Gestisci le chiavi con il servizio Cloud Key Management di Google"].
 
-
-ifdef::aws[]
-
-Per AWS, questo in genere significa utilizzare AWS Key Management Service (KMS).  Per informazioni, fare riferimento alink:task-aws-key-management.html["Gestisci le chiavi con AWS Key Management Service"] .
-
-endif::aws[]
-
-ifdef::azure[]
-
-Per Azure, è necessario configurare Azure Key Vault per NetApp Volume Encryption (NVE).  Per informazioni, fare riferimento alink:task-azure-key-vault.html["Gestisci le chiavi con Azure Key Vault"] .
-
-endif::azure[]
-
-ifdef::gcp[]
-
-Per Google Cloud, si tratta di Google Cloud Key Management Service.  Per informazioni, fare riferimento alink:task-google-key-manager.html["Gestisci le chiavi con il servizio Cloud Key Management di Google"] .
-
-endif::gcp[]
 
 . *Servizi di gestione delle chiavi*: prima di creare un volume FlexCache , verificare che i servizi di gestione delle chiavi siano configurati correttamente sul sistema Cloud Volumes ONTAP .  Questa configurazione è essenziale affinché il volume FlexCache decrittografi i dati dal volume di origine.
 . *Licenza*: verificare che una licenza FlexCache valida sia disponibile e attivata sul sistema Cloud Volumes ONTAP .

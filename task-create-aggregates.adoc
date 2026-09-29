@@ -22,12 +22,10 @@ CAUTION: Tutti i dischi e gli aggregati devono essere creati ed eliminati dirett
 .Passi
 . Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
 . Nella pagina *Sistemi*, fare doppio clic sul nome del sistema Cloud Volumes ONTAP su cui si desidera gestire gli aggregati.
-. Nella scheda Aggregati, fare clic su *Aggiungi aggregato* e quindi specificare i dettagli per l'aggregato.
+. Nella scheda Aggregati, seleziona *Aggiungi aggregato* e poi specifica i dettagli per l'aggregato.
 +
 [role="tabbed-block"]
 ====
-ifdef::aws[]
-
 .AWS
 --
 ** Se ti viene chiesto di scegliere un tipo e una dimensione del disco, fai riferimento alink:task-planning-your-config.html["Pianifica la configurazione Cloud Volumes ONTAP in AWS"] .
@@ -41,26 +39,16 @@ link:concept-aws-elastic-volumes.html["Scopri di più sul supporto per Elastic V
 
 
 --
-endif::aws[]
-
-ifdef::azure[]
-
 .Azzurro
 --
 Per assistenza sul tipo e la dimensione del disco, fare riferimento alink:task-planning-your-config-azure.html["Pianifica la configurazione Cloud Volumes ONTAP in Azure"] .
 
 --
-endif::azure[]
-
-ifdef::gcp[]
-
 .Google Cloud
 --
 Per assistenza sul tipo e la dimensione del disco, fare riferimento alink:task-planning-your-config-gcp.html["Pianifica la configurazione Cloud Volumes ONTAP in Google Cloud"] .
 
 --
-endif::gcp[]
-
 ====
-. Fare clic su *Aggiungi*, quindi su *Approva e acquista*.
+. Seleziona *Add*, quindi seleziona *Approve and Purchase*.
 

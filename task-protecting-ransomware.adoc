@@ -25,17 +25,17 @@ Disponibile sulla Console, l'impostazione Protezione ransomware consente di util
 
 .Passi
 . Nella pagina *Sistemi*, fare doppio clic sul nome del sistema Cloud Volumes ONTAP configurato per utilizzare la protezione ransomware.
-. Nella scheda Panoramica, fare clic sul pannello Funzionalità e quindi sull'icona della matita accanto a *Protezione ransomware*.
+. Nella scheda Panoramica, seleziona il pannello Funzionalità e quindi seleziona l'icona della matita accanto a *Protezione da ransomware*.
 +
 image::screenshot_features_support_registration_2.png[Uno screenshot che mostra l'impostazione Protezione ransomware nel pannello Funzionalità disponibile in alto a destra nella pagina Panoramica quando si visualizza un sistema.]
 
 . Implementare la soluzione NetApp contro il ransomware:
 +
-.. Fare clic su *Attiva criterio snapshot* se si dispone di volumi per i quali non è abilitato un criterio snapshot.
+.. Seleziona *Activate Snapshot Policy* se hai volumi che non hanno una policy di Snapshot abilitata.
 +
 La tecnologia NetApp Snapshot offre la migliore soluzione del settore per la remediation del ransomware.  La chiave per un ripristino riuscito è il ripristino da backup non infetti.  Le copie snapshot sono di sola lettura, il che impedisce la corruzione da parte del ransomware.  Possono anche fornire la granularità necessaria per creare immagini di una singola copia di file o una soluzione completa di disaster recovery.
 
-.. Fare clic su *Attiva FPolicy* per abilitare la soluzione FPolicy di ONTAP, che può bloccare le operazioni sui file in base all'estensione del file.
+.. Seleziona *Attiva FPolicy* per abilitare la soluzione FPolicy di ONTAP, che può bloccare le operazioni sui file in base all'estensione del file.
 +
 Questa soluzione preventiva migliora la protezione dagli attacchi ransomware bloccando i tipi di file ransomware più comuni.
 

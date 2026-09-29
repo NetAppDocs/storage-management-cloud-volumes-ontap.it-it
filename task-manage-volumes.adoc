@@ -32,37 +32,37 @@ Utilizzando la Visualizzazione standard della Console, è possibile gestire i vo
 +
 image:screenshot_manage_vol_button.png["Uno screenshot del pulsante Gestisci volume nella scheda Volumi."]
 
-. Nel riquadro del volume richiesto, fare clic su *Gestisci volume*.
+. Nel riquadro del volume desiderato, seleziona *Gestisci volume*.
 +
 [cols="30,70"]
 |===
 | Compito | Azione 
 
 
-| Visualizza informazioni su un volume | In Azioni volume nel pannello Gestisci volumi, fare clic su *Visualizza dettagli volume*. 
+| Visualizza informazioni su un volume | In "Azioni sul volume" nel pannello "Gestisci volumi", seleziona *Visualizza dettagli del volume*. 
 
 
 | Ottieni il comando di montaggio NFS  a| 
-.. In Azioni volume nel pannello Gestisci volumi, fare clic su *Comando di montaggio*.
-.. Fare clic su *Copia*.
+.. In Azioni volume nel pannello Gestisci volumi, seleziona *Comando di montaggio*.
+.. Seleziona *Copia*.
 
 
 
 
 | Clonare un volume  a| 
-.. In Azioni volume nel pannello Gestisci volumi, fare clic su *Clona il volume*.
-.. Modificare il nome del clone secondo necessità, quindi fare clic su *Clona*.
+.. In Azioni volume nel pannello Gestisci volumi, seleziona *Clona il volume*.
+.. Modifica il nome del clone secondo necessità, quindi seleziona *Clone*.
 
 
 Questo processo crea un volume FlexClone .  Un volume FlexClone è una copia scrivibile, puntuale e a basso consumo di spazio, perché utilizza una piccola quantità di spazio per i metadati e consuma spazio aggiuntivo solo quando i dati vengono modificati o aggiunti.
 
-Per saperne di più sui volumi FlexClone , fare riferimento a http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["Guida alla gestione dell'archiviazione logica ONTAP 9"^] .
+Per saperne di più sui volumi FlexClone, fai riferimento a link:http://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-vsmg/home.html["Guida alla gestione dell'archiviazione logica ONTAP 9"^].
 
 
 
 | Modifica un volume (solo volumi di lettura-scrittura)  a| 
-.. In Azioni volume nel pannello Gestisci volumi, fare clic su *Modifica impostazioni volume*
-.. Modificare il criterio Snapshot del volume, la versione del protocollo NFS, l'elenco di controllo degli accessi NFS (criterio di esportazione) o le autorizzazioni di condivisione, quindi fare clic su *Applica*.
+.. In "Azioni volume" nel pannello "Gestisci volumi", seleziona *Modifica impostazioni volume*
+.. Modifica la policy di Snapshot del volume, la versione del protocollo NFS, l'elenco di controllo degli accessi NFS (policy di esportazione) o le autorizzazioni di condivisione, quindi seleziona *Applica*.
 
 
 
@@ -71,30 +71,30 @@ NOTE: Se hai bisogno di policy Snapshot personalizzate, puoi crearle utilizzando
 
 
 | Elimina un volume  a| 
-.. In Azioni volume nel pannello Gestisci volumi, fare clic su *Elimina il volume*.
+.. In "Azioni volume" nel pannello "Gestisci volumi", seleziona *Elimina il volume*.
 .. Nella finestra Elimina volume, immettere il nome del volume che si desidera eliminare.
-.. Fare nuovamente clic su *Elimina* per confermare.
+.. Seleziona di nuovo *Delete* per confermare.
 
 
 
 
 | Crea una copia Snapshot su richiesta  a| 
-.. In Azioni di protezione nel pannello Gestisci volumi, fare clic su *Crea una copia snapshot*.
-.. Se necessario, modifica il nome e poi fai clic su *Crea*.
+.. In Azioni di protezione nel pannello Gestisci volumi, seleziona *Crea una copia Snapshot*.
+.. Se necessario, modifica il nome e poi seleziona *Crea*.
 
 
 
 
 | Ripristina i dati da una copia Snapshot su un nuovo volume  a| 
-.. In Azioni di protezione nel pannello Gestisci volumi, fare clic su *Ripristina da copia snapshot*.
-.. Selezionare una copia Snapshot, immettere un nome per il nuovo volume, quindi fare clic su *Ripristina*.
+.. In Azioni di protezione nel pannello Gestisci volumi, seleziona *Ripristina da copia Snapshot*.
+.. Seleziona una copia Snapshot, immetti un nome per il nuovo volume, quindi seleziona *Restore*.
 
 
 
 
 | Cambia il tipo di disco sottostante  a| 
-.. In Azioni avanzate nel pannello Gestisci volumi, fare clic su *Cambia tipo di disco*.
-.. Selezionare il tipo di disco, quindi fare clic su *Cambia*.
+.. In Azioni avanzate nel pannello Gestisci volumi, seleziona *Cambia tipo di disco*.
+.. Seleziona il tipo di disco, quindi seleziona *Cambia*.
 
 
 
@@ -103,8 +103,8 @@ NOTE: La console sposta il volume in un aggregato esistente che utilizza il tipo
 
 
 | Cambiare la politica di suddivisione in livelli  a| 
-.. In Azioni avanzate nel pannello Gestisci volumi, fare clic su *Modifica criterio di suddivisione in livelli*.
-.. Seleziona una policy diversa e clicca su *Modifica*.
+.. In Azioni avanzate nel pannello Gestisci volumi, seleziona *Modifica policy di tiering*.
+.. Seleziona una policy diversa e seleziona *Change*.
 
 
 
@@ -113,9 +113,9 @@ NOTE: La console sposta il volume in un aggregato esistente che utilizza il tipo
 
 
 | Elimina un volume  a| 
-.. Selezionare un volume, quindi fare clic su *Elimina*.
+.. Seleziona un volume, quindi seleziona *Elimina*.
 .. Digitare il nome del volume nella finestra di dialogo.
-.. Fare nuovamente clic su *Elimina* per confermare.
+.. Seleziona di nuovo *Delete* per confermare.
 
 
 |===
@@ -134,10 +134,10 @@ Se è necessario ridimensionare il volume, è possibile farlo da ONTAP System Ma
 . Seleziona la vista System Manager per ridimensionare un volume tramite ONTAP System Manager. Fai riferimento a link:task-administer-advanced-view.html#get-started-with-system-manager["Inizia con System Manager"].
 . Dal menu di navigazione a sinistra, seleziona *Archiviazione > Volumi*.
 . Dall'elenco dei volumi, identifica quello che vuoi ridimensionare.
-. Fare clic sull'icona delle opzioniimage:screenshot_gallery_options.gif["icona del kebab"] .
+. Seleziona l'icona delle opzioni image:screenshot_gallery_options.gif["icona del kebab"].
 . Seleziona *Ridimensiona*.
 . Nella schermata *Ridimensiona volume*, modifica la capacità e la percentuale di riserva Snapshot come richiesto.  È possibile confrontare lo spazio disponibile esistente con la capacità modificata.
-. Fare clic su *Salva*.
+. Seleziona *Salva*.
 
 
 image:screenshot-resize-volume.png["Lo schermo visualizza la capacità modificata dopo il ridimensionamento del volume"]
@@ -152,8 +152,8 @@ Quando si ridimensionano i volumi, assicurarsi di tenere in considerazione i lim
 Se si modificano i server DNS o il dominio Active Directory, è necessario modificare il server CIFS in Cloud Volumes ONTAP in modo che possa continuare a fornire spazio di archiviazione ai client.
 
 .Passi
-. Dalla scheda *Panoramica* del sistema Cloud Volumes ONTAP , fare clic sulla scheda *Funzionalità* nel pannello di destra.
-. Nel campo Configurazione CIFS, fare clic sull'icona della matita per visualizzare la finestra Configurazione CIFS.
+. Dalla scheda *Panoramica* del sistema Cloud Volumes ONTAP, seleziona la scheda *Funzionalità* nel pannello di destra.
+. Nel campo Configurazione CIFS, seleziona l'icona a forma di matita per visualizzare la finestra Configurazione CIFS.
 . Specificare le impostazioni per il server CIFS:
 +
 [cols="30,70"]
@@ -170,7 +170,7 @@ Se si modificano i server DNS o il dominio Active Directory, è necessario modif
 | Credenziali autorizzate ad unirsi al dominio | Nome e password di un account Windows con privilegi sufficienti per aggiungere computer all'unità organizzativa (OU) specificata all'interno del dominio AD. 
 
 
-| Indirizzo IP primario e secondario DNS | Gli indirizzi IP dei server DNS che forniscono la risoluzione dei nomi per il server CIFS.  I server DNS elencati devono contenere i record di posizione del servizio (SRV) necessari per individuare i server LDAP di Active Directory e i controller di dominio per il dominio a cui verrà aggiunto il server CIFS. ifdef::gcp[] Se stai configurando Google Managed Active Directory, per impostazione predefinita è possibile accedere ad AD con l'indirizzo IP 169.254.169.254. endif::gcp[] 
+| Indirizzo IP primario e secondario DNS | Gli indirizzi IP dei server DNS che forniscono la risoluzione dei nomi per il server CIFS. I server DNS elencati devono contenere i record di individuazione del servizio (SRV) necessari per individuare i server LDAP di Active Directory e i controller di dominio per il dominio a cui si unirà il server CIFS. Se stai configurando Google-managed Active Directory, puoi accedervi per impostazione predefinita con l'indirizzo IP 169.254.169.254. 
 
 
 | Dominio DNS | Dominio DNS per la macchina virtuale di archiviazione (SVM) Cloud Volumes ONTAP .  Nella maggior parte dei casi, il dominio è lo stesso del dominio AD. 
@@ -182,29 +182,13 @@ Se si modificano i server DNS o il dominio Active Directory, è necessario modif
 | Unità organizzativa  a| 
 L'unità organizzativa all'interno del dominio AD da associare al server CIFS.  L'impostazione predefinita è CN=Computer.
 
-ifdef::aws[]
+** AWS: Per configurare AWS Managed Microsoft AD come server AD per Cloud Volumes ONTAP, inserisci *OU=Computers,OU=corp* in questo campo.
+** Azure: per configurare Azure AD Domain Services come server AD per Cloud Volumes ONTAP, inserisci *OU=AADDC Computers* o *OU=AADDC Users* in questo campo. Documentazione di Azure: link:https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Crea un'unità organizzativa (OU) in un dominio gestito di Azure AD Domain Services"^]
+** Google Cloud: per configurare Google Managed Microsoft AD come server AD per Cloud Volumes ONTAP, immetti *OU=Computers,OU=Cloud* in questo campo. Documentazione di Google Cloud: link:https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units["Unità organizzative in Google Managed Microsoft AD"^]
 
-** Per configurare AWS Managed Microsoft AD come server AD per Cloud Volumes ONTAP, immettere *OU=Computers,OU=corp* in questo campo.
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-** Per configurare Azure AD Domain Services come server AD per Cloud Volumes ONTAP, immettere *OU=AADDC Computers* o *OU=AADDC Users* in questo campo.link:https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Documentazione di Azure: creare un'unità organizzativa (OU) in un dominio gestito da Azure AD Domain Services"^]
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-** Per configurare Google Managed Microsoft AD come server AD per Cloud Volumes ONTAP, immettere *OU=Computers,OU=Cloud* in questo campo.link:https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units["Documentazione di Google Cloud: unità organizzative in Google Managed Microsoft AD"^]
-
-
-endif::gcp[]
 
 |===
-. Fare clic su *Imposta*.
+. Seleziona *Set*.
 
 
 .Risultato
@@ -263,8 +247,8 @@ Ad esempio, le informazioni avanzate dovrebbero contenere un messaggio simile a 
 
 . Identificare uno o più volumi da spostare fuori dall'aggregato:
 +
-.. Nel sistema Cloud Volumes ONTAP , fare clic sulla scheda *Aggregati*.
-.. Nella sezione relativa ai dati aggregati, fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] e poi su *Visualizza dettagli aggregati*.
+.. Nel sistema Cloud Volumes ONTAP, seleziona la scheda *Aggregates*.
+.. Nel riquadro aggregato, seleziona l'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] e poi seleziona *View aggregate details*.
 .. Nella scheda *Panoramica* della schermata *Dettagli aggregati*, controlla le dimensioni di ciascun volume e scegli uno o più volumi da spostare fuori dall'aggregato.
 +
 Dovresti scegliere volumi sufficientemente grandi da liberare spazio complessivamente, in modo da evitare ulteriori problemi di capacità in futuro.
@@ -303,11 +287,9 @@ Per informazioni, fare riferimento a<<move-volumes-aggregate-capacity,Spostare i
 .Informazioni su questo compito
 È possibile seguire i passaggi descritti in questa attività per correggere il seguente messaggio di azione richiesta:
 
-[]
-====
-Lo spostamento di un volume è necessario per evitare problemi di capacità; tuttavia, la Console non può eseguire questa azione perché il sistema ha raggiunto il limite del disco.
 
-====
+NOTE: Spostare un volume è necessario per evitare problemi di capacità; tuttavia, la Console non può eseguire questa operazione per te se il sistema raggiunge il limite del disco.
+
 .Passi
 . Identificare un sistema Cloud Volumes ONTAP con capacità disponibile oppure distribuire un nuovo sistema.
 . Trascinare e rilasciare il sistema di origine sul sistema di destinazione per eseguire una replica dei dati una tantum del volume.
@@ -339,16 +321,14 @@ Per informazioni, fare riferimento alink:task-manage-volumes.html#manage-volumes
 .Informazioni su questo compito
 È possibile seguire i passaggi descritti in questa attività per correggere il seguente messaggio di azione richiesta:
 
-[]
-====
-Per evitare problemi di capacità è necessario spostare due o più volumi; tuttavia, la Console non può eseguire questa azione per te.
 
-====
+NOTE: Per evitare problemi di capacità è necessario spostare due o più volumi; tuttavia, la Console non può eseguire questa azione per te.
+
 .Passi
 . Verificare se un aggregato esistente ha capacità disponibile per i volumi che è necessario spostare:
 +
-.. Nel sistema Cloud Volumes ONTAP , fare clic sulla scheda *Aggregati*.
-.. Sulla tessera dell'aggregato richiesto, fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] e poi su *Visualizza dettagli aggregato* per vedere la capacità disponibile (dimensione prevista meno capacità aggregata utilizzata).
+.. Nel sistema Cloud Volumes ONTAP, seleziona la scheda *Aggregates*.
+.. Sulla tessera dell'aggregato desiderato, seleziona l'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] e quindi *Visualizza dettagli aggregato* per visualizzare la capacità disponibile (dimensione di cui è stato eseguito il provisioning meno la capacità aggregata utilizzata).
 +
 image::screenshot_aggr_capacity.png[capacità di aggregazione degli screenshot]
 
@@ -356,8 +336,8 @@ image::screenshot_aggr_capacity.png[capacità di aggregazione degli screenshot]
 
 . Se necessario, aggiungere dischi a un aggregato esistente:
 +
-.. Seleziona l'aggregato, quindi fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] > *Aggiungi dischi*.
-.. Selezionare il numero di dischi da aggiungere, quindi fare clic su *Aggiungi*.
+.. Seleziona l'aggregato, quindi seleziona l'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] > *Aggiungi dischi*.
+.. Seleziona il numero di dischi da aggiungere, quindi seleziona *Aggiungi*.
 
 
 . Se nessun aggregato ha capacità disponibile, crea un nuovo aggregato.

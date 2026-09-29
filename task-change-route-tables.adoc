@@ -18,8 +18,8 @@ summary: È possibile modificare le tabelle di routing AWS che includono i perco
 
 .Passi
 . Nella pagina *Sistemi*, seleziona il sistema.
-. Nella scheda Panoramica, fare clic sul pannello Funzionalità e quindi sull'icona della matita accanto a *Tabelle di routing*.
-. Modificare l'elenco delle tabelle di routing selezionate e quindi fare clic su *Salva*.
+. Nella scheda Panoramica, seleziona il pannello Funzionalità e quindi seleziona l'icona a forma di matita accanto a *Tabelle di percorso*.
+. Modifica l'elenco delle tabelle di routing selezionate e quindi seleziona *Save*.
 
 
 .Risultato

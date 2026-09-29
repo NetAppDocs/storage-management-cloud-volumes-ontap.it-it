@@ -24,26 +24,10 @@ Sono supportate la maggior parte delle configurazioni.  Se disponi di un sistema
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"]Garantire la connettività tra Cloud Volumes ONTAP e l'archiviazione degli oggetti
 [role="quick-margin-list"]
-ifdef::aws[]
-
-* Per AWS, avrai bisogno di un endpoint VPC per Amazon Simple Storage Service (Amazon S3). <<Requirements to tier cold data to AWS S3,Saperne di più>>.
-
-
-endif::aws[]
-
-ifdef::azure[]
-
+* Per AWS, hai bisogno di un endpoint VPC per Amazon Simple Storage Service (Amazon S3). <<Requirements to tier cold data to AWS S3,Saperne di più>>.
 * Per Azure, non sarà necessario fare nulla finché la NetApp Console avrà le autorizzazioni necessarie. <<Requisiti per suddividere i dati inattivi in livelli nell'archiviazione BLOB di Azure,Saperne di più>> .
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Per Google Cloud, è necessario configurare la subnet per l'accesso privato a Google e impostare un account di servizio. <<Requisiti per suddividere i dati inattivi in un bucket di Google Cloud Storage,Saperne di più>> .
 
-
-endif::gcp[]
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"]Assicurati di avere un aggregato con livelli abilitati
 [role="quick-margin-para"]
@@ -77,8 +61,6 @@ La console crea un archivio oggetti per i dati freddi quando crea il sistema,<<A
 
 È possibile abilitare la suddivisione in livelli dei dati quando si utilizzano configurazioni e funzionalità specifiche.
 
-ifdef::aws[]
-
 
 
 [[support-in-aws]]
@@ -92,10 +74,6 @@ NOTE: Si sconsiglia di suddividere i dati in livelli per l'archiviazione di ogge
 
 * I dati inattivi vengono suddivisi in livelli nei bucket Amazon S3.  Il passaggio ad altri provider non è supportato.
 
-
-endif::aws[]
-
-ifdef::azure[]
 
 
 
@@ -112,10 +90,6 @@ ifdef::azure[]
 * I dati inattivi sono suddivisi in livelli in Microsoft Azure Blob.  Il passaggio ad altri provider non è supportato.
 
 
-endif::azure[]
-
-ifdef::gcp[]
-
 
 
 [[support-in-google-cloud]]
@@ -125,8 +99,6 @@ ifdef::gcp[]
 * Il livello di prestazioni può essere costituito da dischi persistenti SSD, dischi persistenti bilanciati o dischi persistenti standard.
 * I dati inattivi vengono archiviati su Google Cloud Storage.  Il passaggio ad altri provider non è supportato.
 
-
-endif::gcp[]
 
 
 
@@ -144,8 +116,6 @@ endif::gcp[]
 
 A seconda del provider cloud, è necessario impostare determinate connessioni e autorizzazioni affinché Cloud Volumes ONTAP possa suddividere i dati inattivi nell'archiviazione degli oggetti.
 
-ifdef::aws[]
-
 
 
 [[requirements-to-tier-cold-data-to-amazon-s3]]
@@ -156,10 +126,6 @@ Assicurarsi che Cloud Volumes ONTAP abbia una connessione ad Amazon S3. Il modo 
 Quando crei l'endpoint VPC, assicurati di selezionare la regione, la VPC e la tabella di routing che corrispondono all'istanza Cloud Volumes ONTAP .  È inoltre necessario modificare il gruppo di sicurezza per aggiungere una regola HTTPS in uscita che consenta il traffico verso l'endpoint S3.  In caso contrario, Cloud Volumes ONTAP non potrà connettersi al servizio S3.
 
 Se riscontri problemi, fai riferimento a https://aws.amazon.com/premiumsupport/knowledge-center/connect-s3-vpc-endpoint/["AWS Support Knowledge Center: perché non riesco a connettermi a un bucket S3 tramite un endpoint VPC gateway?"^] .
-
-endif::aws[]
-
-ifdef::azure[]
 
 
 
@@ -174,10 +140,6 @@ Non è necessario impostare una connessione tra il livello di prestazioni e il l
 "Microsoft.Network/routeTables/join/action",
 ----
 Il ruolo personalizzato include le autorizzazioni per impostazione predefinita. https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-azure.html["Visualizza l'autorizzazione di Azure per l'agente della console"^]
-
-endif::azure[]
-
-ifdef::gcp[]
 
 
 
@@ -200,8 +162,6 @@ Se non selezioni un account di servizio durante la distribuzione, dovrai arresta
 link:task-setting-up-gcp-encryption.html["Scopri come utilizzare le chiavi di crittografia gestite dal cliente con Cloud Volumes ONTAP"] .
 
 
-
-endif::gcp[]
 
 
 
@@ -240,9 +200,9 @@ image:screenshot_aggregate_tiering_enabled.png["Uno screenshot che mostra inform
 
 
 .Passaggi per abilitare la suddivisione in livelli su un aggregato
-. In ONTAP System Manager, fare clic su *Archiviazione > Livelli*.
-. Fare clic sul menu delle azioni per l'aggregato e selezionare *Collega livelli cloud*.
-. Seleziona il livello cloud da collegare e fai clic su *Salva*.
+. In ONTAP System Manager, seleziona *Storage > Tiers*.
+. Seleziona il menu delle azioni per l'aggregato e seleziona *Attach Cloud Tiers*.
+. Seleziona il livello cloud da collegare e seleziona *Salva*.
 
 
 .Cosa succederà ora?
@@ -263,10 +223,10 @@ Cloud Volumes ONTAP può suddividere i dati inattivi sui volumi di lettura-scrit
 | Compito | Azione 
 
 
-| Crea un nuovo volume | Fare clic su *Aggiungi nuovo volume*. 
+| Crea un nuovo volume | Seleziona *Add New Volume*. 
 
 
-| Modificare un volume esistente | Selezionare il riquadro del volume desiderato, fare clic su *Gestisci volume* per accedere al pannello destro Gestisci volumi, quindi fare clic su *Azioni avanzate* e *Modifica criterio di suddivisione in livelli* nel pannello destro. 
+| Modificare un volume esistente | Seleziona il riquadro del volume desiderato, seleziona *Manage volume* per accedere al pannello laterale destro Manage Volumes, quindi seleziona *Advanced actions* e *Change tiering policy* nel pannello di destra. 
 |===
 . Selezionare una politica di suddivisione in livelli.
 +
@@ -317,8 +277,8 @@ La classe di archiviazione per i dati a livelli è a livello di sistema, non per
 Per informazioni sulle classi di archiviazione supportate, fare riferimento alink:concept-data-tiering.html["Panoramica della suddivisione in livelli dei dati"] .
 
 .Passi
-. Nel sistema Cloud Volumes ONTAP , fare clic sull'icona del menu e quindi su *Classi di archiviazione* o *Suddivisione in livelli di archiviazione BLOB*.
-. Selezionare una classe di archiviazione e quindi fare clic su *Salva*.
+. Nel sistema Cloud Volumes ONTAP, seleziona l'icona del menu e poi seleziona *Storage Classes* o *Blob Storage Tiering*.
+. Scegli una classe di storage e poi seleziona *Salva*.
 
 
 
@@ -337,16 +297,16 @@ Il rapporto è importante per gli scenari di disaster recovery perché quando i 
 
 .Passi
 . Dal riquadro di navigazione a sinistra, vai su *Amministrazione > Agenti*.
-. Fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] dell'agente Console che gestisce il tuo sistema Cloud Volumes ONTAP.
+. Seleziona l'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] dell'agente Console che gestisce il tuo sistema Cloud Volumes ONTAP.
 . Selezionare *Impostazioni Cloud Volumes ONTAP *.
 +
 image::screenshot-settings-cloud-volumes-ontap.png[Uno screenshot dell'opzione Impostazioni Cloud Volumes ONTAP sotto l'icona Impostazioni.]
 
-. In *Capacità*, fare clic su *Soglie di capacità aggregata - Rapporto spazio libero per la suddivisione in livelli dei dati*.
+. In *Capacità*, seleziona *Soglie di capacità aggregata - Rapporto di spazio libero per il tiering dei dati*.
 +
 image:screenshot-cvo-settings-page.png["Panoramica delle impostazioni di capacità di Cloud Volumes ONTAP."]
 
-. Modifica la percentuale di spazio libero in base alle tue esigenze e fai clic su *Salva*.
+. Modifica il rapporto di spazio libero in base alle tue esigenze e seleziona *Salva*.
 
 
 

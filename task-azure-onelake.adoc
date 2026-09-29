@@ -81,7 +81,7 @@ Configura l'accesso multiprotocollo ONTAP S3 per consentire a OneLake di leggere
 . Configura ONTAP S3 per il sistema Cloud Volumes ONTAP.
 +
 .. Su NetApp Console, dal menu di navigazione a sinistra, seleziona *Storage > Management*.
-.. Seleziona un agente della Console, quindi fai clic sul sistema Cloud Volumes ONTAP e, dal menu a destra, seleziona *System Manager*.
+.. Seleziona un agente della console. Quindi seleziona il sistema Cloud Volumes ONTAP e poi, dalle opzioni del menu a destra, seleziona *System Manager*.
 .. Abilita l'accesso al protocollo S3 sull'SVM. Consulta la link:https://docs.netapp.com/us-en/ontap/s3-multiprotocol/enable-access-nas-data-task.html["Documentazione ONTAP: Abilita l'accesso del client S3 ai dati NAS"^] per informazioni.
 +
 

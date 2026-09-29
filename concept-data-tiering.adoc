@@ -20,8 +20,6 @@ image:diagram_data_tiering.png["Questa è un'immagine concettuale che mostra i d
 
 La suddivisione in livelli dei dati è basata sulla tecnologia FabricPool .  Cloud Volumes ONTAP fornisce livelli di dati per tutti i cluster Cloud Volumes ONTAP senza una licenza aggiuntiva.  Quando si abilita il data tiering, i dati suddivisi in livelli per l'archiviazione degli oggetti comportano dei costi.  Per maggiori dettagli sui costi di archiviazione degli oggetti, consulta la documentazione del tuo provider cloud.
 
-ifdef::aws[]
-
 
 
 [[data-tiering-in-aws]]
@@ -64,10 +62,6 @@ La classe di archiviazione per la suddivisione in livelli dei dati è a livello 
 
 --
 
-
-endif::aws[]
-
-ifdef::azure[]
 
 
 
@@ -112,10 +106,6 @@ Il livello di accesso all'archiviazione per la suddivisione in livelli dei dati 
 --
 
 
-endif::azure[]
-
-ifdef::gcp[]
-
 
 
 [[data-tiering-in-google-cloud]]
@@ -147,8 +137,6 @@ La classe di archiviazione per la suddivisione in livelli dei dati è a livello 
 
 --
 
-
-endif::gcp[]
 
 
 

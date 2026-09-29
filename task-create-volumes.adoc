@@ -32,15 +32,13 @@ Alcune note sul provisioning dei volumi:
 
 * Quando crei un volume iSCSI, la Console crea automaticamente un LUN per te. Abbiamo semplificato il processo creando un solo LUN per volume, così non c'è gestione da fare. Dopo aver creato il volume, link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-connect-lun.html["utilizzare l'IQN per connettersi al LUN dai tuoi host"^].
 * È possibile creare LUN aggiuntivi da ONTAP System Manager o da ONTAP CLI.
+* In AWS:
++
+** Se vuoi utilizzare CIFS in AWS, devi aver configurato DNS e Active Directory. Per dettagli, consulta link:reference-networking-aws.html["Requisiti di rete per Cloud Volumes ONTAP per AWS"].
+** Se la configurazione Cloud Volumes ONTAP supporta la funzionalità Amazon EBS Elastic Volumes, potrebbe essere necessariolink:concept-aws-elastic-volumes.html["scopri di più su cosa succede quando crei un volume"] .
 
 
-ifdef::aws[]
 
-* Se vuoi utilizzare CIFS in AWS, devi aver configurato DNS e Active Directory. Per dettagli, consulta link:reference-networking-aws.html["Requisiti di rete per Cloud Volumes ONTAP in AWS"].
-* Se la configurazione Cloud Volumes ONTAP supporta la funzionalità Amazon EBS Elastic Volumes, potrebbe essere necessariolink:concept-aws-elastic-volumes.html["scopri di più su cosa succede quando crei un volume"] .
-
-
-endif::aws[]
 
 
 
@@ -60,12 +58,12 @@ Il modo più comune per creare un volume è specificare il tipo di volume necess
 ====
 .Qualsiasi aggregato
 --
-Selezionare la scheda Volumi e fare clic su *Aggiungi volume*.image:screenshot_add_volume_button.png["Uno screenshot del pulsante Aggiungi volume nella scheda Panoramica."]
+Seleziona la scheda Volumes e seleziona *Add Volume*. image:screenshot_add_volume_button.png["Uno screenshot del pulsante Aggiungi volume nella scheda Panoramica."]
 
 --
 .Aggregato specifico
 --
-.. Nella scheda *Aggregati*, vai all'aggregato desiderato e fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"].
+.. Nella scheda *Aggregati*, vai all'aggregato desiderato e seleziona l'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"].
 .. Selezionare *Aggiungi volume*.image:screenshot_add_volume_button_agg.png["Uno screenshot del pulsante Aggiungi volume nella scheda Aggregati."]
 
 
@@ -96,7 +94,7 @@ Alcuni campi di questa pagina sono autoesplicativi. L'elenco seguente descrive i
 |===
 .. *Protocollo*: scegliere un protocollo per il volume (NFS, CIFS o iSCSI), quindi fornire le informazioni richieste.
 +
-Se selezioni CIFS e non è configurato alcun server, la Console ti chiederà di configurare la connettività CIFS dopo aver fatto clic su *Avanti*.
+Se selezioni CIFS e non è configurato alcun server, la Console ti chiede di configurare la connettività CIFS dopo aver selezionato *Avanti*.
 
 +
 link:concept-client-protocols.html["Scopri i protocolli e le versioni client supportati"] .
@@ -120,42 +118,21 @@ Permessi e utenti/gruppi:: Consente di controllare il livello di accesso a una c
 Indirizzo IP primario e secondario DNS:: Gli indirizzi IP dei server DNS che forniscono la risoluzione dei nomi per il server CIFS.  I server DNS elencati devono contenere i record di posizione del servizio (SRV) necessari per individuare i server LDAP di Active Directory e i controller di dominio per il dominio a cui verrà aggiunto il server CIFS.
 +
 --
-ifdef::gcp[]
-
---
-
-
 Se stai configurando Google Managed Active Directory, per impostazione predefinita puoi accedere ad AD con l'indirizzo IP 169.254.169.254.
 
-endif::gcp[]
-
+--
 Dominio Active Directory a cui unirsi:: FQDN del dominio Active Directory (AD) a cui si desidera che il server CIFS si unisca.
 Credenziali autorizzate ad unirsi al dominio:: Nome e password di un account Windows con privilegi sufficienti per aggiungere computer all'unità organizzativa (OU) specificata all'interno del dominio AD.
 Nome NetBIOS del server CIFS:: Nome del server CIFS univoco nel dominio AD.
 Unità organizzativa:: L'unità organizzativa all'interno del dominio AD da associare al server CIFS.  L'impostazione predefinita è CN=Computer.
-
-
-ifdef::aws[]
-
++
+--
 *** Per configurare AWS Managed Microsoft AD come server AD per Cloud Volumes ONTAP, immettere *OU=Computers,OU=corp* in questo campo.
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 *** Per configurare Azure AD Domain Services come server AD per Cloud Volumes ONTAP, immettere *OU=AADDC Computers* o *OU=AADDC Users* in questo campo.https://docs.microsoft.com/en-us/azure/active-directory-domain-services/create-ou["Documentazione di Azure: creare un'unità organizzativa (OU) in un dominio gestito da Azure AD Domain Services"^]
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 *** Per configurare Google Managed Microsoft AD come server AD per Cloud Volumes ONTAP, immettere *OU=Computers,OU=Cloud* in questo campo.https://cloud.google.com/managed-microsoft-ad/docs/manage-active-directory-objects#organizational_units["Documentazione di Google Cloud: unità organizzative in Google Managed Microsoft AD"^]
 
 
-endif::gcp[]
-
+--
 Dominio DNS:: Dominio DNS per la macchina virtuale di archiviazione (SVM) Cloud Volumes ONTAP .  Nella maggior parte dei casi, il dominio è lo stesso del dominio AD.
 Server NTP:: Seleziona *Usa dominio Active Directory* per configurare un server NTP utilizzando il DNS di Active Directory. Se devi configurare un server NTP utilizzando un indirizzo diverso, allora dovresti usare l'API. Per informazioni, consulta la  https://docs.netapp.com/us-en/console-automation/index.html["NetApp Console documentazione sull'automazione"^].
 +
@@ -177,33 +154,12 @@ Iniziatore ospite (IQN):: Le destinazioni iSCSI si connettono alla rete tramite 
 ====
 .. *Tipo di disco*: scegli un tipo di disco sottostante per il volume in base alle tue esigenze di prestazioni e ai requisiti di costo.
 +
-ifdef::aws[]
-
-+
 *** link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config.html#size-your-system-in-aws["Dimensionamento del sistema in AWS"^]
+*** link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure["Dimensionamento del sistema in Azure"^]
+*** link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-gcp.html#size-your-system-in-gcp["Dimensionamento del sistema in Google Cloud"^]
 
 
-
-
-
-
-endif::aws[]
-
-ifdef::azure[]
-
-* link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-azure.html#size-your-system-in-azure["Dimensionamento del sistema in Azure"^]
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
-* link:https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-planning-your-config-gcp.html#size-your-system-in-gcp["Dimensionamento del sistema in Google Cloud"^]
-
-
-endif::gcp[]
-
-. *Profilo di utilizzo e criteri di suddivisione in livelli*: scegli se abilitare o disabilitare le funzionalità di efficienza di archiviazione sul volume e quindi seleziona unlink:concept-data-tiering.html["politica di suddivisione in livelli del volume"] .
+.. *Profilo di utilizzo e criteri di suddivisione in livelli*: scegli se abilitare o disabilitare le funzionalità di efficienza di archiviazione sul volume e quindi seleziona unlink:concept-data-tiering.html["politica di suddivisione in livelli del volume"] .
 +
 ONTAP include diverse funzionalità di efficienza di archiviazione che possono ridurre la quantità totale di spazio di archiviazione necessario.  Le funzionalità di efficienza dello storage NetApp offrono i seguenti vantaggi:
 
@@ -213,7 +169,9 @@ Deduplicazione:: Migliora l'efficienza individuando blocchi di dati identici e s
 Compressione:: Riduce la capacità fisica necessaria per archiviare i dati comprimendoli all'interno di un volume su storage primario, secondario e di archivio.
 
 
-. *Revisione*: rivedere i dettagli sul volume e quindi fare clic su *Aggiungi*.
+.. *Rivedi*: rivedi i dettagli relativi al volume, quindi seleziona *Aggiungi*.
+
+
 
 
 .Risultato
@@ -230,24 +188,20 @@ Per impostazione predefinita, la console crea volumi sul primo nodo in una confi
 .Passi
 . Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
 . Nella pagina *Sistemi*, fare doppio clic sul nome del sistema Cloud Volumes ONTAP su cui si desidera gestire gli aggregati.
-. Nella scheda Aggregati, fare clic su *Aggiungi aggregato* e creare l'aggregato.
+. Nella scheda Aggregati, seleziona *Aggiungi aggregato* e crea l'aggregato.
 +
 image:screenshot_add_aggregate_cvo.png["Uno screenshot che mostra l'avanzamento dell'aggiunta di un aggregato."]
 
 . Per Home Node, scegliere il secondo nodo nella coppia HA.
-. Dopo che la Console ha creato l'aggregato, selezionarlo e quindi fare clic su *Crea volume*.
-. Inserisci i dettagli per il nuovo volume, quindi fai clic su *Crea*.
+. Dopo che la Console ha creato l'aggregato, selezionalo e quindi seleziona *Crea volume*.
+. Inserisci i dettagli per il nuovo volume, quindi seleziona *Crea*.
 
 
 .Risultato
 La console crea il volume sul secondo nodo nella coppia HA.
 
-ifdef::aws[]
-
 
 TIP: Per le coppie HA distribuite in più zone di disponibilità AWS, è necessario montare il volume sui client utilizzando l'indirizzo IP mobile del nodo su cui risiede il volume.
-
-endif::aws[]
 
 
 

@@ -125,7 +125,7 @@ La risorsa ha il seguente ID: `userassignedidentity` .
 
 .Passi
 . In Azure, vai a Servizi di Azure e seleziona *Identità gestite*.
-. Fare clic su *Crea*.
+. Seleziona *Crea*.
 . Fornire i seguenti dettagli:
 +
 ** *Abbonamento*: Scegli un abbonamento.  Si consiglia di scegliere lo stesso abbonamento dell'agente della Console.
@@ -135,7 +135,7 @@ La risorsa ha il seguente ID: `userassignedidentity` .
 
 
 . Facoltativamente, aggiungi dei tag.
-. Fare clic su *Crea*.
+. Seleziona *Crea*.
 
 
 
@@ -172,7 +172,7 @@ NOTE: L'utilizzo delle chiavi di crittografia gestite dal cliente di Azure è su
 
 
 
-. Se hai selezionato Criterio di accesso al vault, fai clic su Crea per creare un criterio di accesso per il vault delle chiavi.  In caso contrario, passare al passaggio 3.
+. Se hai selezionato policy di accesso al vault, seleziona "Crea" per creare una policy di accesso per il vault delle chiavi. In caso contrario, passa al passaggio 3.
 +
 .. Selezionare le seguenti autorizzazioni:
 +

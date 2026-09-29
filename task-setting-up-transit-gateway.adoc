@@ -32,10 +32,10 @@ I passaggi seguenti illustrano come impostare una configurazione simile.
 . https://docs.aws.amazon.com/vpc/latest/tgw/tgw-getting-started.html["Creare un gateway di transito e collegare le VPC al gateway"^] .
 . Associare le VPC alla tabella di routing del gateway di transito.
 +
-.. Nel servizio *VPC*, fare clic su *Tabelle di routing del gateway di transito*.
+.. Nel servizio *VPC*, seleziona *Transit Gateway Route Tables*.
 .. Selezionare la tabella di routing.
-.. Fare clic su *Associazioni* e quindi selezionare *Crea associazione*.
-.. Selezionare gli allegati (VPC) da associare, quindi fare clic su *Crea associazione*.
+.. Seleziona *Associazioni* e poi seleziona *Crea associazione*.
+.. Seleziona gli allegati (le VPC) da associare, quindi seleziona *Crea associazione*.
 
 
 . Creare percorsi nella tabella di routing del gateway di transito specificando gli indirizzi IP flottanti della coppia HA.
@@ -75,13 +75,13 @@ image:screenshot_transit_gateway3.png["Uno screenshot della console AWS che most
 
 . Aggiorna le impostazioni dei gruppi di sicurezza su Tutto il traffico per la VPC.
 +
-.. In Virtual Private Cloud, fare clic su *Sottoreti*.
-.. Fare clic sulla scheda *Tabella di routing* e selezionare l'ambiente desiderato per uno degli indirizzi IP mobili per una coppia HA.
-.. Fare clic su *Gruppi di sicurezza*.
+.. In Virtual Private Cloud, seleziona *Subnets*.
+.. Seleziona la scheda *Tabella di routing* e seleziona l'ambiente desiderato per uno degli indirizzi IP mobili per una coppia HA.
+.. Seleziona *Gruppi di sicurezza*.
 .. Selezionare *Modifica regole in entrata*.
-.. Fare clic su *Aggiungi regola*.
+.. Seleziona *Aggiungi regola*.
 .. In Tipo, seleziona *Tutto il traffico*, quindi seleziona l'indirizzo IP VPC.
-.. Fare clic su *Salva regole* per applicare le modifiche.
+.. Seleziona *Save Rules* per applicare le modifiche.
 
 
 . Montare i volumi sui client utilizzando l'indirizzo IP mobile.

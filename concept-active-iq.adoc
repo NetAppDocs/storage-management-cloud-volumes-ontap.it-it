@@ -49,7 +49,7 @@ L'utilizzo di questo servizio tramite la Console è gratuito.
 
 L'interfaccia utente Digital Advisor è completamente integrata nella Console.
 
-Dal pannello di sinistra, fare clic su *Salute > Digital Advisor*.
+Nel pannello di sinistra, seleziona *Salute > Digital Advisor*.
 
 * Se hai già registrato un account NSS esistente nella Console, l'interfaccia utente Digital Advisor appare esattamente come la vedresti in un'implementazione autonoma in https://activeiq.netapp.com/[] .
 +

@@ -71,13 +71,13 @@ Per modificare le impostazioni dell'agente della console per l'autenticazione ut
 
 .Passi
 . Dal riquadro di navigazione a sinistra, vai su *Amministrazione > Agenti*.
-. Fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] per l'agente della console richiesto e seleziona *Modifica agente della console*.
+. Seleziona l'image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"]icona per l'agente della console richiesto e seleziona *Modifica agente della console*.
 . In *Forza credenziali utente*, seleziona la casella di controllo *Abilita/Disabilita*.  Per impostazione predefinita, l'autenticazione è disabilitata.
 +
 
 NOTE: Se si imposta questo valore su *Abilita*, l'autenticazione viene reimpostata e sarà necessario modificare tutti i flussi di lavoro esistenti per adattarli a questa modifica.
 
-. Fare clic su *Salva*.
+. Seleziona *Salva*.
 
 
 

@@ -37,7 +37,7 @@ Gli snapshot vengono creati automaticamente solo quando si esegue uno spegniment
 
 .Passi
 . Nella pagina *Sistemi*, fare doppio clic sul sistema Cloud Volumes ONTAP .
-. Nella scheda Panoramica, fare clic sul pannello Funzionalità e quindi sull'icona della matita accanto a *Tempo di inattività pianificato*.
+. Nella scheda Panoramica, seleziona il pannello Funzionalità e poi l'icona a forma di matita accanto a *Interruzione programmata*.
 +
 image::screenshot_schedule_downtime.png[400]
 
@@ -56,7 +56,7 @@ image:screenshot_schedule_downtime_window.png["Screenshot: mostra la schermata P
 
 
 
-. Fare clic su *Salva*.
+. Seleziona *Salva*.
 
 
 .Risultato
@@ -76,12 +76,12 @@ NOTE: Per ridurre i costi, la Console elimina periodicamente gli snapshot più v
 Quando si arresta una coppia HA, la console arresta entrambi i nodi.
 
 .Passi
-. Dal sistema, fare clic sull'icona *Disattiva*.
+. Dal sistema, seleziona l'icona *Spegni*.
 +
 image:screenshot_turn_off_redesign.png["Screenshot: mostra l'icona per disattivare un sistema Cloud Volumes ONTAP ."]
 
 . Mantenere abilitata l'opzione per creare snapshot perché gli snapshot possono abilitare il ripristino del sistema.
-. Fare clic su *Disattiva*.
+. Seleziona *Spegni*.
 +
 L'arresto del sistema potrebbe richiedere alcuni minuti.  È possibile riavviare i sistemi in un secondo momento dalla pagina *Sistemi*.
 

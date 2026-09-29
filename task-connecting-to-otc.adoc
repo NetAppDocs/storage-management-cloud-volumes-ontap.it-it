@@ -19,12 +19,8 @@ Cloud Volumes ONTAP CLI consente di eseguire tutti i comandi amministrativi ed �
 .Prima di iniziare
 L'host da cui si utilizza SSH per connettersi a Cloud Volumes ONTAP deve disporre di una connessione di rete a Cloud Volumes ONTAP.  Ad esempio, potrebbe essere necessario effettuare una connessione SSH da un jump host presente nella rete del tuo provider cloud.
 
-ifdef::aws[]
 
-
-NOTE: Se distribuite in più AZ, le configurazioni Cloud Volumes ONTAP HA utilizzano un indirizzo IP mobile per l'interfaccia di gestione del cluster, il che significa che il routing esterno non è disponibile.  È necessario connettersi da un host che faccia parte dello stesso dominio di routing.
-
-endif::aws[]
+NOTE: In AWS, quando viene distribuito in più AZ, Cloud Volumes ONTAP con configurazioni HA utilizza un indirizzo IP mobile per l'interfaccia di gestione del cluster, il che significa che il routing esterno non è disponibile. Devi connetterti da un host che fa parte dello stesso dominio di routing.
 
 .Passi
 . Nella NetApp Console, identificare l'indirizzo IP dell'interfaccia di gestione del cluster:

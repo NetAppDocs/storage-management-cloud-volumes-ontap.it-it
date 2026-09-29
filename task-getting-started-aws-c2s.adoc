@@ -68,7 +68,7 @@ Sono necessari un criterio IAM e un ruolo IAM per ciascuno dei seguenti elementi
 
 
 .Passi
-. Vai alla console AWS IAM e fai clic su *Criteri*.
+. Vai alla console AWS IAM e seleziona *Policy*.
 . Creare una policy per l'istanza dell'agente Console.
 +
 
@@ -592,17 +592,17 @@ Se hai acquistato una licenza da NetApp, devi aggiungerla alla Console, in modo 
 . Dal menu di navigazione a sinistra, seleziona * Licenses and subscriptions*.
 . Nel pannello * Cloud Volumes ONTAP*, selezionare *Visualizza*.
 . Nella scheda * Cloud Volumes ONTAP*, seleziona *Licenze > Licenze basate su nodi*.
-. Fare clic su *Non assegnato*.
-. Fare clic su *Aggiungi licenze non assegnate*.
+. Seleziona *Non assegnato*.
+. Seleziona *Add Unassigned Licenses*.
 . Inserisci il numero di serie della licenza o carica il file della licenza.
 . Se non hai ancora il file di licenza, dovrai caricarlo manualmente da netapp.com.
 +
 .. Vai allink:https://register.netapp.com/site/vsnr/register/getlicensefile["Generatore di file di licenza NetApp"^] e accedi utilizzando le credenziali del sito di supporto NetApp .
-.. Inserisci la tua password, scegli il tuo prodotto, inserisci il numero di serie, conferma di aver letto e accettato l'informativa sulla privacy, quindi clicca su *Invia*.
+.. Inserisci la tua password, scegli il tuo prodotto, inserisci il numero di serie, conferma di aver letto e accettato l'informativa sulla privacy e infine seleziona *Invia*.
 .. Scegli se desideri ricevere il file JSON serialnumber.NLF tramite e-mail o tramite download diretto.
 
 
-. Fare clic su *Aggiungi licenza*.
+. Seleziona *Aggiungi licenza*.
 
 
 .Risultato
@@ -619,7 +619,7 @@ La Console aggiunge la licenza come non assegnata finché non la si associa a un
 Per le coppie HA, è necessaria una coppia di chiavi per abilitare l'autenticazione SSH basata su chiave al mediatore HA.
 
 .Passi
-. Nella pagina *Sistemi*, fare clic su *Aggiungi sistema*.
+. Nella pagina *Sistemi*, seleziona *Aggiungi sistema*.
 . In *Crea*, seleziona Cloud Volumes ONTAP.
 +
 Per HA: in *Crea*, seleziona Cloud Volumes ONTAP o Cloud Volumes ONTAP HA.

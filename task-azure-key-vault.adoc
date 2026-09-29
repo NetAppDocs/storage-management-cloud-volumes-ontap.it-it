@@ -61,14 +61,14 @@ I passaggi descritti descrivono come registrare la configurazione di Cloud Volum
 .Crea il segreto client di Azure
 . Nel portale di Azure per la registrazione dell'app Azure Key Vault, seleziona il riquadro **Certificati e segreti**.
 . Seleziona **Nuovo segreto client**.  Inserisci un nome significativo per il tuo segreto client.  NetApp consiglia un periodo di scadenza di 24 mesi; tuttavia, le tue specifiche policy di governance del cloud potrebbero richiedere un'impostazione diversa.
-. Fare clic su **Aggiungi** per creare il segreto client.  Copiare la stringa segreta elencata nella colonna **Valore** e memorizzarla in un luogo sicuro per un utilizzo successivo in<<ontap>> .  Il valore segreto non verrà più visualizzato dopo aver abbandonato la pagina.
+. Seleziona **Aggiungi** per creare il segreto del client. Copia la stringa segreta elencata nella colonna **Valore** e conservala in un luogo sicuro per utilizzarla più tardi in <<ontap>>. Il valore del segreto non verrà più visualizzato dopo che avrai lasciato la pagina.
 
 
 [[create-akv]]
 .Creare un Azure Key Vault
 . Se disponi di un Azure Key Vault esistente, puoi connetterlo alla configurazione Cloud Volumes ONTAP ; tuttavia, devi adattare i criteri di accesso alle impostazioni in questo processo.
 . Nel portale di Azure, passare alla sezione **Key Vault**.
-. Fare clic su **+Crea** e immettere le informazioni richieste, tra cui gruppo di risorse, regione e livello di prezzo.  Inoltre, immettere il numero di giorni per cui conservare i vault eliminati e selezionare **Abilita protezione di eliminazione** sul vault delle chiavi.
+. Seleziona **Crea** e inserisci le informazioni richieste, tra cui gruppo di risorse, regione e livello tariffario. Inoltre, inserisci il numero di giorni per cui conservare i vault eliminati e seleziona **Abilita protezione da eliminazione** nel vault delle chiavi.
 . Selezionare **Avanti** per scegliere una policy di accesso.
 . Selezionare le seguenti opzioni:
 +
@@ -76,8 +76,8 @@ I passaggi descritti descrivono come registrare la configurazione di Cloud Volum
 .. In **Accesso alle risorse**, seleziona **Azure Disk Encryption per la crittografia del volume**.
 
 
-. Selezionare **+Crea** per aggiungere un criterio di accesso.
-. In **Configura da un modello**, fai clic sul menu a discesa e seleziona il modello **Gestione chiavi, segreti e certificati**.
+. Seleziona **Crea** per aggiungere una policy di accesso.
+. In **Configura da un modello**, seleziona il menu a discesa e quindi seleziona il modello **Key, Secret, and Certificate Management**.
 . Selezionare ciascuno dei menu a discesa delle autorizzazioni (chiave, segreto, certificato), quindi **Seleziona tutto** nella parte superiore dell'elenco del menu per selezionare tutte le autorizzazioni disponibili.  Dovresti avere:
 +
 ** **Autorizzazioni chiave**: 20 selezionate
@@ -88,7 +88,7 @@ image:screenshot-azure-key-secret-cert-all-list.png["screenshot di Crea un crite
 
 
 
-. Fare clic su **Avanti** per selezionare l'applicazione Azure registrata **Principale** creata in<<azure-app>> . Selezionare **Avanti**.
+. Seleziona **Avanti** per selezionare l'applicazione registrata in Azure **Principal** che hai creato in <<azure-app>>. Seleziona **Avanti**.
 +
 
 NOTE: È possibile assegnare un solo mandante a ogni polizza.
@@ -96,7 +96,7 @@ NOTE: È possibile assegnare un solo mandante a ogni polizza.
 +
 image:screenshot-azure-key-secret-cert-principal.png["screenshot della scheda Crea un'entità di policy di accesso"]
 
-. Fare clic due volte su **Avanti** fino ad arrivare a **Revisiona e crea**.  Quindi, fai clic su **Crea**.
+. Seleziona **Avanti** due volte finché non arrivi a **Rivedi e crea**. Quindi, seleziona **Crea**.
 . Selezionare **Avanti** per passare alle opzioni di **Rete**.
 . Selezionare il metodo di accesso alla rete appropriato oppure selezionare **Tutte le reti** e **Revisiona + Crea** per creare il vault delle chiavi.  (Il metodo di accesso alla rete può essere prescritto da una policy di governance o dal team di sicurezza cloud aziendale.)
 . Registra l'URI del Key Vault: nel Key Vault creato, vai al menu Panoramica e copia l'**URI del Vault** dalla colonna di destra.  Ti servirà per un passaggio successivo.

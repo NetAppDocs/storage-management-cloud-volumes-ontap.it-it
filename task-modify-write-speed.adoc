@@ -27,7 +27,7 @@ Prima di modificare la velocità di scrittura, dovrestilink:concept-write-speed.
 
 .Passi
 . Nella pagina *Sistemi*, fare doppio clic sul nome del sistema per il quale si desidera configurare la velocità di scrittura.
-. Nella scheda Panoramica, fare clic sul pannello Funzionalità e quindi sull'icona della matita accanto a *Velocità di scrittura*.
+. Nella scheda Overview, seleziona il pannello Features e quindi seleziona l'icona a forma di matita accanto a *Write Speed*.
 . Selezionare *Normale* o *Alto*.
 +
 Se scegli Alto, dovrai leggere la dichiarazione "Ho capito..." e confermare selezionando la casella.
@@ -36,5 +36,5 @@ Se scegli Alto, dovrai leggere la dichiarazione "Ho capito..." e confermare sele
 
 NOTE: L'opzione di velocità di scrittura *Alta* è supportata con le coppie Cloud Volumes ONTAP HA in Google Cloud a partire dalla versione 9.13.0.
 
-. Fare clic su *Salva*, rivedere il messaggio di conferma e quindi fare clic su *Approva*.
+. Seleziona *Salva*, controlla il messaggio di conferma e poi seleziona *Approva*.
 

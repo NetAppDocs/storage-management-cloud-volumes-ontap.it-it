@@ -62,7 +62,7 @@ NOTE: Se hai registrato il provider di risorse "Microsoft.storage" nel tuo abbon
 .Passi
 . Dal sito di Azure Marketplace, cerca i prodotti NetApp.
 . Selezionare * NetApp Cloud Volumes ONTAP diretto*.
-. Fare clic su *Crea* per avviare la procedura guidata di distribuzione.
+. Seleziona *Crea* per avviare la procedura guidata di distribuzione.
 . Seleziona un piano.  L'elenco *Piano* in genere visualizza le versioni più recenti di Cloud Volumes ONTAP.
 . Nella scheda *Informazioni di base*, fornisci questi dettagli:
 +

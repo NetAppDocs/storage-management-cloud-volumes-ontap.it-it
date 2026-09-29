@@ -71,12 +71,12 @@ Se hai una distribuzione in modalità standard, puoi convertire la tua licenza b
 
 
 
-NOTE: Se uno qualsiasi di questi requisiti non viene soddisfatto, la conversione della licenza non avviene.  In casi specifici la licenza potrebbe essere convertita, ma non utilizzabile.  Fare clic sull'icona delle informazioni per identificare i problemi e adottare misure correttive.
+NOTE: Se uno qualsiasi di questi requisiti non viene soddisfatto, la conversione della licenza non avviene. In casi specifici, la licenza potrebbe essere convertita, ma non può essere utilizzata. Seleziona l'icona delle informazioni per identificare i problemi e intraprendere le azioni correttive necessarie.
 
 .Passi
 . Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
 . Nella pagina *Sistemi*, fare doppio clic sul nome del sistema per il quale si desidera modificare il tipo di licenza.
-. Nella scheda *Panoramica*, fai clic sul pannello *Features*.
+. Nella scheda *Panoramica*, seleziona il pannello *Funzionalità*.
 . Seleziona l'icona della matita accanto a *Metodo di ricarica*.  Se il metodo di ricarica per il tuo sistema è `Node Based` , è possibile convertirlo in una ricarica a capacità variabile.
 +
 
@@ -90,7 +90,7 @@ TIP: L'icona è disabilitata se il sistema Cloud Volumes ONTAP è già caricato 
 
 
 . Se si dispone di una licenza BYOL, è possibile selezionare la casella di controllo per eliminare la licenza basata su nodo dalla Console al termine della conversione.  Se la conversione è ancora in corso, selezionando questa casella di controllo la licenza non verrà rimossa dalla Console.  Questa opzione non è disponibile per gli abbonamenti al marketplace.
-. Seleziona la casella di controllo per confermare di aver compreso le implicazioni della modifica, quindi fai clic su *Procedi*.
+. Seleziona la check box per confermare di aver compreso le implicazioni della modifica, quindi seleziona *Proceed*.
 
 
 .Dopo aver finito
@@ -132,7 +132,7 @@ NOTE: La conversione da licenze basate su nodi a qualsiasi licenza basata sulla 
 .Passi
 . Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
 . Nella pagina *Sistemi*, fare doppio clic sul nome del sistema per il quale si desidera modificare il tipo di licenza.
-. Nella scheda *Panoramica*, fai clic sul pannello *Features*.
+. Nella scheda *Panoramica*, seleziona il pannello *Funzionalità*.
 . Seleziona l'icona a forma di matita accanto a *Metodo di addebito*. Se il metodo di addebito per il tuo sistema è  `Node Based`, puoi convertirlo in una licenza basata sulla capacità.
 +
 
@@ -141,7 +141,7 @@ TIP: L'icona è disabilitata se il sistema Cloud Volumes ONTAP è già caricato 
 . Nella schermata *Converti licenze basate su nodo in licenze basate su capacità*, verifica il nome del sistema e i dettagli della licenza di origine.
 . Seleziona Essentials come pacchetto di destinazione per la conversione della licenza esistente:
 . Puoi selezionare la casella di controllo per eliminare la licenza basata su nodi dalla Console dopo che la conversione è stata completata. Se la conversione è ancora in corso, selezionando questa casella di controllo non verrà rimossa la licenza dalla Console.
-. Seleziona la casella di controllo per confermare di aver compreso le implicazioni della modifica, quindi fai clic su *Procedi*.
+. Seleziona la check box per confermare di aver compreso le implicazioni della modifica, quindi seleziona *Proceed*.
 
 
 .Dopo aver finito

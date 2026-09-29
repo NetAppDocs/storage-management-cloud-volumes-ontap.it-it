@@ -51,15 +51,15 @@ Si noti che un LIF di gestione opzionale per una VM di storage richiede un indir
 
 .Passi
 . Accedi ad AWS e apri il servizio EC2.
-. Selezionare l'istanza Cloud Volumes ONTAP e fare clic su *Networking*.
+. Seleziona l'istanza Cloud Volumes ONTAP e seleziona *Networking*.
 +
 Se si sta creando una VM di archiviazione su una coppia HA, selezionare il nodo 1.
 
-. Scorrere verso il basso fino a *Interfacce di rete* e fare clic su *ID interfaccia* per la porta e0a.
+. Scorri verso il basso fino a *Interfacce di rete* e seleziona *ID interfaccia* per la porta e0a.
 +
 image:screenshot_aws_e0a.gif["Uno screenshot della console AWS che mostra la porta e0a su un'interfaccia di rete."]
 
-. Selezionare l'interfaccia di rete e fare clic su *Azioni > Gestisci indirizzi IP*.
+. Seleziona l'interfaccia di rete e seleziona *Azioni > Gestisci indirizzi IP*.
 . Espandi l'elenco degli indirizzi IP per e0a.
 . Verificare gli indirizzi IP:
 +
@@ -73,7 +73,7 @@ Se un indirizzo IP non è in uso, è possibile utilizzarlo con la nuova VM di ar
 
 
 
-. Tornando alla console AWS, fai clic su *Assegna nuovo indirizzo IP* per assegnare indirizzi IP aggiuntivi in base alla quantità necessaria per la nuova VM di archiviazione.
+. Tornando alla console AWS, seleziona *Assegna nuovo indirizzo IP* per assegnare indirizzi IP aggiuntivi in base al numero necessario per la nuova VM di storage.
 +
 ** sistema a nodo singolo: è necessario un IP privato secondario non utilizzato.
 +
@@ -87,7 +87,7 @@ Se si desidera creare un LIF di gestione sulla VM di archiviazione, è necessari
 
 
 . Se si sta assegnando l'indirizzo IP su una coppia HA in una singola AZ, abilitare *Consenti la riassegnazione degli indirizzi IPv4 privati secondari*.
-. Fare clic su *Salva*.
+. Seleziona *Salva*.
 . Se si dispone di una coppia HA in più AZ, sarà necessario ripetere questi passaggi per il nodo 2.
 
 

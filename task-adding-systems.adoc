@@ -26,17 +26,16 @@ CAUTION: Non è possibile scoprire, visualizzare o gestire sistemi registrati co
 
 .Passi
 . Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
-. Nella pagina *Sistema*, fare clic su *Aggiungi sistema*.
+. Nella pagina *Sistema*, seleziona *Aggiungi sistema*.
 . Selezionare il provider cloud in cui risiede il sistema.
 . Selezionare il tipo di sistema Cloud Volumes ONTAP da aggiungere.
-. Clicca sul link per scoprire un sistema esistente.
+. Seleziona il link per rilevare un sistema esistente.
++
+Lo screenshot seguente mostra questa opzione in AWS.
 
 
-ifdef::aws[]
 
-+image:screenshot_discover_redesign.png["Uno screenshot che mostra un collegamento per scoprire un sistema Cloud Volumes ONTAP esistente."]
-
-endif::aws[]
+image:screenshot_discover_redesign.png["Uno screenshot che mostra un collegamento per scoprire un sistema Cloud Volumes ONTAP esistente."]
 
 . Nella pagina Regione, seleziona una regione.  È possibile visualizzare i sistemi in esecuzione nella regione selezionata.
 +

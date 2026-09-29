@@ -42,14 +42,14 @@ Se non è possibile modificare il tipo di istanza da c4, m4 o r4, fare riferimen
 
 .Passi
 . Nella pagina *Sistemi*, seleziona il sistema.
-. Nella scheda Panoramica, fare clic sul pannello Funzionalità e quindi sull'icona della matita accanto a *Tipo di istanza*.
+. Nella scheda Panoramica, seleziona il pannello Funzionalità e quindi seleziona l'icona a forma di matita accanto a *Tipo di istanza*.
 +
 image::screenshot_features_instance_type.png[400]
 
 +
 Se si utilizza una licenza PAYGO (Pay as you go) basata su nodi, è possibile scegliere facoltativamente una licenza e un tipo di istanza diversi facendo clic sull'icona della matita accanto a *Tipo di licenza*.
 
-. Scegli un tipo di istanza, seleziona la casella di controllo per confermare di aver compreso le implicazioni della modifica, quindi fai clic su *Modifica*.
+. Scegli un tipo di istanza, seleziona la check box per confermare di aver compreso le implicazioni della modifica, quindi seleziona *Modifica*.
 
 
 .Risultato

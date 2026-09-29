@@ -37,7 +37,7 @@ TIP: La NetApp Console modifica un nodo alla volta avviando l'acquisizione e att
 
 .Passi
 . Nella pagina *Sistemi*, seleziona il sistema.
-. Nella scheda Panoramica, fare clic sul pannello Funzionalità e quindi sull'icona della matita accanto a *Tipo di macchina*.
+. Nella scheda Panoramica, seleziona il pannello Funzionalità e poi l'icona a forma di matita accanto a *Tipo di macchina*.
 +
 image:screenshot_features_machine_type.png["Uno screenshot che mostra l'impostazione Tipo di macchina nel pannello Funzionalità disponibile in alto a destra nella pagina Panoramica quando si visualizza un sistema."]
 
@@ -45,7 +45,7 @@ image:screenshot_features_machine_type.png["Uno screenshot che mostra l'impostaz
 
 Se si utilizza una licenza PAYGO (Node-based pay-as-you-go), è possibile scegliere una licenza e un tipo di macchina diversi facendo clic sull'icona della matita accanto a *Tipo di licenza*.
 
-. Scegli un tipo di macchina, seleziona la casella di controllo per confermare di aver compreso le implicazioni della modifica, quindi fai clic su *Modifica*.
+. Scegli un tipo di macchina, seleziona il check box per confermare di comprendere le implicazioni della modifica, quindi seleziona *Change*.
 
 
 .Risultato

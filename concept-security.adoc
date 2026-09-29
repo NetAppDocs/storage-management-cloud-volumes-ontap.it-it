@@ -24,28 +24,10 @@ Cloud Volumes ONTAP supporta la crittografia dei dati e fornisce protezione cont
 Cloud Volumes ONTAP supporta le seguenti tecnologie di crittografia:
 
 * Soluzioni di crittografia NetApp (NVE e NAE)
-
-
-ifdef::aws[]
-
 * Servizio di gestione delle chiavi AWS
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Crittografia del servizio di archiviazione di Azure
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Crittografia predefinita di Google Cloud Platform
 
-
-endif::gcp[]
 
 È possibile utilizzare le soluzioni di crittografia NetApp con la crittografia nativa del provider cloud, che crittografa i dati a livello di hypervisor.  In questo modo si otterrebbe una doppia crittografia, che potrebbe essere utile per dati molto sensibili.  Quando si accede ai dati crittografati, questi vengono decrittografati due volte: una volta a livello di hypervisor (utilizzando le chiavi del provider cloud) e un'altra volta utilizzando le soluzioni di crittografia NetApp (utilizzando le chiavi di un gestore di chiavi esterno).
 
@@ -66,32 +48,14 @@ Cloud Volumes ONTAP utilizza i servizi standard Key Management Interoperability 
 
 Se utilizzi NVE, hai la possibilità di utilizzare il key vault del tuo provider cloud per proteggere le chiavi di crittografia ONTAP :
 
-ifdef::aws[]
-
 * Servizio di gestione delle chiavi AWS (KMS)
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Azure Key Vault (AKV)
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Servizio di gestione delle chiavi di Google Cloud
 
-
-endif::gcp[]
 
 Per impostazione predefinita, nei nuovi aggregati la crittografia NetApp Aggregate Encryption (NAE) è abilitata dopo aver configurato un gestore di chiavi esterno.  Per impostazione predefinita, nei nuovi volumi che non fanno parte di un aggregato NAE, NVE è abilitato (ad esempio, se si dispone di aggregati esistenti creati prima di configurare un gestore di chiavi esterno).
 
 L'unico passaggio obbligatorio è la configurazione di un gestore delle chiavi supportato.  Per le istruzioni di configurazione, fare riferimento alink:task-encrypting-volumes.html["Crittografa i volumi con le soluzioni di crittografia NetApp"] .
-
-ifdef::aws[]
 
 
 
@@ -105,10 +69,6 @@ TIP: Non è possibile modificare il metodo di crittografia dei dati AWS dopo ave
 
 Se si desidera utilizzare questa opzione di crittografia, è necessario assicurarsi che AWS KMS sia configurato correttamente.  Per informazioni, fare riferimento alink:task-setting-up-kms.html["Configurazione di AWS KMS"] .
 
-endif::aws[]
-
-ifdef::azure[]
-
 
 
 [[azure-storage-service-encryption]]
@@ -118,10 +78,6 @@ I dati vengono crittografati automaticamente su Cloud Volumes ONTAP in Azure uti
 
 Se preferisci, puoi utilizzare le tue chiavi di crittografia. link:task-set-up-azure-encryption.html["Scopri come configurare Cloud Volumes ONTAP per utilizzare una chiave gestita dal cliente in Azure"] .
 
-endif::azure[]
-
-ifdef::gcp[]
-
 
 
 [[google-cloud-platform-default-encryption]]
@@ -130,8 +86,6 @@ ifdef::gcp[]
 https://cloud.google.com/security/encryption-at-rest/["Crittografia dei dati inattivi di Google Cloud Platform"^]è abilitato per impostazione predefinita per Cloud Volumes ONTAP.  Non è richiesta alcuna configurazione.
 
 Sebbene Google Cloud Storage crittografi sempre i dati prima che vengano scritti sul disco, è possibile utilizzare le API della console per creare un sistema Cloud Volumes ONTAP che utilizzi _chiavi di crittografia gestite dal cliente_.  Si tratta di chiavi che puoi generare e gestire in GCP utilizzando Cloud Key Management Service. link:task-setting-up-gcp-encryption.html["Saperne di più"] .
-
-endif::gcp[]
 
 
 

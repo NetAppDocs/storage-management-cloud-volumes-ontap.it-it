@@ -41,7 +41,7 @@ Questo scenario presuppone che ci siano due nodi `node01` E `node02` nell'implem
 `storage failover takeover -ofnode <Node02>`
 
 . Sign in al portale di Azure.
-. Una volta completata l'acquisizione, passare all'istanza della VM per `node02`e fare clic sul pulsante *Stop* per disattivarlo.
+. Quando il takeover è completo, vai all'istanza di macchina virtuale per  `node02` e seleziona il pulsante *Stop* per spegnerla.
 . Passare al gruppo di risorse per `node02` e dall'elenco dei dischi, seleziona il disco NVRAM per cambiare livello.
 . Seleziona *Dimensioni + Prestazioni*.
 . Nel menu a discesa *Livello di prestazioni*, seleziona `P30 - 5000 IOPS, 200MB/s`.

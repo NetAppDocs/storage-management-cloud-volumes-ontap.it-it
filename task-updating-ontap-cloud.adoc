@@ -39,15 +39,14 @@ La console offre due modi per aggiornare Cloud Volumes ONTAP:
 
 
 [[supported-upgrade-paths]]
-=== Percorsi di aggiornamento supportati
+== Percorsi di aggiornamento supportati
 
 La versione di Cloud Volumes ONTAP a cui è possibile effettuare l'aggiornamento dipende dalla versione attualmente in esecuzione. Ogni versione generica o patch in una release nelle tabelle seguenti rappresenta la versione base disponibile per l'aggiornamento. Per dettagli sulle patch disponibili, fare riferimento a  https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html["note di rilascio versionate"^] per ciascuna release.
 
-ifdef::aws[]
 
 
-
-==== Percorsi di aggiornamento supportati per AWS
+[[aws]]
+=== AWS
 
 [cols="2*"]
 |===
@@ -152,13 +151,10 @@ ifdef::aws[]
 
 | 8,3 | 9,0 
 |===
-endif::aws[]
-
-ifdef::azure[]
 
 
-
-==== Percorsi di aggiornamento supportati per Azure
+[[azure]]
+=== Azzurro
 
 [cols="2*"]
 |===
@@ -193,13 +189,10 @@ Se disponi di una versione precedente di Cloud Volumes ONTAP in Azure, devi prim
 * 9.10.1 P12 -> 9.11.1 P20
 
 
-endif::azure[]
-
-ifdef::gcp[]
 
 
-
-==== Percorsi di aggiornamento supportati per Google Cloud
+[[google-cloud]]
+=== Google Cloud
 
 [cols="2*"]
 |===
@@ -304,8 +297,6 @@ ifdef::gcp[]
 
 | 8,3 | 9,0 
 |===
-endif::gcp[]
-
 Notare quanto segue:
 
 * I percorsi di aggiornamento supportati per Cloud Volumes ONTAP sono diversi da quelli per un cluster ONTAP locale.
@@ -441,8 +432,8 @@ Questi passaggi descrivono come utilizzare ONTAP System Manager per la versione 
 
 NOTE: Il computer da cui si accede alla Console deve disporre di una connessione di rete a Cloud Volumes ONTAP.  Ad esempio, potrebbe essere necessario accedere alla Console da un jump host presente nella rete del tuo provider cloud.
 
-. Fare clic su *Protezione > Relazioni*.
-. Selezionare la relazione e fare clic su *Operazioni > Sospendi*.
+. Seleziona *Protection > Relationships*.
+. Seleziona la relazione e seleziona *Operations > Quiesce*.
 
 
 
@@ -456,15 +447,15 @@ Aggregates for Cloud Volumes ONTAP deve essere online prima di aggiornare il sof
 Questi passaggi descrivono come utilizzare ONTAP System Manager per la versione 9.3 e successive.
 
 .Passi
-. Nel sistema Cloud Volumes ONTAP , fare clic sulla scheda *Aggregati*.
-. Sulla casella dell'aggregato richiesto, fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] e poi seleziona *Visualizza dettagli aggregato*.
+. Nel sistema Cloud Volumes ONTAP, seleziona la scheda *Aggregati*.
+. Sulla tile dell'aggregato richiesta, seleziona l'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"], quindi seleziona *View Aggregate details*.
 +
 image:screenshots_aggregate_details_state.png["Screenshot: mostra il campo Stato quando si visualizzano le informazioni per un aggregato."]
 
 . Se l'aggregato è offline, utilizzare ONTAP System Manager per riportarlo online:
 +
-.. Fare clic su *Archiviazione > Aggregati e dischi > Aggregati*.
-.. Selezionare l'aggregato, quindi fare clic su *Altre azioni > Stato > Online*.
+.. Seleziona *Storage > Aggregates & Disks > Aggregates*.
+.. Seleziona l'aggregato, quindi seleziona *Altre azioni > Stato > Online*.
 
 
 
@@ -511,20 +502,20 @@ Se è disponibile una nuova versione, nella scheda Panoramica viene visualizzata
 +
 image:screenshot_overview_upgrade.png["Uno screenshot che mostra il link \"Aggiorna ora!\" nella scheda Panoramica."]
 
-. Se desideri aggiornare la versione installata di Cloud Volumes ONTAP, fai clic su *Aggiorna ora!*  Per impostazione predefinita, viene visualizzata la versione più recente e compatibile per l'aggiornamento.
+. Se vuoi aggiornare la versione installata di Cloud Volumes ONTAP, seleziona *Upgrade Now!* Per impostazione predefinita, vedi la versione compatibile più recente per l'upgrade.
 +
 image:screenshot_upgrade_select_versions.png["Uno screenshot della pagina della versione di Upgrade Cloud Volumes ONTAP ."]
 
 +
-Se desideri effettuare l'aggiornamento a un'altra versione, fai clic su *Seleziona altre versioni*.  Vengono elencate le ultime versioni di Cloud Volumes ONTAP compatibili anche con la versione installata sul sistema.  Ad esempio, la versione installata sul tuo sistema è 9.12.1P3 e sono disponibili le seguenti versioni compatibili:
+Se vuoi eseguire l'aggiornamento a un'altra versione, seleziona *Select other versions*. Vedi elencate le versioni più recenti di Cloud Volumes ONTAP compatibili anche con la versione installata sul tuo sistema. Ad esempio, la versione installata sul tuo sistema è 9.12.1P3 e sono disponibili le seguenti versioni compatibili:
 
 +
 ** 9.12.1P4 a 9.12.1P14
 ** 9.13.1 e 9.13.1P1 La versione predefinita per l'aggiornamento è 9.13.1P1, mentre le altre versioni disponibili sono 9.12.1P13, 9.13.1P14, 9.13.1 e 9.13.1P1.
 
 
-. Facoltativamente, puoi fare clic su *Tutte le versioni* per immettere un'altra versione a cui desideri effettuare l'aggiornamento (ad esempio, la patch successiva della versione installata).  Per un percorso di aggiornamento compatibile della versione corrente Cloud Volumes ONTAP , fare riferimento alink:task-updating-ontap-cloud.html#supported-upgrade-paths["Percorsi di aggiornamento supportati"] .
-. Fare clic su *Salva* e poi su *Applica*.image:screenshot_upgrade_other_versions.png["Uno screenshot che mostra le versioni disponibili per l'aggiornamento."]
+. Facoltativamente, puoi selezionare *Tutte le versioni* per immettere un'altra versione a cui desideri eseguire l'aggiornamento (ad esempio, la patch successiva della versione installata). Per un percorso di upgrade compatibile della tua versione corrente di Cloud Volumes ONTAP, consulta link:task-updating-ontap-cloud.html#supported-upgrade-paths["Percorsi di aggiornamento supportati"].
+. Seleziona *Save*, quindi *Apply*. image:screenshot_upgrade_other_versions.png["Uno screenshot che mostra le versioni disponibili per l'aggiornamento."]
 . Nella pagina Upgrade Cloud Volumes ONTAP , leggere l'EULA, quindi selezionare *Ho letto e approvo l'EULA*.
 . Seleziona *Aggiorna*.
 . Per visualizzare lo stato di avanzamento, nel sistema Cloud Volumes ONTAP , selezionare *Audit*.
@@ -574,8 +565,8 @@ Sono disponibili due percorsi.  Il percorso corretto dipende dalla versione dell
 ** `/opt/application/netapp/cloudmanager/ontap/images/`
 
 
-. Sul sistema, fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] e poi su *Aggiorna Cloud Volumes ONTAP*.
-. Nella pagina Aggiorna versione Cloud Volumes ONTAP , immettere l'URL, quindi fare clic su *Modifica immagine*.
+. Sul sistema, seleziona l'image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] icona, quindi seleziona *Aggiorna Cloud Volumes ONTAP*.
+. Nella pagina Aggiorna la versione di Cloud Volumes ONTAP, inserisci l'URL e poi seleziona *Cambia immagine*.
 +
 Se hai copiato l'immagine del software nell'agente Console nel percorso indicato sopra, dovresti immettere il seguente URL:
 
@@ -586,7 +577,7 @@ Se hai copiato l'immagine del software nell'agente Console nel percorso indicato
 
 NOTE: Nell'URL, *nome-file-immagine* deve seguire il formato "cot.image.9.13.1P2.tgz".
 
-. Fare clic su *Procedi* per confermare.
+. Seleziona *Procedi* per confermare.
 
 
 .Risultato
@@ -594,8 +585,6 @@ La console avvia l'aggiornamento del software.  Una volta completato l'aggiornam
 
 .Dopo aver finito
 Se hai sospeso i trasferimenti SnapMirror , utilizza Gestione sistema per riprenderli.
-
-ifdef::gcp[]
 
 
 
@@ -619,5 +608,3 @@ Il valore per _maxDownloadSessions_ può essere 1 o qualsiasi numero intero magg
 Si noti che 32 è un valore di esempio. Il valore da utilizzare dipende dalla configurazione NAT e dal numero di sessioni che è possibile avere contemporaneamente.
 
 https://docs.netapp.com/us-en/console-automation/cm/api_ref_resources.html#occmconfig["Scopri di più sulla chiamata API /occm/config"^].
-
-endif::gcp[]

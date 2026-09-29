@@ -10,19 +10,6 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
   rss_page: whats-new.html
-  filter:
-    label: Fornitore di cloud
-    default: Tutti i provider cloud
-    options:
-    - name: Servizi Web Amazon
-      alias: AWS
-      id: aws
-    - name: Google Cloud
-      alias: Google Cloud
-      id: gcp
-    - name: Microsoft Azure
-      alias: Azzurro
-      id: azure
   langs: it-it,us-en,de-de,es-es,fr-fr,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:
@@ -59,7 +46,6 @@ sidebar:
       - title: Cloud Volumes ONTAP configurazione HA
         url: "/concept-degraded-ha-pair.html"
     - title: Distribuisci su Amazon Web Services
-      flavor: aws
       entries:
       - title: Esegui l'onboarding di Cloud Volumes ONTAP da AWS Marketplace
         url: "/task-onboard-cvo-aws-marketplace.html"
@@ -93,7 +79,6 @@ sidebar:
       - title: Distribuisci Cloud Volumes ONTAP nelle regioni segrete AWS
         url: "/task-getting-started-aws-c2s.html"
     - title: Distribuisci in Microsoft Azure
-      flavor: azure
       entries:
       - title: Scopri le opzioni di distribuzione di Cloud Volumes ONTAP in Azure
         url: "/concept-azure-mktplace-direct.html"
@@ -134,7 +119,6 @@ sidebar:
       - title: Distribuisci in Azure Marketplace
         url: "/task-deploy-cvo-azure-mktplc.html"
     - title: Distribuisci su Google Cloud
-      flavor: gcp
       entries:
       - title: Panoramica dell'implementazione
         url: "/task-getting-started-gcp.html"
@@ -175,13 +159,10 @@ sidebar:
       - title: Cloud Volumes ONTAP storage VM
         url: "/task-managing-svms.html"
       - title: Gestire le VM di archiviazione in AWS
-        flavor: aws
         url: "/task-managing-svms-aws.html"
       - title: Gestire le VM di archiviazione in Azure
-        flavor: azure
         url: "/task-managing-svms-azure.html"
       - title: Gestisci le VM di archiviazione in Google Cloud
-        flavor: gcp
         url: "/task-managing-svms-gcp.html"
     - title: Amministrazione aggregata
       entries:
@@ -222,7 +203,6 @@ sidebar:
   - title: Gestione dell'infrastruttura cloud
     entries:
     - title: Amministrazione AWS
-      flavor: aws
       entries:
       - title: Configurazioni supportate in AWS
         url: "/reference-configs-aws.html"
@@ -239,7 +219,6 @@ sidebar:
       - title: Modificare le tabelle di routing per le coppie HA
         url: "/task-change-route-tables.html"
     - title: Amministrazione di Azure
-      flavor: azure
       entries:
       - title: Configurazioni supportate in Azure
         url: "/reference-configs-azure.html"
@@ -264,7 +243,6 @@ sidebar:
       - title: Aggiorna il livello di prestazioni del disco in Azure
         url: "/task-upgrade-disk-perf-azure.html"
     - title: Amministrazione di Google Cloud
-      flavor: gcp
       entries:
       - title: Configurazioni supportate in Google Cloud
         url: "/reference-configs-gcp.html"

@@ -28,8 +28,8 @@ Se un aggregato sta esaurendo lo spazio, è possibile spostare i volumi su un al
 .Passi
 . Dal menu di navigazione a sinistra, seleziona *Archiviazione > Gestione*.
 . Nella pagina *Sistemi*, fare doppio clic sul sistema Cloud Volumes ONTAP su cui si desidera gestire gli aggregati.
-. Dai dettagli del sistema, fare clic sulla scheda *Aggregati*.
-. Per l'aggregato richiesto, fai clic sull'icona image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"] per le azioni di gestione.
+. Dalla schermata dei dettagli del sistema, seleziona la scheda *Aggregati*.
+. Per l'aggregato richiesto, seleziona l'image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"]icona relativa alle azioni di gestione.
 +
 image:screenshot_aggr_menu_options.png["Uno screenshot delle opzioni del menu Aggregati."]
 
@@ -39,14 +39,10 @@ image:screenshot_aggr_menu_options.png["Uno screenshot delle opzioni del menu Ag
 
 NOTE: Per aggiungere dischi a un aggregato, tutti i dischi nell'aggregato devono avere le stesse dimensioni.
 
-ifdef::aws[]
-
 Per AWS, è possibile aumentare la capacità di un aggregato che supporta Amazon EBS Elastic Volumes.
 
-. Nel menu image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"], fai clic su *Aumenta capacità*.
-. Inserisci la capacità aggiuntiva che desideri aggiungere e poi clicca su *Aumenta*.
+. Nel menu image:icon-action.png["Un'icona che mostra tre puntini orizzontali per azioni aggiuntive"], seleziona *Aumenta capacità*.
+. Inserisci la capacità aggiuntiva che vuoi aggiungere e poi seleziona *Aumenta*.
 
 
 Si noti che è necessario aumentare la capacità dell'aggregato di almeno 256 GiB o del 10% delle dimensioni dell'aggregato.  Ad esempio, se si dispone di un aggregato di 1,77 TiB, il 10% equivale a 181 GiB.  Si tratta di una quantità inferiore a 256 GiB, quindi la dimensione dell'aggregato deve essere aumentata del minimo di 256 GiB.
-
-endif::aws[]

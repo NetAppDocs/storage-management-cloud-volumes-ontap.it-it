@@ -37,11 +37,11 @@ TIP: NetApp Console modifica un nodo alla volta avviando l'acquisizione e attend
 
 .Passi
 . Nella pagina *Sistemi*, seleziona il sistema.
-. Nella scheda Panoramica, fare clic sul pannello Funzionalità e quindi sull'icona della matita accanto a *Tipo di VM*.
+. Nella scheda Panoramica, seleziona il pannello Funzionalità e quindi seleziona l'icona a forma di matita accanto a *Tipo di VM*.
 +
 Se si utilizza una licenza PAYGO (Node-based pay-as-you-go), è possibile scegliere una licenza e un tipo di VM diversi facendo clic sull'icona della matita accanto a *Tipo di licenza*.
 
-. Selezionare un tipo di VM, selezionare la casella di controllo per confermare di aver compreso le implicazioni della modifica, quindi fare clic su *Modifica*.
+. Seleziona un tipo di VM, seleziona la check box per confermare di aver compreso le implicazioni della modifica, quindi seleziona *Change*.
 
 
 .Risultato
