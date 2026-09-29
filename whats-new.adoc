@@ -55,7 +55,7 @@ Cloud Volumes ONTAP ora supporta la distribuzione nelle regioni Azure Government
 
 Per informazioni, consulta la documentazione di Azure:
 
-* https://azure.microsoft.com/en-us/blog/azure-government-top-secret-now-generally-available-for-us-national-security-missions/["Cloud per le missioni del governo degli Stati Uniti^"]
+* https://azure.microsoft.com/en-us/blog/azure-government-top-secret-now-generally-available-for-us-national-security-missions/["Cloud per le missioni del governo degli Stati Uniti"^]
 * https://azure.microsoft.com/en-us/explore/global-infrastructure/government/national-security["Azure Government Secret"^]
 * https://azure.microsoft.com/en-us/blog/azure-government-top-secret-now-generally-available-for-us-national-security-missions["Azure Government Top Secret"^]
 
@@ -77,7 +77,7 @@ Ora puoi distribuire Cloud Volumes ONTAP 9.12.1 GA e versioni successive nelle r
 * Alta disponibilità in più zone di disponibilità tramite storage a ridondanza di zona (ZRS)
 
 
-Per un elenco di tutte le regioni supportate, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .
+Per un elenco di tutte le regioni supportate, consulta  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali in Azure"^].
 
 
 
@@ -157,7 +157,7 @@ Ora puoi distribuire Cloud Volumes ONTAP 9.12.1 GA e versioni successive nella r
 * Alta disponibilità in più zone di disponibilità tramite storage a ridondanza di zona (ZRS)
 
 
-Per un elenco di tutte le regioni supportate, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .
+Per un elenco di tutte le regioni supportate, consulta  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali in Azure"^].
 
 
 
@@ -308,7 +308,7 @@ I ruoli Cloud Volumes ONTAP si applicano agli ambienti Amazon Web Service (AWS),
 
 Ora è possibile distribuire Cloud Volumes ONTAP 9.12.1 GA e versioni successive in zone di disponibilità singole e multiple in Azure nella regione Malaysia West (malaysiawest). Ciò include il supporto sia per le distribuzioni a nodo singolo che per quelle ad alta disponibilità (HA).
 
-Per un elenco di tutte le regioni, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .
+Per un elenco di tutte le regioni, fare riferimento al https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali in Azure"^].
 
 
 
@@ -520,7 +520,7 @@ Ora puoi distribuire Cloud Volumes ONTAP 9.12.1 GA e versioni successive in zone
 * Indonesia centrale (indonesiacentral)
 
 
-Per un elenco di tutte le regioni, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .
+Per un elenco di tutte le regioni, fare riferimento al https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali in Azure"^].
 
 
 
@@ -880,7 +880,7 @@ Ora puoi distribuire Cloud Volumes ONTAP 9.12.1 GA e versioni successive in zone
 * Messico Centrale
 
 
-Per un elenco di tutte le regioni, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .
+Per un elenco di tutte le regioni, fare riferimento al https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali in Azure"^].
 
 
 
@@ -908,7 +908,7 @@ https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-managi
 
 Ora puoi distribuire Cloud Volumes ONTAP 9.13.1 in AWS nelle regioni della Cina. Ciò include il supporto sia per distribuzioni a nodo singolo che ad alta disponibilità (HA). Sono supportate solo le licenze acquistate direttamente da NetApp .
 
-Per la disponibilità regionale, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappe delle regioni globali per Cloud Volumes ONTAP"^] .
+Per la disponibilità regionale, consulta  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappe delle regioni globali per Cloud Volumes ONTAP"^].
 
 
 
@@ -940,7 +940,7 @@ Le seguenti regioni ora supportano distribuzioni HA con più zone di disponibili
 * Governo degli Stati Uniti Virginia (Regione del governo degli Stati Uniti - Virginia)
 
 
-Per un elenco di tutte le regioni, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .
+Per un elenco di tutte le regioni, fare riferimento al https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali in Azure"^].
 
 
 
@@ -982,7 +982,7 @@ link:https://docs.netapp.com/us-en/cloud-volumes-ontap-9161-relnotes/["Scopri le
 
 La regione Nuova Zelanda settentrionale è ora supportata in Azure per le configurazioni a nodo singolo e ad alta disponibilità (HA) di Cloud Volumes ONTAP 9.12.1 GA e versioni successive.  Si noti che il tipo di istanza Lsv3 non è supportato in questa regione.
 
-Per un elenco di tutte le regioni supportate, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .
+Per un elenco di tutte le regioni supportate, consulta  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali in Azure"^].
 
 
 
@@ -1188,7 +1188,7 @@ Scopri di più su queste funzionalità:
 
 La regione Canada Occidentale è ora supportata in AWS per Cloud Volumes ONTAP 9.12.1 GA e versioni successive.
 
-Per un elenco di tutte le regioni, vedere https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali su AWS"^] .
+Per un elenco di tutte le regioni, consulta  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali su AWS"^].
 
 
 
@@ -1326,7 +1326,7 @@ Le seguenti regioni ora supportano distribuzioni HA con più zone di disponibili
 * Canada Centrale
 
 
-Per un elenco di tutte le regioni, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .
+Per un elenco di tutte le regioni, fare riferimento al https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali in Azure"^].
 
 
 
@@ -1335,7 +1335,7 @@ Per un elenco di tutte le regioni, fare riferimento a https://bluexp.netapp.com/
 
 La regione di Johannesburg(`africa-south1` regione) è ora supportato in Google Cloud per Cloud Volumes ONTAP 9.12.1 GA e versioni successive.
 
-Per un elenco di tutte le regioni, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali su Google Cloud"^] .
+Per un elenco di tutte le regioni, fare riferimento al https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali su Google Cloud"^].
 
 
 
@@ -1483,7 +1483,7 @@ Le seguenti regioni ora supportano distribuzioni con più zone di disponibilità
 * Emirati Arabi Uniti del Nord
 
 
-Per un elenco di tutte le regioni, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .
+Per un elenco di tutte le regioni, fare riferimento al https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali in Azure"^].
 
 
 
@@ -1499,7 +1499,7 @@ La seguente modifica è stata introdotta con la versione 3.9.35 del Connector.
 
 La regione di Berlino è ora supportata in Google Cloud per Cloud Volumes ONTAP 9.12.1 GA e versioni successive.
 
-Per un elenco di tutte le regioni, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali su Google Cloud"^] .
+Per un elenco di tutte le regioni, fare riferimento al https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali su Google Cloud"^].
 
 
 
@@ -1515,7 +1515,7 @@ La seguente modifica è stata introdotta con la versione 3.9.35 del Connector.
 
 La regione di Tel Aviv è ora supportata in AWS per Cloud Volumes ONTAP 9.12.1 GA e versioni successive.
 
-Per un elenco di tutte le regioni, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali su AWS"^] .
+Per un elenco di tutte le regioni, fare riferimento al https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali su AWS"^].
 
 
 
@@ -1531,7 +1531,7 @@ La seguente modifica è stata introdotta con la versione 3.9.34 del Connector.
 
 La regione dell'Arabia Saudita è ora supportata in Google Cloud per Cloud Volumes ONTAP e Connector per Cloud Volumes ONTAP 9.12.1 GA e versioni successive.
 
-Per un elenco di tutte le regioni, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali su Google Cloud"^] .
+Per un elenco di tutte le regioni, fare riferimento al https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali su Google Cloud"^].
 
 
 
@@ -1557,7 +1557,7 @@ Le seguenti regioni di Azure ora supportano distribuzioni con più zone di dispo
 * Stati Uniti occidentali 2
 
 
-Per un elenco di tutte le regioni che supportano più zone di disponibilità, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .
+Per un elenco di tutte le regioni che supportano più zone di disponibilità, consulta  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali in Azure"^].
 
 
 
@@ -1662,7 +1662,7 @@ Con la versione 3.9.31 del Connector sono state introdotte le seguenti modifiche
 
 Japan East e Korea Central in Azure ora supportano distribuzioni HA con più zone di disponibilità per Cloud Volumes ONTAP 9.12.1 GA e versioni successive.
 
-Per un elenco di tutte le regioni che supportano più zone di disponibilità, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .
+Per un elenco di tutte le regioni che supportano più zone di disponibilità, consulta  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali in Azure"^].
 
 
 
@@ -1782,7 +1782,7 @@ A partire da Cloud Volumes ONTAP 9.12.1 GA, le regioni della Cina sono ora suppo
 * Sono supportate le licenze acquistate direttamente da NetApp .
 
 
-Per la disponibilità regionale, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappe delle regioni globali per Cloud Volumes ONTAP"^] .
+Per la disponibilità regionale, consulta  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappe delle regioni globali per Cloud Volumes ONTAP"^].
 
 
 
@@ -1852,7 +1852,7 @@ La regione China North 3 è ora supportata per le distribuzioni a nodo singolo d
 
 NOTE: Le nuove distribuzioni di Cloud Volumes ONTAP nelle regioni della Cina sono supportate solo nelle versioni 9.12.1 GA e 9.13.0 GA.  È possibile aggiornare queste versioni a patch e release successive di Cloud Volumes ONTAP.  Se desideri distribuire versioni successive di Cloud Volumes ONTAP nelle regioni della Cina, contatta l'assistenza NetApp .
 
-Per la disponibilità regionale, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappe delle regioni globali per Cloud Volumes ONTAP"^] .
+Per la disponibilità regionale, consulta  https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappe delle regioni globali per Cloud Volumes ONTAP"^].
 
 
 
@@ -2212,7 +2212,7 @@ https://docs.netapp.com/us-en/ontap/object-storage-management/index.html["Docume
 
 A partire dalla versione 9.10.1, Cloud Volumes ONTAP è ora supportato nella regione Azure West US 3.
 
-https://bluexp.netapp.com/cloud-volumes-global-regions["Visualizza l'elenco completo delle regioni supportate per Cloud Volumes ONTAP"^]
+https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Visualizza l'elenco completo delle regioni supportate per Cloud Volumes ONTAP"^]
 
 
 
@@ -2387,7 +2387,7 @@ Cloud Volumes ONTAP è ora supportato nelle seguenti regioni di Google Cloud a p
 * Santiago (southamerica-west1) - solo nodo singolo
 
 
-https://bluexp.netapp.com/cloud-volumes-global-regions["Visualizza l'elenco completo delle regioni supportate per Cloud Volumes ONTAP"^]
+https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Visualizza l'elenco completo delle regioni supportate per Cloud Volumes ONTAP"^]
 
 
 

@@ -11,7 +11,7 @@ Cloud Volumes ONTAP ora supporta la distribuzione nelle regioni Azure Government
 
 Per informazioni, consulta la documentazione di Azure:
 
-* https://azure.microsoft.com/en-us/blog/azure-government-top-secret-now-generally-available-for-us-national-security-missions/["Cloud per le missioni del governo degli Stati Uniti^"]
+* https://azure.microsoft.com/en-us/blog/azure-government-top-secret-now-generally-available-for-us-national-security-missions/["Cloud per le missioni del governo degli Stati Uniti"^]
 * https://azure.microsoft.com/en-us/explore/global-infrastructure/government/national-security["Azure Government Secret"^]
 * https://azure.microsoft.com/en-us/blog/azure-government-top-secret-now-generally-available-for-us-national-security-missions["Azure Government Top Secret"^]
 

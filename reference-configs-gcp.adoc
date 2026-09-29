@@ -477,7 +477,7 @@ Consulta questa tabella per comprendere la variante di VM e il numero di LSSD su
 [[supported-regions]]
 == Regioni supportate
 
-Per il supporto delle regioni di Google Cloud, vedere https://bluexp.netapp.com/cloud-volumes-global-regions["Regioni globali di Cloud Volumes"^].
+Per il supporto delle regioni di Google Cloud, vedere https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Regioni globali di Cloud Volumes"^].
 
 .Link correlati
 * https://cloud.google.com/compute/docs/disks/["Documentazione di Google Cloud: Opzioni di archiviazione"^]

@@ -13,4 +13,4 @@ Le seguenti regioni ora supportano distribuzioni HA con più zone di disponibili
 * Governo degli Stati Uniti Virginia (Regione del governo degli Stati Uniti - Virginia)
 
 
-Per un elenco di tutte le regioni, fare riferimento a https://bluexp.netapp.com/cloud-volumes-global-regions["Mappa delle regioni globali in Azure"^] .
+Per un elenco di tutte le regioni, fare riferimento al https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Mappa delle regioni globali in Azure"^].

@@ -32,7 +32,7 @@ Sono disponibili diverse opzioni di licenza per Cloud Volumes ONTAP. Ogni opzion
 [[choose-a-supported-region]]
 == Scegli una regione supportata
 
-Cloud Volumes ONTAP è supportato nella maggior parte delle regioni Microsoft Azure. https://bluexp.netapp.com/cloud-volumes-global-regions["Visualizza l'elenco completo delle regioni supportate"^] .
+Cloud Volumes ONTAP è supportato nella maggior parte delle aree di Microsoft Azure https://www.netapp.com/cloud-volumes-ontap/supported-regions/["Visualizza l'elenco completo delle regioni supportate"^].
 
 
 
