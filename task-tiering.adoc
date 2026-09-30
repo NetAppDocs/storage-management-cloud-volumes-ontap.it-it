@@ -24,7 +24,6 @@ Sono supportate la maggior parte delle configurazioni.  Se disponi di un sistema
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"]Garantire la connettività tra Cloud Volumes ONTAP e l'archiviazione degli oggetti
 [role="quick-margin-list"]
-* Per AWS, hai bisogno di un endpoint VPC per Amazon Simple Storage Service (Amazon S3). <<Requirements to tier cold data to AWS S3,Saperne di più>>.
 * Per Azure, non sarà necessario fare nulla finché la NetApp Console avrà le autorizzazioni necessarie. <<Requisiti per suddividere i dati inattivi in livelli nell'archiviazione BLOB di Azure,Saperne di più>> .
 * Per Google Cloud, è necessario configurare la subnet per l'accesso privato a Google e impostare un account di servizio. <<Requisiti per suddividere i dati inattivi in un bucket di Google Cloud Storage,Saperne di più>> .
 
