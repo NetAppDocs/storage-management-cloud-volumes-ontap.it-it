@@ -253,7 +253,7 @@ La Console consente una conversione senza interruzioni delle licenze basate su n
 
 Prima di effettuare la transizione, è bene familiarizzare con la differenza tra i due modelli di licenza.  Le licenze basate sui nodi includono una capacità fissa per ogni istanza ONTAP , il che può limitare la flessibilità.  Le licenze basate sulla capacità, d'altro canto, consentono di condividere un pool di storage su più istanze, offrendo maggiore flessibilità, ottimizzando l'utilizzo delle risorse e riducendo il rischio di sanzioni finanziarie durante la ridistribuzione dei carichi di lavoro.  La ricarica basata sulla capacità si adatta perfettamente alle mutevoli esigenze di stoccaggio.
 
-##Se hai abbonamenti al marketplace o implementazioni private con licenze basate su nodi, puoi link:task-convert-node-capacity.html["converti le tue licenze basate sui nodi in licenze basate sulla capacità"] usare lo strumento di conversione delle licenze nella Console.##
+Se hai abbonamenti al marketplace o distribuzioni private con licenze basate su nodi, puoi link:task-convert-node-capacity.html["converti le tue licenze basate sui nodi in licenze basate sulla capacità"] utilizzare lo strumento di conversione delle licenze nella Console.
 
 Per sapere come eseguire questa conversione, fare riferimento alink:task-convert-node-capacity.html["Convertire una licenza basata su nodi Cloud Volumes ONTAP in una licenza basata sulla capacità"] .
 
