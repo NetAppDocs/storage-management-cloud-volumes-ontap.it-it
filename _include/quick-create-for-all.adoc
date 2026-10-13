@@ -2,7 +2,6 @@
 :allow-uri-read: 
 
 
-[role="lead"]
 Puoi distribuire Cloud Volumes ONTAP su Amazon Web Services (AWS), Microsoft Azure e Google Cloud usando  `Quick create` per una distribuzione più rapida sia in configurazioni a nodo singolo che in configurazioni ad alta disponibilità (HA). Questo processo semplificato riduce i passaggi di distribuzione rispetto al metodo avanzato impostando automaticamente i valori predefiniti in un'unica pagina e minimizzando la navigazione.
 
 .Prima di iniziare
