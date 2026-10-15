@@ -161,6 +161,9 @@ La versione di Cloud Volumes ONTAP a cui è possibile effettuare l'aggiornamento
 | Versione attuale | Versioni a cui puoi effettuare l'aggiornamento diretto 
 
 
+| 9.18.1 | 9.19.1 
+
+
 | 9.17.1 P1 | 9.18.1 
 
 

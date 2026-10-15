@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: task-enable-cluster-encryption.html 
+keywords: Backend cluster network encryption, encryption, security, TLS, IPsec, CSM, kTLS, backend encryption 
+summary: Abilita la crittografia della rete del cluster di backend per proteggere il traffico del cluster Cloud Volumes ONTAP che non è già protetto da ONTAP IPsec. 
+---
+= Abilita la crittografia della rete del cluster backend per Cloud Volumes ONTAP in Azure e Google Cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Per Cloud Volumes ONTAP 9.19.1 e versioni successive, abilita la crittografia della rete del cluster backend per proteggere il traffico interno est-ovest nelle configurazioni ad alta disponibilità (HA) in Azure e Google Cloud. Questa impostazione protegge il traffico in transito; non crittografa i dati del volume a riposo.
+
+ONTAP utilizza Cluster Session Management (CSM) su Kernel TLS (kTLS) e IPsec software per proteggere il traffico sulle reti backend per le configurazioni HA. Cloud Volumes ONTAP 9.19.1 e versioni successive estendono questa protezione al traffico del cluster backend.
+
+
+NOTE: L'attivazione della crittografia di rete del cluster potrebbe influire sulle prestazioni del cluster. Procedi con cautela e verifica che il tuo ambiente sia in grado di gestire il sovraccarico aggiuntivo prima di abilitare questa funzionalità.
+
+.Prima di iniziare
+* Devi utilizzare Cloud Volumes ONTAP 9.19.1 o versione successiva.
+* Devi disporre dei privilegi di amministratore del cluster.
+* Devi verificare che la tua distribuzione di Cloud Volumes ONTAP utilizzi una configurazione supportata.
+
+
+.Passi
+. Usa la CLI di ONTAP per connetterti al cluster Cloud Volumes ONTAP.
+. Verifica che la configurazione della crittografia della rete del cluster sia corretta:
++
+[source, cli]
+----
+security cluster-network show
+    Enabled: false
+    Mode: tls
+    Status: READY
+----
+. Abilita la crittografia di rete del cluster in modalità TLS e IPsec:
++
+[source, cli]
+----
+security cluster-network modify -enabled true -mode tls_ipsec
+----
+. Verifica che la crittografia della rete del cluster sia abilitata:
++
+[source, cli]
+----
+security cluster-network show
+    Enabled: true
+    Mode: tls_ipsec
+    Status: READY
+----
++
+
+NOTE: Quando abiliti `tls_ipsec` la modalità, il traffico CSM utilizza TLS, mentre l'altro traffico di rete del cluster utilizza IPsec. ONTAP genera e gestisce i certificati necessari e le policy IPsec di backend.
+
+
+
+.Informazioni correlate
+* https://docs.netapp.com/us-en/ontap/networking/configure-backend-encryption.html["Configura la crittografia di rete del cluster backend ONTAP"^]
+* https://docs.netapp.com/us-en/ontap-cli/security-cluster-network-show.html["security cluster-network show"^]
+* https://docs.netapp.com/us-en/ontap-cli/security-cluster-network-modify.html["security cluster-network modify"^]
+

@@ -1,0 +1,89 @@
+---
+sidebar: sidebar 
+permalink: task-azure-prevent-freeze.html 
+keywords: Azure, maintenance event, HA, takeover, giveback, freeze, disruption 
+summary: Previeni le interruzioni durante la manutenzione di Azure disattivando il takeover automatico e il giveback per una coppia HA di Cloud Volumes ONTAP. 
+---
+= Previeni le interruzioni durante la manutenzione di Azure per le coppie HA di Cloud Volumes ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Puoi configurare le coppie HA di Cloud Volumes ONTAP per sopprimere il takeover automatico e il giveback durante la manutenzione pianificata di Azure. Questa funzionalità facoltativa è disponibile con Cloud Volumes ONTAP 9.19.1 e versioni successive ed è disabilitata per impostazione predefinita.
+
+
+NOTE: Questa funzionalità è disponibile in anteprima pubblica con Cloud Volumes ONTAP 9.19.1.
+
+Microsoft Azure può mettere brevemente in pausa una VM durante la manutenzione programmata. In una configurazione HA di Cloud Volumes ONTAP, ONTAP potrebbe considerare la pausa come un'interruzione del nodo e spostare le operazioni di storage sul nodo partner, per poi restituirle automaticamente quando la VM in pausa riprende l'attività (takeover e giveback). Questo può interrompere le connessioni client attive. Se abiliti questa funzionalità, la coppia HA continua a funzionare durante un blocco dovuto alla manutenzione programmata di Azure senza avviare automaticamente takeover e giveback.
+
+.Informazioni su questo compito
+* L'I/O del client potrebbe bloccarsi durante il blocco di una VM di Azure. ONTAP non avvia automaticamente il takeover, pertanto l'I/O del client rimane sul nodo interessato anziché passare al partner HA. L'I/O potrebbe bloccarsi finché il nodo non riprende a funzionare.
+* La durata di un'interruzione dipende dal blocco della Azure VM. Un blocco più lungo può comportare un'interruzione di I/O più prolungata.
+* La normale protezione HA rimane attiva per altre condizioni di guasto. La funzionalità sopprime takeover e giveback solo per il blocco di manutenzione pianificata di Azure. Altre condizioni che normalmente attivano takeover, come un guasto del nodo o un panic, continuano a farlo.
+* Questa funzionalità si applica a entrambi i nodi di una coppia HA. Il comportamento relativo agli eventi di manutenzione è configurato su entrambi i nodi e non può essere abilitato su un solo nodo.
+* Questa funzionalità persiste anche dopo il riavvio e rimane attiva finché non la disattivi. Disattivandola, ripristini il comportamento predefinito di takeover e giveback per la manutenzione pianificata.
+
+
+.Prima di iniziare
+* Il tuo sistema Cloud Volumes ONTAP deve eseguire la versione 9.19.1 o successiva.
+* Devi disporre dell'accesso come amministratore di Cloud Volumes ONTAP per completare questa procedura.
+* Verifica che i tuoi carichi di lavoro possano tollerare arresti temporanei dell'I/O durante un blocco per manutenzione pianificata di Azure e che continuare durante il blocco sia preferibile alla risposta predefinita di takeover e giveback.
+
+
+
+
+[[prevent-automatic-takeover-and-giveback-during-azure-scheduled-maintenance]]
+== Impedisci il takeover automatico e il giveback durante la manutenzione pianificata di Azure
+
+.Passi
+. Identifica l'ID di sistema per la coppia HA. Per informazioni su come identificare le risorse e fare chiamate API, consulta https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html#step-1-select-the-identifie["La tua prima chiamata API"^].
+. Invia una `PUT` richiesta al seguente endpoint, sostituendo `{id}` con l'ID di sistema:
++
+`PUT /occm/api/azure/ha/working-environments/{id}/opt-off-maintenance-event`
+
++
+Imposta `enabled` su `true` nel corpo della richiesta:
+
++
+[source, json]
+----
+{
+  "enabled": true
+}
+----
+
+
+.Risultato
+Una richiesta andata a buon fine restituisce HTTP 202 con un corpo vuoto.
+
+
+IMPORTANT: L'API aggiorna i nodi della coppia HA in modo sequenziale. Se una richiesta non va a buon fine prima del completamento dell'operazione, verifica le impostazioni su entrambi i nodi prima di riprovare la richiesta, poiché i nodi potrebbero avere impostazioni diverse.
+
+
+
+[[disable-the-feature-to-restore-default-behavior]]
+== Disabilita la funzione per ripristinare il comportamento predefinito
+
+Per ripristinare il comportamento predefinito di takeover e giveback durante la manutenzione pianificata di Azure, disattiva la funzionalità.
+
+.Passi
+. Invia una `PUT` richiesta allo stesso endpoint, sostituendo `{id}` con l'ID di sistema:
++
+`PUT /occm/api/azure/ha/working-environments/{id}/opt-off-maintenance-event`
+
++
+Imposta  `enabled`su  `false` nel corpo della richiesta:
+
++
+[source, json]
+----
+{
+  "enabled": false
+}
+----
+

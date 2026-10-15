@@ -1,0 +1,61 @@
+= Cloud Volumes ONTAP 9.19.1 in Azure
+:allow-uri-read: 
+
+
+
+
+[[cloud-volumes-ontap-9-19-1-in-azure]]
+=== Cloud Volumes ONTAP 9.19.1 in Azure
+
+Ora puoi usare NetApp Console per distribuire e gestire la versione General Availability (GA) di Cloud Volumes ONTAP 9.19.1 in Azure.
+
+La Console supporta Cloud Volumes ONTAP 9.19.1 in AWS e Google Cloud da agosto 2026.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-new.html["Note sulla versione di Cloud Volumes ONTAP 9.19.1"^]
+
+
+
+[[azure-encryption-at-host-for-cloud-volumes-ontap]]
+=== Crittografia di Azure nell'host per Cloud Volumes ONTAP
+
+A partire da Cloud Volumes ONTAP 9.19.1 GA, la crittografia di Azure nell'host è abilitata per impostazione predefinita per le nuove implementazioni Azure a nodo singolo e ad alta disponibilità (HA) che soddisfano i prerequisiti. Questa funzionalità crittografa i dati sul server fisico che ospita la VM, inclusi il disco temporaneo e le cache associate a livello host, mentre i dati vengono scritti nell'host e letti dall'host.
+
+Prima di distribuire Cloud Volumes ONTAP in Azure, assicurati che siano soddisfatti i seguenti prerequisiti:
+
+* La `EncryptionAtHost` funzionalità è registrata per il tuo abbonamento Azure. Consulta https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli["Documentazione Microsoft: Abilitare la crittografia sull'host"^].
+* Il tipo di istanze di macchine virtuali che hai selezionato supporta la crittografia nell'host nella tua area di Azure. Consulta  https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli#finding-supported-vm-sizes["Documentazione Microsoft: trovare le dimensioni delle macchine virtuali supportate"^].
+
+
+Nota questi punti:
+
+* Non è necessaria alcuna configurazione aggiuntiva.
+* Se questi prerequisiti non sono soddisfatti, la crittografia Azure nell'host non è abilitata per la tua implementazione di Cloud Volumes ONTAP.
+* La crittografia a livello di host si applica solo ad Azure, non ad AWS o Google Cloud.
+
+
+Documentazione Microsoft: https://learn.microsoft.com/en-us/azure/virtual-machines/disks-enable-host-based-encryption-portal["Usa il portale di Azure per abilitare la crittografia end-to-end usando la crittografia a livello host"^]
+
+
+
+[[backend-network-encryption-on-cloud-volumes-ontap-clusters-in-azure-and-google-cloud]]
+=== Crittografia di rete backend sui cluster Cloud Volumes ONTAP in Azure e Google Cloud
+
+Cloud Volumes ONTAP 9.19.1 e versioni successive supportano la crittografia di rete del cluster backend per le configurazioni HA in Azure e Google Cloud.
+
+L'attivazione della crittografia di rete del cluster potrebbe influire sulle prestazioni del cluster. Fai attenzione e verifica che il tuo ambiente sia in grado di gestire il sovraccarico aggiuntivo prima di abilitare questa funzionalità.
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-enable-cluster-encryption.html["Abilita la crittografia della rete backend sui cluster Cloud Volumes ONTAP"^]
+
+
+
+[[ability-to-reduce-disruptions-during-azure-scheduled-maintenance]]
+=== Possibilità di ridurre le interruzioni durante la manutenzione pianificata di Azure
+
+Durante la manutenzione pianificata, Azure può sospendere brevemente un'istanza di macchina virtuale in una coppia HA di Cloud Volumes ONTAP. ONTAP potrebbe interpretare la sospensione come un'interruzione del nodo e spostare le operazioni di storage sul nodo partner, per poi riportarle indietro quando l'istanza di macchina virtuale riprende a funzionare (takeover e giveback). Questo processo può interrompere le connessioni client attive anche in assenza di guasti dei nodi.
+
+Con Cloud Volumes ONTAP 9.19.1 e versioni successive, puoi abilitare un'impostazione facoltativa che consente alla coppia HA di continuare a funzionare durante un blocco della manutenzione pianificata di Azure senza avviare automaticamente il takeover e il giveback.
+
+
+NOTE: Questa funzionalità è disponibile in anteprima pubblica con Cloud Volumes ONTAP 9.19.1.
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-azure-prevent-freeze.html["Previeni le interruzioni durante la manutenzione di Azure per le coppie HA di Cloud Volumes ONTAP"^]

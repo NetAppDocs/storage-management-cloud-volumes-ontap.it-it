@@ -200,6 +200,8 @@ sidebar:
         url: "/task-protecting-ransomware.html"
       - title: Crea copie Snapshot a prova di manomissione per l'archiviazione WORM
         url: "/reference-worm-snaplock.html"
+      - title: Abilita la crittografia della rete del cluster back-end
+        url: "/task-enable-cluster-encryption.html"
   - title: Gestione dell'infrastruttura cloud
     entries:
     - title: Amministrazione AWS
@@ -226,6 +228,9 @@ sidebar:
         url: "/reference-limits-azure.html"
       - title: Scopri le coppie HA in Azure
         url: "/concept-ha-azure.html"
+      - title: Evita le interruzioni durante la manutenzione di Azure per Cloud Volumes
+          ONTAP HA
+        url: "/task-azure-prevent-freeze.html"
       - title: Gestisci le chiavi con Azure Key Vault
         url: "/task-azure-key-vault.html"
       - title: Cambia il tipo di VM di Azure
@@ -248,10 +253,6 @@ sidebar:
           url: "/concept-configuration-analysis-cvo.html"
         - title: Migliora le configurazioni di Cloud Volumes ONTAP in Azure
           url: "/task-improve-configurations-cvo.html"
-      - title: Analisi della configurazione per Cloud Volumes ONTAP in Azure
-        url: "/concept-configuration-analysis-cvo.html"
-      - title: Migliora le configurazioni di Cloud Volumes ONTAP in Azure
-        url: "/task-improve-configurations-cvo.html"
     - title: Amministrazione di Google Cloud
       entries:
       - title: Configurazioni supportate in Google Cloud
