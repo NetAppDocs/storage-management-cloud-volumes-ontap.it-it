@@ -82,7 +82,7 @@ La console crea l'account di archiviazione con le seguenti impostazioni:
 * Prestazioni: Standard
 * Ridondanza: in base alla distribuzione di Cloud Volume ONTAP
 +
-** Zona di disponibilità singola: archiviazione ridondante locale (LRS)
+** Zona di disponibilità singola: storage con ridondanza locale (LRS)
 ** Zona di disponibilità multipla: archiviazione con ridondanza di zona (ZRS)
 
 

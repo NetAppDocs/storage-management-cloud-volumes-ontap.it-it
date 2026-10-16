@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-set-up-licensing-google.html 
 keywords: freemium, professional, essentials, licensing, licenses, cloud volumes ontap charging, cloud volumes ontap licenses, cloud volumes ontap licensing, cvo licenses, cvo licensing, byol, bring your own license, paygo, pay as you go, keystone flex, keystone, digital wallet 
-summary: Dopo aver deciso quale opzione di licenza utilizzare per Cloud Volumes ONTAP, sono necessari alcuni passaggi prima di poter scegliere tale opzione di licenza quando si distribuisce un nuovo sistema. 
+summary: Prima di creare un sistema, configura le licenze Freemium, basate sulla capacità o Keystone Subscription per Cloud Volumes ONTAP in Google Cloud. 
 ---
 = Impostare le licenze per Cloud Volumes ONTAP in Google Cloud
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Dopo aver deciso quale opzione di licenza utilizzare per Cloud Volumes 
 
 
 [role="lead"]
-Dopo aver deciso quale opzione di licenza utilizzare con Cloud Volumes ONTAP, sono necessari alcuni passaggi prima di poter scegliere tale opzione di licenza durante la creazione di un nuovo sistema.
+Dopo aver scelto l'opzione di licenza da utilizzare con Cloud Volumes ONTAP in Google Cloud, completa alcuni passaggi di configurazione prima di selezionarla durante la creazione del sistema.
 
 
 
@@ -29,7 +29,7 @@ Seleziona l'offerta Freemium per utilizzare Cloud Volumes ONTAP gratuitamente co
 +
 .. Nella pagina *Dettagli e credenziali*, seleziona *Modifica credenziali > Aggiungi abbonamento* e segui le istruzioni per abbonarti all'offerta pay-as-you-go nel Google Cloud Marketplace.
 +
-Non ti verrà addebitato alcun costo tramite l'abbonamento al marketplace a meno che tu non superi i 500 GiB di capacità fornita, momento in cui il sistema verrà automaticamente convertito inlink:concept-licensing.html#packages["Pacchetto essenziale"] .
+Non ti verrà addebitato alcun costo tramite l'abbonamento al marketplace a meno che tu non superi i 500 GiB di capacità allocata. Se li superi, il sistema passa automaticamente a link:concept-licensing.html#packages["Pacchetto essenziale"].
 
 .. Dopo essere tornato alla Console, seleziona *Freemium* quando arrivi alla pagina dei metodi di addebito.
 +
@@ -46,7 +46,7 @@ link:task-deploying-gcp.html["Visualizza le istruzioni dettagliate per avviare C
 [[capacity-based-license]]
 == Licenza basata sulla capacità
 
-Le licenze basate sulla capacità consentono di pagare Cloud Volumes ONTAP per TiB di capacità. Le licenze basate sulla capacità sono disponibili sotto forma di _pacchetto_: il pacchetto Essentials o Professional.
+La licenza basata sulla capacità ti consente di pagare Cloud Volumes ONTAP per TiB di capacità. La licenza basata sulla capacità è disponibile come _pacchetto_: Essentials o Professional.
 
 I pacchetti Essentials e Professional sono disponibili con i seguenti modelli di consumo o opzioni di acquisto:
 
@@ -57,7 +57,7 @@ I pacchetti Essentials e Professional sono disponibili con i seguenti modelli di
 
 link:concept-licensing.html#capacity-based-licensing["Scopri di più sulle licenze basate sulla capacità"] .
 
-Le sezioni seguenti descrivono come iniziare a utilizzare ciascuno di questi modelli di consumo.
+Per iniziare a utilizzare ciascuno di questi modelli di consumo, segui i passaggi descritti nelle sezioni successive.
 
 
 
@@ -82,7 +82,7 @@ La licenza deve essere disponibile dalla Console prima di poterla utilizzare con
 +
 .. Nella pagina *Dettagli e credenziali*, seleziona *Modifica credenziali > Aggiungi abbonamento* e segui le istruzioni per abbonarti all'offerta pay-as-you-go nel Google Cloud Marketplace.
 +
-La licenza acquistata da NetApp viene sempre addebitata per prima, ma ti verrà addebitata la tariffa oraria del marketplace se superi la capacità della licenza o se scade il termine della licenza.
+La licenza che hai acquistato da NetApp viene sempre addebitata per prima, ma ti verrà addebitata la tariffa oraria del marketplace se superi la capacità concessa in licenza o se la durata della licenza scade.
 
 .. Dopo essere tornati alla Console, selezionate un pacchetto basato sulla capacità quando raggiungete la pagina dei metodi di ricarica.
 +
@@ -159,7 +159,7 @@ Un abbonamento Keystone è un servizio basato su un abbonamento con pagamento in
 
 .Passi
 . Se non hai ancora un abbonamento, https://www.netapp.com/forms/keystone-sales-contact/["contattare NetApp"^]
-. mailto:ng-keystone-success@netapp.com[Contatta NetApp] per autorizzare il tuo account utente Console con uno o più abbonamenti Keystone .
+. Usa mailto:ng-keystone-success@netapp.com[Contact NetApp] per autorizzare il tuo account utente Console con uno o più Keystone Subscriptions.
 . Dopo che NetApp avrà autorizzato il tuo account, link:task-manage-keystone.html["collega i tuoi abbonamenti per utilizzarli con Cloud Volumes ONTAP"].
 . Nella pagina *Systems*, seleziona *Add System* e segui i passaggi.
 +
@@ -179,7 +179,7 @@ link:task-deploying-gcp.html["Visualizza le istruzioni dettagliate per avviare C
 [[node-based-license]]
 == Licenza basata su nodi
 
-Una licenza basata su nodi è la licenza di precedente generazione per Cloud Volumes ONTAP. Una licenza basata su nodi può essere acquistata da NetApp (BYOL) ed è disponibile per i rinnovi di licenza solo in casi specifici. Per informazioni, fare riferimento a:
+La licenza basata su nodo è la licenza della generazione precedente per Cloud Volumes ONTAP. Potevi acquistare una licenza basata su nodo da NetApp (BYOL). Le licenze basate su nodo sono ora disponibili per il rinnovo solo in casi specifici. Per informazioni, consulta:
 
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#end-of-availability-for-node-based-licenses["Fine della disponibilità delle licenze basate su nodi"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Fine della disponibilità delle licenze basate sui nodi"^]

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-gcp-dm-im-conv.html 
 keywords: manual conversion tool, gcp dm im conversion, gcp deployment manager to infrastructure manager, gcp dm to im conversion 
-summary: Per le distribuzioni esistenti in Google Cloud, è necessario aggiornare i sistemi a Cloud Volumes ONTAP 9.16.1 o versioni successive, quindi eseguire manualmente uno strumento di transizione per la conversione da Google Cloud Deployment Manager a Cloud Infrastructure Manager. 
+summary: Aggiorna i sistemi Cloud Volumes ONTAP esistenti in Google Cloud alla versione 9.16.1 o successiva, quindi esegui lo strumento di transizione per passare da Deployment Manager a Infrastructure Manager. 
 ---
 = Convertire le distribuzioni Cloud Volumes ONTAP esistenti in Infrastructure Manager
 :hardbreaks:
@@ -14,10 +14,10 @@ summary: Per le distribuzioni esistenti in Google Cloud, è necessario aggiornar
 
 
 [role="lead"]
-A partire dal 9 febbraio 2026, le nuove distribuzioni Cloud Volumes ONTAP in Google Cloud potranno utilizzare Google Cloud Infrastructure Manager. Google sta per abbandonare Google Cloud Deployment Manager a favore di Infrastructure Manager. Pertanto, è necessario eseguire manualmente uno strumento di transizione per convertire le distribuzioni Cloud Volumes ONTAP esistenti da Deployment Manager a Infrastructure Manager. Si tratta di una procedura una tantum, al termine della quale i sistemi inizieranno automaticamente a utilizzare Infrastructure Manager.
+A partire dal 9 febbraio 2026, le nuove implementazioni di Cloud Volumes ONTAP in Google Cloud possono utilizzare Google Cloud Infrastructure Manager. Google sta dismettendo Google Cloud Deployment Manager a favore di Infrastructure Manager. Per convertire le tue implementazioni esistenti di Cloud Volumes ONTAP da Deployment Manager a Infrastructure Manager, esegui manualmente lo strumento di conversione. Questo processo una tantum passa automaticamente i tuoi sistemi a Infrastructure Manager.
 
 .Informazioni su questo compito
-Lo strumento di transizione è disponibile nel sito di supporto NetApp e crea i seguenti artefatti:
+Lo strumento di conversione è disponibile nel sito di supporto NetApp e crea i seguenti artefatti:
 
 * Manufatti Terraform, salvati in  `conversion_output/deployment_name`.
 * Riepilogo della conversione, salvato in `conversion_output/batch_summary_<deployment_name>_<timestamp>.json.`
@@ -34,16 +34,16 @@ I sistemi Cloud Volumes ONTAP che utilizzano Infrastructure Manager archiviano d
 
 ====
 .Prima di iniziare
-* Assicurati che il tuo sistema Cloud Volumes ONTAP sia 9.16.1 o successivo.
-* Assicurarsi che nessuna delle risorse Cloud Volumes ONTAP o delle relative proprietà sia stata modificata manualmente da Google Cloud Console.
-* Assicurati che le API di Google Cloud siano abilitate. Fai riferimento a https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Abilita le API di Google Cloud"^]. Assicurati che, insieme alle altre API, sia abilitata anche la Google Cloud Quotas API.
-* Verificare che l'account di servizio dell'agente della NetApp Console disponga di tutte le autorizzazioni necessarie. Fare riferimento a  https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions["Autorizzazioni di Google Cloud per l'agente della console"^].
+* Verifica che il tuo sistema Cloud Volumes ONTAP sia alla versione 9.16.1 o successiva.
+* Verifica che nessuna delle risorse Cloud Volumes ONTAP o delle relative proprietà sia stata modificata manualmente da Google Cloud Console.
+* Verifica che le API di Google Cloud siano abilitate, inclusa l'API Google Cloud Quotas. Fai riferimento a  https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Abilita le API di Google Cloud"^].
+* Verifica che l'account di servizio per l'agente NetApp Console disponga di tutte le autorizzazioni richieste. Fai riferimento a https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions["Autorizzazioni di Google Cloud per l'agente della console"^].
 +
 .Per le implementazioni in modalità privata, assicurati di soddisfare questi prerequisiti aggiuntivi:
 [%collapsible]
 ====
 ** Assicurati di disporre della versione più recente dell'agente Console. Scarica il programma di installazione del prodotto dal NetApp Support Site e quindi installa manualmente l'agente sul tuo host in modo che l'agente possa utilizzare le API di Infrastructure Manager.
-** Se esegui lo strumento in modalità privata, assicurati che, insieme alle altre API, tu abbia abilitato l'API Cloud Build. https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Abilita le API di Google Cloud"^].
+** Se stai eseguendo lo strumento in modalità privata, assicurati di aver abilitato l'API Cloud Build oltre alle altre API. Fai riferimento a https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-google-gcloud.html#step-5-enable-google-cloud-apis["Abilita le API di Google Cloud"^].
 ** Assicurati di aver completato le configurazioni di rete e creato il pool di worker per le distribuzioni in modalità privata. Fai riferimento a link:reference-networking-gcp.html#infrastructure-manager-configuration-in-private-mode-or-protected-environments["Configurazione di Infrastructure Manager in modalità privata o in ambienti protetti"].
 
 
@@ -165,7 +165,7 @@ includedPermissions:
 .Includi autorizzazioni aggiuntive per le implementazioni in modalità privata
 [%collapsible]
 ====
-Se si esegue lo strumento in modalità privata, aggiungere l `cloudbuild.workerpools.get`autorizzazione anche al file YAML.
+Se esegui lo strumento in modalità privata, aggiungi anche l' `cloudbuild.workerpools.get`autorizzazione al file YAML.
 
 ====
 .. Crea un ruolo personalizzato in Google Cloud con le autorizzazioni definite nel file YAML.
@@ -184,7 +184,7 @@ Se si esegue lo strumento in modalità privata, aggiungere l `cloudbuild.workerp
 *** SUSE Linux Enterprise Server 15 SP7 x86_64
 
 
-** Networking: Firewall che consente HTTP e HTTPs
+** Rete: firewall che consente HTTP e HTTPS
 ** Dimensione del disco: 20GB
 ** Sicurezza: Account di servizio: l'account di servizio che hai creato
 ** Sicurezza: Ambito di accesso - accesso impostato per ciascuna API:
@@ -259,7 +259,7 @@ exec -l $SHELL
 [[run-the-conversion-tool]]
 == Esegui lo strumento di conversione
 
-Questi passaggi sono validi sia per Ubuntu che per SUSE Linux Enterprise Server per l'esecuzione dello strumento di conversione.
+Segui questi passaggi per eseguire lo strumento di conversione sia su Ubuntu che su SUSE Linux Enterprise Server.
 
 .Passi
 . Aggiungi l'utente corrente al gruppo Docker, in modo che lo strumento possa utilizzare Docker senza  `sudo` privilegi.
@@ -280,7 +280,7 @@ cd <folder where you extracted the tool>
 In questo modo lo strumento viene installato in un ambiente isolato, `dmconvert-venv` e viene verificato che tutti i pacchetti software richiesti siano installati.
 
 . Immettere l'ambiente in cui è installato lo strumento: `source dmconvert-venv/bin/activate`
-. Eseguire lo strumento di conversione come  `non-sudo`utente. Assicurarsi di utilizzare lo stesso account di servizio dell'account di servizio dell'agente della Console e che l'account di servizio disponga di tutti i  https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions["autorizzazioni necessarie per Google Cloud Infrastructure Manager"^].
+. Esegui lo strumento di conversione come utente `non-sudo`. Assicurati di usare lo stesso account di servizio usato dall'agente di Console e che l'account di servizio disponga di tutti i  https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-gcp.html#service-account-permissions["autorizzazioni necessarie per Google Cloud Infrastructure Manager"^].
 +
 [source, cli]
 ----
@@ -307,10 +307,10 @@ dmconvert \
 
 
 .Dopo aver finito
-Lo strumento visualizza un elenco di tutti i sistemi Cloud Volumes ONTAP e i dettagli delle SVM. Al termine dell'esecuzione, puoi vedere lo stato di tutti i sistemi convertiti. Ogni sistema convertito appare nella Google Console sotto Infrastructure Manager in un formato _<system-name-imdeploy>_, indicando che la Console ora utilizza le API di Infrastructure Manager per gestire quel sistema Cloud Volumes ONTAP.
+Lo strumento visualizza un elenco di tutti i sistemi Cloud Volumes ONTAP e i dettagli SVM. Quando termina l'esecuzione, puoi vedere lo stato di tutti i sistemi convertiti. Ogni sistema convertito viene visualizzato in Google Cloud Console in Infrastructure Manager nel formato _<system-name-imdeploy>_, a indicare che la Console ora utilizza le API di Infrastructure Manager per gestire quel sistema Cloud Volumes ONTAP.
 
 
-CAUTION: Dopo la conversione, non eliminare l'oggetto di distribuzione per Deployment Manager nella Google Cloud Console. Questo oggetto di distribuzione contiene informazioni che potrebbero essere necessarie per eseguire il rollback del sistema convertito.
+CAUTION: Dopo la conversione, non eliminare l'oggetto di distribuzione per Deployment Manager nella Google Cloud Console. Questo oggetto di distribuzione contiene informazioni di cui potresti aver bisogno per eseguire il rollback del sistema convertito.
 
 Se è necessario annullare la conversione, è necessario utilizzare la stessa VM. Se sono stati convertiti tutti i sistemi e non è necessario annullare la conversione a Deployment Manager, è possibile eliminare la VM.
 
@@ -332,7 +332,7 @@ dmconvert \
 --service-account=<the service account attached to the Console agent> \
 --rollback
 ----
-. Attendi fino al completamento del rollback.
+. Attendi il completamento del rollback.
 
 
 .Link correlati

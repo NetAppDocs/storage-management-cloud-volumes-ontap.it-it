@@ -19,12 +19,12 @@ Puoi configurare le coppie HA di Cloud Volumes ONTAP per sopprimere il takeover 
 
 NOTE: Questa funzionalità è disponibile in anteprima pubblica con Cloud Volumes ONTAP 9.19.1.
 
-Microsoft Azure può mettere brevemente in pausa una VM durante la manutenzione programmata. In una configurazione HA di Cloud Volumes ONTAP, ONTAP potrebbe considerare la pausa come un'interruzione del nodo e spostare le operazioni di storage sul nodo partner, per poi restituirle automaticamente quando la VM in pausa riprende l'attività (takeover e giveback). Questo può interrompere le connessioni client attive. Se abiliti questa funzionalità, la coppia HA continua a funzionare durante un blocco dovuto alla manutenzione programmata di Azure senza avviare automaticamente takeover e giveback.
+Microsoft Azure può sospendere brevemente una VM durante la manutenzione programmata. In una configurazione HA di Cloud Volumes ONTAP, ONTAP potrebbe considerare la sospensione come un'interruzione del nodo e spostare le operazioni di storage sul nodo partner (takeover). ONTAP quindi restituisce automaticamente le operazioni quando la VM sospesa riprende (giveback). Questo comportamento può interrompere le connessioni client attive. Se abiliti questa funzionalità, la coppia HA continua a funzionare durante un blocco dovuto alla manutenzione programmata di Azure senza avviare automaticamente takeover e giveback.
 
 .Informazioni su questo compito
 * L'I/O del client potrebbe bloccarsi durante il blocco di una VM di Azure. ONTAP non avvia automaticamente il takeover, pertanto l'I/O del client rimane sul nodo interessato anziché passare al partner HA. L'I/O potrebbe bloccarsi finché il nodo non riprende a funzionare.
 * La durata di un'interruzione dipende dal blocco della Azure VM. Un blocco più lungo può comportare un'interruzione di I/O più prolungata.
-* La normale protezione HA rimane attiva per altre condizioni di guasto. La funzionalità sopprime takeover e giveback solo per il blocco di manutenzione pianificata di Azure. Altre condizioni che normalmente attivano takeover, come un guasto del nodo o un panic, continuano a farlo.
+* La normale protezione HA rimane attiva per altre condizioni di guasto. La funzionalità sopprime takeover e giveback solo durante i blocchi di manutenzione pianificati di Azure. Altre condizioni che normalmente attivano takeover, come un guasto del nodo o un panic, continuano a farlo.
 * Questa funzionalità si applica a entrambi i nodi di una coppia HA. Il comportamento relativo agli eventi di manutenzione è configurato su entrambi i nodi e non può essere abilitato su un solo nodo.
 * Questa funzionalità persiste anche dopo il riavvio e rimane attiva finché non la disattivi. Disattivandola, ripristini il comportamento predefinito di takeover e giveback per la manutenzione pianificata.
 

@@ -1,0 +1,10 @@
+= Inserzione PAYGO separata per Cloud Volumes ONTAP in AWS Marketplace
+:allow-uri-read: 
+
+
+
+
+[[separate-paygo-listing-for-cloud-volumes-ontap-in-aws-marketplace]]
+=== Inserzione PAYGO separata per Cloud Volumes ONTAP in AWS Marketplace
+
+NetApp ora offre un'offerta pay-as-you-go (PAYGO) separata per Cloud Volumes ONTAP in AWS Marketplace tramite NetApp Standalone Listing (NSL). NetApp aveva già introdotto l'abbonamento Standalone Cloud Volumes ONTAP per adeguarsi alle modifiche dell'AWS Enterprise Discount Program (EDP). L'offerta PAYGO è ora disponibile nella stessa offerta NSL insieme al contratto annuale di Cloud Volumes ONTAP, semplificando il monitoraggio dell'utilizzo PAYGO, il controllo degli addebiti di spillover e la gestione dei costi di consumo. Sia il contratto annuale di Cloud Volumes ONTAP sia l'offerta PAYGO rimangono separati dal contratto annuale e dalle offerte PAYGO di NetApp Intelligence Services (NIS), consentendo una fatturazione separata per la capacità di Cloud Volumes ONTAP e i servizi dati.

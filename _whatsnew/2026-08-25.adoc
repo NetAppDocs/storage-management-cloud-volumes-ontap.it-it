@@ -10,7 +10,7 @@
 Ora puoi distribuire Cloud Volumes ONTAP 9.12.1 GA e versioni successive nelle regioni Austria East (austriaeast) e Belgium Central (belgiumcentral) in Azure. Sono supportati i seguenti tipi di deployment:
 
 * Nodo singolo
-* HA in una singola zona di disponibilità tramite storage localmente ridondante (LRS)
+* HA in una singola zona di disponibilità con storage con ridondanza locale (LRS)
 * Alta disponibilità in più zone di disponibilità tramite storage a ridondanza di zona (ZRS)
 
 

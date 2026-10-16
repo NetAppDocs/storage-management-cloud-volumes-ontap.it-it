@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-saz-feature.html 
 keywords: Microsoft Azure feature, HA in SAZ, single availability zone, Azure feature, Virtual Machine Scale Sets in Flexible mode, VMOrchestratorZonalMultiFD, VM Orchestrator, Zonal, MultiFD, VMOrchestratorZonalMultiFD feature 
-summary: Abilita questa funzionalità di Microsoft Azure per distribuire HA in SAZ. 
+summary: Abilita la funzionalità VMOrchestratorZonalMultiFD in Azure per distribuire i nodi HA di Cloud Volumes ONTAP in domini di errore separati di una singola zona di disponibilità. 
 ---
 = Abilita VMOrchestratorZonalMultiFD per Cloud Volumes ONTAP in Azure
 :hardbreaks:
@@ -14,11 +14,11 @@ summary: Abilita questa funzionalità di Microsoft Azure per distribuire HA in S
 
 
 [role="lead"]
-Per distribuire istanze di VM in zone di disponibilità singole (AZ) con archiviazione ridondante locale (LRS), è necessario attivare Microsoft `Microsoft.Compute/VMOrchestratorZonalMultiFD` funzionalità per i tuoi abbonamenti.  In modalità ad alta disponibilità (HA), questa funzionalità semplifica la distribuzione dei nodi in domini di errore separati nella stessa zona di disponibilità.
+Per distribuire istanze VM di Cloud Volumes ONTAP in zone di disponibilità (AZ) singole con storage a ridondanza locale (LRS) in Azure, attiva la funzionalità Microsoft `Microsoft.Compute/VMOrchestratorZonalMultiFD` per le tue sottoscrizioni. In modalità ad alta disponibilità (HA), questa funzionalità ti consente di distribuire i nodi in domini di errore separati nella stessa zona di disponibilità.
 
 Se non si attiva questa funzionalità, la distribuzione zonale non avviene e diventa effettiva la precedente distribuzione non zonale LRS.
 
-Per informazioni sulla distribuzione delle VM in una singola zona di disponibilità, fare riferimento alink:concept-ha-azure.html["Coppie ad alta disponibilità in Azure"] .
+Per informazioni sulla distribuzione delle VM in una singola zona di disponibilità, consulta link:concept-ha-azure.html["Coppie ad alta disponibilità in Azure"].
 
 Eseguire questi passaggi come utente con privilegi di "Proprietario":
 
@@ -31,7 +31,7 @@ Eseguire questi passaggi come utente con privilegi di "Proprietario":
 az account set -s _<nome_o_ID_abbonamento_Azure>_ az feature register --name VMOrchestratorZonalMultiFD --namespace Microsoft.Compute
 
 ====
-. Verificare lo stato della registrazione e il campione di output:
+. Verifica lo stato della registrazione eseguendo questo comando, che restituisce un output simile a questo esempio:
 +
 []
 ====
