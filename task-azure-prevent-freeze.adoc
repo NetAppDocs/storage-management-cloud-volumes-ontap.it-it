@@ -41,7 +41,7 @@ Microsoft Azure può sospendere brevemente una VM durante la manutenzione progra
 == Impedisci il takeover automatico e il giveback durante la manutenzione pianificata di Azure
 
 .Passi
-. Identifica l'ID di sistema per la coppia HA. Per informazioni su come identificare le risorse e fare chiamate API, consulta https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html#step-1-select-the-identifie["La tua prima chiamata API"^].
+. Identifica l'ID di sistema per la coppia HA di Azure. Per informazioni sull'identificazione delle risorse e sull'esecuzione di chiamate API, consulta  https://docs.netapp.com/us-en/console-automation/cm/your_api_call.html#step-1-select-the-identifier["Esegui una chiamata REST API di gestione ONTAP"^].
 . Invia una `PUT` richiesta al seguente endpoint, sostituendo `{id}` con l'ID di sistema:
 +
 `PUT /occm/api/azure/ha/working-environments/{id}/opt-off-maintenance-event`

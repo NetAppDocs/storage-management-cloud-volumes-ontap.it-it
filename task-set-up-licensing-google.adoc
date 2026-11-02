@@ -14,7 +14,7 @@ summary: Prima di creare un sistema, configura le licenze Freemium, basate sulla
 
 
 [role="lead"]
-Dopo aver scelto l'opzione di licenza da utilizzare con Cloud Volumes ONTAP in Google Cloud, completa alcuni passaggi di configurazione prima di selezionarla durante la creazione del sistema.
+Dopo aver scelto l'opzione di licenza da utilizzare con Cloud Volumes ONTAP in Google Cloud, completa alcuni passaggi di configurazione in modo da poter selezionare tale opzione quando crei un nuovo sistema.
 
 
 
@@ -57,7 +57,7 @@ I pacchetti Essentials e Professional sono disponibili con i seguenti modelli di
 
 link:concept-licensing.html#capacity-based-licensing["Scopri di più sulle licenze basate sulla capacità"] .
 
-Per iniziare a utilizzare ciascuno di questi modelli di consumo, segui i passaggi descritti nelle sezioni successive.
+Per iniziare, segui i passaggi relativi al modello di consumo che desideri utilizzare.
 
 
 
@@ -82,7 +82,7 @@ La licenza deve essere disponibile dalla Console prima di poterla utilizzare con
 +
 .. Nella pagina *Dettagli e credenziali*, seleziona *Modifica credenziali > Aggiungi abbonamento* e segui le istruzioni per abbonarti all'offerta pay-as-you-go nel Google Cloud Marketplace.
 +
-La licenza che hai acquistato da NetApp viene sempre addebitata per prima, ma ti verrà addebitata la tariffa oraria del marketplace se superi la capacità concessa in licenza o se la durata della licenza scade.
+La licenza che hai acquistato da NetApp viene sempre addebitata per prima, ma ti verrà addebitata la tariffa oraria del marketplace se superi la capacità concessa dalla licenza o se la durata della licenza scade.
 
 .. Dopo essere tornati alla Console, selezionate un pacchetto basato sulla capacità quando raggiungete la pagina dei metodi di ricarica.
 +
@@ -179,7 +179,7 @@ link:task-deploying-gcp.html["Visualizza le istruzioni dettagliate per avviare C
 [[node-based-license]]
 == Licenza basata su nodi
 
-La licenza basata su nodo è la licenza della generazione precedente per Cloud Volumes ONTAP. Potevi acquistare una licenza basata su nodo da NetApp (BYOL). Le licenze basate su nodo sono ora disponibili per il rinnovo solo in casi specifici. Per informazioni, consulta:
+La licenza basata su nodo è la licenza della generazione precedente per Cloud Volumes ONTAP. Potevi acquistare una licenza basata su nodo da NetApp (BYOL). Le licenze basate su nodo sono disponibili per il rinnovo solo in casi specifici. Per informazioni, consulta:
 
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/whats-new.html#end-of-availability-for-node-based-licenses["Fine della disponibilità delle licenze basate su nodi"^]
 * https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/concept-licensing.html#end-of-availability-of-node-based-licenses["Fine della disponibilità delle licenze basate sui nodi"^]

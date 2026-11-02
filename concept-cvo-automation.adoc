@@ -140,7 +140,7 @@ Per ulteriori informazioni, fare riferimento a https://docs.netapp.com/us-en/ont
 Ansible è uno strumento open-source per la gestione della configurazione basato su file di configurazione procedurali.
 
 * https://galaxy.ansible.com/ui/repo/published/netapp/ontap/["Ansible Galaxy"^]
-* https://docs.ansible.com/ansible/latest/user_guide/index.html["Documentazione di Ansible"^]
+* https://docs.ansible.com/projects/ansible/latest/getting_started/index.html["Documentazione di Ansible"^]
 
 
 
