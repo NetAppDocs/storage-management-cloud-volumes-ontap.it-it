@@ -4,7 +4,7 @@ permalink: task-onboard-cvo-aws-marketplace.html
 keywords: aws marketplace, cloud volumes ontap, onboarding, subscribe, deploy agent, setup guide, organization, subscription association 
 summary: 'Iscriviti a Cloud Volumes ONTAP su AWS Marketplace e completa la configurazione nella NetApp Console, inclusa la creazione dell"organizzazione, l"associazione dell"abbonamento, la distribuzione dell"agente e la creazione del primo sistema.' 
 ---
-= Iscriviti e distribuisci l'offerta standalone di Cloud Volumes ONTAP da AWS Marketplace
+= Distribuisci Cloud Volumes ONTAP utilizzando l'offerta standalone su AWS Marketplace
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -17,10 +17,10 @@ summary: 'Iscriviti a Cloud Volumes ONTAP su AWS Marketplace e completa la confi
 Abbonati all'offerta standalone di Cloud Volumes ONTAP su AWS Marketplace, distribuisci un agente Console e crea il tuo primo sistema.
 
 .Prima di iniziare
-Prima di iniziare, assicurati di avere:
+Assicurati di avere:
 
 * Un account NetApp Console, oppure le informazioni necessarie per crearne uno.
-* Assicurati che la rete dell'agente di Console soddisfi i requisiti.link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html#step-1-set-up-networking["Scopri i requisiti di rete dell'agente di Console"^]
+* Una rete di agenti Console che soddisfa i requisiti. link:https://docs.netapp.com/us-en/console-setup-admin/task-install-agent-aws-marketplace.html#step-1-set-up-networking["Scopri i requisiti di rete dell'agente di Console"^]
 * Un account e un'identità AWS con l'autorizzazione a sottoscrivere AWS Marketplace e ad accettare i termini dell'offerta.
 +
 Se scegli *Crea ruolo per me*, l'identità AWS che invia lo stack Quick Create di CloudFormation deve disporre delle autorizzazioni indicate di seguito. Per usare la stessa identità sia per la sottoscrizione sia per l'invio dello stack, assegna queste autorizzazioni prima di iniziare. Se usi un'identità diversa per inviare lo stack, assegna invece queste autorizzazioni a quell'identità. Queste autorizzazioni consentono a CloudFormation di creare il ruolo di distribuzione; non sono le autorizzazioni usate dall'agente in esecuzione.
@@ -72,10 +72,24 @@ Trova l'offerta standalone di Cloud Volumes ONTAP in AWS Marketplace.
 . Individua l'offerta standalone di NetApp Cloud Volumes ONTAP. AWS Marketplace offre due opzioni per Cloud Volumes ONTAP:
 +
 ** L'offerta autonoma per l'abbonamento annuale a Cloud Volumes ONTAP
-** L'offerta combinata Intelligent Service di NetApp per i servizi dati di NetApp e gli abbonamenti a Cloud Volumes ONTAP.
+** L'offerta combinata di NetApp Intelligent Service per i servizi dati NetApp e gli abbonamenti a Cloud Volumes ONTAP
 
 
-. Scegli l'offerta _autonoma_. Questi passaggi ti guideranno nella sottoscrizione dell'offerta autonoma.
+. Scegli l'offerta _autonoma_. Esamina i dettagli dell'inserzione e le condizioni di prezzo.
+. Iscriviti e completa l'acquisto.
+. Dopo l'iscrizione, seleziona *Configura prodotto* per essere reindirizzato alla NetApp Console e completare la distribuzione.
+
+
+
+
+[[subscribe-to-the-netapp-intelligent-service-offering-for-data-services]]
+== Abbonati all'offerta Intelligent Service di NetApp per i servizi dati
+
+Se vuoi utilizzare altri servizi dati, come NetApp Backup and Recovery, devi sottoscrivere l'offerta NetApp Intelligent Service oltre all'offerta standalone.
+
+.Passi
+. Accedi ad AWS Marketplace utilizzando il tuo account AWS con le autorizzazioni necessarie.
+. Individua e seleziona l'offerta NetApp Intelligent Service.
 . Esamina i dettagli dell'inserzione e le condizioni di prezzo.
 . Iscriviti e completa l'acquisto.
 . Dopo l'iscrizione, seleziona *Configura prodotto* per essere reindirizzato alla NetApp Console e completare la distribuzione.
@@ -166,7 +180,7 @@ Le credenziali di distribuzione autorizzano la Console a distribuire l'agente. L
 Per fare in modo che la Console crei il ruolo con CloudFormation Quick Create, l'identità AWS che invia lo stack deve avere autorizzazioni di amministratore o le autorizzazioni minime in <<aws-iam-role-permissions,Esempio JSON qui sopra>>.
 
 ... Seleziona *Crea un ruolo per me*.
-... Aggiungi l'ID account AWS e, facoltativamente, l'ID esterno. La Console imposta un nome ruolo predefinito.
+... Aggiungi l'ID dell'account AWS e, facoltativamente, l'ID esterno. La Console imposta un nome di ruolo predefinito.
 ... Seleziona *Open CloudFormation Quick Create*.
 ... Nella pagina di creazione rapida di AWS CloudFormation, accetta i termini e seleziona *Crea stack*.
 +
@@ -182,7 +196,7 @@ Se disponi già di un ruolo con le autorizzazioni AWS richieste, fornisci il rel
 
 ... Seleziona *Assume role*.
 +
-Console crea un nome per il ruolo assunto che puoi modificare se vuoi.
+La Console crea un nome per il ruolo assunto che puoi modificare se vuoi.
 
 ... Inserisci l'ARN del ruolo esistente.
 ... Seleziona *Validate credentials*.
@@ -204,7 +218,7 @@ Se desideri utilizzare le chiavi di accesso per autorizzare la distribuzione del
 
 . Configura i dettagli di distribuzione dell'agente, inclusi il nome dell'istanza dell'agente e se la Console deve creare il ruolo IAM per l'agente in esecuzione o utilizzare un ruolo esistente.
 +
-Quando la Console crea l'agente della Console, crea un ruolo IAM e un profilo per l'agente oppure utilizza un ruolo che fornisci tu. Questo ruolo include autorizzazioni che consentono all'agente di gestire le risorse AWS. Assicurati che il ruolo venga aggiornato man mano che vengono aggiunte nuove autorizzazioni nelle versioni future. link:https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Scopri di più sulla policy IAM per l'agente Console"^].
+Quando la Console crea l'agente della Console, crea un ruolo IAM e un profilo per l'agente oppure utilizza un ruolo che fornisci tu. Questo ruolo include le autorizzazioni che consentono all'agente di gestire le risorse AWS. Mantieni il ruolo aggiornato con tutte le nuove autorizzazioni richieste dall'agente. link:https://docs.netapp.com/us-en/console-setup-admin/reference-permissions-aws.html["Scopri di più sulla policy IAM per l'agente Console"^].
 
 . Configura la rete selezionando una VPC, una sottorete, una coppia di chiavi, il comportamento dell'IP pubblico e le impostazioni del proxy, se necessario.
 . Configura le regole del tuo gruppo di sicurezza per consentire l'accesso in entrata tramite HTTP (80), HTTPS (443) e SSH (22) alla VM dell'agente per la risoluzione dei problemi.
@@ -232,7 +246,7 @@ Per i requisiti completi di rete e autorizzazioni per l'agente Console, consulta
 
 Dopo che la Console ha distribuito l'agente, segui i passaggi in https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-quick-deploy-aws.html["Implementa Cloud Volumes ONTAP con Quick create in AWS"^] per creare il tuo primo sistema.
 
-Se non sei ancora pronto a creare il tuo sistema Cloud Volumes ONTAP, puoi tornare alla pagina Systems in qualsiasi momento per creare il sistema in un secondo momento.
+Se non sei ancora pronto a creare il tuo sistema Cloud Volumes ONTAP, puoi tornare alla pagina Systems in qualsiasi momento per crearlo.
 
 
 

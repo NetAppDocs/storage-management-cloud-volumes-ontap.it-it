@@ -1,0 +1,49 @@
+= Nuovo ruolo di collaboratore di Cloud Volumes ONTAP
+:allow-uri-read: 
+
+
+
+
+[[new-cloud-volumes-ontap-contributor-role]]
+=== Nuovo ruolo di collaboratore di Cloud Volumes ONTAP
+
+NetApp aggiunge il ruolo *Cloud Volumes ONTAP contributor*, che ha più autorizzazioni del ruolo operator ma meno del ruolo admin. Un utente con il ruolo operator può eseguire diversi flussi di lavoro quotidiani, incluse le attività di replica di SnapMirror. Il ruolo admin copre questi flussi di lavoro, ma consente anche agli utenti admin di eliminare i sistemi Cloud Volumes ONTAP, cosa che molte organizzazioni non vogliono per gli utenti operativi. Questo ruolo è importante perché la Console al momento non supporta la verifica multi-admin (MAV); senza di essa, un utente admin può eseguire operazioni sensibili, come eliminare sistemi, senza una seconda approvazione. Il ruolo contributor consente agli utenti di eseguire la maggior parte delle operazioni critiche, come creare sistemi, gestire la replica e gestire lo storage, impedendo però l'eliminazione dei sistemi.
+
+Il ruolo di collaboratore include tutte le autorizzazioni di operatore, comprese le funzionalità aggiuntive per:
+
+* Crea sistemi Cloud Volumes ONTAP
+* Aggiorna le impostazioni di sistema, ad esempio cambiando il tipo di istanza o aggiornando la versione di ONTAP
+* Gestisci la replica, incluse le operazioni di interruzione, risincronizzazione, risincronizzazione inversa e modifica delle pianificazioni di replica e delle velocità di trasferimento
+* Gestire lo spazio di archiviazione, ad esempio aggiungendo aggregati e aumentando la capacità
+
+
+Un utente con il ruolo di collaboratore non può eseguire le seguenti attività:
+
+* Elimina sistemi, volumi, aggregati o relazioni di replica
+* Accendere o spegnere i sistemi
+* Imposta una password
+* Accedi a ONTAP System Manager
+
+
+Assegni il ruolo di collaboratore da *Amministrazione > Identità*, nello stesso modo in cui assegni agli utenti gli altri ruoli di Cloud Volumes ONTAP.
+
+.Link correlati
+* https://docs.netapp.com/us-en/console-setup-admin/reference-iam-cvo-roles.html["Ruoli di accesso di Cloud Volumes ONTAP nella NetApp Console"^]
+* https://docs.netapp.com/us-en/console-setup-admin/task-cvo-rbac-setup.html["Configura l'accesso in base al ruolo per Cloud Volumes ONTAP in NetApp Console"^]
+* https://docs.netapp.com/us-en/console-setup-admin/reference-iam-predefined-roles.html#data-service-roles["NetApp Console access ruoli"^]
+
+
+
+
+[[microsoft-entra-id-hybrid-user-authentication-for-smb-public-preview]]
+=== Autenticazione utente ibrida Microsoft Entra ID per SMB (anteprima pubblica)
+
+Cloud Volumes ONTAP 9.19.1 e versioni successive supportano l'autenticazione utente ibrida con https://www.microsoft.com/en-in/security/business/identity-access/microsoft-entra-id["Microsoft Entra ID"^] per accedere alle condivisioni SMB.
+
+In precedenza, Cloud Volumes ONTAP supportava l'autenticazione SMB solo per gli utenti di dominio, il che richiedeva la configurazione di Active Directory (AD) locale. Con l'autenticazione utente ibrida, puoi estendere l'autenticazione SMB al cloud tramite Microsoft Entra ID, continuando a utilizzare l'infrastruttura AD locale esistente.
+
+Con l'autenticazione utente ibrida, gli utenti vengono creati in AD locale e sincronizzati con Microsoft Entra ID usando https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/whatis-azure-ad-connect["Microsoft Entra Connect"^]. ONTAP autentica gli utenti che accedono alle condivisioni SMB comunicando sia con AD locale che con Microsoft Entra ID.
+
+Questa funzionalità è disponibile come anteprima pubblica. La configurazione è supportata solo tramite la CLI di ONTAP. L'integrazione con NetApp Console non è ancora disponibile.
+
+https://docs.netapp.com/us-en/storage-management-cloud-volumes-ontap/task-azure-entra-id-smb-auth.html["Configura l'autenticazione Microsoft Entra ID per SMB"^]

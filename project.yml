@@ -47,7 +47,8 @@ sidebar:
         url: "/concept-degraded-ha-pair.html"
     - title: Distribuisci su Amazon Web Services
       entries:
-      - title: Distribuisci Cloud Volumes ONTAP standalone da AWS Marketplace
+      - title: Distribuisci Cloud Volumes ONTAP utilizzando l'inserzione standalone
+          su AWS Marketplace
         url: "/task-onboard-cvo-aws-marketplace.html"
       - title: Panoramica dell'implementazione
         url: "/task-getting-started-aws.html"
@@ -229,7 +230,7 @@ sidebar:
       - title: Scopri le coppie HA in Azure
         url: "/concept-ha-azure.html"
       - title: Previeni le interruzioni durante la manutenzione di Azure per le coppie
-          HA di Cloud Volumes ONTAP
+          HA
         url: "/task-azure-prevent-freeze.html"
       - title: Gestisci le chiavi con Azure Key Vault
         url: "/task-azure-key-vault.html"
@@ -239,6 +240,8 @@ sidebar:
         url: "/task-overriding-cifs-locks.html"
       - title: Utilizzare un collegamento privato di Azure o endpoint di servizio
         url: "/task-enabling-private-link.html"
+      - title: Configura l'autenticazione Microsoft Entra ID per SMB
+        url: "/task-azure-entra-id-smb-auth.html"
       - title: Sposta gruppi di risorse
         url: "/task-moving-resource-groups-azure.html"
       - title: Separare il traffico SnapMirror in Azure
