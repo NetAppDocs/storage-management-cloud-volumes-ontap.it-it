@@ -71,25 +71,25 @@ Trova l'offerta standalone di Cloud Volumes ONTAP in AWS Marketplace.
 . Accedi ad AWS Marketplace utilizzando il tuo account AWS con le autorizzazioni necessarie.
 . Individua l'offerta standalone di NetApp Cloud Volumes ONTAP. AWS Marketplace offre due opzioni per Cloud Volumes ONTAP:
 +
-** L'offerta autonoma per l'abbonamento annuale a Cloud Volumes ONTAP
-** L'offerta combinata di NetApp Intelligent Service per i servizi dati NetApp e gli abbonamenti a Cloud Volumes ONTAP
+** L'offerta standalone per Cloud Volumes ONTAP, disponibile con abbonamento annuale o pay-as-you-go (PAYGO).
+** L'offerta Intelligent Service (NIS) di NetApp per i servizi dati NetApp e Cloud Volumes ONTAP, disponibile anche come abbonamento annuale o PAYGO.
 
 
-. Scegli l'offerta _autonoma_. Esamina i dettagli dell'inserzione e le condizioni di prezzo.
+. Scegli tra l'abbonamento annuale o l'opzione PAYGO per l'offerta _autonoma_. Consulta i dettagli dell'inserzione e le condizioni di prezzo.
 . Iscriviti e completa l'acquisto.
 . Dopo l'iscrizione, seleziona *Configura prodotto* per essere reindirizzato alla NetApp Console e completare la distribuzione.
 
 
 
 
-[[subscribe-to-the-netapp-intelligent-service-offering-for-data-services]]
-== Abbonati all'offerta Intelligent Service di NetApp per i servizi dati
+[[subscribe-to-netapp-intelligent-service-for-data-services]]
+== Abbonati a NetApp Intelligent Service per i servizi dati
 
-Se vuoi utilizzare altri servizi dati, come NetApp Backup and Recovery, devi sottoscrivere l'offerta NetApp Intelligent Service oltre all'offerta standalone.
+Se vuoi utilizzare altri servizi dati, come NetApp Backup and Recovery, devi abbonarti all'offerta NIS oltre all'offerta standalone.
 
 .Passi
 . Accedi ad AWS Marketplace utilizzando il tuo account AWS con le autorizzazioni necessarie.
-. Individua e seleziona l'offerta NetApp Intelligent Service.
+. Individua e seleziona l'opzione annuale o PAYGO per l'offerta NetApp Intelligent Service (NIS).
 . Esamina i dettagli dell'inserzione e le condizioni di prezzo.
 . Iscriviti e completa l'acquisto.
 . Dopo l'iscrizione, seleziona *Configura prodotto* per essere reindirizzato alla NetApp Console e completare la distribuzione.
