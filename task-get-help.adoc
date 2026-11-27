@@ -7,7 +7,7 @@ summary: 'NetApp fornisce supporto in vari modi. Sono disponibili ampie opzioni 
 = Ottieni assistenza per Cloud Volumes ONTAP
 :allow-uri-read: 
 :icons: font
-:imagesdir: ./media/
+:imagesdir: https://docs.netapp.com/us-en/console-family/media/
 
 
 [role="lead"]
@@ -87,7 +87,7 @@ Gli allegati sono limitati a 25 MB per file. Sono supportate le seguenti estensi
 
 
 +
-image:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/screenshot-create-case.png["Uno screenshot del modulo Crea un caso che consente di creare un caso con il supporto NetApp ."]
+image:screenshot-create-case.png["Uno screenshot del modulo Crea un caso che consente di creare un caso con il supporto NetApp ."]
 
 
 
@@ -141,10 +141,10 @@ La pagina *Gestione casi* mostra i casi aperti relativi all'account NSS associat
 ** In *Casi dell'organizzazione*, seleziona *Visualizza* per visualizzare tutti i casi associati alla tua azienda.
 ** Modifica l'intervallo di date scegliendo un intervallo di date esatto o un intervallo di tempo diverso.
 ** Filtra il contenuto delle colonne.
-** Modifica le colonne che appaiono nella tabella selezionandoimage:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/icon-table-columns.png["L'icona più che appare nella tabella"] e quindi scegli le colonne che desideri visualizzare.
+** Modifica le colonne visualizzate nella tabella selezionando image:icon-table-columns.png["L'icona più che appare nella tabella"] e scegliendo le colonne che desideri visualizzare.
 
 
-. Gestisci un caso esistente selezionandoimage:https://raw.githubusercontent.com/NetAppDocs/console-family/main/media/icon-table-action.png["Un'icona con tre punti che appare nell'ultima colonna della tabella"] e selezionando una delle opzioni disponibili:
+. Gestisci un caso esistente selezionando image:icon-table-action.png["Un'icona con tre punti che appare nell'ultima colonna della tabella"] e selezionando una delle opzioni disponibili:
 +
 ** *Visualizza caso*: visualizza i dettagli completi su un caso specifico.
 ** *Aggiorna note sul caso*: fornisci ulteriori dettagli sul tuo problema o seleziona *Carica file* per allegare fino a un massimo di cinque file.
