@@ -4,7 +4,7 @@ permalink: task-file-verification-linux.html
 keywords: Azure, image, VHD, file signature verification, encryption, sha256, ONTAP, Cloud Volumes, CLI, Linux 
 summary: 'Verificare la firma di un file VHD esportato tramite lo strumento di file digest dell"immagine Cloud Volumes ONTAP su Linux' 
 ---
-= Verifica la firma dell'immagine di Azure Marketplace per Cloud Volumes ONTAP su Linux
+= Verifica la firma dell'immagine Azure per Cloud Volumes ONTAP su Linux
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

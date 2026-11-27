@@ -4,7 +4,7 @@ permalink: task-moving-resource-groups-azure.html
 keywords: move resource groups, azure, remove system, resource groups, azure console, Azure subscriptions 
 summary: Cloud Volumes ONTAP supporta gli spostamenti dei gruppi di risorse di Azure, ma il flusso di lavoro avviene solo nella console di Azure. 
 ---
-= Spostare un gruppo di risorse di Azure per Cloud Volumes ONTAP nella console di Azure
+= Sposta un gruppo di risorse Cloud Volumes ONTAP in Azure
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

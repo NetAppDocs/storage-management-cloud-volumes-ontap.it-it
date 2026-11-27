@@ -236,7 +236,6 @@
   <block id="7d831c8a95d6f1d0ec777a6a3624c915" category="paragraph">Se il sistema Cloud Volumes ONTAP di destinazione supporta Elastic Volumes, un volume di destinazione verrà posizionato su un aggregato in cui Elastic Volumes è abilitato (a condizione che si scelga un disco gp3 o io1).</block>
   <block id="40f78d193b858589ad7df4dd4ce61ad6" category="inline-link">Scopri come impostare la replica dei dati</block>
   <block id="335f4b4c3f32d7fd5ea619fa6dbe4204" category="summary">Informazioni su come verificare la firma di un file VHD esportato tramite lo strumento File digest immagine Cloud Volumes ONTAP .</block>
-  <block id="367721c6da74417e71470676fd55bfec" category="doc">Verifica della firma dell'immagine di Azure Marketplace per Cloud Volumes ONTAP</block>
   <block id="58b845122330da91119b6688c036350d" category="paragraph">Il processo di verifica dell'immagine di Azure genera un file digest dal file VHD eliminando 1 MB all'inizio e 512 byte alla fine, quindi applicando una funzione hash.  Per abbinare la procedura di firma, per l'hashing viene utilizzato _sha256_.</block>
   <block id="f98e4b86cca760be2447f72ea72c4f88" category="section-title">Riepilogo del flusso di lavoro di verifica della firma del file</block>
   <block id="9454f651ecd65349c0f152b92965f048" category="paragraph">Di seguito è riportata una panoramica del processo di verifica della firma del file.</block>
@@ -351,7 +350,6 @@
   <block id="394af58b8754c06314d43b854dc5006f" category="inline-link">queste FAQ</block>
   <block id="9c89822027b6c9736a75d3187c897d4d" category="admonition">Dal 3 dicembre 2021, NetApp è passata a una nuova metodologia di registrazione delle credenziali per gli account NSS. Per ulteriori informazioni, consulta <block ref="e276cbae6a7bedd32258cb1ce27fb2ac" category="inline-link-rx"></block> .  Se il tuo account NSS utilizza il vecchio set di credenziali, dovrai aggiornare l'account con le nuove credenziali.</block>
   <block id="dfd4955ec9706a8b05865bd0aa3ab14f" category="summary">Riduci i costi di archiviazione abilitando la suddivisione automatica dei dati inattivi in un archivio di oggetti a basso costo.</block>
-  <block id="84fbe7f88bb3a63bec3ffcbda024a860" category="doc">Scopri di più sulla suddivisione in livelli dei dati con Cloud Volumes ONTAP in AWS, Azure o Google Cloud</block>
   <block id="c1b0fccfdff9ac3307a1dde73fefce36" category="paragraph">Riduci i costi di archiviazione abilitando la suddivisione automatica dei dati inattivi in un archivio di oggetti a basso costo.  I dati attivi rimangono negli SSD o HDD ad alte prestazioni, mentre i dati inattivi vengono archiviati in sistemi di archiviazione a oggetti a basso costo.  Ciò consente di recuperare spazio sullo storage primario e di ridurre lo storage secondario.</block>
   <block id="4a399275f88e7ce2505e96b9b7f521b9" category="inline-image-macro">Questa è un'immagine concettuale che mostra i dati attivi che vanno allo storage EBS e i dati inattivi che vanno allo storage S3.</block>
   <block id="3d3b4afad1ee8976c0e2861a36e95c05" category="paragraph"><block ref="3d3b4afad1ee8976c0e2861a36e95c05" category="inline-image-macro-rx" type="image"></block></block>
@@ -460,7 +458,6 @@
   <block id="6cf1e7fdb6b5707c27a7b71fe6c8c463" category="paragraph">Salta la selezione delle impostazioni di efficienza di archiviazione quando crei un volume dalla NetApp Console oppure crea un volume e poi<block ref="41233aab48d70287f1bbc60d78ce6eab" category="inline-link-rx"></block> .</block>
   <block id="444f10b28a63ab25d9664d0647602d07" category="list-text">Il riscaldamento della cache dopo un riavvio non è supportato con Cloud Volumes ONTAP.</block>
   <block id="01277cd6d5e8d9a803f07b849cedae4b" category="summary">Verificare i file delle firme dei file immagine di Google Cloud.</block>
-  <block id="25706862d682c182f521566815ee29c5" category="doc">Scopri come l'immagine di Google Cloud viene verificata in Cloud Volumes ONTAP</block>
   <block id="248cdc66c441a6612309f6e2ce80a63c" category="inline-link">NSS</block>
   <block id="2a57c4c48ac4fed7319e97ba358228fe" category="paragraph">La verifica delle immagini di Google Cloud è conforme ai requisiti di sicurezza avanzati NetApp .  Sono state apportate modifiche allo script che genera le immagini per firmare l'immagine durante il processo utilizzando chiavi private generate appositamente per questa attività.  È possibile verificare l'integrità dell'immagine Google Cloud utilizzando il digest firmato e il certificato pubblico per Google Cloud, scaricabili tramite<block ref="4af4717946461f54169780875a3b5a98" category="inline-link-rx"></block> per una versione specifica.</block>
   <block id="5745e537e1e3a11e00e50f67820a46a1" category="admonition">La verifica delle immagini di Google Cloud è supportata dal software Cloud Volumes ONTAP versione 9.13.0 o successiva.</block>
@@ -1195,7 +1192,6 @@
   <block id="9c6c0a63729c2c1bc8388b9ccd4e4155" category="inline-link-macro">Scopri di più sul disaster recovery SVM</block>
   <block id="5dc0415d3b98038c9ac4667c27633958" category="paragraph"><block ref="9ef9838740c8c73e2e54c1615ffa6adb" category="inline-link-macro-rx"></block> .</block>
   <block id="04e85b8818646c50c9da467d9aca4c77" category="summary">La NetApp Console gestisce la configurazione dei componenti di rete per Cloud Volumes ONTAP, come indirizzi IP, maschere di rete e percorsi.  È necessario assicurarsi che l'accesso a Internet in uscita sia disponibile, che siano disponibili sufficienti indirizzi IP privati, che siano attive le connessioni giuste e altro ancora.</block>
-  <block id="bdb9f0bd802608490113cecb46963491" category="doc">Configurare la rete AWS per Cloud Volumes ONTAP</block>
   <block id="a1a264e616e24563d4b8f8b5795ea403" category="section-title">Requisiti generali</block>
   <block id="48a88a6a697e4dc4a6da4cec716d1400" category="paragraph">Assicurati di aver soddisfatto i seguenti requisiti in AWS.</block>
   <block id="5908bdfb58aef23bebf7df36d49b9dfb" category="section-title">Accesso Internet in uscita per i nodi Cloud Volumes ONTAP</block>
@@ -1736,7 +1732,6 @@
   <block id="0de55206c94834c678768dfaf359fb98" category="list-text">9.5 P6</block>
   <block id="556696d309aaf81ce29c6a76f8f8a503" category="list-text">coppia HA</block>
   <block id="1b636e5dd7d104ae9efd572a823a9227" category="summary">Quando si sceglie di bloccare l'ambiente Google con VPC Service Controls, è necessario comprendere come NetApp Console e Cloud Volumes ONTAP interagiscono con le API di Google e come configurare i parametri del servizio per distribuire Cloud Volumes ONTAP.</block>
-  <block id="03b6a8927e57dee9e13ce3e743433f8c" category="doc">Configurare i controlli del servizio VPC per distribuire Cloud Volumes ONTAP in Google Cloud</block>
   <block id="a7b34a1b61cc62dbb7e5736e41d0dbca" category="paragraph">Quando si sceglie di bloccare l'ambiente Google Cloud con VPC Service Controls, è necessario comprendere come NetApp Console e Cloud Volumes ONTAP interagiscono con le API di Google Cloud, nonché come configurare il perimetro del servizio per distribuire Console e Cloud Volumes ONTAP.</block>
   <block id="51864fc98a7ac79ddec9d933162b734b" category="inline-link">Scopri di più sui controlli del servizio VPC di Google Cloud</block>
   <block id="1ea7fcd26fa8ab32a75247310351f611" category="paragraph">I controlli del servizio VPC consentono di controllare l'accesso ai servizi gestiti da Google al di fuori di un perimetro attendibile, di bloccare l'accesso ai dati da posizioni non attendibili e di mitigare i rischi di trasferimento dati non autorizzato.<block ref="a3874a083385bdd3c92e9cffcd9eea61" category="inline-link-rx"></block> .</block>
@@ -1758,7 +1753,6 @@
   <block id="31650362bb5570c134790bda1b06b52f" category="section-title">Regole di uscita</block>
   <block id="e2ce7d2096788db9d57f4e33f9d09c47" category="admonition">Il numero di progetto sopra indicato è il progetto _netapp-cloudmanager_ utilizzato da NetApp per archiviare le immagini per l'agente Console e per Cloud Volumes ONTAP.</block>
   <block id="e77931c1eab4b02e332e8adcfabae636" category="summary">È possibile creare copie Snapshot a prova di manomissione di file WORM (write once, read many) su un sistema Cloud Volumes ONTAP e conservare gli snapshot in forma non modificata per un periodo di conservazione specifico.</block>
-  <block id="d22f5ca5f04b85906e5c03f0a8f0354d" category="doc">Crea copie Snapshot a prova di manomissione dei file WORM su Cloud Volumes ONTAP</block>
   <block id="6e6590dbc5a26f05df18072791d9b8ef" category="paragraph">È possibile creare copie Snapshot a prova di manomissione di file WORM (write once, read many) su un sistema Cloud Volumes ONTAP e conservare gli snapshot in forma non modificata per un periodo di conservazione specifico.  Questa funzionalità è basata sulla tecnologia SnapLock e fornisce un ulteriore livello di protezione e conformità dei dati.</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="paragraph-title">Prima di iniziare</block>
   <block id="7301ea4031b8cc11bedbfe33aa4223f7" category="inline-link">Documentazione ONTAP : Configurare SnapLock</block>
@@ -1770,7 +1764,6 @@
   <block id="2e936d789afa6c8e13ad633d0aa9fc21" category="list-text">È possibile modificare il periodo di conservazione se è necessario modificare questi snapshot.  Per informazioni fare riferimento al<block ref="ae33c2fccf15e81f09562d7040255f90" category="inline-link-rx"></block> .</block>
   <block id="1e130656f520fa6c2ea0d619d4efcc6b" category="admonition">Anche se una copia Snapshot è protetta per un periodo di conservazione specifico, il volume di origine può essere eliminato da un amministratore del cluster, poiché l'archiviazione WORM in Cloud Volumes ONTAP funziona secondo un modello di "amministratore di archiviazione attendibile".  Inoltre, un amministratore cloud fidato può eliminare i dati WORM agendo sulle risorse di archiviazione cloud.</block>
   <block id="5ac123f6eee32c0fe88eeab92338a1a4" category="summary">Un volume FlexCache è un volume di archiviazione che memorizza nella cache i dati di lettura NFS da un volume di origine o di origine.  Le letture successive dei dati memorizzati nella cache consentono un accesso più rapido a tali dati.</block>
-  <block id="816ad715f74514ea0e194c106b673bf0" category="doc">Accelera l'accesso ai dati con i volumi FlexCache su un sistema Cloud Volumes ONTAP</block>
   <block id="4255b526fdaa2217071759cd5d05e981" category="paragraph">Un volume FlexCache è un volume di archiviazione che memorizza nella cache i dati di lettura SMB e NFS da un volume di origine (o sorgente).  Le letture successive dei dati memorizzati nella cache consentono un accesso più rapido a tali dati.</block>
   <block id="90c624683582774042156c98858d14dc" category="paragraph">È possibile utilizzare i volumi FlexCache per velocizzare l'accesso ai dati o per scaricare il traffico dai volumi a cui si accede più frequentemente.  I volumi FlexCache contribuiscono a migliorare le prestazioni, soprattutto quando i client devono accedere ripetutamente agli stessi dati, perché i dati possono essere forniti direttamente senza dover accedere al volume di origine.  I volumi FlexCache sono adatti per carichi di lavoro di sistema che richiedono molta lettura.</block>
   <block id="06156010b52bde259c58b15866491a02" category="paragraph">È anche possibile utilizzare ONTAP CLI o ONTAP System Manager per creare e gestire i volumi FlexCache :</block>
@@ -2079,7 +2072,6 @@
   <block id="cde648cfec6a9f1a0f5bbf7f5083336a" category="inline-image-macro">Uno screenshot che mostra il menu disponibile dal sistema che contiene l'azione Imposta password.</block>
   <block id="d1c167c796401c671e613bfcd1fbf5bb" category="paragraph"><block ref="d1c167c796401c671e613bfcd1fbf5bb" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4760896a3351a42c072a61eb664108e5" category="summary">È possibile modificare le tabelle di routing AWS che includono i percorsi verso gli indirizzi IP mobili per una coppia HA distribuita in più zone di disponibilità AWS.  Questa operazione può essere eseguita se nuovi client NFS o CIFS devono accedere a una coppia HA in AWS.</block>
-  <block id="82bd762491ef3ae271a0ea595966e322" category="doc">Modificare le tabelle di routing per le coppie Cloud Volumes ONTAP HA in più zone di disponibilità AWS</block>
   <block id="89cac051c93d21ebf3a23db9a240bbd1" category="paragraph">È possibile modificare le tabelle di routing AWS che includono i percorsi verso gli indirizzi IP mobili per una coppia HA distribuita in più zone di disponibilità (AZ) AWS.  Questa operazione può essere eseguita se nuovi client NFS o CIFS devono accedere a una coppia HA in AWS.</block>
   <block id="f683ba2cef6e0a0394df839a0cab354d" category="paragraph">La NetApp Console invia una richiesta AWS per modificare le tabelle di routing.</block>
   <block id="c8448275713faf6fe02a71468ed251d8" category="summary">Il sistema di gestione degli eventi raccoglie e visualizza informazioni sugli eventi che si verificano sui sistemi ONTAP .  Per ricevere notifiche sugli eventi, è possibile impostare destinazioni e percorsi degli eventi per una particolare gravità dell'evento.</block>
@@ -2088,8 +2080,6 @@
   <block id="abf596ebbf2c64b882e111278a49b1e5" category="inline-link">Documentazione ONTAP : panoramica della configurazione EMS</block>
   <block id="f0bf9f15eadaf8491da2934af661a352" category="paragraph">È possibile configurare EMS tramite la CLI.  Per le istruzioni, fare riferimento al<block ref="f10f254becd5d3115751852411e7271e" category="inline-link-rx"></block> .</block>
   <block id="4803d974c37e8a3895fbff420f579823" category="summary">Cloud Volumes ONTAP utilizza un collegamento privato di Azure per le connessioni ai relativi account di archiviazione associati.  Se necessario, è possibile disabilitare i collegamenti privati ​​di Azure e utilizzare invece gli endpoint del servizio.</block>
-  <block id="ce61224c44993a5d74a14a814d63a141" category="doc">Configurare la creazione di gruppi di posizionamento per coppie Cloud Volumes ONTAP HA nelle singole zone di disponibilità AWS</block>
-  <block id="40e4e6d3852024f0e6a0da75b4eb51d7" category="paragraph">Le distribuzioni ad alta disponibilità (HA) Cloud Volumes ONTAP nella zona di disponibilità singola (AZ) di AWS possono non riuscire e subire il rollback se la creazione del gruppo di posizionamento non riesce.  Anche la creazione del gruppo di posizionamento fallisce e la distribuzione viene annullata se il nodo Cloud Volumes ONTAP e l'istanza del mediatore non sono disponibili.  Per evitare questo problema, è possibile modificare la configurazione per consentire il completamento della distribuzione anche se la creazione del gruppo di posizionamento non riesce.</block>
   <block id="d184531e79cb1894504e475c084ea277" category="paragraph">Se si ignora il processo di rollback, il processo di distribuzione Cloud Volumes ONTAP viene completato correttamente e viene notificato che la creazione del gruppo di posizionamento non è completa.</block>
   <block id="4428c2751564925c131f0738abf616d4" category="list-text">Utilizzare SSH per connettersi all'host dell'agente NetApp Console ed effettuare l'accesso.</block>
   <block id="686735252f557ef703d19ff54b0dfe6f" category="list-text">Vai a<block ref="678ffe0122c1675f1a5ee93c014ea09c" prefix=" " category="inline-code"></block> .</block>
@@ -2644,7 +2634,6 @@
   <block id="de8cf25f68f35d1a6c91688973a7593e" category="list-text">*Comunicazione sicura con Storage e WORM*: scegli se abilitare una connessione HTTPS agli account di storage di Azure e attivare lo storage WORM (Write Once, Read Many), se lo desideri.</block>
   <block id="0ec7765f187d305178d2d75bad995495" category="paragraph">La connessione HTTPS avviene da una coppia Cloud Volumes ONTAP 9.7 HA agli account di archiviazione BLOB di pagine di Azure.  Tieni presente che l'abilitazione di questa opzione può influire sulle prestazioni di scrittura.  Non è possibile modificare l'impostazione dopo aver creato il sistema.</block>
   <block id="15cbb1f16ecbbcee7df3dcd252b9d2ef" category="paragraph">WORM non può essere abilitato se è stato abilitato il tiering dei dati.</block>
-  <block id="815c7816169ce0181021470fc851ad75" category="doc">Utilizzare un collegamento privato di Azure o endpoint di servizio per i sistemi Cloud Volumes ONTAP</block>
   <block id="2b1c9102679901ba714fbfa4b28c648e" category="paragraph">Per impostazione predefinita, la NetApp Console abilita un collegamento privato di Azure per le connessioni tra Cloud Volumes ONTAP e i relativi account di archiviazione associati.  Un collegamento privato di Azure protegge le connessioni tra gli endpoint in Azure e offre vantaggi in termini di prestazioni.</block>
   <block id="c9a73222b35c741b31b116efb4cefa73" category="paragraph">Se necessario, è possibile configurare Cloud Volumes ONTAP in modo che utilizzi endpoint di servizio anziché un collegamento privato di Azure.</block>
   <block id="9cf2167303974f50e4d2fe6433413949" category="paragraph">Con entrambe le configurazioni, la Console limita sempre l'accesso alla rete per le connessioni tra Cloud Volumes ONTAP e gli account di archiviazione.  L'accesso alla rete è limitato alla rete virtuale in cui è distribuito Cloud Volumes ONTAP e alla rete virtuale in cui è distribuito l'agente Console.</block>
@@ -2694,12 +2683,10 @@
   <block id="fccc9b1aa20f1188588a2827e62fa40a" category="list-text">Passare alla seguente directory: /opt/application/netapp/cloudmanager/docker_occm/data</block>
   <block id="fa7b604cc90feece6d71e8400213710f" category="list-text">Modifica app.conf aggiungendo il seguente parametro e valore:</block>
   <block id="d8fe61fe121132ae71b6616d52f15f56" category="summary">Cloud Volumes ONTAP supporta sia NetApp Volume Encryption (NVE) sia NetApp Aggregate Encryption (NAE) con un gestore di chiavi esterno.  NVE e NAE sono abilitati per impostazione predefinita se si imposta un gestore di chiavi esterno.</block>
-  <block id="3f8a964f1b4371b109b271e17740eb42" category="doc">Crittografa i volumi su Cloud Volumes ONTAP con le soluzioni di crittografia NetApp</block>
   <block id="9472acffdb6a585b24d4317169bbc868" category="inline-link-macro">Scopri di più su queste soluzioni di crittografia</block>
   <block id="401a8aaa330fe64d45395192c047e1ed" category="paragraph">Cloud Volumes ONTAP supporta NetApp Volume Encryption (NVE) e NetApp Aggregate Encryption (NAE).  NVE e NAE sono soluzioni basate su software che consentono la crittografia dei dati a riposo dei volumi conforme allo standard FIPS 140-2. <block ref="d36456219fc3d98cd4133816e30fd33f" category="inline-link-macro-rx"></block> .</block>
   <block id="154811f59111df605f6aebc9999a1135" category="paragraph">Sia NVE che NAE sono supportati da un gestore di chiavi esterno.</block>
   <block id="80e0ce0662b2846621d1355a00843d7d" category="summary">Verificare la firma di un file VHD esportato tramite lo strumento di file digest dell'immagine Cloud Volumes ONTAP su Linux</block>
-  <block id="7e2f4ea87cd4ef2400c67d3a6b35c0e4" category="doc">Verifica la firma dell'immagine di Azure Marketplace per Cloud Volumes ONTAP su Linux</block>
   <block id="11e81e6e3ef9958c0f8028f9c79e5dbe" category="paragraph">La verifica della firma di un file VHD esportato su Linux include la convalida della catena di attendibilità, la modifica del file e la verifica della firma.</block>
   <block id="6339f94a77b583074840fe198737cc13" category="list-text">Scarica il file immagine di Azure da<block ref="3725c06f412bedb14ffd610de312875d" category="inline-link-rx"></block> ed estrarre il file digest (.sig), il file del certificato della chiave pubblica (.pem) e il file del certificato della catena (.pem).</block>
   <block id="1c70ba48a8faaae47a72ab185f6f3572" category="list-text">Verificare la catena di fiducia.</block>
@@ -2708,7 +2695,6 @@
   <block id="b40380aca2b7f94b6fd1739f23b3c19b" category="paragraph">Il prompt dei comandi visualizza messaggi che indicano l'esito positivo o negativo della verifica.</block>
   <block id="7c00abf63371811634839eb405ec4038" category="list-text">Pulisci l'area di lavoro.</block>
   <block id="a821b3210026c1d21c89671c2d45b1a4" category="summary">Verificare la firma di un file VHD esportato tramite lo strumento File digest immagine Cloud Volumes ONTAP su macOS</block>
-  <block id="a7cfd7b86c7190536d50b4749e7aadf1" category="doc">Verifica la firma dell'immagine di Azure Marketplace per Cloud Volumes ONTAP su macOS</block>
   <block id="15b1d6274a4b31b0d3be9a3bcbe74b84" category="list-text">Rimuovere 1 MB (1.048.576 byte) all'inizio e 512 byte alla fine del file VHD.  Quando si utilizza<block ref="7aea2552dfe7eb84b9443b6fc9ba6e01" prefix=" " category="inline-code"></block> , IL<block ref="2040875c59e5bf4043fe4cfb86322cb2" prefix=" " category="inline-code"></block> L'opzione genera byte dal K-esimo byte del file.  Pertanto, passa 1048577 a<block ref="f7803ce2a90e2cf20bc01f7ab2c60c5c" prefix=" " category="inline-code"></block> .  Tieni presente che su macOS il comando tail potrebbe richiedere circa dieci minuti per essere completato.</block>
   <block id="965eb67c5c4b0c477e47cea94faa6e75" category="list-text">Utilizzare OpenSSL per estrarre la chiave pubblica dal certificato e verificare il file estratto (sign.tmp) con il file della firma e la chiave pubblica.  Il prompt dei comandi visualizza messaggi che indicano l'esito positivo o negativo della verifica.</block>
   <block id="1ee6f28ca24808cbfb56feaccf1c3e53" category="summary">Converti un'immagine esportata nel formato disk.raw tramite la riga di comando di Google Cloud.</block>
@@ -3278,7 +3264,6 @@
   <block id="1dc9045fa2256d31acd9a9e96f728946" category="paragraph">Se scegli Alto, dovrai leggere la dichiarazione "Ho capito..." e confermare selezionando la casella.</block>
   <block id="8ffbbcac612c8285be31d80ec1c1454d" category="admonition">L'opzione di velocità di scrittura *Alta* è supportata con le coppie Cloud Volumes ONTAP HA in Google Cloud a partire dalla versione 9.13.0.</block>
   <block id="619dc876da25600cdf36ffbec25d908e" category="summary">Cloud Volumes ONTAP supporta gli spostamenti dei gruppi di risorse di Azure, ma il flusso di lavoro avviene solo nella console di Azure.</block>
-  <block id="47b81d0548595de2006c8db7b6c6d963" category="doc">Spostare un gruppo di risorse di Azure per Cloud Volumes ONTAP nella console di Azure</block>
   <block id="c4b4f491c7eac4a25ca0d25227c44e27" category="paragraph">È possibile spostare un sistema Cloud Volumes ONTAP da un gruppo di risorse a un gruppo di risorse diverso in Azure all'interno della stessa sottoscrizione di Azure.  Lo spostamento di gruppi di risorse tra diverse sottoscrizioni di Azure non è supportato.</block>
   <block id="fa9b2b347a5943867b375a9cefa50099" category="inline-link-macro">Rimozione dei sistemi Cloud Volumes ONTAP</block>
   <block id="2432571dc15a8d67f6eec5f65d85e73f" category="list-text">Eseguire lo spostamento del gruppo di risorse nella console di Azure.</block>
@@ -3455,7 +3440,6 @@
   <block id="0c24475ef585478c403b399a4afc227c" category="cell">Indirizzo IP mobile per i dati sul nodo 2</block>
   <block id="7d7ca8f39ddaf09ca365d0d1f9421649" category="cell">Tabelle di routing per indirizzi IP mobili</block>
   <block id="040992520398fff1b71c0e0bab8dab8a" category="summary">Gli attacchi ransomware possono costare tempo, risorse e reputazione a un'azienda. La Console consente di implementare la soluzione NetApp per il ransomware, che fornisce strumenti efficaci per la visibilità, il rilevamento e la correzione.</block>
-  <block id="a594296c21b04d237d645fb5ddbfd992" category="doc">Abilita le soluzioni di protezione ransomware NetApp per Cloud Volumes ONTAP</block>
   <block id="7a6634ed7905d41d5f94593d96c40240" category="paragraph">Gli attacchi ransomware possono costare alle aziende tempo, risorse e reputazione.  NetApp Console consente di implementare due soluzioni NetApp contro il ransomware: protezione dalle estensioni di file ransomware più comuni e protezione autonoma dal ransomware (ARP).  Queste soluzioni forniscono strumenti efficaci per la visibilità, il rilevamento e la correzione.</block>
   <block id="78cc5cdbd5abab66548d6b3a595b1c6c" category="section-title">Protezione dalle estensioni di file ransomware più comuni</block>
   <block id="cb868822d50ad53b1196727ed1c8c04c" category="paragraph">Disponibile sulla Console, l'impostazione Protezione ransomware consente di utilizzare la funzionalità ONTAP FPolicy per proteggersi dai comuni tipi di estensione di file ransomware.</block>
@@ -3736,7 +3720,6 @@
   <block id="35d23de0f37782d307786bb80fa04ca3" category="paragraph">Il contratto è disponibile come offerta _privata_ nel Google Cloud Marketplace.</block>
   <block id="3589df8ffdf1087d97717cb81ad91c82" category="paragraph">Dopo che NetApp avrà condiviso con te l'offerta privata, potrai selezionare il piano annuale quando ti iscrivi da Google Cloud Marketplace durante la creazione del sistema.</block>
   <block id="818de76c16440469d9944b1d2c07ba57" category="summary">Sebbene Google Cloud Storage crittografi sempre i dati prima che vengano scritti sul disco, è possibile utilizzare le API della console per creare un sistema Cloud Volumes ONTAP che utilizzi chiavi di crittografia gestite dal cliente.  Si tratta di chiavi che puoi generare e gestire in GCP utilizzando Cloud Key Management Service.</block>
-  <block id="d9483fef78159e6b7c5c069f6308ec9e" category="doc">Utilizzo di chiavi di crittografia gestite dal cliente con Cloud Volumes ONTAP</block>
   <block id="c76b7315caaa70d158328adc6f2de71a" category="paragraph">Sebbene Google Cloud Storage crittografi sempre i dati prima che vengano scritti sul disco, è possibile utilizzare le API per creare un sistema Cloud Volumes ONTAP che utilizzi _chiavi di crittografia gestite dal cliente_.  Si tratta di chiavi che puoi generare e gestire in GCP utilizzando Cloud Key Management Service.</block>
   <block id="a8f2d7f368adf46fb8b80685bfc25d43" category="list-text">Assicurarsi che l'account del servizio agente della console disponga delle autorizzazioni corrette a livello di progetto, nel progetto in cui è archiviata la chiave.</block>
   <block id="d8691a039deef120e0fc9c805510b54a" category="inline-link">le autorizzazioni dell'account di servizio per impostazione predefinita</block>
@@ -3851,7 +3834,6 @@
   <block id="b14d512a3c64fb5df16f6721b0603c63" category="paragraph">Utilizzando questa opzione ti verrà richiesto di effettuare nuovamente l'accesso. Si noti che il token per questi account scade dopo 90 giorni. Verrà pubblicata una notifica per avvisarti di ciò.</block>
   <block id="29e5950813e59366056c85a091ad2206" category="summary">Specificando un server NTP si sincronizza l'ora tra i sistemi nella rete, il che può aiutare a prevenire problemi dovuti alle differenze di fuso orario.</block>
   <block id="b6f2459d07813a329f10d1f5ef7babc2" category="summary">È possibile ridurre i costi di archiviazione per Cloud Volumes ONTAP combinando un livello di prestazioni SSD o HDD per i dati attivi con un livello di capacità di archiviazione degli oggetti per i dati inattivi.  La suddivisione in livelli dei dati è basata sulla tecnologia FabricPool .</block>
-  <block id="dc856ecc0acf613e6f450c313f378cfd" category="doc">Trasferisci i dati Cloud Volumes ONTAP inattivi in ​​un archivio di oggetti a basso costo</block>
   <block id="caf4154dd66e202bf9f092a3b5b9f070" category="paragraph">È possibile ridurre i costi di archiviazione per Cloud Volumes ONTAP combinando un livello di prestazioni SSD o HDD per i dati attivi con un livello di capacità di archiviazione degli oggetti per i dati inattivi.  La suddivisione in livelli dei dati è basata sulla tecnologia FabricPool .  Per una panoramica di alto livello, fare riferimento a<block ref="69d3706831f999336fb27703356dae22" category="inline-link-macro-rx"></block> .</block>
   <block id="10647b0244486006c8ce3cf5b113d377" category="paragraph">Per impostare la suddivisione in livelli dei dati, è necessario procedere come segue:</block>
   <block id="d39421b26d8f96d6b63ba8583d57f734" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block>Scegli una configurazione supportata</block>
@@ -4102,7 +4084,6 @@
   <block id="3e454df771adc9ead6632eefa975b41b" category="paragraph"><block ref="06a7153e7f90941a4abd483a38e2283b" prefix="" category="inline-code"></block></block>
   <block id="4d947fe0b5c4693f487f4fd1a4295c99" category="paragraph">Ecco un esempio:</block>
   <block id="44579e142f1f753a153dbb19dac8125c" category="summary">Verificare il file disk.raw scaricato da Google Cloud rispetto al contenuto del file digest utilizzando OpenSSL.</block>
-  <block id="bd915a4eab5328d0dbd80804cc09ee0a" category="doc">Verificare il file disk.raw dell'immagine di Google Cloud per Cloud Volumes ONTAP utilizzando OpenSSL</block>
   <block id="9790936d7b09c3cf187b770347ee60d1" category="paragraph">È possibile verificare il file disk.raw scaricato da Google Cloud rispetto al contenuto del file digest disponibile tramite<block ref="4af4717946461f54169780875a3b5a98" category="inline-link-rx"></block> utilizzando OpenSSL.</block>
   <block id="d8272d492d8b39dd1ed365f53be37911" category="admonition">I comandi OpenSSL per convalidare l'immagine sono compatibili con i computer Linux, macOS e Windows.</block>
   <block id="c275ec11ecf674a6672183664681e98f" category="list-text">Verificare il certificato utilizzando OpenSSL.</block>
@@ -4925,7 +4906,6 @@
   <block id="7dcf169bce66df3174a7d8b5c540d3f6" category="list-text"><block ref="7dcf169bce66df3174a7d8b5c540d3f6" category="inline-link-macro-rx"></block></block>
   <block id="174dd97dd1f160583ac76fa482fa6a5e" category="section-title">10 dicembre 2025</block>
   <block id="291909ca7f153a0249c5e8ab37e16843" category="sidebar">Gestire le prestazioni del disco Premium SSD v2 in Azure</block>
-  <block id="0494190504419ddec15209e57cb422e1" category="doc">Modificare il livello di prestazioni dei dischi SSD Premium in Cloud Volumes ONTAP in Azure</block>
   <block id="953d65863cd6da0e48671f2a30151ae4" category="paragraph">È possibile aggiornare il livello di prestazioni dei dischi gestiti Premium SSD in Cloud Volumes ONTAP in Azure tramite il portale di Azure. Si tratta di un processo manuale che prevede la modifica del livello del disco di ciascun disco Premium SSD in un livello con prestazioni più elevate. Modificando il livello di prestazioni del disco NVRAM è possibile ridurre i colli di bottiglia delle prestazioni e migliorare l'efficienza del sistema Cloud Volumes ONTAP , garantendo IOPS e capacità di throughput più elevati.</block>
   <block id="39264f9aea8b7bf4280c732e8f7fcce0" category="list-text">Per impostazione predefinita, Cloud Volumes ONTAP in Azure distribuisce dischi SSD Premium per NVRAM nel livello P20. Il livello P20 offre prestazioni bilanciate adatte alla maggior parte dei carichi di lavoro. Tuttavia, se il carico di lavoro richiede prestazioni più elevate, è possibile aggiornare il disco NVRAM a un livello superiore, ad esempio P30.</block>
   <block id="5984acab069d2008cdff0ddd10ef35a8" category="admonition">Attualmente è possibile aggiornare un disco NVRAM dal livello P20 al livello P30 solo tramite il portale di Azure.</block>
@@ -5028,7 +5008,6 @@
   <block id="ee315b90b56cac454504030332e26f7d" category="list-text">*Posizione e connettività*: seleziona la regione e la zona di Google Cloud per il tuo sistema, scegli una policy firewall e conferma la connettività di rete allo storage di Google Cloud per il data tiering.</block>
   <block id="432f238e2167c79f023d25fc94cf7068" category="list-text">Se disabiliti il data tiering, puoi abilitarlo sugli aggregati successivi, ma dovrai disattivare il sistema e aggiungere un account di servizio dal Google Cloud Console.</block>
   <block id="ae02630a597278f3ffd84e28ca4d3fbd" category="admonition">Al termine del processo di distribuzione, non modificare le configurazioni di Cloud Volumes ONTAP generate dal sistema nel portale Google Cloud, come i tag di sistema e le etichette impostate nelle risorse Google Cloud. Qualsiasi modifica apportata a queste configurazioni potrebbe causare comportamenti imprevisti o perdita di dati.</block>
-  <block id="b9e5aa43ec2007eccaf097117438e531" category="doc">Convertire le distribuzioni Cloud Volumes ONTAP esistenti in Infrastructure Manager</block>
   <block id="fe91a45b95e89e219ea69631edff8521" category="list-text">Manufatti Terraform, salvati in <block ref="b1042b7d7203a022c297b13679f7d1f8" prefix=" " category="inline-code"></block>.</block>
   <block id="787ab3bb526ace3e3d9f5b857facafbf" category="list-text">Log di debug, salvati nella<block ref="abecaca0429ea0c44adcba537eb94f89" prefix=" " category="inline-code"></block> directory. Questi log sono necessari per la risoluzione dei problemi. Il<block ref="6ec9e5b046607d57923aee80f990225d" prefix=" " category="inline-code"></block> bucket memorizza i log di Terraform.</block>
   <block id="07f770dff2ab3ed070b0fafe70eae22a" category="paragraph">I sistemi Cloud Volumes ONTAP che utilizzano Infrastructure Manager archiviano dati e record nei bucket di Google Cloud Storage. L'utilizzo di questi bucket potrebbe comportare costi aggiuntivi, ma non modificare o eliminare i bucket o il loro contenuto:</block>
@@ -5608,7 +5587,6 @@
   <block id="0608b2573e22e73db851c766dab1b407" category="list-text"><block ref="0608b2573e22e73db851c766dab1b407" category="inline-link-macro-rx"></block></block>
   <block id="b96fa5adecc8a586628bbb2ddf7d58d7" category="inline-link-macro">Scopri le coppie HA di Cloud Volumes ONTAP in GCP</block>
   <block id="f3b274b271f89c410c3263d54f5388b1" category="list-text"><block ref="f3b274b271f89c410c3263d54f5388b1" category="inline-link-macro-rx"></block></block>
-  <block id="3b39095deba75ca5cfb3ff4ed9720d63" category="doc">Flash Cache e Cloud Volumes ONTAP</block>
   <block id="acda066727c453f591cee07d837ac2f9" category="list-text"><block ref="acda066727c453f591cee07d837ac2f9" category="inline-link-macro-rx"></block></block>
   <block id="f7c758ab953df7ab0596505fd272634a" category="list-text"><block ref="f7c758ab953df7ab0596505fd272634a" category="inline-link-macro-rx"></block></block>
   <block id="0e7fa6a468d03fe4518b3e9c14209fe1" category="list-text"><block ref="0e7fa6a468d03fe4518b3e9c14209fe1" category="inline-link-macro-rx"></block></block>
@@ -6423,7 +6401,6 @@
   <block id="a90ba97b5d13c19715db9ac621cd4100" category="paragraph">Scopri di più su <block ref="4071c9cc0ee41ad60e40847a894de0de" category="inline-link-macro-rx"></block> e <block ref="534bf928908b00c855f51b75d262cee7" category="inline-link-macro-rx"></block>.</block>
   <block id="6742b02b7c8a6d1cd7fe62e6e878022c" category="paragraph">Scopri di più su <block ref="8419f112ddacc5ee7c9ee16688060e34" category="inline-link-macro-rx"></block> e <block ref="534bf928908b00c855f51b75d262cee7" category="inline-link-macro-rx"></block>.</block>
   <block id="83275cd8bcf6a8230ae238a9d2e389b8" category="summary">Verifica di aver completato i prerequisiti per la distribuzione di Cloud Volumes ONTAP in AWS.</block>
-  <block id="9e0e4788bfd5a10132309d3dca016968" category="doc">Panoramica della distribuzione di Cloud Volumes ONTAP in AWS</block>
   <block id="94d456e201e43656fdfcd847325f792d" category="paragraph">Per implementare Cloud Volumes ONTAP, devi prima conoscere il tuo abbonamento AWS e le licenze di Cloud Volumes ONTAP. Devi anche verificare di aver creato un agente della NetApp Console per il tuo account AWS. Gran parte delle informazioni in questo argomento devono essere eseguite come parte della configurazione della Console prima ancora di iniziare a implementare Cloud Volumes ONTAP.</block>
   <block id="f3aee30a3a487c746572616e3f53dc9d" category="paragraph">Crea un agente della Console</block>
   <block id="e7682eccbdb3edf9435592e4d7e8b791" category="paragraph">Se non disponi ancora di un agente Console, creane uno prima di distribuire Cloud Volumes ONTAP. Se distribuisci in una sottorete senza accesso a Internet, installa manualmente l'agente Console e accedi alla NetApp Console in esecuzione su quell'agente.</block>
@@ -6442,7 +6419,6 @@
   <block id="9afbf91fc5dacff8aee5144e68e0c23c" category="paragraph">Quando hai soddisfatto tutti i prerequisiti, puoi completare i passaggi della procedura guidata per distribuire Cloud Volumes ONTAP in AWS.</block>
   <block id="dd80703f7d89793c8c6bcd9eb27c0ffa" category="inline-link-macro">Distribuisci Cloud Volumes ONTAP utilizzando le opzioni avanzate</block>
   <block id="63e3b7b0b8eabb63c1a575019f00025a" category="list-text"><block ref="63e3b7b0b8eabb63c1a575019f00025a" category="inline-link-macro-rx"></block></block>
-  <block id="787cdbaccf6ca660be7dec3786806671" category="doc">Panoramica della distribuzione di Cloud Volumes ONTAP in Azure</block>
   <block id="224c5fdd891fa8655debffbdbcb9b90d" category="paragraph">Per distribuire Cloud Volumes ONTAP, devi prima conoscere la tua sottoscrizione Azure e le licenze Cloud Volumes ONTAP. Devi anche verificare di aver creato un agente NetApp Console per la tua sottoscrizione e organizzazione Azure. Gran parte delle informazioni in questo argomento devono essere gestite durante la configurazione della Console, prima ancora di iniziare a distribuire Cloud Volumes ONTAP.</block>
   <block id="a8db22ad28f81f010b6c687df3b23e8f" category="paragraph">Se non hai ancora un agente Console, creane uno prima di distribuire Cloud Volumes ONTAP.</block>
   <block id="2196f489a721c0d19335024b7f8b5fc8" category="inline-link">Crea un agente Console in Azure</block>
@@ -6454,7 +6430,6 @@
   <block id="34f79dfeddc8c0c0cf29bb075dba1e0a" category="paragraph">Quando hai soddisfatto tutti i prerequisiti, puoi completare i passaggi della procedura guidata per distribuire Cloud Volumes ONTAP in Azure.</block>
   <block id="6563093287f74a616e9d7ac49b4d6a44" category="paragraph">Fai riferimento a:</block>
   <block id="e67c04a7ad4eeda74ceb878c0553eff4" category="list-text"><block ref="e67c04a7ad4eeda74ceb878c0553eff4" category="inline-link-macro-rx"></block></block>
-  <block id="755ff4f3bf37dc77238bd9ce18d2513f" category="doc">Panoramica della distribuzione di Cloud Volumes ONTAP in Google Cloud</block>
   <block id="3c0c2050848fa2bd86d68cd9d6bc0637" category="paragraph">Per implementare Cloud Volumes ONTAP, devi prima conoscere il tuo abbonamento a Google Cloud e le licenze di Cloud Volumes ONTAP. Devi anche verificare di avere un agente della NetApp Console creato per il tuo progetto e la tua organizzazione Google Cloud. Gran parte delle informazioni in questo argomento devono essere eseguite come parte della configurazione della Console prima ancora di iniziare a implementare Cloud Volumes ONTAP.</block>
   <block id="2e725ec0223114fab1b208bfbfddfb67" category="inline-link">Crea un agente Console in Google Cloud</block>
   <block id="a852172b1ba492725e8bc14ac1f7bdcc" category="paragraph">Consulta la guida all'installazione della console: <block ref="90ca8477c27b88b3929ef47aa80c1ffc" category="inline-link-rx"></block></block>
@@ -6478,7 +6453,6 @@
   <block id="0375af31d39c4bfde1c980cd053ab2b9" category="doc">Cloud Volumes ONTAP storage VM</block>
   <block id="54448f9a8312c7b08e3e97308160554c" category="paragraph">Una storage VM (SVM) è una macchina virtuale in esecuzione all'interno di ONTAP che fornisce servizi di storage e dati ai tuoi client. Potresti conoscerla come _SVM_ o _vserver_. Cloud Volumes ONTAP è configurato di default con una storage VM, ma alcune configurazioni supportano storage VM aggiuntive.</block>
   <block id="3298e455b39f3323fcb1a4a41454ef56" category="doc">Modifica la velocità di scrittura del sistema in Cloud Volumes ONTAP</block>
-  <block id="790a6eeef182c9847c5686e3d7af76cd" category="doc">Segrega il traffico SnapMirror in Cloud Volumes ONTAP in Azure</block>
   <block id="22e2a7fe0db4ccace3b93579a7678955" category="paragraph">A partire da Cloud Volumes ONTAP 9.15.1, puoi distribuire istanze di macchine virtuali (VM) in modalità HA in singole zone di disponibilità (AZ) in Azure. A differenza delle precedenti distribuzioni non zonali, Cloud Volumes ONTAP 9.15.1 utilizza Microsoft Virtual Machines Scale Sets in modalità di orchestrazione Flexible per distribuire tutte le risorse, inclusi domini di errore separati all'interno della stessa AZ, garantendo una disponibilità ottimale. Questa modalità di distribuzione, per impostazione predefinita, utilizza dischi gestiti Premium SSD v2 quando vengono soddisfatte le seguenti condizioni:</block>
   <block id="68367d4408e943b9268a7a6d4314fb0a" category="inline-link">Avvia una coppia HA Cloud Volumes ONTAP in Azure</block>
   <block id="ba9b674ef918293b2811c2896cb57927" category="inline-link">Scopri come abilitare VMOrchestratorZonalMultiFD per zone di disponibilità singole</block>
@@ -7940,7 +7914,6 @@
   <block id="b1c99bd089b17e20a9f2a2707a599854" category="list-text">Invia una<block ref="3e75383a5992a6d15fb81e872e46e256" prefix=" " category="inline-code"></block> richiesta allo stesso endpoint, sostituendo<block ref="1f7f5b0a33cb78cd5f99f2d4a1cd6e29" prefix=" " category="inline-code"></block> con l'ID di sistema:</block>
   <block id="ed1f1798cf59d3b7e2dccb773f996a49" category="paragraph">Imposta <block ref="a10311459433adf322f2590a4987c423" prefix=" " category="inline-code"></block>su <block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block> nel corpo della richiesta:</block>
   <block id="840e012212b7ce51ef9cd5802d3ffc25" category="summary">Abilita la crittografia della rete del cluster di backend per proteggere il traffico del cluster Cloud Volumes ONTAP che non è già protetto da ONTAP IPsec.</block>
-  <block id="7999d03bdd5aa474a03ebcf61a2de49d" category="doc">Abilita la crittografia della rete del cluster backend per Cloud Volumes ONTAP in Azure e Google Cloud</block>
   <block id="d6a96ea38aea023cd1fea09197b94126" category="paragraph">ONTAP utilizza Cluster Session Management (CSM) su Kernel TLS (kTLS) e IPsec software per proteggere il traffico sulle reti backend per le configurazioni HA. Cloud Volumes ONTAP 9.19.1 e versioni successive estendono questa protezione al traffico del cluster backend.</block>
   <block id="e0c9d8803c8bdc8ce51e91511d3f16e9" category="admonition">L'attivazione della crittografia di rete del cluster potrebbe influire sulle prestazioni del cluster. Procedi con cautela e verifica che il tuo ambiente sia in grado di gestire il sovraccarico aggiuntivo prima di abilitare questa funzionalità.</block>
   <block id="3a77fed898c3fa02fcbdf21c5d1176c1" category="list-text">Devi utilizzare Cloud Volumes ONTAP 9.19.1 o versione successiva.</block>
@@ -8332,4 +8305,122 @@
   <block id="b9433802e6e744b5cc84b87da127cf0e" category="paragraph">Ora puoi distribuire Cloud Volumes ONTAP 9.12.1 GA e versioni successive nelle aree Denmark East (denmarkeast) e India South Central (indiasouthcentral) in Azure. Sono supportati i seguenti tipi di distribuzione:</block>
   <block id="893f7f9c4326ccc9db9efcafead22429" category="list-text">HA in più zone di disponibilità tramite storage con ridondanza di zona (ZRS) - Solo per India South Central</block>
   <block id="1d13d5e4cee76a1ac900dd9c56640ddb" category="section-title">24 novembre 2026</block>
+  <block id="dc7bed598fbe3d18606591caa4d1abc4" category="doc">Verifica della firma dell'immagine del marketplace di Azure per Cloud Volumes ONTAP</block>
+  <block id="5cbcc291bf23e6e79bd1867820790148" category="doc">Scopri il tiering dei dati con Cloud Volumes ONTAP</block>
+  <block id="0b06c320cdf81e231933ec708a4ed4ae" category="doc">Configurazioni ad alta disponibilità per Cloud Volumes ONTAP</block>
+  <block id="9258380ec052348ddb4ce8ecdc049692" category="doc">Scopri di più su Flash Cache in Cloud Volumes ONTAP</block>
+  <block id="640e0ed1f11c7349c2005dbd03d7bcae" category="doc">Scopri come Cloud Volumes ONTAP verifica le immagini di Google Cloud</block>
+  <block id="6b9b9e55102bb13f1ca535f28c0d3a98" category="doc">Note legali per Cloud Volumes ONTAP</block>
+  <block id="7da92fb5319676e6d1d3c8fbbff59b3b" category="doc">Requisiti di rete AWS per Cloud Volumes ONTAP</block>
+  <block id="1628ff5433400d560c64c3537e302aad" category="doc">Requisiti di rete di Azure per Cloud Volumes ONTAP</block>
+  <block id="dc819f3c1afb8138eba49fd10790d879" category="doc">Configura i controlli del servizio VPC per Cloud Volumes ONTAP in Google Cloud</block>
+  <block id="4ba21d11dbaa80daf3ae9070e72cfea1" category="doc">Crea copie snapshot a prova di manomissione dei file WORM su Cloud Volumes ONTAP</block>
+  <block id="042f7911ad8783a575bdf6d78be4b414" category="doc">Accelera l'accesso ai dati con i volumi FlexCache in Cloud Volumes ONTAP</block>
+  <block id="db033a29724d6ae6aafbef1b5082b693" category="doc">Integra Cloud Volumes ONTAP con Microsoft OneLake per l'intelligenza artificiale e l'analisi dei dati</block>
+  <block id="8bc694f2c7783cc66dbff45ddc279c3c" category="doc">Evita le interruzioni dovute alla manutenzione di Azure per le coppie HA di Cloud Volumes ONTAP</block>
+  <block id="404c3843cb366ee3d07e5f47a5f751bc" category="doc">Modifica le tabelle di routing AWS per le coppie HA di Cloud Volumes ONTAP</block>
+  <block id="785d0fce0928c7f48d41e39251b2e664" category="doc">Configura le coppie HA di Cloud Volumes ONTAP per la creazione di gruppi di posizionamento in AWS</block>
+  <block id="d12cb5567e0d53f1e577fd04dbca36c7" category="paragraph">Le implementazioni ad alta disponibilità (HA) di Cloud Volumes ONTAP in una singola zona di disponibilità (AZ) di AWS possono non riuscire e venire annullate se la creazione del gruppo di posizionamento non riesce. Anche la creazione del gruppo di posizionamento non riesce e l'implementazione viene annullata se il nodo Cloud Volumes ONTAP e l'istanza del mediatore non sono disponibili. Per evitarlo, puoi modificare la configurazione in modo da consentire il completamento dell'implementazione anche se la creazione del gruppo di posizionamento non riesce.</block>
+  <block id="c202b1167855ffaf23f553b9ecd0c29b" category="summary">Sposta la fatturazione di Cloud Volumes ONTAP da NetApp Intelligent Services alla pagina dedicata su AWS Marketplace, in base al tuo abbonamento e al metodo di addebito.</block>
+  <block id="ae888af3cff4b70a82228ba30a161841" category="doc">Converti gli abbonamenti NIS in abbonamenti Cloud Volumes ONTAP standalone in AWS</block>
+  <block id="b7d9caa0688260f82821ec1ed52a4e2c" category="paragraph">Sposta il tuo consumo di Cloud Volumes ONTAP dall'inserzione di NetApp Intelligent Services (NIS) all'inserzione standalone di Cloud Volumes ONTAP (NSL) su AWS Marketplace.</block>
+  <block id="337650df47bda1ffa7be75d1aa8c7513" category="inline-link">modello di abbonamento multiplo</block>
+  <block id="11c0c64c6bca24fc286f11dcf800c4a6" category="paragraph">L'offerta standalone è il percorso di acquisto preferito per Cloud Volumes ONTAP da AWS Marketplace, perché offre un modello di abbonamento dedicato. L'offerta standalone supporta solo la licenza Cloud Volumes ONTAP Essentials. Se vuoi usare la licenza Cloud Volumes ONTAP Professional, NetApp Backup and Recovery o qualsiasi altro NetApp Data Services, come NetApp Disaster Recovery e NetApp Ransomware Resilience, devi continuare a usare gli abbonamenti NIS. Se vuoi usare le licenze Cloud Volumes ONTAP Essentials Primary o Essentials Secondary con i servizi dati, puoi usare sia le offerte NSL che NIS supportate<block ref="92f33c2b9e7ddd185cf6c1aa61016901" category="inline-link-rx"></block>.</block>
+  <block id="19a09844a6ab598aecd5446cb72338e9" category="paragraph">Un singolo account NetApp Console può avere più abbonamenti al marketplace contemporaneamente. Se hai una licenza Essentials per Cloud Volumes ONTAP, il sistema instrada automaticamente gli addebiti di consumo tramite NSL, a meno che non sia configurato diversamente nelle tue Preferenze di fatturazione. Puoi utilizzare le seguenti combinazioni:</block>
+  <block id="56ee3495a32081ccb6d2376eab391bfa" category="cell">Elenco</block>
+  <block id="b622ba7d90f3025a538b8ec0c8b397c6" category="list-text">Cloud Volumes ONTAP Essentials Primary</block>
+  <block id="bc8c00559c64bbd1ab3e5f234164628a" category="list-text">Cloud Volumes ONTAP Essentials Secondary</block>
+  <block id="88c6a525ed2fe399b147abf16c742553" category="paragraph">NSL con pay-as-you-go (PAYGO) o contratto annuale</block>
+  <block id="3803e8fceeeadbf4b5f800bd0b366c22" category="list-text">Licenza Cloud Volumes ONTAP Professional</block>
+  <block id="e413eba49b15917b0c9dbf2620f3e66e" category="list-text">Disaster Recovery</block>
+  <block id="c36b12344113082dcf8a9786e36a3536" category="list-text">Ransomware Resilience</block>
+  <block id="e5e5a945280ecec3d7fe5db876557aea" category="paragraph">NIS con PAYGO o contratto annuale</block>
+  <block id="60ad52e38cf5f0b390c3b8f0a1a2fc93" category="paragraph">Sia Cloud Volumes ONTAP Essentials Primary/Essentials Secondary che Backup and Recovery o altri servizi dati</block>
+  <block id="7cf8ac41dedafa8eadbc0c0a550f8f49" category="paragraph">NSL per Cloud Volumes ONTAP Essentials Primary/Essentials Secondary e NIS per backup e ripristino o servizi dati</block>
+  <block id="837f5eeb94f48fb787cd93c316f6abb0" category="paragraph">Rivedi la tua offerta attuale e l'abbonamento al marketplace, e stima il tuo utilizzo futuro e i requisiti di licenza. Considera quanto segue:</block>
+  <block id="e51007f500f5fe9731e5853b27a5a67c" category="list-text">La tua attuale licenza Cloud Volumes ONTAP o il tuo metodo di fatturazione, che può essere:</block>
+  <block id="59bcede5f47f09bb9862e65887896961" category="list-text">Elementi essenziali di Cloud Volumes ONTAP</block>
+  <block id="51f8387c68649a36048b2689eb222c9c" category="list-text">Cloud Volumes ONTAP Professional</block>
+  <block id="85f8aa528b875d49f1c9feeba9be4d50" category="list-text">Requisiti per Backup and Recovery o qualsiasi altro servizio dati</block>
+  <block id="33c9f370b912e528cbd81baf6526aabb" category="list-text">Lo stato del tuo contratto NIS o NSL esistente</block>
+  <block id="d743ec1cf37f02612964b6966715f923" category="list-text">L'offerta AWS Marketplace attualmente associata al tuo account Console</block>
+  <block id="ab135aa5587c442a331d4a7f12d60050" category="section-title">Converti gli abbonamenti NIS di Cloud Volumes ONTAP con una licenza Essentials</block>
+  <block id="713ce0f9f104441832c79b4dd1e142f4" category="paragraph">Utilizza questo scenario se disponi di un abbonamento NIS PAYGO o annuale con una licenza Cloud Volumes ONTAP Essentials e non utilizzi Backup and Recovery o altri servizi dati. Dopo la conversione, disponi di un abbonamento NSL PAYGO o annuale con una licenza Cloud Volumes ONTAP Essentials.</block>
+  <block id="9228e387a3e6926a5e90ca4344ebac39" category="section-title">Convertire un abbonamento PAYGO</block>
+  <block id="ffcc76a447262875ad4c474879e621e3" category="paragraph">Hai un abbonamento Cloud Volumes ONTAP NIS PAYGO prima della conversione.</block>
+  <block id="56fa87404c12730ecd7dd2936ab3e9ff" category="list-text">Da AWS Marketplace, sottoscrivi l'abbonamento Cloud Volumes ONTAP NSL PAYGO e associa l'abbonamento NSL al tuo account Console. Consulta <block ref="6090cd5dc2e277d20ba5083153f46134" category="inline-link-macro-rx"></block>.</block>
+  <block id="a16c1152b003840c33e97f8322bae0c2" category="inline-link">Licenses and subscriptions: Imposta le preferenze di fatturazione</block>
+  <block id="33554fe0643bfcc8f90c714f846b9384" category="list-text">Nella Console, vai a *Administration &gt; Licenses and subscriptions* e verifica che per la fatturazione di Cloud Volumes ONTAP sia selezionato l'abbonamento corretto. Fai riferimento a <block ref="e783318645ebdf5beb233a5aaeee30e9" category="inline-link-rx"></block>.</block>
+  <block id="1fd4d4b15e7b1f2d167f3c1174f42651" category="list-text">Verifica lo stato di addebito e di idoneità.</block>
+  <block id="9a8368590ae1f8280feef72b7dd90701" category="inline-link">Licenses and subscriptions: Rimuovi un abbonamento</block>
+  <block id="dc949b466360e0cc18ac9afa42cb42e0" category="list-text">Rimuovi l'abbonamento NIS se non ti serve più. Fai riferimento a<block ref="1ba28f5fe560af95cd73c014baee08da" category="inline-link-rx"></block>.</block>
+  <block id="7c69cfaa4ef1e24e94adf4132c96f11d" category="section-title">Converti un contratto annuale o un'offerta privata</block>
+  <block id="f087cccadd414afe69c6fab8f37b5e98" category="paragraph">Hai un contratto annuale NIS Cloud Volumes ONTAP prima della conversione.</block>
+  <block id="5bc4a3320dd1cacb87ab7b48fd9a2ddf" category="list-text">Richiedi un'offerta privata sostitutiva o di modifica per Cloud Volumes ONTAP tramite l'elenco NSL. Contatta il tuo team di riferimento NetApp.</block>
+  <block id="9268472feb4064981306c0934ad2c0d8" category="inline-link">Licenses and subscriptions: Accetta e configura un'offerta privata di AWS Marketplace</block>
+  <block id="4e6bd9ea9fd34f9ec557cad3f98a7e4a" category="list-text">Accetta la nuova offerta, attiva il nuovo abbonamento e associa l'abbonamento NSL al tuo account Console. Consulta <block ref="691ae850f5409e1682e96e6f661e4dd0" category="inline-link-rx"></block>.</block>
+  <block id="0c8039041b5c2dfd91aa1adda64723dc" category="list-text">Vai a *Amministrazione &gt; Licenses and subscriptions* e verifica che l'abbonamento corretto sia quello preferito per la fatturazione di Cloud Volumes ONTAP. Fai riferimento a <block ref="e783318645ebdf5beb233a5aaeee30e9" category="inline-link-rx"></block>.</block>
+  <block id="af9ac15b96bb4817268e4aa6abc504f0" category="list-text">Verifica le preferenze di addebito e fatturazione.</block>
+  <block id="17535ec7ba18455b537124cf53347056" category="section-title">Converti le sottoscrizioni Cloud Volumes ONTAP Essentials che utilizzano Backup</block>
+  <block id="670f1fd587a96ccc968b05fb03ae3342" category="paragraph">Usa questo scenario se hai un abbonamento NIS PAYGO o annuale con una licenza Cloud Volumes ONTAP Essentials e hai abilitato Backup and Recovery o altri servizi dati. Dopo la conversione, utilizzerai un abbonamento NSL PAYGO o annuale per Cloud Volumes ONTAP e un abbonamento NIS per Backup and Recovery o servizi dati.</block>
+  <block id="d7bc03393776fc45d9ef5c0696c06284" category="list-text">Abbonati all'offerta NSL PAYGO per Cloud Volumes ONTAP dall'AWS Marketplace. Consulta <block ref="6090cd5dc2e277d20ba5083153f46134" category="inline-link-macro-rx"></block>.</block>
+  <block id="30e3db58071a27da5560278ac9bb5daa" category="list-text">Mantieni attivo il tuo abbonamento NIS per Backup and Recovery, oppure aggiungine uno se non ne hai già uno.</block>
+  <block id="42e1895061b98a84cf5e43ea012b483c" category="inline-link">Licenses and subscriptions: Associa un abbonamento a un account console</block>
+  <block id="1ddbe4a14fadb4b65a6855331ad60180" category="list-text">Associa entrambi gli abbonamenti allo stesso account Console. Fai riferimento a <block ref="4e41dee64d19f498c3e95227f4b50ae6" category="inline-link-rx"></block>.</block>
+  <block id="8f9f7d5bb115041e57a8b6da18cfb699" category="inline-link">Licenses and subscriptions: verifica le preferenze di fatturazione</block>
+  <block id="b37c66446eea563f03cfd61d100c784f" category="list-text">Verifica le preferenze di addebito e fatturazione. Consulta <block ref="3a89b5aceac12d800afc506c76ffc30f" category="inline-link-rx"></block>.</block>
+  <block id="79c9150c12324ba2601d2e9089f85853" category="inline-link">Licenses and subscriptions: fatturazione flessibile per Cloud Volumes ONTAP e servizi dati in AWS</block>
+  <block id="95858148522f311a1e783a99398670d7" category="list-text">Verifica che gli addebiti di Cloud Volumes ONTAP passino tramite l'abbonamento NSL e che gli addebiti dei servizi dati passino tramite l'abbonamento NIS. Fai riferimento a<block ref="94d6cb0616e5102ff25eb990f4a78558" category="inline-link-rx"></block>.</block>
+  <block id="af545e665569ac298868dcc7e8e825a5" category="paragraph">Prima della conversione, hai un contratto annuale o un'offerta privata per Cloud Volumes ONTAP NIS.</block>
+  <block id="8890e427bcdae02f4e9641e650080501" category="list-text">Ottieni o mantieni un abbonamento NIS valido per Backup and Recovery in uno dei seguenti modi:</block>
+  <block id="b6558bb45cf061d90d63b5c139bec62f" category="list-text">Tramite un abbonamento NIS PAYGO</block>
+  <block id="ae1af9794687a7f484ce1ae91b52847d" category="list-text">Tramite una nuova o modificata offerta privata NIS che copre Backup and Recovery o altri servizi dati</block>
+  <block id="eeea7eba55e242aafba10670bce1ebce" category="inline-link">configurazione multi-sottoscrizione</block>
+  <block id="8a009a3cfb5e8f7e074fb59ead59f09f" category="paragraph">Hai un supportato<block ref="b7b37e283e1062029828c0c2de5146a5" category="inline-link-rx"></block>.</block>
+  <block id="21f50e75a7875d18980f74b6cd1b5ff2" category="section-title">Converti gli abbonamenti Cloud Volumes ONTAP Professional senza servizi dati</block>
+  <block id="042c3431935b885b27110a241b4d7712" category="paragraph">Se hai un abbonamento Cloud Volumes ONTAP NIS con una licenza Professional e non usi attivamente né prevedi di usare Backup and Recovery o altri servizi dati, devi convertire il tuo metodo di addebito da Professional a Essentials. Lo stato di destinazione preferito è un abbonamento Cloud Volumes ONTAP NSL con una licenza Essentials.</block>
+  <block id="59c828f10d9bd537444323ef1ead1318" category="admonition">Devi completare la conversione da Professional a Essentials prima della scadenza dell'abbonamento NIS o prima di rimuoverlo.</block>
+  <block id="1e14f1d35c74a851586056fd880bd8e1" category="paragraph">Se non converti il tuo metodo di addebito:</block>
+  <block id="748898ae7b7c083e7aadae3d90b1dcee" category="list-text">Il sistema Cloud Volumes ONTAP continua a essere fatturato tramite la licenza NIS Professional esistente.</block>
+  <block id="33fca55dcd56fc69aa1100ed480112b0" category="list-text">Non avrai un percorso di fatturazione Professional valido per continuare ad addebitare l'utilizzo di Cloud Volumes ONTAP.</block>
+  <block id="2c88551e7f625f83004caf95eab0017e" category="list-text">Il flusso di lavoro di conversione potrebbe non essere più disponibile dopo la scadenza dell'abbonamento NIS.</block>
+  <block id="c812ddc39cb2fd7d0f51d03af943738a" category="section-title">Converti un pacchetto Professional con abbonamento PAYGO</block>
+  <block id="9126bb34b515dbc403be1eaecd574a35" category="inline-link">Licenses and subscriptions: Modifica i metodi di addebito</block>
+  <block id="ab9c9eb7204574687b0816044fcde6b4" category="list-text">Cambia il metodo di addebito da Professional a Essentials. Consulta<block ref="9b31e27de340ae02845480bda5f99b91" category="inline-link-rx"></block>.</block>
+  <block id="c858dc10a6a60cc88f112871c06ac541" category="list-text">Associa l'abbonamento NSL al tuo account Console. Consulta <block ref="4e41dee64d19f498c3e95227f4b50ae6" category="inline-link-rx"></block>.</block>
+  <block id="42b58eb30095379156ff4507b3984fcb" category="list-text">Verifica le preferenze di addebito e fatturazione. Consulta <block ref="94d6cb0616e5102ff25eb990f4a78558" category="inline-link-rx"></block>.</block>
+  <block id="399aae2ae39db69243ce6c9bccabce9d" category="list-text">Richiedi un'offerta privata sostitutiva o modificata per Cloud Volumes ONTAP Essentials tramite NSL. Contatta il tuo team account NetApp.</block>
+  <block id="eae3c850039cfe958563ecb94a21720f" category="paragraph">Scopri cosa devi fare se riscontri i seguenti problemi:</block>
+  <block id="067fc58c3f9faa49fca09ada3488a34b" category="section-title">Hai un pacchetto Cloud Volumes ONTAP Professional</block>
+  <block id="ad9af0602496fe49e45123f718572570" category="paragraph">Se hai un abbonamento Cloud Volumes ONTAP e vuoi passare a NSL, l'unica opzione di conversione supportata è da Professional a Essentials. Per smettere di usare le funzionalità Professional e passare a Essentials, devi modificare il metodo di fatturazione da Professional a Essentials.</block>
+  <block id="fa858089ab60ec176480b8ea8f032068" category="paragraph"><block ref="9d38308e65dc5763d6dfebbca494cfa4" category="inline-link-rx"></block>.</block>
+  <block id="ba7f4e8449c3ffa653e943695c332382" category="section-title">I sistemi utilizzano i pacchetti Professional anche dopo l'abbonamento NSL</block>
+  <block id="4ef987ed5770ee294dc7e99aa930d44b" category="paragraph">Questo comportamento è previsto. NSL supporta solo il pacchetto di licenza Essentials. Esegui una delle seguenti operazioni:</block>
+  <block id="1df5a4e29bbaf4256dc2821efe0d64eb" category="list-text">Continua a fatturare in base al pacchetto Professional tramite l'abbonamento NIS.</block>
+  <block id="c958ae98d76d77bf2cd745bef8c701f9" category="section-title">Utilizzi servizi di backup e ripristino o servizi dati e desideri passare a NSL</block>
+  <block id="005e5930d0715ff054b07d19d9b0d0fa" category="inline-link">Licenses and subscriptions: Gestisci le preferenze di fatturazione</block>
+  <block id="cff98273bffb9daab2b2c38fa23f7f90" category="paragraph">Continua a utilizzare l'abbonamento NIS per Backup and Recovery o per i servizi dati e utilizza l'abbonamento NSL per Cloud Volumes ONTAP in un modello multi-abbonamento. Fai riferimento a<block ref="74fa998026b6cb97671377ed2cabb165" category="inline-link-rx"></block>.</block>
+  <block id="58e2f0c581ba69d0803ad140fc2d7289" category="doc">Convertire le licenze basate sui nodi di Cloud Volumes ONTAP in licenze basate sulla capacità</block>
+  <block id="7f9da09dbae147c336e0451e5e9f44c6" category="doc">Abilita la crittografia della rete del cluster backend per Cloud Volumes ONTAP</block>
+  <block id="28dd3c86492dce54400dea0063805398" category="doc">Usa Azure Private Link o endpoint di servizio con Cloud Volumes ONTAP</block>
+  <block id="b54275047d1fe06248fd15dc8116aeeb" category="doc">Crittografa i volumi di Cloud Volumes ONTAP con la crittografia NetApp</block>
+  <block id="c56cdc504add6fe934d608152bd376a9" category="doc">Verifica la firma dell'immagine Azure per Cloud Volumes ONTAP su Linux</block>
+  <block id="c4d86f96e530f6ed6d572c2f813e87db" category="doc">Verifica la firma dell'immagine Azure per Cloud Volumes ONTAP su macOS</block>
+  <block id="e677aac4aaafc90616c8819150b1759f" category="doc">Converti le distribuzioni di Cloud Volumes ONTAP in Infrastructure Manager</block>
+  <block id="5eaccb01010926a660dd6cc8e22d6f6f" category="doc">Ottieni assistenza per Cloud Volumes ONTAP</block>
+  <block id="4c015cb055809ee865e6639b7540c8b1" category="doc">Inizia a utilizzare Cloud Volumes ONTAP in AWS</block>
+  <block id="794498a601ca64cfd80cd3e4d5830692" category="doc">Inizia a utilizzare Cloud Volumes ONTAP in Azure</block>
+  <block id="dc3a3b69be7ee6be922664e8486d08a1" category="doc">Inizia a utilizzare Cloud Volumes ONTAP in Google Cloud</block>
+  <block id="e59a1609bab49b796852cd69501165f4" category="doc">Migliora le configurazioni di Cloud Volumes ONTAP in Azure con Workload Factory</block>
+  <block id="6d9e96987b88cdcb232b7970bf4c20b7" category="doc">Gestisci le VM di storage per Cloud Volumes ONTAP in Google Cloud</block>
+  <block id="2bb93fa90bb8d3d929f5cd1869b38c89" category="doc">Gestisci le VM di storage in Cloud Volumes ONTAP</block>
+  <block id="65303dd4f66fa8179300ad7d4523991a" category="doc">Sposta un gruppo di risorse Cloud Volumes ONTAP in Azure</block>
+  <block id="e275a348cfbea01fb5c1c502c1189381" category="doc">Abilita la protezione anti-ransomware per Cloud Volumes ONTAP</block>
+  <block id="10402976e7f91dbb78068c4c6ee576c6" category="doc">Separa il traffico SnapMirror per Cloud Volumes ONTAP in Azure</block>
+  <block id="a0f0a1e643b185693f6e81fc1393790c" category="doc">Utilizza chiavi di crittografia gestite dal cliente con Cloud Volumes ONTAP</block>
+  <block id="9cecfa756697109a50bac4527ce46a67" category="doc">Registrati per ricevere supporto per Cloud Volumes ONTAP</block>
+  <block id="75932bbaa09f32468aa9d35c3ccc4837" category="doc">Sposta i dati inattivi di Cloud Volumes ONTAP su storage a oggetti a basso costo</block>
+  <block id="74f9aca10e2756e0a6e4f98283b16ab2" category="doc">Modifica il livello di prestazioni del disco Premium SSD per Cloud Volumes ONTAP in Azure</block>
+  <block id="561024775ce4912cba9fe28384d03237" category="doc">Verifica le immagini di Google Cloud per Cloud Volumes ONTAP utilizzando OpenSSL</block>
+  <block id="45158acc9812c40a91f41bbdad469d0f" category="sidebar">Converti gli abbonamenti NIS in abbonamenti standalone in AWS</block>
 </blocks>

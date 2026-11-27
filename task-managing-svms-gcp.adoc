@@ -4,7 +4,7 @@ permalink: task-managing-svms-gcp.html
 keywords: storage virtual machine, vserver, svm, storage vm, supported number, number supported, create svm, create storage vm, create vserver 
 summary: 'Una VM di archiviazione è una macchina virtuale in esecuzione all"interno di ONTAP che fornisce servizi di archiviazione e dati ai tuoi client.  Potresti conoscerlo come SVM o vserver.  Per impostazione predefinita, Cloud Volumes ONTAP è configurato con una VM di archiviazione, ma alcune configurazioni supportano VM di archiviazione aggiuntive.' 
 ---
-= Gestisci le VM di archiviazione dati per Cloud Volumes ONTAP in Google Cloud
+= Gestisci le VM di storage per Cloud Volumes ONTAP in Google Cloud
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

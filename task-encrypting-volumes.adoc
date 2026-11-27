@@ -4,7 +4,7 @@ permalink: task-encrypting-volumes.html
 keywords: encrypt, encryption, data, volumes, netapp volume encryption, volume encryption, nve, key managers, kmip, key management servers, license, ssl certificates, nae, netapp aggregate encryption 
 summary: 'Cloud Volumes ONTAP supporta sia NetApp Volume Encryption (NVE) sia NetApp Aggregate Encryption (NAE) con un gestore di chiavi esterno.  NVE e NAE sono abilitati per impostazione predefinita se si imposta un gestore di chiavi esterno.' 
 ---
-= Crittografa i volumi su Cloud Volumes ONTAP con le soluzioni di crittografia NetApp
+= Crittografa i volumi di Cloud Volumes ONTAP con la crittografia NetApp
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: concept-data-tiering.html
 keywords: storage tiering, tier, tiering, data tiering, s3, s3 tiering, capacity, performance, s3 endpoint, fabric pool, fabricpool, s3 bucket, requirement, vpc endpoint, policy, policies, tiering policies, auto, snapshot only, backup, none, cooling period, volume tiering policies, blob, standard, infrequent access, hot, cool, tiering level, storage tier, storage class 
 summary: Riduci i costi di archiviazione abilitando la suddivisione automatica dei dati inattivi in un archivio di oggetti a basso costo. 
 ---
-= Scopri di più sulla suddivisione in livelli dei dati con Cloud Volumes ONTAP in AWS, Azure o Google Cloud
+= Scopri il tiering dei dati con Cloud Volumes ONTAP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

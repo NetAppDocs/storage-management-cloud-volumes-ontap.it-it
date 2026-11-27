@@ -4,7 +4,7 @@ permalink: task-tiering.html
 keywords: tier, tiering, cold data, hot data, storage tiering, data tiering, fabricpool, fabric pool, s3 endpoint, endpoint, connection, performance tier, capacity tier, object store, blob tiering, container, inactive, tiering requirements, remove S3 bucket, delete S3 CVO bucket, tenant, multi-tenant tiering 
 summary: È possibile ridurre i costi di archiviazione per Cloud Volumes ONTAP combinando un livello di prestazioni SSD o HDD per i dati attivi con un livello di capacità di archiviazione degli oggetti per i dati inattivi.  La suddivisione in livelli dei dati è basata sulla tecnologia FabricPool . 
 ---
-= Trasferisci i dati Cloud Volumes ONTAP inattivi in ​​un archivio di oggetti a basso costo
+= Sposta i dati inattivi di Cloud Volumes ONTAP su storage a oggetti a basso costo
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: task-upgrade-disk-perf-azure.html
 keywords: azure, premium ssd v2, Premium SSDv2, performance parameters, cloud volumes ontap 
 summary: Configurare i parametri delle prestazioni nei dischi Premium SSD v2 in Azure. 
 ---
-= Modificare il livello di prestazioni dei dischi SSD Premium in Cloud Volumes ONTAP in Azure
+= Modifica il livello di prestazioni del disco Premium SSD per Cloud Volumes ONTAP in Azure
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: reference-networking-aws.html
 keywords: networking, network, requirements, connection, connections, vpc, security group, security groups, subnets, vpn, internet, nat, s3, dns, ad, active directory, az, availability zone, floating IP, floating, SVM, management LIF, route, route tables, proxy, HTTP, private, tier, s3 endpoint, proxy server, nat device, vpn, snapmanager, snapcenter, iscsi, nfs, cifs, nas, san, outbound, inbound, connections, autosupport, ha, ha pair, high availability 
 summary: 'La NetApp Console gestisce la configurazione dei componenti di rete per Cloud Volumes ONTAP, come indirizzi IP, maschere di rete e percorsi.  È necessario assicurarsi che l"accesso a Internet in uscita sia disponibile, che siano disponibili sufficienti indirizzi IP privati, che siano attive le connessioni giuste e altro ancora.' 
 ---
-= Configurare la rete AWS per Cloud Volumes ONTAP
+= Requisiti di rete AWS per Cloud Volumes ONTAP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

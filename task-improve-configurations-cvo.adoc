@@ -4,7 +4,7 @@ permalink: task-improve-configurations-cvo.html
 keywords: improve configurations, optimize configurations, implement best practices, well-architected file system, Cloud Volumes ONTAP, Microsoft Azure 
 summary: 'La dashboard ben progettata analizza le configurazioni di Cloud Volumes ONTAP, fornendo informazioni e raccomandazioni per aiutarti a raggiungere l"eccellenza operativa.' 
 ---
-= Migliora le configurazioni di Cloud Volumes ONTAP in Azure utilizzando Workload Factory
+= Migliora le configurazioni di Cloud Volumes ONTAP in Azure con Workload Factory
 :allow-uri-read: 
 :icons: font
 :imagesdir: ./media/

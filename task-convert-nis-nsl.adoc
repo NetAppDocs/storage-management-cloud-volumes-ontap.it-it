@@ -1,0 +1,224 @@
+---
+sidebar: sidebar 
+permalink: task-convert-nis-nsl.html 
+keywords: NIS, NSL, NetApp Intelligent Services, standalone listing, marketplace subscription, migrate, convert, charging method, Essentials, Professional, backup 
+summary: Sposta la fatturazione di Cloud Volumes ONTAP da NetApp Intelligent Services alla pagina dedicata su AWS Marketplace, in base al tuo abbonamento e al metodo di addebito. 
+---
+= Converti gli abbonamenti NIS in abbonamenti Cloud Volumes ONTAP standalone in AWS
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Sposta il tuo consumo di Cloud Volumes ONTAP dall'inserzione di NetApp Intelligent Services (NIS) all'inserzione standalone di Cloud Volumes ONTAP (NSL) su AWS Marketplace.
+
+L'offerta standalone è il percorso di acquisto preferito per Cloud Volumes ONTAP da AWS Marketplace, perché offre un modello di abbonamento dedicato. L'offerta standalone supporta solo la licenza Cloud Volumes ONTAP Essentials. Se vuoi usare la licenza Cloud Volumes ONTAP Professional, NetApp Backup and Recovery o qualsiasi altro NetApp Data Services, come NetApp Disaster Recovery e NetApp Ransomware Resilience, devi continuare a usare gli abbonamenti NIS. Se vuoi usare le licenze Cloud Volumes ONTAP Essentials Primary o Essentials Secondary con i servizi dati, puoi usare sia le offerte NSL che NIS supportate https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws["modello di abbonamento multiplo"^].
+
+Un singolo account NetApp Console può avere più abbonamenti al marketplace contemporaneamente. Se hai una licenza Essentials per Cloud Volumes ONTAP, il sistema instrada automaticamente gli addebiti di consumo tramite NSL, a meno che non sia configurato diversamente nelle tue Preferenze di fatturazione. Puoi utilizzare le seguenti combinazioni:
+
+[cols="2*"]
+|===
+| Servizio | Elenco 
+
+
+ a| 
+* Cloud Volumes ONTAP Essentials Primary
+* Cloud Volumes ONTAP Essentials Secondary
+
+ a| 
+NSL con pay-as-you-go (PAYGO) o contratto annuale
+
+
+
+ a| 
+* Licenza Cloud Volumes ONTAP Professional
+* Backup e ripristino
+* Disaster Recovery
+* Ransomware Resilience
+
+ a| 
+NIS con PAYGO o contratto annuale
+
+
+
+ a| 
+Sia Cloud Volumes ONTAP Essentials Primary/Essentials Secondary che Backup and Recovery o altri servizi dati
+ a| 
+NSL per Cloud Volumes ONTAP Essentials Primary/Essentials Secondary e NIS per backup e ripristino o servizi dati
+
+|===
+.Prima di iniziare
+Rivedi la tua offerta attuale e l'abbonamento al marketplace, e stima il tuo utilizzo futuro e i requisiti di licenza. Considera quanto segue:
+
+* La tua attuale licenza Cloud Volumes ONTAP o il tuo metodo di fatturazione, che può essere:
++
+** Elementi essenziali di Cloud Volumes ONTAP
+** Cloud Volumes ONTAP Professional
+
+
+* Requisiti per Backup and Recovery o qualsiasi altro servizio dati
+* Lo stato del tuo contratto NIS o NSL esistente
+* L'offerta AWS Marketplace attualmente associata al tuo account Console
+
+
+
+
+[[convert-cloud-volumes-ontap-nis-subscriptions-with-an-essentials-license]]
+== Converti gli abbonamenti NIS di Cloud Volumes ONTAP con una licenza Essentials
+
+Utilizza questo scenario se disponi di un abbonamento NIS PAYGO o annuale con una licenza Cloud Volumes ONTAP Essentials e non utilizzi Backup and Recovery o altri servizi dati. Dopo la conversione, disponi di un abbonamento NSL PAYGO o annuale con una licenza Cloud Volumes ONTAP Essentials.
+
+
+
+[[convert-a-paygo-subscription]]
+=== Convertire un abbonamento PAYGO
+
+Hai un abbonamento Cloud Volumes ONTAP NIS PAYGO prima della conversione.
+
+.Passi
+. Da AWS Marketplace, sottoscrivi l'abbonamento Cloud Volumes ONTAP NSL PAYGO e associa l'abbonamento NSL al tuo account Console. Consulta link:task-onboard-cvo-aws-marketplace.html["Distribuisci Cloud Volumes ONTAP utilizzando l'offerta standalone su AWS Marketplace"].
+. Nella Console, vai a *Administration > Licenses and subscriptions* e verifica che per la fatturazione di Cloud Volumes ONTAP sia selezionato l'abbonamento corretto. Fai riferimento a  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-billing-preferences.html#set-billing-preferences["Licenses and subscriptions: Imposta le preferenze di fatturazione"^].
+. Verifica lo stato di addebito e di idoneità.
+. Rimuovi l'abbonamento NIS se non ti serve più. Fai riferimento a https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html["Licenses and subscriptions: Rimuovi un abbonamento"^].
+
+
+
+
+[[convert-an-annual-contract-or-private-offer]]
+=== Converti un contratto annuale o un'offerta privata
+
+Hai un contratto annuale NIS Cloud Volumes ONTAP prima della conversione.
+
+.Passi
+. Richiedi un'offerta privata sostitutiva o di modifica per Cloud Volumes ONTAP tramite l'elenco NSL. Contatta il tuo team di riferimento NetApp.
+. Accetta la nuova offerta, attiva il nuovo abbonamento e associa l'abbonamento NSL al tuo account Console. Consulta  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-private-aws.html#accept-the-private-offer-in-the-aws-marketplace-portal["Licenses and subscriptions: Accetta e configura un'offerta privata di AWS Marketplace"^].
+. Vai a *Amministrazione > Licenses and subscriptions* e verifica che l'abbonamento corretto sia quello preferito per la fatturazione di Cloud Volumes ONTAP. Fai riferimento a  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-billing-preferences.html#set-billing-preferences["Licenses and subscriptions: Imposta le preferenze di fatturazione"^].
+. Verifica le preferenze di addebito e fatturazione.
+. Rimuovi l'abbonamento NIS se non ti serve più. Fai riferimento a https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html["Licenses and subscriptions: Rimuovi un abbonamento"^].
+
+
+
+
+[[convert-cloud-volumes-ontap-essentials-subscriptions-that-use-backup]]
+== Converti le sottoscrizioni Cloud Volumes ONTAP Essentials che utilizzano Backup
+
+Usa questo scenario se hai un abbonamento NIS PAYGO o annuale con una licenza Cloud Volumes ONTAP Essentials e hai abilitato Backup and Recovery o altri servizi dati. Dopo la conversione, utilizzerai un abbonamento NSL PAYGO o annuale per Cloud Volumes ONTAP e un abbonamento NIS per Backup and Recovery o servizi dati.
+
+
+
+[[convert-a-paygo-subscription]]
+=== Convertire un abbonamento PAYGO
+
+Hai un abbonamento Cloud Volumes ONTAP NIS PAYGO prima della conversione.
+
+.Passi
+. Abbonati all'offerta NSL PAYGO per Cloud Volumes ONTAP dall'AWS Marketplace. Consulta link:task-onboard-cvo-aws-marketplace.html["Distribuisci Cloud Volumes ONTAP utilizzando l'offerta standalone su AWS Marketplace"].
+. Mantieni attivo il tuo abbonamento NIS per Backup and Recovery, oppure aggiungine uno se non ne hai già uno.
+. Associa entrambi gli abbonamenti allo stesso account Console. Fai riferimento a  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html["Licenses and subscriptions: Associa un abbonamento a un account console"^].
+. Verifica le preferenze di addebito e fatturazione. Consulta  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-billing-preferences.html#verify-billing-preferences["Licenses and subscriptions: verifica le preferenze di fatturazione"^].
+. Verifica che gli addebiti di Cloud Volumes ONTAP passino tramite l'abbonamento NSL e che gli addebiti dei servizi dati passino tramite l'abbonamento NIS. Fai riferimento a https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws["Licenses and subscriptions: fatturazione flessibile per Cloud Volumes ONTAP e servizi dati in AWS"^].
+
+
+
+
+[[convert-an-annual-contract-or-private-offer]]
+=== Converti un contratto annuale o un'offerta privata
+
+Prima della conversione, hai un contratto annuale o un'offerta privata per Cloud Volumes ONTAP NIS.
+
+.Passi
+. Richiedi un'offerta privata sostitutiva o di modifica per Cloud Volumes ONTAP tramite l'elenco NSL. Contatta il tuo team di riferimento NetApp.
+. Ottieni o mantieni un abbonamento NIS valido per Backup and Recovery in uno dei seguenti modi:
++
+** Tramite un abbonamento NIS PAYGO
+** Tramite una nuova o modificata offerta privata NIS che copre Backup and Recovery o altri servizi dati
+
+
+. Accetta la nuova offerta, attiva il nuovo abbonamento e associa l'abbonamento NSL al tuo account Console. Consulta  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-private-aws.html#accept-the-private-offer-in-the-aws-marketplace-portal["Licenses and subscriptions: Accetta e configura un'offerta privata di AWS Marketplace"^].
+. Associa entrambi gli abbonamenti allo stesso account Console. Fai riferimento a  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html["Licenses and subscriptions: Associa un abbonamento a un account console"^].
+. Verifica le preferenze di addebito e fatturazione. Consulta  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-billing-preferences.html#verify-billing-preferences["Licenses and subscriptions: verifica le preferenze di fatturazione"^].
+. Verifica che gli addebiti di Cloud Volumes ONTAP passino tramite l'abbonamento NSL e che gli addebiti dei servizi dati passino tramite l'abbonamento NIS. Fai riferimento a https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws["Licenses and subscriptions: fatturazione flessibile per Cloud Volumes ONTAP e servizi dati in AWS"^].
+
+
+.Risultato
+Hai un supportato https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws["configurazione multi-sottoscrizione"^].
+
+
+
+[[convert-cloud-volumes-ontap-professional-subscriptions-without-data-services]]
+== Converti gli abbonamenti Cloud Volumes ONTAP Professional senza servizi dati
+
+Se hai un abbonamento Cloud Volumes ONTAP NIS con una licenza Professional e non usi attivamente né prevedi di usare Backup and Recovery o altri servizi dati, devi convertire il tuo metodo di addebito da Professional a Essentials. Lo stato di destinazione preferito è un abbonamento Cloud Volumes ONTAP NSL con una licenza Essentials.
+
+
+NOTE: Devi completare la conversione da Professional a Essentials prima della scadenza dell'abbonamento NIS o prima di rimuoverlo.
+
+Se non converti il tuo metodo di addebito:
+
+* Il sistema Cloud Volumes ONTAP continua a essere fatturato tramite la licenza NIS Professional esistente.
+* Non avrai un percorso di fatturazione Professional valido per continuare ad addebitare l'utilizzo di Cloud Volumes ONTAP.
+* Il flusso di lavoro di conversione potrebbe non essere più disponibile dopo la scadenza dell'abbonamento NIS.
+
+
+
+
+[[convert-a-professional-package-with-paygo-subscription]]
+=== Converti un pacchetto Professional con abbonamento PAYGO
+
+.Passi
+. Cambia il metodo di addebito da Professional a Essentials. Consulta https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-capacity-licenses.html#change-charging-methods["Licenses and subscriptions: Modifica i metodi di addebito"^].
+. Abbonati all'offerta NSL PAYGO per Cloud Volumes ONTAP dall'AWS Marketplace. Consulta link:task-onboard-cvo-aws-marketplace.html["Distribuisci Cloud Volumes ONTAP utilizzando l'offerta standalone su AWS Marketplace"].
+. Associa l'abbonamento NSL al tuo account Console. Consulta  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html["Licenses and subscriptions: Associa un abbonamento a un account console"^].
+. Verifica le preferenze di addebito e fatturazione. Consulta  https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws["Licenses and subscriptions: fatturazione flessibile per Cloud Volumes ONTAP e servizi dati in AWS"^].
+. Rimuovi l'abbonamento NIS se non ti serve più. Fai riferimento a https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html["Licenses and subscriptions: Rimuovi un abbonamento"^].
+
+
+
+
+[[convert-an-annual-contract-or-private-offer]]
+=== Converti un contratto annuale o un'offerta privata
+
+.Passi
+. Richiedi un'offerta privata sostitutiva o modificata per Cloud Volumes ONTAP Essentials tramite NSL. Contatta il tuo team account NetApp.
+. Accetta la nuova offerta, attiva il nuovo abbonamento e associa l'abbonamento NSL al tuo account Console. Consulta  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-private-aws.html#accept-the-private-offer-in-the-aws-marketplace-portal["Licenses and subscriptions: Accetta e configura un'offerta privata di AWS Marketplace"^].
+. Cambia il metodo di addebito da Professional a Essentials. Consulta https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-capacity-licenses.html#change-charging-methods["Licenses and subscriptions: Modifica i metodi di addebito"^].
+. Associa l'abbonamento NSL al tuo account Console. Consulta  https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html["Licenses and subscriptions: Associa un abbonamento a un account console"^].
+. Verifica le preferenze di addebito e fatturazione. Consulta  https://docs.netapp.com/us-en/console-licenses-subscriptions/concept-billing-preferences.html#flexible-billing-for-cloud-volumes-ontap-and-data-services-in-aws["Licenses and subscriptions: fatturazione flessibile per Cloud Volumes ONTAP e servizi dati in AWS"^].
+. Rimuovi l'abbonamento NIS se non ti serve più. Fai riferimento a https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-subscriptions.html["Licenses and subscriptions: Rimuovi un abbonamento"^].
+
+
+
+
+[[troubleshooting]]
+== Risoluzione dei problemi
+
+Scopri cosa devi fare se riscontri i seguenti problemi:
+
+
+
+[[you-have-a-cloud-volumes-ontap-professional-package]]
+=== Hai un pacchetto Cloud Volumes ONTAP Professional
+
+Se hai un abbonamento Cloud Volumes ONTAP e vuoi passare a NSL, l'unica opzione di conversione supportata è da Professional a Essentials. Per smettere di usare le funzionalità Professional e passare a Essentials, devi modificare il metodo di fatturazione da Professional a Essentials.
+
+https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-capacity-licenses.html#change-charging-methods["Licenses and subscriptions: Modifica i metodi di addebito"^].
+
+
+
+[[systems-use-professional-packages-even-after-nsl-subscription]]
+=== I sistemi utilizzano i pacchetti Professional anche dopo l'abbonamento NSL
+
+Questo comportamento è previsto. NSL supporta solo il pacchetto di licenza Essentials. Esegui una delle seguenti operazioni:
+
+* Cambia il metodo di addebito da Professional a Essentials. Consulta https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-capacity-licenses.html#change-charging-methods["Licenses and subscriptions: Modifica i metodi di addebito"^].
+* Continua a fatturare in base al pacchetto Professional tramite l'abbonamento NIS.
+
+
+
+
+[[you-use-backup-and-recovery-or-data-services-and-want-to-move-to-nsl]]
+=== Utilizzi servizi di backup e ripristino o servizi dati e desideri passare a NSL
+
+Continua a utilizzare l'abbonamento NIS per Backup and Recovery o per i servizi dati e utilizza l'abbonamento NSL per Cloud Volumes ONTAP in un modello multi-abbonamento. Fai riferimento a https://docs.netapp.com/us-en/console-licenses-subscriptions/task-manage-billing-preferences.html["Licenses and subscriptions: Gestisci le preferenze di fatturazione"^].

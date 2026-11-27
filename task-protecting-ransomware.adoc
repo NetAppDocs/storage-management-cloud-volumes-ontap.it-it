@@ -4,7 +4,7 @@ permalink: task-protecting-ransomware.html
 keywords: snapshot policy, ransomware, protection, fpolicy, block, extension, attacks, arp, autonomous, monitor, alert, attacks, Cloud Volumes ONTAP 
 summary: 'Gli attacchi ransomware possono costare tempo, risorse e reputazione a un"azienda. La Console consente di implementare la soluzione NetApp per il ransomware, che fornisce strumenti efficaci per la visibilità, il rilevamento e la correzione.' 
 ---
-= Abilita le soluzioni di protezione ransomware NetApp per Cloud Volumes ONTAP
+= Abilita la protezione anti-ransomware per Cloud Volumes ONTAP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
